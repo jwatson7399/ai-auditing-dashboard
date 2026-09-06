@@ -37,3 +37,16 @@ Use only to find links to allowlisted independent testers or model-maker release
 - Simon Willison — simonwillison.net, @simonw
 - The New Stack
 - The Decoder
+
+## Blocklist
+
+Never search, quote, or propose these. They have been reviewed and rejected. Do not list them under Proposed sources again.
+
+- cryptobriefing.com (misreported Epoch AI figures, September 2026)
+- officechai.com (unsourced "leaked benchmark" posts)
+- llm-stats.com, benchlm.ai, swfte.com and similar SEO leaderboards (repackage other people's numbers without running anything)
+- Any site whose only content is a summary of an allowlisted source. Link the allowlisted source directly instead.
+
+## Rule on settings
+
+Every fact in an item's settings field must appear on the item's quoted url. If a detail comes from a second page (for example a methodology page), either file it as its own item or put the second url in notes next to the detail.
