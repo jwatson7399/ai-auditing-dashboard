@@ -9,7 +9,7 @@ Search these for scores, new tests, method changes, and corrections.
 - Artificial Analysis — artificialanalysis.ai, @ArtificialAnlys
 - Epoch AI — epoch.ai, @EpochAIResearch
 - ARC Prize — arcprize.org, @arcprize
-- LMArena — lmarena.ai, @lmarena_ai
+- LMArena — arena.ai (formerly lmarena.ai; both domains allowed), @lmarena_ai
 - Scale AI SEAL leaderboards
 - Vals AI
 - SWE-bench and DeepSWE leaderboards
