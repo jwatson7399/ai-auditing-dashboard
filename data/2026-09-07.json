@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-07",
- "built_at": "2026-09-07T16:14:32+00:00",
+ "built_at": "2026-09-07T23:01:10+00:00",
  "built_by": "tools/rebuild.py, GitHub Actions run local",
- "built_at_et": "12:14 PM",
+ "built_at_et": "7:01 PM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -718,14 +718,9 @@
      null
     ],
     [
-     "Muse Spark 1.3",
+     "Gemini 3.8 Flash",
      74.4,
      null
-    ],
-    [
-     "Grok 4.6",
-     74.4,
-     "grok"
     ],
     [
      "GPT-5.6 Terra",
@@ -733,14 +728,19 @@
      "chatgpt"
     ],
     [
-     "Gemini 3.8 Flash",
+     "Grok 4.6",
      74.4,
-     null
+     "grok"
     ],
     [
      "GPT-6 Astra",
      74.4,
      "chatgpt"
+    ],
+    [
+     "Muse Spark 1.3",
+     74.4,
+     null
     ],
     [
      "GLM-5.3",
@@ -948,8 +948,8 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
     "GPT-5.6 Terra",
+    "Claude Fable 5",
     "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
@@ -1044,15 +1044,15 @@
    "name": "Video generation",
    "pick": "Grok Imagine Video",
    "runner": null,
-   "overall": "Wan 3.0",
+   "overall": "Gemini Omni Flash",
    "rows": [
     [
-     "Wan 3.0",
+     "Gemini Omni Flash",
      100.0,
      null
     ],
     [
-     "Gemini Omni Flash",
+     "Wan 3.0",
      100.0,
      null
     ],
@@ -1138,10 +1138,10 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
-    "GPT-6 Astra",
     "GPT-5.6 Terra",
-    "GPT-5.6 Luna"
+    "Grok 4.6",
+    "GPT-5.6 Luna",
+    "GPT-6 Astra"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -1383,6 +1383,7 @@
   }
  },
  "commentary": null,
+ "proposed_sources": [],
  "pending_prs": [
   {
    "number": 0,

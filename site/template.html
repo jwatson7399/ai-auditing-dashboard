@@ -151,6 +151,12 @@ footer{margin-top:40px;font-size:13px;color:var(--muted);max-width:72ch}
     <div class="second" id="second"></div>
   </section>
 
+  <section id="proposed-section" hidden>
+    <h3>Proposed sources awaiting your decision</h3>
+    <p class="note" style="margin:0 0 12px">The Benchmark Scout proposed these and the Verifier recorded what their pages say. Nothing here is a recommendation. Add a domain to the allowlist or the Blocklist in sources/allowlist.md and it leaves this list.</p>
+    <div class="second" id="proposed"></div>
+  </section>
+
   <section>
     <h3>Effort levels and cost per task</h3>
     <div class="card">
@@ -277,6 +283,18 @@ document.getElementById('second').innerHTML = D.second.map(s=>{
   <blockquote>${esc(s.quote)}</blockquote>
   <p class="meta"><a href="${esc(s.url)}" target="_blank" rel="noopener">source page</a></p></article>`;
 }).join('') || '<p class="note">Nothing filed today.</p>';
+
+// ---------- proposed sources: facts only ----------
+if(D.proposed_sources && D.proposed_sources.length){
+  document.getElementById('proposed-section').hidden = false;
+  const F = [['resolves','Resolves'],['own_numbers','Own numbers'],['methodology','Methodology'],['who_runs_it','Who runs it'],['last_updated','Last updated'],['also_on','Also on']];
+  document.getElementById('proposed').innerHTML = D.proposed_sources.map(p=>`<article class="card">
+    <h4>${esc(p.domain)}</h4>
+    <p class="meta">Proposed ${esc(p.first_seen)}${p.found_via?' · found via '+esc(p.found_via):''}</p>
+    <p style="font-size:14px">${esc(p.why)}</p>
+    ${p.facts ? `<p class="meta">Verifier facts, ${esc(p.checked_on)}:</p><div style="font-size:13.5px;display:grid;grid-template-columns:auto 1fr;gap:2px 10px">${F.filter(f=>p.facts[f[0]]!==undefined).map(f=>`<span class="meta">${f[1]}</span><span>${esc(p.facts[f[0]])}</span>`).join('')}</div>` : '<p class="meta"><span class="chip mid">not yet checked by the Verifier</span></p>'}
+    <p class="meta"><a href="${esc(p.url)}" target="_blank" rel="noopener">proposed page</a></p></article>`).join('');
+}
 
 // ---------- effort table ----------
 const E = D.eff.rows.slice().sort((a,b)=>(b.score??-1)-(a.score??-1));

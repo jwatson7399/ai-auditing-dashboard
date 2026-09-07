@@ -25,4 +25,6 @@ Benchmark Scout files new credible AI model benchmark findings into `inbox/bench
 
 The Artificial Analysis key lives in the repository's Actions secrets as `AA_API_KEY` and nowhere else. Data from Artificial Analysis is used under its attribution requirement.
 
+Unresolved entries in `inbox/proposed-sources.md` (domains on neither the allowlist nor the Blocklist) are shown on the page with the Verifier's recorded facts and no recommendation; the decision is a human edit to `sources/allowlist.md`.
+
 `inbox/commentary/YYYY-MM-DD.md` is written by the Commentator agent from the day's JSON. A pull request carrying the `commentary` label and touching only that path is merged by `.github/workflows/commentary-merge.yml`, which then rebuilds the page. Every number in the commentary is checked against the day's data; a block with a number not in the data is set aside and the page shows the templated line instead, marked.

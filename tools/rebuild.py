@@ -269,7 +269,9 @@ def parse_kv_items(path):
     with open(path, encoding="utf-8") as f:
         lines = f.read().splitlines()
     for ln in lines:
-        if ln.startswith("### "):
+        if ln.startswith("## "):
+            cur = None
+        elif ln.startswith("### "):
             cur = {"_title": ln[4:].strip()}
             items.append(cur)
         elif cur is not None and re.match(r"^\s*\d+\.\s+\S", ln):
@@ -338,6 +340,63 @@ def read_scout(today):
     if not verdicts:
         note = f"{len(out)} items filed by the Benchmark Scout. No Verifier report on main for today, so every item is unverified."
     return out, {"scout_file": os.path.relpath(bpath, ROOT), "verified_file": os.path.relpath(vpath, ROOT) if verdicts else None, "note": note}
+
+
+def allowlist_sections():
+    """Returns (allow_text, block_text) from sources/allowlist.md, lowercased."""
+    p = os.path.join(ROOT, "sources", "allowlist.md")
+    if not os.path.exists(p):
+        return "", ""
+    with open(p, encoding="utf-8") as f:
+        txt = f.read()
+    m = re.search(r"^## Blocklist\s*$", txt, re.M)
+    if not m:
+        return txt.lower(), ""
+    return txt[:m.start()].lower(), txt[m.start():].lower()
+
+
+def read_proposed_sources():
+    """inbox/proposed-sources.md is the Scout's append-only queue. Each unresolved block
+    (domain on neither list) is shown with whatever facts the Verifier has recorded for it,
+    and nothing else: no rating, no recommendation. The decision is a human edit to
+    sources/allowlist.md."""
+    p = os.path.join(ROOT, "inbox", "proposed-sources.md")
+    if not os.path.exists(p):
+        return []
+    allow, block = allowlist_sections()
+    blocks, cur = [], None
+    with open(p, encoding="utf-8") as f:
+        for ln in f.read().splitlines():
+            if ln.startswith("- url:"):
+                cur = {"url": ln[6:].strip()}
+                blocks.append(cur)
+            elif cur is not None and ln.startswith("  ") and ":" in ln:
+                k, v = ln.strip().split(":", 1)
+                cur[k.strip()] = v.strip()
+    # latest Verifier facts per domain, from the "Proposed source checks" blocks
+    facts = {}
+    for vp in sorted(glob.glob(os.path.join(ROOT, "inbox", "verified", "????-??-??.md"))):
+        _, vitems = parse_kv_items(vp)
+        for v in vitems:
+            if "resolves" in v or "own_numbers" in v:
+                facts[v["_title"].strip().lower()] = dict(v, checked_on=os.path.basename(vp)[:10])
+    out = []
+    for b in blocks:
+        d = b.get("domain", "").strip().lower()
+        if not d:
+            continue
+        status = "unresolved"
+        if d in block:
+            status = "blocklist"
+        elif d in allow:
+            status = "allowlist"
+        if status != "unresolved":
+            continue
+        f = facts.get(d)
+        out.append({"domain": d, "url": b.get("url", ""), "first_seen": b.get("first_seen", ""), "found_via": b.get("found_via", ""),
+                    "why": b.get("why", ""), "checked_on": f["checked_on"] if f else None,
+                    "facts": {k: f[k] for k in ("resolves", "own_numbers", "methodology", "who_runs_it", "last_updated", "also_on") if f and k in f} if f else None})
+    return out
 
 
 def read_commentary(today, numbers, names=()):
@@ -713,6 +772,7 @@ def main():
         if not news and prev:
             news, news_meta = prev.get("news", []), dict(prev.get("news_meta", {}), note=news_meta["note"])
         second, second_meta = read_scout(today)
+        proposed = read_proposed_sources()
         prs = pending_prs()
 
         # 3. picks, commentary, changes
@@ -723,7 +783,7 @@ def main():
              "status": status, "status_notes": notes,
              "access": ACCESS, "media_access": MEDIA_ACCESS, "bench": bench, "second": second, "second_meta": second_meta,
              "news": news, "news_meta": news_meta, "eff": dict(eff_meta, rows=eff_rows), "picks": picks,
-             "commentary": commentary, "pending_prs": prs, "previous_date": prev["date"] if prev else None, "noise": NOISE}
+             "commentary": commentary, "proposed_sources": proposed, "pending_prs": prs, "previous_date": prev["date"] if prev else None, "noise": NOISE}
         d["changes"] = compute_changes(d, prev)
         if commentary and commentary["changes"]:
             d["changes"] = [["commentator", c] for c in commentary["changes"]] + d["changes"]
