@@ -18,3 +18,14 @@ https://epoch.ai/models/claude-fable-5-1 | Claude Fable 5.1 | Epoch Capabilities
 https://arena.ai/leaderboard/agent | Claude Fable 5.1 (Max) | Arena Agent Arena Overall (Net Improvement)
 https://arena.ai/leaderboard/agent/code?license=open-source | Hy4 preview | Arena Agent Arena Code (open-source filter) (Net Improvement)
 https://arena.ai/leaderboard/code/webdev | gpt-6-astra-max | Arena Code Arena WebDev (Overall)
+https://www.vals.ai/benchmarks/rsi_index | Claude Fable 5.1 | Vals RSI Index
+https://www.vals.ai/benchmarks/legal_research | Muse Spark 1.3 Max | Legal Research Bench
+https://www.vals.ai/benchmarks/legal_research | Claude Opus 5 | Legal Research Bench
+https://www.vals.ai/benchmarks/legal_research | Claude Fable 5.1 | Legal Research Bench
+https://www.vals.ai/benchmarks/fabv2 | Muse Spark 1.2 | Finance Agent v2
+https://www.vals.ai/benchmarks/vibe-code | Claude Fable 5 | Vibe Code Bench v1.1
+https://artificialanalysis.ai/articles/gemini-3-8-flash | Gemini 3.8 Flash (high) | Artificial Analysis Intelligence Index
+https://artificialanalysis.ai/articles/muse-spark-1-3 | Muse Spark 1.3 (max) | Artificial Analysis Intelligence Index
+https://artificialanalysis.ai/articles/muse-spark-1-3 | Muse Spark 1.3 (xhigh) | Artificial Analysis Intelligence Index
+https://openai.com/index/gpt-6-astra/ | GPT-6 Astra | not applicable
+https://www.anthropic.com/claude-fable-and-mythos-5-1 | Claude Fable 5.1 | not applicable
