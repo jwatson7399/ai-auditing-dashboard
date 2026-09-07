@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Which Model Today</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F1F3F6; --surface:#FFFFFF; --ink:#172029; --muted:#5F6B78; --line:#DDE2E8;
+  --bar:#C3CBD4; --bar-dim:#E4E8ED; --bar-text:#3A4552; --pick:#1B5FBF; --pick-soft:#E3ECFA;
+  --good:#1E7F4F; --mid:#9A6B00; --weak:#B3463B; --good-soft:#E2F2E8; --mid-soft:#F8EFD6; --weak-soft:#F9E3E0;
+  --display:'Manrope',system-ui,sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme: dark){ :root{
+  --ground:#0F1418; --surface:#171D24; --ink:#E7ECF1; --muted:#95A0AC; --line:#2A333D;
+  --bar:#3A4652; --bar-dim:#242C35; --bar-text:#C2CBD4; --pick:#6A9CF2; --pick-soft:#1C2B45;
+  --good:#5FC58E; --mid:#E0B24C; --weak:#EF7F72; --good-soft:#15301F; --mid-soft:#332A10; --weak-soft:#3A1C18;
+}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 24px 80px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,4.5vw,40px);font-weight:800;letter-spacing:-0.02em;line-height:1.1}
+h2{font-size:21px;font-weight:800;letter-spacing:-0.01em}
+h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted)}
+h4{font-size:16px;font-weight:800}
+p{margin:0}
+a{color:var(--pick)}
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.stamp{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.status{display:flex;flex-wrap:wrap;gap:8px;font-size:12px}
+.chip{border-radius:999px;padding:3px 10px;font-weight:600;letter-spacing:0.03em;white-space:nowrap}
+.chip.good{background:var(--good-soft);color:var(--good)} .chip.mid{background:var(--mid-soft);color:var(--mid)} .chip.weak{background:var(--weak-soft);color:var(--weak)} .chip.pick{background:var(--pick-soft);color:var(--pick)} .chip.commentator{background:var(--pick-soft);color:var(--pick)}
+section{margin-top:36px}
+section>h3{margin-bottom:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:820px){.news{grid-template-columns:1fr}}
+.story{display:flex;flex-direction:column;gap:10px}
+.story .tag{display:flex;gap:8px;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted)}
+.story h4{font-size:17px;line-height:1.25}
+.story p{font-size:14.5px}
+.story .why{border-left:3px solid var(--pick);padding-left:10px;font-size:14px;color:var(--bar-text)}
+.story .links{font-size:13px;display:flex;flex-direction:column;gap:4px;margin-top:auto}
+.story .links span{color:var(--muted)}
+.note{font-size:13px;color:var(--muted);margin-top:10px;max-width:80ch}
+.changes{display:flex;flex-direction:column;gap:10px}
+.changes .item{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;font-size:15px}
+.changes .item p{max-width:80ch}
+.tasks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media (max-width:980px){.tasks{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.tasks{grid-template-columns:1fr}}
+.task{display:flex;flex-direction:column;gap:8px;padding:16px 16px 14px;text-decoration:none;color:inherit}
+.task:focus-visible{outline:2px solid var(--pick);outline-offset:2px}
+.task .name{font-size:13px;font-weight:600;color:var(--muted)}
+.task .pickname{font-family:var(--display);font-size:18px;font-weight:800;line-height:1.2;color:var(--pick)}
+.task .runner{font-size:13px;color:var(--muted)}
+.task .why{font-size:13.5px;color:var(--bar-text);line-height:1.4}
+.task .foot{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
+.task .chip{font-size:10.5px}
+details.bench{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-top:12px;scroll-margin-top:16px}
+details.bench>summary{cursor:pointer;list-style:none;padding:18px 22px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline}
+details.bench>summary::-webkit-details-marker{display:none}
+details.bench>summary h2{font-size:18px}
+details.bench>summary .sub{color:var(--muted);font-size:14px}
+details.bench>summary .open{margin-left:auto;font-size:12px;color:var(--pick);font-weight:600}
+details[open]>summary .open .c{display:none} details:not([open])>summary .open .o{display:none}
+.inner{padding:0 22px 22px}
+.grid{display:grid;grid-template-columns:minmax(260px,36fr) minmax(0,64fr);gap:28px}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.explain{display:flex;flex-direction:column;gap:14px;font-size:14.5px}
+.explain h3{margin-bottom:4px}
+.explain p{max-width:46ch}
+.chart{display:flex;flex-direction:column;gap:5px;font-size:12.5px}
+.row{display:grid;grid-template-columns:200px 1fr 62px;align-items:center;gap:10px}
+.row .lbl{text-align:right;color:var(--bar-text);line-height:1.15}
+.row .lbl .cfg{color:var(--muted);font-size:11px}
+.row .track{height:16px}
+.row .fill{height:100%;background:var(--bar);border-radius:2px}
+.row .val{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--muted);text-align:right}
+.row.pick .lbl{color:var(--pick);font-weight:600} .row.pick .fill{background:var(--pick)} .row.pick .val{color:var(--pick);font-weight:500}
+.row.noaccess .lbl{color:var(--muted)} .row.noaccess .fill{background:var(--bar-dim)}
+.axis{display:grid;grid-template-columns:200px 1fr 62px;gap:10px;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px}
+.axis .ticks{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:4px}
+@media (max-width:560px){.row,.axis{grid-template-columns:130px 1fr 54px}.row{font-size:11.5px}}
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:12.5px;color:var(--muted);margin-bottom:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:14px;height:10px;border-radius:2px;display:inline-block;background:var(--bar)} .sw.p{background:var(--pick)} .sw.d{background:var(--bar-dim)}
+.components{font-size:13px;color:var(--muted);margin-top:14px}
+.second{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media (max-width:820px){.second{grid-template-columns:1fr}}
+.second .card{display:flex;flex-direction:column;gap:8px}
+.second h4{font-size:15px}
+.second .meta{font-size:12.5px;color:var(--muted)}
+.second blockquote{margin:0;padding-left:10px;border-left:3px solid var(--line);font-size:13.5px;color:var(--bar-text)}
+.tbl,.health{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+th{font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);font-weight:600}
+td.num,th.num{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+tr.lead td{font-weight:600}
+tr.noaccess td{color:var(--muted)}
+.equiv{margin-top:14px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.equiv p{border-left:3px solid var(--pick);padding-left:10px}
+.caveats p{color:var(--muted);max-width:72ch}
+.caveats p+p{margin-top:10px}
+.caveats b{color:var(--ink);font-weight:600}
+footer{margin-top:40px;font-size:13px;color:var(--muted);max-width:72ch}
+@media (prefers-reduced-motion:no-preference){.fill{transition:width .5s ease}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div>
+      <div class="stamp" id="stamp"></div>
+      <h1>Which Model Today</h1>
+    </div>
+    <div class="status" id="status"></div>
+  </div>
+
+  <section>
+    <h3>Today's AI news</h3>
+    <div class="news" id="news"></div>
+    <p class="note" id="newsnote"></p>
+  </section>
+
+  <section>
+    <h3>What changed since yesterday</h3>
+    <div class="card changes" id="changes"></div>
+    <p class="note" id="changesnote"></p>
+  </section>
+
+  <section>
+    <h3>Which model for which task</h3>
+    <div class="tasks" id="tasks"></div>
+    <p class="note">Picks are limited to what you can open today: Claude (Max or Pro), ChatGPT (Plus or Pro), SuperGrok. Tap a card for the full chart and what the tests actually measure. Lines marked "agent" were written by the Commentator from the day's numbers; unmarked lines are built by code from the numbers alone.</p>
+  </section>
+
+  <section>
+    <h3>The evidence, task by task</h3>
+    <div class="legend"><span><i class="sw p"></i>Today's pick</span><span><i class="sw"></i>You can open it</span><span><i class="sw d"></i>No subscription</span></div>
+    <div id="details"></div>
+  </section>
+
+  <section>
+    <h3>What the Benchmark Scout found today</h3>
+    <p class="note" id="secondnote" style="margin:0 0 12px"></p>
+    <div class="second" id="second"></div>
+  </section>
+
+  <section>
+    <h3>Effort levels and cost per task</h3>
+    <div class="card">
+      <p style="font-size:14.5px;max-width:76ch" id="effintro"></p>
+      <div class="tbl" style="margin-top:14px"><table id="eff"></table></div>
+      <div class="equiv" id="equiv"></div>
+      <p class="note">Rows with no cost are settings the source has scored but not priced. Speed is output tokens per second; wait is seconds until the first word of the answer appears, including thinking time. You pay by subscription, not per token, but higher effort burns your usage limits faster, so this table tells you when turning effort down costs you nothing.</p>
+    </div>
+  </section>
+
+  <section>
+    <h3>Pipeline health</h3>
+    <div class="card">
+      <p style="font-size:14.5px;max-width:80ch">Which agents ran in the last 14 days, and what each produced. An agent with no line for a day did not run, which is a finding rather than something to hide. Read from the run logs in the repository.</p>
+      <div class="health" style="margin-top:14px"><table id="health"></table></div>
+      <p class="note" id="prnote"></p>
+    </div>
+  </section>
+
+  <section class="caveats">
+    <h3>Read before trusting</h3>
+    <div class="card">
+      <p><b>Three-point rule.</b> Differences of one to three points are within the noise of these tests. Cards say "within noise" when the top two are that close.</p>
+      <p><b>Testers disagree.</b> The same named test run by two testers on different harnesses can reach opposite conclusions. The picks use Artificial Analysis numbers only; other testers' figures appear in the Scout section and are never blended in.</p>
+      <p><b>Preference votes are not task tests.</b> Frontend, image, video, and writing are ranked by blind human votes (which output do people prefer). That is real signal but it measures taste, not whether the job got done. Cards say which kind of evidence they rest on.</p>
+      <p><b>Effort settings.</b> Benchmark charts use each model's best effort setting, and that setting is stored with every score. Your app's default is usually lower. The effort table shows how much that matters.</p>
+      <p><b>Index versions are not comparable.</b> Artificial Analysis revises its Intelligence Index. Scores from different versions are not comparable, so the version is shown with the effort table.</p>
+      <p><b>Access assumptions.</b> Image and video products are matched to subscriptions by name; confirm what you actually see in each app. A newly released model may be listed before it reaches your app, in which case use the runner-up.</p>
+      <p><b>News is unverified.</b> The Verifier checks benchmark quotes only. Nobody independently checks the news links, so treat the stories above as reported, not confirmed.</p>
+      <p><b>Stale sources are labeled.</b> When a source could not be refreshed, the page shows the last numbers it had with the date they were fetched, and the status line says so.</p>
+    </div>
+  </section>
+
+  <footer id="footer"></footer>
+</div>
+
+<script>
+const D = {"schema": 1, "date": "2026-09-07", "built_at": "2026-09-07T16:14:32+00:00", "built_by": "tools/rebuild.py, GitHub Actions run local", "built_at_et": "12:14 PM", "status": "partial", "status_notes": ["numbers carried forward (--no-fetch)"], "access": {"Claude Fable 5.1": "claude", "Claude Fable 5": "claude", "Claude Opus 5": "claude", "GPT-6 Astra": "chatgpt", "GPT-5.6 Sol": "chatgpt", "GPT-5.6 Terra": "chatgpt", "GPT-5.6 Luna": "chatgpt", "Grok 4.6": "grok"}, "media_access": {"GPT Image 2": "chatgpt", "GPT Image 1.5": "chatgpt", "Grok Imagine": "grok", "Grok Imagine Video": "grok"}, "bench": {"terminal": {"name": "Terminal-Bench v2.1", "kind": "task", "src": "Artificial Analysis", "elo": false, "fetched": "2026-09-03", "index_version": null, "stale": true, "d": {"Claude Fable 5.1": 91, "Claude Opus 5": 89, "Grok 4.6": 88, "GPT-6 Astra": 88, "GPT-5.6 Terra": 88, "GPT-5.6 Sol": 88, "Gemini 3.8 Flash": 88, "Muse Spark 1.3": 86, "Kimi K3": 85, "Claude Fable 5": 85, "GLM-5.3-Flash": 84, "GLM-5.3": 84, "Qwen3.8 2.4T A95B": 82, "GPT-5.6 Luna": 81, "Qwen3.8 278": 80, "DeepSeek V4 Pro 0813": 79, "MiniMax-M3": 65, "Inkling": 55}}, "scicode": {"name": "SciCode", "kind": "task", "src": "Artificial Analysis", "elo": false, "fetched": "2026-09-03", "index_version": null, "stale": true, "d": {"Claude Fable 5.1": 62, "Claude Fable 5": 60, "Kimi K3": 59, "Muse Spark 1.3": 57, "GLM-5.3": 56, "GPT-5.6 Sol": 56, "Claude Opus 5": 56, "GPT-6 Astra": 54, "GPT-5.6 Terra": 54, "Gemini 3.8 Flash": 54, "Grok 4.6": 54, "GPT-5.6 Luna": 53, "Qwen3.8 2.4T A95B": 52, "DeepSeek V4 Pro 0813": 49, "Inkling": 46, "GLM-5.3-Flash": 46, "MiniMax-M3": 45, "Qwen3.8 278": 45}}, "gdpval": {"name": "GDPval-AA v2", "kind": "task", "src": "Artificial Analysis", "elo": false, "fetched": "2026-09-03", "index_version": null, "stale": true, "d": {"Claude Fable 5.1": 68, "Claude Opus 5": 68, "GLM-5.3-Flash": 63, "GLM-5.3": 63, "Muse Spark 1.3": 63, "Grok 4.6": 61, "Claude Fable 5": 61, "Qwen3.8 2.4T A95B": 61, "GPT-5.6 Sol": 61, "Kimi K3": 58, "GPT-6 Astra": 56, "DeepSeek V4 Pro 0813": 54, "GPT-5.6 Luna": 53, "GPT-5.6 Terra": 53, "Gemini 3.8 Flash": 52, "Qwen3.8 278": 52, "MiniMax-M3": 44, "Inkling": 37}}, "tau": {"name": "τ³-Banking", "kind": "task", "src": "Artificial Analysis", "elo": false, "fetched": "2026-09-03", "index_version": null, "stale": true, "d": {"Muse Spark 1.3": 52, "Grok 4.6": 51, "GLM-5.3": 50, "Qwen3.8 2.4T A95B": 49, "Qwen3.8 278": 48, "GLM-5.3-Flash": 47, "Claude Fable 5.1": 47, "Kimi K3": 46, "Gemini 3.8 Flash": 45, "GPT-5.6 Sol": 44, "Claude Opus 5": 42, "GPT-6 Astra": 41, "GPT-5.6 Terra": 40, "DeepSeek V4 Pro 0813": 40, "Claude Fable 5": 38, "GPT-5.6 Luna": 31, "Inkling": 29, "MiniMax-M3": 15}}, "lcr": {"name": "AA-LCR", "kind": "task", "src": "Artificial Analysis", "elo": false, "fetched": "2026-09-03", "index_version": null, "stale": true, "d": {"Kimi K3": 83, "Gemini 3.8 Flash": 81, "MiniMax-M3": 80, "Claude Fable 5.1": 80, "GPT-5.6 Terra": 80, "Muse Spark 1.3": 79, "GPT-5.6 Luna": 78, "GLM-5.3-Flash": 78, "GPT-5.6 Sol": 78, "Qwen3.8 278": 77, "Claude Fable 5": 77, "GLM-5.3": 76, "Claude Opus 5": 76, "DeepSeek V4 Pro 0813": 75, "Qwen3.8 2.4T A95B": 75, "Grok 4.6": 75, "GPT-6 Astra": 74, "Inkling": 73}}, "omni": {"name": "AA-Omniscience Accuracy", "kind": "task", "src": "Artificial Analysis", "elo": false, "fetched": "2026-09-03", "index_version": null, "stale": true, "d": {"Claude Fable 5.1": 67, "Claude Fable 5": 65, "GPT-6 Astra": 63, "Claude Opus 5": 61, "GPT-5.6 Sol": 59, "Gemini 3.8 Flash": 55, "DeepSeek V4 Pro 0813": 49, "Grok 4.6": 48, "Kimi K3": 48, "GPT-5.6 Terra": 47, "Muse Spark 1.3": 44, "GPT-5.6 Luna": 43, "Inkling": 42, "GLM-5.3": 34, "Qwen3.8 2.4T A95B": 31, "GLM-5.3-Flash": 28, "MiniMax-M3": 17, "Qwen3.8 278": 16}}, "nohalluc": {"name": "Non-hallucination rate", "kind": "task", "src": "Artificial Analysis", "elo": false, "fetched": "2026-09-03", "index_version": null, "stale": true, "d": {"MiniMax-M3": 82, "GLM-5.3-Flash": 72, "GLM-5.3": 70, "Qwen3.8 278": 70, "Muse Spark 1.3": 66, "Grok 4.6": 66, "Qwen3.8 2.4T A95B": 61, "GPT-6 Astra": 49, "Kimi K3": 47, "Gemini 3.8 Flash": 45, "Claude Opus 5": 39, "Claude Fable 5": 36, "Inkling": 32, "Claude Fable 5.1": 27, "GPT-5.6 Terra": 12, "GPT-5.6 Sol": 8, "GPT-5.6 Luna": 7, "DeepSeek V4 Pro 0813": 5}}, "gdppdf": {"name": "GDP.pdf (all criteria met)", "kind": "task", "src": "Artificial Analysis, Sept 4 (Benchmark Scout PR 1, verified)", "elo": false, "fetched": "2026-09-03", "index_version": null, "stale": true, "d": {"GPT-6 Astra": 33.2, "GPT-5.6 Sol": 28.2, "Claude Fable 5.1": 26.2}}, "webdev": {"name": "Arena WebDev", "kind": "votes", "src": "arena.ai, Sept 5 (verified)", "elo": true, "fetched": "2026-09-05", "index_version": null, "stale": true, "d": {"GPT-6 Astra": 1797, "Claude Fable 5.1": 1762, "Claude Opus 5": 1688, "Qwen3.8 Max": 1686, "Kimi K3": 1674, "Grok 4.6": 1625, "Gemini 3.6 Flash": 1604, "GPT-5.6 Sol": 1588}}, "text": {"name": "Arena Text", "kind": "votes", "src": "arena.ai, Sept 2", "elo": true, "fetched": "2026-09-05", "index_version": null, "stale": true, "d": {"Claude Fable 5": 1507, "Claude Fable 5.1": 1504, "Muse Spark 1.2": 1499, "Gemini 3.8 Flash": 1494, "Claude Opus 5": 1493, "Kimi K3": 1489, "GPT-5.6 Sol": 1483, "GLM-5.3": 1482}}, "image": {"name": "AA Image Arena", "kind": "votes", "src": "Artificial Analysis, Sept 6", "elo": true, "fetched": "2026-09-06", "index_version": null, "stale": true, "d": {"GPT Image 2": 1178, "MAI-Image-2.6": 1149, "Reve 2.1": 1127, "Nano Banana 2": 1121, "Muse Image": 1116, "GPT Image 1.5": 1114, "MAI-Image-2.5": 1112, "Nano Banana Pro": 1099, "Qwen-Image-3.0-Pro": 1086, "Seedream 5.0 Pro": 1083, "Grok Imagine": 1034}}, "video": {"name": "AA Video Arena (with audio)", "kind": "votes", "src": "Artificial Analysis, Sept 6", "elo": true, "fetched": "2026-09-06", "index_version": null, "stale": true, "d": {"Wan 3.0": 1238, "Gemini Omni Flash": 1238, "MiniMax H3": 1228, "Seedance 2.0": 1222, "Kling 3.0 Pro": 1108, "Veo 3.1": 1091, "Grok Imagine Video": 1062}}}, "second": [], "second_meta": {"scout_file": null, "verified_file": null, "note": "No Benchmark Scout report on main for today."}, "news": [{"tag": "Releases · shipped", "title": "Meta ships Muse Voice Transcribe for live speech", "body": "Meta Superintelligence Labs released Muse Voice Transcribe, a real-time speech transcription model with speaker diarization and adaptive delay. It is available now in Meta AI and through the Meta Model API at $0.18 per hour.", "why": "Developers and Meta AI users can buy live transcription with speaker labels at a listed API price today.", "sourcing": "vendor_only", "links": [["research.meta.ai", "https://research.meta.ai/blog/introducing-muse-voice-transcribe", "vendor"], ["the-decoder.com", "https://the-decoder.com/metas-new-real-time-audio-model-is-the-foundation-for-ai-assistants-that-never-stop-listening/", "reported"]], "notes": "Scout filed 4 items (under 10); thin run so this is not a full choice set."}, {"tag": "Policy · reported", "title": "Seattle Times and Newsday sue OpenAI and Microsoft", "body": "The Seattle Times and Newsday filed a copyright lawsuit in the Southern District of New York against OpenAI and Microsoft. The suit alleges scraping of paywalled journalism for AI training and related claims.", "why": "Two more newsrooms are seeking court limits on how OpenAI and Microsoft use paywalled reporting in training and products.", "sourcing": "independent", "links": [["storage.courtlistener.com", "https://storage.courtlistener.com/recap/gov.uscourts.nysd.672142/gov.uscourts.nysd.672142.1.0.pdf", "primary"], ["techcrunch.com", "https://techcrunch.com/2026/09/05/seattle-times-and-newsday-are-the-latest-publications-to-sue-openai-and-microsoft/", "reported"]], "notes": "none"}, {"tag": "Policy · reported", "title": "Authors contest claims on Anthropic settlement payouts", "body": "Authors in Anthropic's $1.5 billion copyright settlement say publishers and some literary agents are filing claim shares that conflict with the settlement's 50-50 split or rights-reversion rules. The settlement pays about $3,000 per pirated work under those allocation rules.", "why": "Authors deciding whether to dispute payment allocations face conflicting claims that can cut what they receive from the settlement.", "sourcing": "independent", "links": [["techcrunch.com", "https://techcrunch.com/2026/09/06/authors-push-back-as-publishers-and-agents-seek-share-of-anthropic-settlement/", "primary"]], "notes": "only one link filed by the Scout"}], "news_meta": {"editor_file": "inbox/news/2026-09-07-edited.md", "considered": "4", "note": "Chosen by the Editor agent from 4 items filed by the News Scout. That is under the 10-item bar, so this is a thin choice set rather than a real selection."}, "eff": {"index": "Artificial Analysis Intelligence Index v4.2", "fetched": "2026-09-06", "rows": [{"model": "Claude Fable 5.1", "effort": "max with fallback", "score": 57, "cost_per_task": 6.12, "speed": 70, "wait_s": 264.9, "access": "claude", "estimate": false}, {"model": "GPT-6 Astra", "effort": "max", "score": 55, "cost_per_task": 2.57, "speed": 71, "wait_s": 384.3, "access": "chatgpt", "estimate": false}, {"model": "GPT-6 Astra", "effort": "xhigh", "score": 54, "cost_per_task": 1.85, "speed": 67, "wait_s": 160.4, "access": "chatgpt", "estimate": false}, {"model": "Claude Opus 5", "effort": "max", "score": 54, "cost_per_task": 4.21, "speed": 58, "wait_s": 62.1, "access": "claude", "estimate": false}, {"model": "Claude Fable 5.1", "effort": "xhigh with fallback", "score": 54, "cost_per_task": null, "speed": 67, "wait_s": 109.5, "access": "claude", "estimate": true}, {"model": "Claude Opus 5", "effort": "xhigh", "score": 53, "cost_per_task": 3.36, "speed": 54, "wait_s": 34.4, "access": "claude", "estimate": false}, {"model": "GPT-6 Astra", "effort": "high", "score": 53, "cost_per_task": 1.41, "speed": 64, "wait_s": 95, "access": "chatgpt", "estimate": false}, {"model": "Claude Fable 5", "effort": "with fallback", "score": 53, "cost_per_task": 5.62, "speed": 68, "wait_s": 103.6, "access": "claude", "estimate": false}, {"model": "Muse Spark 1.3", "effort": "max", "score": 53, "cost_per_task": 0.96, "speed": 190, "wait_s": 18.7, "access": null, "estimate": false}, {"model": "GPT-6 Astra", "effort": "medium", "score": 52, "cost_per_task": 1.16, "speed": 61, "wait_s": 9.7, "access": "chatgpt", "estimate": false}, {"model": "Claude Opus 5", "effort": "high", "score": 52, "cost_per_task": 2.44, "speed": 54, "wait_s": 18.4, "access": "claude", "estimate": false}, {"model": "Claude Fable 5.1", "effort": "high with fallback", "score": 52, "cost_per_task": null, "speed": 56, "wait_s": 25.7, "access": "claude", "estimate": true}, {"model": "GPT-5.6 Sol", "effort": "max", "score": 51, "cost_per_task": 1.25, "speed": 85, "wait_s": 163, "access": "chatgpt", "estimate": false}, {"model": "Grok 4.6", "effort": "high", "score": 51, "cost_per_task": 1.25, "speed": 63, "wait_s": 52, "access": "grok", "estimate": false}, {"model": "Claude Fable 5.1", "effort": "medium with fallback", "score": 50, "cost_per_task": null, "speed": 56, "wait_s": 17.2, "access": "claude", "estimate": true}, {"model": "GPT-5.6 Sol", "effort": "xhigh", "score": 50, "cost_per_task": 0.89, "speed": 82, "wait_s": 64, "access": "chatgpt", "estimate": false}, {"model": "Claude Opus 5", "effort": "medium", "score": 50, "cost_per_task": 1.36, "speed": 53, "wait_s": 4.7, "access": "claude", "estimate": false}, {"model": "Grok 4.6", "effort": "xhigh", "score": 49, "cost_per_task": null, "speed": 64, "wait_s": 58.2, "access": "grok", "estimate": true}, {"model": "GPT-6 Astra", "effort": "low", "score": 49, "cost_per_task": 0.63, "speed": 61, "wait_s": 2.5, "access": "chatgpt", "estimate": false}, {"model": "Grok 4.6", "effort": "medium", "score": 48, "cost_per_task": null, "speed": 63, "wait_s": 41.9, "access": "grok", "estimate": true}, {"model": "GPT-5.6 Sol", "effort": "high", "score": 48, "cost_per_task": 0.61, "speed": 73, "wait_s": 17.9, "access": "chatgpt", "estimate": false}, {"model": "Claude Fable 5.1", "effort": "low with fallback", "score": 48, "cost_per_task": null, "speed": 55, "wait_s": 6.5, "access": "claude", "estimate": true}, {"model": "Gemini 3.8 Flash", "effort": "high", "score": 47, "cost_per_task": 0.74, "speed": 334, "wait_s": 10.8, "access": null, "estimate": false}, {"model": "GPT-5.6 Terra", "effort": "max", "score": 47, "cost_per_task": 0.81, "speed": 115, "wait_s": 168.8, "access": "chatgpt", "estimate": false}, {"model": "GPT-5.6 Sol", "effort": "medium", "score": 46, "cost_per_task": 0.37, "speed": 72, "wait_s": 6.4, "access": "chatgpt", "estimate": false}, {"model": "Claude Opus 5", "effort": "low", "score": 44, "cost_per_task": 0.64, "speed": 53, "wait_s": 2.3, "access": "claude", "estimate": false}, {"model": "GPT-5.6 Luna", "effort": "max", "score": 43, "cost_per_task": 0.1, "speed": 129, "wait_s": 150.5, "access": "chatgpt", "estimate": false}, {"model": "Grok 4.6", "effort": "low", "score": 42, "cost_per_task": null, "speed": 57, "wait_s": 6.8, "access": "grok", "estimate": true}, {"model": "GPT-5.6 Sol", "effort": "low", "score": 41, "cost_per_task": 0.23, "speed": 74, "wait_s": 3.3, "access": "chatgpt", "estimate": false}]}, "picks": {"coding": {"name": "Coding projects", "pick": "Claude Fable 5.1", "runner": "Claude Opus 5", "overall": "Claude Fable 5.1", "rows": [["Claude Fable 5.1", 79.4, "claude"], ["Claude Opus 5", 75.8, "claude"], ["GPT-5.6 Sol", 75.2, "chatgpt"], ["Claude Fable 5", 75.0, "claude"], ["Kimi K3", 74.6, null], ["Muse Spark 1.3", 74.4, null], ["Grok 4.6", 74.4, "grok"], ["GPT-5.6 Terra", 74.4, "chatgpt"], ["Gemini 3.8 Flash", 74.4, null], ["GPT-6 Astra", 74.4, "chatgpt"], ["GLM-5.3", 72.8, null], ["Qwen3.8 2.4T A95B", 70.0, null], ["GPT-5.6 Luna", 69.8, "chatgpt"], ["GLM-5.3-Flash", 68.8, null], ["DeepSeek V4 Pro 0813", 67.0, null], ["Qwen3.8 278", 66.0, null], ["MiniMax-M3", 57.0, null], ["Inkling", 51.4, null]], "missing": [], "confidence": "Clear lead", "evidence": "Task tests", "why": "Claude Fable 5.1 leads Terminal-Bench v2.1 and SciCode outright. Claude Opus 5 is 4 points back.", "why_source": "templated", "w": {"terminal": 0.6, "scicode": 0.4}, "extra": null, "media": false, "tests": "Terminal-Bench hands the model a command line and a real job (install this, fix that build, process these files) and checks whether it finishes. SciCode has it write working code for research problems.", "daily": "\"Can it do technical chores on a computer by itself, and is the code it writes correct?\""}, "agents": {"name": "Supervising coding agents", "pick": "Claude Fable 5.1", "runner": "Claude Opus 5", "overall": "Claude Fable 5.1", "rows": [["Claude Fable 5.1", 70.9, "claude"], ["Muse Spark 1.3", 69.2, null], ["Claude Opus 5", 68.3, "claude"], ["Grok 4.6", 68.0, "grok"], ["GLM-5.3", 67.6, null], ["GLM-5.3-Flash", 67.2, null], ["GPT-5.6 Sol", 66.9, "chatgpt"], ["Kimi K3", 66.8, null], ["Qwen3.8 2.4T A95B", 66.0, null], ["Gemini 3.8 Flash", 65.0, null], ["Claude Fable 5", 64.5, "claude"], ["GPT-5.6 Terra", 63.9, "chatgpt"], ["GPT-6 Astra", 63.8, "chatgpt"], ["Qwen3.8 278", 63.0, null], ["DeepSeek V4 Pro 0813", 61.0, null], ["GPT-5.6 Luna", 59.5, "chatgpt"], ["MiniMax-M3", 49.2, null], ["Inkling", 46.7, null]], "missing": [], "confidence": "Within noise", "evidence": "Task tests", "why": "Claude Fable 5.1 leads GDPval-AA v2 and Terminal-Bench v2.1 outright. Claude Opus 5 is 3 points back, within noise.", "why_source": "templated", "w": {"gdpval": 0.3, "tau": 0.25, "terminal": 0.25, "lcr": 0.2}, "extra": "gdppdf", "media": false, "tests": "Blends the long, multi-step tests: real job deliverables judged against other models (GDPval), following rules while using tools across a long conversation (τ³-Banking), terminal work, and reasoning over long documents.", "daily": "\"When I hand it a big project and walk away, will it keep track, follow instructions, and not go off the rails?\""}, "frontend": {"name": "Frontend and design", "pick": "GPT-6 Astra", "runner": "Claude Fable 5.1", "overall": "GPT-6 Astra", "rows": [["GPT-6 Astra", 96.4, "chatgpt"], ["Claude Fable 5.1", 85.6, "claude"], ["Claude Opus 5", 60.2, "claude"], ["Kimi K3", 54.3, null], ["Grok 4.6", 38.8, "grok"], ["GPT-5.6 Sol", 26.4, "chatgpt"]], "missing": ["Claude Fable 5", "GPT-5.6 Terra", "GPT-5.6 Luna"], "confidence": "Clear lead", "evidence": "Tests plus votes", "why": "GPT-6 Astra leads Arena WebDev outright. Claude Fable 5.1 is 11 points back.", "why_source": "templated", "w": {"webdev": 0.7, "terminal": 0.3}, "extra": null, "media": false, "tests": "Arena WebDev shows two models the same request, builds both sites, and asks people which they prefer. Terminal-Bench adds whether it can actually ship the code.", "daily": "\"Which one makes the page people like more, and can it build it?\" Mostly a taste vote."}, "image": {"name": "Image generation", "pick": "GPT Image 2", "runner": "GPT Image 1.5", "overall": "GPT Image 2", "rows": [["GPT Image 2", 100.0, "chatgpt"], ["MAI-Image-2.6", 79.9, null], ["Reve 2.1", 64.6, null], ["Nano Banana 2", 60.4, null], ["Muse Image", 56.9, null], ["GPT Image 1.5", 55.6, "chatgpt"], ["MAI-Image-2.5", 54.2, null], ["Nano Banana Pro", 45.1, null], ["Qwen-Image-3.0-Pro", 36.1, null], ["Seedream 5.0 Pro", 34.0, null], ["Grok Imagine", 0.0, "grok"]], "missing": [], "confidence": "Clear lead", "evidence": "Preference votes", "why": "GPT Image 2 is ranked 1 of 11 on this board at 1178.", "why_source": "templated", "w": {"image": 1}, "extra": null, "media": true, "tests": "Blind human votes between two images made from the same prompt.", "daily": "\"Which image tool do people prefer?\" Pure preference, no task test exists."}, "video": {"name": "Video generation", "pick": "Grok Imagine Video", "runner": null, "overall": "Wan 3.0", "rows": [["Wan 3.0", 100.0, null], ["Gemini Omni Flash", 100.0, null], ["MiniMax H3", 94.3, null], ["Seedance 2.0", 90.9, null], ["Kling 3.0 Pro", 26.1, null], ["Veo 3.1", 16.5, null], ["Grok Imagine Video", 0.0, "grok"]], "missing": [], "confidence": "Clear lead", "evidence": "Preference votes", "why": "Grok Imagine Video is ranked 7 of 7 on this board at 1062. The board leader is Wan 3.0 at 1238, which you cannot open.", "why_source": "templated", "w": {"video": 1}, "extra": null, "media": true, "tests": "Blind human votes between two clips (with audio) made from the same prompt.", "daily": "\"Which video tool do people prefer?\" Pure preference. Sora is not on this board at all."}, "writing": {"name": "Writing to humans", "pick": "Claude Fable 5", "runner": "Claude Fable 5.1", "overall": "Claude Fable 5", "rows": [["Claude Fable 5", 75.2, "claude"], ["Claude Fable 5.1", 67.5, "claude"], ["Gemini 3.8 Flash", 49.0, null], ["Claude Opus 5", 47.0, "claude"], ["Kimi K3", 37.8, null], ["GLM-5.3", 26.0, null], ["GPT-5.6 Sol", 18.8, "chatgpt"]], "missing": ["Grok 4.6", "GPT-6 Astra", "GPT-5.6 Terra", "GPT-5.6 Luna"], "confidence": "Clear lead", "evidence": "Tests plus votes", "why": "Claude Fable 5 leads Arena Text outright. Claude Fable 5.1 is 8 points back.", "why_source": "templated", "w": {"text": 0.5, "nohalluc": 0.25, "omni": 0.25}, "extra": null, "media": false, "tests": "Arena Text is a blind vote on which reply people prefer in ordinary chat. Non-hallucination is how often the model admits it does not know instead of bluffing. Accuracy is plain factual recall.", "daily": "\"Which one writes the way people like, and will it quietly make things up in my email?\""}, "audit": {"name": "Auditing code", "pick": "Grok 4.6", "runner": "GPT-6 Astra", "overall": "GLM-5.3", "rows": [["GLM-5.3", 71.4, null], ["Muse Spark 1.3", 71.3, null], ["Grok 4.6", 71.2, "grok"], ["GLM-5.3-Flash", 69.0, null], ["Qwen3.8 2.4T A95B", 66.7, null], ["Qwen3.8 278", 66.5, null], ["GPT-6 Astra", 66.1, "chatgpt"], ["Kimi K3", 65.8, null], ["Gemini 3.8 Flash", 64.9, null], ["Claude Opus 5", 64.1, "claude"], ["MiniMax-M3", 64.1, null], ["Claude Fable 5.1", 63.1, "claude"], ["Claude Fable 5", 62.8, "claude"], ["GPT-5.6 Terra", 55.0, "chatgpt"], ["GPT-5.6 Sol", 54.4, "chatgpt"], ["GPT-5.6 Luna", 50.4, "chatgpt"], ["DeepSeek V4 Pro 0813", 47.8, null], ["Inkling", 45.4, null]], "missing": [], "confidence": "Clear lead", "evidence": "Task tests", "why": "Grok 4.6 has the best blend across the tests without leading any one of them. GPT-6 Astra is 5 points back. The overall leader is GLM-5.3, which you cannot open.", "why_source": "templated", "w": {"terminal": 0.4, "scicode": 0.3, "nohalluc": 0.3}, "extra": null, "media": false, "tests": "Coding tests plus the bluffing rate, because a reviewer that invents bugs is worse than none.", "daily": "\"Will it find the real problems in this code without inventing fake ones?\""}, "technical": {"name": "Technical jobs", "pick": "Claude Fable 5.1", "runner": "Claude Opus 5", "overall": "Claude Fable 5.1", "rows": [["Claude Fable 5.1", 80.8, "claude"], ["Claude Opus 5", 78.8, "claude"], ["Muse Spark 1.3", 77.0, null], ["GPT-5.6 Sol", 76.9, "chatgpt"], ["Kimi K3", 76.3, null], ["Grok 4.6", 76.0, "grok"], ["GLM-5.3-Flash", 75.9, null], ["Claude Fable 5", 75.4, "claude"], ["GLM-5.3", 75.3, null], ["Gemini 3.8 Flash", 75.1, null], ["GPT-5.6 Terra", 75.1, "chatgpt"], ["GPT-6 Astra", 74.2, "chatgpt"], ["Qwen3.8 2.4T A95B", 73.6, null], ["GPT-5.6 Luna", 71.7, "chatgpt"], ["Qwen3.8 278", 70.7, null], ["DeepSeek V4 Pro 0813", 70.3, null], ["MiniMax-M3", 63.2, null], ["Inkling", 55.0, null]], "missing": [], "confidence": "Within noise", "evidence": "Task tests", "why": "Claude Fable 5.1 leads Terminal-Bench v2.1 and GDPval-AA v2 outright. Claude Opus 5 is 2 points back, within noise.", "why_source": "templated", "w": {"terminal": 0.4, "gdpval": 0.3, "lcr": 0.3}, "extra": "gdppdf", "media": false, "tests": "Terminal work, real job deliverables, and long-document reasoning.", "daily": "\"Data cleanup, scripts, configuring things, reading a long spec: can it handle the whole job?\""}}, "commentary": null, "pending_prs": [{"number": 0, "title": "could not list pull requests (403)"}], "previous_date": "2026-09-07", "noise": 3, "changes": [["good", "No picks changed today. Every task card carries the same model as yesterday."], ["weak", "12 of 12 sources could not be refreshed today and show their last numbers: Terminal-Bench v2.1 (2026-09-03), SciCode (2026-09-03), GDPval-AA v2 (2026-09-03), τ³-Banking (2026-09-03), AA-LCR (2026-09-03), AA-Omniscience Accuracy (2026-09-03), Non-hallucination rate (2026-09-03), GDP.pdf (all criteria met) (2026-09-03), Arena WebDev (2026-09-05), Arena Text (2026-09-05), AA Image Arena (2026-09-06), AA Video Arena (with audio) (2026-09-06)."]], "health": [{"agent": "Benchmark Scout", "date": "2026-09-06", "time": "13:55", "status": "ok", "items": "10", "pr": "1", "notes": "none"}, {"agent": "News Scout", "date": "2026-09-06", "time": "16:40", "status": "partial", "items": "2", "pr": "8", "notes": "four of six beats empty"}, {"agent": "Editor", "date": "2026-09-06", "time": "16:50", "status": "ok", "items": "2", "pr": "7", "notes": "considered 2 items from a partial Scout run"}, {"agent": "News Scout", "date": "2026-09-07", "time": "20:35", "status": "partial", "items": "4", "pr": "14", "notes": "empty robotics compute business"}, {"agent": "Editor", "date": "2026-09-07", "time": "20:41", "status": "partial", "items": "3", "pr": "14", "notes": "4 considered under 10; 3 picked"}, {"agent": "Benchmark Scout", "date": "2026-09-07", "time": "", "status": "did not run", "items": "0", "pr": "", "notes": "no log line for today"}, {"agent": "Verifier", "date": "2026-09-07", "time": "", "status": "did not run", "items": "0", "pr": "", "notes": "no log line for today"}, {"agent": "Commentator", "date": "2026-09-07", "time": "", "status": "did not run", "items": "0", "pr": "", "notes": "no log line for today"}]};
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const has = m => D.access[m] !== undefined;
+const fmtDate = iso => { const [y,m,d] = iso.split('-').map(Number); return new Date(Date.UTC(y,m-1,d)).toLocaleDateString('en-US',{weekday:'long',month:'long',day:'numeric',year:'numeric',timeZone:'UTC'}); };
+const ET = iso => new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'});
+
+// ---------- top ----------
+document.getElementById('stamp').textContent = `${fmtDate(D.date)} · built ${esc(D.built_at_et)} ET · ${esc(D.built_by)}`;
+const chips = [];
+chips.push([D.status==='ok'?'good':'mid', `Rebuild: ${D.status}${D.status_notes.length?' ('+D.status_notes.join('; ')+')':''}`]);
+const stale = Object.values(D.bench).filter(b=>b.stale);
+if(stale.length) chips.push(['weak', stale.length>3 ? `Stale: ${stale.length} of ${Object.keys(D.bench).length} sources, see What changed` : `Stale: ${stale.map(b=>b.name+' ('+b.fetched+')').join(', ')}`]);
+if(D.second_meta) chips.push([D.second_meta.verified_file?'good':'mid', D.second_meta.verified_file ? `Scout: ${D.second.filter(s=>s.verdict==='pass').length} of ${D.second.length} verified` : 'Scout: no verified report today']);
+if(D.commentary){ chips.push([D.commentary.flags.length?'weak':'pick', D.commentary.flags.length ? `Commentary: ${D.commentary.flags.length} number(s) not in data` : 'Commentary: agent-written']); }
+else chips.push(['mid','Commentary: none today, lines are templated']);
+if(D.pending_prs.length) chips.push(['mid', `${D.pending_prs.length} pull request(s) pending, not shown as data`]);
+chips.push(['mid','Image and video access list unconfirmed']);
+document.getElementById('status').innerHTML = chips.map(c=>`<span class="chip ${c[0]}">${esc(c[1])}</span>`).join('');
+
+// ---------- news ----------
+document.getElementById('news').innerHTML = D.news.map(n=>`<article class="card story">
+  <div class="tag"><span>${esc(n.tag)}</span>${n.sourcing==='vendor_only'?'<span class="chip mid">vendor only</span>':''}${n.links.length<2?'<span class="chip mid">single link</span>':''}</div>
+  <h4>${esc(n.title)}</h4>
+  <p>${esc(n.body)}</p>
+  <p class="why">${esc(n.why)}</p>
+  <div class="links">${n.links.map(l=>`<div><a href="${esc(l[1])}" target="_blank" rel="noopener">${esc(l[0])}</a> <span>· ${esc(l[2])}</span></div>`).join('')}</div>
+</article>`).join('') || '<p class="note">No news stories on main today.</p>';
+document.getElementById('newsnote').textContent = (D.news_meta && D.news_meta.note) || '';
+
+// ---------- changes ----------
+const label = k => ({pick:'Pick changed', good:'New data', weak:'Conflict', mid:'Gap', commentator:'Agent'}[k] || k);
+document.getElementById('changes').innerHTML = D.changes.map(c=>`<div class="item"><span class="chip ${esc(c[0])}">${label(c[0])}</span><p>${esc(c[1])}</p></div>`).join('');
+document.getElementById('changesnote').textContent = D.previous_date ? `Compared against the ${D.previous_date} data file.` : '';
+
+// ---------- tasks ----------
+const tasksEl = document.getElementById('tasks'), detailsEl = document.getElementById('details');
+for(const [id,t] of Object.entries(D.picks)){
+  const pickLabel = t.pick || 'no pick';
+  const evk = t.evidence==='Task tests' ? 'good' : 'mid';
+  const confk = t.confidence==='Clear lead' ? 'good' : 'mid';
+  tasksEl.insertAdjacentHTML('beforeend', `<a class="card task" href="#${esc(id)}">
+    <span class="name">${esc(t.name)}</span>
+    <span class="pickname">${esc(pickLabel)}</span>
+    <span class="runner">then ${esc(t.runner || 'no second option')}</span>
+    <span class="why">${esc(t.why)}${t.why_source==='commentator'?' <span class="chip commentator">agent</span>':t.why_source==='flagged'?' <span class="chip weak">agent line set aside: number not in data</span>':''}</span>
+    <span class="foot"><span class="chip ${confk}">${esc(t.confidence)}</span><span class="chip ${evk}">${esc(t.evidence)}</span>${t.overall && t.overall!==t.pick?'<span class="chip weak">Not the overall leader</span>':''}</span>
+  </a>`);
+  if(!t.rows.length) continue;
+  const w = t.w || {};
+  const k0 = Object.keys(w)[0];
+  const max = t.media ? Math.max(...t.rows.map(x=>D.bench[k0].d[x[0]])) : 100;
+  const rows = t.rows.map(x=>{
+    const raw = t.media ? D.bench[k0].d[x[0]] : Math.round(x[1]);
+    const width = t.media ? raw/max*100 : raw;
+    const cls = x[0]===t.pick ? 'pick' : (x[2] ? '' : 'noaccess');
+    const settings = !t.media && D.bench[k0].settings && D.bench[k0].settings[x[0]] ? ` <span class="cfg">(${esc(D.bench[k0].settings[x[0]])})</span>` : '';
+    return `<div class="row ${cls}"><div class="lbl">${esc(x[0])}${x[2]?'':' <span class="cfg">(no access)</span>'}${settings}</div><div class="track"><div class="fill" style="width:${width}%"></div></div><div class="val">${raw}</div></div>`;
+  }).join('');
+  const comps = Object.keys(w).map(k=>`${D.bench[k].name} ${Math.round(w[k]*100)}%`).join(' · ');
+  const srcs = [...new Set(Object.keys(w).map(k=>`${D.bench[k].src} (${D.bench[k].fetched}${D.bench[k].stale?', stale':''})`))].join('; ');
+  let extra = '';
+  if(t.extra && D.bench[t.extra]){
+    const e = D.bench[t.extra]; const emax = Math.max(...Object.values(e.d));
+    extra = `<div style="margin-top:18px"><h3>Also worth knowing: ${esc(e.name)}</h3><p class="components" style="margin:6px 0 10px">Not in the blend. Source: ${esc(e.src)}, ${esc(e.fetched)}.</p><div class="chart">${Object.entries(e.d).sort((a,b)=>b[1]-a[1]).map(([m,v])=>`<div class="row ${has(m)?'':'noaccess'}"><div class="lbl">${esc(m)}</div><div class="track"><div class="fill" style="width:${v/emax*100}%"></div></div><div class="val">${v}</div></div>`).join('')}</div></div>`;
+  }
+  const missing = t.missing.length ? `<p class="components">Not rated for this task because one of the tests has not scored it: ${esc(t.missing.join(', '))}.</p>` : '';
+  detailsEl.insertAdjacentHTML('beforeend', `<details class="bench" id="${esc(id)}">
+    <summary><h2>${esc(t.name)}</h2><span class="sub">pick: ${esc(t.pick||'none')}, overall leader: ${esc(t.overall||'none')}</span><span class="open"><span class="o">show evidence</span><span class="c">hide</span></span></summary>
+    <div class="inner"><div class="grid">
+      <div class="explain">
+        <div><h3>What the tests do</h3><p>${esc(t.tests)}</p></div>
+        <div><h3>In everyday use</h3><p>${esc(t.daily)}</p></div>
+        <div><h3>How the score is built</h3><p>${esc(comps)}. ${t.media?'Values are arena Elo.':'Each test is scaled 0 to 100, then blended.'} Source: ${esc(srcs)}.</p></div>
+      </div>
+      <div><div class="chart">${rows}</div>${t.media?'':'<div class="axis"><span></span><div class="ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div><span></span></div>'}${missing}${extra}</div>
+    </div></div>
+  </details>`);
+}
+
+// ---------- scout findings ----------
+document.getElementById('secondnote').textContent = (D.second_meta && D.second_meta.note) || '';
+document.getElementById('second').innerHTML = D.second.map(s=>{
+  const v = s.verdict==='pass' ? ['good','verified'] : s.verdict==='unverified' ? ['mid','unverified'] : ['weak', esc(s.verdict)];
+  return `<article class="card"><div class="tag" style="display:flex;gap:8px;align-items:center"><span class="chip ${v[0]}">${v[1]}</span><span class="meta">${esc(s.type)} · ${esc(s.source)} · ${esc(s.published)}</span></div>
+  <h4>${esc(s.test)}${s.model && s.model!=='not applicable' ? ': ' + esc(s.model) : ''}</h4>
+  ${s.score && s.score!=='not applicable' ? `<p><b>${esc(s.score)}</b> <span class="meta">${esc(s.settings)}</span></p>` : `<p class="meta">${esc(s.settings)}</p>`}
+  <blockquote>${esc(s.quote)}</blockquote>
+  <p class="meta"><a href="${esc(s.url)}" target="_blank" rel="noopener">source page</a></p></article>`;
+}).join('') || '<p class="note">Nothing filed today.</p>';
+
+// ---------- effort table ----------
+const E = D.eff.rows.slice().sort((a,b)=>(b.score??-1)-(a.score??-1));
+document.getElementById('effintro').textContent = `Every row is one model at one thinking-effort setting. Score is the ${D.eff.index}, fetched ${D.eff.fetched}. Cost is what it takes to complete one index task through the API.`;
+const money = v => v==null ? '--' : '$'+Number(v).toFixed(2);
+document.getElementById('eff').innerHTML = `<thead><tr><th>Model</th><th>Effort</th><th class="num">Score</th><th class="num">Cost / task</th><th class="num">Speed</th><th class="num">Wait (s)</th><th>Access</th></tr></thead><tbody>` +
+  E.map((r,i)=>`<tr class="${i<2?'lead':''} ${r.access?'':'noaccess'}"><td>${esc(r.model)}</td><td>${esc(r.effort)}</td><td class="num">${r.score}${r.estimate?'*':''}</td><td class="num">${money(r.cost_per_task)}</td><td class="num">${r.speed==null?'--':Math.round(r.speed)}</td><td class="num">${r.wait_s==null?'--':Number(r.wait_s).toFixed(0)}</td><td>${esc(r.access||'none')}</td></tr>`).join('') + `</tbody>`;
+// equivalence lines: arithmetic on the rows only
+const priced = E.filter(r=>r.cost_per_task!=null && r.access);
+const lines = [];
+for(const a of priced) for(const b of priced){
+  if(a.model===b.model) continue;
+  if(Math.abs(a.score-b.score)<=2 && a.cost_per_task>=b.cost_per_task*1.4){
+    const L = r=>`${r.model} (${r.effort}, score ${r.score}, ${money(r.cost_per_task)})`;
+    lines.push({a:a.model,b:b.model,save:1-b.cost_per_task/a.cost_per_task,txt:`${L(b)} matches ${L(a)} within noise, for ${Math.round((1-b.cost_per_task/a.cost_per_task)*100)}% less per task.`});
+  }
+}
+lines.sort((x,y)=>y.save-x.save);
+const seenA=new Set(), seenB=new Set(), keep=[];
+for(const l of lines){ if(seenA.has(l.a)||seenB.has(l.b)) continue; seenA.add(l.a); seenB.add(l.b); keep.push(l); if(keep.length>=6) break; }
+const down=[]; const byModel={};
+priced.forEach(r=>{(byModel[r.model]=byModel[r.model]||[]).push(r)});
+for(const [m,rs] of Object.entries(byModel)){
+  const best = rs.reduce((a,b)=>a.score>=b.score?a:b);
+  const cands = rs.filter(r=>r!==best && best.score-r.score<=3 && r.cost_per_task<best.cost_per_task);
+  if(!cands.length) continue;
+  const c = cands.reduce((a,b)=>a.cost_per_task<=b.cost_per_task?a:b);
+  const wait = (best.wait_s!=null && c.wait_s!=null) ? ` and a ${Number(best.wait_s).toFixed(0)}s to ${Number(c.wait_s).toFixed(0)}s wait` : '';
+  down.push(`${m}: ${c.effort} scores ${c.score} vs ${best.score} at ${best.effort}, for ${Math.round((1-c.cost_per_task/best.cost_per_task)*100)}% less per task${wait}.`);
+}
+document.getElementById('equiv').innerHTML = (down.length?'<h3 style="margin-top:6px">Turn effort down and lose almost nothing</h3>'+down.map(t=>`<p>${esc(t)}</p>`).join(''):'') + (keep.length?'<h3 style="margin-top:14px">Same result, less spent, across models</h3>'+keep.map(l=>`<p>${esc(l.txt)}</p>`).join(''):'');
+
+// ---------- health ----------
+const sc = s => s==='ok' ? 'good' : (s==='partial'||s==='empty') ? 'mid' : 'weak';
+document.getElementById('health').innerHTML = `<thead><tr><th>Agent</th><th>Day</th><th>Time ET</th><th>Status</th><th class="num">Items</th><th>PR</th><th>Note</th></tr></thead><tbody>` +
+  D.health.slice().reverse().map(r=>`<tr><td><b>${esc(r.agent)}</b></td><td>${esc(r.date)}</td><td>${esc(r.time)}</td><td><span class="chip ${sc(r.status)}">${esc(r.status)}</span></td><td class="num">${esc(r.items)}</td><td>${esc(r.pr)}</td><td>${esc(r.notes)}</td></tr>`).join('') + `</tbody>`;
+document.getElementById('prnote').textContent = D.pending_prs.length ? 'Pending pull requests with agent output, not yet data: ' + D.pending_prs.map(p=>`#${p.number} ${p.title}`).join('; ') + '.' : 'No pull requests with agent output are pending.';
+
+// ---------- footer ----------
+const srcList = [...new Set(Object.values(D.bench).map(b=>`${b.src} (${b.fetched})`))].join(', ');
+document.getElementById('footer').textContent = `Sources: ${srcList}. Benchmark figures in the Scout section were filed with an exact quote from each source page and checked against that page by the Verifier. Data from Artificial Analysis is used under its attribution requirement. Built by tools/rebuild.py from the data file for ${D.date}; every number on this page is in that file.`;
+</script>
+</body>
+</html>

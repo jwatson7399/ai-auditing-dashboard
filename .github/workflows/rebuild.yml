@@ -1,0 +1,91 @@
+name: Daily rebuild
+
+# 8:15am ET. Cron is UTC: 12:15 UTC while New York is on daylight time (until
+# November 1, 2026), then 13:15 UTC. Change the hour when the clocks change, or
+# accept an hour's drift. Also runs when commentary lands on main, and by hand.
+on:
+  schedule:
+    - cron: "15 12 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "inbox/commentary/**"
+  workflow_dispatch:
+    inputs:
+      no_fetch:
+        description: "Rebuild from the last data file without fetching"
+        type: boolean
+        default: false
+
+concurrency:
+  group: rebuild
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+  pull-requests: read
+
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install
+        run: |
+          pip install --quiet requests openpyxl playwright
+          python -m playwright install --with-deps chromium
+
+      - name: Rebuild
+        id: rebuild
+        env:
+          AA_API_KEY: ${{ secrets.AA_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set +e
+          if [ "${{ inputs.no_fetch }}" = "true" ]; then
+            python tools/rebuild.py --no-fetch
+          else
+            python tools/rebuild.py
+          fi
+          echo "rc=$?" >> "$GITHUB_OUTPUT"
+          exit 0
+
+      - name: Commit data, page, and log
+        # Runs even when the rebuild failed, so the log line is recorded.
+        # On failure site/index.html is untouched and the old page stays up.
+        run: |
+          git config user.name "daily-rebuild"
+          git config user.email "daily-rebuild@users.noreply.github.com"
+          git add data log site/index.html
+          git diff --cached --quiet || git commit -m "Daily rebuild $(date -u +%Y-%m-%d) (run ${{ github.run_number }})"
+          git push
+
+      - name: Upload page
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+      - name: Fail the run if the rebuild failed
+        if: steps.rebuild.outputs.rc != '0'
+        run: |
+          echo "rebuild exited ${{ steps.rebuild.outputs.rc }}; see log/runs-rebuild.csv"
+          exit 1
+
+  deploy:
+    needs: rebuild
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

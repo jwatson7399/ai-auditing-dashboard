@@ -1,0 +1,56 @@
+name: Merge commentary
+
+# Merges a Commentator pull request without waiting for a human, but only when
+# the PR carries the "commentary" label and touches nothing outside
+# inbox/commentary/ and its own run log. Anything else stays open for review.
+# This is the one exception to "inbox/ pull requests wait for Julian", and it
+# exists so the words are on the page by 9am. The merge triggers the rebuild
+# workflow through its push filter.
+on:
+  pull_request:
+    types: [opened, labeled, synchronize, reopened]
+
+permissions:
+  contents: write
+  pull-requests: write
+  actions: write
+
+jobs:
+  merge:
+    if: contains(github.event.pull_request.labels.*.name, 'commentary')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the changed files
+        id: files
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          files=$(gh pr view ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --json files --jq '.files[].path')
+          echo "$files"
+          bad=$(echo "$files" | grep -v -E '^(inbox/commentary/[0-9]{4}-[0-9]{2}-[0-9]{2}\.md|log/runs-commentator\.csv)$' || true)
+          if [ -n "$bad" ]; then
+            echo "refusing to auto-merge; files outside the commentary path: $bad"
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Merge
+        if: steps.files.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr merge ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --squash --delete-branch
+
+      - name: Rebuild the page with the commentary
+        # A merge made with the workflow token does not fire other workflows'
+        # push triggers, so the rebuild is started here by name.
+        if: steps.files.outputs.ok == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run rebuild.yml --repo ${{ github.repository }} --ref main
+
+      - name: Leave a note when refused
+        if: steps.files.outputs.ok != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body "Not auto-merged: this pull request changes files outside inbox/commentary/. It waits for review."
