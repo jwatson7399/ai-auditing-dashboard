@@ -8,3 +8,5 @@ https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4
 https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2 | GPT-5.6 Sol | GDP.pdf (All-pass Rate)
 https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2 | Claude Fable 5.1 | GDP.pdf (All-pass Rate)
 https://arena.ai/leaderboard/agent/code?license=open-source | Kimi K3 (Max) | Arena Agent Arena Code (open-source filter) — Net Improvement
+https://arena.ai/leaderboard/agent | GPT 6 Astra (Max) | Arena Agent Arena Overall (Net Improvement)
+https://arena.ai/leaderboard/code/webdev | muse-spark-1.3-max | Arena Code Arena WebDev (Overall)
