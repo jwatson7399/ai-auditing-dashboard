@@ -264,6 +264,11 @@ def fetch_aa_media(key, kind, probe=False):
         raise RuntimeError(f"AA media/{kind} returned {status}")
     raw = r.json()
     models = raw.get("data", [])
+    # Kept for the same reason as the llms response: when a board's numbers all move at once,
+    # the only way to tell a re-grade from a different board is to read what the endpoint sent.
+    os.makedirs(os.path.join(ROOT, "data", "raw"), exist_ok=True)
+    with open(os.path.join(ROOT, "data", "raw", f"aa-media-{kind}.json"), "w") as f:
+        json.dump(raw, f)
     if probe:
         log(f"AA media/{kind}: {len(models)} rows; keys: " + ", ".join(sorted(models[0].keys())) if models else "empty")
         return None
@@ -611,6 +616,40 @@ def compute_picks(bench, commentary):
 
 
 # ------------------------------------------------------------------- changes
+# A test is called re-graded, rather than reporting each model separately, when nearly every
+# model on it moved the same way at once. Models do not improve in lockstep; a whole board
+# shifting means the grading changed, the board was replaced, or the scale is not the one the
+# previous file was read from. Reporting that as N models improving is wrong in a way a reader
+# cannot catch, because each individual line is arithmetically true.
+SHIFT_MIN_MODELS = 5      # below this a board is too small for "nearly every" to mean anything
+SHIFT_MOVED_FRACTION = 0.7   # share of comparable models that must have moved at all
+SHIFT_AGREE_FRACTION = 0.9   # share of those moves that must point the same way
+
+
+def uniform_shift(b, pb):
+    """One line if this whole board moved together, else None.
+
+    Returns (text, moved, comparable, median delta) so the caller can also suppress the
+    per-model lines for the same test.
+    """
+    deltas = {m: v - pb["d"][m] for m, v in b["d"].items() if m in pb["d"] and isinstance(pb["d"][m], (int, float))}
+    if len(deltas) < SHIFT_MIN_MODELS:
+        return None
+    moved = [d for d in deltas.values() if abs(d) >= NOISE]
+    if len(moved) < SHIFT_MOVED_FRACTION * len(deltas):
+        return None
+    up = sum(1 for d in moved if d > 0)
+    agree = max(up, len(moved) - up)
+    if agree < SHIFT_AGREE_FRACTION * len(moved):
+        return None
+    med = sorted(moved)[len(moved) // 2]
+    direction = "up" if up >= len(moved) - up else "down"
+    return (f"{b['name']} appears re-graded rather than improved: {len(moved)} of {len(deltas)} models moved {direction} "
+            f"at once, by about {abs(med):.1f} at the middle. Models do not move together, so this is a change to the "
+            f"test or the board and not to the models. Individual moves on this test are not listed today.",
+            len(moved), len(deltas), med)
+
+
 def compute_changes(today_d, prev):
     changes = []
     if not prev:
@@ -629,10 +668,15 @@ def compute_changes(today_d, prev):
         if not pb:
             changes.append(["good", f"New test on the page: {b['name']}."])
             continue
+        shift = uniform_shift(b, pb)
+        if shift:
+            changes.append(["regrade", shift[0]])
         for m, v in b["d"].items():
             if m not in pb["d"]:
                 if ACCESS.get(m) or MEDIA_ACCESS.get(m):
                     changes.append(["good", f"New on {b['name']}: {m} at {v}."])
+            elif shift:
+                continue  # the board moved as a whole; a per-model line would misread it as progress
             elif (ACCESS.get(m) or MEDIA_ACCESS.get(m)) and abs(v - pb["d"][m]) >= NOISE:
                 changes.append(["mid", f"{b['name']}: {m} moved from {pb['d'][m]} to {v}."])
     stale = [b for b in today_d["bench"].values() if b.get("stale")]

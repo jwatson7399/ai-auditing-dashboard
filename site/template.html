@@ -32,7 +32,7 @@ a{color:var(--pick)}
 .stamp{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
 .status{display:flex;flex-wrap:wrap;gap:8px;font-size:12px}
 .chip{border-radius:999px;padding:3px 10px;font-weight:600;letter-spacing:0.03em;white-space:nowrap}
-.chip.good{background:var(--good-soft);color:var(--good)} .chip.mid{background:var(--mid-soft);color:var(--mid)} .chip.weak{background:var(--weak-soft);color:var(--weak)} .chip.pick{background:var(--pick-soft);color:var(--pick)} .chip.commentator{background:var(--pick-soft);color:var(--pick)}
+.chip.good{background:var(--good-soft);color:var(--good)} .chip.mid{background:var(--mid-soft);color:var(--mid)} .chip.weak{background:var(--weak-soft);color:var(--weak)} .chip.pick{background:var(--pick-soft);color:var(--pick)} .chip.commentator{background:var(--pick-soft);color:var(--pick)} .chip.regrade{background:var(--weak-soft);color:var(--weak)}
 section{margin-top:36px}
 section>h3{margin-bottom:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
@@ -224,7 +224,7 @@ document.getElementById('news').innerHTML = D.news.map(n=>`<article class="card 
 document.getElementById('newsnote').textContent = (D.news_meta && D.news_meta.note) || '';
 
 // ---------- changes ----------
-const label = k => ({pick:'Pick changed', good:'New data', weak:'Conflict', mid:'Gap', commentator:'Agent'}[k] || k);
+const label = k => ({pick:'Pick changed', good:'New data', weak:'Conflict', mid:'Gap', commentator:'Agent', regrade:'Re-graded'}[k] || k);
 document.getElementById('changes').innerHTML = D.changes.map(c=>`<div class="item"><span class="chip ${esc(c[0])}">${label(c[0])}</span><p>${esc(c[1])}</p></div>`).join('');
 document.getElementById('changesnote').textContent = D.previous_date ? `Compared against the ${D.previous_date} data file.` : '';
 
