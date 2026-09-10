@@ -53,4 +53,5 @@ jobs:
         if: steps.files.outputs.ok != 'true'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body "Not auto-merged: this pull request changes files outside inbox/commentary/. It waits for review."
+        run: |
+          gh pr comment ${{ github.event.pull_request.number }} --repo ${{ github.repository }} --body "Not auto-merged: this pull request changes files outside inbox/commentary/. It waits for review."
