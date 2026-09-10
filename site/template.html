@@ -158,7 +158,7 @@ footer{margin-top:40px;font-size:13px;color:var(--muted);max-width:72ch}
   </section>
 
   <section>
-    <h3>Effort levels and cost per task</h3>
+    <h3>Effort levels, price, and speed</h3>
     <div class="card">
       <p style="font-size:14.5px;max-width:76ch" id="effintro"></p>
       <div class="tbl" style="margin-top:14px"><table id="eff"></table></div>
@@ -298,34 +298,17 @@ if(D.proposed_sources && D.proposed_sources.length){
 
 // ---------- effort table ----------
 const E = D.eff.rows.slice().sort((a,b)=>(b.score??-1)-(a.score??-1));
-document.getElementById('effintro').textContent = `Every row is one model at one thinking-effort setting. Score is the ${D.eff.index}, fetched ${D.eff.fetched}. Cost is what it takes to complete one index task through the API.`;
+document.getElementById('effintro').textContent = `Every row is one model at one thinking-effort setting. Score is the ${D.eff.index}, fetched ${D.eff.fetched}. Price is a list price per million tokens and does not change with effort, so it cannot be read as the cost of one task. Speed and wait do change with effort.`;
 const money = v => v==null ? '--' : '$'+Number(v).toFixed(2);
-document.getElementById('eff').innerHTML = `<thead><tr><th>Model</th><th>Effort</th><th class="num">Score</th><th class="num">Cost / task</th><th class="num">Speed</th><th class="num">Wait (s)</th><th>Access</th></tr></thead><tbody>` +
-  E.map((r,i)=>`<tr class="${i<2?'lead':''} ${r.access?'':'noaccess'}"><td>${esc(r.model)}</td><td>${esc(r.effort)}</td><td class="num">${r.score}${r.estimate?'*':''}</td><td class="num">${money(r.cost_per_task)}</td><td class="num">${r.speed==null?'--':Math.round(r.speed)}</td><td class="num">${r.wait_s==null?'--':Number(r.wait_s).toFixed(0)}</td><td>${esc(r.access||'none')}</td></tr>`).join('') + `</tbody>`;
-// equivalence lines: arithmetic on the rows only
-const priced = E.filter(r=>r.cost_per_task!=null && r.access);
-const lines = [];
-for(const a of priced) for(const b of priced){
-  if(a.model===b.model) continue;
-  if(Math.abs(a.score-b.score)<=2 && a.cost_per_task>=b.cost_per_task*1.4){
-    const L = r=>`${r.model} (${r.effort}, score ${r.score}, ${money(r.cost_per_task)})`;
-    lines.push({a:a.model,b:b.model,save:1-b.cost_per_task/a.cost_per_task,txt:`${L(b)} matches ${L(a)} within noise, for ${Math.round((1-b.cost_per_task/a.cost_per_task)*100)}% less per task.`});
-  }
-}
-lines.sort((x,y)=>y.save-x.save);
-const seenA=new Set(), seenB=new Set(), keep=[];
-for(const l of lines){ if(seenA.has(l.a)||seenB.has(l.b)) continue; seenA.add(l.a); seenB.add(l.b); keep.push(l); if(keep.length>=6) break; }
-const down=[]; const byModel={};
-priced.forEach(r=>{(byModel[r.model]=byModel[r.model]||[]).push(r)});
-for(const [m,rs] of Object.entries(byModel)){
-  const best = rs.reduce((a,b)=>a.score>=b.score?a:b);
-  const cands = rs.filter(r=>r!==best && best.score-r.score<=3 && r.cost_per_task<best.cost_per_task);
-  if(!cands.length) continue;
-  const c = cands.reduce((a,b)=>a.cost_per_task<=b.cost_per_task?a:b);
-  const wait = (best.wait_s!=null && c.wait_s!=null) ? ` and a ${Number(best.wait_s).toFixed(0)}s to ${Number(c.wait_s).toFixed(0)}s wait` : '';
-  down.push(`${m}: ${c.effort} scores ${c.score} vs ${best.score} at ${best.effort}, for ${Math.round((1-c.cost_per_task/best.cost_per_task)*100)}% less per task${wait}.`);
-}
-document.getElementById('equiv').innerHTML = (down.length?'<h3 style="margin-top:6px">Turn effort down and lose almost nothing</h3>'+down.map(t=>`<p>${esc(t)}</p>`).join(''):'') + (keep.length?'<h3 style="margin-top:14px">Same result, less spent, across models</h3>'+keep.map(l=>`<p>${esc(l.txt)}</p>`).join(''):'');
+document.getElementById('eff').innerHTML = `<thead><tr><th>Model</th><th>Effort</th><th class="num">Score</th><th class="num">${esc(D.eff.price_label||'Price')}</th><th class="num">Speed</th><th class="num">Wait (s)</th><th>Access</th></tr></thead><tbody>` +
+  E.map((r,i)=>`<tr class="${i<2?'lead':''} ${r.access?'':'noaccess'}"><td>${esc(r.model)}</td><td>${esc(r.effort)}</td><td class="num">${r.score}${r.estimate?'*':''}</td><td class="num">${money(r.price_1m)}</td><td class="num">${r.speed==null?'--':Math.round(r.speed)}</td><td class="num">${r.wait_s==null?'--':Number(r.wait_s).toFixed(0)}</td><td>${esc(r.access||'none')}</td></tr>`).join('') + `</tbody>`;
+// The two equivalence blocks that stood here said "X% less per task" across models and across
+// effort settings. Both divided one cost per task by another. The free tier does not expose a
+// cost per task: the only price it gives is a list price per million tokens, identical at every
+// effort setting of a model, so both blocks would have divided a number by itself and reported
+// a saving of zero for every pair. They are removed rather than left computing on the wrong
+// column. Restoring them needs a real per-task cost. See the open question in README.
+document.getElementById('equiv').innerHTML = `<p class="note">Cost per task is not published on the tier this page reads, so the effort and model equivalence comparisons are not shown. The price column above is a list price per million tokens and does not vary with effort.</p>`;
 
 // ---------- health ----------
 const sc = s => s==='ok' ? 'good' : (s==='partial'||s==='empty') ? 'mid' : 'weak';

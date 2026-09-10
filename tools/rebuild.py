@@ -49,10 +49,18 @@ MEDIA_ACCESS = {"GPT Image 2": "chatgpt", "GPT Image 1.5": "chatgpt", "Grok Imag
 # preference. The first one present is used; the field actually used is stored with the
 # scores. If none is present the benchmark is carried forward and the run is partial.
 BENCH = {
-    "terminal": {"name": "Terminal-Bench v2.1", "kind": "task", "api": ["terminalbench_hard", "terminal_bench_hard", "terminalbench"]},
+    # One candidate only, deliberately. first_key is resolved per model, so a fallback would
+    # let some models contribute terminalbench_hard into a column headed Terminal-Bench v2.1.
+    # terminalbench_hard is the older test and is null on every current model; v2.1 is the one
+    # this page has always claimed. If AA renames the field the benchmark carries forward stale,
+    # which is the intended failure.
+    "terminal": {"name": "Terminal-Bench v2.1", "kind": "task", "api": ["terminalbench_v2_1"]},
     "scicode":  {"name": "SciCode", "kind": "task", "api": ["scicode"]},
     "gdpval":   {"name": "GDPval-AA v2", "kind": "task", "api": ["gdpval_aa", "gdpval"]},
-    "tau":      {"name": "τ³-Banking", "kind": "task", "api": ["tau3_bench_banking", "tau3_banking", "tau2_bench_telecom"]},
+    # tau_banking is AA's tau-cubed Bench Banking; the API just omits the superscript. Verified
+    # against the published figures: Fable 5.1 max 0.472 and Astra max 0.414 match 47 and 41.
+    # tau2 is the older tau-squared Bench and must not be substituted, so no fallback here.
+    "tau":      {"name": "τ³-Banking", "kind": "task", "api": ["tau_banking"]},
     "lcr":      {"name": "AA-LCR", "kind": "task", "api": ["lcr", "aa_lcr"]},
     "omni":     {"name": "AA-Omniscience Accuracy", "kind": "task", "api": ["aa_omniscience_accuracy", "omniscience_accuracy"]},
     "nohalluc": {"name": "Non-hallucination rate", "kind": "task", "api": ["aa_omniscience_non_hallucination_rate", "non_hallucination_rate"],
@@ -64,7 +72,15 @@ BENCH = {
     "video":    {"name": "AA Video Arena (with audio)", "kind": "votes", "elo": True, "media": "text-to-video"},
 }
 INDEX_API = ["artificial_analysis_intelligence_index"]
-COST_API = ["cost_to_run_artificial_analysis_intelligence_index", "cost_to_run_intelligence_index", "intelligence_index_cost"]
+# Cost per task is not available on the free tier. It varies with effort and needs per-run token
+# counts, which the API does not expose. What it does expose is a list price under the model's
+# pricing object, identical across every effort level of a model, so it cannot stand in for cost
+# per task and is not labelled as one. See the open question in README.
+PRICE_API = ["price_1m_blended_3_to_1"]
+PRICE_LABEL = "Price per 1M tokens, 3:1 blend"
+# An Elo board outside this range means the cell we read is not the score. Raising carries the
+# board forward instead of publishing a wrong number.
+ELO_RANGE = (800, 2000)
 
 TASKS = [
     {"id": "coding", "name": "Coding projects", "w": {"terminal": 0.6, "scicode": 0.4},
@@ -134,6 +150,46 @@ def split_effort(name):
     return name.strip(), "default"
 
 
+# Effort settings appear in three shapes across the three endpoints: a parenthesis on the llms
+# and image boards, a trailing word on the arena slugs, and nothing at all. Stripped only from
+# the end of a name, so a model whose own name contains one of these words keeps it.
+EFFORT_TOKENS = ("max", "xhigh", "high", "medium", "low", "thinking", "reasoning", "non")
+
+
+def canon(name):
+    """A comparison key for one model, ignoring case, punctuation and effort setting."""
+    base, _ = split_effort(name)
+    toks = re.sub(r"[^a-z0-9]+", " ", base.lower()).split()
+    while toks and toks[-1] in EFFORT_TOKENS:
+        toks.pop()
+    return " ".join(toks)
+
+
+def fold_to_access(d, access):
+    """Fold the names an endpoint returns onto the display names in the access table.
+
+    The arena and media endpoints return slugs (grok-imagine-video) and effort suffixes
+    (GPT Image 2 (high)) where the llms endpoint returns display names, so without this the
+    access lookup misses and the task has no pick. Same rule as the llms path: one row per
+    model at its best effort setting. Every fold is returned so the day's JSON can show it,
+    and a name that matches nothing is kept verbatim rather than dropped, so an unrecognised
+    model is visible on the page instead of silently disappearing.
+    """
+    lookup = {canon(k): k for k in access}
+    folded, aliases, unmatched = {}, {}, []
+    for raw, val in d.items():
+        base = lookup.get(canon(raw))
+        if base is None:
+            unmatched.append(raw)
+            if raw not in folded or val > folded[raw]:
+                folded[raw] = val
+            continue
+        aliases[raw] = base
+        if base not in folded or val > folded[base]:
+            folded[base] = val
+    return folded, aliases, sorted(unmatched)
+
+
 def first_key(d, candidates):
     for k in candidates:
         if k in d and d[k] is not None:
@@ -169,10 +225,11 @@ def fetch_aa_llms(key, probe=False):
         ev = m.get("evaluations") or {}
         idx_k = first_key(ev, INDEX_API)
         idx = ev.get(idx_k) if idx_k else None
-        cost_k = first_key(ev, COST_API) or first_key(m, COST_API)
-        cost = (ev.get(cost_k) if cost_k in ev else m.get(cost_k)) if cost_k else None
+        pricing = m.get("pricing") or {}
+        price_k = first_key(pricing, PRICE_API)
+        price = pricing.get(price_k) if price_k else None
         if idx is not None:
-            eff.append({"model": base, "effort": effort, "score": round(idx, 1), "cost_per_task": cost,
+            eff.append({"model": base, "effort": effort, "score": round(idx, 1), "price_1m": price,
                         "speed": m.get("median_output_tokens_per_second"),
                         "wait_s": m.get("median_time_to_first_answer_token") or m.get("median_time_to_first_token_seconds"),
                         "access": ACCESS.get(base), "estimate": False, "api_name": name})
@@ -197,7 +254,7 @@ def fetch_aa_llms(key, probe=False):
                 slot["d"][base] = val
                 slot["settings"][base] = effort
     index_meta = {"index": raw.get("index_version") or "Artificial Analysis Intelligence Index (version not exposed by the API)",
-                  "fetched": now_et().strftime("%Y-%m-%d"), "fields": used_fields}
+                  "fetched": now_et().strftime("%Y-%m-%d"), "fields": used_fields, "price_label": PRICE_LABEL}
     return bench, eff, index_meta, raw
 
 
@@ -254,9 +311,18 @@ def fetch_arena(board, probe=False):
     for r in rows:
         if len(r) <= max(mi, si) or r is header:
             continue
-        name, score = r[mi].split("\n")[0].strip(), re.sub(r"[^\d.]", "", r[si])
-        if name and score:
-            d[name] = round(float(score))
+        # Take the first number in the cell, not every digit in it. The score cell also carries
+        # a confidence interval, so stripping non-digits glued the two together and turned
+        # 1507 with an interval of 5 into 15075.
+        name = r[mi].split("\n")[0].strip()
+        m = re.search(r"\d+(?:\.\d+)?", r[si])
+        if not (name and m):
+            continue
+        score = round(float(m.group(0)))
+        if not ELO_RANGE[0] <= score <= ELO_RANGE[1]:
+            raise RuntimeError(f"arena {board}: {name} scored {score}, outside {ELO_RANGE[0]} to {ELO_RANGE[1]}; "
+                               "the layout has probably changed")
+        d[name] = score
     if len(d) < 5:
         raise RuntimeError(f"arena {board}: only {len(d)} rows parsed")
     return d
@@ -451,7 +517,7 @@ def number_set(bench, eff):
         for v in b["d"].values():
             s.add(str(v)); s.add(str(round(v))); s.add(str(v).rstrip("0").rstrip("."))
     for r in eff:
-        for k in ("score", "cost_per_task", "speed", "wait_s"):
+        for k in ("score", "price_1m", "speed", "wait_s"):
             v = r.get(k)
             if v is not None:
                 s.add(str(v)); s.add(str(round(v))); s.add(f"{v:.2f}"); s.add(f"{v:.0f}")
@@ -752,8 +818,13 @@ def main():
                         src = "arena.ai"
                     else:
                         raise RuntimeError("no fetcher produced this benchmark")
+                    # These two endpoints name models differently from the llms endpoint, so the
+                    # names are folded onto the access table before anything scores them.
+                    d, aliases, unmatched = fold_to_access(d, MEDIA_ACCESS if b.get("media") else ACCESS)
+                    if aliases:
+                        log(f"{k}: folded " + "; ".join(f"{r} -> {v}" for r, v in sorted(aliases.items())))
                     bench[k] = {"name": b["name"], "kind": b["kind"], "elo": bool(b.get("elo")), "src": src, "fetched": today,
-                                "stale": False, "d": d}
+                                "stale": False, "d": d, "aliases": aliases, "unmatched": unmatched}
                     fresh += 1
                 except Exception as e:  # noqa: BLE001
                     log(f"{k}: {e}")
