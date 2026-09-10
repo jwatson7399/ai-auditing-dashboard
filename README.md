@@ -28,3 +28,13 @@ The Artificial Analysis key lives in the repository's Actions secrets as `AA_API
 Unresolved entries in `inbox/proposed-sources.md` (domains on neither the allowlist nor the Blocklist) are shown on the page with the Verifier's recorded facts and no recommendation; the decision is a human edit to `sources/allowlist.md`.
 
 `inbox/commentary/YYYY-MM-DD.md` is written by the Commentator agent from the day's JSON. A pull request carrying the `commentary` label and touching only that path is merged by `.github/workflows/commentary-merge.yml`, which then rebuilds the page. Every number in the commentary is checked against the day's data; a block with a number not in the data is set aside and the page shows the templated line instead, marked.
+
+### Open question: cost per task
+
+The efficiency table shows a list price per million tokens, not a cost per task. The free Artificial Analysis tier does not publish cost per task: it varies with effort setting and needs per-run token counts, which the API does not expose. The only price it gives, `price_1m_blended_3_to_1`, is identical at every effort setting of a model. The two equivalence blocks that once said "X% less per task" have been removed rather than left dividing that price by itself.
+
+This leaves principle 6 partly unmet. Two ways to close it, neither taken yet: pay for the tier that exposes per-task cost, or scrape the leaderboard page for that one column. Speed and wait still vary with effort and are unaffected.
+
+### Benchmarks the API does not carry
+
+`gdpval`, `omni`, `nohalluc` and `gdppdf` have no field on this tier. They are carried forward from the previous day and marked stale rather than guessed at, so a blend that depends on one of them is scored on the tests that are present.
