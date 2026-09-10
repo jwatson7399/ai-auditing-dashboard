@@ -4,3 +4,4 @@ date,time_et,agent,status,items,pr,notes
 2026-09-10,12:21,rebuild,blocked,0,3,AA_API_KEY not set
 2026-09-10,13:08,rebuild,partial,0,4,numbers carried forward (--no-fetch)
 2026-09-10,13:23,rebuild,partial,6,5,gdpval carried forward; tau carried forward; omni carried forward; nohalluc carried forward; gdppdf
+2026-09-10,13:54,rebuild,partial,7,6,gdpval carried forward; omni carried forward; nohalluc carried forward; gdppdf carried forward; web
