@@ -69,7 +69,12 @@ BENCH = {
     "webdev":   {"name": "Arena WebDev", "kind": "votes", "elo": True, "arena": "webdev"},
     "text":     {"name": "Arena Text", "kind": "votes", "elo": True, "arena": "text"},
     "image":    {"name": "AA Image Arena", "kind": "votes", "elo": True, "media": "text-to-image"},
-    "video":    {"name": "AA Video Arena (with audio)", "kind": "votes", "elo": True, "media": "text-to-video"},
+    # Named for what the endpoint returns, which is the whole text-to-video board. It is not the
+    # narrower "with audio" chart the seed numbers were read from: the response comes back with
+    # include_categories false and every row's categories list empty, so no filter is applied,
+    # and it carries 83 models where that chart had a handful. Calling it the audio board made
+    # a change of board look like every model gaining about 95 Elo overnight.
+    "video":    {"name": "AA Video Arena", "kind": "votes", "elo": True, "media": "text-to-video"},
 }
 INDEX_API = ["artificial_analysis_intelligence_index"]
 # Cost per task is not available on the free tier. It varies with effort and needs per-run token
@@ -96,7 +101,7 @@ TASKS = [
      "tests": "Blind human votes between two images made from the same prompt.",
      "daily": "\"Which image tool do people prefer?\" Pure preference, no task test exists."},
     {"id": "video", "name": "Video generation", "w": {"video": 1}, "media": True,
-     "tests": "Blind human votes between two clips (with audio) made from the same prompt.",
+     "tests": "Blind human votes between two clips made from the same prompt, across the whole video board rather than the audio-only chart.",
      "daily": "\"Which video tool do people prefer?\" Pure preference. Sora is not on this board at all."},
     {"id": "writing", "name": "Writing to humans", "w": {"text": 0.5, "nohalluc": 0.25, "omni": 0.25},
      "tests": "Arena Text is a blind vote on which reply people prefer in ordinary chat. Non-hallucination is how often the model admits it does not know instead of bluffing. Accuracy is plain factual recall.",
@@ -259,7 +264,11 @@ def fetch_aa_llms(key, probe=False):
 
 
 def fetch_aa_media(key, kind, probe=False):
-    status, r = http_get(f"https://artificialanalysis.ai/api/v2/data/media/{kind}", {"x-api-key": key})
+    # include_categories asks the endpoint to say which sub-boards each model appears on. It is
+    # metadata only and does not filter the rows. It is requested so the saved response records
+    # whether a narrower board, such as video with audio, exists to be selected later.
+    status, r = http_get(f"https://artificialanalysis.ai/api/v2/data/media/{kind}?include_categories=true",
+                         {"x-api-key": key})
     if status != 200:
         raise RuntimeError(f"AA media/{kind} returned {status}")
     raw = r.json()
