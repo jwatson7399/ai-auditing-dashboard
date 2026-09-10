@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-10",
- "built_at": "2026-09-10T21:47:36+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 10",
- "built_at_et": "5:47 PM",
+ "built_at": "2026-09-10T21:51:28+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 11",
+ "built_at_et": "5:51 PM",
  "status": "partial",
  "status_notes": [
   "gdpval carried forward",
@@ -2965,7 +2965,7 @@
    ]
   },
   "video": {
-   "name": "AA Video Arena (with audio)",
+   "name": "AA Video Arena",
    "kind": "votes",
    "elo": true,
    "src": "Artificial Analysis",
@@ -11004,9 +11004,9 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
+    "Claude Fable 5",
     "GPT-5.6 Terra",
-    "Claude Fable 5"
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -11088,12 +11088,12 @@
      null
     ],
     [
-     "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+     "Qwen-Image-3.0-Pro",
      85.9,
      null
     ],
     [
-     "Qwen-Image-3.0-Pro",
+     "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
      85.9,
      null
     ],
@@ -11128,12 +11128,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "FLUX.2 [max]",
      77.7,
      null
     ],
     [
-     "FLUX.2 [max]",
+     "Recraft V4.1 Utility",
      77.7,
      null
     ],
@@ -11168,12 +11168,12 @@
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Ideogram 4.0 (Quality)",
      76.5,
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Wan 2.6 Image",
      76.5,
      null
     ],
@@ -11203,12 +11203,12 @@
      null
     ],
     [
-     "FLUX.2 [pro]",
+     "Seedream 4.5",
      75.3,
      null
     ],
     [
-     "Seedream 4.5",
+     "FLUX.2 [pro]",
      75.3,
      null
     ],
@@ -11228,12 +11228,12 @@
      null
     ],
     [
-     "FLUX.2 [dev] Turbo",
+     "Seedream 5.0 Lite",
      74.0,
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "FLUX.2 [dev] Turbo",
      74.0,
      null
     ],
@@ -11248,12 +11248,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Imagen 4 Ultra",
      73.1,
      null
     ],
     [
-     "Imagen 4 Ultra",
+     "Ideogram 4.0 Fast (Quality)",
      73.1,
      null
     ],
@@ -11268,12 +11268,12 @@
      null
     ],
     [
-     "Recraft V4 Pro",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      72.4,
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Recraft V4 Pro",
      72.4,
      null
     ],
@@ -11293,12 +11293,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Medium)",
+     "FLUX.2 [dev] Flash",
      71.4,
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "P-Image-Ideogram (Medium)",
      71.4,
      null
     ],
@@ -11313,12 +11313,12 @@
      null
     ],
     [
-     "HiDream-O1-Image",
+     "ImagineArt 2.0",
      71.2,
      null
     ],
     [
-     "ImagineArt 2.0",
+     "HiDream-O1-Image",
      71.2,
      null
     ],
@@ -11353,12 +11353,12 @@
      null
     ],
     [
-     "Seedream 3.0",
+     "HunyuanImage 3.0 Instruct (Fal)",
      69.1,
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct (Fal)",
+     "Seedream 3.0",
      69.1,
      null
     ],
@@ -11378,12 +11378,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "Kolors 2.1",
      66.6,
      null
     ],
     [
-     "Kolors 2.1",
+     "FLUX.2 [klein] 9B",
      66.6,
      null
     ],
@@ -11443,12 +11443,7 @@
      null
     ],
     [
-     "Dreamina 3.1",
-     62.5,
-     null
-    ],
-    [
-     "Kling Image 3.0 Omni",
+     "GPT Image 1 Mini (medium)",
      62.5,
      null
     ],
@@ -11458,7 +11453,12 @@
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Dreamina 3.1",
+     62.5,
+     null
+    ],
+    [
+     "Kling Image 3.0 Omni",
      62.5,
      null
     ],
@@ -11498,22 +11498,22 @@
      null
     ],
     [
-     "FLUX.2 [klein] Base 9B",
-     60.4,
-     null
-    ],
-    [
      "FLUX1.1 [pro] Ultra",
      60.4,
      null
     ],
     [
-     "FLUX1.1 [pro]",
-     59.7,
+     "FLUX.2 [klein] Base 9B",
+     60.4,
      null
     ],
     [
      "P-Image",
+     59.7,
+     null
+    ],
+    [
+     "FLUX1.1 [pro]",
      59.7,
      null
     ],
@@ -11578,12 +11578,12 @@
      null
     ],
     [
-     "Image-01",
+     "HiDream-I1-Dev",
      56.7,
      null
     ],
     [
-     "HiDream-I1-Dev",
+     "Image-01",
      56.7,
      null
     ],
@@ -11648,12 +11648,12 @@
      null
     ],
     [
-     "Stable Diffusion 3.5 Large",
+     "Stable Diffusion 3.5 Large Turbo",
      51.5,
      null
     ],
     [
-     "Stable Diffusion 3.5 Large Turbo",
+     "Stable Diffusion 3.5 Large",
      51.5,
      null
     ],
@@ -11908,22 +11908,22 @@
      null
     ],
     [
-     "Wan 2.7",
-     78.9,
-     null
-    ],
-    [
      "Kling 3.0 720p (Standard)",
      78.9,
      null
     ],
     [
-     "Veo 3",
-     78.8,
+     "Wan 2.7",
+     78.9,
      null
     ],
     [
      "Vidu Q3 Pro",
+     78.8,
+     null
+    ],
+    [
+     "Veo 3",
      78.8,
      null
     ],
@@ -12033,12 +12033,12 @@
      null
     ],
     [
-     "PixVerse V5",
+     "Sora 2 (December)",
      71.1,
      null
     ],
     [
-     "Sora 2 (December)",
+     "PixVerse V5",
      71.1,
      null
     ],
@@ -12268,7 +12268,7 @@
    },
    "extra": null,
    "media": true,
-   "tests": "Blind human votes between two clips (with audio) made from the same prompt.",
+   "tests": "Blind human votes between two clips made from the same prompt, across the whole video board rather than the audio-only chart.",
    "daily": "\"Which video tool do people prefer?\" Pure preference. Sora is not on this board at all."
   },
   "writing": {
@@ -12464,14 +12464,14 @@
      null
     ],
     [
-     "Grok 4.6",
-     78.0,
-     "grok"
-    ],
-    [
      "Muse Spark 1.3",
      78.0,
      null
+    ],
+    [
+     "Grok 4.6",
+     78.0,
+     "grok"
     ],
     [
      "GPT-6 Astra",
@@ -12711,7 +12711,7 @@
   ],
   [
    "regrade",
-   "AA Video Arena (with audio) appears re-graded rather than improved: 5 of 5 models moved up at once, by about 95.0 at the middle. Models do not move together, so this is a change to the test or the board and not to the models. Individual moves on this test are not listed today."
+   "AA Video Arena appears re-graded rather than improved: 5 of 5 models moved up at once, by about 95.0 at the middle. Models do not move together, so this is a change to the test or the board and not to the models. Individual moves on this test are not listed today."
   ],
   [
    "weak",
@@ -12843,6 +12843,15 @@
    "status": "partial",
    "items": "7",
    "pr": "9",
+   "notes": "gdpval carried forward; omni carried forward; nohalluc carried forward; gdppdf carried forward; web"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-10",
+   "time": "17:47",
+   "status": "partial",
+   "items": "7",
+   "pr": "10",
    "notes": "gdpval carried forward; omni carried forward; nohalluc carried forward; gdppdf carried forward; web"
   },
   {
