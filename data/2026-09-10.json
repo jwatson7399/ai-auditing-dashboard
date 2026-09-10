@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-10",
- "built_at": "2026-09-10T18:56:34+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 8",
- "built_at_et": "2:56 PM",
+ "built_at": "2026-09-10T18:57:49+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 9",
+ "built_at_et": "2:57 PM",
  "status": "partial",
  "status_notes": [
   "gdpval carried forward",
@@ -10965,8 +10965,8 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
     "GPT-5.6 Terra",
+    "GPT-5.6 Luna",
     "Claude Fable 5"
    ],
    "confidence": "Clear lead",
@@ -11114,12 +11114,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
+     "Recraft V4.1 Utility",
      77.6,
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "Recraft V4.1 Utility Pro",
      77.6,
      null
     ],
@@ -11174,12 +11174,7 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
-     75.0,
-     null
-    ],
-    [
-     "Luma UNI 1",
+     "Recraft V4.1",
      75.0,
      null
     ],
@@ -11189,7 +11184,12 @@
      null
     ],
     [
-     "Recraft V4.1",
+     "Seedream 5.0 Lite",
+     75.0,
+     null
+    ],
+    [
+     "Luma UNI 1",
      75.0,
      null
     ],
@@ -11209,12 +11209,12 @@
      null
     ],
     [
-     "Recraft V4 Pro",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      73.8,
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Recraft V4 Pro",
      73.8,
      null
     ],
@@ -11234,12 +11234,12 @@
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Recraft V4.1 Pro",
      72.7,
      null
     ],
     [
-     "Recraft V4.1 Pro",
+     "Wan 2.7 Pro",
      72.7,
      null
     ],
@@ -11264,12 +11264,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast",
+     "P-Image-Ideogram (Medium)",
      71.4,
      null
     ],
     [
-     "P-Image-Ideogram (Medium)",
+     "Ideogram 4.0 Fast",
      71.4,
      null
     ],
@@ -11279,12 +11279,12 @@
      null
     ],
     [
-     "Wan 2.7",
+     "Qwen Image Max 2512",
      71.1,
      null
     ],
     [
-     "Qwen Image Max 2512",
+     "Wan 2.7",
      71.1,
      null
     ],
@@ -11359,12 +11359,12 @@
      null
     ],
     [
-     "Imagen 3 (v002)",
+     "Vivago 2.0",
      64.8,
      null
     ],
     [
-     "Vivago 2.0",
+     "Imagen 3 (v002)",
      64.8,
      null
     ],
@@ -11374,12 +11374,12 @@
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Lucid Origin Ultra",
      64.2,
      null
     ],
     [
-     "Lucid Origin Ultra",
+     "ERNIE Image Turbo",
      64.2,
      null
     ],
@@ -11494,12 +11494,12 @@
      null
     ],
     [
-     "Midjourney v6",
+     "Qwen Image",
      57.9,
      null
     ],
     [
-     "Qwen Image",
+     "Midjourney v6",
      57.9,
      null
     ],
@@ -11514,7 +11514,7 @@
      null
     ],
     [
-     "HiDream-O1-Image-Dev",
+     "Luma Photon",
      57.4,
      null
     ],
@@ -11524,17 +11524,17 @@
      null
     ],
     [
-     "Luma Photon",
+     "HiDream-O1-Image-Dev",
      57.4,
      null
     ],
     [
-     "HiDream-I1-Dev",
+     "Image-01",
      57.1,
      null
     ],
     [
-     "Image-01",
+     "HiDream-I1-Dev",
      57.1,
      null
     ],
@@ -11579,12 +11579,12 @@
      null
     ],
     [
-     "FLUX.1 [dev]",
+     "Stable Diffusion 3 Large",
      53.0,
      null
     ],
     [
-     "Stable Diffusion 3 Large",
+     "FLUX.1 [dev]",
      53.0,
      null
     ],
@@ -11604,12 +11604,12 @@
      null
     ],
     [
-     "Stable Diffusion 3.5 Large",
+     "FIBO Lite",
      51.9,
      null
     ],
     [
-     "FIBO Lite",
+     "Stable Diffusion 3.5 Large",
      51.9,
      null
     ],
@@ -11719,22 +11719,22 @@
      null
     ],
     [
-     "Stable Diffusion 1.6",
-     35.1,
-     null
-    ],
-    [
      "Amazon Titan G1 (Standard)",
      35.1,
      null
     ],
     [
-     "SDXL Lightning",
-     34.6,
+     "Stable Diffusion 1.6",
+     35.1,
      null
     ],
     [
      "OmniGen V2",
+     34.6,
+     null
+    ],
+    [
+     "SDXL Lightning",
      34.6,
      null
     ],
@@ -11849,18 +11849,13 @@
      null
     ],
     [
-     "LTX-2.5 Fast",
-     79.3,
-     null
-    ],
-    [
      "Kling 3.0 Omni 720p (Standard)",
      79.3,
      null
     ],
     [
-     "Kling 3.0 720p (Standard)",
-     78.9,
+     "LTX-2.5 Fast",
+     79.3,
      null
     ],
     [
@@ -11869,12 +11864,17 @@
      null
     ],
     [
-     "Veo 3",
-     78.8,
+     "Kling 3.0 720p (Standard)",
+     78.9,
      null
     ],
     [
      "Vidu Q3 Pro",
+     78.8,
+     null
+    ],
+    [
+     "Veo 3",
      78.8,
      null
     ],
@@ -11939,12 +11939,12 @@
      null
     ],
     [
-     "Kling O1 Standard (January)",
+     "Wan 2.6",
      74.2,
      null
     ],
     [
-     "Wan 2.6",
+     "Kling O1 Standard (January)",
      74.2,
      null
     ],
@@ -11969,12 +11969,12 @@
      null
     ],
     [
-     "Hailuo 02 Standard",
+     "Seedance 1.5 pro",
      71.4,
      null
     ],
     [
-     "Seedance 1.5 pro",
+     "Hailuo 02 Standard",
      71.4,
      null
     ],
@@ -11984,12 +11984,12 @@
      null
     ],
     [
-     "Sora 2 (December)",
+     "PixVerse V5",
      71.1,
      null
     ],
     [
-     "PixVerse V5",
+     "Sora 2 (December)",
      71.1,
      null
     ],
@@ -12801,6 +12801,15 @@
    "items": "8",
    "pr": "27",
    "notes": "first live run status partial data"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-10",
+   "time": "14:56",
+   "status": "partial",
+   "items": "7",
+   "pr": "8",
+   "notes": "gdpval carried forward; omni carried forward; nohalluc carried forward; gdppdf carried forward; web"
   },
   {
    "agent": "Benchmark Scout",
