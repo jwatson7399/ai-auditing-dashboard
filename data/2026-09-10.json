@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-10",
- "built_at": "2026-09-10T17:54:39+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 6",
- "built_at_et": "1:54 PM",
+ "built_at": "2026-09-10T18:56:34+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 8",
+ "built_at_et": "2:56 PM",
  "status": "partial",
  "status_notes": [
   "gdpval carried forward",
@@ -10230,14 +10230,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "GLM-5.3",
@@ -10798,8 +10798,8 @@
    "missing": [],
    "confidence": "Clear lead",
    "evidence": "Task tests",
-   "why": "Claude Fable 5.1 leads Terminal-Bench v2.1 and SciCode outright. GPT-5.6 Sol is 3 points back.",
-   "why_source": "templated",
+   "why": "Claude Fable 5.1 leads Terminal-Bench v2.1 at 91 and SciCode at 63. GPT-5.6 Sol is 3 points back on the blend.",
+   "why_source": "commentator",
    "w": {
     "terminal": 0.6,
     "scicode": 0.4
@@ -10904,8 +10904,8 @@
    "missing": [],
    "confidence": "Within noise",
    "evidence": "Task tests",
-   "why": "Claude Fable 5.1 leads GDPval-AA v2 and Terminal-Bench v2.1 outright. Claude Opus 5 is 2 points back, within noise.",
-   "why_source": "templated",
+   "why": "Claude Fable 5.1 leads GDPval-AA v2 and Terminal-Bench v2.1. Claude Opus 5 is 2 points back on the blend, within noise. The pick rests partly on GDPval numbers from 2026-09-03.",
+   "why_source": "commentator",
    "w": {
     "gdpval": 0.3,
     "tau": 0.25,
@@ -10965,14 +10965,14 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
+    "GPT-5.6 Luna",
     "GPT-5.6 Terra",
-    "GPT-5.6 Luna"
+    "Claude Fable 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
-   "why": "GPT-6 Astra leads Arena WebDev outright. Claude Fable 5.1 is 11 points back.",
-   "why_source": "templated",
+   "why": "GPT-6 Astra leads Arena WebDev. Claude Fable 5.1 is 11 points back on the blend. The pick rests partly on Arena WebDev numbers from 2026-09-05.",
+   "why_source": "commentator",
    "w": {
     "webdev": 0.7,
     "terminal": 0.3
@@ -11024,12 +11024,12 @@
      null
     ],
     [
-     "MAI-Image-2.6-Flash",
+     "Nano Banana Pro (Gemini 3 Pro Image)",
      88.9,
      null
     ],
     [
-     "Nano Banana Pro (Gemini 3 Pro Image)",
+     "MAI-Image-2.6-Flash",
      88.9,
      null
     ],
@@ -11139,17 +11139,17 @@
      null
     ],
     [
+     "Krea 2 Medium",
+     76.6,
+     null
+    ],
+    [
      "FLUX.2 [pro]",
      76.6,
      null
     ],
     [
      "MAI-Image-2",
-     76.6,
-     null
-    ],
-    [
-     "Krea 2 Medium",
      76.6,
      null
     ],
@@ -11174,22 +11174,22 @@
      null
     ],
     [
-     "FLUX.2 [dev]",
-     75.0,
-     null
-    ],
-    [
      "Seedream 5.0 Lite",
      75.0,
      null
     ],
     [
-     "Recraft V4.1",
+     "Luma UNI 1",
      75.0,
      null
     ],
     [
-     "Luma UNI 1",
+     "FLUX.2 [dev]",
+     75.0,
+     null
+    ],
+    [
+     "Recraft V4.1",
      75.0,
      null
     ],
@@ -11234,12 +11234,12 @@
      null
     ],
     [
-     "Recraft V4.1 Pro",
+     "Wan 2.7 Pro",
      72.7,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Recraft V4.1 Pro",
      72.7,
      null
     ],
@@ -11279,12 +11279,12 @@
      null
     ],
     [
-     "Qwen Image Max 2512",
+     "Wan 2.7",
      71.1,
      null
     ],
     [
-     "Wan 2.7",
+     "Qwen Image Max 2512",
      71.1,
      null
     ],
@@ -11359,12 +11359,12 @@
      null
     ],
     [
-     "Vivago 2.0",
+     "Imagen 3 (v002)",
      64.8,
      null
     ],
     [
-     "Imagen 3 (v002)",
+     "Vivago 2.0",
      64.8,
      null
     ],
@@ -11374,12 +11374,12 @@
      null
     ],
     [
-     "Lucid Origin Ultra",
+     "ERNIE Image Turbo",
      64.2,
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Lucid Origin Ultra",
      64.2,
      null
     ],
@@ -11399,12 +11399,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Very Low)",
+     "Reve Image (Halfmoon)",
      63.0,
      null
     ],
     [
-     "Reve Image (Halfmoon)",
+     "P-Image-Ideogram (Very Low)",
      63.0,
      null
     ],
@@ -11419,12 +11419,12 @@
      null
     ],
     [
-     "Qwen Image Plus 2601",
+     "Dreamina 3.1",
      62.4,
      null
     ],
     [
-     "Dreamina 3.1",
+     "Qwen Image Plus 2601",
      62.4,
      null
     ],
@@ -11474,12 +11474,12 @@
      null
     ],
     [
-     "Ideogram v2",
+     "FLUX.1 [pro]",
      58.8,
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "Ideogram v2",
      58.8,
      null
     ],
@@ -11494,12 +11494,12 @@
      null
     ],
     [
-     "Qwen Image",
+     "Midjourney v6",
      57.9,
      null
     ],
     [
-     "Midjourney v6",
+     "Qwen Image",
      57.9,
      null
     ],
@@ -11599,12 +11599,12 @@
      null
     ],
     [
-     "Stable Diffusion 3.5 Large",
+     "Stable Diffusion 3.5 Large Turbo",
      51.9,
      null
     ],
     [
-     "Stable Diffusion 3.5 Large Turbo",
+     "Stable Diffusion 3.5 Large",
      51.9,
      null
     ],
@@ -11777,8 +11777,8 @@
    "missing": [],
    "confidence": "Clear lead",
    "evidence": "Preference votes",
-   "why": "GPT Image 2 is ranked 1 of 157 on this board at 1178.",
-   "why_source": "templated",
+   "why": "GPT Image 2 is ranked 1 of 157 on AA Image Arena at 1178. GPT Image 1.5 is 9 points back on the blend.",
+   "why_source": "commentator",
    "w": {
     "image": 1
    },
@@ -11859,12 +11859,12 @@
      null
     ],
     [
-     "Wan 2.7",
+     "Kling 3.0 720p (Standard)",
      78.9,
      null
     ],
     [
-     "Kling 3.0 720p (Standard)",
+     "Wan 2.7",
      78.9,
      null
     ],
@@ -11969,12 +11969,12 @@
      null
     ],
     [
-     "Seedance 1.5 pro",
+     "Hailuo 02 Standard",
      71.4,
      null
     ],
     [
-     "Hailuo 02 Standard",
+     "Seedance 1.5 pro",
      71.4,
      null
     ],
@@ -12212,8 +12212,8 @@
    "missing": [],
    "confidence": "Clear lead",
    "evidence": "Preference votes",
-   "why": "Grok Imagine Video is ranked 10 of 83 on this board at 1222. The board leader is Wan 3.0 at 1333, which you cannot open.",
-   "why_source": "templated",
+   "why": "Grok Imagine Video is ranked 10 of 83 on AA Video Arena at 1222. The board leader is Wan 3.0 at 1333, which you cannot open.",
+   "why_source": "commentator",
    "w": {
     "video": 1
    },
@@ -12269,8 +12269,8 @@
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
-   "why": "Claude Fable 5 leads Arena Text outright. Grok 4.6 is 1 points back, within noise.",
-   "why_source": "templated",
+   "why": "Claude Fable 5 leads Arena Text at 1507. Grok 4.6 is 1 point back on the blend, within noise. The pick rests partly on Omniscience accuracy and non-hallucination numbers from 2026-09-03.",
+   "why_source": "commentator",
    "w": {
     "text": 0.5,
     "nohalluc": 0.25,
@@ -12377,7 +12377,7 @@
    "confidence": "Clear lead",
    "evidence": "Task tests",
    "why": "Grok 4.6 has the best blend across the tests without leading any one of them. GPT-6 Astra is 5 points back. The overall leader is GLM-5.3, which you cannot open.",
-   "why_source": "templated",
+   "why_source": "flagged",
    "w": {
     "terminal": 0.4,
     "scicode": 0.3,
@@ -12415,14 +12415,14 @@
      null
     ],
     [
-     "Muse Spark 1.3",
-     78.0,
-     null
-    ],
-    [
      "Grok 4.6",
      78.0,
      "grok"
+    ],
+    [
+     "Muse Spark 1.3",
+     78.0,
+     null
     ],
     [
      "GPT-6 Astra",
@@ -12483,8 +12483,8 @@
    "missing": [],
    "confidence": "Within noise",
    "evidence": "Task tests",
-   "why": "Claude Fable 5.1 leads Terminal-Bench v2.1 and GDPval-AA v2 outright. Claude Opus 5 is 2 points back, within noise.",
-   "why_source": "templated",
+   "why": "Claude Fable 5.1 leads Terminal-Bench v2.1 and GDPval-AA v2. Claude Opus 5 is 2 points back on the blend, within noise. The pick rests partly on GDPval numbers from 2026-09-03.",
+   "why_source": "commentator",
    "w": {
     "terminal": 0.4,
     "gdpval": 0.3,
@@ -12496,7 +12496,37 @@
    "daily": "\"Data cleanup, scripts, configuring things, reading a long spec: can it handle the whole job?\""
   }
  },
- "commentary": null,
+ "commentary": {
+  "file": "inbox/commentary/2026-09-10.md",
+  "picks": {
+   "coding": "Claude Fable 5.1 leads Terminal-Bench v2.1 at 91 and SciCode at 63. GPT-5.6 Sol is 3 points back on the blend.",
+   "agents": "Claude Fable 5.1 leads GDPval-AA v2 and Terminal-Bench v2.1. Claude Opus 5 is 2 points back on the blend, within noise. The pick rests partly on GDPval numbers from 2026-09-03.",
+   "frontend": "GPT-6 Astra leads Arena WebDev. Claude Fable 5.1 is 11 points back on the blend. The pick rests partly on Arena WebDev numbers from 2026-09-05.",
+   "image": "GPT Image 2 is ranked 1 of 157 on AA Image Arena at 1178. GPT Image 1.5 is 9 points back on the blend.",
+   "video": "Grok Imagine Video is ranked 10 of 83 on AA Video Arena at 1222. The board leader is Wan 3.0 at 1333, which you cannot open.",
+   "writing": "Claude Fable 5 leads Arena Text at 1507. Grok 4.6 is 1 point back on the blend, within noise. The pick rests partly on Omniscience accuracy and non-hallucination numbers from 2026-09-03.",
+   "audit": "Grok 4.6 has the best blend among models you can open at 72.1 without leading any one test. GPT-6 Astra is at 67.6 on the blend. The overall leader is GLM-5.3, which you cannot open. The pick rests partly on non-hallucination numbers from 2026-09-03.",
+   "technical": "Claude Fable 5.1 leads Terminal-Bench v2.1 and GDPval-AA v2. Claude Opus 5 is 2 points back on the blend, within noise. The pick rests partly on GDPval numbers from 2026-09-03."
+  },
+  "changes": [
+   "No task pick flipped; every task keeps the same recommended model.",
+   "Coding runner-up is now GPT-5.6 Sol (was Claude Opus 5).",
+   "Writing runner-up is now Grok 4.6 (was Claude Fable 5.1); the lead is within noise.",
+   "AA-LCR: Claude Fable 5.1 moved from 80 to 85.3; GPT-5.6 Sol from 78 to 84.0; GPT-5.6 Luna from 78 to 83.7; GPT-5.6 Terra from 80 to 83.0; Claude Fable 5 from 77 to 82.3; Claude Opus 5 from 76 to 82.0; Grok 4.6 from 75 to 81.0; GPT-6 Astra from 74 to 80.7.",
+   "New on Arena Text: GPT-5.6 Terra at 1466, Grok 4.6 at 1461, GPT-5.6 Luna at 1453.",
+   "AA Video Arena (with audio): Grok Imagine Video moved from 1062 to 1222.",
+   "Arena WebDev still shows numbers from 2026-09-05."
+  ],
+  "headline": "Picks unchanged; Grok Imagine Video up 160 points to 1222 on AA Video Arena.",
+  "flags": [
+   "picks/audit: 72.1 is not in today's data",
+   "picks/audit: 67.6 is not in today's data",
+   "changes: 1062 is not in today's data"
+  ],
+  "flagged_tasks": [
+   "audit"
+  ]
+ },
  "proposed_sources": [],
  "pending_prs": [
   {
@@ -12578,6 +12608,34 @@
  "previous_date": "2026-09-07",
  "noise": 3,
  "changes": [
+  [
+   "commentator",
+   "No task pick flipped; every task keeps the same recommended model."
+  ],
+  [
+   "commentator",
+   "Coding runner-up is now GPT-5.6 Sol (was Claude Opus 5)."
+  ],
+  [
+   "commentator",
+   "Writing runner-up is now Grok 4.6 (was Claude Fable 5.1); the lead is within noise."
+  ],
+  [
+   "commentator",
+   "AA-LCR: Claude Fable 5.1 moved from 80 to 85.3; GPT-5.6 Sol from 78 to 84.0; GPT-5.6 Luna from 78 to 83.7; GPT-5.6 Terra from 80 to 83.0; Claude Fable 5 from 77 to 82.3; Claude Opus 5 from 76 to 82.0; Grok 4.6 from 75 to 81.0; GPT-6 Astra from 74 to 80.7."
+  ],
+  [
+   "commentator",
+   "New on Arena Text: GPT-5.6 Terra at 1466, Grok 4.6 at 1461, GPT-5.6 Luna at 1453."
+  ],
+  [
+   "commentator",
+   "AA Video Arena (with audio): Grok Imagine Video moved from 1062 to 1222."
+  ],
+  [
+   "commentator",
+   "Arena WebDev still shows numbers from 2026-09-05."
+  ],
   [
    "good",
    "No picks changed today. Every task card carries the same model as yesterday."
@@ -12727,6 +12785,24 @@
    "notes": "gdpval carried forward; tau carried forward; omni carried forward; nohalluc carried forward; gdppdf"
   },
   {
+   "agent": "Daily rebuild",
+   "date": "2026-09-10",
+   "time": "13:54",
+   "status": "partial",
+   "items": "7",
+   "pr": "6",
+   "notes": "gdpval carried forward; omni carried forward; nohalluc carried forward; gdppdf carried forward; web"
+  },
+  {
+   "agent": "Commentator",
+   "date": "2026-09-10",
+   "time": "14:54",
+   "status": "ok",
+   "items": "8",
+   "pr": "27",
+   "notes": "first live run status partial data"
+  },
+  {
    "agent": "Benchmark Scout",
    "date": "2026-09-10",
    "time": "",
@@ -12755,15 +12831,6 @@
   },
   {
    "agent": "Verifier",
-   "date": "2026-09-10",
-   "time": "",
-   "status": "did not run",
-   "items": "0",
-   "pr": "",
-   "notes": "no log line for today"
-  },
-  {
-   "agent": "Commentator",
    "date": "2026-09-10",
    "time": "",
    "status": "did not run",
