@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-11",
- "built_at": "2026-09-11T13:06:32+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 12",
- "built_at_et": "9:06 AM",
+ "built_at": "2026-09-11T13:07:42+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 13",
+ "built_at_et": "9:07 AM",
  "status": "partial",
  "status_notes": [
   "gdpval carried forward",
@@ -10279,14 +10279,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "GLM-5.3",
@@ -11019,9 +11019,9 @@
     ]
    ],
    "missing": [
+    "Claude Fable 5",
     "GPT-5.6 Terra",
-    "GPT-5.6 Luna",
-    "Claude Fable 5"
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -11143,12 +11143,12 @@
      null
     ],
     [
-     "FLUX.2 [max]",
+     "Recraft V4.1 Utility",
      77.6,
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "FLUX.2 [max]",
      77.6,
      null
     ],
@@ -11178,12 +11178,7 @@
      null
     ],
     [
-     "Wan 2.6 Image",
-     76.4,
-     null
-    ],
-    [
-     "Recraft V4.1 Utility Pro",
+     "Krea 2 Medium Turbo",
      76.4,
      null
     ],
@@ -11193,7 +11188,12 @@
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "Recraft V4.1 Utility Pro",
+     76.4,
+     null
+    ],
+    [
+     "Wan 2.6 Image",
      76.4,
      null
     ],
@@ -11218,12 +11218,12 @@
      null
     ],
     [
-     "FLUX.2 [pro]",
+     "Seedream 4.5",
      75.2,
      null
     ],
     [
-     "Seedream 4.5",
+     "FLUX.2 [pro]",
      75.2,
      null
     ],
@@ -11243,16 +11243,6 @@
      null
     ],
     [
-     "Recraft V4.1",
-     73.9,
-     null
-    ],
-    [
-     "Seedream 5.0 Lite",
-     73.9,
-     null
-    ],
-    [
      "FLUX.2 [dev] Turbo",
      73.9,
      null
@@ -11263,12 +11253,22 @@
      null
     ],
     [
-     "Imagen 4 Ultra",
-     73.0,
+     "Recraft V4.1",
+     73.9,
+     null
+    ],
+    [
+     "Seedream 5.0 Lite",
+     73.9,
      null
     ],
     [
      "Ideogram 4.0 Fast (Quality)",
+     73.0,
+     null
+    ],
+    [
+     "Imagen 4 Ultra",
      73.0,
      null
     ],
@@ -11288,12 +11288,12 @@
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "MAI-Image-2-Efficient",
      72.2,
      null
     ],
     [
-     "MAI-Image-2-Efficient",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      72.2,
      null
     ],
@@ -11328,12 +11328,12 @@
      null
     ],
     [
-     "HiDream-O1-Image",
+     "ImagineArt 2.0",
      71.1,
      null
     ],
     [
-     "ImagineArt 2.0",
+     "HiDream-O1-Image",
      71.1,
      null
     ],
@@ -11343,12 +11343,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast",
+     "Qwen Image Max 2512",
      70.5,
      null
     ],
     [
-     "Qwen Image Max 2512",
+     "Ideogram 4.0 Fast",
      70.5,
      null
     ],
@@ -11363,12 +11363,12 @@
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct (Fal)",
+     "Seedream 3.0",
      69.0,
      null
     ],
     [
-     "Seedream 3.0",
+     "HunyuanImage 3.0 Instruct (Fal)",
      69.0,
      null
     ],
@@ -11453,12 +11453,12 @@
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "P-Image-Ideogram (Very Low)",
      62.6,
      null
     ],
     [
-     "P-Image-Ideogram (Very Low)",
+     "GPT Image 1 Mini (medium)",
      62.6,
      null
     ],
@@ -11468,22 +11468,22 @@
      null
     ],
     [
-     "Reve Image (Halfmoon)",
-     62.4,
-     null
-    ],
-    [
      "Kling Image 3.0 Omni",
      62.4,
      null
     ],
     [
-     "Qwen Image Plus 2601",
-     62.3,
+     "Reve Image (Halfmoon)",
+     62.4,
      null
     ],
     [
      "Vidu Q2",
+     62.3,
+     null
+    ],
+    [
+     "Qwen Image Plus 2601",
      62.3,
      null
     ],
@@ -11538,12 +11538,12 @@
      null
     ],
     [
-     "Ideogram v2",
+     "FLUX.1 [pro]",
      58.3,
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "Ideogram v2",
      58.3,
      null
     ],
@@ -11573,12 +11573,12 @@
      null
     ],
     [
-     "GLM-Image",
+     "Luma Photon",
      57.2,
      null
     ],
     [
-     "Luma Photon",
+     "GLM-Image",
      57.2,
      null
     ],
@@ -11593,12 +11593,12 @@
      null
     ],
     [
-     "HiDream-I1-Dev",
+     "Image-01",
      56.6,
      null
     ],
     [
-     "Image-01",
+     "HiDream-I1-Dev",
      56.6,
      null
     ],
@@ -11643,12 +11643,12 @@
      null
     ],
     [
-     "FLUX.1 Krea [dev]",
+     "Stable Diffusion 3 Large",
      52.7,
      null
     ],
     [
-     "Stable Diffusion 3 Large",
+     "FLUX.1 Krea [dev]",
      52.7,
      null
     ],
@@ -11733,12 +11733,12 @@
      null
     ],
     [
-     "Playground v2.5",
+     "FLUX.2 [klein] Base 4B",
      42.8,
      null
     ],
     [
-     "FLUX.2 [klein] Base 4B",
+     "Playground v2.5",
      42.8,
      null
     ],
@@ -11913,12 +11913,12 @@
      null
     ],
     [
-     "Wan 2.7",
+     "LTX-2.5 Fast",
      79.0,
      null
     ],
     [
-     "LTX-2.5 Fast",
+     "Wan 2.7",
      79.0,
      null
     ],
@@ -11973,17 +11973,17 @@
      null
     ],
     [
-     "Veo 3.1 Fast",
-     76.2,
-     null
-    ],
-    [
      "Veo 3.1",
      76.2,
      null
     ],
     [
      "Kling 2.5 Turbo 1080p",
+     76.2,
+     null
+    ],
+    [
+     "Veo 3.1 Fast",
      76.2,
      null
     ],
@@ -12083,12 +12083,12 @@
      null
     ],
     [
-     "LTX-2.3 Fast",
+     "LTX-2 Fast",
      62.6,
      null
     ],
     [
-     "LTX-2 Fast",
+     "LTX-2.3 Fast",
      62.6,
      null
     ],
@@ -12479,14 +12479,14 @@
      null
     ],
     [
-     "Muse Spark 1.3",
-     78.0,
-     null
-    ],
-    [
      "Grok 4.6",
      78.0,
      "grok"
+    ],
+    [
+     "Muse Spark 1.3",
+     78.0,
+     null
     ],
     [
      "GPT-6 Astra",
@@ -12817,6 +12817,15 @@
    "items": "0",
    "pr": "32",
    "notes": "data/2026-09-11.json missing on main after 10m retry"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-11",
+   "time": "09:06",
+   "status": "partial",
+   "items": "7",
+   "pr": "12",
+   "notes": "gdpval carried forward; omni carried forward; nohalluc carried forward; gdppdf carried forward; web"
   },
   {
    "agent": "Benchmark Scout",
