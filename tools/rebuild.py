@@ -29,6 +29,8 @@ import re
 import sys
 import traceback
 import zoneinfo
+from public_sources import (AA_URL, AA_COLUMNS, ARENA_URLS, fetch_public_table,
+                            parse_aa_table, parse_arena_table, effort_key)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ET = zoneinfo.ZoneInfo("America/New_York")
@@ -77,10 +79,7 @@ BENCH = {
     "video":    {"name": "AA Video Arena", "kind": "votes", "elo": True, "media": "text-to-video"},
 }
 INDEX_API = ["artificial_analysis_intelligence_index"]
-# Cost per task is not available on the free tier. It varies with effort and needs per-run token
-# counts, which the API does not expose. What it does expose is a list price under the model's
-# pricing object, identical across every effort level of a model, so it cannot stand in for cost
-# per task and is not labelled as one. See the open question in README.
+# Token price comes from the API; per-task cost is joined separately from the public table.
 PRICE_API = ["price_1m_blended_3_to_1"]
 PRICE_LABEL = "Price per 1M tokens, 3:1 blend"
 # An Elo board outside this range means the cell we read is not the score. Raising carries the
@@ -294,52 +293,81 @@ def fetch_aa_media(key, kind, probe=False):
 
 # ------------------------------------------------------------------- arena.ai
 def fetch_arena(board, probe=False):
-    """Render the arena.ai board in headless Chromium and read the table. Layout is not
-    under our control; on any doubt this raises and the board is carried forward."""
-    from playwright.sync_api import sync_playwright
-    url = f"https://arena.ai/leaderboard/{board}"
-    with sync_playwright() as p:
-        b = p.chromium.launch()
-        page = b.new_page()
-        page.goto(url, wait_until="networkidle", timeout=90000)
-        page.wait_for_timeout(3000)
-        text = page.inner_text("body")
-        rows = page.evaluate("""() => Array.from(document.querySelectorAll('table tr')).map(tr =>
-            Array.from(tr.querySelectorAll('td,th')).map(td => td.innerText.trim()))""")
-        b.close()
-    if probe:
-        log(f"arena {board}: {len(rows)} table rows; first rows: {rows[:5]}")
-        os.makedirs(os.path.join(ROOT, "data", "raw"), exist_ok=True)
-        with open(os.path.join(ROOT, "data", "raw", f"arena-{board}-probe.txt"), "w") as f:
-            f.write(text)
-        return None
-    header = next((r for r in rows if any(c.lower() in ("model", "model name") for c in r)), None)
-    if not header:
-        raise RuntimeError(f"arena {board}: no header row with a Model column")
-    lower = [c.lower() for c in header]
-    mi = next(i for i, c in enumerate(lower) if c.startswith("model"))
-    si = next((i for i, c in enumerate(lower) if c in ("score", "arena score", "elo", "rating")), None)
-    if si is None:
-        raise RuntimeError(f"arena {board}: no score column in {header}")
-    d = {}
-    for r in rows:
-        if len(r) <= max(mi, si) or r is header:
+    payload = fetch_public_table(ARENA_URLS[board], ROOT, "arena-" + board)
+    data, excluded = parse_arena_table(payload, board)
+    log(f"arena {board}: {len(data)} scores; {len(excluded)} estimated or ambiguous rows excluded")
+    return data, {"url": payload["url"], "source_updated": payload["source_updated"],
+                  "excluded": excluded, "board": board}
+
+
+def apply_public_aa(parsed, payload, eff_rows, bench, prev, today):
+    """Attach exact effort costs and fill API-missing benchmarks with row provenance."""
+    notes = []
+    source = {"src": "Artificial Analysis public leaderboard", "url": AA_URL,
+              "fetched": today, "source_updated": payload.get("source_updated"),
+              "fetched_at": payload.get("fetched_at")}
+    api_names = {}
+    for row in eff_rows:
+        api_names.setdefault(effort_key(row.get("api_name", row["model"])), []).append(row)
+    page_costs = {}
+    for row in parsed.get("cost", []):
+        page_costs.setdefault(effort_key(row["name"]), []).append(row)
+    old_costs = {r.get("api_name", r["model"] + " (" + r["effort"] + ")"): r
+                 for r in (prev or {}).get("eff", {}).get("rows", [])}
+    for row in eff_rows:
+        name = row.get("api_name", row["model"] + " (" + row["effort"] + ")")
+        key = effort_key(name)
+        matches = page_costs.get(key, [])
+        match = matches[0] if len(matches) == 1 and len(api_names.get(key, [])) == 1 else None
+        if match and match["value"] is not None:
+            row.update(cost_per_task=match["value"], cost_display=match["display"],
+                       cost_source=AA_URL, cost_fetched=today, cost_stale=False,
+                       cost_status="rounded" if match["value"] == 0 else "fresh",
+                       cost_join={"page_name": match["name"], "api_name": name, "key": list(key)})
+        else:
+            old = old_costs.get(name, {})
+            if old.get("cost_per_task") is not None:
+                row.update({k: v for k, v in old.items() if k.startswith("cost_")})
+                row.update(cost_stale=True, cost_status="stale")
+            else:
+                row.update(cost_per_task=None, cost_status="missing", cost_stale=True)
+            log(f"cost unavailable or ambiguous: {name}")
+            if row.get("access"):
+                notes.append("cost missing or carried forward")
+    for key, candidates in page_costs.items():
+        if key not in api_names:
+            log("cost page row unjoined: " + "; ".join(r["name"] for r in candidates))
+    for k in ("gdpval", "omni", "nohalluc"):
+        if k in bench or k not in parsed:
             continue
-        # Take the first number in the cell, not every digit in it. The score cell also carries
-        # a confidence interval, so stripping non-digits glued the two together and turned
-        # 1507 with an interval of 5 into 15075.
-        name = r[mi].split("\n")[0].strip()
-        m = re.search(r"\d+(?:\.\d+)?", r[si])
-        if not (name and m):
-            continue
-        score = round(float(m.group(0)))
-        if not ELO_RANGE[0] <= score <= ELO_RANGE[1]:
-            raise RuntimeError(f"arena {board}: {name} scored {score}, outside {ELO_RANGE[0]} to {ELO_RANGE[1]}; "
-                               "the layout has probably changed")
-        d[name] = score
-    if len(d) < 5:
-        raise RuntimeError(f"arena {board}: only {len(d)} rows parsed")
-    return d
+        d, settings, records = {}, {}, {}
+        for row in parsed[k]:
+            base, setting = split_effort(row["name"])
+            matches = api_names.get(effort_key(row["name"]), [])
+            if len(matches) == 1:
+                base, setting = matches[0]["model"], matches[0]["effort"]
+            if row["value"] is None:
+                log(f"{k}: missing for {row['name']}")
+                continue
+            if base not in d or row["value"] > d[base]:
+                d[base], settings[base] = row["value"], setting
+                records[base] = dict(source, page_name=row["name"], field=AA_COLUMNS[k],
+                                     display=row["display"], effort=setting, stale=False)
+        old = (prev or {}).get("bench", {}).get(k, {})
+        stale_models = []
+        for model, value in old.get("d", {}).items():
+            if model not in d:
+                d[model] = value
+                settings[model] = old.get("settings", {}).get(model, "unknown (carried forward)")
+                records[model] = dict(old.get("records", {}).get(model, {
+                    "src": old.get("src"), "fetched": old.get("fetched")}), stale=True)
+                stale_models.append(model)
+        bench[k] = dict(source, name=BENCH[k]["name"], kind="task", elo=False,
+                        field=AA_COLUMNS[k], d=d, settings=settings, records=records,
+                        stale=bool(stale_models), stale_models=stale_models)
+        if stale_models:
+            notes.append(k + " has carried-forward model scores")
+    return sorted(set(notes))
 
 
 # --------------------------------------------------------------------- inbox
@@ -625,11 +653,7 @@ def compute_picks(bench, commentary):
 
 
 # ------------------------------------------------------------------- changes
-# A test is called re-graded, rather than reporting each model separately, when nearly every
-# model on it moved the same way at once. Models do not improve in lockstep; a whole board
-# shifting means the grading changed, the board was replaced, or the scale is not the one the
-# previous file was read from. Reporting that as N models improving is wrong in a way a reader
-# cannot catch, because each individual line is arithmetically true.
+# Group broad shifts without asserting an unverified explanation for their cause.
 SHIFT_MIN_MODELS = 5      # below this a board is too small for "nearly every" to mean anything
 SHIFT_MOVED_FRACTION = 0.7   # share of comparable models that must have moved at all
 SHIFT_AGREE_FRACTION = 0.9   # share of those moves that must point the same way
@@ -653,10 +677,16 @@ def uniform_shift(b, pb):
         return None
     med = sorted(moved)[len(moved) // 2]
     direction = "up" if up >= len(moved) - up else "down"
-    return (f"{b['name']} appears re-graded rather than improved: {len(moved)} of {len(deltas)} models moved {direction} "
-            f"at once, by about {abs(med):.1f} at the middle. Models do not move together, so this is a change to the "
-            f"test or the board and not to the models. Individual moves on this test are not listed today.",
+    return (f"{b['name']} shifted across the board: {len(moved)} of {len(deltas)} models moved {direction} "
+            f"by about {abs(med):.1f} at the middle. The cause is unconfirmed; this may reflect grading, "
+            f"board composition, or model changes. Individual moves on this test are grouped today.",
             len(moved), len(deltas), med)
+
+
+
+def oldest_stale_date(b):
+    dates = [r.get("fetched", "unknown") for r in b.get("records", {}).values() if r.get("stale")]
+    return min(dates) if dates else b.get("fetched", "unknown")
 
 
 def compute_changes(today_d, prev):
@@ -690,11 +720,11 @@ def compute_changes(today_d, prev):
                 changes.append(["mid", f"{b['name']}: {m} moved from {pb['d'][m]} to {v}."])
     stale = [b for b in today_d["bench"].values() if b.get("stale")]
     if len(stale) > 3:
-        changes.append(["weak", f"{len(stale)} of {len(today_d['bench'])} sources could not be refreshed today and show their last numbers: "
-                        + ", ".join(f"{b['name']} ({b['fetched']})" for b in stale) + "."])
+        changes.append(["weak", f"{len(stale)} of {len(today_d['bench'])} sources include carried-forward scores: "
+                        + ", ".join(f"{b['name']} (oldest carried-forward score: {oldest_stale_date(b)})" for b in stale) + "."])
     else:
         for b in stale:
-            changes.append(["weak", f"{b['name']} could not be refreshed today and shows the {b['fetched']} numbers."])
+            changes.append(["weak", f"{b['name']} includes old scores from {oldest_stale_date(b)}; see source records for each model."])
     return changes
 
 
@@ -832,6 +862,13 @@ def main():
 
     status, notes, items = "ok", [], 0
     prev = load_previous(today)
+    carry = prev
+    latest = os.path.join(ROOT, "data", "latest.json")
+    if os.path.exists(latest):
+        with open(latest) as f:
+            candidate = json.load(f)
+        if candidate.get("date", "9999") <= today and (not carry or candidate["date"] >= carry["date"]):
+            carry = candidate  # retries retain today's latest good scores; diffs still use yesterday
     try:
         # 1. numbers
         bench = {}
@@ -845,7 +882,12 @@ def main():
             if not prev:
                 raise Blocked("--no-fetch with no previous data file")
             bench = {k: dict(v, stale=True) for k, v in prev["bench"].items()}
+            for b in bench.values():
+                b["records"] = {m: dict(r, stale=True) for m, r in b.get("records", {}).items()}
             eff_rows, eff_meta = prev["eff"]["rows"], {k: v for k, v in prev["eff"].items() if k != "rows"}
+            for row in eff_rows:
+                if row.get("cost_per_task") is not None:
+                    row.update(cost_stale=True, cost_status="stale")
             notes.append("numbers carried forward (--no-fetch)")
             status = "partial"
         else:
@@ -859,30 +901,69 @@ def main():
                                 "fetched": today, "field": eff_meta["fields"].get(k), "index_version": eff_meta["index"],
                                 "stale": False, "d": got[k]["d"], "settings": got[k]["settings"]}
                     fresh += 1
+            try:
+                public = fetch_public_table(AA_URL, ROOT, "aa-leaderboard", expand=True)
+                parsed, errors = parse_aa_table(public["rows"])
+                for field, error in errors.items():
+                    log(f"AA public {field}: {error}")
+                if errors:
+                    notes.append("AA public columns unavailable: " + ", ".join(errors))
+                    status = "partial"
+            except Exception as e:
+                log(f"AA public leaderboard: {e}")
+                parsed, public = {}, {}
+                notes.append("AA public leaderboard unavailable")
+                status = "partial"
+            public_notes = apply_public_aa(parsed, public, eff_rows, bench, carry, today)
+            notes.extend(public_notes)
+            if public_notes:
+                status = "partial"
+            fresh = sum(not b.get("stale") for b in bench.values())
             for k, b in BENCH.items():
                 if k in bench:
                     continue
                 try:
+                    source_meta = {}
                     if b.get("media"):
                         d = fetch_aa_media(key, b["media"])
                         src = "Artificial Analysis"
                     elif b.get("arena") and not args.skip_arena:
-                        d = fetch_arena(b["arena"])
+                        d, source_meta = fetch_arena(b["arena"])
                         src = "arena.ai"
                     else:
                         raise RuntimeError("no fetcher produced this benchmark")
                     # These two endpoints name models differently from the llms endpoint, so the
                     # names are folded onto the access table before anything scores them.
-                    d, aliases, unmatched = fold_to_access(d, MEDIA_ACCESS if b.get("media") else ACCESS)
+                    old = (carry or {}).get("bench", {}).get(k, {})
+                    names = dict.fromkeys(old.get("d", {})) if b.get("arena") else {}
+                    names.update(MEDIA_ACCESS if b.get("media") else ACCESS)
+                    d, aliases, unmatched = fold_to_access(d, names)
+                    stale_models = []
+                    records = {m: {"fetched": today, "src": src, "stale": False,
+                                   "url": source_meta.get("url"), "source_updated": source_meta.get("source_updated"),
+                                   "raw_names": [raw for raw, base in aliases.items() if base == m] or [m]}
+                               for m in d}
+                    old = (carry or {}).get("bench", {}).get(k, {})
+                    for model, value in old.get("d", {}).items():
+                        if model not in d:
+                            d[model] = value
+                            records[model] = dict(old.get("records", {}).get(model, {
+                                "fetched": old.get("fetched"), "src": old.get("src")}), stale=True)
+                            stale_models.append(model)
+                    if stale_models:
+                        notes.append(k + " has carried-forward model scores")
+                        status = "partial"
                     if aliases:
                         log(f"{k}: folded " + "; ".join(f"{r} -> {v}" for r, v in sorted(aliases.items())))
                     bench[k] = {"name": b["name"], "kind": b["kind"], "elo": bool(b.get("elo")), "src": src, "fetched": today,
-                                "stale": False, "d": d, "aliases": aliases, "unmatched": unmatched}
+                                "stale": bool(stale_models), "stale_models": stale_models, "records": records,
+                                "d": d, "aliases": aliases, "unmatched": unmatched, **source_meta}
                     fresh += 1
                 except Exception as e:  # noqa: BLE001
                     log(f"{k}: {e}")
-                    if prev and k in prev["bench"]:
-                        bench[k] = dict(prev["bench"][k], stale=True)
+                    if carry and k in carry["bench"]:
+                        bench[k] = dict(carry["bench"][k], stale=True)
+                        bench[k]["records"] = {m: dict(r, stale=True) for m, r in bench[k].get("records", {}).items()}
                         notes.append(f"{k} carried forward")
                     else:
                         notes.append(f"{k} missing")

@@ -32,6 +32,7 @@ a{color:var(--pick)}
 .stamp{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
 .status{display:flex;flex-wrap:wrap;gap:8px;font-size:12px}
 .chip{border-radius:999px;padding:3px 10px;font-weight:600;letter-spacing:0.03em;white-space:nowrap}
+.status .chip{white-space:normal;overflow-wrap:anywhere;max-width:100%}
 .chip.good{background:var(--good-soft);color:var(--good)} .chip.mid{background:var(--mid-soft);color:var(--mid)} .chip.weak{background:var(--weak-soft);color:var(--weak)} .chip.pick{background:var(--pick-soft);color:var(--pick)} .chip.commentator{background:var(--pick-soft);color:var(--pick)} .chip.regrade{background:var(--weak-soft);color:var(--weak)}
 section{margin-top:36px}
 section>h3{margin-bottom:12px}
@@ -163,7 +164,7 @@ footer{margin-top:40px;font-size:13px;color:var(--muted);max-width:72ch}
       <p style="font-size:14.5px;max-width:76ch" id="effintro"></p>
       <div class="tbl" style="margin-top:14px"><table id="eff"></table></div>
       <div class="equiv" id="equiv"></div>
-      <p class="note">Rows with no cost are settings the source has scored but not priced. Speed is output tokens per second; wait is seconds until the first word of the answer appears, including thinking time. You pay by subscription, not per token, but higher effort burns your usage limits faster, so this table tells you when turning effort down costs you nothing.</p>
+      <p class="note">Unavailable costs mean the public table has no price or its model setting could not be matched safely. Speed is output tokens per second; wait includes thinking time. Benchmark costs do not measure subscription usage limits.</p>
     </div>
   </section>
 
@@ -204,8 +205,12 @@ const ET = iso => new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minut
 document.getElementById('stamp').textContent = `${fmtDate(D.date)} · built ${esc(D.built_at_et)} ET · ${esc(D.built_by)}`;
 const chips = [];
 chips.push([D.status==='ok'?'good':'mid', `Rebuild: ${D.status}${D.status_notes.length?' ('+D.status_notes.join('; ')+')':''}`]);
+const staleDate = b => {
+  const dates = Object.values(b.records||{}).filter(r=>r.stale).map(r=>r.fetched).filter(Boolean);
+  return dates.length ? dates.sort()[0] : b.fetched;
+};
 const stale = Object.values(D.bench).filter(b=>b.stale);
-if(stale.length) chips.push(['weak', stale.length>3 ? `Stale: ${stale.length} of ${Object.keys(D.bench).length} sources, see What changed` : `Stale: ${stale.map(b=>b.name+' ('+b.fetched+')').join(', ')}`]);
+if(stale.length) chips.push(['weak', stale.length>3 ? `Stale: ${stale.length} of ${Object.keys(D.bench).length} sources, see What changed` : `Stale: ${stale.map(b=>b.name+' ('+staleDate(b)+')').join(', ')}`]);
 if(D.second_meta) chips.push([D.second_meta.verified_file?'good':'mid', D.second_meta.verified_file ? `Scout: ${D.second.filter(s=>s.verdict==='pass').length} of ${D.second.length} verified` : 'Scout: no verified report today']);
 if(D.commentary){ chips.push([D.commentary.flags.length?'weak':'pick', D.commentary.flags.length ? `Commentary: ${D.commentary.flags.length} number(s) not in data` : 'Commentary: agent-written']); }
 else chips.push(['mid','Commentary: none today, lines are templated']);
@@ -224,7 +229,7 @@ document.getElementById('news').innerHTML = D.news.map(n=>`<article class="card 
 document.getElementById('newsnote').textContent = (D.news_meta && D.news_meta.note) || '';
 
 // ---------- changes ----------
-const label = k => ({pick:'Pick changed', good:'New data', weak:'Conflict', mid:'Gap', commentator:'Agent', regrade:'Re-graded'}[k] || k);
+const label = k => ({pick:'Pick changed', good:'New data', weak:'Conflict', mid:'Gap', commentator:'Agent', regrade:'Board shift'}[k] || k);
 document.getElementById('changes').innerHTML = D.changes.map(c=>`<div class="item"><span class="chip ${esc(c[0])}">${label(c[0])}</span><p>${esc(c[1])}</p></div>`).join('');
 document.getElementById('changesnote').textContent = D.previous_date ? `Compared against the ${D.previous_date} data file.` : '';
 
@@ -239,6 +244,7 @@ for(const [id,t] of Object.entries(D.picks)){
     <span class="pickname">${esc(pickLabel)}</span>
     <span class="runner">then ${esc(t.runner || 'no second option')}</span>
     <span class="why">${esc(t.why)}${t.why_source==='commentator'?' <span class="chip commentator">agent</span>':t.why_source==='flagged'?' <span class="chip weak">agent line set aside: number not in data</span>':''}</span>
+    ${Object.keys(t.w||{}).some(k=>D.bench[k].stale) ? `<span class="why">Uses old scores: ${esc(Object.keys(t.w).filter(k=>D.bench[k].stale).map(k=>D.bench[k].name+' (oldest '+staleDate(D.bench[k])+')').join('; '))}.</span>` : ''}
     <span class="foot"><span class="chip ${confk}">${esc(t.confidence)}</span><span class="chip ${evk}">${esc(t.evidence)}</span>${t.overall && t.overall!==t.pick?'<span class="chip weak">Not the overall leader</span>':''}</span>
   </a>`);
   if(!t.rows.length) continue;
@@ -253,11 +259,11 @@ for(const [id,t] of Object.entries(D.picks)){
     return `<div class="row ${cls}"><div class="lbl">${esc(x[0])}${x[2]?'':' <span class="cfg">(no access)</span>'}${settings}</div><div class="track"><div class="fill" style="width:${width}%"></div></div><div class="val">${raw}</div></div>`;
   }).join('');
   const comps = Object.keys(w).map(k=>`${D.bench[k].name} ${Math.round(w[k]*100)}%`).join(' · ');
-  const srcs = [...new Set(Object.keys(w).map(k=>`${D.bench[k].src} (${D.bench[k].fetched}${D.bench[k].stale?', stale':''})`))].join('; ');
+  const srcs = [...new Set(Object.keys(w).map(k=>`${D.bench[k].src} (${D.bench[k].fetched}, fetched${D.bench[k].source_updated?', board updated '+D.bench[k].source_updated:''}${D.bench[k].stale?', includes old scores from '+staleDate(D.bench[k]):''})`))].join('; ');
   let extra = '';
   if(t.extra && D.bench[t.extra]){
     const e = D.bench[t.extra]; const emax = Math.max(...Object.values(e.d));
-    extra = `<div style="margin-top:18px"><h3>Also worth knowing: ${esc(e.name)}</h3><p class="components" style="margin:6px 0 10px">Not in the blend. Source: ${esc(e.src)}, ${esc(e.fetched)}.</p><div class="chart">${Object.entries(e.d).sort((a,b)=>b[1]-a[1]).map(([m,v])=>`<div class="row ${has(m)?'':'noaccess'}"><div class="lbl">${esc(m)}</div><div class="track"><div class="fill" style="width:${v/emax*100}%"></div></div><div class="val">${v}</div></div>`).join('')}</div></div>`;
+    extra = `<div style="margin-top:18px"><h3>Also worth knowing: ${esc(e.name)}</h3><p class="components" style="margin:6px 0 10px">Not in the blend. Source: ${esc(e.src)}, ${esc(e.fetched)}${e.stale ? ', stale; oldest score '+esc(staleDate(e)) : ''}.</p><div class="chart">${Object.entries(e.d).sort((a,b)=>b[1]-a[1]).map(([m,v])=>`<div class="row ${has(m)?'':'noaccess'}"><div class="lbl">${esc(m)}</div><div class="track"><div class="fill" style="width:${v/emax*100}%"></div></div><div class="val">${v}</div></div>`).join('')}</div></div>`;
   }
   const missing = t.missing.length ? `<p class="components">Not rated for this task because one of the tests has not scored it: ${esc(t.missing.join(', '))}.</p>` : '';
   detailsEl.insertAdjacentHTML('beforeend', `<details class="bench" id="${esc(id)}">
@@ -298,17 +304,20 @@ if(D.proposed_sources && D.proposed_sources.length){
 
 // ---------- effort table ----------
 const E = D.eff.rows.slice().sort((a,b)=>(b.score??-1)-(a.score??-1));
-document.getElementById('effintro').textContent = `Every row is one model at one thinking-effort setting. Score is the ${D.eff.index}, fetched ${D.eff.fetched}. Price is a list price per million tokens and does not change with effort, so it cannot be read as the cost of one task. Speed and wait do change with effort.`;
+document.getElementById('effintro').textContent = `Every row is one model at one thinking-effort setting. Score is the ${D.eff.index}, fetched ${D.eff.fetched}. Cost per task is AA's benchmark-based USD estimate, not your subscription cost. Token price is a separate list price. Missing and carried-forward costs are labeled; $0.00 is rounded, not necessarily free.`;
 const money = v => v==null ? '--' : '$'+Number(v).toFixed(2);
-document.getElementById('eff').innerHTML = `<thead><tr><th>Model</th><th>Effort</th><th class="num">Score</th><th class="num">${esc(D.eff.price_label||'Price')}</th><th class="num">Speed</th><th class="num">Wait (s)</th><th>Access</th></tr></thead><tbody>` +
-  E.map((r,i)=>`<tr class="${i<2?'lead':''} ${r.access?'':'noaccess'}"><td>${esc(r.model)}</td><td>${esc(r.effort)}</td><td class="num">${r.score}${r.estimate?'*':''}</td><td class="num">${money(r.price_1m)}</td><td class="num">${r.speed==null?'--':Math.round(r.speed)}</td><td class="num">${r.wait_s==null?'--':Number(r.wait_s).toFixed(0)}</td><td>${esc(r.access||'none')}</td></tr>`).join('') + `</tbody>`;
-// The two equivalence blocks that stood here said "X% less per task" across models and across
-// effort settings. Both divided one cost per task by another. The free tier does not expose a
-// cost per task: the only price it gives is a list price per million tokens, identical at every
-// effort setting of a model, so both blocks would have divided a number by itself and reported
-// a saving of zero for every pair. They are removed rather than left computing on the wrong
-// column. Restoring them needs a real per-task cost. See the open question in README.
-document.getElementById('equiv').innerHTML = `<p class="note">Cost per task is not published on the tier this page reads, so the effort and model equivalence comparisons are not shown. The price column above is a list price per million tokens and does not vary with effort.</p>`;
+const costCell = r => r.cost_per_task==null ? 'Unavailable' : `${money(r.cost_per_task)}${r.cost_per_task===0?' (rounded)':''}<br><small>${r.cost_stale?'Stale, ':''}${esc(r.cost_fetched||'unknown date')}</small>`;
+document.getElementById('eff').innerHTML = `<thead><tr><th>Model</th><th>Effort</th><th class="num">Score</th><th class="num">Cost / task</th><th class="num">${esc(D.eff.price_label||'Price')}</th><th class="num">Speed</th><th class="num">Wait (s)</th><th>Access</th></tr></thead><tbody>` +
+  E.map((r,i)=>`<tr class="${i<2?'lead':''} ${r.access?'':'noaccess'}"><td>${esc(r.model)}</td><td>${esc(r.effort)}</td><td class="num">${r.score}${r.estimate?'*':''}</td><td class="num">${costCell(r)}</td><td class="num">${money(r.price_1m)}</td><td class="num">${r.speed==null?'--':Math.round(r.speed)}</td><td class="num">${r.wait_s==null?'--':Number(r.wait_s).toFixed(0)}</td><td>${esc(r.access||'none')}</td></tr>`).join('') + `</tbody>`;
+const costRows = E.filter(r=>r.access && !r.cost_stale && r.cost_per_task>0 && r.score!=null);
+const cheaperNear = (anchor, candidates) => candidates.filter(r=>r!==anchor && r.score>=anchor.score-D.noise && r.cost_per_task<anchor.cost_per_task).sort((a,b)=>a.cost_per_task-b.cost_per_task)[0];
+const comparison = (a,b) => `${esc(b.model)} (${esc(b.effort)}), score ${b.score}, costs ${money(b.cost_per_task)} per task versus ${money(a.cost_per_task)} for ${esc(a.model)} (${esc(a.effort)}), score ${a.score}: ${Math.round(100*(1-b.cost_per_task/a.cost_per_task))}% less in AA's benchmark estimate.`;
+const sameModel = [...new Set(costRows.map(r=>r.model))].map(model=>{
+  const candidates=costRows.filter(r=>r.model===model), anchor=candidates[0], cheaper=cheaperNear(anchor,candidates);
+  return cheaper ? `<p>${comparison(anchor,cheaper)}</p>` : '';
+}).filter(Boolean);
+const anchor=costRows[0], alternative=anchor && cheaperNear(anchor,costRows.filter(r=>r.model!==anchor.model));
+document.getElementById('equiv').innerHTML = `<h3>Across effort settings</h3>${sameModel.join('')||'<p>No comparable fresh costs available.</p>'}<h3>Across models</h3>${alternative?'<p>'+comparison(anchor,alternative)+'</p>':'<p>No cheaper model within the score threshold has a comparable fresh cost.</p>'}<p class="note">Comparisons use models you can open, fresh positive costs, and scores within ${D.noise} points of the highest-scoring eligible setting. Similar index scores do not guarantee equivalent performance on your task. Source: <a href="https://artificialanalysis.ai/leaderboards/models">Artificial Analysis leaderboard</a>.</p>`;
 
 // ---------- health ----------
 const sc = s => s==='ok' ? 'good' : (s==='partial'||s==='empty') ? 'mid' : 'weak';
