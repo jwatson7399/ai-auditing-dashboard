@@ -1,2 +1,4 @@
 date,time_et,agent,status,items,pr,notes
 2026-09-10,14:54,commentator,ok,8,27,first live run status partial data
+2026-09-11,09:05,commentator,blocked,0,32,data/2026-09-11.json missing on main after 10m retry
+2026-09-12,09:14,commentator,blocked,0,35,data/2026-09-12.json missing on main after 10m retry
