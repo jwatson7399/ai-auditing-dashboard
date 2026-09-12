@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-12",
- "built_at": "2026-09-12T13:15:19+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 16",
- "built_at_et": "9:15 AM",
+ "built_at": "2026-09-12T13:16:32+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 15",
+ "built_at_et": "9:16 AM",
  "status": "partial",
  "status_notes": [
   "gdpval carried forward",
@@ -10300,14 +10300,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "GLM-5.3",
@@ -11045,9 +11045,9 @@
     ]
    ],
    "missing": [
+    "Claude Fable 5",
     "GPT-5.6 Terra",
-    "GPT-5.6 Luna",
-    "Claude Fable 5"
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -11169,12 +11169,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "FLUX.2 [max]",
      77.6,
      null
     ],
     [
-     "FLUX.2 [max]",
+     "Recraft V4.1 Utility",
      77.6,
      null
     ],
@@ -11204,12 +11204,7 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
-     76.4,
-     null
-    ],
-    [
-     "Ideogram 4.0 (Quality)",
+     "Wan 2.6 Image",
      76.4,
      null
     ],
@@ -11219,12 +11214,17 @@
      null
     ],
     [
+     "Recraft V4.1 Utility Pro",
+     76.4,
+     null
+    ],
+    [
      "Krea 2 Medium Turbo",
      76.4,
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Ideogram 4.0 (Quality)",
      76.4,
      null
     ],
@@ -11269,17 +11269,17 @@
      null
     ],
     [
+     "FLUX.2 [dev] Turbo",
+     73.9,
+     null
+    ],
+    [
      "Luma UNI 1",
      73.9,
      null
     ],
     [
      "Recraft V4.1",
-     73.9,
-     null
-    ],
-    [
-     "FLUX.2 [dev] Turbo",
      73.9,
      null
     ],
@@ -11329,12 +11329,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "P-Image-Ideogram (Medium)",
      71.6,
      null
     ],
     [
-     "P-Image-Ideogram (Medium)",
+     "Cosmos3-Super-Text2Image",
      71.6,
      null
     ],
@@ -11419,12 +11419,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "Kolors 2.1",
      66.6,
      null
     ],
     [
-     "Kolors 2.1",
+     "FLUX.2 [klein] 9B",
      66.6,
      null
     ],
@@ -11484,12 +11484,12 @@
      null
     ],
     [
-     "Dreamina 3.1",
+     "GPT Image 1 Mini (medium)",
      62.6,
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Dreamina 3.1",
      62.6,
      null
     ],
@@ -11539,12 +11539,12 @@
      null
     ],
     [
-     "FLUX1.1 [pro] Ultra",
+     "FLUX.2 [klein] Base 9B",
      60.4,
      null
     ],
     [
-     "FLUX.2 [klein] Base 9B",
+     "FLUX1.1 [pro] Ultra",
      60.4,
      null
     ],
@@ -11554,22 +11554,22 @@
      null
     ],
     [
-     "Midjourney v7 Alpha",
-     59.7,
-     null
-    ],
-    [
      "P-Image",
      59.7,
      null
     ],
     [
-     "FLUX.1 [pro]",
-     58.3,
+     "Midjourney v7 Alpha",
+     59.7,
      null
     ],
     [
      "Ideogram v2",
+     58.3,
+     null
+    ],
+    [
+     "FLUX.1 [pro]",
      58.3,
      null
     ],
@@ -11589,12 +11589,12 @@
      null
     ],
     [
-     "SRPO",
+     "Ideogram v2 Turbo",
      57.3,
      null
     ],
     [
-     "Ideogram v2 Turbo",
+     "SRPO",
      57.3,
      null
     ],
@@ -11689,12 +11689,12 @@
      null
     ],
     [
-     "Stable Diffusion 3.5 Large Turbo",
+     "Stable Diffusion 3.5 Large",
      51.5,
      null
     ],
     [
-     "Stable Diffusion 3.5 Large",
+     "Stable Diffusion 3.5 Large Turbo",
      51.5,
      null
     ],
@@ -11759,12 +11759,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] Base 4B",
+     "Playground v2.5",
      42.8,
      null
     ],
     [
-     "Playground v2.5",
+     "FLUX.2 [klein] Base 4B",
      42.8,
      null
     ],
@@ -11944,12 +11944,12 @@
      null
     ],
     [
-     "LTX-2.5 Fast",
+     "Vidu Q3 Pro",
      79.0,
      null
     ],
     [
-     "Vidu Q3 Pro",
+     "LTX-2.5 Fast",
      79.0,
      null
     ],
@@ -11999,17 +11999,17 @@
      null
     ],
     [
+     "Veo 3.1",
+     76.2,
+     null
+    ],
+    [
      "Veo 3.1 Fast",
      76.2,
      null
     ],
     [
      "Kling 2.5 Turbo 1080p",
-     76.2,
-     null
-    ],
-    [
-     "Veo 3.1",
      76.2,
      null
     ],
@@ -12059,17 +12059,17 @@
      null
     ],
     [
+     "Hailuo 2.3",
+     71.2,
+     null
+    ],
+    [
      "Sora 2 (December)",
      71.2,
      null
     ],
     [
      "Veo 3 Fast Preview",
-     71.2,
-     null
-    ],
-    [
-     "Hailuo 2.3",
      71.2,
      null
     ],
@@ -12259,12 +12259,12 @@
      null
     ],
     [
-     "Kling 1.0",
+     "Ray 2",
      31.3,
      null
     ],
     [
-     "Ray 2",
+     "Kling 1.0",
      31.3,
      null
     ],
@@ -12508,14 +12508,14 @@
      null
     ],
     [
-     "Muse Spark 1.3",
-     78.0,
-     null
-    ],
-    [
      "Grok 4.6",
      78.0,
      "grok"
+    ],
+    [
+     "Muse Spark 1.3",
+     78.0,
+     null
     ],
     [
      "GPT-6 Astra",
@@ -12907,6 +12907,15 @@
    "items": "0",
    "pr": "35",
    "notes": "data/2026-09-12.json missing on main after 10m retry"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-12",
+   "time": "09:15",
+   "status": "partial",
+   "items": "7",
+   "pr": "16",
+   "notes": "gdpval carried forward; omni carried forward; nohalluc carried forward; gdppdf carried forward; web"
   },
   {
    "agent": "Benchmark Scout",
