@@ -29,12 +29,22 @@ Unresolved entries in `inbox/proposed-sources.md` (domains on neither the allowl
 
 `inbox/commentary/YYYY-MM-DD.md` is written by the Commentator agent from the day's JSON. A pull request carrying the `commentary` label and touching only that path is merged by `.github/workflows/commentary-merge.yml`, which then rebuilds the page. Every number in the commentary is checked against the day's data; a block with a number not in the data is set aside and the page shows the templated line instead, marked.
 
-### Open question: cost per task
+### Public leaderboard sources
 
-The efficiency table shows a list price per million tokens, not a cost per task. The free Artificial Analysis tier does not publish cost per task: it varies with effort setting and needs per-run token counts, which the API does not expose. The only price it gives, `price_1m_blended_3_to_1`, is identical at every effort setting of a model. The two equivalence blocks that once said "X% less per task" have been removed rather than left dividing that price by itself.
+The rebuild renders the public Artificial Analysis models table, expands its columns, and matches exact header labels and units. GDPval-AA v2 uses the displayed `(Elo-500)/2000` scale, expressed as percentage points. AA-Omniscience Accuracy and Non-Hallucination Rate use their separate percent columns. Non-hallucination is the complement of AA's conditional hallucination measure, not the percentage of all responses that are correct. GDP.pdf remains carried forward and labeled stale until a separate source is verified.
 
-This leaves principle 6 partly unmet. Two ways to close it, neither taken yet: pay for the tier that exposes per-task cost, or scrape the leaderboard page for that one column. Speed and wait still vary with effort and are unaffected.
+Cost per task comes from the same public table and is joined to API rows by model, effort level, and fallback presence. Ambiguous or unknown settings are left unjoined and logged. Original names and join keys are stored with each cost. A displayed $0.00 is retained as rounded and excluded from savings comparisons; it is not interpreted as free. Missing values stay unavailable or carry forward with their original date. The separate token-price column remains available.
 
-### Benchmarks the API does not carry
+The WebDev fetch uses `https://arena.ai/leaderboard/code`, the overall WebDev board. It preserves the board's published date separately from the fetch date. AutoEval estimates are recorded as exclusions and do not enter the human-vote blend. A source change is not automatically called a re-grade.
 
-`gdpval`, `omni`, `nohalluc` and `gdppdf` have no field on this tier. They are carried forward from the previous day and marked stale rather than guessed at, so a blend that depends on one of them is scored on the tests that are present.
+Raw rendered text and table rows are saved under `data/raw/`. Benchmarks retain per-model provenance, effort settings, and dates; rows absent from a successful fetch are preserved separately as historical observations and excluded from current rankings. A whole-source outage retains the last available board with stale dates. A failed column leaves other validated columns usable. Task cards warn when their blend includes stale scores.
+
+The three public metrics remain owned by their validated public columns, even if similarly named API fields appear later. Changes in source, field, scale, board or index version reset numeric comparisons. Arena dates are read only from the metadata row beside the leaderboard heading.
+
+### Open question: long-term cost source
+
+The public-table scrape implements the September 10 decision. Revisit a paid API tier or removing the cost column after operational experience. Public pages can change; parse failures are logged and stale values remain visible. Model and effort comparisons use only fresh positive costs, so unavailable or rounded-zero prices cannot produce savings claims.
+
+### Validation
+
+Run `python -m unittest discover -s tests -p 'test_*.py'`. The source checks can run without an AA key. Full production fetching still requires `AA_API_KEY` in Actions; never place it in local files. Test output must not be committed as production data or appended to merged run logs.
