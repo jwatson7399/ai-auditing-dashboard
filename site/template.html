@@ -265,6 +265,11 @@ for(const [id,t] of Object.entries(D.picks)){
     const e = D.bench[t.extra]; const emax = Math.max(...Object.values(e.d));
     extra = `<div style="margin-top:18px"><h3>Also worth knowing: ${esc(e.name)}</h3><p class="components" style="margin:6px 0 10px">Not in the blend. Source: ${esc(e.src)}, ${esc(e.fetched)}${e.stale ? ', stale; oldest score '+esc(staleDate(e)) : ''}.</p><div class="chart">${Object.entries(e.d).sort((a,b)=>b[1]-a[1]).map(([m,v])=>`<div class="row ${has(m)?'':'noaccess'}"><div class="lbl">${esc(m)}</div><div class="track"><div class="fill" style="width:${v/emax*100}%"></div></div><div class="val">${v}</div></div>`).join('')}</div></div>`;
   }
+  const history = [...new Set([...Object.keys(w), ...(t.extra ? [t.extra] : [])])].map(k=>{
+    const b = D.bench[k], entries = Object.entries(b?.historical||{});
+    if(!entries.length) return '';
+    return `<details><summary>${esc(b.name)}: ${entries.length} historical scores excluded from current rankings</summary><p class="components">These models were absent or unscored in the latest successful fetch.</p><ul>${entries.map(([m,r])=>`<li>${esc(m)}: ${esc(r.value)}, last fetched ${esc(r.fetched||'unknown')}${r.effort ? ', effort '+esc(r.effort) : ''}</li>`).join('')}</ul></details>`;
+  }).join('');
   const missing = t.missing.length ? `<p class="components">Not rated for this task because one of the tests has not scored it: ${esc(t.missing.join(', '))}.</p>` : '';
   detailsEl.insertAdjacentHTML('beforeend', `<details class="bench" id="${esc(id)}">
     <summary><h2>${esc(t.name)}</h2><span class="sub">pick: ${esc(t.pick||'none')}, overall leader: ${esc(t.overall||'none')}</span><span class="open"><span class="o">show evidence</span><span class="c">hide</span></span></summary>
@@ -274,7 +279,7 @@ for(const [id,t] of Object.entries(D.picks)){
         <div><h3>In everyday use</h3><p>${esc(t.daily)}</p></div>
         <div><h3>How the score is built</h3><p>${esc(comps)}. ${t.media?'Values are arena Elo.':'Each test is scaled 0 to 100, then blended.'} Source: ${esc(srcs)}.</p></div>
       </div>
-      <div><div class="chart">${rows}</div>${t.media?'':'<div class="axis"><span></span><div class="ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div><span></span></div>'}${missing}${extra}</div>
+      <div><div class="chart">${rows}</div>${t.media?'':'<div class="axis"><span></span><div class="ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div><span></span></div>'}${missing}${extra}${history}</div>
     </div></div>
   </details>`);
 }

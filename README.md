@@ -37,7 +37,9 @@ Cost per task comes from the same public table and is joined to API rows by mode
 
 The WebDev fetch uses `https://arena.ai/leaderboard/code`, the overall WebDev board. It preserves the board's published date separately from the fetch date. AutoEval estimates are recorded as exclusions and do not enter the human-vote blend. A source change is not automatically called a re-grade.
 
-Raw rendered text and table rows are saved under `data/raw/`. Benchmarks retain per-model provenance, effort settings, and dates; rows absent from a later fetch carry forward marked stale. A failed column leaves other validated columns usable. Task cards warn when their blend includes stale scores.
+Raw rendered text and table rows are saved under `data/raw/`. Benchmarks retain per-model provenance, effort settings, and dates; rows absent from a successful fetch are preserved separately as historical observations and excluded from current rankings. A whole-source outage retains the last available board with stale dates. A failed column leaves other validated columns usable. Task cards warn when their blend includes stale scores.
+
+The three public metrics remain owned by their validated public columns, even if similarly named API fields appear later. Changes in source, field, scale, board or index version reset numeric comparisons. Arena dates are read only from the metadata row beside the leaderboard heading.
 
 ### Open question: long-term cost source
 

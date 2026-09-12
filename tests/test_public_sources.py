@@ -6,7 +6,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
-from public_sources import AA_COLUMNS, effort_key, parse_aa_table, parse_arena_table
+from public_sources import AA_COLUMNS, ARENA_URLS, arena_source_date, effort_key, parse_aa_table, parse_arena_table
 import rebuild
 
 
@@ -63,7 +63,7 @@ class SourceTests(unittest.TestCase):
         self.assertNotEqual(effort_key('Claude Fable 5 (with fallback)'), effort_key('Claude Fable 5 (max with fallback)'))
 
     def arena(self):
-        return {'title': 'WebDev AI Leaderboard', 'rows': [['Model', 'Score', 'Votes']] + [
+        return {'url':ARENA_URLS['webdev'], 'heading':'Code Arena | WebDev 🏆 Overall', 'title': 'WebDev AI Leaderboard', 'rows': [['Model', 'Score', 'Votes']] + [
             [f'model-{i}', '1507\n+5/-5', '100'] for i in range(6)]}
 
     def test_arena_ci_and_estimates(self):
@@ -80,7 +80,7 @@ class SourceTests(unittest.TestCase):
         self.assertEqual(len(excluded), 2)
 
     def test_arena_wrong_board_and_range(self):
-        p = self.arena(); p['title'] = 'Leaderboard Not Found'
+        p = self.arena(); p['heading'] = 'Leaderboard Not Found'
         with self.assertRaises(ValueError): parse_arena_table(p, 'webdev')
         p = self.arena(); p['rows'][1][1] = '15075'
         with self.assertRaises(ValueError): parse_arena_table(p, 'webdev')
@@ -102,9 +102,13 @@ class SourceTests(unittest.TestCase):
     def test_missing_benchmark_model_keeps_old_date(self):
         prev = {'bench':{'omni':{'d':{'Absent':55}, 'src':'old source', 'fetched':'2026-09-03'}}}
         bench, notes = self.apply({'omni':[{'name':'New', 'value':30, 'display':'30%'}]}, [], prev)
-        self.assertEqual(bench['omni']['d']['Absent'],55)
-        self.assertEqual(rebuild.oldest_stale_date(bench['omni']), '2026-09-03')
-        self.assertTrue(notes)
+        self.assertNotIn('Absent', bench['omni']['d'])
+        self.assertEqual(bench['omni']['historical']['Absent']['value'],55)
+        self.assertEqual(bench['omni']['historical']['Absent']['fetched'],'2026-09-03')
+        self.assertFalse(bench['omni']['stale'])
+        self.assertFalse(notes)
+        next_bench, _ = self.apply({'omni':[{'name':'New', 'value':31, 'display':'31%'}]}, [], {'bench':bench})
+        self.assertEqual(next_bench['omni']['historical'],bench['omni']['historical'])
 
     def test_cost_failure_carries_exact_effort_only(self):
         old = {'model':'Grok 4.6','effort':'high','api_name':'Grok 4.6 (high)',
@@ -121,9 +125,65 @@ class SourceTests(unittest.TestCase):
         self.assertTrue(all(r['cost_per_task'] is None for r in rows))
 
     def test_shift_does_not_assert_regrading(self):
-        old={'d':{str(i):10 for i in range(10)}}
-        new={'name':'Test','d':{str(i):20 for i in range(10)}}
+        old={'src':'fixture','d':{str(i):10 for i in range(10)}}
+        new={'src':'fixture','name':'Test','d':{str(i):20 for i in range(10)}}
         self.assertIn('cause is unconfirmed', rebuild.uniform_shift(new,old)[0])
+
+    def test_nonreasoning_qualifier_blocks_asymmetric_cost_join(self):
+        rows = [{'model':'M','effort':'none','api_name':'M (non-reasoning)'}]
+        self.apply({'cost':[{'name':'M (non-reasoning, special harness)','value':1,'display':'$1.00'}]}, rows)
+        self.assertIsNone(rows[0]['cost_per_task'])
+        self.assertEqual(effort_key('M (none)'),effort_key('M (non-reasoning)'))
+        self.assertNotEqual(effort_key('M (none, special harness)'),effort_key('M (none)'))
+
+    def test_date_requires_unique_scoped_metadata(self):
+        self.assertEqual(arena_source_date({'metadata':['Sep 11, 2026','128 models','679,295 votes']}),'2026-09-11')
+        for cells in (['Sep 11, 2026'], ['Sep 11, 2026','Sep 10, 2026','128 models','100 votes'],
+                      ['Feb 31, 2026','128 models','100 votes'], ['article from Sep 11, 2026','128 models','100 votes']):
+            self.assertIsNone(arena_source_date({'metadata':cells}))
+
+    def test_arena_wrong_text_board_or_filter_rejected(self):
+        with self.assertRaises(ValueError): parse_arena_table(self.arena(),'text')
+        p=self.arena(); p['url'] += '?category=coding'
+        with self.assertRaises(ValueError): parse_arena_table(p,'webdev')
+
+    def test_probe_bypasses_strict_parser(self):
+        from unittest.mock import patch
+        payload={'title':'Changed schema','rows':[['Unexpected']]}
+        with patch.object(rebuild,'fetch_public_table',return_value=payload), contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(rebuild.fetch_arena('webdev',probe=True),payload)
+            with self.assertRaises(ValueError): rebuild.fetch_arena('webdev')
+
+    def test_probe_without_key_reaches_public_sources(self):
+        from unittest.mock import patch
+        with patch.dict(rebuild.os.environ,{'AA_API_KEY':''}), patch.object(sys,'argv',['rebuild.py','--probe']), \
+             patch.object(rebuild,'fetch_arena') as fetch, contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(rebuild.main(),0)
+            self.assertEqual(fetch.call_count,2)
+
+    def test_source_definition_changes_reset_comparison(self):
+        old={'name':'Test','src':'AA','field':'score','elo':False,'d':{'Grok 4.6':10}}
+        for key,value in [('src','public'),('field','new score'),('scale','percent'),('index_version','v2'),('board','coding')]:
+            new=dict(old,d={'Grok 4.6':90}); new[key]=value
+            changes=rebuild.compute_changes({'picks':{},'bench':{'test':new}}, {'picks':{},'bench':{'test':old}})
+            self.assertTrue(any('baseline' in text for _,text in changes))
+            self.assertFalse(any('moved from' in text for _,text in changes))
+            self.assertIsNone(rebuild.uniform_shift(new,old))
+
+    def test_unverified_api_public_fields_are_not_ingested(self):
+        from unittest.mock import patch
+        class Response:
+            def json(self): return {'data':[{'name':'M','evaluations':{'gdpval_aa':1500,'aa_omniscience_accuracy':.8}}]}
+        with patch.object(rebuild,'http_get',return_value=(200,Response())):
+            bench,_,_,_=rebuild.fetch_aa_llms('fixture')
+        self.assertNotIn('gdpval',bench)
+        self.assertNotIn('omni',bench)
+
+    def test_returning_model_replaces_historical_score(self):
+        old={'d':{'M':80},'historical':{'R':{'value':99,'fetched':'2026-01-01'}}}
+        history=rebuild.historical_scores(old,{'R':50})
+        self.assertNotIn('R',history)
+        self.assertEqual(history['M']['value'],80)
 
 
 

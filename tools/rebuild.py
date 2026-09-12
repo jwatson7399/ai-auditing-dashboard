@@ -7,7 +7,7 @@ and the run logs. No language model is involved in any step here.
 
     python tools/rebuild.py                 # full run, needs AA_API_KEY
     python tools/rebuild.py --no-fetch      # rebuild from the last data file only
-    python tools/rebuild.py --probe         # print what the sources return, write nothing
+    python tools/rebuild.py --probe         # print source diagnostics and save raw captures
     python tools/rebuild.py --no-log        # do not append to log/runs-rebuild.csv
 
 Outputs: data/YYYY-MM-DD.json, data/latest.json, site/index.html,
@@ -30,7 +30,7 @@ import sys
 import traceback
 import zoneinfo
 from public_sources import (AA_URL, AA_COLUMNS, ARENA_URLS, fetch_public_table,
-                            parse_aa_table, parse_arena_table, effort_key)
+                            parse_aa_table, parse_arena_table, effort_key, PUBLIC_METRICS)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ET = zoneinfo.ZoneInfo("America/New_York")
@@ -82,9 +82,6 @@ INDEX_API = ["artificial_analysis_intelligence_index"]
 # Token price comes from the API; per-task cost is joined separately from the public table.
 PRICE_API = ["price_1m_blended_3_to_1"]
 PRICE_LABEL = "Price per 1M tokens, 3:1 blend"
-# An Elo board outside this range means the cell we read is not the score. Raising carries the
-# board forward instead of publishing a wrong number.
-ELO_RANGE = (800, 2000)
 
 TASKS = [
     {"id": "coding", "name": "Coding projects", "w": {"terminal": 0.6, "scicode": 0.4},
@@ -238,7 +235,8 @@ def fetch_aa_llms(key, probe=False):
                         "wait_s": m.get("median_time_to_first_answer_token") or m.get("median_time_to_first_token_seconds"),
                         "access": ACCESS.get(base), "estimate": False, "api_name": name})
         for k, b in BENCH.items():
-            if "api" not in b:
+            # Public metric aliases have no verified API scale or definition.
+            if "api" not in b or k in PUBLIC_METRICS:
                 continue
             fk = first_key(ev, b["api"])
             val = None
@@ -294,14 +292,35 @@ def fetch_aa_media(key, kind, probe=False):
 # ------------------------------------------------------------------- arena.ai
 def fetch_arena(board, probe=False):
     payload = fetch_public_table(ARENA_URLS[board], ROOT, "arena-" + board)
+    if probe:
+        log(f"arena {board}: title={payload.get('title')!r}; url={payload.get('url')}; rows={len(payload.get('rows', []))}")
+        log("headers/sample: " + repr(payload.get("rows", [])[:3]))
+        return payload
     data, excluded = parse_arena_table(payload, board)
     log(f"arena {board}: {len(data)} scores; {len(excluded)} estimated or ambiguous rows excluded")
     return data, {"url": payload["url"], "source_updated": payload["source_updated"],
                   "excluded": excluded, "board": board}
 
 
+def historical_scores(old, current):
+    """Preserve absent observations without admitting them to the current ranking."""
+    history = dict(old.get("historical", {}))
+    for model, value in old.get("d", {}).items():
+        if model not in current:
+            history[model] = dict(old.get("records", {}).get(model, {
+                "src": old.get("src"), "fetched": old.get("fetched")}),
+                value=value, effort=old.get("settings", {}).get(model), stale=True)
+    return {m: r for m, r in history.items() if m not in current}
+
+
+def comparable_boards(a, b):
+    # Missing legacy provenance establishes a new baseline, never a numeric delta.
+    keys = ("src", "url", "field", "scale", "index_version", "board", "elo")
+    return bool(a.get("src") and b.get("src")) and all(a.get(k) == b.get(k) for k in keys)
+
+
 def apply_public_aa(parsed, payload, eff_rows, bench, prev, today):
-    """Attach exact effort costs and fill API-missing benchmarks with row provenance."""
+    """Attach exact effort costs and validated public benchmarks with row provenance."""
     notes = []
     source = {"src": "Artificial Analysis public leaderboard", "url": AA_URL,
               "fetched": today, "source_updated": payload.get("source_updated"),
@@ -354,19 +373,9 @@ def apply_public_aa(parsed, payload, eff_rows, bench, prev, today):
                 records[base] = dict(source, page_name=row["name"], field=AA_COLUMNS[k],
                                      display=row["display"], effort=setting, stale=False)
         old = (prev or {}).get("bench", {}).get(k, {})
-        stale_models = []
-        for model, value in old.get("d", {}).items():
-            if model not in d:
-                d[model] = value
-                settings[model] = old.get("settings", {}).get(model, "unknown (carried forward)")
-                records[model] = dict(old.get("records", {}).get(model, {
-                    "src": old.get("src"), "fetched": old.get("fetched")}), stale=True)
-                stale_models.append(model)
         bench[k] = dict(source, name=BENCH[k]["name"], kind="task", elo=False,
-                        field=AA_COLUMNS[k], d=d, settings=settings, records=records,
-                        stale=bool(stale_models), stale_models=stale_models)
-        if stale_models:
-            notes.append(k + " has carried-forward model scores")
+                        field=AA_COLUMNS[k], scale="percent", d=d, settings=settings, records=records,
+                        stale=False, historical=historical_scores(old, d))
     return sorted(set(notes))
 
 
@@ -665,7 +674,10 @@ def uniform_shift(b, pb):
     Returns (text, moved, comparable, median delta) so the caller can also suppress the
     per-model lines for the same test.
     """
-    deltas = {m: v - pb["d"][m] for m, v in b["d"].items() if m in pb["d"] and isinstance(pb["d"][m], (int, float))}
+    if not comparable_boards(b, pb):
+        return None
+    deltas = {m: v - pb["d"][m] for m, v in b["d"].items() if m in pb["d"] and isinstance(pb["d"][m], (int, float))
+              and b.get("settings", {}).get(m) == pb.get("settings", {}).get(m)}
     if len(deltas) < SHIFT_MIN_MODELS:
         return None
     moved = [d for d in deltas.values() if abs(d) >= NOISE]
@@ -707,6 +719,9 @@ def compute_changes(today_d, prev):
         if not pb:
             changes.append(["good", f"New test on the page: {b['name']}."])
             continue
+        if not comparable_boards(b, pb):
+            changes.append(["mid", f"{b['name']}: source or score definition changed; a new comparison baseline starts today."])
+            continue
         shift = uniform_shift(b, pb)
         if shift:
             changes.append(["regrade", shift[0]])
@@ -714,6 +729,8 @@ def compute_changes(today_d, prev):
             if m not in pb["d"]:
                 if ACCESS.get(m) or MEDIA_ACCESS.get(m):
                     changes.append(["good", f"New on {b['name']}: {m} at {v}."])
+            elif b.get("settings", {}).get(m) != pb.get("settings", {}).get(m):
+                continue  # Different effort configurations do not establish model progress.
             elif shift:
                 continue  # the board moved as a whole; a per-model line would misread it as progress
             elif (ACCESS.get(m) or MEDIA_ACCESS.get(m)) and abs(v - pb["d"][m]) >= NOISE:
@@ -845,19 +862,20 @@ def main():
     if args.probe:
         try:
             fetch_aa_llms(key, probe=True)
+        except Exception as e:
+            log(f"AA llms: {e}")
+        if key:
             for kind in ("text-to-image", "text-to-video"):
                 try:
                     fetch_aa_media(key, kind, probe=True)
-                except Exception as e:  # noqa: BLE001
+                except Exception as e:
                     log(f"media/{kind}: {e}")
-            if not args.skip_arena:
-                for board in ("text", "webdev"):
-                    try:
-                        fetch_arena(board, probe=True)
-                    except Exception as e:  # noqa: BLE001
-                        log(f"arena {board}: {e}")
-        except Blocked as e:
-            log(f"blocked: {e}")
+        if not args.skip_arena:
+            for board in ("text", "webdev"):
+                try:
+                    fetch_arena(board, probe=True)
+                except Exception as e:
+                    log(f"arena {board}: {e}")
         return 0
 
     status, notes, items = "ok", [], 0
@@ -938,25 +956,14 @@ def main():
                     names = dict.fromkeys(old.get("d", {})) if b.get("arena") else {}
                     names.update(MEDIA_ACCESS if b.get("media") else ACCESS)
                     d, aliases, unmatched = fold_to_access(d, names)
-                    stale_models = []
                     records = {m: {"fetched": today, "src": src, "stale": False,
                                    "url": source_meta.get("url"), "source_updated": source_meta.get("source_updated"),
                                    "raw_names": [raw for raw, base in aliases.items() if base == m] or [m]}
                                for m in d}
-                    old = (carry or {}).get("bench", {}).get(k, {})
-                    for model, value in old.get("d", {}).items():
-                        if model not in d:
-                            d[model] = value
-                            records[model] = dict(old.get("records", {}).get(model, {
-                                "fetched": old.get("fetched"), "src": old.get("src")}), stale=True)
-                            stale_models.append(model)
-                    if stale_models:
-                        notes.append(k + " has carried-forward model scores")
-                        status = "partial"
                     if aliases:
                         log(f"{k}: folded " + "; ".join(f"{r} -> {v}" for r, v in sorted(aliases.items())))
                     bench[k] = {"name": b["name"], "kind": b["kind"], "elo": bool(b.get("elo")), "src": src, "fetched": today,
-                                "stale": bool(stale_models), "stale_models": stale_models, "records": records,
+                                "stale": False, "historical": historical_scores(old, d), "records": records,
                                 "d": d, "aliases": aliases, "unmatched": unmatched, **source_meta}
                     fresh += 1
                 except Exception as e:  # noqa: BLE001

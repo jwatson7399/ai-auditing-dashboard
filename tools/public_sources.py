@@ -7,6 +7,8 @@ import re
 
 AA_URL = "https://artificialanalysis.ai/leaderboards/models"
 ARENA_URLS = {"text": "https://arena.ai/leaderboard/text", "webdev": "https://arena.ai/leaderboard/code"}
+ELO_RANGE = (800, 2000)
+PUBLIC_METRICS = ("gdpval", "omni", "nohalluc")
 AA_COLUMNS = {
     "gdpval": "GDPval-AA v2\nAgentic Real-World Work Tasks, (Elo-500)/2000",
     "omni": "AA-Omniscience Accuracy\nKnowledge",
@@ -22,6 +24,30 @@ def compact(s):
 def table_rows(page):
     return page.evaluate("""() => Array.from(document.querySelectorAll('table tr')).map(tr =>
         Array.from(tr.querySelectorAll('td,th')).map(td => td.innerText.trim()))""")
+
+
+# Read only the metadata row adjacent to the leaderboard heading. Never use body dates.
+ARENA_HEADER_JS = """() => {
+    const headings = [...document.querySelectorAll('h1')];
+    if (headings.length !== 1) return {heading: '', metadata: []};
+    const h = headings[0];
+    const row = h.parentElement?.nextElementSibling;
+    return {heading: h.innerText, metadata: row ? [...row.children].map(e => e.innerText.trim()) : []};
+}"""
+
+
+def arena_source_date(header):
+    cells = header.get("metadata", [])
+    if not any(re.fullmatch(r"[\d,]+ votes", c) for c in cells) or not any(
+            re.fullmatch(r"[\d,]+ models", c) for c in cells):
+        return None
+    dates = [c for c in cells if re.fullmatch(r"(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{1,2}, \d{4}", c)]
+    if len(dates) == 1:
+        try:
+            return dt.datetime.strptime(dates[0], "%b %d, %Y").date().isoformat()
+        except ValueError:
+            pass
+    return None
 
 
 def fetch_public_table(url, root, name, expand=False):
@@ -47,9 +73,9 @@ def fetch_public_table(url, root, name, expand=False):
                        "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
                        "source_updated": None}
             if "arena.ai" in url:
-                match = re.search(r"\b(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \d{1,2}, \d{4}\b", body)
-                if match:
-                    payload["source_updated"] = dt.datetime.strptime(match.group(), "%b %d, %Y").date().isoformat()
+                header = page.evaluate(ARENA_HEADER_JS)
+                payload["heading"] = header["heading"]
+                payload["source_updated"] = arena_source_date(header)
             raw_dir = os.path.join(root, "data", "raw")
             os.makedirs(raw_dir, exist_ok=True)
             with open(os.path.join(raw_dir, name + "-probe.txt"), "w") as f:
@@ -125,6 +151,9 @@ def effort_key(name):
     fallback = "fallback" in setting
     if "non-reasoning" in setting or setting == "none":
         level = "none"
+        remainder = re.sub(r"\b(non-reasoning|none|effort|default|with|fallback)\b", "", setting)
+        if re.sub(r"[\s,]+", "", remainder):
+            level = setting
     else:
         level_match = re.search(r"\b(max|xhigh|high|medium|low)\b", setting)
         level = level_match[1] if level_match else setting
@@ -138,8 +167,9 @@ def effort_key(name):
 
 
 def parse_arena_table(payload, board):
-    if board == "webdev" and "WebDev" not in payload["title"]:
-        raise ValueError("Arena response is not the WebDev board")
+    expected = {"webdev": "Code Arena | WebDev 🏆 Overall", "text": "Text Arena 🏆 Overall"}
+    if payload.get("url", "").rstrip("/") != ARENA_URLS[board] or compact(payload.get("heading", "")) != compact(expected[board]):
+        raise ValueError(f"Arena response is not the overall {board} board")
     headers, mi, rows = labeled_rows(payload["rows"], allow_duplicates=True)
     counts = Counter(row[mi].split("\n")[0] for row in rows)
     si = next((headers.index(h) for h in ("score", "arena score", "elo", "rating") if h in headers), None)
@@ -155,7 +185,7 @@ def parse_arena_table(payload, board):
             excluded.append({"model": name, "reason": "AutoEval estimate, not human votes", "display": row[si]})
             continue
         match = re.match(r"^(\d+(?:\.\d+)?)(?=\s|[+\-]|$)", row[si])
-        if not match or not 800 <= float(match[1]) <= 2000:
+        if not match or not ELO_RANGE[0] <= float(match[1]) <= ELO_RANGE[1]:
             raise ValueError(f"Invalid Arena score for {name}: {row[si]}")
         data[name] = round(float(match[1]))
     if len(data) < 5:

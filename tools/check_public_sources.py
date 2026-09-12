@@ -14,11 +14,13 @@ def main():
     parsed, errors = parse_aa_table(aa['rows'])
     if errors:
         raise RuntimeError(str(errors))
-    arena = fetch_public_table(ARENA_URLS['webdev'], output, 'arena-webdev')
-    scores, excluded = parse_arena_table(arena, 'webdev')
-    print(json.dumps({'aa_numeric_rows': {k: sum(r['value'] is not None for r in v) for k, v in parsed.items()},
-                      'webdev_scores': len(scores), 'webdev_excluded': excluded,
-                      'webdev_source_updated': arena['source_updated'], 'output': output}, indent=2))
+    result = {'aa_numeric_rows': {k: sum(r['value'] is not None for r in v) for k, v in parsed.items()}, 'output': output}
+    for board in ('webdev', 'text'):
+        arena = fetch_public_table(ARENA_URLS[board], output, 'arena-' + board)
+        scores, excluded = parse_arena_table(arena, board)
+        result[board] = {'scores': len(scores), 'excluded': excluded, 'source_updated': arena['source_updated']}
+    print(json.dumps(result, indent=2))
+
 
 
 if __name__ == '__main__':
