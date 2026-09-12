@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-12",
- "built_at": "2026-09-12T13:16:32+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 15",
- "built_at_et": "9:16 AM",
+ "built_at": "2026-09-12T15:29:20+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 17",
+ "built_at_et": "11:29 AM",
  "status": "partial",
  "status_notes": [
   "gdpval carried forward",
@@ -11045,8 +11045,8 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
     "GPT-5.6 Terra",
+    "Claude Fable 5",
     "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
@@ -11169,12 +11169,12 @@
      null
     ],
     [
-     "FLUX.2 [max]",
+     "Recraft V4.1 Utility",
      77.6,
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "FLUX.2 [max]",
      77.6,
      null
     ],
@@ -11204,7 +11204,12 @@
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Ideogram 4.0 (Quality)",
+     76.4,
+     null
+    ],
+    [
+     "Krea 2 Medium Turbo",
      76.4,
      null
     ],
@@ -11219,12 +11224,7 @@
      null
     ],
     [
-     "Krea 2 Medium Turbo",
-     76.4,
-     null
-    ],
-    [
-     "Ideogram 4.0 (Quality)",
+     "Wan 2.6 Image",
      76.4,
      null
     ],
@@ -11269,6 +11269,11 @@
      null
     ],
     [
+     "Seedream 5.0 Lite",
+     73.9,
+     null
+    ],
+    [
      "FLUX.2 [dev] Turbo",
      73.9,
      null
@@ -11280,11 +11285,6 @@
     ],
     [
      "Recraft V4.1",
-     73.9,
-     null
-    ],
-    [
-     "Seedream 5.0 Lite",
      73.9,
      null
     ],
@@ -11329,22 +11329,22 @@
      null
     ],
     [
-     "P-Image-Ideogram (Medium)",
-     71.6,
-     null
-    ],
-    [
      "Cosmos3-Super-Text2Image",
      71.6,
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
-     71.3,
+     "P-Image-Ideogram (Medium)",
+     71.6,
      null
     ],
     [
      "Recraft V4.1 Pro",
+     71.3,
+     null
+    ],
+    [
+     "FLUX.2 [dev] Flash",
      71.3,
      null
     ],
@@ -11389,12 +11389,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Low)",
+     "Seedream 3.0",
      69.0,
      null
     ],
     [
-     "Seedream 3.0",
+     "P-Image-Ideogram (Low)",
      69.0,
      null
     ],
@@ -11419,12 +11419,12 @@
      null
     ],
     [
-     "Kolors 2.1",
+     "FLUX.2 [klein] 9B",
      66.6,
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "Kolors 2.1",
      66.6,
      null
     ],
@@ -11484,12 +11484,12 @@
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Dreamina 3.1",
      62.6,
      null
     ],
     [
-     "Dreamina 3.1",
+     "GPT Image 1 Mini (medium)",
      62.6,
      null
     ],
@@ -11579,12 +11579,12 @@
      null
     ],
     [
-     "Midjourney v6",
+     "HunyuanImage 2.1",
      57.4,
      null
     ],
     [
-     "HunyuanImage 2.1",
+     "Midjourney v6",
      57.4,
      null
     ],
@@ -11619,12 +11619,12 @@
      null
     ],
     [
-     "HiDream-I1-Dev",
+     "Image-01",
      56.6,
      null
     ],
     [
-     "Image-01",
+     "HiDream-I1-Dev",
      56.6,
      null
     ],
@@ -11689,12 +11689,12 @@
      null
     ],
     [
-     "Stable Diffusion 3.5 Large",
+     "Stable Diffusion 3.5 Large Turbo",
      51.5,
      null
     ],
     [
-     "Stable Diffusion 3.5 Large Turbo",
+     "Stable Diffusion 3.5 Large",
      51.5,
      null
     ],
@@ -11759,12 +11759,12 @@
      null
     ],
     [
-     "Playground v2.5",
+     "FLUX.2 [klein] Base 4B",
      42.8,
      null
     ],
     [
-     "FLUX.2 [klein] Base 4B",
+     "Playground v2.5",
      42.8,
      null
     ],
@@ -11954,12 +11954,12 @@
      null
     ],
     [
-     "Kling 3.0 720p (Standard)",
+     "Kling 3.0 Omni 720p (Standard)",
      78.6,
      null
     ],
     [
-     "Kling 3.0 Omni 720p (Standard)",
+     "Kling 3.0 720p (Standard)",
      78.6,
      null
     ],
@@ -12004,12 +12004,12 @@
      null
     ],
     [
-     "Veo 3.1 Fast",
+     "Kling 2.5 Turbo 1080p",
      76.2,
      null
     ],
     [
-     "Kling 2.5 Turbo 1080p",
+     "Veo 3.1 Fast",
      76.2,
      null
     ],
@@ -12029,12 +12029,12 @@
      null
     ],
     [
-     "Ray 3",
+     "Kling O1 Standard (January)",
      74.2,
      null
     ],
     [
-     "Kling O1 Standard (January)",
+     "Ray 3",
      74.2,
      null
     ],
@@ -12059,7 +12059,7 @@
      null
     ],
     [
-     "Hailuo 2.3",
+     "Veo 3 Fast Preview",
      71.2,
      null
     ],
@@ -12069,7 +12069,7 @@
      null
     ],
     [
-     "Veo 3 Fast Preview",
+     "Hailuo 2.3",
      71.2,
      null
     ],
@@ -12109,12 +12109,12 @@
      null
     ],
     [
-     "LTX-2 Fast",
+     "LTX-2.3 Fast",
      62.6,
      null
     ],
     [
-     "LTX-2.3 Fast",
+     "LTX-2 Fast",
      62.6,
      null
     ],
@@ -12259,12 +12259,12 @@
      null
     ],
     [
-     "Ray 2",
+     "Kling 1.0",
      31.3,
      null
     ],
     [
-     "Kling 1.0",
+     "Ray 2",
      31.3,
      null
     ],
@@ -12915,6 +12915,15 @@
    "status": "partial",
    "items": "7",
    "pr": "16",
+   "notes": "gdpval carried forward; omni carried forward; nohalluc carried forward; gdppdf carried forward; web"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-12",
+   "time": "09:16",
+   "status": "partial",
+   "items": "7",
+   "pr": "15",
    "notes": "gdpval carried forward; omni carried forward; nohalluc carried forward; gdppdf carried forward; web"
   },
   {
