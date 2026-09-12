@@ -4,7 +4,7 @@ on:
     paths:
       - 'tools/**'
       - 'site/template.html'
-      - 'tests/test_*.py'
+      - 'tests/*.py'
       - '.github/workflows/source-checks.yml'
 permissions:
   contents: read
@@ -23,6 +23,8 @@ jobs:
         run: |
           pip install playwright
           python -m playwright install --with-deps chromium
+      - name: Inline evidence browser checks
+        run: python tests/check_task_panels.py
       - name: Fetch public tables without secrets
         run: python tools/check_public_sources.py --output /tmp/auditor-source-check
       - uses: actions/upload-artifact@v4
