@@ -1,4 +1,3 @@
-import base64
 import copy
 import json
 from pathlib import Path
@@ -79,10 +78,36 @@ class DeliveryTests(unittest.TestCase):
         with patch.object(delivery, 'gh', side_effect=subprocess.CalledProcessError(1, 'gh')):
             with self.assertRaises(subprocess.CalledProcessError):
                 delivery.ensure_data(REPO, 10, 1)
-        encoded = base64.b64encode(json.dumps(DATA).encode()).decode()
-        with patch.object(delivery, 'gh', side_effect=[json.dumps([{'name': f'{TODAY}.json'}]),
-                          json.dumps({'content': encoded})]):
-            self.assertEqual(delivery.remote_data(REPO, TODAY), DATA)
+
+    def test_large_raw_snapshot_is_ready_without_dispatch(self):
+        data = dict(DATA, diagnostic_text='x' * (1024 * 1024 + 1))
+        raw = json.dumps(data)
+        self.assertGreater(len(raw.encode()), 1024 * 1024)
+        with patch.object(delivery, 'today_et', return_value=TODAY), \
+             patch.object(delivery, 'gh', side_effect=[json.dumps([{'name': f'{TODAY}.json'}]), raw]) as gh:
+            self.assertEqual(delivery.ensure_data(REPO, 10, 1), data)
+        self.assertEqual(gh.call_count, 2)
+        self.assertEqual(gh.call_args_list[1].args, ('api', '-H',
+                         'Accept: application/vnd.github.raw+json',
+                         f'repos/{REPO}/contents/data/{TODAY}.json?ref=main'))
+
+    def test_raw_fetch_errors_never_dispatch_recovery(self):
+        for error in (subprocess.CalledProcessError(1, 'gh', stderr='HTTP 403'),
+                      subprocess.CalledProcessError(1, 'gh', stderr='HTTP 404'),
+                      subprocess.TimeoutExpired('gh', 45)):
+            with self.subTest(error=error), \
+                 patch.object(delivery, 'today_et', return_value=TODAY), \
+                 patch.object(delivery, 'gh', side_effect=[json.dumps([{'name': f'{TODAY}.json'}]), error]) as gh:
+                with self.assertRaises(type(error)):
+                    delivery.ensure_data(REPO, 10, 1)
+                self.assertEqual(gh.call_count, 2)
+
+    def test_invalid_raw_json_never_dispatches_recovery(self):
+        with patch.object(delivery, 'today_et', return_value=TODAY), \
+             patch.object(delivery, 'gh', side_effect=[json.dumps([{'name': f'{TODAY}.json'}]), '<html>error</html>']) as gh:
+            with self.assertRaises(json.JSONDecodeError):
+                delivery.ensure_data(REPO, 10, 1)
+            self.assertEqual(gh.call_count, 2)
 
     @patch.object(delivery, 'today_et', return_value=TODAY)
     def test_ready_data_needs_no_dispatch(self, date):

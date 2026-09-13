@@ -3,7 +3,6 @@
 No production fetch runs here: authenticated fetching remains in Actions.
 """
 import argparse
-import base64
 import datetime as dt
 import json
 import os
@@ -83,8 +82,10 @@ def remote_data(repo, today):
     entries = json.loads(gh('api', f'repos/{repo}/contents/data?ref=main'))
     if f'{today}.json' not in [entry['name'] for entry in entries]:
         return None
-    blob = json.loads(gh('api', f'repos/{repo}/contents/data/{today}.json?ref=main'))
-    return json.loads(base64.b64decode(blob['content']))
+    # The JSON content envelope is empty above 1 MB. Raw media supports
+    # files up to 100 MB and still uses authenticated API error handling.
+    return json.loads(gh('api', '-H', 'Accept: application/vnd.github.raw+json',
+                         f'repos/{repo}/contents/data/{today}.json?ref=main'))
 
 
 def ensure_data(repo, timeout, interval):
@@ -92,8 +93,7 @@ def ensure_data(repo, timeout, interval):
     data = remote_data(repo, today)
     if ready(data, today):
         return data
-    # Each caller dispatches at most once. Concurrent callers are handled by
-    # the rebuild workflow's lock and its post-checkout ensure_daily guard.
+    # Do not retry dispatch while the first request may still be queued.
     gh('workflow', 'run', 'rebuild.yml', '--repo', repo, '--ref', 'main',
        '-f', 'ensure_daily=true')
     print(f'Requested today\'s data for {today}; waiting up to {timeout}s.', file=sys.stderr)
@@ -117,8 +117,7 @@ def plan_rebuild(root, event, ensure_daily, no_fetch):
         latest = json.loads((root / 'data' / 'latest.json').read_text())
     except (OSError, ValueError):
         latest = None
-    # Explicit manual refreshes and commentary pushes still rebuild. Recovery
-    # requests and a delayed daily schedule can reuse today's committed refresh.
+    # A dated file alone may be superseded; reuse only the current snapshot.
     skip = (not no_fetch and (event == 'schedule' or ensure_daily)
             and ready(snapshot, today) and snapshot == latest)
     return not skip
