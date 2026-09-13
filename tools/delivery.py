@@ -123,6 +123,21 @@ def plan_rebuild(root, event, ensure_daily, no_fetch):
     return not skip
 
 
+def record_skip(root, run, run_id):
+    """A skipped firing still leaves a rebuild log line, or it looks like the job never ran."""
+    if run:
+        return
+    log_dir = root / 'log'
+    log_dir.mkdir(parents=True, exist_ok=True)
+    path = log_dir / 'runs-rebuild.csv'
+    notes = 'no refresh needed; today already current'
+    line = f"{today_et()},{dt.datetime.now(ET).strftime('%H:%M')},rebuild,ok,0,{run_id},{notes}\n"
+    if not path.exists():
+        path.write_text('date,time_et,agent,status,items,pr,notes\n')
+    with path.open('a') as log:
+        log.write(line)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     sub = ap.add_subparsers(dest='command', required=True)
@@ -145,6 +160,7 @@ def main():
     else:
         run = plan_rebuild(args.root, os.getenv('GITHUB_EVENT_NAME'),
                            os.getenv('ENSURE_DAILY') == 'true', os.getenv('NO_FETCH') == 'true')
+        record_skip(args.root, run, os.getenv('GITHUB_RUN_NUMBER', 'local'))
         with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
             output.write(f'run={str(run).lower()}\n')
         print('Refresh required.' if run else 'Today already has usable data; skip duplicate refresh.')

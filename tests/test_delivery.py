@@ -154,6 +154,46 @@ class DeliveryTests(unittest.TestCase):
             (root / 'data' / 'latest.json').write_text(json.dumps(dict(DATA, date='2026-09-11')))
             self.assertTrue(delivery.plan_rebuild(root, 'schedule', False, False))
 
+    @patch.object(delivery, 'today_et', return_value=TODAY)
+    def test_skipped_rebuild_records_ok_log_line(self, date):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            delivery.record_skip(root, run=True, run_id='23')
+            self.assertFalse((root / 'log' / 'runs-rebuild.csv').exists())
+            delivery.record_skip(root, run=False, run_id='22')
+            lines = (root / 'log' / 'runs-rebuild.csv').read_text().splitlines()
+            self.assertEqual(lines[0], 'date,time_et,agent,status,items,pr,notes')
+            self.assertRegex(lines[1],
+                             rf'^{TODAY},\d{{2}}:\d{{2}},rebuild,ok,0,22,no refresh needed; today already current$')
+            delivery.record_skip(root, run=True, run_id='24')
+            self.assertEqual(len((root / 'log' / 'runs-rebuild.csv').read_text().splitlines()), 2)
+
+    @patch.object(delivery, 'today_et', return_value=TODAY)
+    def test_plan_rebuild_command_logs_only_when_skipping(self, date):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / 'data').mkdir()
+            for name in (f'{TODAY}.json', 'latest.json'):
+                (root / 'data' / name).write_text(json.dumps(DATA))
+            out = root / 'github-output'
+            out.write_text('')
+            with patch.object(sys, 'argv', ['delivery.py', 'plan-rebuild', '--root', str(root)]), \
+                 patch.dict('os.environ', {'GITHUB_EVENT_NAME': 'schedule',
+                                           'GITHUB_OUTPUT': str(out),
+                                           'GITHUB_RUN_NUMBER': '9'}, clear=False):
+                delivery.main()
+            self.assertEqual(out.read_text().strip(), 'run=false')
+            log_line = (root / 'log' / 'runs-rebuild.csv').read_text().splitlines()[-1]
+            self.assertIn(',rebuild,ok,0,9,no refresh needed; today already current', log_line)
+            out.write_text('')
+            with patch.object(sys, 'argv', ['delivery.py', 'plan-rebuild', '--root', str(root)]), \
+                 patch.dict('os.environ', {'GITHUB_EVENT_NAME': 'push',
+                                           'GITHUB_OUTPUT': str(out),
+                                           'GITHUB_RUN_NUMBER': '10'}, clear=False):
+                delivery.main()
+            self.assertEqual(out.read_text().strip(), 'run=true')
+            self.assertEqual(len((root / 'log' / 'runs-rebuild.csv').read_text().splitlines()), 2)
+
 
 if __name__ == '__main__':
     unittest.main()

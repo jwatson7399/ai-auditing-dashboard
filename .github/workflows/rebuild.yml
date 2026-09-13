@@ -73,14 +73,21 @@ jobs:
           exit 0
 
       - name: Commit data, page, and log
-        if: steps.plan.outputs.run == 'true'
-        # Runs even when the rebuild failed, so the log line is recorded.
-        # On failure site/index.html is untouched and the old page stays up.
+        # Always run: a skipped firing still has a log line to commit, or the
+        # schedule looks like it never ran. Rebuild failures still record too.
+        # On fetch failure site/index.html is untouched and the old page stays up.
         run: |
           git config user.name "daily-rebuild"
           git config user.email "daily-rebuild@users.noreply.github.com"
           git add data log site/index.html
-          git diff --cached --quiet || git commit -m "Daily rebuild $(date -u +%Y-%m-%d) (run ${{ github.run_number }})"
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          if [ "${{ steps.plan.outputs.run }}" = "true" ]; then
+            git commit -m "Daily rebuild $(date -u +%Y-%m-%d) (run ${{ github.run_number }})"
+          else
+            git commit -m "Rebuild skipped $(date -u +%Y-%m-%d) (run ${{ github.run_number }})"
+          fi
           git push
 
       - name: Upload page
