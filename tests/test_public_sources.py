@@ -88,7 +88,7 @@ class SourceTests(unittest.TestCase):
     def apply(self, parsed, rows, prev=None):
         bench = {}
         with contextlib.redirect_stdout(io.StringIO()):
-            notes = rebuild.apply_public_aa(parsed, {}, rows, bench, prev, '2026-09-11')
+            notes, _gaps = rebuild.apply_public_aa(parsed, {}, rows, bench, prev, '2026-09-11')
         return bench, notes
 
     def test_best_effort_with_provenance(self):
@@ -185,6 +185,14 @@ class SourceTests(unittest.TestCase):
         self.assertNotIn('R',history)
         self.assertEqual(history['M']['value'],80)
 
+    def test_cost_missing_is_known_gap_not_status_note(self):
+        rows = [{'model': 'Grok 4.6', 'effort': 'high', 'api_name': 'Grok 4.6 (high)', 'access': 'grok'}]
+        with contextlib.redirect_stdout(io.StringIO()):
+            notes, gaps = rebuild.apply_public_aa({}, {}, rows, {}, None, '2026-09-12')
+        self.assertEqual(notes, [])
+        self.assertEqual(gaps, ['cost missing or carried forward'])
+        self.assertIsNone(rows[0]['cost_per_task'])
+
 
 
 
@@ -227,6 +235,83 @@ class RebuildIntegrationTests(unittest.TestCase):
             self.assertTrue(failure['eff']['rows'][0]['cost_stale'])
             self.assertEqual(failure['eff']['rows'][0]['cost_fetched'],today)
             self.assertFalse((root/'log/runs-rebuild.csv').exists())
+
+    def _run_rebuild(self, folder, today, baseline, api, effort, rows, arena=None, no_log=True):
+        import json
+        from unittest.mock import patch
+        argv = ['rebuild.py', '--date', today]
+        if no_log:
+            argv.append('--no-log')
+        def fetch_arena(board):
+            if arena:
+                return arena(board)
+            return (baseline['bench'][board]['d'], {})
+        with contextlib.redirect_stdout(io.StringIO()), patch.object(rebuild, 'ROOT', folder), \
+             patch.object(rebuild, 'fetch_aa_llms', side_effect=lambda key: (copy.deepcopy(api), copy.deepcopy(effort), {'fields': {}, 'index': 'fixture'}, {})), \
+             patch.object(rebuild, 'fetch_public_table', return_value={'rows': rows}), \
+             patch.object(rebuild, 'fetch_arena', side_effect=fetch_arena), \
+             patch.object(rebuild, 'fetch_aa_media', side_effect=lambda key, kind: baseline['bench']['image' if kind == 'text-to-image' else 'video']['d']), \
+             patch.object(rebuild, 'pending_prs', return_value=[]), patch.object(rebuild, 'write_xlsx'), \
+             patch.object(sys, 'argv', argv):
+            self.assertEqual(rebuild.main(), 0)
+        return json.loads((Path(folder) / 'data/latest.json').read_text())
+
+    def test_standing_limits_are_known_gaps_and_status_ok(self):
+        import datetime as dt
+        import json
+        import tempfile
+        repo = Path(__file__).resolve().parents[1]
+        baseline = json.loads((repo / 'data/latest.json').read_text())
+        today = (dt.date.fromisoformat(baseline['date']) + dt.timedelta(days=1)).isoformat()
+        api = {k: {'d': copy.deepcopy(b['d']), 'settings': {}} for k, b in baseline['bench'].items()
+               if k in ('terminal', 'scicode', 'tau', 'lcr')}
+        effort = [{'model': 'Grok 4.6', 'effort': 'high', 'api_name': 'Grok 4.6 (high)',
+                   'score': 44, 'access': 'grok'},
+                  {'model': 'Claude Fable 5.1', 'effort': 'max', 'api_name': 'Claude Fable 5.1 (max)',
+                   'score': 50, 'access': 'claude'}]
+        rows = aa_rows(); rows[1] = ['Grok 4.6 (high)', '50%', '60%', '70%', '$1.23']
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); (root / 'data').mkdir(); (root / 'site').mkdir(); (root / 'log').mkdir()
+            (root / 'data/latest.json').write_text(json.dumps(baseline))
+            (root / 'data' / f"{baseline['date']}.json").write_text(json.dumps(baseline))
+            (root / 'site/template.html').write_text((repo / 'site/template.html').read_text())
+            result = self._run_rebuild(folder, today, baseline, api, effort, rows, no_log=False)
+            self.assertEqual(result['status'], 'ok')
+            self.assertNotIn('gdppdf carried forward', result['status_notes'])
+            self.assertNotIn('cost missing or carried forward', result['status_notes'])
+            self.assertIn('gdppdf carried forward', result['known_gaps'])
+            self.assertIn('cost missing or carried forward', result['known_gaps'])
+            log_line = (root / 'log/runs-rebuild.csv').read_text().splitlines()[-1]
+            self.assertIn('gap: gdppdf carried forward', log_line)
+            self.assertIn('gap: cost missing or carried forward', log_line)
+            self.assertIn(',ok,', log_line)
+
+    def test_fetchable_source_carry_forward_still_partial(self):
+        import datetime as dt
+        import json
+        import tempfile
+        repo = Path(__file__).resolve().parents[1]
+        baseline = json.loads((repo / 'data/latest.json').read_text())
+        today = (dt.date.fromisoformat(baseline['date']) + dt.timedelta(days=1)).isoformat()
+        api = {k: {'d': copy.deepcopy(b['d']), 'settings': {}} for k, b in baseline['bench'].items()
+               if k in ('terminal', 'scicode', 'tau', 'lcr')}
+        effort = [{'model': 'Grok 4.6', 'effort': 'high', 'api_name': 'Grok 4.6 (high)',
+                   'score': 44, 'access': 'grok'}]
+        rows = aa_rows(); rows[1] = ['Grok 4.6 (high)', '50%', '60%', '70%', '$1.23']
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder); (root / 'data').mkdir(); (root / 'site').mkdir()
+            (root / 'data/latest.json').write_text(json.dumps(baseline))
+            (root / 'data' / f"{baseline['date']}.json").write_text(json.dumps(baseline))
+            (root / 'site/template.html').write_text((repo / 'site/template.html').read_text())
+            def arena(board):
+                if board == 'webdev':
+                    raise RuntimeError('outage')
+                return (baseline['bench'][board]['d'], {})
+            result = self._run_rebuild(folder, today, baseline, api, effort, rows, arena=arena)
+            self.assertEqual(result['status'], 'partial')
+            self.assertIn('webdev carried forward', result['status_notes'])
+            self.assertNotIn('webdev carried forward', result.get('known_gaps', []))
+            self.assertIn('gdppdf carried forward', result['known_gaps'])
 
 
 if __name__ == '__main__': unittest.main()
