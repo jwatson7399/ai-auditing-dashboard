@@ -52,10 +52,28 @@ def main():
                 assert abs(page.evaluate('scrollY') - y) < 2
                 assert page.evaluate('location.hash') == ''
                 placement(index, columns)
+                # Check label geometry, not just the page's overall scroll width.
+                for axis in page.locator('.evidence-panel:visible .ticks').all():
+                    ticks = axis.evaluate('''el => [...el.children].filter(e=>e.getClientRects().length).map(e=>{
+                      const r=e.getBoundingClientRect(); return {text:e.textContent,left:r.left,right:r.right,top:r.top,height:r.height};
+                    })''')
+                    assert [t['text'] for t in ticks] == (['0','50','100'] if width <= 400 else ['0','25','50','75','100']), ticks
+                    assert all(abs(t['top']-ticks[0]['top']) < 1 and t['height'] < 20 for t in ticks), ticks
+                    assert all(a['right'] + 2 <= b['left'] for a,b in zip(ticks,ticks[1:])), ticks
                 card.press('Space')
                 assert card.get_attribute('aria-expanded') == 'false'
                 assert page.locator('.evidence-panel:visible').count() == 0
                 assert abs(page.evaluate('scrollY') - y) < 2
+
+        # Native Tab order skips every control inside a hidden panel.
+        def tab_closed_cards():
+            cards.nth(0).focus()
+            for index in range(1,8):
+                page.keyboard.press('Tab')
+                assert cards.nth(index).evaluate('(el)=>el===document.activeElement')
+            page.keyboard.press('Tab')
+            assert page.evaluate("!document.activeElement.closest('.evidence-panel')")
+        tab_closed_cards()
 
         # Reposition an already open panel across both breakpoints.
         page.set_viewport_size({'width':1280,'height':900})
@@ -63,15 +81,38 @@ def main():
         panel = page.locator('#evidence-agents')
         panel.locator('details summary').click()
         assert 'Historical fixture: 52, last fetched 2026-09-03' in panel.inner_text()
+        def history_not_ranked():
+            assert panel.locator('details').get_attribute('open') is not None
+            assert 'Historical fixture: 52, last fetched 2026-09-03' in panel.inner_text()
+            assert all('Historical fixture' not in text for text in panel.locator('.chart .row').all_text_contents())
+        history_not_ranked()
         for width, columns in [(800,2),(375,1),(1280,4)]:
             page.set_viewport_size({'width':width,'height':900})
-            page.wait_for_function("getComputedStyle(document.getElementById('tasks')).gridTemplateColumns.split(' ').length === " + str(columns))
-            page.wait_for_timeout(50)  # Allow the media-query change event to run.
+            page.wait_for_function('''columns => {
+              const grid=document.getElementById('tasks'), cards=[...grid.querySelectorAll('.task')];
+              return getComputedStyle(grid).gridTemplateColumns.split(' ').length === columns &&
+                document.getElementById('evidence-agents').previousElementSibling === cards[Math.floor(1 / columns) * columns + columns - 1];
+            }''', arg=columns)
             placement(1, columns)
-            assert panel.locator('details').get_attribute('open') is not None
+            history_not_ranked()
+        cards.nth(1).focus()
+        for index in (2,3):
+            page.keyboard.press('Tab')
+            assert cards.nth(index).evaluate('(el)=>el===document.activeElement')
+        page.keyboard.press('Tab')
+        assert panel.locator('.close-evidence').first.evaluate('(el)=>el===document.activeElement')
+        page.keyboard.press('Tab')
+        assert panel.locator('details summary').evaluate('(el)=>el===document.activeElement')
+        page.keyboard.press('Tab')
+        assert panel.locator('.close-evidence').last.evaluate('(el)=>el===document.activeElement')
+        page.keyboard.press('Tab')
+        assert cards.nth(4).evaluate('(el)=>el===document.activeElement')
         # Switching cards closes the old region; Escape restores the trigger's focus.
         cards.nth(2).click()
         assert panel.is_hidden()
+        cards.nth(1).click()
+        history_not_ranked()
+        cards.nth(2).click()
         page.locator('#evidence-frontend .close-evidence').first.focus()
         page.keyboard.press('Escape')
         assert page.locator('.evidence-panel:visible').count() == 0
@@ -80,6 +121,7 @@ def main():
         assert 'No models have enough scores' in page.locator('#evidence-coding').inner_text()
         page.locator('#evidence-coding .close-evidence').last.click()
         assert cards.nth(0).evaluate('(el)=>el===document.activeElement')
+        tab_closed_cards()
         assert not errors, errors
         browser.close()
     print('Inline evidence checks passed: 8 widths, row placement, keyboard, scroll, resize, history and empty data.')
