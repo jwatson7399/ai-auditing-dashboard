@@ -50,10 +50,10 @@ section>h3{margin-bottom:12px}
 .changes{display:flex;flex-direction:column;gap:10px}
 .changes .item{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:start;font-size:15px}
 .changes .item p{max-width:80ch}
-.tasks{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tasks{overflow-anchor:none;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 @media (max-width:980px){.tasks{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:520px){.tasks{grid-template-columns:1fr}}
-.task{display:flex;flex-direction:column;gap:8px;padding:16px 16px 14px;text-decoration:none;color:inherit}
+.task{font:inherit;text-align:left;cursor:pointer;min-width:0;display:flex;flex-direction:column;gap:8px;padding:16px 16px 14px;text-decoration:none;color:inherit}
 .task:focus-visible{outline:2px solid var(--pick);outline-offset:2px}
 .task .name{font-size:13px;font-weight:600;color:var(--muted)}
 .task .pickname{font-family:var(--display);font-size:18px;font-weight:800;line-height:1.2;color:var(--pick)}
@@ -61,13 +61,15 @@ section>h3{margin-bottom:12px}
 .task .why{font-size:13.5px;color:var(--bar-text);line-height:1.4}
 .task .foot{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:6px}
 .task .chip{font-size:10.5px}
-details.bench{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-top:12px;scroll-margin-top:16px}
-details.bench>summary{cursor:pointer;list-style:none;padding:18px 22px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline}
-details.bench>summary::-webkit-details-marker{display:none}
-details.bench>summary h2{font-size:18px}
-details.bench>summary .sub{color:var(--muted);font-size:14px}
-details.bench>summary .open{margin-left:auto;font-size:12px;color:var(--pick);font-weight:600}
-details[open]>summary .open .c{display:none} details:not([open])>summary .open .o{display:none}
+.task[aria-expanded="true"]{border-color:var(--pick);box-shadow:inset 0 0 0 1px var(--pick)}
+.task .toggle-label{font-size:12px;color:var(--pick);font-weight:600}
+.evidence-panel{grid-column:1 / -1;min-width:0;background:var(--surface);border:1px solid var(--pick);border-radius:10px;margin:0;overflow-wrap:anywhere}
+.evidence-panel[hidden]{display:none}
+.panel-heading{padding:18px 22px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+.panel-heading h2{font-size:18px;flex:1 1 240px}
+.close-evidence{font:inherit;font-size:13px;color:var(--pick);background:transparent;border:1px solid var(--line);border-radius:6px;padding:6px 10px;cursor:pointer}
+.close-evidence:focus-visible,.evidence-panel summary:focus-visible{outline:2px solid var(--pick);outline-offset:2px}
+.panel-footer{margin-top:18px}
 .inner{padding:0 22px 22px}
 .grid{display:grid;grid-template-columns:minmax(260px,36fr) minmax(0,64fr);gap:28px}
 @media (max-width:760px){.grid{grid-template-columns:1fr}}
@@ -138,12 +140,6 @@ footer{margin-top:40px;font-size:13px;color:var(--muted);max-width:72ch}
     <h3>Which model for which task</h3>
     <div class="tasks" id="tasks"></div>
     <p class="note">Picks are limited to what you can open today: Claude (Max or Pro), ChatGPT (Plus or Pro), SuperGrok. Tap a card for the full chart and what the tests actually measure. Lines marked "agent" were written by the Commentator from the day's numbers; unmarked lines are built by code from the numbers alone.</p>
-  </section>
-
-  <section>
-    <h3>The evidence, task by task</h3>
-    <div class="legend"><span><i class="sw p"></i>Today's pick</span><span><i class="sw"></i>You can open it</span><span><i class="sw d"></i>No subscription</span></div>
-    <div id="details"></div>
   </section>
 
   <section>
@@ -234,20 +230,20 @@ document.getElementById('changes').innerHTML = D.changes.map(c=>`<div class="ite
 document.getElementById('changesnote').textContent = D.previous_date ? `Compared against the ${D.previous_date} data file.` : '';
 
 // ---------- tasks ----------
-const tasksEl = document.getElementById('tasks'), detailsEl = document.getElementById('details');
+const tasksEl = document.getElementById('tasks');
 for(const [id,t] of Object.entries(D.picks)){
   const pickLabel = t.pick || 'no pick';
   const evk = t.evidence==='Task tests' ? 'good' : 'mid';
   const confk = t.confidence==='Clear lead' ? 'good' : 'mid';
-  tasksEl.insertAdjacentHTML('beforeend', `<a class="card task" href="#${esc(id)}">
+  tasksEl.insertAdjacentHTML('beforeend', `<button type="button" class="card task" id="task-${esc(id)}" aria-expanded="false" aria-controls="evidence-${esc(id)}">
     <span class="name">${esc(t.name)}</span>
     <span class="pickname">${esc(pickLabel)}</span>
     <span class="runner">then ${esc(t.runner || 'no second option')}</span>
     <span class="why">${esc(t.why)}${t.why_source==='commentator'?' <span class="chip commentator">agent</span>':t.why_source==='flagged'?' <span class="chip weak">agent line set aside: number not in data</span>':''}</span>
     ${Object.keys(t.w||{}).some(k=>D.bench[k].stale) ? `<span class="why">Uses old scores: ${esc(Object.keys(t.w).filter(k=>D.bench[k].stale).map(k=>D.bench[k].name+' (oldest '+staleDate(D.bench[k])+')').join('; '))}.</span>` : ''}
     <span class="foot"><span class="chip ${confk}">${esc(t.confidence)}</span><span class="chip ${evk}">${esc(t.evidence)}</span>${t.overall && t.overall!==t.pick?'<span class="chip weak">Not the overall leader</span>':''}</span>
-  </a>`);
-  if(!t.rows.length) continue;
+    <span class="toggle-label">Show evidence</span>
+  </button>`);
   const w = t.w || {};
   const k0 = Object.keys(w)[0];
   const max = t.media ? Math.max(...t.rows.map(x=>D.bench[k0].d[x[0]])) : 100;
@@ -271,17 +267,64 @@ for(const [id,t] of Object.entries(D.picks)){
     return `<details><summary>${esc(b.name)}: ${entries.length} historical scores excluded from current rankings</summary><p class="components">These models were absent or unscored in the latest successful fetch.</p><ul>${entries.map(([m,r])=>`<li>${esc(m)}: ${esc(r.value)}, last fetched ${esc(r.fetched||'unknown')}${r.effort ? ', effort '+esc(r.effort) : ''}</li>`).join('')}</ul></details>`;
   }).join('');
   const missing = t.missing.length ? `<p class="components">Not rated for this task because one of the tests has not scored it: ${esc(t.missing.join(', '))}.</p>` : '';
-  detailsEl.insertAdjacentHTML('beforeend', `<details class="bench" id="${esc(id)}">
-    <summary><h2>${esc(t.name)}</h2><span class="sub">pick: ${esc(t.pick||'none')}, overall leader: ${esc(t.overall||'none')}</span><span class="open"><span class="o">show evidence</span><span class="c">hide</span></span></summary>
-    <div class="inner"><div class="grid">
+  tasksEl.insertAdjacentHTML('beforeend', `<section class="evidence-panel" id="evidence-${esc(id)}" role="region" aria-labelledby="evidence-title-${esc(id)}" hidden>
+    <div class="panel-heading"><h2 id="evidence-title-${esc(id)}">${esc(t.name)}: evidence</h2><button type="button" class="close-evidence" aria-label="Close ${esc(t.name)} evidence">Close evidence</button></div>
+    <div class="inner"><div class="legend"><span><i class="sw p"></i>Today's pick</span><span><i class="sw"></i>You can open it</span><span><i class="sw d"></i>No subscription</span></div>
+    ${!t.rows.length ? '<p class="components">No models have enough scores to be ranked for this task.</p>' : ''}<div class="grid">
       <div class="explain">
         <div><h3>What the tests do</h3><p>${esc(t.tests)}</p></div>
         <div><h3>In everyday use</h3><p>${esc(t.daily)}</p></div>
         <div><h3>How the score is built</h3><p>${esc(comps)}. ${t.media?'Values are arena Elo.':'Each test is scaled 0 to 100, then blended.'} Source: ${esc(srcs)}.</p></div>
       </div>
       <div><div class="chart">${rows}</div>${t.media?'':'<div class="axis"><span></span><div class="ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div><span></span></div>'}${missing}${extra}${history}</div>
-    </div></div>
-  </details>`);
+    </div><div class="panel-footer"><button type="button" class="close-evidence" aria-label="Close ${esc(t.name)} evidence">Close evidence</button></div></div>
+  </section>`);
+}
+
+// One full-width panel follows the last card in the selected card's current row.
+const taskCards = [...tasksEl.querySelectorAll('.task')];
+let activeCard = null;
+const panelFor = card => document.getElementById(card.getAttribute('aria-controls'));
+function placePanel(){
+  if(!activeCard) return;
+  const columns = getComputedStyle(tasksEl).gridTemplateColumns.split(' ').length;
+  const index = taskCards.indexOf(activeCard);
+  const rowEnd = Math.min(taskCards.length - 1, Math.floor(index / columns) * columns + columns - 1);
+  taskCards[rowEnd].after(panelFor(activeCard));
+}
+function setExpanded(card, expanded){
+  card.setAttribute('aria-expanded', String(expanded));
+  card.querySelector('.toggle-label').textContent = expanded ? 'Hide evidence' : 'Show evidence';
+  panelFor(card).hidden = !expanded;
+}
+function keepScroll(change){
+  const x = window.scrollX, y = window.scrollY;
+  change();
+  tasksEl.getBoundingClientRect(); // Resolve layout before restoring the viewport.
+  window.scrollTo({left:x, top:y, behavior:'instant'});
+}
+function closeEvidence(){
+  if(!activeCard) return;
+  const card = activeCard;
+  keepScroll(()=>{setExpanded(card, false); activeCard = null; card.focus({preventScroll:true});});
+}
+tasksEl.addEventListener('click', event=>{
+  const card = event.target.closest('.task');
+  if(card){
+    if(card === activeCard){closeEvidence(); return;}
+    keepScroll(()=>{
+      if(activeCard) setExpanded(activeCard, false);
+      activeCard = card;
+      placePanel();
+      setExpanded(card, true);
+    });
+  }else if(event.target.closest('.close-evidence')) closeEvidence();
+});
+tasksEl.addEventListener('keydown', event=>{
+  if(event.key === 'Escape' && activeCard){event.preventDefault(); closeEvidence();}
+});
+for(const query of ['(max-width:980px)', '(max-width:520px)']){
+  matchMedia(query).addEventListener('change', ()=>keepScroll(placePanel));
 }
 
 // ---------- scout findings ----------
