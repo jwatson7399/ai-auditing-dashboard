@@ -1,0 +1,1170 @@
+{
+  "url": "https://arena.ai/leaderboard/code",
+  "title": "WebDev AI Leaderboard - Best AI Models for Web Development",
+  "rows": [
+    [
+      "Rank",
+      "Rank Spread",
+      "Model",
+      "Score",
+      "Votes",
+      "Price $/M",
+      "Context"
+    ],
+    [
+      "1",
+      "1\n1",
+      "gpt-6-astra-max\nOpenAI \u00b7 Proprietary",
+      "1800\n+16/-16",
+      "2,281",
+      "$10 / $50",
+      "1.1M"
+    ],
+    [
+      "2",
+      "2\n2",
+      "claude-fable-5.1-max\nAnthropic \u00b7 Proprietary",
+      "1758\n+14/-14",
+      "3,036",
+      "$10 / $50",
+      "1M"
+    ],
+    [
+      "3",
+      "3\n6",
+      "claude-opus-5-max\nAnthropic \u00b7 Proprietary",
+      "1687\n+7/-7",
+      "12,087",
+      "$5 / $25",
+      "1M"
+    ],
+    [
+      "4",
+      "3\n7",
+      "qwen3.8-max-0902\nAlibaba \u00b7 Proprietary",
+      "1681\n+15/-15\nPreliminary",
+      "2,262",
+      "$2 / $6",
+      "N/A"
+    ],
+    [
+      "5",
+      "3\n8",
+      "kimi-k3-max\nMoonshot \u00b7 Kimi K3 license",
+      "1674\n+11/-11",
+      "4,547",
+      "$3 / $15",
+      "1M"
+    ],
+    [
+      "6",
+      "3\n8",
+      "qwen3.8-max\nAlibaba \u00b7 Proprietary",
+      "1671\n+12/-12\nPreliminary",
+      "3,221",
+      "$2 / $6",
+      "1M"
+    ],
+    [
+      "7",
+      "4\n8",
+      "claude-opus-5-high\nAnthropic \u00b7 Proprietary",
+      "1660\n+7/-7",
+      "12,566",
+      "$5 / $25",
+      "1M"
+    ],
+    [
+      "8",
+      "5\n9",
+      "muse-spark-1.3-max\nMeta \u00b7 Proprietary",
+      "1652\n+12/-12",
+      "2,972",
+      "$1.25 / $4.25",
+      "1M"
+    ],
+    [
+      "9",
+      "8\n16",
+      "qwen3.8-flash-next\nAlibaba \u00b7 qwen-community-1.0",
+      "1635\n+13/-13\nPreliminary",
+      "2,779",
+      "$0.16 / $0.47",
+      "1M"
+    ],
+    [
+      "10",
+      "9\n16",
+      "claude-fable-5\nAnthropic \u00b7 Proprietary",
+      "1628\n+7/-7",
+      "10,081",
+      "$10 / $50",
+      "1M"
+    ],
+    [
+      "11",
+      "9\n17",
+      "hy4-preview\nTencent \u00b7 Apache 2.0",
+      "1624\n+13/-13\nPreliminary",
+      "2,321",
+      "$0.83 / $2.50",
+      "1M"
+    ],
+    [
+      "12",
+      "9\n17",
+      "muse-spark-1.3 (xHigh)\nMeta \u00b7 Proprietary",
+      "1623\n+14/-14",
+      "2,123",
+      "$1.25 / $4.25",
+      "1M"
+    ],
+    [
+      "13",
+      "9\n17",
+      "grok-4.6-high\nSpaceXAI \u00b7 Proprietary",
+      "1618\n+10/-10",
+      "4,282",
+      "$2 / $6",
+      "500K"
+    ],
+    [
+      "14",
+      "9\n17",
+      "gpt-5.6-sol-xhigh (codex-harness)\nOpenAI \u00b7 Proprietary",
+      "1617\n+7/-7",
+      "11,916",
+      "$4 / $20",
+      "1.1M"
+    ],
+    [
+      "15",
+      "9\n17",
+      "glm-5.3-max\nZ.ai \u00b7 MIT",
+      "1614\n+11/-11",
+      "3,725",
+      "$1.40 / $4.40",
+      "1M"
+    ],
+    [
+      "16",
+      "9\n20",
+      "deepseek-v4.1-flash-max\nDeepSeek \u00b7 MIT",
+      "1614\n+17/-17",
+      "1,361",
+      "$0.30 / $1.20",
+      "1M"
+    ],
+    [
+      "17",
+      "11\n20",
+      "glm-5.3-flash\nZ.ai \u00b7 MIT",
+      "1607\n+12/-12",
+      "2,925",
+      "$0.07 / $0.25",
+      "1M"
+    ],
+    [
+      "18",
+      "16\n22",
+      "qwen3.8-27b\nAlibaba \u00b7 Apache 2.0",
+      "1593\n+9/-9",
+      "4,913",
+      "$0.40 / $3",
+      "N/A"
+    ],
+    [
+      "19",
+      "16\n22",
+      "glm-5.2-max\nZ.ai \u00b7 MIT",
+      "1592\n+7/-7",
+      "10,516",
+      "$1.40 / $4.40",
+      "1M"
+    ],
+    [
+      "20",
+      "16\n23",
+      "gemini-3.7-flash-high\nGoogle \u00b7 Proprietary",
+      "1587\n+12/-12\nPreliminary",
+      "3,007",
+      "$0.75 / $3.75",
+      "1M"
+    ],
+    [
+      "21",
+      "18\n23",
+      "deepseek-v4-pro-high-20260813\nDeepSeek \u00b7 MIT",
+      "1581\n+10/-10",
+      "4,258",
+      "$1.32 / $3.96",
+      "N/A"
+    ],
+    [
+      "22",
+      "18\n23",
+      "deepseek-v4-flash-high\nDeepSeek \u00b7 MIT",
+      "1580\n+10/-10",
+      "4,723",
+      "$0.30 / $1.20",
+      "1M"
+    ],
+    [
+      "23",
+      "20\n27",
+      "gemini-3.8-flash-high\nGoogle \u00b7 Proprietary",
+      "1568\n+12/-12\nPreliminary",
+      "2,732",
+      "$0.75 / $3.75",
+      "1M"
+    ],
+    [
+      "24",
+      "23\n27",
+      "claude-opus-4-8-high\nAnthropic \u00b7 Proprietary",
+      "1559\n+7/-7",
+      "13,787",
+      "$5 / $25",
+      "1M"
+    ],
+    [
+      "25",
+      "23\n28",
+      "claude-opus-4-7\nAnthropic \u00b7 Proprietary",
+      "1557\n+6/-6",
+      "15,914",
+      "$5 / $25",
+      "1M"
+    ],
+    [
+      "26",
+      "23\n29",
+      "claude-opus-4-7-high\nAnthropic \u00b7 Proprietary",
+      "1555\n+6/-6",
+      "16,387",
+      "$5 / $25",
+      "1M"
+    ],
+    [
+      "27",
+      "23\n30",
+      "grok-4.5\nSpaceXAI \u00b7 Proprietary",
+      "1555\n+8/-8",
+      "8,133",
+      "$2 / $6",
+      "500K"
+    ],
+    [
+      "28",
+      "25\n34",
+      "claude-opus-4-6-high\nAnthropic \u00b7 Proprietary",
+      "1547\n+6/-6",
+      "18,332",
+      "$5 / $25",
+      "1M"
+    ],
+    [
+      "29",
+      "26\n34",
+      "muse-spark-1.1\nMeta \u00b7 Proprietary",
+      "1542\n+8/-8",
+      "7,549",
+      "$1.25 / $4.25",
+      "N/A"
+    ],
+    [
+      "30",
+      "28\n34",
+      "claude-opus-4-8\nAnthropic \u00b7 Proprietary",
+      "1539\n+6/-6",
+      "12,654",
+      "$5 / $25",
+      "1M"
+    ],
+    [
+      "31",
+      "28\n34",
+      "claude-opus-4-6\nAnthropic \u00b7 Proprietary",
+      "1537\n+5/-5",
+      "19,536",
+      "$5 / $25",
+      "1M"
+    ],
+    [
+      "32",
+      "28\n34",
+      "gemini-3.6-flash-high\nGoogle \u00b7 Proprietary",
+      "1537\n+8/-8",
+      "8,259",
+      "$0.75 / $3.75",
+      "1M"
+    ],
+    [
+      "33",
+      "28\n34",
+      "claude-sonnet-5-high\nAnthropic \u00b7 Proprietary",
+      "1537\n+7/-7",
+      "9,296",
+      "$2 / $10",
+      "1M"
+    ],
+    [
+      "34",
+      "27\n40",
+      "muse-spark-1.2 (xHigh)\nMeta \u00b7 Proprietary",
+      "1534\n+14/-14",
+      "2,065",
+      "$1.25 / $4.25",
+      "N/A"
+    ],
+    [
+      "35",
+      "34\n43",
+      "gpt-5.6-terra-xhigh (codex-harness)\nOpenAI \u00b7 Proprietary",
+      "1521\n+8/-8",
+      "7,694",
+      "$2 / $12",
+      "1M"
+    ],
+    [
+      "36",
+      "34\n42",
+      "claude-sonnet-4-6\nAnthropic \u00b7 Proprietary",
+      "1521\n+5/-5",
+      "21,642",
+      "$1.50 / $7.50",
+      "1M"
+    ],
+    [
+      "37",
+      "34\n43",
+      "gpt-5.6-luna-xhigh (codex-harness)\nOpenAI \u00b7 Proprietary",
+      "1519\n+8/-8",
+      "7,828",
+      "$0.20 / $1.20",
+      "1M"
+    ],
+    [
+      "38",
+      "34\n43",
+      "seed-2.1-pro-preview\nBytedance \u00b7 Proprietary",
+      "1519\n+7/-7",
+      "9,333",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "39",
+      "34\n43",
+      "qwen3.7-max-20260517\nAlibaba \u00b7 Proprietary",
+      "1517\n+8/-8",
+      "8,363",
+      "$1.48 / $4.42",
+      "1M"
+    ],
+    [
+      "40",
+      "34\n45",
+      "hy3\nTencent \u00b7 Apache 2.0",
+      "1513\n+11/-11",
+      "3,586",
+      "$0.08 / $0.33",
+      "262.1K"
+    ],
+    [
+      "41",
+      "35\n44",
+      "gpt-5.5-xhigh (codex-harness)\nOpenAI \u00b7 Proprietary",
+      "1510\n+6/-6",
+      "14,946",
+      "$5 / $30",
+      "N/A"
+    ],
+    [
+      "42",
+      "35\n45",
+      "kimi-k2.6\nMoonshot \u00b7 Modified MIT",
+      "1509\n+7/-7",
+      "9,585",
+      "$0.95 / $4",
+      "262.1K"
+    ],
+    [
+      "43",
+      "36\n45",
+      "glm-5.1\nZ.ai \u00b7 MIT",
+      "1508\n+7/-7",
+      "10,220",
+      "$1.40 / $4.40",
+      "202.8K"
+    ],
+    [
+      "44",
+      "40\n48",
+      "gemini-3.5-flash-high\nGoogle \u00b7 Proprietary",
+      "1500\n+7/-7",
+      "8,931",
+      "$0.75 / $4.50",
+      "1M"
+    ],
+    [
+      "45",
+      "41\n50",
+      "claude-opus-4-5-20251101-high-32k\nAnthropic \u00b7 Proprietary",
+      "1495\n+8/-8",
+      "10,592",
+      "$5 / $25",
+      "200K"
+    ],
+    [
+      "46",
+      "44\n50",
+      "gemini-3.5-flash-medium\nGoogle \u00b7 Proprietary",
+      "1492\n+7/-7",
+      "11,412",
+      "$0.75 / $4.50",
+      "1M"
+    ],
+    [
+      "47",
+      "44\n52",
+      "gpt-5.5-high (codex-harness)\nOpenAI \u00b7 Proprietary",
+      "1487\n+6/-6",
+      "17,020",
+      "$5 / $30",
+      "N/A"
+    ],
+    [
+      "48",
+      "44\n53",
+      "minimax-m3\nMiniMax \u00b7 MiniMax Community License",
+      "1487\n+6/-6",
+      "12,686",
+      "$0.30 / $1.20",
+      "524.3K"
+    ],
+    [
+      "49",
+      "45\n55",
+      "qwen3.6-max-preview\nAlibaba \u00b7 Proprietary",
+      "1479\n+13/-13",
+      "2,601",
+      "$1.03 / $6.16",
+      "262.1K"
+    ],
+    [
+      "50",
+      "48\n55",
+      "mimo-v2.5-pro\nXiaomi \u00b7 MIT",
+      "1475\n+6/-6",
+      "15,843",
+      "$0.43 / $0.87",
+      "1.1M"
+    ],
+    [
+      "51",
+      "47\n57",
+      "kimi-k2.7-code\nMoonshot \u00b7 Modified MIT",
+      "1473\n+10/-10",
+      "4,683",
+      "$0.71 / $3.50",
+      "262.1K"
+    ],
+    [
+      "52",
+      "49\n58",
+      "claude-opus-4-5-20251101\nAnthropic \u00b7 Proprietary",
+      "1468\n+7/-7",
+      "12,899",
+      "$5 / $25",
+      "200K"
+    ],
+    [
+      "53",
+      "49\n58",
+      "deepseek-v4-pro-high-preview\nDeepSeek \u00b7 MIT",
+      "1464\n+6/-6",
+      "12,405",
+      "$1.32 / $3.96",
+      "1M"
+    ],
+    [
+      "54",
+      "47\n64",
+      "gpt-5.4-high (codex-harness)\nOpenAI \u00b7 Proprietary",
+      "1463\n+19/-19",
+      "1,277",
+      "$2.50 / $15",
+      "1.1M"
+    ],
+    [
+      "55",
+      "51\n58",
+      "qwen3.6-plus\nAlibaba \u00b7 Proprietary",
+      "1461\n+6/-6",
+      "17,562",
+      "$0.33 / $1.95",
+      "1M"
+    ],
+    [
+      "56",
+      "51\n60",
+      "gpt-5.5 (codex-harness)\nOpenAI \u00b7 Proprietary",
+      "1458\n+6/-6",
+      "15,012",
+      "$5 / $30",
+      "N/A"
+    ],
+    [
+      "57",
+      "55\n67",
+      "gemini-3.1-pro-preview\nGoogle \u00b7 Proprietary",
+      "1447\n+5/-5",
+      "22,891",
+      "$1 / $6",
+      "1M"
+    ],
+    [
+      "58",
+      "45\n76",
+      "gemini-3.5-flash-lite\nGoogle \u00b7 Proprietary",
+      "1447\n+42/-42",
+      "228",
+      "$0.15 / $1.25",
+      "1M"
+    ],
+    [
+      "59",
+      "55\n68",
+      "deepseek-v4-pro\nDeepSeek \u00b7 MIT",
+      "1446\n+6/-6",
+      "13,183",
+      "$1.32 / $3.96",
+      "1M"
+    ],
+    [
+      "60",
+      "52\n70",
+      "gpt-5.4-medium (codex-harness)\nOpenAI \u00b7 Proprietary",
+      "1443\n+19/-19",
+      "1,316",
+      "$2.50 / $15",
+      "1.1M"
+    ],
+    [
+      "61",
+      "56\n70",
+      "gemini-3-pro\nGoogle \u00b7 Proprietary",
+      "1439\n+9/-9",
+      "13,573",
+      "$2 / $12",
+      "1M"
+    ],
+    [
+      "62",
+      "56\n70",
+      "gemini-3-flash\nGoogle \u00b7 Proprietary",
+      "1438\n+9/-9",
+      "10,453",
+      "$0.50 / $3",
+      "1M"
+    ],
+    [
+      "63",
+      "57\n70",
+      "mimo-v2.5\nXiaomi \u00b7 MIT",
+      "1437\n+6/-6",
+      "14,117",
+      "$0.14 / $0.28",
+      "1.1M"
+    ],
+    [
+      "64",
+      "57\n70",
+      "kimi-k2.5-thinking\nMoonshot \u00b7 Modified MIT",
+      "1436\n+5/-5",
+      "19,042",
+      "$0.60 / $3",
+      "N/A"
+    ],
+    [
+      "65",
+      "56\n70",
+      "glm-5\nZ.ai \u00b7 MIT",
+      "1436\n+8/-8",
+      "7,056",
+      "$1 / $3.20",
+      "202.8K"
+    ],
+    [
+      "66",
+      "56\n71",
+      "glm-4.7\nZ.ai \u00b7 MIT",
+      "1435\n+12/-12",
+      "3,811",
+      "$0.40 / $1.75",
+      "204.8K"
+    ],
+    [
+      "67",
+      "57\n70",
+      "mimo-v2-pro\nXiaomi \u00b7 Proprietary",
+      "1433\n+8/-8",
+      "6,963",
+      "$1 / $3",
+      "1M"
+    ],
+    [
+      "68",
+      "59\n70",
+      "deepseek-v4-flash-high-preview\nDeepSeek \u00b7 MIT",
+      "1431\n+7/-7",
+      "9,493",
+      "$0.30 / $1.20",
+      "1M"
+    ],
+    [
+      "69",
+      "59\n77",
+      "gpt-5-medium\nOpenAI \u00b7 Proprietary",
+      "1420\n+16/-16",
+      "3,032",
+      "$1.25 / $10",
+      "400K"
+    ],
+    [
+      "70",
+      "58\n83",
+      "gpt-5.2\nOpenAI \u00b7 Proprietary",
+      "1417\n+23/-23",
+      "1,055",
+      "$0.88 / $7",
+      "400K"
+    ],
+    [
+      "71",
+      "68\n79",
+      "inkling\nThinky \u00b7 Apache 2.0",
+      "1410\n+7/-7",
+      "8,970",
+      "$1 / $4.05",
+      "524.3K"
+    ],
+    [
+      "72",
+      "67\n83",
+      "gpt-5.3-codex (codex-harness)\nOpenAI \u00b7 Proprietary",
+      "1409\n+14/-14",
+      "2,514",
+      "$1.75 / $14",
+      "400K"
+    ],
+    [
+      "73",
+      "68\n82",
+      "Inkling Small\nThinky \u00b7 Apache 2.0",
+      "1407\n+9/-9",
+      "5,058",
+      "$0.50 / $1.20",
+      "524.3K"
+    ],
+    [
+      "74",
+      "68\n83",
+      "kimi-k2.5-instant\nMoonshot \u00b7 Modified MIT",
+      "1406\n+12/-12",
+      "3,095",
+      "$0.45 / $2.25",
+      "262.1K"
+    ],
+    [
+      "75",
+      "68\n87",
+      "glm-5v-turbo\nZ.ai \u00b7 Proprietary",
+      "1401\n+14/-14",
+      "2,185",
+      "$1.20 / $4",
+      "202.8K"
+    ],
+    [
+      "76",
+      "68\n83",
+      "qwen3.5-397b-a17b\nAlibaba \u00b7 Apache 2.0",
+      "1399\n+5/-5",
+      "19,922",
+      "$0.55 / $3.50",
+      "262.1K"
+    ],
+    [
+      "77",
+      "70\n85",
+      "minimax-m2.7\nMiniMax \u00b7 Modified MIT",
+      "1398\n+6/-6",
+      "15,194",
+      "$0.30 / $1.20",
+      "204.8K"
+    ],
+    [
+      "78",
+      "69\n85",
+      "gpt-5.4-mini-high\nOpenAI \u00b7 Proprietary",
+      "1397\n+7/-7",
+      "11,279",
+      "$0.75 / $4.50",
+      "400K"
+    ],
+    [
+      "79",
+      "71\n87",
+      "claude-sonnet-4-5-20250929-high-32k\nAnthropic \u00b7 Proprietary",
+      "1393\n+8/-8",
+      "12,764",
+      "$3 / $15",
+      "200K"
+    ],
+    [
+      "80",
+      "70\n88",
+      "gpt-5.1-medium\nOpenAI \u00b7 Proprietary",
+      "1392\n+12/-12",
+      "4,751",
+      "$0.63 / $5",
+      "400K"
+    ],
+    [
+      "81",
+      "71\n90",
+      "claude-opus-4-1-20250805\nAnthropic \u00b7 Proprietary",
+      "1389\n+11/-11",
+      "6,769",
+      "$15 / $75",
+      "200K"
+    ],
+    [
+      "82",
+      "72\n90",
+      "minimax-m2.1-preview\nMiniMax \u00b7 MIT",
+      "1387\n+10/-10",
+      "7,281",
+      "$0.30 / $1.20",
+      "204.8K"
+    ],
+    [
+      "83",
+      "71\n92",
+      "gpt-5.4\nOpenAI \u00b7 Proprietary",
+      "1387\n+13/-13",
+      "2,493",
+      "$2.50 / $15",
+      "1.1M"
+    ],
+    [
+      "84",
+      "76\n90",
+      "claude-sonnet-4-5-20250929\nAnthropic \u00b7 Proprietary",
+      "1385\n+7/-7",
+      "15,150",
+      "$3 / $15",
+      "200K"
+    ],
+    [
+      "85",
+      "76\n91",
+      "minimax-m2.5\nMiniMax \u00b7 Modified MIT",
+      "1384\n+8/-8",
+      "7,186",
+      "$0.27 / $1.08",
+      "204.8K"
+    ],
+    [
+      "86",
+      "78\n90",
+      "gemini-3-flash (thinking-minimal)\nGoogle \u00b7 Proprietary",
+      "1383\n+5/-5",
+      "20,911",
+      "$0.50 / $3",
+      "1M"
+    ],
+    [
+      "87",
+      "81\n94",
+      "grok-4.20-beta-0309-reasoning\nSpaceXAI \u00b7 Proprietary",
+      "1374\n+6/-6",
+      "14,571",
+      "$1.25 / $2.50",
+      "1M"
+    ],
+    [
+      "88",
+      "78\n98",
+      "solar-pro4\nUpstage \u00b7 Proprietary",
+      "1371\n+17/-17",
+      "1,403",
+      "$0.09 / $0.36",
+      "524.3K"
+    ],
+    [
+      "89",
+      "80\n97",
+      "gpt-5.3-codex (codex-harness)\nOpenAI \u00b7 Proprietary",
+      "1370\n+12/-12",
+      "3,491",
+      "$1.75 / $14",
+      "400K"
+    ],
+    [
+      "90",
+      "87\n97",
+      "gemma-4-31b\nGoogle \u00b7 Apache 2.0",
+      "1364\n+7/-7",
+      "10,139",
+      "$0.99 / $1.49",
+      "131.1K"
+    ],
+    [
+      "91",
+      "81\n102",
+      "gemma-4-26b-a4b\nGoogle \u00b7 Apache 2.0",
+      "1361\n+17/-17",
+      "1,442",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "92",
+      "87\n99",
+      "deepseek-v3.2-thinking\nDeepSeek \u00b7 MIT",
+      "1361\n+9/-9",
+      "6,633",
+      "$0.27 / $0.40",
+      "163.8K"
+    ],
+    [
+      "93",
+      "85\n102",
+      "muse-glimmer\nMeta \u00b7 Apache-2.0",
+      "1360\n+16/-16",
+      "1,512",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "94",
+      "88\n99",
+      "qwen3.5-122b-a10b\nAlibaba \u00b7 Apache 2.0",
+      "1358\n+8/-8",
+      "7,831",
+      "$0.26 / $2.08",
+      "262.1K"
+    ],
+    [
+      "95",
+      "88\n100",
+      "qwen3.5-27b\nAlibaba \u00b7 Apache 2.0",
+      "1357\n+8/-8",
+      "7,427",
+      "$0.20 / $1.56",
+      "262.1K"
+    ],
+    [
+      "96",
+      "88\n99",
+      "grok-4.3\nSpaceXAI \u00b7 Proprietary",
+      "1357\n+6/-6",
+      "14,192",
+      "$1.25 / $2.50",
+      "1M"
+    ],
+    [
+      "97",
+      "86\n103",
+      "hunyuan-hy3-preview\nTencent \u00b7 tencent-hunyuan-community",
+      "1356\n+18/-18",
+      "1,395",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "98",
+      "90\n103",
+      "laguna-m.1\nPoolside \u00b7 Apache 2.0",
+      "1347\n+10/-10",
+      "5,062",
+      "$0.20 / $0.40",
+      "262.1K"
+    ],
+    [
+      "99",
+      "94\n105",
+      "gpt-5.1\nOpenAI \u00b7 Proprietary",
+      "1341\n+9/-9",
+      "10,326",
+      "$0.63 / $5",
+      "400K"
+    ],
+    [
+      "100",
+      "91\n106",
+      "glm-4.6\nZ.ai \u00b7 MIT",
+      "1341\n+11/-11",
+      "6,600",
+      "$0.43 / $1.75",
+      "204.8K"
+    ],
+    [
+      "101",
+      "95\n106",
+      "gpt-5.2-codex\nOpenAI \u00b7 Proprietary",
+      "1339\n+9/-9",
+      "6,402",
+      "$1.75 / $14",
+      "400K"
+    ],
+    [
+      "102",
+      "95\n106",
+      "gpt-5.1-codex\nOpenAI \u00b7 Proprietary",
+      "1336\n+12/-12",
+      "4,861",
+      "$1.25 / $10",
+      "400K"
+    ],
+    [
+      "103",
+      "97\n106",
+      "mimo-v2-flash (non-thinking)\nXiaomi \u00b7 MIT",
+      "1331\n+10/-10",
+      "5,401",
+      "$0.10 / $0.30",
+      "262.1K"
+    ],
+    [
+      "104",
+      "99\n106",
+      "claude-haiku-4-5-20251001\nAnthropic \u00b7 Proprietary",
+      "1329\n+5/-5",
+      "27,785",
+      "$1 / $5",
+      "200K"
+    ],
+    [
+      "105",
+      "99\n106",
+      "deepseek-v3.2\nDeepSeek \u00b7 MIT",
+      "1325\n+8/-8",
+      "8,966",
+      "$0.27 / $0.40",
+      "163.8K"
+    ],
+    [
+      "106",
+      "100\n106",
+      "kimi-k2-thinking-turbo\nMoonshot \u00b7 Modified MIT",
+      "1323\n+8/-8",
+      "12,631",
+      "$1.15 / $8",
+      "262.1K"
+    ],
+    [
+      "107",
+      "107\n109",
+      "laguna-xs.2\nPoolside \u00b7 Apache 2.0",
+      "1302\n+11/-11",
+      "3,934",
+      "$0.10 / $0.20",
+      "262.1K"
+    ],
+    [
+      "108",
+      "107\n109",
+      "minimax-m2\nMiniMax \u00b7 Apache 2.0",
+      "1298\n+11/-11",
+      "6,539",
+      "$0.30 / $1.20",
+      "204.8K"
+    ],
+    [
+      "109",
+      "107\n112",
+      "mimo-v2-flash (thinking)\nXiaomi \u00b7 MIT",
+      "1293\n+17/-17",
+      "1,658",
+      "$0.10 / $0.30",
+      "262.1K"
+    ],
+    [
+      "110",
+      "109\n115",
+      "qwen3-coder-480b-a35b-instruct\nAlibaba \u00b7 Apache 2.0",
+      "1274\n+8/-8",
+      "12,265",
+      "$0.40 / $1.60",
+      "262.1K"
+    ],
+    [
+      "111",
+      "109\n117",
+      "deepseek-v3.2-exp\nDeepSeek \u00b7 MIT",
+      "1272\n+14/-14",
+      "3,865",
+      "$0.27 / $0.41",
+      "163.8K"
+    ],
+    [
+      "112",
+      "109\n120",
+      "mistral-medium-3.5\nMistral \u00b7 Modified MIT",
+      "1265\n+15/-15",
+      "2,154",
+      "$0.75 / $3.75",
+      "262.1K"
+    ],
+    [
+      "113",
+      "110\n122",
+      "KAT-Coder-Pro-V1\nProprietary",
+      "1255\n+20/-20",
+      "1,458",
+      "$0.21 / $0.83",
+      "256K"
+    ],
+    [
+      "114",
+      "111\n120",
+      "gemini-3.1-flash-lite-preview\nGoogle \u00b7 Proprietary",
+      "1254\n+7/-7",
+      "13,634",
+      "$0.25 / $1.50",
+      "1M"
+    ],
+    [
+      "115",
+      "110\n122",
+      "qwen3.5-35b-a3b\nAlibaba \u00b7 Apache 2.0",
+      "1250\n+18/-18",
+      "1,535",
+      "$0.31 / $1.25",
+      "262.1K"
+    ],
+    [
+      "116",
+      "110\n122",
+      "gpt-5.1-codex-mini\nOpenAI \u00b7 Proprietary",
+      "1244\n+22/-22",
+      "1,133",
+      "$0.25 / $2",
+      "400K"
+    ],
+    [
+      "117",
+      "112\n122",
+      "grok-4-1-fast-reasoning\nSpaceXAI \u00b7 Proprietary",
+      "1240\n+11/-11",
+      "5,314",
+      "$1.25 / $2.50",
+      "2M"
+    ],
+    [
+      "118",
+      "111\n122",
+      "qwen3.5-flash\nAlibaba \u00b7 Proprietary",
+      "1238\n+20/-20",
+      "1,270",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "119",
+      "112\n122",
+      "trinity-large-thinking\nApache 2.0",
+      "1237\n+21/-21",
+      "1,303",
+      "$0.25 / $0.80",
+      "262.1K"
+    ],
+    [
+      "120",
+      "112\n124",
+      "mistral-large-3\nMistral \u00b7 Apache 2.0",
+      "1230\n+26/-26",
+      "812",
+      "$0.50 / $1.50",
+      "N/A"
+    ],
+    [
+      "121",
+      "114\n124",
+      "gemini-2.5-pro\nGoogle \u00b7 Proprietary",
+      "1226\n+16/-16",
+      "2,667",
+      "$1.25 / $10",
+      "1M"
+    ],
+    [
+      "122",
+      "114\n127",
+      "grok-4.1-thinking\nSpaceXAI \u00b7 Proprietary",
+      "1211\n+25/-25",
+      "939",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "123",
+      "120\n127",
+      "devstral-2\nMistral \u00b7 Modified MIT",
+      "1194\n+21/-21",
+      "1,147",
+      "N/A",
+      "N/A"
+    ],
+    [
+      "124",
+      "120\n127",
+      "granite-4.1-8b\nIBM \u00b7 Apache 2.0",
+      "1192\n+19/-19",
+      "1,701",
+      "$0.05 / $0.10",
+      "131.1K"
+    ],
+    [
+      "125",
+      "122\n127",
+      "mercury-2\nInception AI \u00b7 Proprietary",
+      "1167\n+25/-25",
+      "904",
+      "$0.25 / $0.75",
+      "128K"
+    ],
+    [
+      "126",
+      "122\n127",
+      "grok-code-fast-1\nSpaceXAI \u00b7 Proprietary",
+      "1165\n+28/-28",
+      "783",
+      "$0.20 / $1.50",
+      "N/A"
+    ],
+    [
+      "127",
+      "122\n127",
+      "grok-4-fast-reasoning\nSpaceXAI \u00b7 Proprietary",
+      "1161\n+28/-28",
+      "731",
+      "$1.25 / $2.50",
+      "2M"
+    ],
+    [
+      "128",
+      "128\n128",
+      "devstral-medium-2507\nMistral \u00b7 Proprietary",
+      "1081\n+31/-31",
+      "831",
+      "$0.40 / $2",
+      "128K"
+    ]
+  ],
+  "fetched_at": "2026-09-13T00:39:39.667190+00:00",
+  "source_updated": "2026-09-11",
+  "heading": "Code Arena | WebDev\n\ud83c\udfc6\nOverall"
+}
