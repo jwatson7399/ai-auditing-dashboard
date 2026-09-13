@@ -5,7 +5,7 @@ on:
       - 'tools/**'
       - 'site/template.html'
       - 'tests/*.py'
-      - '.github/workflows/source-checks.yml'
+      - '.github/workflows/*.yml'
 permissions:
   contents: read
 jobs:

@@ -15,7 +15,7 @@ Benchmark Scout files new credible AI model benchmark findings into `inbox/bench
 
 ## Daily rebuild
 
-`tools/rebuild.py` runs on GitHub Actions (`.github/workflows/rebuild.yml`) at 8:15am ET and builds the dashboard from structured sources and the merged inbox on `main`. No language model touches a number. It writes:
+`tools/rebuild.py` runs on GitHub Actions (`.github/workflows/rebuild.yml`) on a best-effort 12:15 UTC schedule (8:15am ET during daylight time) and builds the dashboard from structured sources and the merged inbox on `main`. No language model touches a number. It writes:
 
 - `data/YYYY-MM-DD.json` and `data/latest.json`: every number on the page, with source, fetch date, and effort setting
 - `data/raw/aa-llms-latest.json`: the last Artificial Analysis API response, overwritten daily
@@ -27,7 +27,7 @@ The Artificial Analysis key lives in the repository's Actions secrets as `AA_API
 
 Unresolved entries in `inbox/proposed-sources.md` (domains on neither the allowlist nor the Blocklist) are shown on the page with the Verifier's recorded facts and no recommendation; the decision is a human edit to `sources/allowlist.md`.
 
-`inbox/commentary/YYYY-MM-DD.md` is written by the Commentator agent from the day's JSON. A pull request carrying the `commentary` label and touching only that path is merged by `.github/workflows/commentary-merge.yml`, which then rebuilds the page. Every number in the commentary is checked against the day's data; a block with a number not in the data is set aside and the page shows the templated line instead, marked.
+`inbox/commentary/YYYY-MM-DD.md` is written by the Commentator agent from the day's JSON. A non-draft pull request into `main` carrying the `commentary` label and touching only dated commentary files and/or `log/runs-commentator.csv` is merged by `.github/workflows/commentary-merge.yml`. Events for each PR are serialized, then its live state and head are checked. Only a merge that changes commentary dispatches a rebuild; a log-only update does not. Already-closed PRs do nothing. Every number in the commentary is checked against the day's data; a block with a number not in the data is set aside and the page shows the templated line instead, marked.
 
 ### Public leaderboard sources
 
@@ -48,3 +48,21 @@ The public-table scrape implements the September 10 decision. Revisit a paid API
 ### Validation
 
 Run `python -m unittest discover -s tests -p 'test_*.py'`. The source checks can run without an AA key. Full production fetching still requires `AA_API_KEY` in Actions; never place it in local files. Test output must not be committed as production data or appended to merged run logs.
+
+### Morning readiness and recovery
+
+GitHub scheduled workflows can arrive late. On September 11 and 12, 2026 the daily scheduled runs were created at 12:24 PM and 11:28 AM ET, respectively. Both mornings the Commentator reported missing daily data. The configured cron does not establish a before-9-AM delivery guarantee. GitHub documents this limitation in [scheduled workflow events](https://docs.github.com/en/actions/reference/workflows-and-actions/events-that-trigger-workflows#schedule).
+
+After this change is merged, the external Commentator's first step should run the following from a checkout of current `main`, with an authenticated `gh` account allowed to dispatch Actions:
+
+```sh
+python tools/delivery.py ensure-data > /tmp/auditor-commentator-data.json
+```
+
+Only use the output after exit status 0. It is today's dated JSON read from `main`, never a local preview. An `ok` or `partial` snapshot with picks and at least one non-stale benchmark fetched today is usable; missing GDP.pdf or costs still retain their existing warnings. Missing, yesterday-only, or entirely carried-forward data triggers one authenticated recovery dispatch. The command polls for up to ten minutes, plus bounded API-call time, and fails if data is still unavailable. API/authentication errors fail immediately instead of triggering speculative rebuilds. A failure must produce a blocked report, not commentary from yesterday's numbers. Inspect the Actions run and retry explicitly if necessary.
+
+Recovery uses the `ensure_daily` workflow input. The existing workflow lock serializes rebuilds, and a check after checkout skips fetching and committing when today's usable snapshot already equals `latest.json`. Delayed scheduled runs use this same check. Explicit manual refreshes and commentary publications still rebuild by default. Reused data still uploads and deploys the committed page so a previous Pages failure can recover. The helper establishes data readiness on `main`, not successful Pages delivery.
+
+The external Commentator schedule/configuration is not stored in this repository or the available local Codex automation configuration. Connecting this command to that scheduler remains a rollout prerequisite. Start it early enough to allow recovery, writing, review automation and deployment before 9 AM ET; validate the next actual morning end to end. The UTC cron is unchanged and still requires a daylight-saving adjustment in November.
+
+If commentary merges but the explicit dispatch fails, the merge workflow fails visibly. Re-running a closed PR event intentionally does nothing; recover with `gh workflow run rebuild.yml --ref main`. Do not use `--no-fetch` as a commentary publication shortcut: that option has separate carry-forward semantics.
