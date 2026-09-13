@@ -205,6 +205,7 @@ const ET = iso => new Date(iso).toLocaleTimeString('en-US',{hour:'numeric',minut
 document.getElementById('stamp').textContent = `${fmtDate(D.date)} · built ${esc(D.built_at_et)} ET · ${esc(D.built_by)}`;
 const chips = [];
 chips.push([D.status==='ok'?'good':'mid', `Rebuild: ${D.status}${D.status_notes.length?' ('+D.status_notes.join('; ')+')':''}`]);
+if ((D.known_gaps||[]).length) chips.push(['mid', `Known gaps: ${D.known_gaps.join('; ')}`]);
 const staleDate = b => {
   const dates = Object.values(b.records||{}).filter(r=>r.stale).map(r=>r.fetched).filter(Boolean);
   return dates.length ? dates.sort()[0] : b.fetched;

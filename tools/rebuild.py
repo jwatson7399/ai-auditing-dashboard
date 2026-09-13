@@ -14,8 +14,8 @@ Outputs: data/YYYY-MM-DD.json, data/latest.json, site/index.html,
 log/run-log.xlsx, one line in log/runs-rebuild.csv.
 
 Status values (same meanings as the agents):
-  ok       every source fetched fresh, page built
-  partial  page built but one or more sources carried forward from the last run
+  ok       every fetchable source refreshed; standing coverage limits are in known_gaps
+  partial  page built but one or more fetchable sources carried forward from the last run
   blocked  a required credential or input was missing, page not rebuilt
   error    an unexpected failure, page not rebuilt
 """
@@ -67,7 +67,8 @@ BENCH = {
     "omni":     {"name": "AA-Omniscience Accuracy", "kind": "task", "api": ["aa_omniscience_accuracy", "omniscience_accuracy"]},
     "nohalluc": {"name": "Non-hallucination rate", "kind": "task", "api": ["aa_omniscience_non_hallucination_rate", "non_hallucination_rate"],
                  "derive_from_hallucination": ["aa_omniscience_hallucination_rate", "hallucination_rate"]},
-    "gdppdf":   {"name": "GDP.pdf (all criteria met)", "kind": "task", "api": ["gdp_pdf", "gdppdf"]},
+    "gdppdf":   {"name": "GDP.pdf (all criteria met)", "kind": "task", "api": ["gdp_pdf", "gdppdf"],
+                 "no_public_source": True},
     "webdev":   {"name": "Arena WebDev", "kind": "votes", "elo": True, "arena": "webdev"},
     "text":     {"name": "Arena Text", "kind": "votes", "elo": True, "arena": "text"},
     "image":    {"name": "AA Image Arena", "kind": "votes", "elo": True, "media": "text-to-image"},
@@ -320,8 +321,12 @@ def comparable_boards(a, b):
 
 
 def apply_public_aa(parsed, payload, eff_rows, bench, prev, today):
-    """Attach exact effort costs and validated public benchmarks with row provenance."""
-    notes = []
+    """Attach exact effort costs and validated public benchmarks with row provenance.
+
+    Returns (notes, gaps). Notes affect rebuild status. Gaps are standing coverage
+    limits and do not.
+    """
+    notes, gaps = [], []
     source = {"src": "Artificial Analysis public leaderboard", "url": AA_URL,
               "fetched": today, "source_updated": payload.get("source_updated"),
               "fetched_at": payload.get("fetched_at")}
@@ -352,7 +357,7 @@ def apply_public_aa(parsed, payload, eff_rows, bench, prev, today):
                 row.update(cost_per_task=None, cost_status="missing", cost_stale=True)
             log(f"cost unavailable or ambiguous: {name}")
             if row.get("access"):
-                notes.append("cost missing or carried forward")
+                gaps.append("cost missing or carried forward")
     for key, candidates in page_costs.items():
         if key not in api_names:
             log("cost page row unjoined: " + "; ".join(r["name"] for r in candidates))
@@ -376,7 +381,7 @@ def apply_public_aa(parsed, payload, eff_rows, bench, prev, today):
         bench[k] = dict(source, name=BENCH[k]["name"], kind="task", elo=False,
                         field=AA_COLUMNS[k], scale="percent", d=d, settings=settings, records=records,
                         stale=False, historical=historical_scores(old, d))
-    return sorted(set(notes))
+    return sorted(set(notes)), sorted(set(gaps))
 
 
 # --------------------------------------------------------------------- inbox
@@ -878,7 +883,7 @@ def main():
                     log(f"arena {board}: {e}")
         return 0
 
-    status, notes, items = "ok", [], 0
+    status, notes, gaps, items = "ok", [], [], 0
     prev = load_previous(today)
     carry = prev
     latest = os.path.join(ROOT, "data", "latest.json")
@@ -932,8 +937,9 @@ def main():
                 parsed, public = {}, {}
                 notes.append("AA public leaderboard unavailable")
                 status = "partial"
-            public_notes = apply_public_aa(parsed, public, eff_rows, bench, carry, today)
+            public_notes, public_gaps = apply_public_aa(parsed, public, eff_rows, bench, carry, today)
             notes.extend(public_notes)
+            gaps.extend(public_gaps)
             if public_notes:
                 status = "partial"
             fresh = sum(not b.get("stale") for b in bench.values())
@@ -971,10 +977,14 @@ def main():
                     if carry and k in carry["bench"]:
                         bench[k] = dict(carry["bench"][k], stale=True)
                         bench[k]["records"] = {m: dict(r, stale=True) for m, r in bench[k].get("records", {}).items()}
-                        notes.append(f"{k} carried forward")
+                        message = f"{k} carried forward"
                     else:
-                        notes.append(f"{k} missing")
-                    status = "partial"
+                        message = f"{k} missing"
+                    if b.get("no_public_source") and message.endswith("carried forward"):
+                        gaps.append(message)
+                    else:
+                        notes.append(message)
+                        status = "partial"
             items = fresh
         if not bench:
             raise Blocked("no benchmark data at all")
@@ -992,7 +1002,7 @@ def main():
         picks = compute_picks(bench, commentary)
         d = {"schema": 1, "date": today, "built_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
              "built_by": f"tools/rebuild.py, GitHub Actions run {run_id}", "built_at_et": now_et().strftime("%-I:%M %p"),
-             "status": status, "status_notes": notes,
+             "status": status, "status_notes": notes, "known_gaps": gaps,
              "access": ACCESS, "media_access": MEDIA_ACCESS, "bench": bench, "second": second, "second_meta": second_meta,
              "news": news, "news_meta": news_meta, "eff": dict(eff_meta, rows=eff_rows), "picks": picks,
              "commentary": commentary, "proposed_sources": proposed, "pending_prs": prs, "previous_date": prev["date"] if prev else None, "noise": NOISE}
@@ -1024,7 +1034,8 @@ def main():
         traceback.print_exc()
     finally:
         if not args.no_log:
-            append_log(today, status, items, run_id, "; ".join(notes) if notes else "none")
+            logged = notes + [f"gap: {g}" for g in gaps]
+            append_log(today, status, items, run_id, "; ".join(logged) if logged else "none")
     return rc
 
 
