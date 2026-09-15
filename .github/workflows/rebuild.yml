@@ -16,6 +16,10 @@ on:
         description: "Rebuild from the last data file without fetching"
         type: boolean
         default: false
+      ensure_daily:
+        description: "Fetch only if today has no usable committed refresh"
+        type: boolean
+        default: false
 
 concurrency:
   group: rebuild
@@ -39,13 +43,22 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Check whether today already has data
+        id: plan
+        env:
+          ENSURE_DAILY: ${{ inputs.ensure_daily }}
+          NO_FETCH: ${{ inputs.no_fetch }}
+        run: python tools/delivery.py plan-rebuild
+
       - name: Install
+        if: steps.plan.outputs.run == 'true'
         run: |
           pip install --quiet requests openpyxl playwright
           python -m playwright install --with-deps chromium
 
       - name: Rebuild
         id: rebuild
+        if: steps.plan.outputs.run == 'true'
         env:
           AA_API_KEY: ${{ secrets.AA_API_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -60,13 +73,21 @@ jobs:
           exit 0
 
       - name: Commit data, page, and log
-        # Runs even when the rebuild failed, so the log line is recorded.
-        # On failure site/index.html is untouched and the old page stays up.
+        # Always run: a skipped firing still has a log line to commit, or the
+        # schedule looks like it never ran. Rebuild failures still record too.
+        # On fetch failure site/index.html is untouched and the old page stays up.
         run: |
           git config user.name "daily-rebuild"
           git config user.email "daily-rebuild@users.noreply.github.com"
           git add data log site/index.html
-          git diff --cached --quiet || git commit -m "Daily rebuild $(date -u +%Y-%m-%d) (run ${{ github.run_number }})"
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          if [ "${{ steps.plan.outputs.run }}" = "true" ]; then
+            git commit -m "Daily rebuild $(date -u +%Y-%m-%d) (run ${{ github.run_number }})"
+          else
+            git commit -m "Rebuild skipped $(date -u +%Y-%m-%d) (run ${{ github.run_number }})"
+          fi
           git push
 
       - name: Upload page
@@ -75,7 +96,7 @@ jobs:
           path: site
 
       - name: Fail the run if the rebuild failed
-        if: steps.rebuild.outputs.rc != '0'
+        if: steps.plan.outputs.run == 'true' && steps.rebuild.outputs.rc != '0'
         run: |
           echo "rebuild exited ${{ steps.rebuild.outputs.rc }}; see log/runs-rebuild.csv"
           exit 1
