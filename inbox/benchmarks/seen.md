@@ -8,3 +8,7 @@ https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4
 https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2 | GPT-5.6 Sol | GDP.pdf (All-pass Rate)
 https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2 | Claude Fable 5.1 | GDP.pdf (All-pass Rate)
 https://arena.ai/leaderboard/agent/code?license=open-source | Kimi K3 (Max) | Arena Agent Arena Code (open-source filter) — Net Improvement
+https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/ | Gemini 3.8 Live Extended Thinking | Artificial Analysis Speech to Speech Quality Index (vendor-reported)
+https://artificialanalysis.ai/speech-to-speech | Gemini 3.8 Live Extended Thinking (High) | Artificial Analysis Speech to Speech Index
+https://artificialanalysis.ai/speech-to-speech | Gemini 3.8 Live | Artificial Analysis Speech to Speech Index
+https://artificialanalysis.ai/speech-to-speech | Gemini 3.8 Live Extended Thinking (High) | Artificial Analysis Big Bench Audio (Speech Reasoning)
