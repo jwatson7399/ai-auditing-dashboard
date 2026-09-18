@@ -105,7 +105,7 @@ Context
 1
 7
 	
-claude-fable-5
+claude-fable-5-high
 Anthropic · Proprietary
 	
 1506

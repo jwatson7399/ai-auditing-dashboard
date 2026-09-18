@@ -95,7 +95,7 @@
     [
       "10",
       "9\n16",
-      "claude-fable-5\nAnthropic \u00b7 Proprietary",
+      "claude-fable-5-high\nAnthropic \u00b7 Proprietary",
       "1628\n+7/-7",
       "10,081",
       "$10 / $50",
@@ -1164,7 +1164,7 @@
       "128K"
     ]
   ],
-  "fetched_at": "2026-09-17T16:56:50.664082+00:00",
+  "fetched_at": "2026-09-18T13:12:38.849041+00:00",
   "source_updated": "2026-09-11",
   "heading": "Code Arena | WebDev\n\ud83c\udfc6\nOverall"
 }
