@@ -10,6 +10,7 @@ REPO = Path(__file__).resolve().parents[1]
 def main():
     data = json.loads((REPO / 'data/latest.json').read_text())
     data['bench']['gdpval']['historical'] = {'Historical fixture': {'value': 52, 'fetched': '2026-09-03'}}
+    data['known_gaps'] = ['gdppdf carried forward', 'cost missing or carried forward']
     # A card with no ranking still has an accessible explanation.
     data['picks']['coding']['rows'] = []
     html = (REPO / 'site/template.html').read_text().replace('/*DATA*/null', json.dumps(data).replace('</', '<\\/'))
@@ -22,6 +23,7 @@ def main():
         errors = []
         page.on('pageerror', lambda error: errors.append(str(error)))
         page.goto(file.as_uri())
+        assert 'Known gaps: gdppdf carried forward; cost missing or carried forward' in page.locator('#status').inner_text()
         cards = page.locator('.task')
         assert cards.count() == 8
         assert page.locator('.evidence-panel:visible').count() == 0

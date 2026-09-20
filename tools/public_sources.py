@@ -54,6 +54,7 @@ def fetch_public_table(url, root, name, expand=False):
     from playwright.sync_api import sync_playwright
     with sync_playwright() as p:
         browser = p.chromium.launch()
+        page = None
         try:
             page = browser.new_page()
             response = page.goto(url, wait_until="networkidle" if expand else "domcontentloaded", timeout=90000)
@@ -87,8 +88,9 @@ def fetch_public_table(url, root, name, expand=False):
             raw_dir = os.path.join(root, "data", "raw")
             os.makedirs(raw_dir, exist_ok=True)
             try:
-                with open(os.path.join(raw_dir, name + "-failure.txt"), "w") as f:
-                    f.write(page.inner_text("body", timeout=5000))
+                if page is not None:
+                    with open(os.path.join(raw_dir, name + "-failure.txt"), "w") as f:
+                        f.write(page.inner_text("body", timeout=5000))
             except Exception:
                 pass
             raise
