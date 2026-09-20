@@ -15,7 +15,7 @@ Benchmark Scout files new credible AI model benchmark findings into `inbox/bench
 
 ## Daily rebuild
 
-`tools/rebuild.py` runs on GitHub Actions (`.github/workflows/rebuild.yml`) on a best-effort 12:15 UTC schedule (8:15am ET during daylight time) and builds the dashboard from structured sources and the merged inbox on `main`. No language model touches a number. It writes:
+`tools/rebuild.py` runs on GitHub Actions (`.github/workflows/rebuild.yml`) on four staggered best-effort schedule entries (06:15, 08:15, 10:15 and 12:15 UTC; the first that finds no data for today's Eastern date fetches, the rest log a skip) and builds the dashboard from structured sources and the merged inbox on `main`. No language model touches a number. It writes:
 
 - `data/YYYY-MM-DD.json` and `data/latest.json`: every number on the page, with source, fetch date, and effort setting
 - `data/raw/aa-llms-latest.json`: the last Artificial Analysis API response, overwritten daily
@@ -63,6 +63,18 @@ Only use the output after exit status 0. It is today's dated JSON read from `mai
 
 Recovery uses the `ensure_daily` workflow input. The existing workflow lock serializes rebuilds, and a check after checkout skips fetching when today's usable snapshot already equals `latest.json`. Delayed scheduled runs use this same check. A skipped firing still appends one rebuild log line (`ok`, `no refresh needed; today already current`) and commits it, so a silent schedule can be told apart from a missed one. Explicit manual refreshes and commentary publications still rebuild by default. Reused data still uploads and deploys the committed page so a previous Pages failure can recover. The helper establishes data readiness on `main`, not successful Pages delivery.
 
-A saved Grok Bot brief was located outside the worktree. It specifies 8:45 AM ET and a credential that cannot dispatch workflows; the live settings remain unverified. [The rollout proposal](docs/commentator-recovery-rollout.md) provides exact prompt replacements, an 8:25 AM ET schedule proposal, and a separate recovery-credential requirement. Applying and verifying those changes remains a rollout prerequisite; validate the next actual morning end to end. The UTC cron is unchanged and still requires a daylight-saving adjustment in November.
+A saved Grok Bot brief was located outside the worktree. It specifies 8:45 AM ET and a credential that cannot dispatch workflows; the live settings remain unverified. [The rollout proposal](docs/commentator-recovery-rollout.md) provides exact prompt replacements, an 8:25 AM ET schedule proposal, and a separate recovery-credential requirement. Applying and verifying those changes remains a rollout prerequisite; validate the next actual morning end to end.
+
+### Schedule lag, same-day publishing and the key
+
+From September 10 through 20, 2026 every scheduled run was created 3.2 to 5.8 hours after its 12:15 UTC time (11:28 AM to 2:03 PM ET). The rebuilds seen near 9 AM ET on those days were not the schedule: the Commentator's blocked log PR carried the `commentary` label, was merged automatically, and the merge workflow dispatched a rebuild. A log-only PR no longer dispatches one, so the schedule has to deliver the morning data itself. The workflow now has four entries, 06:15 through 12:15 UTC. With the observed lag the first lands between about 5:30 and 8:00 AM ET. All four are after midnight in New York in both daylight and standard time, so no clock-change edit is needed. The numbers for a day are those of its first successful fetch; later firings skip. `ensure-data` remains the fallback for a morning when every early entry is late.
+
+Merges into `inbox/benchmarks/`, `inbox/news/` and `inbox/verified/` on `main` now start a rebuild, as commentary already did. The page reads only the file carrying today's Eastern date from each, so a Scout, Verifier or Editor file merged after midnight ET for the previous day is never shown.
+
+The commit step replays its commit onto the current tip of `main` and retries the push up to three times. Run 29 on September 16 lost its data to a rejected non-fast-forward push when an agent PR merged mid-run.
+
+The rebuild job runs in the `data-fetch` environment, whose deployment branch policy admits `main` only. `AA_API_KEY` must be stored as a secret of that environment and removed from the repository-level secrets; until the repository-level copy is deleted, a run dispatched on another ref can still read it.
+
+[The Editor input proposal](docs/editor-input-rollout.md) changes where the Editor looks for the News Scout's file, so news needs one human merge a day rather than two timed ones.
 
 If commentary merges but the explicit dispatch fails, the merge workflow fails visibly. Re-running a closed PR event intentionally does nothing; recover with `gh workflow run rebuild.yml --ref main`. Do not use `--no-fetch` as a commentary publication shortcut: that option has separate carry-forward semantics.

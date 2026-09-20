@@ -1,15 +1,30 @@
 name: Daily rebuild
 
-# 8:15am ET. Cron is UTC: 12:15 UTC while New York is on daylight time (until
-# November 1, 2026), then 13:15 UTC. Change the hour when the clocks change, or
-# accept an hour's drift. Also runs when commentary lands on main, and by hand.
+# Scheduled firings arrive hours late: between September 10 and 20, 2026 the
+# single 12:15 UTC entry was created 3.2 to 5.8 hours after its time, so the
+# numbers never landed before 9am ET on their own. The entries below are
+# staggered so that, with that lag, at least one lands before the Commentator
+# wakes. The first firing that finds no usable data for today's Eastern date
+# fetches; tools/delivery.py plan-rebuild turns the rest into a logged skip.
+# Every entry is after midnight in New York in both daylight and standard time,
+# so nothing here needs changing when the clocks change.
+# Also runs when agent files land on main, and by hand.
 on:
   schedule:
+    - cron: "15 6 * * *"
+    - cron: "15 8 * * *"
+    - cron: "15 10 * * *"
     - cron: "15 12 * * *"
   push:
     branches: [main]
     paths:
       - "inbox/commentary/**"
+      # The page reads only today's dated file from each of these, and a
+      # scheduled firing skips once today has data, so without these a merged
+      # Scout, Verifier or Editor file would not show until tomorrow's fetch.
+      - "inbox/benchmarks/**"
+      - "inbox/news/**"
+      - "inbox/verified/**"
   workflow_dispatch:
     inputs:
       no_fetch:
@@ -34,6 +49,9 @@ permissions:
 jobs:
   rebuild:
     runs-on: ubuntu-latest
+    # AA_API_KEY belongs to this environment, whose deployment branch policy
+    # admits main only. A run started on any other ref cannot read the key.
+    environment: data-fetch
     steps:
       - uses: actions/checkout@v4
         with:
@@ -88,7 +106,18 @@ jobs:
           else
             git commit -m "Rebuild skipped $(date -u +%Y-%m-%d) (run ${{ github.run_number }})"
           fi
-          git push
+          # main can move while this job runs (a merged agent PR). Agents write
+          # under inbox/ and their own log file; this job writes data/, site/
+          # and log/runs-rebuild.csv, so replaying onto the new tip is clean.
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            sleep 5
+          done
+          echo "could not push the rebuild commit after 3 attempts"
+          exit 1
 
       - name: Upload page
         uses: actions/upload-pages-artifact@v3
