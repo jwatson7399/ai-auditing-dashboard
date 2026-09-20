@@ -8,3 +8,7 @@ https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4
 https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2 | GPT-5.6 Sol | GDP.pdf (All-pass Rate)
 https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2 | Claude Fable 5.1 | GDP.pdf (All-pass Rate)
 https://arena.ai/leaderboard/agent/code?license=open-source | Kimi K3 (Max) | Arena Agent Arena Code (open-source filter) — Net Improvement
+https://api-docs.deepseek.com/updates | DeepSeek-V4.1-Flash | not applicable
+https://artificialanalysis.ai/models/deepseek-v4-1-flash | DeepSeek V4.1 Flash (Reasoning, Max Effort) | Artificial Analysis Intelligence Index v4.3
+https://arena.ai/leaderboard/code/webdev | deepseek-v4.1-flash-max | Arena Code Arena WebDev (Overall)
+https://www.vals.ai/models/deepseek_deepseek-v4.1-flash | DeepSeek V4.1 Flash | Vals Index
