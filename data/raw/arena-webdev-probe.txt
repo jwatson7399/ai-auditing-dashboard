@@ -582,7 +582,7 @@ Tencent · Apache 2.0
 	
 1513
 +11/-11
-	3,586	$0.13 / $0.53	262.1K
+	3,586	$0.08 / $0.33	262.1K
 
 41
 	
@@ -1645,6 +1645,31 @@ Confidence Intervals on Arena Score
 Fraction of Model A Wins in A vs. B Battles (Ties Excluded)
 Battle Count for Each Pair of Models (Ties Excluded)
 Average of Win Rates Against Each Opponent (Ties Excluded)
+claude-fable-5.1-max
+gpt-6-astra-max
+claude-opus-5-max
+qwen3.8-max
+qwen3.8-max-0902
+claude-opus-5-high
+kimi-k3-max
+muse-spark-1.3-max
+gemini-3.7-flash-high
+qwen3.8-flash-next
+deepseek-v4.1-flash-max
+glm-5.3-max
+hy4-preview
+claude-fable-5-high
+muse-spark-1.3 (xHigh)
+gpt-5.6-sol-xhigh (codex-harne...
+grok-4.6-high
+qwen3.8-27b
+glm-5.2-max
+glm-5.3-flash
+0.0%
+20.0%
+40.0%
+60.0%
+80.0%
 USE CASES
 Chat with AI
 Build Apps & Websites
@@ -1688,3 +1713,5 @@ YouTube
 Discord
 
 © Arena Intelligence 2026
+
+0.0%
