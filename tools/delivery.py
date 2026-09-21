@@ -15,6 +15,9 @@ from zoneinfo import ZoneInfo
 
 ET = ZoneInfo('America/New_York')
 COMMENTARY = re.compile(r'inbox/commentary/\d{4}-\d{2}-\d{2}\.md\Z')
+EARLIEST_SCHEDULED_FETCH_HOUR_ET = 5
+ALREADY_CURRENT = 'no refresh needed; today already current'
+TOO_EARLY = 'scheduled firing before 5am ET; fetch left to a later entry'
 
 
 def today_et():
@@ -109,7 +112,12 @@ def ensure_data(repo, timeout, interval):
                        'do not write commentary from yesterday. Inspect Daily rebuild runs.')
 
 
-def plan_rebuild(root, event, ensure_daily, no_fetch):
+def hour_et():
+    return dt.datetime.now(ET).hour
+
+
+def skip_reason(root, event, ensure_daily, no_fetch):
+    """Why this firing should not fetch, or None when it should."""
     today = today_et()
     snapshot = None
     try:
@@ -118,19 +126,30 @@ def plan_rebuild(root, event, ensure_daily, no_fetch):
     except (OSError, ValueError):
         latest = None
     # A dated file alone may be superseded; reuse only the current snapshot.
-    skip = (not no_fetch and (event == 'schedule' or ensure_daily)
-            and ready(snapshot, today) and snapshot == latest)
-    return not skip
+    if (not no_fetch and (event == 'schedule' or ensure_daily)
+            and ready(snapshot, today) and snapshot == latest):
+        return ALREADY_CURRENT
+    # The schedule entries are hours early to absorb GitHub's delay. When one
+    # fires on time instead, leave the fetch to a later entry rather than freeze
+    # the day's numbers in the middle of the night. Only the schedule is held
+    # back: a manual run, a recovery dispatch or a merge still fetches.
+    if event == 'schedule' and not no_fetch and hour_et() < EARLIEST_SCHEDULED_FETCH_HOUR_ET:
+        return TOO_EARLY
+    return None
 
 
-def record_skip(root, run, run_id):
+def plan_rebuild(root, event, ensure_daily, no_fetch):
+    return skip_reason(root, event, ensure_daily, no_fetch) is None
+
+
+def record_skip(root, run, run_id, notes=None):
     """A skipped firing still leaves a rebuild log line, or it looks like the job never ran."""
     if run:
         return
     log_dir = root / 'log'
     log_dir.mkdir(parents=True, exist_ok=True)
     path = log_dir / 'runs-rebuild.csv'
-    notes = 'no refresh needed; today already current'
+    notes = notes or ALREADY_CURRENT
     line = f"{today_et()},{dt.datetime.now(ET).strftime('%H:%M')},rebuild,ok,0,{run_id},{notes}\n"
     if not path.exists():
         path.write_text('date,time_et,agent,status,items,pr,notes\n')
@@ -158,12 +177,13 @@ def main():
             ap.error('timeout and interval must be positive')
         print(json.dumps(ensure_data(args.repo, args.timeout, args.interval), ensure_ascii=False))
     else:
-        run = plan_rebuild(args.root, os.getenv('GITHUB_EVENT_NAME'),
-                           os.getenv('ENSURE_DAILY') == 'true', os.getenv('NO_FETCH') == 'true')
-        record_skip(args.root, run, os.getenv('GITHUB_RUN_NUMBER', 'local'))
+        reason = skip_reason(args.root, os.getenv('GITHUB_EVENT_NAME'),
+                             os.getenv('ENSURE_DAILY') == 'true', os.getenv('NO_FETCH') == 'true')
+        run = reason is None
+        record_skip(args.root, run, os.getenv('GITHUB_RUN_NUMBER', 'local'), reason)
         with open(os.environ['GITHUB_OUTPUT'], 'a') as output:
             output.write(f'run={str(run).lower()}\n')
-        print('Refresh required.' if run else 'Today already has usable data; skip duplicate refresh.')
+        print('Refresh required.' if run else f'Skipping fetch: {reason}.')
 
 
 if __name__ == '__main__':

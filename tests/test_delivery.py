@@ -140,7 +140,24 @@ class DeliveryTests(unittest.TestCase):
                 delivery.ensure_data(REPO, 10, 1)
 
     @patch.object(delivery, 'today_et', return_value=TODAY)
-    def test_rebuild_plan_preserves_explicit_refresh_and_retries_missing_data(self, date):
+    def test_on_time_schedule_does_not_freeze_the_day_before_5am(self, date):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp); (root / 'data').mkdir()
+            with patch.object(delivery, 'hour_et', return_value=2):
+                self.assertEqual(delivery.skip_reason(root, 'schedule', False, False), delivery.TOO_EARLY)
+                # Only the schedule is held back; recovery, manual runs and merges still fetch.
+                self.assertTrue(delivery.plan_rebuild(root, 'workflow_dispatch', True, False))
+                self.assertTrue(delivery.plan_rebuild(root, 'workflow_dispatch', False, False))
+                self.assertTrue(delivery.plan_rebuild(root, 'push', False, False))
+            with patch.object(delivery, 'hour_et', return_value=5):
+                self.assertTrue(delivery.plan_rebuild(root, 'schedule', False, False))
+            delivery.record_skip(root, run=False, run_id='7', notes=delivery.TOO_EARLY)
+            self.assertIn(',rebuild,ok,0,7,scheduled firing before 5am ET',
+                          (root / 'log' / 'runs-rebuild.csv').read_text())
+
+    @patch.object(delivery, 'hour_et', return_value=9)
+    @patch.object(delivery, 'today_et', return_value=TODAY)
+    def test_rebuild_plan_preserves_explicit_refresh_and_retries_missing_data(self, date, hour):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp); (root / 'data').mkdir()
             self.assertTrue(delivery.plan_rebuild(root, 'schedule', False, False))
