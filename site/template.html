@@ -171,7 +171,7 @@ footer{margin-top:40px;font-size:13px;color:var(--muted);max-width:72ch}
   <section>
     <h3>Pipeline health</h3>
     <div class="card">
-      <p style="font-size:14.5px;max-width:80ch">Which agents ran in the last 14 days, and what each produced. An agent with no line for a day did not run, which is a finding rather than something to hide. Read from the run logs in the repository.</p>
+      <p style="font-size:14.5px;max-width:80ch">What each agent's merged run log says for the last 14 days. Agents file their log in a pull request, so "no merged log" means only that nothing for that day has reached the main branch: the agent may have run and be waiting for review, or may not have run. Either way it is a finding rather than something to hide. Read from the run logs on the main branch.</p>
       <div class="health" style="margin-top:14px"><table id="health"></table></div>
       <p class="note" id="prnote"></p>
     </div>
