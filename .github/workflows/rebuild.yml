@@ -4,8 +4,10 @@ name: Daily rebuild
 # single 12:15 UTC entry was created 3.2 to 5.8 hours after its time, so the
 # numbers never landed before 9am ET on their own. The entries below are
 # staggered so that, with that lag, at least one lands before the Commentator
-# wakes. The first firing that finds no usable data for today's Eastern date
-# fetches; tools/delivery.py plan-rebuild turns the rest into a logged skip.
+# wakes. The first firing at or after 5am ET that finds no usable data for
+# today's Eastern date fetches; tools/delivery.py plan-rebuild turns the rest
+# into a logged skip. The 5am floor covers the day GitHub fires on time, so the
+# day's numbers are never frozen at 2am.
 # Every entry is after midnight in New York in both daylight and standard time,
 # so nothing here needs changing when the clocks change.
 # Also runs when agent files land on main, and by hand.
