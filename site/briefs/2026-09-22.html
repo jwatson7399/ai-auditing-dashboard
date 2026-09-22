@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="description" content="Event-led AI Updates brief for 2026-09-22: news synthesis plus full-field Artificial Analysis charts with tapable explainers."/>
+<title>AI Updates — 2026-09-22</title>
+<style>img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ground:#F1F3F6; --surface:#FFFFFF; --ink:#172029; --muted:#5F6B78; --line:#DDE2E8;
+  --bar:#C3CBD4; --bar-text:#3A4552; --pick:#1B5FBF; --pick-soft:#E3ECFA;
+  --good:#1E7F4F; --mid:#9A6B00; --weak:#B3463B; --good-soft:#E2F2E8; --mid-soft:#F8EFD6; --weak-soft:#F9E3E0;
+  --display:'Manrope',system-ui,sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --ground:#0F1418; --surface:#171D24; --ink:#E7ECF1; --muted:#95A0AC; --line:#2A333D;
+  --bar:#3A4652; --bar-text:#C2CBD4; --pick:#6A9CF2; --pick-soft:#1C2B45;
+  --good:#5FC58E; --mid:#E0B24C; --weak:#EF7F72; --good-soft:#15301F; --mid-soft:#332A10; --weak-soft:#3A1C18;
+}}
+:root[data-theme="dark"]{
+  --ground:#0F1418; --surface:#171D24; --ink:#E7ECF1; --muted:#95A0AC; --line:#2A333D;
+  --bar:#3A4652; --bar-text:#C2CBD4; --pick:#6A9CF2; --pick-soft:#1C2B45;
+  --good:#5FC58E; --mid:#E0B24C; --weak:#EF7F72; --good-soft:#15301F; --mid-soft:#332A10; --weak-soft:#3A1C18;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
+.wrap{max-width:1080px;margin:0 auto;padding:32px 24px 80px}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;margin:0}
+h1{font-size:clamp(28px,4.5vw,40px);font-weight:800;letter-spacing:-0.02em;line-height:1.1}
+h2{font-size:18px;font-weight:800;letter-spacing:-0.01em}
+h3{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted)}
+h4{font-size:16px;font-weight:800}
+p{margin:0}
+a{color:var(--pick)}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:12px 24px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.stamp{font-family:var(--mono);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted)}
+.status{display:flex;flex-wrap:wrap;gap:8px;font-size:12px}
+.chip{border-radius:999px;padding:3px 10px;font-weight:600;letter-spacing:0.03em}
+.chip.good{background:var(--good-soft);color:var(--good)} .chip.mid{background:var(--mid-soft);color:var(--mid)} .chip.weak{background:var(--weak-soft);color:var(--weak)} .chip.pick{background:var(--pick-soft);color:var(--pick)}
+
+section{margin-top:36px}
+section>h3{margin-bottom:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.lede{background:var(--pick-soft);border-radius:10px;padding:16px 18px;margin-top:20px;max-width:none}
+.lede p{max-width:76ch}
+.lede p+p{margin-top:8px}
+
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media (max-width:820px){.news{grid-template-columns:1fr}}
+.story{display:flex;flex-direction:column;gap:10px}
+.story .tag{display:flex;gap:8px;align-items:center;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted)}
+.story h4{font-size:17px;line-height:1.25}
+.story p{font-size:14.5px}
+.story .why{border-left:3px solid var(--pick);padding-left:10px;font-size:14px;color:var(--bar-text)}
+.story .links{font-size:13px;display:flex;flex-direction:column;gap:4px;margin-top:auto}
+.story .links span{color:var(--muted)}
+
+.callout{margin-top:12px;background:var(--surface);border:1px solid var(--pick);border-radius:12px;padding:18px 20px}
+.callout .big{font-family:var(--mono);font-size:2rem;font-weight:500;color:var(--pick);letter-spacing:-0.02em;margin:4px 0}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+@media (max-width:760px){.tiles{grid-template-columns:repeat(2,1fr)}}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;display:flex;flex-direction:column;gap:6px;text-decoration:none;color:inherit}
+.tile:focus-visible{outline:2px solid var(--pick);outline-offset:2px}
+.tile .name{font-size:13px;font-weight:600;line-height:1.3}
+.tile .rank{font-family:var(--mono);font-size:22px;font-weight:500;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
+.tile .rank small{font-size:12px;color:var(--muted);margin-left:2px}
+.tile .pill{align-self:flex-start;font-size:11px;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;padding:2px 8px;border-radius:999px}
+.pill.good{background:var(--good-soft);color:var(--good)} .pill.mid{background:var(--mid-soft);color:var(--mid)} .pill.weak{background:var(--weak-soft);color:var(--weak)}
+
+.legend{display:flex;flex-wrap:wrap;gap:16px;font-size:12.5px;color:var(--muted);margin:16px 0 8px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.sw{width:14px;height:10px;border-radius:2px;display:inline-block;background:var(--bar)} .sw.p{background:var(--pick)}
+
+details.bench{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-top:12px;scroll-margin-top:16px}
+details.bench>summary{cursor:pointer;list-style:none;padding:18px 22px;display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline}
+details.bench>summary::-webkit-details-marker{display:none}
+details.bench>summary .sub{color:var(--muted);font-size:14px}
+details.bench>summary .open{margin-left:auto;font-size:12px;color:var(--pick);font-weight:600}
+details[open]>summary .open .c{display:none} details:not([open])>summary .open .o{display:none}
+.inner{padding:0 22px 22px}
+.grid{display:grid;grid-template-columns:minmax(260px,36fr) minmax(0,64fr);gap:28px}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+.explain{display:flex;flex-direction:column;gap:14px;font-size:14.5px}
+.explain h3{margin-bottom:4px}
+.explain p{max-width:46ch}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tags .chip{font-size:10.5px}
+.result{border-left:3px solid var(--pick);padding-left:12px}
+.result .big{font-family:var(--mono);font-size:26px;font-weight:500;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;color:var(--pick)}
+.result .big small{font-size:13px;color:var(--muted);font-family:var(--body);margin-left:6px}
+
+.chart{display:flex;flex-direction:column;gap:5px;font-size:12.5px}
+.row{display:grid;grid-template-columns:210px 1fr 56px;align-items:center;gap:10px}
+.row .lbl{text-align:right;color:var(--bar-text);line-height:1.15}
+.row .lbl .cfg{color:var(--muted);font-size:11px}
+.row .track{height:16px}
+.row .fill{height:100%;background:var(--bar);border-radius:2px}
+.row .val{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--muted);text-align:right}
+.row.pick .lbl{color:var(--pick);font-weight:600} .row.pick .fill{background:var(--pick)} .row.pick .val{color:var(--pick);font-weight:500}
+.axis{display:grid;grid-template-columns:210px 1fr 56px;gap:10px;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:4px}
+.axis .ticks{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:4px}
+@media (max-width:560px){.row,.axis{grid-template-columns:130px 1fr 44px}.row{font-size:11.5px}}
+
+.matrix{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+@media (max-width:720px){.matrix{grid-template-columns:1fr}}
+.cell{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;min-height:84px}
+.cell .k{font-size:0.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.04em}
+.cell .v{margin-top:6px;font-size:0.95rem}
+
+.deltas{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+.bar-row{display:flex;align-items:center;gap:10px}
+.bar-label{width:160px;flex-shrink:0;font-size:0.85rem;color:var(--muted)}
+.bar-track{flex:1;height:22px;background:var(--ground);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
+.bar-fill{height:100%;background:var(--good);border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:0.75rem;font-weight:700;color:#062416;min-width:2.5rem}
+
+.caveats p{color:var(--muted);max-width:72ch}
+.caveats p+p{margin-top:10px}
+.caveats b{color:var(--ink);font-weight:600}
+footer{margin-top:40px;font-size:13px;color:var(--muted);max-width:72ch}
+@media (prefers-reduced-motion:no-preference){.fill{transition:width .5s ease}}
+.demo{font-size:12px;color:var(--muted);margin-top:8px}
+</style>
+
+<div class="wrap">
+  <div class="top">
+    <div>
+      <div class="stamp">Tuesday, September 22, 2026 · event-led demo · America/New_York</div>
+      <h1>AI Updates</h1>
+    </div>
+    <div class="status">
+      <span class="chip good">News: Sheet verified</span>
+      <span class="chip good">Benches: AA Grok 4.7 article Sept 21</span>
+      <span class="chip mid">Explainers: draft — iterate with Julian</span>
+      <span class="chip pick">Subject: Grok 4.7</span>
+    </div>
+  </div>
+
+  <div class="lede">
+    <p><b>Executive take.</b> UN week is turning frontier labs into geopolitical actors, while desktop agents are showing up as real security surfaces. Separately, Artificial Analysis posted a clean Grok 4.7 eval — real gains on agentic knowledge work and coding agents, paid for with much higher token use.</p>
+    <p class="demo">Demo format: news synthesis on top; full-field bars below; tap each benchmark for what it tests and what that means in practice. Task-pick strip intentionally omitted (event-led).</p>
+  </div>
+
+  <section>
+    <h3>Today's AI news</h3>
+    <div class="news" id="news"></div>
+  </section>
+
+  <section>
+    <h3>Held</h3>
+    <div class="card" style="font-size:14.5px;color:var(--muted)">Finland/Norway 20-country appeal — real, but no US/China. Ipsos poll — mood, not a decision. Googlebook — product beat. Wall Street Muse revenue — forward-looking estimates.</div>
+  </section>
+
+  <section>
+    <h3>Benchmarks — Grok 4.7 vs the field</h3>
+    <p style="font-size:14px;color:var(--muted);max-width:76ch;margin-bottom:8px">Source: <a href="https://artificialanalysis.ai/articles/benchmarking-grok-4-7">Benchmarking Grok 4.7</a> (Artificial Analysis, 2026-09-21). Field transcribed from the article charts (same snapshot as today’s Sheet filing). Blue = Grok 4.7. Tap a row for the explainer.</p>
+    <div class="callout">
+      <div style="font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:0.06em;font-weight:600">Mover of the day</div>
+      <div class="big">+111 Elo · AA-Briefcase</div>
+      <div style="max-width:72ch">Grok 4.7 (xhigh) to <b>1657</b> from Grok 4.6 (high) at 1546. Largest verified move in today’s filing. Coding Agent Index also jumped <b>+9</b> to 56 with Grok Build.</div>
+    </div>
+    <div class="tiles" id="tiles"></div>
+    <div class="legend"><span><i class="sw p"></i>Grok 4.7 (today's subject)</span><span><i class="sw"></i>Other models in the article field</span><span>Higher is better on every chart</span></div>
+    <div id="details"></div>
+  </section>
+
+  <section>
+    <h3>Delta vs Grok 4.6</h3>
+    <div class="card">
+      <div class="deltas">
+        <div class="bar-row"><div class="bar-label">AA-Briefcase Elo</div><div class="bar-track"><div class="bar-fill" style="width:100%">+111</div></div></div>
+        <div class="bar-row"><div class="bar-label">GDPval-AA Elo</div><div class="bar-track"><div class="bar-fill" style="width:81%">+90</div></div></div>
+        <div class="bar-row"><div class="bar-label">Coding Agent Index</div><div class="bar-track"><div class="bar-fill" style="width:49%">+9</div></div></div>
+        <div class="bar-row"><div class="bar-label">Intelligence Index</div><div class="bar-track"><div class="bar-fill" style="width:18%">+2</div></div></div>
+      </div>
+      <p style="font-size:12.5px;color:var(--muted);margin-top:12px">Bar widths scaled to today’s largest delta (+111). Briefcase/GDPval deltas use Grok 4.6 <b>high</b>; Intelligence Index and Coding Agent use Grok 4.6 <b>xhigh</b> (as in the AA article).</p>
+    </div>
+  </section>
+
+  <section>
+    <h3>What is new vs updated</h3>
+    <div class="matrix">
+      <div class="cell"><div class="k">New model / version</div><div class="v">Grok 4.7 (eval at xhigh)</div></div>
+      <div class="cell"><div class="k">New benchmark</div><div class="v" style="color:var(--muted);font-style:italic">None in today’s filing</div></div>
+      <div class="cell"><div class="k">Score updates</div><div class="v">4 AA headline scores for Grok 4.7</div></div>
+      <div class="cell"><div class="k">Method / cost note</div><div class="v">Coding Agent uses Grok Build (native). Intelligence Index ~81k output tokens/task at xhigh vs ~27k for GPT-6 Astra (max).</div></div>
+    </div>
+  </section>
+
+  <section class="caveats">
+    <h3>Read before trusting</h3>
+    <div class="card">
+      <p><b>Noise floor.</b> Differences of about one to three points on percentage indexes are within noise. Elo gaps under ~20 are soft without the CI bands.</p>
+      <p><b>Effort ≠ chat default.</b> Charts use high/xhigh/max. Your app’s default is usually lower and cheaper.</p>
+      <p><b>Harness matters.</b> Coding Agent Index compares native harnesses (Grok Build, Claude Code, Codex, …). Intelligence Index uses a unified harness — do not mix the two.</p>
+      <p><b>Field is a snapshot.</b> These bars match the Grok 4.7 article charts. Live AA leaderboards can add newer models (e.g. later Claude Opus variants) after this snapshot.</p>
+      <p><b>Explainers are drafts.</b> “What the test does” / “In everyday use” copy is for iteration with Julian before freezing.</p>
+    </div>
+  </section>
+
+  <footer>Generated by AI Commentator from the AI Updates Sheet + Artificial Analysis Grok 4.7 article. Commentary decisions live on the Sheet; this HTML is the visual delivery layer. Full-field scores transcribed from published AA charts via the 2026-09-21 article snapshot.</footer>
+</div>
+
+<script>
+const SUBJECT = 'Grok 4.7';
+const NEWS = [
+ {tag:'Share · Geopolitics', title:'DeepSeek (and Moonshot) to brief the UN Security Council',
+  body:'Chinese frontier labs are being seated as diplomatic voices, not just vendors.',
+  why:'Worth your time for the seating chart and what gets framed as international security versus commerce. Revisit after the session if it happens.',
+  links:[['Reuters','https://www.reuters.com/world/asia-pacific/deepseek-brief-un-security-council-ai-this-week-sources-say-2026-09-22/','independent']]},
+ {tag:'Share · Geopolitics', title:'US–China AI incident notification talks',
+  body:'A proposed alert channel for AI national-security incidents, with Bessent confirming the dialogue.',
+  why:'Mechanism, not speechwriting — one of the few concrete bilateral plumbing items before a Trump–Xi meeting.',
+  links:[['Wired','https://www.wired.com/story/us-and-china-discuss-alerting-each-other-to-ai-national-security-threats/','independent']]},
+ {tag:'Share · Security', title:'Meta Muse 0-day',
+  body:'A highly privileged desktop assistant is a different class of problem from a browser chat tab. Meta shipped a ~12-hour hotfix.',
+  why:'Read for the privilege model — the template for every desktop agent you will judge.',
+  links:[['Ars Technica','https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/','independent']]},
+ {tag:'Share · Caveat', title:'CAIRN / CLOSEDQUORUM “hive-mind” malware',
+  body:'Early pattern of malware that polls multiple LLMs for next steps.',
+  why:'Worth the architecture. Hard caveat: researchers have not confirmed real-world deployment.',
+  links:[['Wired','https://www.wired.com/story/a-tool-for-tracking-ai-integrated-malware-uncovered-an-autonomous-command-system/','independent']]},
+ {tag:'Share · Caveat', title:'OpenAI math advisory + claimed open-math progress',
+  body:'Advisory group is a real institutional move during UNGA. Math claims are vendor-asserted until reproduced.',
+  why:'Skim for claim surface area, not for taking the math as settled.',
+  links:[['OpenAI','https://openai.com/index/advisory-group-on-mathematics-and-ai/','vendor']]},
+ {tag:'Share · Policy', title:'OpenAI push for a US-led AI safety coalition',
+  body:'Same cluster as the UNSC and US–China items: who sets frontier standards this week.',
+  why:'Political ask, not technical novelty.',
+  links:[['Semafor','https://www.semafor.com/article/09/21/2026/openai-calls-for-global-us-led-coalition-on-ai-safety','independent']]}
+];
+
+const BENCH = [
+ {id:'briefcase', name:'AA-Briefcase', sub:'Long-horizon agentic knowledge work · Elo',
+  unit:'Elo', scale:'elo',
+  tests:'The model works through multi-week professional projects (data science, product, strategy) and must produce real deliverables — spreadsheets, decks, memos — graded on rubric checks, analytical quality, and presentation. Elo blends those signals.',
+  daily:'Closest test to “hand it a multi-day desk project and expect a submit-ready file.” Maps to research memos / analysis and tool use. Not a chat-personality test, not coding.',
+  tags:[['good','Research memos / analysis'],['good','Tool use / browsing'],['mid','Writing email / prose']],
+  note:'Largest move today (+111 vs Grok 4.6 high). Just behind Claude Opus 5 and Fable 5.1 in this article field.',
+  data:[['Claude Fable 5.1','max w/ fallback',1678],['Claude Opus 5','max',1673],['Grok 4.7','xhigh',1657],['Qwen3.8 Max','0902',1640],['Muse Spark 1.3','max',1597],['GPT-6 Astra','max',1569],['Grok 4.6','high',1546],['Claude Fable 5','w/ fallback',1543],['GLM-5.3','max',1525],['Kimi K3','max',1510],['GPT-5.6 Sol','max',1487],['GLM-5.3-Flash','',1459]]},
+ {id:'gdpval', name:'GDPval-AA', sub:'Economically valuable work products · Elo',
+  unit:'Elo', scale:'elo',
+  tests:'Models produce practical work products (documents, spreadsheets, slides) on tasks drawn from real occupations. Elo comes from blind pairwise comparisons, anchored to a human baseline of 1,000.',
+  daily:'“Is it useful on paid knowledge-work outcomes?” Maps to research memos / analysis and writing deliverables. Still not a substitute for domain exams (legal, medical).',
+  tags:[['good','Research memos / analysis'],['good','Writing email / prose'],['mid','Tool use / browsing']],
+  note:'+90 Elo vs Grok 4.6 (high). Third in this article field behind Fable 5.1 and Opus 5.',
+  data:[['Claude Fable 5.1','max w/ fallback',1735],['Claude Opus 5','max',1708],['Grok 4.7','xhigh',1695],['Muse Spark 1.3','max',1674],['Qwen3.8 Max','0902',1668],['GLM-5.3','max',1646],['GLM-5.3-Flash','',1641],['Grok 4.6','high',1605],['DeepSeek V4.1 Flash','max',1600],['Claude Fable 5','w/ fallback',1595],['GPT-5.6 Sol','max',1588],['GPT-6 Astra','max',1542]]},
+ {id:'coding', name:'Coding Agent Index', sub:'Native harness coding agents · index',
+  unit:'', scale:'pct',
+  tests:'Equal-weight blend of DeepSWE v1.1, Terminal-Bench 4.0, and SWE-Atlas-QnA. Each lab runs in its own coding agent (Grok Build, Claude Code, Codex, Muse Code, …). Separate from the Intelligence Index unified harness.',
+  daily:'“Can a coding agent ship and fix software with tools?” Maps to coding projects / agents and tool use — closer to repo work than one-shot chat completion.',
+  tags:[['good','Coding projects / agents'],['good','Tool use / browsing']],
+  note:'56 with Grok Build — 4th among native harnesses in the article (+9 vs Grok 4.6 xhigh). Behind Fable 5.1, Astra, and Opus 5.',
+  data:[['Claude Fable 5.1','Claude Code · max',62],['GPT-6 Astra','Codex · max',62],['Claude Opus 5','Claude Code · max',60],['Grok 4.7','Grok Build · xhigh',56],['GPT-5.6 Sol','Codex · max',55],['Muse Spark 1.3','Muse Code · max',54],['GLM-5.3','Opencode',54],['Kimi K3','Kimi Code CLI',52],['Grok 4.6','Grok Build · xhigh',47],['Qwen3.8 Max','Claude Code',43],['DeepSeek V4 Pro 0813','Codex · max',43],['Gemini 3.8 Flash','Antigravity · high',42]]},
+ {id:'intel', name:'Intelligence Index', sub:'Composite capability · index v4.3',
+  unit:'', scale:'pct',
+  tests:'Artificial Analysis blend of ten evaluations (AA-Briefcase, GDPval-AA, AutomationBench-AA, Terminal-Bench 4.0, SciCode, HLE, GDP.pdf, CritPt, AA-Omniscience, AA-LCR) under a unified harness. Headline “how smart” score — not a single job.',
+  daily:'General IQ headline for ranking labs/models. Weak guide for picking a model for one job; use the task-specific charts for that.',
+  tags:[['good','General IQ headline']],
+  note:'46 at xhigh (+2 vs Grok 4.6 xhigh). Mid-top of the article field; token burn ~81k/task.',
+  data:[['Claude Fable 5.1','max w/ fallback',53],['GPT-6 Astra','max',53],['Claude Opus 5','max',51],['Claude Fable 5','w/ fallback',50],['Muse Spark 1.3','max',48],['GPT-5.6 Sol','max',47],['Grok 4.7','xhigh',46],['Qwen3.8 Max','0902',45],['GLM-5.3','max',45],['Grok 4.6','xhigh',44],['Kimi K3','max',44],['GPT-5.6 Terra','max',42]]}
+];
+
+function isSubject(name){ return name.indexOf(SUBJECT)===0; }
+function rankOf(b){
+  const sorted=[...b.data].sort((x,y)=>y[2]-x[2]);
+  const hit=sorted.find(d=>isSubject(d[0]));
+  const rank=sorted.filter(d=>d[2]>hit[2]).length+1;
+  return {rank,n:sorted.length,score:hit[2],top:sorted[0][2],cfg:hit[1]};
+}
+function band(r){ if(r.rank<=3) return ['good','Top group']; if(r.rank/r.n<=0.55) return ['mid','Middle']; return ['weak','Lower half']; }
+function width(b,v){
+  if(b.scale==='elo'){ const vals=b.data.map(d=>d[2]); const min=Math.min(...vals), max=Math.max(...vals); return Math.max(4, (v-min)/(max-min)*100); }
+  return v;
+}
+
+document.getElementById('news').innerHTML = NEWS.map(n=>`<article class="card story">
+  <div class="tag"><span>${n.tag}</span></div>
+  <h4>${n.title}</h4>
+  <p>${n.body}</p>
+  <p class="why">${n.why}</p>
+  <div class="links">${n.links.map(l=>`<div><a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a> <span>· ${l[2]}</span></div>`).join('')}</div>
+</article>`).join('');
+
+const tiles=document.getElementById('tiles');
+const details=document.getElementById('details');
+BENCH.forEach(b=>{
+  const r=rankOf(b); const [cls,lbl]=band(r);
+  const scoreLabel = b.unit==='Elo' ? r.score+' Elo' : String(r.score);
+  tiles.insertAdjacentHTML('beforeend',`<a class="tile" href="#${b.id}"><span class="name">${b.name}</span><span class="rank">#${r.rank}<small>of ${r.n}</small></span><span class="pill ${cls}">${lbl}</span></a>`);
+  const maxVal=Math.max(...b.data.map(d=>d[2]));
+  const rows=[...b.data].sort((x,y)=>y[2]-x[2]).map(d=>{
+    const w=b.scale==='elo'?width(b,d[2]):(d[2]/maxVal*100);
+    const pick=isSubject(d[0])?' pick':'';
+    return `<div class="row${pick}"><div class="lbl">${d[0]}${d[1]?` <span class="cfg">(${d[1]})</span>`:''}</div><div class="track"><div class="fill" style="width:${w}%"></div></div><div class="val">${d[2]}${b.unit==='Elo'?'':''}</div></div>`;
+  }).join('');
+  const tagHtml=b.tags.map(t=>`<span class="chip ${t[0]}">${t[1]}</span>`).join('');
+  const axis = b.scale==='pct'
+    ? `<div class="axis"><span></span><div class="ticks"><span>0</span><span>25</span><span>50</span><span>75</span><span>100</span></div><span></span></div>`
+    : `<div class="axis"><span></span><div class="ticks"><span>field min</span><span></span><span>field max</span></div><span></span></div>`;
+  details.insertAdjacentHTML('beforeend',`<details class="bench" id="${b.id}">
+    <summary><h2>${b.name}</h2><span class="sub">${b.sub} · Grok 4.7: ${scoreLabel} (#${r.rank}/${r.n})</span><span class="open"><span class="o">show explainer + chart</span><span class="c">hide</span></span></summary>
+    <div class="inner"><div class="grid">
+      <div class="explain">
+        <div><h3>What the test does</h3><p>${b.tests}</p></div>
+        <div><h3>In everyday use</h3><p>${b.daily}</p><div class="tags" style="margin-top:8px">${tagHtml}</div></div>
+        <div class="result"><div class="big">${scoreLabel}<small>rank ${r.rank} of ${r.n}, leader ${r.top}${b.unit==='Elo'?' Elo':''}</small></div><p>${b.note}</p></div>
+      </div>
+      <div><div class="chart">${rows}</div>${axis}</div>
+    </div></div>
+  </details>`);
+});
+</script>
+</body>
+</html>
