@@ -73,6 +73,17 @@ section>h3{margin-bottom:12px}
 .news-wrap.is-open .news-panel{display:block}
 .news-wrap.is-open .news-toggle .o{display:none}
 .news-wrap:not(.is-open) .news-toggle .c{display:none}
+.cost-toggle{
+  margin-top:12px; width:100%; appearance:none; -webkit-appearance:none;
+  border:1px solid var(--line); background:var(--ground); color:var(--pick);
+  font:inherit; font-size:13px; font-weight:600; border-radius:8px;
+  padding:10px 12px; cursor:pointer; text-align:left;
+}
+.cost-toggle .hint{float:right; color:var(--pick)}
+.cost-wrap.show-max .cost-only-max{display:grid}
+.cost-only-max{display:none}
+.cost-wrap.show-max .cost-toggle .o{display:none}
+.cost-wrap:not(.show-max) .cost-toggle .c{display:none}
 
 .news{display:grid;gap:12px}
 @media(min-width:820px){.news{grid-template-columns:1fr 1fr}}
@@ -235,8 +246,14 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
     <div class="card">
       <p style="max-width:70ch;font-size:14.5px;margin-bottom:10px"><b>Same model, different “think harder” dial.</b> Labs let you turn thinking up or down. Higher settings often burn more money for the same job. This list is one hard test task, cheapest first. <b>Lower $ is better.</b></p>
       <p class="note" style="margin:0 0 12px"><b>Use this today:</b> Prefer a model’s <i>normal</i> thinking unless you have a reason to crank it. For Grok 4.7, normal and max got the <b>same score (46)</b> on this test — max just cost more (~$3.74 vs ~$2.73).</p>
-      <div class="legend"><span><i class="sw p"></i>Grok 4.7</span><span><i class="sw"></i>Others</span><span>Each row = one dial setting</span></div>
-      <div class="chart" id="costchart"></div>
+      <div class="legend"><span><i class="sw p"></i>Grok 4.7</span><span><i class="sw"></i>Others</span><span>Default: hide max thinking</span></div>
+      <div class="cost-wrap" id="costWrap">
+        <div class="chart" id="costchart"></div>
+        <button type="button" class="cost-toggle" id="costToggle" aria-expanded="false">
+          Max thinking rows
+          <span class="hint"><span class="o">show</span><span class="c">hide</span></span>
+        </button>
+      </div>
       <p class="note">$ = what Artificial Analysis spent to run one hard “overall smarts” task. Token counts are how much writing/thinking the model produced on that task.</p>
       <details class="more">
         <summary>How to read the dial <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
@@ -357,13 +374,27 @@ document.getElementById('newsList').innerHTML=NEWS.map(n=>{
 }).join('');
 
 const costMax=Math.max(...COST.map(c=>c.dollars));
-document.getElementById('costchart').innerHTML=COST.map(c=>{
+function costRow(c, extraClass){
   const pick=isSub(c.m)?' pick':'';
   const spend=Math.max(8,c.dollars/costMax*100);
   const tok=c.tokens!=null?` · ~${c.tokens}k tokens`:'';
   const tip=c.tip?` · ${c.tip}`:'';
-  return `<div class="row${pick}"><div class="lbl">${c.m}<span class="cfg">${c.effort}${tok}${tip}</span></div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div></div>`;
-}).join('');
+  const cls=(extraClass?extraClass+' ':'')+'row'+pick;
+  return `<div class="${cls}"><div class="lbl">${c.m}<span class="cfg">${c.effort}${tok}${tip}</span></div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div></div>`;
+}
+const costDefault=COST.filter(c=>c.effort!=='Max thinking');
+const costMaxRows=COST.filter(c=>c.effort==='Max thinking');
+document.getElementById('costchart').innerHTML =
+  costDefault.map(c=>costRow(c)).join('') +
+  costMaxRows.map(c=>costRow(c,'cost-only-max')).join('');
+const costWrap=document.getElementById('costWrap');
+const costToggle=document.getElementById('costToggle');
+if(costToggle){
+  costToggle.addEventListener('click',()=>{
+    const open=costWrap.classList.toggle('show-max');
+    costToggle.setAttribute('aria-expanded', open?'true':'false');
+  });
+}
 
 BENCH.forEach(b=>{
   const s=sorted(b); const top=s.slice(0,3);
