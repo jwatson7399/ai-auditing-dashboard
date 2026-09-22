@@ -230,24 +230,27 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
     </div>
   </section>
 
-  <section id="cost">
+    <section id="cost">
     <h3>Cost / who is efficient</h3>
     <div class="card">
-      <p style="max-width:70ch;font-size:14.5px;margin-bottom:10px"><b>Cheaper per hard task wins.</b> Sticker price per million tokens can lie. What matters is what one hard test task actually costs. Lower is better. Where Artificial Analysis published a dollar figure, we use that; otherwise we show how many words of “thinking” the model burned (tokens).</p>
-      <div class="legend"><span><i class="sw p"></i>Grok 4.7</span><span><i class="sw"></i>Others</span><span>Ranked by $ per hard task when known</span></div>
+      <p style="max-width:70ch;font-size:14.5px;margin-bottom:10px"><b>Same model, different “think harder” dial.</b> Labs let you turn thinking up or down. Higher settings often burn more money for the same job. This list is one hard test task, cheapest first. <b>Lower $ is better.</b></p>
+      <p class="note" style="margin:0 0 12px"><b>Use this today:</b> Prefer a model’s <i>normal</i> thinking unless you have a reason to crank it. For Grok 4.7, normal and max got the <b>same score (46)</b> on this test — max just cost more (~$3.74 vs ~$2.73).</p>
+      <div class="legend"><span><i class="sw p"></i>Grok 4.7</span><span><i class="sw"></i>Others</span><span>Each row = one dial setting</span></div>
       <div class="chart" id="costchart"></div>
-      <p class="note">Dollars = Artificial Analysis cost to run one Intelligence Index task. Tokens = output tokens for that same kind of task (from the Grok 4.7 write-up). Astra at a low setting can match Grok 4.7’s score much cheaper; at max effort Astra scores higher for roughly similar money.</p>
+      <p class="note">$ = what Artificial Analysis spent to run one hard “overall smarts” task. Token counts are how much writing/thinking the model produced on that task.</p>
       <details class="more">
-        <summary>How to use this today <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
+        <summary>How to read the dial <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
         <div class="explain">
-          <p>If you pay by usage: prefer models that finish the job with fewer tokens or a lower $ per task — even if the “price per million” looks higher.</p>
-          <p>If you use a flat subscription: high token use still burns rate limits faster. Grok 4.7 at its hardest setting is a heavy burner.</p>
+          <p><b>Normal thinking</b> = the usual setting in apps/APIs (often called “high”).</p>
+          <p><b>Max thinking</b> = dial all the way up (often called “xhigh” or “max”). Slower and usually pricier.</p>
+          <p><b>Low thinking</b> = dial turned down. Can be much cheaper; score may drop.</p>
+          <p>If two rows share a model name, they are <b>not duplicates</b> — they are two dial settings. Pick the cheaper one that still does your job.</p>
         </div>
       </details>
     </div>
   </section>
 
-  <section id="jobs">
+<section id="jobs">
     <h3>How good are they at each job?</h3>
     <p class="note" style="margin:0 0 4px">Each card is named for the job. The official test name is the small subtitle. Default view: top 3. Tap for the full list and a longer explainer.</p>
     <div class="legend"><span><i class="sw p"></i>Grok 4.7</span><span><i class="sw"></i>Others</span></div>
@@ -303,13 +306,13 @@ This is politics and agenda-setting, not a new product demo. Read it next to the
 
 /* Cost: prefer $ when known; tokens as backup column. Rank by $ asc. */
 const COST=[
- {m:'GPT-6 Astra', cfg:'low effort', dollars:0.82, tokens:null, note:'Same score band as Grok 4.7, much cheaper'},
- {m:'Grok 4.6', cfg:'high', dollars:1.86, tokens:36},
- {m:'Grok 4.6', cfg:'xhigh', dollars:2.32, tokens:38},
- {m:'Grok 4.7', cfg:'high', dollars:2.73, tokens:null},
- {m:'GPT-6 Astra', cfg:'max', dollars:3.26, tokens:27, note:'Higher score (53)'},
- {m:'Grok 4.7', cfg:'xhigh', dollars:3.74, tokens:81},
- {m:'Claude Fable 5.1', cfg:'max', dollars:5.98, tokens:78, note:'Tied for top score (53)'}
+ {m:'GPT-6 Astra', effort:'Low thinking', dollars:0.82, tokens:null, tip:'Same score band as Grok 4.7, much cheaper'},
+ {m:'Grok 4.6', effort:'Normal thinking', dollars:1.86, tokens:36, tip:null},
+ {m:'Grok 4.6', effort:'Max thinking', dollars:2.32, tokens:38, tip:null},
+ {m:'Grok 4.7', effort:'Normal thinking', dollars:2.73, tokens:null, tip:'Same score as max — better default'},
+ {m:'GPT-6 Astra', effort:'Max thinking', dollars:3.26, tokens:27, tip:'Higher score (53)'},
+ {m:'Grok 4.7', effort:'Max thinking', dollars:3.74, tokens:81, tip:'Same score as normal, costs more'},
+ {m:'Claude Fable 5.1', effort:'Max thinking', dollars:5.98, tokens:78, tip:'Tied for top score (53)'}
 ];
 
 const BENCH=[
@@ -353,26 +356,15 @@ document.getElementById('newsList').innerHTML=NEWS.map(n=>{
   return `<article class="card story"><div class="tag">${n.tag}</div><h4>${n.title}</h4><div class="body">${paras}</div><p class="why">${n.why}</p><div class="links">${n.links.map(l=>`<div><a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a> <span>· ${l[2]}</span></div>`).join('')}</div></article>`;
 }).join('');
 
-/* Cost chart: bar length inverse to dollars (cheaper = longer) for intuition? Better: show $ as label, bar = relative cheapness from max */
 const costMax=Math.max(...COST.map(c=>c.dollars));
 document.getElementById('costchart').innerHTML=COST.map(c=>{
   const pick=isSub(c.m)?' pick':'';
-  const cheap=Math.max(8,(1-(c.dollars/costMax))*100); // visual: cheaper -> longer (optional)
-  // Actually for cost "leaderboard" people expect cheaper at top with shorter spend bars OR longer efficiency bars.
-  // Use spend bars: longer = more expensive (honest). Rank already cheapest-first.
   const spend=Math.max(8,c.dollars/costMax*100);
   const tok=c.tokens!=null?` · ~${c.tokens}k tokens`:'';
-  return `<div class="row${pick}"><div class="lbl">${c.m}<span class="cfg">${c.cfg}${c.note?' · '+c.note:''}</span></div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}${tok.replace(' ·','')}</div></div>`;
-}).join('');
-// Fix val display - keep $ and tokens clean
-document.getElementById('costchart').innerHTML=COST.map(c=>{
-  const pick=isSub(c.m)?' pick':'';
-  const spend=Math.max(8,c.dollars/costMax*100);
-  const extra=c.tokens!=null?`<span class="cfg">~${c.tokens}k tokens${c.note?' · '+c.note:''}</span>`:(c.note?`<span class="cfg">${c.note}</span>`:`<span class="cfg">${c.cfg}</span>`);
-  return `<div class="row${pick}"><div class="lbl">${c.m}${extra}</div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div></div>`;
+  const tip=c.tip?` · ${c.tip}`:'';
+  return `<div class="row${pick}"><div class="lbl">${c.m}<span class="cfg">${c.effort}${tok}${tip}</span></div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div></div>`;
 }).join('');
 
-const root=document.getElementById('benches');
 BENCH.forEach(b=>{
   const s=sorted(b); const top=s.slice(0,3);
   const hit=s.find(d=>isSub(d[0])); const rank=s.filter(d=>d[2]>hit[2]).length+1;
