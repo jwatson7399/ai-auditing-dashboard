@@ -37,23 +37,42 @@ p{margin:0} a{color:var(--pick)}
 .chip.good{background:var(--good-soft);color:var(--good)} .chip.pick{background:var(--pick-soft);color:var(--pick)} .chip.mid{background:var(--mid-soft);color:var(--mid)}
 .lede{background:var(--pick-soft);border-radius:10px;padding:16px 18px;margin-top:18px;max-width:76ch}
 
-.toc{margin-top:22px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
-.toc h3{margin-bottom:10px}
-.toc ol{margin:0;padding-left:1.2rem;display:flex;flex-direction:column;gap:6px;font-size:15px}
-.toc a{text-decoration:none;font-weight:600}
-.toc a:hover{text-decoration:underline}
+.toc-bar{
+  position:sticky; top:0; z-index:50;
+  margin:14px -20px 0; padding:10px 20px;
+  background:color-mix(in srgb, var(--ground) 92%, transparent);
+  backdrop-filter:saturate(1.2) blur(10px);
+  -webkit-backdrop-filter:saturate(1.2) blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.toc-bar .label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:8px}
+.toc-scroller{
+  display:flex; gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch;
+  scrollbar-width:none; padding-bottom:2px;
+}
+.toc-scroller::-webkit-scrollbar{display:none}
+.toc-scroller a{
+  flex:0 0 auto; text-decoration:none; font-size:13px; font-weight:600;
+  color:var(--ink); background:var(--surface); border:1px solid var(--line);
+  border-radius:999px; padding:8px 12px; white-space:nowrap;
+}
+.toc-scroller a:active, .toc-scroller a:focus-visible{border-color:var(--pick); color:var(--pick); outline:none}
 
-section{margin-top:34px;scroll-margin-top:18px}
+section{margin-top:34px;scroll-margin-top:64px}
 section>h3{margin-bottom:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 18px}
 
-details.block{background:var(--surface);border:1px solid var(--line);border-radius:10px}
-details.block>summary{cursor:pointer;list-style:none;padding:16px 18px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-weight:700;font-family:var(--display)}
-details.block>summary::-webkit-details-marker{display:none}
-details.block>summary .hint{margin-left:auto;font-size:13px;color:var(--pick);font-weight:600;font-family:var(--body)}
-details.block[open]>summary .hint .o{display:none}
-details.block:not([open])>summary .hint .c{display:none}
-.block-body{padding:0 18px 18px}
+.news-wrap{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.news-toggle{
+  width:100%; appearance:none; -webkit-appearance:none; border:0; background:transparent;
+  color:var(--ink); font:inherit; font-family:var(--display); font-weight:700; font-size:16px;
+  text-align:left; padding:16px 18px; display:flex; align-items:center; gap:8px; cursor:pointer;
+}
+.news-toggle .hint{margin-left:auto; font-size:13px; color:var(--pick); font-weight:600; font-family:var(--body)}
+.news-panel{display:none; padding:0 18px 18px}
+.news-wrap.is-open .news-panel{display:block}
+.news-wrap.is-open .news-toggle .o{display:none}
+.news-wrap:not(.is-open) .news-toggle .c{display:none}
 
 .news{display:grid;gap:12px}
 @media(min-width:820px){.news{grid-template-columns:1fr 1fr}}
@@ -71,11 +90,10 @@ details.block:not([open])>summary .hint .c{display:none}
 .newmodel p{max-width:70ch;font-size:14.5px}
 
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;align-items:end}
-@media(max-width:520px){.pair{grid-template-columns:1fr}}
 .pair .col{text-align:center}
 .pair .lab{font-size:12px;color:var(--muted);margin-bottom:6px}
 .pair .track{height:120px;display:flex;align-items:flex-end;justify-content:center;background:var(--ground);border-radius:8px;border:1px solid var(--line);padding:8px}
-.pair .fill{width:56%;border-radius:6px 6px 2px 2px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;font-family:var(--mono);font-size:12px;font-weight:600}
+.pair .fill{width:70%;max-width:72px;border-radius:6px 6px 2px 2px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;font-family:var(--mono);font-size:12px;font-weight:600}
 .pair .fill.old{background:var(--old);color:#fff;min-height:20%}
 .pair .fill.neu{background:var(--pick);color:#fff}
 .pair .delta{margin-top:10px;font-family:var(--mono);font-size:1.25rem;font-weight:600;color:var(--good);text-align:center}
@@ -138,17 +156,17 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
     <p><b>Today in one breath.</b> Governments and labs are treating frontier AI like diplomacy, not just products. Desktop AI assistants are becoming a security issue. And Grok 4.7 just posted real gains on hard work tasks — while using a lot more tokens to get there.</p>
   </div>
 
-  <nav class="toc" id="contents" aria-label="Contents">
-    <h3>Contents</h3>
-    <ol>
-      <li><a href="#new-model">What’s new in models</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#biggest">Biggest improvement</a></li>
-      <li><a href="#vs46">Where 4.7 is better than 4.6</a></li>
-      <li><a href="#cost">Cost / who is efficient</a></li>
-      <li><a href="#jobs">How good are they at each job?</a></li>
-      <li><a href="#trust">Before you trust this</a></li>
-    </ol>
+  <nav class="toc-bar" id="contents" aria-label="Contents">
+    <div class="label">Jump to</div>
+    <div class="toc-scroller">
+      <a href="#new-model">New model</a>
+      <a href="#news">News</a>
+      <a href="#biggest">Biggest move</a>
+      <a href="#vs46">4.7 vs 4.6</a>
+      <a href="#cost">Cost</a>
+      <a href="#jobs">By job</a>
+      <a href="#trust">Caveats</a>
+    </div>
   </nav>
 
   <section id="new-model">
@@ -162,10 +180,15 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
 
   <section id="news">
     <h3>News</h3>
-    <details class="block">
-      <summary>Today’s AI news <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
-      <div class="block-body"><div class="news" id="news"></div></div>
-    </details>
+    <div class="news-wrap" id="newsWrap">
+      <button type="button" class="news-toggle" id="newsToggle" aria-expanded="false" aria-controls="newsPanel">
+        Today’s AI news
+        <span class="hint"><span class="o">show</span><span class="c">hide</span></span>
+      </button>
+      <div class="news-panel" id="newsPanel" hidden>
+        <div class="news" id="newsList"></div>
+      </div>
+    </div>
   </section>
 
   <section id="biggest">
@@ -325,7 +348,7 @@ function rows(data, scaleMax){
   }).join('');
 }
 
-document.getElementById('news').innerHTML=NEWS.map(n=>{
+document.getElementById('newsList').innerHTML=NEWS.map(n=>{
   const paras=n.body.trim().split(/\n+/).map(p=>`<p>${p.trim()}</p>`).join('');
   return `<article class="card story"><div class="tag">${n.tag}</div><h4>${n.title}</h4><div class="body">${paras}</div><p class="why">${n.why}</p><div class="links">${n.links.map(l=>`<div><a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a> <span>· ${l[2]}</span></div>`).join('')}</div></article>`;
 }).join('');
@@ -368,6 +391,17 @@ BENCH.forEach(b=>{
     </details>
   </article>`);
 });
+
+const newsWrap=document.getElementById('newsWrap');
+const newsToggle=document.getElementById('newsToggle');
+const newsPanel=document.getElementById('newsPanel');
+if(newsToggle){
+  newsToggle.addEventListener('click',()=>{
+    const open=newsWrap.classList.toggle('is-open');
+    newsToggle.setAttribute('aria-expanded', open?'true':'false');
+    if(open) newsPanel.removeAttribute('hidden'); else newsPanel.setAttribute('hidden','');
+  });
+}
 </script>
 </body>
 </html>
