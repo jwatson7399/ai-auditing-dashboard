@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="AI Updates for 2026-09-22: plain-language news and model comparisons."/>
+<meta name="description" content="AI Updates for 2026-09-22: Claude Opus 5.5 launch — lab-reported benches, pricing, and plain-language takeaways."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231B5FBF%22/%3E%20%3Ctext%20x%3D%2232%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C-apple-system%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23FFFFFF%22%20letter-spacing%3D%22-0.5%22%3EAI%3C/text%3E%20%3C/svg%3E"/>
 <link rel="apple-touch-icon" href="https://jwatson7399.github.io/ai-auditing-dashboard/apple-touch-icon.png"/>
-<title>AI Updates — Sep 22, 2026</title>
+<title>AI Updates — Sep 22, 2026 · Claude Opus 5.5</title>
 <style>img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
@@ -98,6 +98,9 @@ section>h3{margin-bottom:12px}
 .newmodel .big{font-family:var(--display);font-size:1.4rem;font-weight:800;color:var(--pick);margin:6px 0}
 .newmodel p{max-width:70ch;font-size:14.5px}
 
+.callout{background:var(--mid-soft);border:1px solid color-mix(in srgb, var(--mid) 35%, var(--line));border-radius:10px;padding:14px 16px;margin-top:14px;max-width:76ch;font-size:14.5px}
+.callout b{color:var(--ink)}
+
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px;align-items:end}
 .pair .col{text-align:center}
 .pair .lab{font-size:12px;color:var(--muted);margin-bottom:6px}
@@ -138,6 +141,13 @@ details.more:not([open])>summary .hint .c{display:none}
 .deltas .bar-label{width:48%;max-width:220px;flex-shrink:0;font-size:0.88rem}
 .deltas .bar-track{flex:1;height:22px;background:var(--ground);border-radius:6px;overflow:hidden;border:1px solid var(--line)}
 .deltas .bar-fill{height:100%;background:var(--good);border-radius:6px;display:flex;align-items:center;padding-left:8px;font-size:0.72rem;font-weight:700;color:#062416;min-width:2.8rem}
+.deltas .bar-fill.warn{background:var(--mid);color:#3a2a00}
+
+.price-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
+.price-table th,.price-table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
+.price-table th{font-size:11px;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);font-weight:600}
+.price-table td.pick{color:var(--pick);font-weight:700;font-family:var(--mono)}
+.price-table td.mono{font-family:var(--mono)}
 
 .caveats p{color:var(--muted);max-width:72ch}
 .caveats p+p{margin-top:10px}
@@ -148,6 +158,11 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
 .sw{width:14px;height:10px;border-radius:2px;background:var(--bar);display:inline-block}
 .sw.p{background:var(--pick)} .sw.o{background:var(--old)}
 @media (prefers-reduced-motion:no-preference){.fill{transition:height .45s ease,width .45s ease}}
+@media (max-width:520px){
+  .row{grid-template-columns:minmax(90px,1fr) 1.6fr 54px}
+  .cost-wrap .row,.cost-head{grid-template-columns:minmax(120px,1.5fr) 1.2fr 48px 40px}
+  .pair .fill{font-size:11px}
+}
 </style>
 
 <div class="wrap">
@@ -155,14 +170,18 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
     <div class="stamp">Tuesday, Sep 22, 2026 · America/New_York</div>
     <h1>AI Updates</h1>
     <div class="chips">
-      <span class="chip pick">New model: Grok 4.7</span>
-      <span class="chip good">Scores checked</span>
-      <span class="chip mid">Plain-language demo</span>
+      <span class="chip pick">New model: Claude Opus 5.5</span>
+      <span class="chip mid">Lab-reported benches</span>
+      <span class="chip good">~40% cheaper than Opus 5</span>
     </div>
   </div>
 
   <div class="lede">
-    <p><b>Today in one breath.</b> Governments and labs are treating frontier AI like diplomacy, not just products. Desktop AI assistants are becoming a security issue. And Grok 4.7 just posted real gains on hard work tasks — while using a lot more tokens to get there.</p>
+    <p><b>Today in one breath.</b> Anthropic launched <b>Claude Opus 5.5</b> — Fable-level work at Opus pricing, with a sticker cut vs Opus 5 ($4/$20 per million tokens) and big jumps on coding-agent and knowledge-work tests <i>in Anthropic’s own table</i>. GPT-6 Astra still leads two workflow/science benches. Artificial Analysis has started independent runs the same day; this brief charts the lab table first.</p>
+  </div>
+
+  <div class="callout">
+    <b>Big caveat.</b> The headline bars below are <b>lab-reported by Anthropic</b> (Zapier for AutomationBench; OpenAI-reported figures for some peer models). They are <b>not</b> a finished Artificial Analysis audit of this exact chart set. AA published a same-day write-up with its own numbers — those can differ (e.g. AA Terminal-Bench 4.0 ≈59.6% vs Anthropic’s 66.4%). Treat Anthropic bars as company claims until you cross-check independents.
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
@@ -171,8 +190,8 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
       <a href="#new-model">New model</a>
       <a href="#news">News</a>
       <a href="#biggest">Biggest move</a>
-      <a href="#vs46">4.7 vs 4.6</a>
-      <a href="#cost">Cost</a>
+      <a href="#leads">Where it leads</a>
+      <a href="#cost">Cost / effort</a>
       <a href="#jobs">By job</a>
       <a href="#trust">Caveats</a>
     </div>
@@ -181,9 +200,10 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
   <section id="new-model">
     <h3>What’s new in models</h3>
     <div class="newmodel">
-      <div class="k">New today</div>
-      <div class="big">Grok 4.7 is out</div>
-      <p>SpaceXAI’s new model. Independent testers at Artificial Analysis ran it on hard “do the job” tests. Same sticker price as Grok 4.6 ($2 in / $6 out per million tokens). The catch: it often thinks longer, so a single hard task can cost more even though the rate card didn’t change.</p>
+      <div class="k">New today · highlighted</div>
+      <div class="big">Claude Opus 5.5 is out</div>
+      <p>First model in Anthropic’s Claude 5.5 family. Anthropic says it matches <b>Claude Fable 5.1</b> on most work, costs ~40% less than Opus 5 on typical workloads, and runs &gt;30% faster. API id: <code>claude-opus-5-5</code>. Thinking is always on (adaptive); you dial <b>effort</b> instead (low → max). Sonnet 5.5 and Haiku 5.5 are promised in the coming weeks.</p>
+      <p style="margin-top:10px">Primary source: <a href="https://www.anthropic.com/claude-opus-5-5" target="_blank" rel="noopener">anthropic.com/claude-opus-5-5</a></p>
     </div>
   </section>
 
@@ -201,156 +221,187 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
   </section>
 
   <section id="biggest">
-    <h3>Biggest improvement</h3>
+    <h3>Biggest improvement vs Opus 5</h3>
     <div class="card">
-      <h2 style="margin-bottom:6px">Multi-day desk projects</h2>
-      <p class="note" style="margin:0 0 8px">Same job, old model vs new model. Higher bar = better.</p>
+      <h2 style="margin-bottom:6px">Agentic terminal coding</h2>
+      <p class="note" style="margin:0 0 8px">Same job, old Opus vs new Opus. Higher bar = better. <b>Lab-reported</b> (Terminal-Bench 4.0).</p>
       <div class="pair">
         <div class="col">
-          <div class="lab">Grok 4.6</div>
-          <div class="track"><div class="fill old" style="height:72%">1546</div></div>
+          <div class="lab">Claude Opus 5</div>
+          <div class="track"><div class="fill old" style="height:79%">52.3%</div></div>
         </div>
         <div class="col">
-          <div class="lab">Grok 4.7</div>
-          <div class="track"><div class="fill neu" style="height:100%">1657</div></div>
+          <div class="lab">Claude Opus 5.5</div>
+          <div class="track"><div class="fill neu" style="height:100%">66.4%</div></div>
         </div>
       </div>
-      <div class="delta">+111 · largest jump in today’s scores</div>
+      <div class="delta">+14.1 pts · largest jump on today’s lab table</div>
       <details class="more">
         <summary>What this means for you <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
         <div class="explain">
-          <div><h3>The job</h3><p>Think: research memo, slide deck, spreadsheet analysis — work you’d hand to a sharp analyst over several days, not a one-line chat answer.</p></div>
-          <div><h3>What changed</h3><p>Grok 4.7 jumped the most here versus 4.6. In this week’s comparison set it sits just behind the two Claude leaders. If you care about “finish the project,” this is the headline move.</p></div>
-          <div><h3>Test name (for nerds)</h3><p>Artificial Analysis calls this AA-Briefcase. You don’t need that name to use the chart.</p></div>
+          <div><h3>The job</h3><p>Think: an agent that lives in a terminal — installs tools, edits files, runs commands, and finishes multi-step coding work without you babysitting every step.</p></div>
+          <div><h3>What changed</h3><p>Opus 5.5 clears a big gap vs Opus 5 on Anthropic’s Terminal-Bench 4.0 table, and also leads Fable 5.1 and GPT-6 Astra on that same lab chart. Science agents and Zapier-style business workflows are a different story — Astra still leads those two.</p></div>
+          <div><h3>Test name (for nerds)</h3><p>Terminal-Bench 4.0. Anthropic reports SE ±2.6 for Opus 5.5; production safeguards were on (may lower scores).</p></div>
         </div>
       </details>
     </div>
   </section>
 
-  <section id="vs46">
-    <h3>Where 4.7 is better than 4.6</h3>
+  <section id="leads">
+    <h3>Where Opus 5.5 leads vs the field</h3>
     <div class="card deltas">
-      <p class="note" style="margin:0 0 10px">How much Grok 4.7 improved on each kind of work. Longer bar = bigger upgrade.</p>
-      <div class="bar-row"><div class="bar-label">Multi-day desk projects</div><div class="bar-track"><div class="bar-fill" style="width:100%">+111</div></div></div>
-      <div class="bar-row"><div class="bar-label">Paid work deliverables</div><div class="bar-track"><div class="bar-fill" style="width:81%">+90</div></div></div>
-      <div class="bar-row"><div class="bar-label">Coding agents</div><div class="bar-track"><div class="bar-fill" style="width:49%">+9</div></div></div>
-      <div class="bar-row"><div class="bar-label">Overall smarts</div><div class="bar-track"><div class="bar-fill" style="width:18%">+2</div></div></div>
-      <p class="note">Read: 4.7 is a clear step up on project-style work and coding agents. The “overall smarts” score barely moved.</p>
+      <p class="note" style="margin:0 0 10px"><b>Lab-reported.</b> Gain vs previous Opus 5 on each job. Longer green bar = bigger upgrade. Amber = Astra still ahead of Opus 5.5.</p>
+      <div class="bar-row"><div class="bar-label">Terminal coding agents</div><div class="bar-track"><div class="bar-fill" style="width:100%">+14.1</div></div></div>
+      <div class="bar-row"><div class="bar-label">Science research agents</div><div class="bar-track"><div class="bar-fill" style="width:100%">+29.7</div></div></div>
+      <div class="bar-row"><div class="bar-label">Business workflows</div><div class="bar-track"><div class="bar-fill" style="width:44%">+13.1</div></div></div>
+      <div class="bar-row"><div class="bar-label">Cursor-style coding</div><div class="bar-track"><div class="bar-fill" style="width:38%">+11.2</div></div></div>
+      <div class="bar-row"><div class="bar-label">Hard reasoning (w/ tools)</div><div class="bar-track"><div class="bar-fill" style="width:14%">+4.1</div></div></div>
+      <div class="bar-row"><div class="bar-label">Paid work deliverables</div><div class="bar-track"><div class="bar-fill" style="width:47%">+138 Elo</div></div></div>
+      <p class="note" style="margin-top:12px"><b>Still behind Astra (lab table):</b> AutomationBench 40.0 vs <b>41.4</b>; Terminal-Bench-Science 58.7 vs <b>64.6</b>.</p>
     </div>
   </section>
 
-    <section id="cost">
-    <h3>Cost / who is efficient</h3>
+  <section id="cost">
+    <h3>Cost / effort</h3>
     <div class="card">
-      <p style="max-width:70ch;font-size:14.5px;margin-bottom:10px"><b>Same model, different “think harder” dial.</b> Labs let you turn thinking up or down. Higher settings often burn more money for the same job. This list is one hard test task, cheapest first. <b>Lower $ is better.</b></p>
-      <p class="note" style="margin:0 0 12px"><b>Use this today:</b> Prefer a model’s <i>normal</i> thinking unless you have a reason to crank it. For Grok 4.7, normal and max got the <b>same score (46)</b> on this test — max just cost more (~$3.74 vs ~$2.73).</p>
-      <div class="legend"><span><i class="sw p"></i>Grok 4.7</span><span><i class="sw"></i>Others</span><span>Lower $ better · higher score better</span></div>
+      <p style="max-width:70ch;font-size:14.5px;margin-bottom:10px"><b>Sticker price dropped.</b> Opus 5.5 vs Opus 5 per million tokens. Cache reads (most of agent/coding cost) fell the most.</p>
+      <table class="price-table" aria-label="Pricing Opus 5.5 vs Opus 5">
+        <thead><tr><th>Per 1M tokens</th><th>Opus 5.5</th><th>Opus 5</th></tr></thead>
+        <tbody>
+          <tr><td>Input</td><td class="pick">$4</td><td class="mono">$5</td></tr>
+          <tr><td>Output</td><td class="pick">$20</td><td class="mono">$25</td></tr>
+          <tr><td>Cache read</td><td class="pick">$0.20</td><td class="mono">$0.50</td></tr>
+          <tr><td>Cache write (5m)</td><td class="pick">$5</td><td class="mono">$6.25</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Anthropic also offers a Fast mode (~2.5× speed) at $8 / $40. Batch API is half price on input/output.</p>
+
+      <p style="max-width:70ch;font-size:14.5px;margin:18px 0 10px"><b>Use this today:</b> On Anthropic’s FrontierCode chart, <b>Medium thinking</b> hits ~54.6% — matching Max (~54.4%) for roughly <b>1/8 the $ per task</b>. Cranking to Max rarely pays on that bench. On Terminal-Bench, High (~64%) is close to Extra-high’s peak (66.4%) for less spend.</p>
+      <div class="legend"><span><i class="sw p"></i>Opus 5.5</span><span><i class="sw"></i>Peers (peaks)</span><span>Lower $ better · higher score better · approx. from Anthropic charts</span></div>
       <div class="cost-wrap">
         <div class="cost-head"><span>Model · thinking level</span><span>Cost bar</span><span>$</span><span>Score</span></div>
         <div class="chart" id="costchart"></div>
       </div>
-      <p class="note">$ = what Artificial Analysis spent to run one hard “overall smarts” task. Token counts are how much writing/thinking the model produced on that task.</p>
+      <p class="note">$ ≈ Anthropic chart “cost per task/attempt” (not AA Index task cost). Effort labels in plain English: Low / Medium / High / Extra-high / Max.</p>
       <details class="more">
         <summary>How to read the dial <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
         <div class="explain">
-          <p><b>Normal thinking</b> = the usual setting in apps/APIs (often called “high”).</p>
-          <p><b>Max thinking</b> = dial all the way up (often called “xhigh” or “max”). Slower and usually pricier.</p>
-          <p><b>Low thinking</b> = dial turned down. Can be much cheaper; score may drop.</p>
-          <p>If two rows share a model name, they are <b>not duplicates</b> — they are two dial settings. Pick the cheaper one that still does your job.</p>
+          <p><b>Medium thinking</b> = Anthropic’s default effort on Opus 5.5. Good first setting for coding agents.</p>
+          <p><b>High / Extra-high / Max</b> = dial up. Often costs more; score gains shrink after High on several charts.</p>
+          <p><b>Low thinking</b> = dial down. Cheaper; score usually drops.</p>
+          <p>If two rows share a model name, they are <b>not duplicates</b> — they are two dial settings.</p>
         </div>
       </details>
     </div>
   </section>
 
-<section id="jobs">
+  <section id="jobs">
     <h3>How good are they at each job?</h3>
-    <p class="note" style="margin:0 0 4px">Each card is named for the job. The official test name is the small subtitle. Default view: top 3. Tap for the full list and a longer explainer.</p>
-    <div class="legend"><span><i class="sw p"></i>Grok 4.7</span><span><i class="sw"></i>Others</span></div>
+    <p class="note" style="margin:0 0 4px">Each card is named for the job. Official test name is the small subtitle. Default view: top 3. Tap for the full field and a longer explainer. <b>All scores lab-reported unless noted.</b></p>
+    <div class="legend"><span><i class="sw p"></i>Claude Opus 5.5</span><span><i class="sw"></i>Others</span></div>
     <div id="benches"></div>
   </section>
 
   <section id="trust" class="caveats">
     <h3>Before you trust this</h3>
     <div class="card">
-      <p><b>Small gaps don’t matter.</b> A couple of points on a 0–100 score is often noise.</p>
-      <p><b>Hard mode ≠ what you get in the app.</b> These charts usually use the model’s hardest thinking setting. Everyday chat is often cheaper and a bit weaker.</p>
-      <p><b>One lab, one week.</b> Numbers come from Artificial Analysis’s Grok 4.7 write-up (Sept 21) and related cost tables. Newer models may already sit above this snapshot.</p>
+      <p><b>Lab-reported ≠ finished independent audit.</b> Bars come from Anthropic’s announce table (and Zapier / OpenAI-reported peer cells). Artificial Analysis posted a same-day Opus 5.5 article — useful cross-check, different harnesses, different numbers.</p>
+      <p><b>Safeguards were on.</b> Anthropic says production cyber/biology fallbacks may have lowered some Opus 5.5 scores (failed safeguards counted as fails on AutomationBench).</p>
+      <p><b>Effort matters.</b> Headline Opus 5.5 numbers are mostly adaptive thinking at <b>max</b> (Terminal-Bench uses extra-high). Everyday apps often run Medium — cheaper, sometimes nearly as good.</p>
+      <p><b>Small gaps don’t matter.</b> A couple of points is often noise (TB4.0 SE ±2.6 for Opus 5.5; TB-Science SE ±3.5–5).</p>
     </div>
   </section>
 
-  <footer>Built for phone reading · AI Commentator · scores from Artificial Analysis</footer>
+  <footer>Built for phone reading · AI Commentator · benches: Anthropic lab table (Sep 22, 2026) · independent AA write-up linked in News · do not treat as AA leaderboard export</footer>
 </div>
 
 <script>
-const SUBJECT='Grok 4.7';
+const SUBJECT='Claude Opus 5.5';
 const NEWS=[
- {tag:'Share · World politics', title:'Chinese AI labs may brief the UN Security Council',
-  body:`Reuters says DeepSeek is expected to talk to the UN Security Council about AI this week, with Moonshot also mentioned. That’s unusual: these are companies, not countries, getting a seat in a very formal room.
-Until the meeting happens, treat it as “planned / sourced,” not finished. Watch who else is invited and whether the talk is framed as safety, rules, or industry policy.`,
-  why:'Why care: AI labs are being treated like geopolitical players. The guest list matters more than the press release.',
-  links:[['Reuters','https://www.reuters.com/world/asia-pacific/deepseek-brief-un-security-council-ai-this-week-sources-say-2026-09-22/','news']]},
- {tag:'Share · World politics', title:'US and China talk about warning each other on AI threats',
-  body:`Wired reports the two governments are discussing a way to alert each other about AI-related national-security problems — more like a hotline than a full treaty. A US official has confirmed the talks are real.
-There is no public rulebook yet. The news is that any concrete channel is even on the table.`,
-  why:'Why care: this is process, not speeches. Rare bit of practical US–China plumbing on AI risk.',
-  links:[['Wired','https://www.wired.com/story/us-and-china-discuss-alerting-each-other-to-ai-national-security-threats/','news']]},
- {tag:'Share · Security', title:'A serious bug in Meta’s Muse desktop assistant',
-  body:`Ars Technica covers a 0-day in Muse, Meta’s AI assistant that sits on your computer with high privileges — much riskier than a website chatbot. Meta shipped a fix in about half a day.
-The lesson isn’t “Meta bad.” It’s: once an assistant can touch your files and act locally, a bug looks more like a break-in than a wrong answer.`,
-  why:'Why care: use this as the checklist for any desktop AI you install — what can it touch, and how fast does the company patch?',
-  links:[['Ars Technica','https://arstechnica.com/security/2026/09/muse-metas-extraordinarily-privileged-ai-assistant-has-a-serious-0-day/','news']]},
- {tag:'Share · Caveat', title:'Researchers describe malware that asks several AIs what to do next',
-  body:`Wired covers research (CAIRN / CLOSEDQUORUM) on malware that polls multiple AI models for its next move instead of following a fixed script.
-Important caveat: the researchers have not shown this running widely in the real world. It’s an early warning about a design pattern, not proof of a mass outbreak.`,
-  why:'Why care: learn the pattern. Don’t panic into “AI malware is everywhere” without confirmed attacks.',
-  links:[['Wired','https://www.wired.com/story/a-tool-for-tracking-ai-integrated-malware-uncovered-an-autonomous-command-system/','news']]},
- {tag:'Share · Caveat', title:'OpenAI starts a math advisory group — and makes big math claims',
-  body:`OpenAI announced advisors on math and AI during a busy UN week, plus strong claims about progress on famous open math problems.
-The advisory group is a real organizational move. The math breakthroughs should be treated as “OpenAI says so” until independent experts reproduce them.`,
-  why:'Why care: separate “they’re organizing advice” (solid) from “these problems are solved” (not independently settled).',
-  links:[['OpenAI','https://openai.com/index/advisory-group-on-mathematics-and-ai/','company']]},
- {tag:'Share · Policy', title:'OpenAI wants a US-led coalition on AI safety',
-  body:`Semafor reports OpenAI pushing for a US-led international group on AI safety standards — same week as the UN and US–China stories above.
-This is politics and agenda-setting, not a new product demo. Read it next to the other governance news.`,
-  why:'Why care: it shows who wants to write the rules this week. Low tech novelty, high power-map value.',
-  links:[['Semafor','https://www.semafor.com/article/09/21/2026/openai-calls-for-global-us-led-coalition-on-ai-safety','news']]}
+ {tag:'Share · New model', title:'Anthropic ships Claude Opus 5.5 — Fable-level work, cheaper Opus',
+  body:`Anthropic launched Opus 5.5 as the first Claude 5.5 model: Fable 5.1–level performance on most work, ~40% lower cost than Opus 5 on typical loads, >30% faster output, 1M context, always-on adaptive thinking with an effort dial.
+Pricing: $4 in / $20 out per million tokens (was $5/$25). Cache reads $0.20 (was $0.50). Available as claude-opus-5-5 on Claude API, Bedrock, Google Cloud, and Azure Foundry. Sonnet 5.5 and Haiku 5.5 are “coming weeks.”`,
+  why:'Why care: this is the day’s product event — cheaper frontier Opus with coding-agent claims worth auditing.',
+  links:[['Anthropic announce','https://www.anthropic.com/claude-opus-5-5','company'],['TechCrunch','https://techcrunch.com/2026/09/22/anthropic-releases-opus-5-5-with-lower-prices-and-fable-level-performance/','news']]},
+ {tag:'Share · Benches', title:'Lab table: Opus 5.5 leads coding & knowledge work; Astra keeps two wins',
+  body:`On Anthropic’s compare table, Opus 5.5 leads Terminal-Bench 4.0 (66.4%), FrontierCode (54.4%), CursorBench (57.8%), GDPval-AA (1846 Elo), HLE w/ tools (67.7%), OSWorld partial (81.8%), and Chartography (89.0%).
+GPT-6 Astra still leads AutomationBench (41.4 vs 40.0) and Terminal-Bench-Science (64.6 vs 58.7). Peer Astra/Sol coding figures are OpenAI-reported; AutomationBench is Zapier’s.`,
+  why:'Why care: know where the new model actually wins vs where the peer still owns the chart.',
+  links:[['Anthropic announce (table)','https://www.anthropic.com/claude-opus-5-5','company']]},
+ {tag:'Share · Independent', title:'Artificial Analysis already has Opus 5.5 on the Intelligence Index',
+  body:`Same day, Artificial Analysis says Opus 5.5 (max) scores 58 on its Intelligence Index — their highest yet — and leads several of their own evals (including GDPval-AA 1846 Elo and AA-Briefcase 1822).
+Their Terminal-Bench 4.0 figure (~59.6%, tied with Astra) is lower than Anthropic’s 66.4%. Different harnesses; don’t paste the two tables together.`,
+  why:'Why care: independent signal exists today — use it to temper the lab table, not to invent hybrid scores.',
+  links:[['Artificial Analysis','https://artificialanalysis.ai/articles/claude-opus-5-5','lab']]},
+ {tag:'Share · Pricing', title:'Token sticker cut + cache-read discount is the real money story',
+  body:`Input/output down 20%; cache reads down 60%. Anthropic says that nets ~40% lower cost on typical agent/coding work because cache hits dominate those bills. Fast mode is $8/$40 for up to ~2.5× speed.
+Effort charts (lab): Medium often matches Max on FrontierCode for a fraction of the $ — so “turn it to max” is not free lunch.`,
+  why:'Why care: for agents, cache + effort setting move the bill more than the sticker alone.',
+  links:[['Platform docs','https://platform.claude.com/docs/en/models/opus-5-5/overview','docs']]}
 ];
 
-/* Cost: prefer $ when known; tokens as backup column. Rank by $ asc. */
+/* Approx $ from Anthropic effort charts; scores from page/charts. Rank by $ asc. */
 const COST=[
- {m:'GPT-6 Astra', effort:'Low thinking', dollars:0.82, tokens:null, score:46, tip:'Same score as Grok 4.7, much cheaper'},
- {m:'Grok 4.6', effort:'Normal thinking', dollars:1.86, tokens:36, score:44, tip:null},
- {m:'Grok 4.6', effort:'Max thinking', dollars:2.32, tokens:38, score:44, tip:null},
- {m:'Grok 4.7', effort:'Normal thinking', dollars:2.73, tokens:null, score:46, tip:'Same score as max — better default'},
- {m:'GPT-6 Astra', effort:'Max thinking', dollars:3.26, tokens:27, score:53, tip:'Higher score'},
- {m:'Grok 4.7', effort:'Max thinking', dollars:3.74, tokens:81, score:46, tip:'Same score as normal, costs more'},
- {m:'Claude Fable 5.1', effort:'Max thinking', dollars:5.98, tokens:78, score:53, tip:'Tied for top score'}
+ {m:'Claude Opus 5.5', effort:'Low thinking', dollars:0.35, score:47, tip:'FrontierCode · cheap floor'},
+ {m:'Claude Opus 5.5', effort:'Medium thinking', dollars:0.80, score:55, tip:'FrontierCode ~54.6% · best default'},
+ {m:'Claude Opus 5.5', effort:'High thinking', dollars:1.10, score:54, tip:'FrontierCode · little gain vs med'},
+ {m:'GPT-6 Astra', effort:'Max thinking', dollars:4.50, score:53, tip:'FrontierCode peak (OpenAI-reported)'},
+ {m:'Claude Opus 5.5', effort:'Extra-high thinking', dollars:2.20, score:52, tip:'FrontierCode dip vs med'},
+ {m:'Claude Opus 5.5', effort:'Max thinking', dollars:6.50, score:54, tip:'FrontierCode 54.4% · ~8× med $'},
+ {m:'Claude Opus 5.5', effort:'High thinking', dollars:4.20, score:64, tip:'Terminal-Bench · near peak'},
+ {m:'Claude Opus 5.5', effort:'Extra-high thinking', dollars:7.20, score:66, tip:'Terminal-Bench 66.4% peak'},
+ {m:'GPT-6 Astra', effort:'High thinking', dollars:7.50, score:58, tip:'Terminal-Bench peak ~57.9%'}
 ];
 
 const BENCH=[
- {id:'desk', title:'Multi-day desk projects', sub:'Official test name: AA-Briefcase',
-  practical:'Best for long projects: memos, decks, spreadsheets — not quick chat.',
-  tests:'The model has to finish realistic multi-day office projects and turn in real files. Graders check whether the work is complete, smart, and presentable.',
-  daily:'Would you trust it with a research memo or deck you’d show a boss?',
-  data:[['Claude Fable 5.1','hardest setting',1678],['Claude Opus 5','hardest setting',1673],['Grok 4.7','hardest setting',1657],['Qwen3.8 Max','',1640],['Muse Spark 1.3','hardest setting',1597],['GPT-6 Astra','hardest setting',1569],['Grok 4.6','high',1546],['Claude Fable 5','',1543],['GLM-5.3','hardest setting',1525],['Kimi K3','hardest setting',1510],['GPT-5.6 Sol','hardest setting',1487],['GLM-5.3-Flash','',1459]]},
- {id:'paid', title:'Paid work deliverables', sub:'Official test name: GDPval-AA',
-  practical:'Best for everyday job outputs: documents, sheets, slides across real occupations.',
-  tests:'Models produce work products from real jobs. Humans (via blind comparisons) judge which output is better.',
-  daily:'If you need something you could hand to a client or coworker, look here.',
-  data:[['Claude Fable 5.1','hardest setting',1735],['Claude Opus 5','hardest setting',1708],['Grok 4.7','hardest setting',1695],['Muse Spark 1.3','hardest setting',1674],['Qwen3.8 Max','',1668],['GLM-5.3','hardest setting',1646],['GLM-5.3-Flash','',1641],['Grok 4.6','high',1605],['DeepSeek V4.1 Flash','hardest setting',1600],['Claude Fable 5','',1595],['GPT-5.6 Sol','hardest setting',1588],['GPT-6 Astra','hardest setting',1542]]},
- {id:'code', title:'Coding agents that build and fix software', sub:'Official test name: Coding Agent Index',
-  practical:'Best for AI that edits code, runs commands, and fixes breakages — not one-shot code snippets.',
-  tests:'Each company uses its own coding helper (Grok Build, Claude Code, Codex, etc.). Score blends several coding-agent tests.',
-  daily:'If you want an agent in your repo, this chart is closer to reality than a chat coding quiz.',
-  data:[['Claude Fable 5.1','Claude Code',62],['GPT-6 Astra','Codex',62],['Claude Opus 5','Claude Code',60],['Grok 4.7','Grok Build',56],['GPT-5.6 Sol','Codex',55],['Muse Spark 1.3','Muse Code',54],['GLM-5.3','Opencode',54],['Kimi K3','Kimi Code',52],['Grok 4.6','Grok Build',47],['Qwen3.8 Max','Claude Code',43],['DeepSeek V4 Pro','Codex',43],['Gemini 3.8 Flash','Antigravity',42]]},
- {id:'smarts', title:'Overall smarts (headline score)', sub:'Official test name: Intelligence Index',
-  practical:'A single “how smart is it?” headline. Weak guide for picking a model for one specific job.',
-  tests:'A blend of many hard tests under one shared setup. Good for ranking labs; bad as your only decision tool.',
-  daily:'Use the job cards above when you have a real task. Use this when you just want the leaderboard vibe.',
-  data:[['Claude Fable 5.1','hardest setting',53],['GPT-6 Astra','hardest setting',53],['Claude Opus 5','hardest setting',51],['Claude Fable 5','',50],['Muse Spark 1.3','hardest setting',48],['GPT-5.6 Sol','hardest setting',47],['Grok 4.7','hardest setting',46],['Qwen3.8 Max','',45],['GLM-5.3','hardest setting',45],['Grok 4.6','hardest setting',44],['Kimi K3','hardest setting',44],['GPT-5.6 Terra','hardest setting',42]]}
+ {id:'code-term', title:'Coding agents / terminal coding', sub:'Official: Terminal-Bench 4.0',
+  practical:'Best for agents that drive a shell — install, edit, run, fix — across multi-step jobs.',
+  tests:'Models complete complex professional tasks inside a command-line harness. Anthropic reports Opus 5.5 at extra-high effort; Astra at high (OpenAI-reported). SE ±2.6 for Opus 5.5.',
+  daily:'If you want Claude Code / terminal agents to finish sprawling refactors, this is the headline coding card.',
+  data:[['Claude Opus 5.5','extra-high · lab',66.4],['GPT-6 Astra','high · OpenAI-reported',57.9],['Claude Fable 5.1','lab',55.8],['Claude Opus 5','lab',52.3],['GPT-5.6 Sol','OpenAI-reported',37.3]]},
+ {id:'code-frontier', title:'Coding agents that ship mergeable changes', sub:'Official: FrontierCode v1.1 (Main)',
+  practical:'Best for “would a human merge this?” coding-agent quality — not one-shot snippets.',
+  tests:'Scores whether an agent’s code changes look merge-ready. Anthropic: Opus 5.5 at max 54.4%; default/medium ~54.6% on their chart.',
+  daily:'Use when the question is “can it land a PR,” not “can it write a function.”',
+  data:[['Claude Opus 5.5','max · lab',54.4],['GPT-6 Astra','OpenAI-reported',53.3],['Claude Fable 5.1','lab',50.3],['Claude Opus 5','lab',48.0],['GPT-5.6 Sol','OpenAI-reported',47.5]]},
+ {id:'code-cursor', title:'Ambiguous multi-file coding (Cursor-style)', sub:'Official: CursorBench 4.0',
+  practical:'Best for messy, real IDE sessions — vague asks across many files.',
+  tests:'Tasks drawn from real Cursor sessions. Astra not reported on Anthropic’s table. Medium effort ~52.5% on Anthropic’s chart vs 57.8% at max.',
+  daily:'Closer to day-to-day pair-programming agents than a clean contest problem.',
+  data:[['Claude Opus 5.5','max · lab',57.8],['Claude Fable 5.1','lab',51.8],['Claude Opus 5','lab',46.6],['GPT-5.6 Sol','OpenAI-reported',41.7]]},
+ {id:'paid', title:'Paid work deliverables / knowledge work', sub:'Official: GDPval-AA v2.1',
+  practical:'Best for documents, sheets, and slides across real occupations — Elo-like score.',
+  tests:'Artificial Analysis’s GDPval-AA style knowledge-work eval across 44 occupations. Anthropic reports Opus 5.5 at 1846 Elo (max). AA’s same-day article also cites 1846.',
+  daily:'If you need client-ready work products, look here before the “IQ” headline.',
+  data:[['Claude Opus 5.5','max · lab',1846],['Claude Fable 5.1','lab',1735],['Claude Opus 5','lab',1708],['GPT-5.6 Sol','lab table',1588],['GPT-6 Astra','lab table',1542]]},
+ {id:'workflows', title:'Business workflows across connected apps', sub:'Official: AutomationBench (Zapier)',
+  practical:'Best for multi-app business automations. Note: Astra still edges Opus 5.5 here.',
+  tests:'Zapier-run workflows. Safeguard fails counted as fails (no fallback), so Opus 5.5 may score lower than real production with fallbacks.',
+  daily:'If your agent lives in Zapier-style glue, don’t crown Opus 5.5 from coding wins alone.',
+  data:[['GPT-6 Astra','Zapier leaderboard',41.4],['Claude Opus 5.5','Zapier early access',40.0],['Claude Fable 5.1','lab table',31.4],['GPT-5.6 Sol','Zapier leaderboard',28.8],['Claude Opus 5','Zapier leaderboard',26.9]]},
+ {id:'science', title:'Research / science agents', sub:'Official: Terminal-Bench-Science 0.1',
+  practical:'Best for long agentic science work in a terminal. Astra leads this lab card.',
+  tests:'Science-oriented terminal tasks. SE ±3.5–5. Astra figure OpenAI-reported. Huge jump vs Opus 5 (29.0 → 58.7) but still behind Astra 64.6.',
+  daily:'Pick for lab/research agents — and keep Astra in the bake-off.',
+  data:[['GPT-6 Astra','OpenAI-reported',64.6],['Claude Opus 5.5','lab',58.7],['Claude Fable 5.1','lab',52.6],['Claude Opus 5','lab',29.0],['GPT-5.6 Sol','OpenAI-reported',22.4]]},
+ {id:'computer', title:'Computer use (clicking around a desktop)', sub:'Official: OSWorld 2.0 (partial)',
+  practical:'Best for agents that drive a GUI — open apps, click, type, finish the task.',
+  tests:'Partial OSWorld 2.0 scores on Anthropic’s table. Astra/Sol not shown.',
+  daily:'Useful if your product is “AI that uses the computer,” not just chat.',
+  data:[['Claude Opus 5.5','partial · lab',81.8],['Claude Fable 5.1','partial · lab',80.7],['Claude Opus 5','partial · lab',74.0]]},
+ {id:'charts', title:'Charts / visual reading (with tools)', sub:'Official: Chartography (w/ tools)',
+  practical:'Best for reading charts and figures accurately when tools are allowed.',
+  tests:'Visual chart recognition with tools. Narrow lead over Fable; clearer step up vs Opus 5.',
+  daily:'For finance/ops packs full of charts — less about chat IQ.',
+  data:[['Claude Opus 5.5','w/ tools · lab',89.0],['Claude Fable 5.1','w/ tools · lab',88.4],['Claude Opus 5','w/ tools · lab',83.4]]},
+ {id:'hle', title:'Overall hard reasoning (with tools)', sub:'Official: Humanity’s Last Exam (w/ tools)',
+  practical:'A hard multidisciplinary exam with tools — closer to “general IQ headline” than a job card.',
+  tests:'HLE with tools. Sol not reported. Strong but smaller gap than the coding jumps.',
+  daily:'Use as a smarts vibe-check; pick job cards for real work.',
+  data:[['Claude Opus 5.5','w/ tools · lab',67.7],['Claude Fable 5.1','w/ tools · lab',65.6],['Claude Opus 5','w/ tools · lab',63.6],['GPT-6 Astra','w/ tools · lab',57.2]]}
 ];
 
-function isSub(n){return n.indexOf(SUBJECT)===0}
+function isSub(n){return n.indexOf(SUBJECT)===0 || n==='Claude Opus 5.5'}
 function sorted(b){return [...b.data].sort((a,c)=>c[2]-a[2])}
 function width(vals,v){const min=Math.min(...vals),max=Math.max(...vals);return Math.max(8,(v-min)/((max-min)||1)*100)}
 function rows(data, scaleMax){
@@ -359,7 +410,8 @@ function rows(data, scaleMax){
   return data.map(d=>{
     const pick=isSub(d[0])?' pick':'';
     const w=scaleMax? (d[2]/max*100) : width(vals,d[2]);
-    return `<div class="row${pick}"><div class="lbl">${d[0]}${d[1]?`<span class="cfg">${d[1]}</span>`:''}</div><div class="track"><div class="fill" style="width:${w}%"></div></div><div class="val">${d[2]}</div></div>`;
+    const show=Number.isInteger(d[2])?d[2]:d[2];
+    return `<div class="row${pick}"><div class="lbl">${d[0]}${d[1]?`<span class="cfg">${d[1]}</span>`:''}</div><div class="track"><div class="fill" style="width:${w}%"></div></div><div class="val">${show}</div></div>`;
   }).join('');
 }
 
@@ -373,20 +425,21 @@ function costRow(c){
   const pick=isSub(c.m)?' pick':'';
   const spend=Math.max(8,c.dollars/costMax*100);
   const bits=[];
-  if(c.tokens!=null) bits.push('~'+c.tokens+'k tokens');
   if(c.tip) bits.push(c.tip);
   const sub=bits.length?`<span class="cfg">${bits.join(' · ')}</span>`:'';
   return `<div class="row${pick}"><div class="lbl">${c.m} — ${c.effort}${sub}</div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div><div class="score">${c.score}</div></div>`;
 }
-document.getElementById('costchart').innerHTML = COST.map(costRow).join('');
+document.getElementById('costchart').innerHTML = COST.slice().sort((a,b)=>a.dollars-b.dollars).map(costRow).join('');
 
 const root=document.getElementById('benches');
 BENCH.forEach(b=>{
   const s=sorted(b); const top=s.slice(0,3);
-  const hit=s.find(d=>isSub(d[0])); const rank=s.filter(d=>d[2]>hit[2]).length+1;
+  const hit=s.find(d=>isSub(d[0]));
+  const rank=hit? (s.filter(d=>d[2]>hit[2]).length+1) : '—';
+  const rankLine=hit? ` · ${SUBJECT} ranks #${rank} of ${s.length} here` : '';
   root.insertAdjacentHTML('beforeend',`<article class="bench" id="${b.id}">
     <p class="title">${b.title}</p>
-    <p class="sub">${b.sub} · Grok 4.7 ranks #${rank} of ${s.length} here</p>
+    <p class="sub">${b.sub}${rankLine}</p>
     <p class="practical"><b>In practice:</b> ${b.practical}</p>
     <div class="chart">${rows(top)}</div>
     <details class="more">
