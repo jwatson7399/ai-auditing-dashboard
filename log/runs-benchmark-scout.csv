@@ -1,3 +1,4 @@
 date,time_et,agent,status,items,pr,notes
 2026-09-06,13:55,benchmark-scout,ok,10,1,none
 2026-09-20,07:06 ET,benchmark-scout,ok,1,62,AA Index v4.3.2 Elo anchor method change
+2026-09-22,07:23 ET,benchmark-scout,ok,6,71,Grok 4.7 and MiMo-V2.6-Pro AA Index and agent scores
