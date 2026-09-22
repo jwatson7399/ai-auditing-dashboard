@@ -378,6 +378,7 @@ function costRow(c){
 }
 document.getElementById('costchart').innerHTML = COST.map(costRow).join('');
 
+const root=document.getElementById('benches');
 BENCH.forEach(b=>{
   const s=sorted(b); const top=s.slice(0,3);
   const hit=s.find(d=>isSub(d[0])); const rank=s.filter(d=>d[2]>hit[2]).length+1;
