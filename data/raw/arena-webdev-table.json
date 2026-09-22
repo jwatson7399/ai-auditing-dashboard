@@ -93,6 +93,15 @@
       "1M"
     ],
     [
+      "",
+      "N/A",
+      "mimo-v2.6-pro\nXiaomi \u00b7 MIT",
+      "1628\n+18/-18\nAutoEval",
+      "N/A",
+      "$0.43 / $0.87",
+      "1M"
+    ],
+    [
       "10",
       "9\n16",
       "claude-fable-5-high\nAnthropic \u00b7 Proprietary",
@@ -467,7 +476,7 @@
       "kimi-k2.7-code\nMoonshot \u00b7 Modified MIT",
       "1473\n+10/-10",
       "4,683",
-      "$0.71 / $3.21",
+      "$0.71 / $3.30",
       "262.1K"
     ],
     [
@@ -648,7 +657,7 @@
       "1410\n+7/-7",
       "8,970",
       "$1 / $4.05",
-      "524.3K"
+      "1M"
     ],
     [
       "72",
@@ -1164,7 +1173,7 @@
       "128K"
     ]
   ],
-  "fetched_at": "2026-09-21T18:12:22.843891+00:00",
+  "fetched_at": "2026-09-22T13:20:30.534838+00:00",
   "source_updated": "2026-09-11",
   "heading": "Code Arena | WebDev\n\ud83c\udfc6\nOverall"
 }
