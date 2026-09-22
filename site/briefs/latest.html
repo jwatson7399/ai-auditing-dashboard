@@ -84,6 +84,9 @@ section>h3{margin-bottom:12px}
 .cost-only-max{display:none}
 .cost-wrap.show-max .cost-toggle .o{display:none}
 .cost-wrap:not(.show-max) .cost-toggle .c{display:none}
+.cost-wrap .row{grid-template-columns:minmax(140px,1.35fr) 1.6fr 64px}
+.cost-wrap .row .lbl{font-size:12.5px;font-weight:600;text-align:left}
+.cost-wrap .row .lbl .cfg{font-weight:500;font-size:11px;margin-top:2px}
 
 .news{display:grid;gap:12px}
 @media(min-width:820px){.news{grid-template-columns:1fr 1fr}}
@@ -377,10 +380,13 @@ const costMax=Math.max(...COST.map(c=>c.dollars));
 function costRow(c, extraClass){
   const pick=isSub(c.m)?' pick':'';
   const spend=Math.max(8,c.dollars/costMax*100);
-  const tok=c.tokens!=null?` · ~${c.tokens}k tokens`:'';
-  const tip=c.tip?` · ${c.tip}`:'';
+  const bits=[];
+  if(c.tokens!=null) bits.push('~'+c.tokens+'k tokens');
+  if(c.tip) bits.push(c.tip);
+  const sub=bits.length?`<span class="cfg">${bits.join(' · ')}</span>`:'';
   const cls=(extraClass?extraClass+' ':'')+'row'+pick;
-  return `<div class="${cls}"><div class="lbl">${c.m}<span class="cfg">${c.effort}${tok}${tip}</span></div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div></div>`;
+  // Effort is in the main title so it stays readable on phone
+  return `<div class="${cls}"><div class="lbl">${c.m} — ${c.effort}${sub}</div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div></div>`;
 }
 const costDefault=COST.filter(c=>c.effort!=='Max thinking');
 const costMaxRows=COST.filter(c=>c.effort==='Max thinking');
