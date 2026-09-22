@@ -73,20 +73,13 @@ section>h3{margin-bottom:12px}
 .news-wrap.is-open .news-panel{display:block}
 .news-wrap.is-open .news-toggle .o{display:none}
 .news-wrap:not(.is-open) .news-toggle .c{display:none}
-.cost-toggle{
-  margin-top:12px; width:100%; appearance:none; -webkit-appearance:none;
-  border:1px solid var(--line); background:var(--ground); color:var(--pick);
-  font:inherit; font-size:13px; font-weight:600; border-radius:8px;
-  padding:10px 12px; cursor:pointer; text-align:left;
-}
-.cost-toggle .hint{float:right; color:var(--pick)}
-.cost-wrap.show-max .cost-only-max{display:grid}
-.cost-only-max{display:none}
-.cost-wrap.show-max .cost-toggle .o{display:none}
-.cost-wrap:not(.show-max) .cost-toggle .c{display:none}
-.cost-wrap .row{grid-template-columns:minmax(140px,1.35fr) 1.6fr 64px}
+.cost-wrap .row{grid-template-columns:minmax(140px,1.4fr) 1.4fr 52px 44px}
 .cost-wrap .row .lbl{font-size:12.5px;font-weight:600;text-align:left}
 .cost-wrap .row .lbl .cfg{font-weight:500;font-size:11px;margin-top:2px}
+.cost-wrap .row .score{font-family:var(--mono);font-size:12px;font-weight:600;text-align:right;color:var(--bar-text)}
+.cost-wrap .row.pick .score{color:var(--pick)}
+.cost-head{display:grid;grid-template-columns:minmax(140px,1.4fr) 1.4fr 52px 44px;gap:8px;font-size:10.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);font-weight:600;margin-bottom:6px;padding:0 2px}
+.cost-head span:nth-child(3),.cost-head span:nth-child(4){text-align:right}
 
 .news{display:grid;gap:12px}
 @media(min-width:820px){.news{grid-template-columns:1fr 1fr}}
@@ -249,13 +242,10 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
     <div class="card">
       <p style="max-width:70ch;font-size:14.5px;margin-bottom:10px"><b>Same model, different “think harder” dial.</b> Labs let you turn thinking up or down. Higher settings often burn more money for the same job. This list is one hard test task, cheapest first. <b>Lower $ is better.</b></p>
       <p class="note" style="margin:0 0 12px"><b>Use this today:</b> Prefer a model’s <i>normal</i> thinking unless you have a reason to crank it. For Grok 4.7, normal and max got the <b>same score (46)</b> on this test — max just cost more (~$3.74 vs ~$2.73).</p>
-      <div class="legend"><span><i class="sw p"></i>Grok 4.7</span><span><i class="sw"></i>Others</span><span>Default: hide max thinking</span></div>
-      <div class="cost-wrap" id="costWrap">
+      <div class="legend"><span><i class="sw p"></i>Grok 4.7</span><span><i class="sw"></i>Others</span><span>Lower $ better · higher score better</span></div>
+      <div class="cost-wrap">
+        <div class="cost-head"><span>Model · thinking level</span><span>Cost bar</span><span>$</span><span>Score</span></div>
         <div class="chart" id="costchart"></div>
-        <button type="button" class="cost-toggle" id="costToggle" aria-expanded="false">
-          Max thinking rows
-          <span class="hint"><span class="o">show</span><span class="c">hide</span></span>
-        </button>
       </div>
       <p class="note">$ = what Artificial Analysis spent to run one hard “overall smarts” task. Token counts are how much writing/thinking the model produced on that task.</p>
       <details class="more">
@@ -326,13 +316,13 @@ This is politics and agenda-setting, not a new product demo. Read it next to the
 
 /* Cost: prefer $ when known; tokens as backup column. Rank by $ asc. */
 const COST=[
- {m:'GPT-6 Astra', effort:'Low thinking', dollars:0.82, tokens:null, tip:'Same score band as Grok 4.7, much cheaper'},
- {m:'Grok 4.6', effort:'Normal thinking', dollars:1.86, tokens:36, tip:null},
- {m:'Grok 4.6', effort:'Max thinking', dollars:2.32, tokens:38, tip:null},
- {m:'Grok 4.7', effort:'Normal thinking', dollars:2.73, tokens:null, tip:'Same score as max — better default'},
- {m:'GPT-6 Astra', effort:'Max thinking', dollars:3.26, tokens:27, tip:'Higher score (53)'},
- {m:'Grok 4.7', effort:'Max thinking', dollars:3.74, tokens:81, tip:'Same score as normal, costs more'},
- {m:'Claude Fable 5.1', effort:'Max thinking', dollars:5.98, tokens:78, tip:'Tied for top score (53)'}
+ {m:'GPT-6 Astra', effort:'Low thinking', dollars:0.82, tokens:null, score:46, tip:'Same score as Grok 4.7, much cheaper'},
+ {m:'Grok 4.6', effort:'Normal thinking', dollars:1.86, tokens:36, score:44, tip:null},
+ {m:'Grok 4.6', effort:'Max thinking', dollars:2.32, tokens:38, score:44, tip:null},
+ {m:'Grok 4.7', effort:'Normal thinking', dollars:2.73, tokens:null, score:46, tip:'Same score as max — better default'},
+ {m:'GPT-6 Astra', effort:'Max thinking', dollars:3.26, tokens:27, score:53, tip:'Higher score'},
+ {m:'Grok 4.7', effort:'Max thinking', dollars:3.74, tokens:81, score:46, tip:'Same score as normal, costs more'},
+ {m:'Claude Fable 5.1', effort:'Max thinking', dollars:5.98, tokens:78, score:53, tip:'Tied for top score'}
 ];
 
 const BENCH=[
@@ -377,30 +367,16 @@ document.getElementById('newsList').innerHTML=NEWS.map(n=>{
 }).join('');
 
 const costMax=Math.max(...COST.map(c=>c.dollars));
-function costRow(c, extraClass){
+function costRow(c){
   const pick=isSub(c.m)?' pick':'';
   const spend=Math.max(8,c.dollars/costMax*100);
   const bits=[];
   if(c.tokens!=null) bits.push('~'+c.tokens+'k tokens');
   if(c.tip) bits.push(c.tip);
   const sub=bits.length?`<span class="cfg">${bits.join(' · ')}</span>`:'';
-  const cls=(extraClass?extraClass+' ':'')+'row'+pick;
-  // Effort is in the main title so it stays readable on phone
-  return `<div class="${cls}"><div class="lbl">${c.m} — ${c.effort}${sub}</div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div></div>`;
+  return `<div class="row${pick}"><div class="lbl">${c.m} — ${c.effort}${sub}</div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div><div class="score">${c.score}</div></div>`;
 }
-const costDefault=COST.filter(c=>c.effort!=='Max thinking');
-const costMaxRows=COST.filter(c=>c.effort==='Max thinking');
-document.getElementById('costchart').innerHTML =
-  costDefault.map(c=>costRow(c)).join('') +
-  costMaxRows.map(c=>costRow(c,'cost-only-max')).join('');
-const costWrap=document.getElementById('costWrap');
-const costToggle=document.getElementById('costToggle');
-if(costToggle){
-  costToggle.addEventListener('click',()=>{
-    const open=costWrap.classList.toggle('show-max');
-    costToggle.setAttribute('aria-expanded', open?'true':'false');
-  });
-}
+document.getElementById('costchart').innerHTML = COST.map(costRow).join('');
 
 BENCH.forEach(b=>{
   const s=sorted(b); const top=s.slice(0,3);
