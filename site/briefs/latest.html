@@ -112,6 +112,8 @@ section>h3{margin-bottom:12px}
 .cost-head{display:grid;grid-template-columns:minmax(140px,1.4fr) 1.4fr 52px 44px;gap:8px;font-size:10.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);font-weight:600;margin-bottom:6px;padding:0 2px}
 .cost-head span:nth-child(3),.cost-head span:nth-child(4){text-align:right}
 
+.ce-sep{border:0;border-top:2px solid var(--line);margin:18px 0 14px}
+.ce-title{font-size:1.05rem;font-weight:700;margin:0 0 6px;color:var(--ink)}
 .ce-board{margin-top:20px;padding-top:4px;border-top:1px solid var(--line)}
 .ce-board>h2{font-size:17px;font-weight:800;margin:12px 0 4px}
 .ce-board .ce-blurb{font-size:13px;color:var(--muted);margin:0 0 12px;max-width:72ch;line-height:1.45}
@@ -309,7 +311,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
   <section id="leads">
     <h3>Where Sol / Luna land vs the field</h3>
     <div class="card deltas">
-      <p class="note" style="margin:0 0 10px"><b>Independent AA + ARC.</b> Ranked like By job — who leads the filed field, then Sol/Luna. No full-width “win” bars.</p>
+      <p class="note" style="margin:0 0 10px"><b>Independent AA + ARC.</b> Ranked like By job — who leads the field, then Sol/Luna. No full-width “win” bars.</p>
       <ul class="rank-list">
         <li><span class="job">Coding agents (Codex harness)</span><span class="pick-line">Astra leads Coding Agent at 62; Sol 57 · Luna 41</span></li>
         <li><span class="job">Knowledge / hallucination Index</span>Only Sol/Luna filed today — Sol 27 · Luna 1 <b>(weak Omniscience; no wider field)</b></li>
@@ -334,12 +336,14 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
           <tr><td>Context</td><td class="pick">1.05M</td><td class="mono">see docs</td><td class="mono">1M</td></tr>
         </tbody>
       </table>
-      <p class="note">Luna $0.10/$0.50 from Willison’s map of promo/tier pricing — confirm live docs before budgeting. Vendor accuracy claims ≠ free lunch on capability. Sticker table is list price, not AA $/task.</p>
+      <p class="note">Luna $0.10/$0.50 from Willison’s map of promo/tier pricing — confirm live docs before budgeting. Vendor accuracy claims ≠ free lunch on capability.</p>
+      <hr class="ce-sep" />
+      <p class="note" style="margin:0 0 12px"><b>Below uses AA $/task for the Intelligence Index — not the sticker $/1M table above.</b></p>
 
       <div class="ce-board">
-        <h2>Cost-effectiveness leaderboard</h2>
-        <p class="ce-blurb">Ranked by Intelligence Index points per AA dollar of Index-task cost. Higher is better. Independent Artificial Analysis.</p>
-        <div class="legend"><span><i class="sw p"></i>GPT-6 Sol / Luna (today)</span><span><i class="sw x"></i>Exploit (pricier, ≤ Index)</span><span>Higher CE = more smarts per $</span></div>
+        <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
+        <p class="ce-blurb"><b>Cost-effectiveness (CE) = Index ÷ AA $/task.</b> Ranked high to low — more smarts per dollar. Independent Artificial Analysis Intelligence Index cost-per-task.</p>
+        <div class="legend"><span><i class="sw p"></i>GPT-6 Sol / Luna (today)</span><span><i class="sw x"></i>Worse deal — another dial gives ≥ Index for less $</span><span>Higher CE = more smarts per $</span></div>
         <div class="cost-wrap ce">
           <div class="ce-head"><span>#</span><span>Model · thinking</span><span>Index</span><span>$/task</span><span>CE</span></div>
           <div class="chart" id="cechart"></div>
@@ -350,7 +354,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
             <div class="chart" id="cechartFull"></div>
           </div>
         </details>
-        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> For smarts per AA dollar, <b>Luna</b> (medium→max) and <b>MiMo</b> top the board — tiny $/task. <b>Sol max</b> is the clean mid-tier pick that isn’t Pareto-dominated. <b>Opus max</b> still owns raw Index 58; you’re buying the peak, not cost-effectiveness. Gold rows cost more than another row with equal or better Index — skip those dial settings unless you have a non-score reason.</p>
+        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> Luna tops CE because AA $/task is tiny — Index is still mid/low. <b>MiMo</b> is the open-weights CE standout. <b>Sol max</b> is the clean mid-tier pick without a Worse deal flag. <b>Opus max</b> still owns raw Index; you’re buying the peak, not cost-effectiveness. Rows marked <b>Worse deal</b> mean another dial already gives equal or better Index for less $ — skip those unless you have a non-score reason.</p>
         <p class="note">AA Cost per Task for the Intelligence Index. Effort labels ≠ chat default (most headline Index rows are max). Sticker table above is list price, not $/task. CE = Index ÷ $/task.</p>
       </div>
     </div>
@@ -524,7 +528,7 @@ const CE_ROWS=[
  {m:'GPT-6 Luna', effort:'Medium thinking', index:29, dollars:0.02}
 ];
 function ceVal(r){return r.index/r.dollars}
-/* Exploit = Pareto-dominated on $/Index within this board: costs more than another row with equal or better Index. */
+/* Worse deal = dominated on $/Index: costs more than another row with equal or better Index. */
 function isCeExploit(c, pool){
   return pool.some(o => o !== c && o.dollars < c.dollars && o.index >= c.index);
 }
@@ -542,7 +546,7 @@ function ceRow(c, rank, pool){
   const exploit=isCeExploit(c, pool);
   const pick=isSub(c.m)?' pick':'';
   const cls=`row${pick}${exploit?' exploit':''}`;
-  const badge=exploit?'<span class="badge-exploit">Exploit</span>':'';
+  const badge=exploit?'<span class="badge-exploit">Worse deal</span>':'';
   let sub='';
   if(exploit){
     const beaters=pool.filter(o => o !== c && o.dollars < c.dollars && o.index >= c.index)
