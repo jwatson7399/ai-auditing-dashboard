@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-23",
- "built_at": "2026-09-23T17:15:22+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 70",
- "built_at_et": "1:15 PM",
+ "built_at": "2026-09-23T17:22:34+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 71",
+ "built_at_et": "1:22 PM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -29156,14 +29156,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -30378,14 +30378,14 @@
      null
     ],
     [
-     "MAI-Image-2.5",
-     88.3,
-     null
-    ],
-    [
      "GPT Image 1.5",
      88.3,
      "chatgpt"
+    ],
+    [
+     "MAI-Image-2.5",
+     88.3,
+     null
     ],
     [
      "Nano Banana Pro (Gemini 3 Pro Image)",
@@ -30463,12 +30463,12 @@
      null
     ],
     [
-     "FLUX.2 [max]",
+     "Seedream 4.5",
      77.2,
      null
     ],
     [
-     "Seedream 4.5",
+     "FLUX.2 [max]",
      77.2,
      null
     ],
@@ -30498,12 +30498,12 @@
      null
     ],
     [
-     "Luma UNI 1 Max",
+     "Ideogram 4.0 (Quality)",
      76.0,
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Luma UNI 1 Max",
      76.0,
      null
     ],
@@ -30568,22 +30568,22 @@
      null
     ],
     [
-     "MAI-Image-2-Efficient",
-     72.9,
-     null
-    ],
-    [
      "Luma UNI 1",
      72.9,
      null
     ],
     [
-     "Wan 2.7",
-     72.7,
+     "MAI-Image-2-Efficient",
+     72.9,
      null
     ],
     [
      "Recraft V4.1",
+     72.7,
+     null
+    ],
+    [
+     "Wan 2.7",
      72.7,
      null
     ],
@@ -30593,17 +30593,17 @@
      null
     ],
     [
-     "Recraft V4 Pro",
-     72.2,
-     null
-    ],
-    [
      "Ideogram 4.0 Fast (Quality)",
      72.2,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Recraft V4 Pro",
+     72.2,
+     null
+    ],
+    [
+     "FLUX.2 [dev] Flash",
      72.0,
      null
     ],
@@ -30613,12 +30613,12 @@
      null
     ],
     [
-     "Recraft V4",
+     "Wan 2.7 Pro",
      72.0,
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "Recraft V4",
      72.0,
      null
     ],
@@ -30733,12 +30733,12 @@
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Vivago 2.0",
      63.8,
      null
     ],
     [
-     "Vivago 2.0",
+     "ERNIE Image Turbo",
      63.8,
      null
     ],
@@ -30818,12 +30818,12 @@
      null
     ],
     [
-     "FLUX1.1 [pro]",
+     "FLUX.1 [pro]",
      59.3,
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "FLUX1.1 [pro]",
      59.3,
      null
     ],
@@ -30838,12 +30838,12 @@
      null
     ],
     [
-     "Qwen Image",
+     "Luma Photon",
      58.8,
      null
     ],
     [
-     "Luma Photon",
+     "Qwen Image",
      58.8,
      null
     ],
@@ -30878,17 +30878,17 @@
      null
     ],
     [
+     "Midjourney v6",
+     57.2,
+     null
+    ],
+    [
      "Z-Image Base",
      57.2,
      null
     ],
     [
      "Infinity 8B",
-     57.2,
-     null
-    ],
-    [
-     "Midjourney v6",
      57.2,
      null
     ],
@@ -30918,12 +30918,12 @@
      null
     ],
     [
-     "MAI Image 1",
+     "FLUX.2 [klein] 4B",
      55.8,
      null
     ],
     [
-     "FLUX.2 [klein] 4B",
+     "MAI Image 1",
      55.8,
      null
     ],
@@ -30948,12 +30948,12 @@
      null
     ],
     [
-     "FLUX.1 [dev]",
+     "Phoenix 1.0 Ultra",
      52.8,
      null
     ],
     [
-     "Phoenix 1.0 Ultra",
+     "FLUX.1 [dev]",
      52.8,
      null
     ],
@@ -30993,12 +30993,12 @@
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.7,
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.7,
      null
     ],
@@ -31088,12 +31088,12 @@
      null
     ],
     [
-     "SDXL Lightning",
+     "Stable Diffusion 1.6",
      36.0,
      null
     ],
     [
-     "Stable Diffusion 1.6",
+     "SDXL Lightning",
      36.0,
      null
     ],
@@ -31203,17 +31203,17 @@
      null
     ],
     [
+     "PixVerse V5.6",
+     81.0,
+     null
+    ],
+    [
      "PixVerse V6",
      81.0,
      null
     ],
     [
      "Kling 3.0 1080p (Pro)",
-     81.0,
-     null
-    ],
-    [
-     "PixVerse V5.6",
      81.0,
      null
     ],
@@ -31308,12 +31308,12 @@
      null
     ],
     [
-     "Kling O1 Standard (January)",
+     "Ray 3",
      72.9,
      null
     ],
     [
-     "Ray 3",
+     "Kling O1 Standard (January)",
      72.9,
      null
     ],
@@ -31388,12 +31388,12 @@
      null
     ],
     [
-     "LTX-2 Fast",
+     "LTX-2.3 Pro",
      62.2,
      null
     ],
     [
-     "LTX-2.3 Pro",
+     "LTX-2 Fast",
      62.2,
      null
     ],
@@ -31533,12 +31533,12 @@
      null
     ],
     [
-     "Pika 2.2",
+     "Kling 1.0",
      30.6,
      null
     ],
     [
-     "Kling 1.0",
+     "Pika 2.2",
      30.6,
      null
     ],
@@ -32126,14 +32126,14 @@
      "chatgpt"
     ],
     [
-     "Grok 4.6",
-     77.1,
-     "grok"
-    ],
-    [
      "Muse Spark 1.3",
      77.1,
      null
+    ],
+    [
+     "Grok 4.6",
+     77.1,
+     "grok"
     ],
     [
      "Qwen3.8 Max",
@@ -32256,12 +32256,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -33649,6 +33649,15 @@
    "status": "partial",
    "items": "0",
    "pr": "69",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-23",
+   "time": "13:15",
+   "status": "partial",
+   "items": "0",
+   "pr": "70",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
