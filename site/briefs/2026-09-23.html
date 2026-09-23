@@ -355,11 +355,10 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
 
       <div class="ce-board">
         <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
-        <p class="ce-blurb"><b>Cost-effectiveness (CE) = Index ÷ AA $/task.</b> Ranked high to low across labs. Blue <b>Best {Model} deal</b> = best CE among that model’s dials (not the highest Index). Gold <b>Worse deal</b> = same-model only. Independent Artificial Analysis.</p>
+        <p class="ce-blurb"><b>Cost-effectiveness (CE) = Index ÷ AA $/task.</b> Ranked high to low across labs. Blue <b>Best {Model} deal</b> marks that model’s best thinking setting on CE — not its highest Index. Independent Artificial Analysis.</p>
         <div class="legend ce-legend">
           <span><i class="sw p"></i>GPT-6 Sol / Luna (today)</span>
           <span><i class="sw p"></i><b>Best {Model} deal</b> — top CE among that model’s thinking settings (not highest Index)</span>
-          <span><i class="sw x"></i><b>Worse deal</b> — same model, another setting already ≥ Index for less $ <span class="ce-worse-note">(none on today’s board)</span></span>
           <span>Higher CE = more smarts per $ across labs</span>
         </div>
         <div class="cost-wrap ce">
@@ -372,7 +371,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
             <div class="chart" id="cechartFull"></div>
           </div>
         </details>
-        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> CE ranks labs on smarts per AA dollar. <b>Best {Model} deal</b> is only that model’s best dial for CE — e.g. <b>Best Opus deal</b> can be Low thinking even though <b>Opus max</b> still owns raw Index 58. <b>Luna</b> / <b>MiMo</b> lead raw CE; pick Sol’s Best deal dial when you want Sol-class Index without overpaying a weaker Sol setting. No same-model <b>Worse deal</b> rows on today’s board.</p>
+        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> CE ranks labs on smarts per AA dollar. <b>Best {Model} deal</b> is only that model’s best dial for CE — e.g. <b>Best Opus deal</b> can be Low thinking even though <b>Opus max</b> still owns raw Index 58. <b>Luna</b> / <b>MiMo</b> lead raw CE; use Sol’s Best deal dial when you want Sol without overpaying a weaker Sol setting.</p>
         <p class="note">AA Cost per Task for the Intelligence Index. Effort labels ≠ chat default (most headline Index rows are max). Sticker table above is list price, not $/task. CE = Index ÷ $/task.</p>
       </div>
     </div>
@@ -555,7 +554,7 @@ function isCeBestDeal(c, pool){
   const same=pool.filter(o => sameModel(o,c));
   if(same.length<2) return false; /* single dial: no badge spam */
   const best=Math.max(...same.map(ceVal));
-  return ceVal(c)===best && !isCeWorseDeal(c, pool);
+  return ceVal(c)===best;
 }
 function shortModel(m){
   if(m.indexOf('GPT-6 Sol')===0) return 'Sol';
@@ -579,25 +578,12 @@ function fmtCe(v){
   return v.toFixed(2);
 }
 function ceRow(c, rank, pool){
-  const worse=isCeWorseDeal(c, pool);
   const best=isCeBestDeal(c, pool);
   const pick=isSub(c.m)?' pick':'';
-  const cls=`row${pick}${worse?' exploit':''}${best?' best-deal':''}`;
-  let badge='';
-  if(best) badge=`<span class="badge-best">Best ${shortModel(c.m)} deal</span>`;
-  else if(worse) badge='<span class="badge-exploit">Worse deal</span>';
-  let sub='';
-  if(worse){
-    const beaters=pool.filter(o => o !== c && sameModel(o,c) && o.dollars < c.dollars && o.index >= c.index)
-      .sort((a,b)=>b.index-a.index || a.dollars-b.dollars);
-    const win=beaters[0];
-    if(win){
-      const be=win.effort==='—'?'':` ${win.effort}`;
-      sub=`<span class="cfg">beats: ${win.effort==='—'?win.m:win.effort} @ ${fmtDol(win.dollars)} / Index ${win.index}</span>`;
-    }
-  }
+  const cls=`row${pick}${best?' best-deal':''}`;
+  const badge=best?`<span class="badge-best">Best ${shortModel(c.m)} deal</span>`:'';
   const effortLabel=c.effort==='—'?'':` · ${c.effort}`;
-  return `<div class="${cls}"><div class="rank">${rank}</div><div class="lbl">${c.m}${effortLabel}${badge}${sub}</div><div class="idx">${c.index}</div><div class="dol">${fmtDol(c.dollars)}</div><div class="ce">${fmtCe(ceVal(c))}</div></div>`;
+  return `<div class="${cls}"><div class="rank">${rank}</div><div class="lbl">${c.m}${effortLabel}${badge}</div><div class="idx">${c.index}</div><div class="dol">${fmtDol(c.dollars)}</div><div class="ce">${fmtCe(ceVal(c))}</div></div>`;
 }
 const ceSorted=CE_ROWS.slice().sort((a,b)=>ceVal(b)-ceVal(a) || b.index-a.index || a.dollars-b.dollars);
 const CE_TOP_N=12;
