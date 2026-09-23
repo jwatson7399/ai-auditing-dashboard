@@ -60,7 +60,7 @@ p{margin:0} a{color:var(--pick)}
 }
 .toc-scroller a:active, .toc-scroller a:focus-visible{border-color:var(--pick); color:var(--pick); outline:none}
 
-section{margin-top:34px;scroll-margin-top:64px}
+section{margin-top:34px;scroll-margin-top:120px;padding-top:4px}
 section>h3{margin-bottom:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 18px}
 
@@ -137,7 +137,7 @@ section>h3{margin-bottom:12px}
 .pair .fill{width:70%;max-width:72px;border-radius:6px 6px 2px 2px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;font-family:var(--mono);font-size:12px;font-weight:600}
 .pair .fill.old{background:var(--old);color:#fff;min-height:20%}
 .pair .fill.neu{background:var(--pick);color:#fff}
-.pair .delta{margin-top:10px;font-family:var(--mono);font-size:1.25rem;font-weight:600;color:var(--good);text-align:center}
+.pair .delta{grid-column:1/-1;margin-top:10px;font-family:var(--mono);font-size:1.25rem;font-weight:600;color:var(--good);text-align:center}
 
 .chart{display:flex;flex-direction:column;gap:6px;font-size:12.5px;margin-top:8px}
 .row{display:grid;grid-template-columns:minmax(110px,1.1fr) 2fr 70px;align-items:center;gap:8px}
@@ -166,16 +166,12 @@ details.more:not([open])>summary .hint .c{display:none}
 .explain p{max-width:56ch}
 .note{font-size:13px;color:var(--muted);margin-top:8px;max-width:70ch}
 
-.deltas .bar-row{display:grid;grid-template-columns:minmax(110px,1.15fr) minmax(80px,1.4fr) minmax(96px,auto);align-items:center;gap:10px;margin:10px 0}
-.deltas .bar-label{font-size:0.88rem;line-height:1.25;color:var(--ink)}
-.deltas .bar-track{height:14px;background:var(--ground);border-radius:6px;overflow:hidden;border:1px solid var(--line);min-width:0}
-.deltas .bar-fill{height:100%;background:var(--good);border-radius:6px;min-width:4px}
-.deltas .bar-fill.warn{background:var(--mid)}
-.deltas .bar-val{font-family:var(--mono);font-size:0.78rem;font-weight:600;color:var(--ink);line-height:1.25;text-align:right;white-space:normal}
-@media (max-width:520px){
-  .deltas .bar-row{grid-template-columns:1fr;gap:4px}
-  .deltas .bar-val{text-align:left}
-}
+.deltas .rank-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.deltas .rank-list li{font-size:14.5px;line-height:1.45;max-width:72ch;color:var(--ink)}
+.deltas .rank-list li .job{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:3px}
+.deltas .rank-list li .pick-line{color:var(--pick);font-weight:600}
+.news-teaser{margin:0;padding:0 18px 12px;font-size:13px;color:var(--muted);line-height:1.4}
+.news-wrap.is-open .news-teaser{display:none}
 
 .price-table{width:100%;border-collapse:collapse;font-size:14px;margin-top:10px}
 .price-table th,.price-table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line)}
@@ -249,6 +245,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
         Today’s AI news
         <span class="hint"><span class="o">show</span><span class="c">hide</span></span>
       </button>
+      <p class="news-teaser">Sol/Luna launch · UNSC AI session · Muse LPE patch · AA+ARC benches · Alibaba Zhenwu</p>
       <div class="news-panel" id="newsPanel" hidden>
         <div class="news" id="newsList"></div>
       </div>
@@ -269,8 +266,8 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
           <div class="lab">Claude Opus 5.5 (max)</div>
           <div class="track"><div class="fill old" style="height:100%">58</div></div>
         </div>
+        <div class="delta">Sol trails Opus by 10 Index points · but Sol is priced ~half Opus sticker</div>
       </div>
-      <div class="delta">Sol trails Opus by 10 Index points · but Sol is priced ~half Opus sticker</div>
       <details class="more">
         <summary>What this means for you <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
         <div class="explain">
@@ -285,13 +282,15 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
   <section id="leads">
     <h3>Where Sol / Luna land vs the field</h3>
     <div class="card deltas">
-      <p class="note" style="margin:0 0 10px"><b>Independent AA + ARC.</b> Practical labels. Green = fresh Sol/Luna reads worth knowing today.</p>
-      <div class="bar-row"><div class="bar-label">Coding agents (Codex harness)</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bar-val">Sol 57 · Luna 41</div></div>
-      <div class="bar-row"><div class="bar-label">Knowledge / hallucination Index</div><div class="bar-track"><div class="bar-fill" style="width:47%"></div></div><div class="bar-val">Sol 27 · Luna 1</div></div>
-      <div class="bar-row"><div class="bar-label">Business workflows (AA)</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bar-val">Sol 62% · Luna 53%</div></div>
-      <div class="bar-row"><div class="bar-label">Terminal coding agents</div><div class="bar-track"><div class="bar-fill" style="width:71%"></div></div><div class="bar-val">Sol ~44% · Luna 13%</div></div>
-      <div class="bar-row"><div class="bar-label">Puzzle reasoning (ARC-AGI-2)</div><div class="bar-track"><div class="bar-fill" style="width:64%"></div></div><div class="bar-val">Luna Max 59.3% · Opus High 93.3%</div></div>
-      <div class="bar-row"><div class="bar-label">Harder ARC-AGI-3 (Provider Adapter)</div><div class="bar-track"><div class="bar-fill" style="width:8%"></div></div><div class="bar-val">Luna Max 0.59%</div></div>
+      <p class="note" style="margin:0 0 10px"><b>Independent AA + ARC.</b> Ranked like By job — who leads the filed field, then Sol/Luna. No full-width “win” bars.</p>
+      <ul class="rank-list">
+        <li><span class="job">Coding agents (Codex harness)</span><span class="pick-line">Astra leads Coding Agent at 62; Sol 57 · Luna 41</span></li>
+        <li><span class="job">Knowledge / hallucination Index</span>Only Sol/Luna filed today — Sol 27 · Luna 1 <b>(weak Omniscience; no wider field)</b></li>
+        <li><span class="job">Business workflows (AA)</span>Only Sol/Luna filed today — Sol 62% · Luna 53% <b>(no wider AutomationBench-AA field)</b></li>
+        <li><span class="job">Terminal coding agents</span><span class="pick-line">Astra leads Terminal-Bench at 56; Sol ~44% · Luna 13%</span></li>
+        <li><span class="job">Puzzle reasoning (ARC-AGI-2)</span>Opus High leads at 93.3%; Luna Max 59.3%</li>
+        <li><span class="job">Harder ARC-AGI-3 (Provider Adapter)</span>Luna Max 0.59% <b>(early/weak)</b>; Standard Max 0.10% — do not blend harnesses</li>
+      </ul>
       <p class="note" style="margin-top:12px"><b>Don’t mix harnesses:</b> AA AutomationBench-AA ≠ Anthropic/Zapier AutomationBench. ARC Provider Adapter ≠ Standard harness (Luna Standard Max is 0.10% on ARC-AGI-3).</p>
     </div>
   </section>
@@ -417,7 +416,7 @@ const BENCH=[
   data:[['GPT-6 Sol','max · AA',62],['GPT-6 Luna','max · AA',53]]},
  {id:'code-term', title:'Coding agents / terminal coding', sub:'Official: Terminal-Bench 4.0 (AA)',
   practical:'Best for agents that live in a terminal — install, edit, run, fix.',
-  tests:'Terminal-Bench 4.0 from AA Coding Agent tables + Sol/Luna article (Sol ~44% / page also notes 43% in one bullet; Luna 13%). Independent. Do not average with Anthropic’s lab TB 66.4%.',
+  tests:'Terminal-Bench 4.0 from AA Coding Agent tables + Sol/Luna article (Sol ~44%; Luna 13%). Independent. Do not average with Anthropic’s lab TB 66.4%.',
   daily:'Sol is usable on terminal agents per AA; Luna is far behind on this card.',
   data:[
     ['GPT-6 Astra','max · Codex · AA',56],
@@ -471,7 +470,7 @@ BENCH.forEach(b=>{
   const hit=s.find(d=>isSub(d[0]));
   const rank=hit? (s.filter(d=>d[2]>hit[2]).length+1) : '—';
   const label=hit? hit[0] : 'Sol/Luna';
-  const rankLine=hit? ` · ${label} ranks #${rank} of ${s.length} here` : '';
+  const rankLine=(hit && s.length>2)? ` · ${label} ranks #${rank} of ${s.length} here` : '';
   const hasFull=s.length>3;
   const summary=hasFull
     ? 'Full list and explainer'
