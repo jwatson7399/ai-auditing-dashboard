@@ -112,6 +112,30 @@ section>h3{margin-bottom:12px}
 .cost-head{display:grid;grid-template-columns:minmax(140px,1.4fr) 1.4fr 52px 44px;gap:8px;font-size:10.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);font-weight:600;margin-bottom:6px;padding:0 2px}
 .cost-head span:nth-child(3),.cost-head span:nth-child(4){text-align:right}
 
+.ce-board{margin-top:20px;padding-top:4px;border-top:1px solid var(--line)}
+.ce-board>h2{font-size:17px;font-weight:800;margin:12px 0 4px}
+.ce-board .ce-blurb{font-size:13px;color:var(--muted);margin:0 0 12px;max-width:72ch;line-height:1.45}
+.cost-wrap.ce .ce-head,.cost-wrap.ce .row{
+  grid-template-columns:28px minmax(110px,1.7fr) 42px 54px 58px;
+  gap:6px;
+}
+.cost-wrap.ce .ce-head{display:grid;font-size:10.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);font-weight:600;margin-bottom:6px;padding:0 2px}
+.cost-wrap.ce .ce-head span:nth-child(n+3){text-align:right}
+.cost-wrap.ce .row .rank{font-family:var(--mono);font-size:12px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.cost-wrap.ce .row .lbl{font-size:12.5px;font-weight:600;text-align:left;line-height:1.2}
+.cost-wrap.ce .row .lbl .cfg{font-weight:500;font-size:11px;margin-top:2px;color:var(--muted)}
+.cost-wrap.ce .row .idx,.cost-wrap.ce .row .dol,.cost-wrap.ce .row .ce{
+  font-family:var(--mono);font-size:12px;font-weight:600;text-align:right;color:var(--bar-text);font-variant-numeric:tabular-nums
+}
+.cost-wrap.ce .row.pick .ce{color:var(--pick)}
+.cost-wrap.ce .row.exploit .idx,.cost-wrap.ce .row.exploit .dol,.cost-wrap.ce .row.exploit .ce{color:#8A6A00}
+.cost-wrap.ce .row.exploit .rank{color:#8A6A00}
+@media (prefers-color-scheme: dark){
+  .cost-wrap.ce .row.exploit .idx,.cost-wrap.ce .row.exploit .dol,.cost-wrap.ce .row.exploit .ce,.cost-wrap.ce .row.exploit .rank{color:#F0D56A}
+}
+.ce-board .legend{margin:10px 0 8px}
+
+
 .news{display:grid;gap:12px}
 @media(min-width:820px){.news{grid-template-columns:1fr 1fr}}
 .story .tag{font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:6px}
@@ -191,6 +215,9 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
 @media (max-width:520px){
   .row{grid-template-columns:minmax(90px,1fr) 1.6fr 54px}
   .cost-wrap .row,.cost-head{grid-template-columns:minmax(120px,1.5fr) 1.2fr 48px 40px}
+  .cost-wrap.ce .ce-head,.cost-wrap.ce .row{grid-template-columns:24px minmax(96px,1.7fr) 36px 48px 50px;gap:4px}
+  .cost-wrap.ce .row .lbl{font-size:11.5px}
+  .cost-wrap.ce .row .idx,.cost-wrap.ce .row .dol,.cost-wrap.ce .row .ce,.cost-wrap.ce .row .rank{font-size:11px}
   .pair .fill{font-size:11px}
 }
 </style>
@@ -307,8 +334,25 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
           <tr><td>Context</td><td class="pick">1.05M</td><td class="mono">see docs</td><td class="mono">1M</td></tr>
         </tbody>
       </table>
-      <p class="note">Luna $0.10/$0.50 from Willison’s map of promo/tier pricing — confirm live docs before budgeting. Vendor accuracy claims ≠ free lunch on capability.</p>
-      <p style="max-width:70ch;font-size:14.5px;margin:18px 0 10px"><b>Use this today:</b> If you need Opus-class Index leadership, pay Opus. If you need cheaper coding/agent volume with independent AA Coding Agent 57 (Sol), Sol is the cost play. Luna is the high-volume / Free-Go tier play — Omniscience 1 shows it still hallucinates a lot on that Index.</p>
+      <p class="note">Luna $0.10/$0.50 from Willison’s map of promo/tier pricing — confirm live docs before budgeting. Vendor accuracy claims ≠ free lunch on capability. Sticker table is list price, not AA $/task.</p>
+
+      <div class="ce-board">
+        <h2>Cost-effectiveness leaderboard</h2>
+        <p class="ce-blurb">Ranked by Intelligence Index points per AA dollar of Index-task cost. Higher is better. Independent Artificial Analysis.</p>
+        <div class="legend"><span><i class="sw p"></i>GPT-6 Sol / Luna (today)</span><span><i class="sw x"></i>Exploit (pricier, ≤ Index)</span><span>Higher CE = more smarts per $</span></div>
+        <div class="cost-wrap ce">
+          <div class="ce-head"><span>#</span><span>Model · thinking</span><span>Index</span><span>$/task</span><span>CE</span></div>
+          <div class="chart" id="cechart"></div>
+        </div>
+        <details class="more" id="ceFullWrap">
+          <summary>Full list <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
+          <div class="cost-wrap ce" style="margin-top:8px">
+            <div class="chart" id="cechartFull"></div>
+          </div>
+        </details>
+        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> For smarts per AA dollar, <b>Luna</b> (medium→max) and <b>MiMo</b> top the board — tiny $/task. <b>Sol max</b> is the clean mid-tier pick that isn’t Pareto-dominated. <b>Opus max</b> still owns raw Index 58; you’re buying the peak, not cost-effectiveness. Gold rows cost more than another row with equal or better Index — skip those dial settings unless you have a non-score reason.</p>
+        <p class="note">AA Cost per Task for the Intelligence Index. Effort labels ≠ chat default (most headline Index rows are max). Sticker table above is list price, not $/task. CE = Index ÷ $/task.</p>
+      </div>
     </div>
   </section>
 
@@ -456,6 +500,72 @@ function rows(data, scaleMax){
     const show=Number.isInteger(d[2])?d[2]:d[2];
     return `<div class="row${pick}"><div class="lbl">${d[0]}${d[1]?`<span class="cfg">${d[1]}</span>`:''}</div><div class="track"><div class="fill" style="width:${w}%"></div></div><div class="val">${show}</div></div>`;
   }).join('');
+}
+
+/* AA Intelligence Index vs AA Cost per Task USD. CE = Index / dollars. Do not invent costs. */
+const CE_ROWS=[
+ {m:'Claude Opus 5.5', effort:'Max thinking', index:58, dollars:5.98},
+ {m:'Claude Opus 5.5', effort:'Extra-high thinking', index:56, dollars:3.46},
+ {m:'Claude Opus 5.5', effort:'High thinking', index:54, dollars:1.82},
+ {m:'Claude Fable 5.1', effort:'Max thinking', index:53, dollars:7.63},
+ {m:'GPT-6 Astra', effort:'Max thinking', index:53, dollars:3.26},
+ {m:'Claude Opus 5.5', effort:'Medium thinking', index:51, dollars:1.34},
+ {m:'Muse Spark 1.3', effort:'Max thinking', index:48, dollars:1.60},
+ {m:'GPT-6 Sol', effort:'Max thinking', index:48, dollars:1.06},
+ {m:'Grok 4.7', effort:'Max thinking (xhigh)', index:46, dollars:3.74},
+ {m:'MiMo-V2.6-Pro', effort:'—', index:46, dollars:0.13},
+ {m:'GPT-6 Sol', effort:'Extra-high thinking', index:44, dollars:0.53},
+ {m:'GPT-6 Sol', effort:'High thinking', index:43, dollars:0.37},
+ {m:'Claude Opus 5.5', effort:'Low thinking', index:42, dollars:0.55},
+ {m:'GPT-6 Sol', effort:'Medium thinking', index:40, dollars:0.25},
+ {m:'GPT-6 Luna', effort:'Max thinking', index:37, dollars:0.07},
+ {m:'GPT-6 Luna', effort:'Extra-high thinking', index:34, dollars:0.04},
+ {m:'GPT-6 Luna', effort:'High thinking', index:32, dollars:0.03},
+ {m:'GPT-6 Luna', effort:'Medium thinking', index:29, dollars:0.02}
+];
+function ceVal(r){return r.index/r.dollars}
+/* Exploit = Pareto-dominated on $/Index within this board: costs more than another row with equal or better Index. */
+function isCeExploit(c, pool){
+  return pool.some(o => o !== c && o.dollars < c.dollars && o.index >= c.index);
+}
+function fmtDol(d){
+  if(d < 0.1) return '$'+d.toFixed(2);
+  if(d < 1) return '$'+d.toFixed(2);
+  return '$'+d.toFixed(2);
+}
+function fmtCe(v){
+  if(v >= 100) return v.toFixed(0);
+  if(v >= 10) return v.toFixed(1);
+  return v.toFixed(2);
+}
+function ceRow(c, rank, pool){
+  const exploit=isCeExploit(c, pool);
+  const pick=isSub(c.m)?' pick':'';
+  const cls=`row${pick}${exploit?' exploit':''}`;
+  const badge=exploit?'<span class="badge-exploit">Exploit</span>':'';
+  let sub='';
+  if(exploit){
+    const beaters=pool.filter(o => o !== c && o.dollars < c.dollars && o.index >= c.index)
+      .sort((a,b)=>b.index-a.index || a.dollars-b.dollars);
+    const best=beaters[0];
+    if(best){
+      const be=best.effort==='—'?'':` ${best.effort}`;
+      sub=`<span class="cfg">beats: ${best.m}${be} @ ${fmtDol(best.dollars)} / Index ${best.index}</span>`;
+    }
+  }
+  const effortLabel=c.effort==='—'?'':` · ${c.effort}`;
+  return `<div class="${cls}"><div class="rank">${rank}</div><div class="lbl">${c.m}${effortLabel}${badge}${sub}</div><div class="idx">${c.index}</div><div class="dol">${fmtDol(c.dollars)}</div><div class="ce">${fmtCe(ceVal(c))}</div></div>`;
+}
+const ceSorted=CE_ROWS.slice().sort((a,b)=>ceVal(b)-ceVal(a) || b.index-a.index || a.dollars-b.dollars);
+const CE_TOP_N=12;
+const ceTop=ceSorted.slice(0,CE_TOP_N);
+const ceRest=ceSorted.slice(CE_TOP_N);
+document.getElementById('cechart').innerHTML = ceTop.map((c,i)=>ceRow(c, i+1, CE_ROWS)).join('');
+if(ceRest.length){
+  document.getElementById('cechartFull').innerHTML = ceRest.map((c,i)=>ceRow(c, CE_TOP_N+i+1, CE_ROWS)).join('');
+}else{
+  const wrap=document.getElementById('ceFullWrap');
+  if(wrap) wrap.hidden=true;
 }
 
 document.getElementById('newsList').innerHTML=NEWS.map(n=>{
