@@ -80,6 +80,17 @@ section>h3{margin-bottom:12px}
 .cost-wrap .row .lbl .cfg{font-weight:500;font-size:11px;margin-top:2px}
 .cost-wrap .row .score{font-family:var(--mono);font-size:12px;font-weight:600;text-align:right;color:var(--bar-text)}
 .cost-wrap .row.pick .score{color:var(--pick)}
+
+.badge-best{
+  display:inline-block; margin-left:6px; padding:1px 7px; border-radius:999px;
+  font-size:10px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+  background:var(--pick); color:#fff; vertical-align:middle;
+}
+.row.best-deal{
+  border-radius:8px; padding:6px 8px; margin:2px -8px;
+  box-shadow:0 0 0 1px color-mix(in srgb, var(--pick) 45%, var(--line));
+}
+
 .row.exploit{
   position:relative;
   border-radius:8px;
@@ -342,8 +353,8 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
 
       <div class="ce-board">
         <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
-        <p class="ce-blurb"><b>Cost-effectiveness (CE) = Index ÷ AA $/task.</b> Ranked high to low — more smarts per dollar. Independent Artificial Analysis Intelligence Index cost-per-task.</p>
-        <div class="legend"><span><i class="sw p"></i>GPT-6 Sol / Luna (today)</span><span><i class="sw x"></i>Worse deal — another setting or model gives ≥ Index for less $</span><span>Higher CE = more smarts per $</span></div>
+        <p class="ce-blurb"><b>Cost-effectiveness (CE) = Index ÷ AA $/task.</b> Ranked high to low across labs. <b>Best deal</b> / <b>Worse deal</b> only compare thinking settings inside the same model. Independent Artificial Analysis.</p>
+        <div class="legend"><span><i class="sw p"></i>GPT-6 Sol / Luna (today)</span><span><i class="sw x"></i>Best deal = top CE among that model’s thinking settings · Worse deal = same model, another setting already ≥ Index for less $</span><span>Higher CE = more smarts per $</span></div>
         <div class="cost-wrap ce">
           <div class="ce-head"><span>#</span><span>Model · thinking</span><span>Index</span><span>$/task</span><span>CE</span></div>
           <div class="chart" id="cechart"></div>
@@ -354,7 +365,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
             <div class="chart" id="cechartFull"></div>
           </div>
         </details>
-        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> Luna tops CE because AA $/task is tiny — Index is still mid/low. <b>MiMo</b> is the open-weights CE standout. <b>Sol max</b> is the clean mid-tier pick without a Worse deal flag. <b>Opus max</b> still owns raw Index; you’re buying the peak, not cost-effectiveness. Rows marked <b>Worse deal</b> mean another thinking setting or model already gives equal or better Index for less $ — skip those unless you have a non-score reason.</p>
+        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> CE score ranks every lab on smarts per AA dollar. <b>Best deal</b> is only within one model’s dials (e.g. Sol Medium may beat Sol Max on CE). <b>Luna</b> and <b>MiMo</b> still lead raw CE; <b>Sol</b>’s Best deal is its strongest dial for $/Index; <b>Opus max</b> still owns raw Index. Skip same-model <b>Worse deal</b> dials unless you need that effort for a non-score reason.</p>
         <p class="note">AA Cost per Task for the Intelligence Index. Effort labels ≠ chat default (most headline Index rows are max). Sticker table above is list price, not $/task. CE = Index ÷ $/task.</p>
       </div>
     </div>
@@ -528,9 +539,27 @@ const CE_ROWS=[
  {m:'GPT-6 Luna', effort:'Medium thinking', index:29, dollars:0.02}
 ];
 function ceVal(r){return r.index/r.dollars}
-/* Worse deal = dominated on $/Index: costs more than another row with equal or better Index. */
-function isCeExploit(c, pool){
-  return pool.some(o => o !== c && o.dollars < c.dollars && o.index >= c.index);
+/* Same-model only: Best deal = highest CE among that model's rows; Worse deal = dominated by another dial of the same model. */
+function sameModel(a,b){return a.m===b.m}
+function isCeWorseDeal(c, pool){
+  return pool.some(o => o !== c && sameModel(o,c) && o.dollars < c.dollars && o.index >= c.index);
+}
+function isCeBestDeal(c, pool){
+  const same=pool.filter(o => sameModel(o,c));
+  if(same.length<2) return false; /* single dial: no badge spam */
+  const best=Math.max(...same.map(ceVal));
+  return ceVal(c)===best && !isCeWorseDeal(c, pool);
+}
+function shortModel(m){
+  if(m.indexOf('GPT-6 Sol')===0) return 'Sol';
+  if(m.indexOf('GPT-6 Luna')===0) return 'Luna';
+  if(m.indexOf('GPT-6 Astra')===0) return 'Astra';
+  if(m.indexOf('Claude Opus')===0) return 'Opus';
+  if(m.indexOf('Claude Fable')===0) return 'Fable';
+  if(m.indexOf('Grok')===0) return 'Grok';
+  if(m.indexOf('Muse')===0) return 'Muse';
+  if(m.indexOf('MiMo')===0) return 'MiMo';
+  return m.split(' ')[0];
 }
 function fmtDol(d){
   if(d < 0.1) return '$'+d.toFixed(2);
@@ -543,18 +572,21 @@ function fmtCe(v){
   return v.toFixed(2);
 }
 function ceRow(c, rank, pool){
-  const exploit=isCeExploit(c, pool);
+  const worse=isCeWorseDeal(c, pool);
+  const best=isCeBestDeal(c, pool);
   const pick=isSub(c.m)?' pick':'';
-  const cls=`row${pick}${exploit?' exploit':''}`;
-  const badge=exploit?'<span class="badge-exploit">Worse deal</span>':'';
+  const cls=`row${pick}${worse?' exploit':''}${best?' best-deal':''}`;
+  let badge='';
+  if(best) badge=`<span class="badge-best">Best ${shortModel(c.m)} deal</span>`;
+  else if(worse) badge='<span class="badge-exploit">Worse deal</span>';
   let sub='';
-  if(exploit){
-    const beaters=pool.filter(o => o !== c && o.dollars < c.dollars && o.index >= c.index)
+  if(worse){
+    const beaters=pool.filter(o => o !== c && sameModel(o,c) && o.dollars < c.dollars && o.index >= c.index)
       .sort((a,b)=>b.index-a.index || a.dollars-b.dollars);
-    const best=beaters[0];
-    if(best){
-      const be=best.effort==='—'?'':` ${best.effort}`;
-      sub=`<span class="cfg">beats: ${best.m}${be} @ ${fmtDol(best.dollars)} / Index ${best.index}</span>`;
+    const win=beaters[0];
+    if(win){
+      const be=win.effort==='—'?'':` ${win.effort}`;
+      sub=`<span class="cfg">beats: ${win.effort==='—'?win.m:win.effort} @ ${fmtDol(win.dollars)} / Index ${win.index}</span>`;
     }
   }
   const effortLabel=c.effort==='—'?'':` · ${c.effort}`;
