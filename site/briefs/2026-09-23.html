@@ -91,40 +91,24 @@ section>h3{margin-bottom:12px}
   box-shadow:0 0 0 1px color-mix(in srgb, var(--pick) 45%, var(--line));
 }
 
-.row.exploit{
-  position:relative;
-  border-radius:8px;
-  padding:6px 8px;
-  margin:2px -8px;
-  background:linear-gradient(90deg, color-mix(in srgb, #C9A227 18%, transparent), color-mix(in srgb, #E8C547 8%, transparent) 55%, transparent);
-  box-shadow:0 0 0 1px color-mix(in srgb, #C9A227 55%, var(--line)), 0 0 18px color-mix(in srgb, #E8C547 45%, transparent), inset 0 0 20px color-mix(in srgb, #E8C547 12%, transparent);
-}
-.row.exploit .lbl{color:#8A6A00}
-.row.exploit.pick .lbl{color:#7A5A00}
-.row.exploit .score{color:#8A6A00}
-.row.exploit .fill{background:#C9A227}
-.row.exploit .badge-exploit{
-  display:inline-block; margin-left:6px; padding:1px 7px; border-radius:999px;
-  font-size:10px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
-  background:#E8C547; color:#3A2E00; vertical-align:middle;
-}
+
+
+
+
+
+
 @media (prefers-color-scheme: dark){
-  .row.exploit{
-    background:linear-gradient(90deg, color-mix(in srgb, #E8C547 22%, transparent), color-mix(in srgb, #C9A227 6%, transparent) 55%, transparent);
-    box-shadow:0 0 0 1px color-mix(in srgb, #E8C547 50%, var(--line)), 0 0 22px color-mix(in srgb, #E8C547 35%, transparent), inset 0 0 24px color-mix(in srgb, #E8C547 10%, transparent);
-  }
-  .row.exploit .lbl,.row.exploit .score{color:#F0D56A}
-  .row.exploit.pick .lbl{color:#F5DE7A}
-  .row.exploit .fill{background:#E8C547}
-  .row.exploit .badge-exploit{background:#E8C547; color:#1A1500}
+  
+  
+  
+  
+  
 }
-.sw.x{background:#C9A227; box-shadow:0 0 8px color-mix(in srgb, #E8C547 70%, transparent)}
 
 .cost-head{display:grid;grid-template-columns:minmax(140px,1.4fr) 1.4fr 52px 44px;gap:8px;font-size:10.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);font-weight:600;margin-bottom:6px;padding:0 2px}
 .cost-head span:nth-child(3),.cost-head span:nth-child(4){text-align:right}
 
 .ce-sep{border:0;border-top:2px solid var(--line);margin:18px 0 14px}
-.ce-worse-note{font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0}
 .ce-legend{flex-wrap:wrap;gap:8px 14px}
 .ce-title{font-size:1.05rem;font-weight:700;margin:0 0 6px;color:var(--ink)}
 .ce-board{margin-top:20px;padding-top:4px;border-top:1px solid var(--line)}
@@ -143,11 +127,8 @@ section>h3{margin-bottom:12px}
   font-family:var(--mono);font-size:12px;font-weight:600;text-align:right;color:var(--bar-text);font-variant-numeric:tabular-nums
 }
 .cost-wrap.ce .row.pick .ce{color:var(--pick)}
-.cost-wrap.ce .row.exploit .idx,.cost-wrap.ce .row.exploit .dol,.cost-wrap.ce .row.exploit .ce{color:#8A6A00}
-.cost-wrap.ce .row.exploit .rank{color:#8A6A00}
 @media (prefers-color-scheme: dark){
-  .cost-wrap.ce .row.exploit .idx,.cost-wrap.ce .row.exploit .dol,.cost-wrap.ce .row.exploit .ce,.cost-wrap.ce .row.exploit .rank{color:#F0D56A}
-}
+  }
 .ce-board .legend{margin:10px 0 8px}
 
 
@@ -353,7 +334,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
       <hr class="ce-sep" />
       <p class="note" style="margin:0 0 12px"><b>Below uses AA $/task for the Intelligence Index — not the sticker $/1M table above.</b></p>
 
-      <div class="ce-board">
+      <div class="ce-board" data-ce-mode="best-only">
         <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
         <p class="ce-blurb"><b>Cost-effectiveness (CE) = Index ÷ AA $/task.</b> Ranked high to low across labs. Blue <b>Best {Model} deal</b> marks that model’s best thinking setting on CE — not its highest Index. Independent Artificial Analysis.</p>
         <div class="legend ce-legend">
@@ -545,11 +526,8 @@ const CE_ROWS=[
  {m:'GPT-6 Luna', effort:'Medium thinking', index:29, dollars:0.02}
 ];
 function ceVal(r){return r.index/r.dollars}
-/* Same-model only: Best deal = highest CE among that model's rows; Worse deal = dominated by another dial of the same model. */
+/* Same-model Best deal = highest CE among that model's thinking settings. Cross-lab compare = CE rank only. */
 function sameModel(a,b){return a.m===b.m}
-function isCeWorseDeal(c, pool){
-  return pool.some(o => o !== c && sameModel(o,c) && o.dollars < c.dollars && o.index >= c.index);
-}
 function isCeBestDeal(c, pool){
   const same=pool.filter(o => sameModel(o,c));
   if(same.length<2) return false; /* single dial: no badge spam */
