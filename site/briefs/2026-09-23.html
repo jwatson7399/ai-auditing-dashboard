@@ -124,6 +124,8 @@ section>h3{margin-bottom:12px}
 .cost-head span:nth-child(3),.cost-head span:nth-child(4){text-align:right}
 
 .ce-sep{border:0;border-top:2px solid var(--line);margin:18px 0 14px}
+.ce-worse-note{font-weight:500;color:var(--muted);text-transform:none;letter-spacing:0}
+.ce-legend{flex-wrap:wrap;gap:8px 14px}
 .ce-title{font-size:1.05rem;font-weight:700;margin:0 0 6px;color:var(--ink)}
 .ce-board{margin-top:20px;padding-top:4px;border-top:1px solid var(--line)}
 .ce-board>h2{font-size:17px;font-weight:800;margin:12px 0 4px}
@@ -353,8 +355,13 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
 
       <div class="ce-board">
         <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
-        <p class="ce-blurb"><b>Cost-effectiveness (CE) = Index ÷ AA $/task.</b> Ranked high to low across labs. <b>Best deal</b> / <b>Worse deal</b> only compare thinking settings inside the same model. Independent Artificial Analysis.</p>
-        <div class="legend"><span><i class="sw p"></i>GPT-6 Sol / Luna (today)</span><span><i class="sw x"></i>Best deal = top CE among that model’s thinking settings · Worse deal = same model, another setting already ≥ Index for less $</span><span>Higher CE = more smarts per $</span></div>
+        <p class="ce-blurb"><b>Cost-effectiveness (CE) = Index ÷ AA $/task.</b> Ranked high to low across labs. Blue <b>Best {Model} deal</b> = best CE among that model’s dials (not the highest Index). Gold <b>Worse deal</b> = same-model only. Independent Artificial Analysis.</p>
+        <div class="legend ce-legend">
+          <span><i class="sw p"></i>GPT-6 Sol / Luna (today)</span>
+          <span><i class="sw p"></i><b>Best {Model} deal</b> — top CE among that model’s thinking settings (not highest Index)</span>
+          <span><i class="sw x"></i><b>Worse deal</b> — same model, another setting already ≥ Index for less $ <span class="ce-worse-note">(none on today’s board)</span></span>
+          <span>Higher CE = more smarts per $ across labs</span>
+        </div>
         <div class="cost-wrap ce">
           <div class="ce-head"><span>#</span><span>Model · thinking</span><span>Index</span><span>$/task</span><span>CE</span></div>
           <div class="chart" id="cechart"></div>
@@ -365,7 +372,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
             <div class="chart" id="cechartFull"></div>
           </div>
         </details>
-        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> CE score ranks every lab on smarts per AA dollar. <b>Best deal</b> is only within one model’s dials (e.g. Sol Medium may beat Sol Max on CE). <b>Luna</b> and <b>MiMo</b> still lead raw CE; <b>Sol</b>’s Best deal is its strongest dial for $/Index; <b>Opus max</b> still owns raw Index. Skip same-model <b>Worse deal</b> dials unless you need that effort for a non-score reason.</p>
+        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> CE ranks labs on smarts per AA dollar. <b>Best {Model} deal</b> is only that model’s best dial for CE — e.g. <b>Best Opus deal</b> can be Low thinking even though <b>Opus max</b> still owns raw Index 58. <b>Luna</b> / <b>MiMo</b> lead raw CE; pick Sol’s Best deal dial when you want Sol-class Index without overpaying a weaker Sol setting. No same-model <b>Worse deal</b> rows on today’s board.</p>
         <p class="note">AA Cost per Task for the Intelligence Index. Effort labels ≠ chat default (most headline Index rows are max). Sticker table above is list price, not $/task. CE = Index ÷ $/task.</p>
       </div>
     </div>
