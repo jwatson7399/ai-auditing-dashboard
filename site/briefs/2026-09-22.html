@@ -80,6 +80,35 @@ section>h3{margin-bottom:12px}
 .cost-wrap .row .lbl .cfg{font-weight:500;font-size:11px;margin-top:2px}
 .cost-wrap .row .score{font-family:var(--mono);font-size:12px;font-weight:600;text-align:right;color:var(--bar-text)}
 .cost-wrap .row.pick .score{color:var(--pick)}
+.row.exploit{
+  position:relative;
+  border-radius:8px;
+  padding:6px 8px;
+  margin:2px -8px;
+  background:linear-gradient(90deg, color-mix(in srgb, #C9A227 18%, transparent), color-mix(in srgb, #E8C547 8%, transparent) 55%, transparent);
+  box-shadow:0 0 0 1px color-mix(in srgb, #C9A227 55%, var(--line)), 0 0 18px color-mix(in srgb, #E8C547 45%, transparent), inset 0 0 20px color-mix(in srgb, #E8C547 12%, transparent);
+}
+.row.exploit .lbl{color:#8A6A00}
+.row.exploit.pick .lbl{color:#7A5A00}
+.row.exploit .score{color:#8A6A00}
+.row.exploit .fill{background:#C9A227}
+.row.exploit .badge-exploit{
+  display:inline-block; margin-left:6px; padding:1px 7px; border-radius:999px;
+  font-size:10px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+  background:#E8C547; color:#3A2E00; vertical-align:middle;
+}
+@media (prefers-color-scheme: dark){
+  .row.exploit{
+    background:linear-gradient(90deg, color-mix(in srgb, #E8C547 22%, transparent), color-mix(in srgb, #C9A227 6%, transparent) 55%, transparent);
+    box-shadow:0 0 0 1px color-mix(in srgb, #E8C547 50%, var(--line)), 0 0 22px color-mix(in srgb, #E8C547 35%, transparent), inset 0 0 24px color-mix(in srgb, #E8C547 10%, transparent);
+  }
+  .row.exploit .lbl,.row.exploit .score{color:#F0D56A}
+  .row.exploit.pick .lbl{color:#F5DE7A}
+  .row.exploit .fill{background:#E8C547}
+  .row.exploit .badge-exploit{background:#E8C547; color:#1A1500}
+}
+.sw.x{background:#C9A227; box-shadow:0 0 8px color-mix(in srgb, #E8C547 70%, transparent)}
+
 .cost-head{display:grid;grid-template-columns:minmax(140px,1.4fr) 1.4fr 52px 44px;gap:8px;font-size:10.5px;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);font-weight:600;margin-bottom:6px;padding:0 2px}
 .cost-head span:nth-child(3),.cost-head span:nth-child(4){text-align:right}
 
@@ -276,8 +305,8 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
       </table>
       <p class="note">Anthropic also offers a Fast mode (~2.5× speed) at $8 / $40. Batch API is half price on input/output.</p>
 
-      <p style="max-width:70ch;font-size:14.5px;margin:18px 0 10px"><b>Use this today:</b> On Anthropic’s FrontierCode chart, <b>Medium thinking</b> hits ~54.6% — matching Max (~54.4%) for roughly <b>1/8 the $ per task</b>. Cranking to Max rarely pays on that bench. On Terminal-Bench, High (~64%) is close to Extra-high’s peak (66.4%) for less spend.</p>
-      <div class="legend"><span><i class="sw p"></i>Opus 5.5</span><span><i class="sw"></i>Peers (peaks)</span><span>Lower $ better · higher score better · approx. from Anthropic charts</span></div>
+      <p style="max-width:70ch;font-size:14.5px;margin:18px 0 10px"><b>Use this today:</b> On Anthropic’s FrontierCode chart, <b>Medium thinking</b> hits ~54.6% — matching Max (~54.4%) for roughly <b>1/8 the $ per task</b>. Rows with a gold glow are <b>exploits</b>: more $ for the same or worse score (High / Extra-high / Max vs Medium on FrontierCode). On Terminal-Bench, High (~64%) is close to Extra-high’s peak (66.4%) for less spend — Extra-high is not an exploit there because it still scores higher.</p>
+      <div class="legend"><span><i class="sw p"></i>Opus 5.5</span><span><i class="sw"></i>Peers (peaks)</span><span><i class="sw x"></i>Exploit (pricier, ≤ score)</span><span>Lower $ better · higher score better · approx. from Anthropic charts</span></div>
       <div class="cost-wrap">
         <div class="cost-head"><span>Model · thinking level</span><span>Cost bar</span><span>$</span><span>Score</span></div>
         <div class="chart" id="costchart"></div>
@@ -288,6 +317,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
         <div class="explain">
           <p><b>Medium thinking</b> = Anthropic’s default effort on Opus 5.5. Good first setting for coding agents.</p>
           <p><b>High / Extra-high / Max</b> = dial up. Often costs more; score gains shrink after High on several charts.</p>
+          <p><b>Exploit (gold glow)</b> = same test, higher $ than another row that scores the same or better. Skip those dial settings unless you have a non-score reason.</p>
           <p><b>Low thinking</b> = dial down. Cheaper; score usually drops.</p>
           <p>If two rows share a model name, they are <b>not duplicates</b> — they are two dial settings.</p>
         </div>
@@ -342,15 +372,15 @@ Effort charts (lab): Medium often matches Max on FrontierCode for a fraction of 
 
 /* Approx $ from Anthropic effort charts; scores from page/charts. Rank by $ asc. */
 const COST=[
- {m:'Claude Opus 5.5', effort:'Low thinking', dollars:0.35, score:47, tip:'FrontierCode · cheap floor'},
- {m:'Claude Opus 5.5', effort:'Medium thinking', dollars:0.80, score:55, tip:'FrontierCode ~54.6% · best default'},
- {m:'Claude Opus 5.5', effort:'High thinking', dollars:1.10, score:54, tip:'FrontierCode · little gain vs med'},
- {m:'GPT-6 Astra', effort:'Max thinking', dollars:4.50, score:53, tip:'FrontierCode peak (OpenAI-reported)'},
- {m:'Claude Opus 5.5', effort:'Extra-high thinking', dollars:2.20, score:52, tip:'FrontierCode dip vs med'},
- {m:'Claude Opus 5.5', effort:'Max thinking', dollars:6.50, score:54, tip:'FrontierCode 54.4% · ~8× med $'},
- {m:'Claude Opus 5.5', effort:'High thinking', dollars:4.20, score:64, tip:'Terminal-Bench · near peak'},
- {m:'Claude Opus 5.5', effort:'Extra-high thinking', dollars:7.20, score:66, tip:'Terminal-Bench 66.4% peak'},
- {m:'GPT-6 Astra', effort:'High thinking', dollars:7.50, score:58, tip:'Terminal-Bench peak ~57.9%'}
+ {m:'Claude Opus 5.5', effort:'Low thinking', dollars:0.35, score:47, bench:'FrontierCode', tip:'FrontierCode · cheap floor'},
+ {m:'Claude Opus 5.5', effort:'Medium thinking', dollars:0.80, score:55, bench:'FrontierCode', tip:'FrontierCode ~54.6% · best default'},
+ {m:'Claude Opus 5.5', effort:'High thinking', dollars:1.10, score:54, bench:'FrontierCode', tip:'FrontierCode · little gain vs med'},
+ {m:'GPT-6 Astra', effort:'Max thinking', dollars:4.50, score:53, bench:'FrontierCode', tip:'FrontierCode peak (OpenAI-reported)'},
+ {m:'Claude Opus 5.5', effort:'Extra-high thinking', dollars:2.20, score:52, bench:'FrontierCode', tip:'FrontierCode dip vs med'},
+ {m:'Claude Opus 5.5', effort:'Max thinking', dollars:6.50, score:54, bench:'FrontierCode', tip:'FrontierCode 54.4% · ~8× med $'},
+ {m:'Claude Opus 5.5', effort:'High thinking', dollars:4.20, score:64, bench:'Terminal-Bench', tip:'Terminal-Bench · near peak'},
+ {m:'Claude Opus 5.5', effort:'Extra-high thinking', dollars:7.20, score:66, bench:'Terminal-Bench', tip:'Terminal-Bench 66.4% peak'},
+ {m:'GPT-6 Astra', effort:'High thinking', dollars:7.50, score:58, bench:'Terminal-Bench', tip:'Terminal-Bench peak ~57.9%'}
 ];
 
 const BENCH=[
@@ -421,15 +451,29 @@ document.getElementById('newsList').innerHTML=NEWS.map(n=>{
 }).join('');
 
 const costMax=Math.max(...COST.map(c=>c.dollars));
-function costRow(c){
+/* Exploit = same bench, costs more, score ≤ a cheaper row (Pareto-dominated on $ vs score). */
+function isExploit(c, pool){
+  return pool.some(o => o !== c && o.bench === c.bench && o.dollars < c.dollars && o.score >= c.score);
+}
+function costRow(c, pool){
+  const exploit=isExploit(c, pool);
   const pick=isSub(c.m)?' pick':'';
+  const cls=`row${pick}${exploit?' exploit':''}`;
   const spend=Math.max(8,c.dollars/costMax*100);
   const bits=[];
   if(c.tip) bits.push(c.tip);
+  if(exploit){
+    const beaters=pool.filter(o => o !== c && o.bench === c.bench && o.dollars < c.dollars && o.score >= c.score)
+      .sort((a,b)=>b.score-a.score || a.dollars-b.dollars);
+    const best=beaters[0];
+    if(best) bits.push(`beats: ${best.effort} at $${best.dollars.toFixed(2)} / ${best.score}`);
+  }
+  const badge=exploit?'<span class="badge-exploit">Exploit</span>':'';
   const sub=bits.length?`<span class="cfg">${bits.join(' · ')}</span>`:'';
-  return `<div class="row${pick}"><div class="lbl">${c.m} — ${c.effort}${sub}</div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div><div class="score">${c.score}</div></div>`;
+  return `<div class="${cls}"><div class="lbl">${c.m} — ${c.effort}${badge}${sub}</div><div class="track"><div class="fill" style="width:${spend}%"></div></div><div class="val">$${c.dollars.toFixed(2)}</div><div class="score">${c.score}</div></div>`;
 }
-document.getElementById('costchart').innerHTML = COST.slice().sort((a,b)=>a.dollars-b.dollars).map(costRow).join('');
+const costSorted=COST.slice().sort((a,b)=>a.dollars-b.dollars);
+document.getElementById('costchart').innerHTML = costSorted.map(c=>costRow(c, COST)).join('');
 
 const root=document.getElementById('benches');
 BENCH.forEach(b=>{
