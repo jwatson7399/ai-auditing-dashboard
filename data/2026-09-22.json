@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-22",
- "built_at": "2026-09-22T21:27:34+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 62",
- "built_at_et": "5:27 PM",
+ "built_at": "2026-09-23T02:53:50+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 63",
+ "built_at_et": "10:53 PM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -30393,12 +30393,12 @@
      null
     ],
     [
-     "MAI-Image-2.6-Flash",
+     "MAI-Image-2.5-Pro",
      87.9,
      null
     ],
     [
-     "MAI-Image-2.5-Pro",
+     "MAI-Image-2.6-Flash",
      87.9,
      null
     ],
@@ -30498,12 +30498,12 @@
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Luma UNI 1 Max",
      76.0,
      null
     ],
     [
-     "Luma UNI 1 Max",
+     "Ideogram 4.0 (Quality)",
      76.0,
      null
     ],
@@ -30568,12 +30568,12 @@
      null
     ],
     [
-     "MAI-Image-2-Efficient",
+     "Luma UNI 1",
      72.9,
      null
     ],
     [
-     "Luma UNI 1",
+     "MAI-Image-2-Efficient",
      72.9,
      null
     ],
@@ -30593,12 +30593,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Recraft V4 Pro",
      72.2,
      null
     ],
     [
-     "Recraft V4 Pro",
+     "Ideogram 4.0 Fast (Quality)",
      72.2,
      null
     ],
@@ -30608,12 +30608,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Wan 2.7 Pro",
      72.0,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Cosmos3-Super-Text2Image",
      72.0,
      null
     ],
@@ -30658,12 +30658,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Low)",
+     "HunyuanImage 3.0 Instruct (Fal)",
      69.4,
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct (Fal)",
+     "P-Image-Ideogram (Low)",
      69.4,
      null
     ],
@@ -30733,12 +30733,12 @@
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Vivago 2.0",
      63.8,
      null
     ],
     [
-     "Vivago 2.0",
+     "ERNIE Image Turbo",
      63.8,
      null
     ],
@@ -30748,12 +30748,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Very Low)",
+     "Imagen 3 (v002)",
      62.9,
      null
     ],
     [
-     "Imagen 3 (v002)",
+     "P-Image-Ideogram (Very Low)",
      62.9,
      null
     ],
@@ -30778,12 +30778,12 @@
      null
     ],
     [
-     "Dreamina 3.1",
+     "Reve Image (Halfmoon)",
      62.3,
      null
     ],
     [
-     "Reve Image (Halfmoon)",
+     "Dreamina 3.1",
      62.3,
      null
     ],
@@ -30818,12 +30818,12 @@
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "FLUX1.1 [pro]",
      59.3,
      null
     ],
     [
-     "FLUX1.1 [pro]",
+     "FLUX.1 [pro]",
      59.3,
      null
     ],
@@ -30838,18 +30838,13 @@
      null
     ],
     [
-     "Qwen Image",
-     58.8,
-     null
-    ],
-    [
      "Luma Photon",
      58.8,
      null
     ],
     [
-     "P-Image",
-     58.4,
+     "Qwen Image",
+     58.8,
      null
     ],
     [
@@ -30858,12 +30853,17 @@
      null
     ],
     [
-     "HiDream-O1-Image-Dev",
-     58.3,
+     "P-Image",
+     58.4,
      null
     ],
     [
      "Ideogram v2",
+     58.3,
+     null
+    ],
+    [
+     "HiDream-O1-Image-Dev",
      58.3,
      null
     ],
@@ -30878,17 +30878,17 @@
      null
     ],
     [
-     "Z-Image Base",
-     57.2,
-     null
-    ],
-    [
      "Infinity 8B",
      57.2,
      null
     ],
     [
      "Midjourney v6",
+     57.2,
+     null
+    ],
+    [
+     "Z-Image Base",
      57.2,
      null
     ],
@@ -30948,12 +30948,12 @@
      null
     ],
     [
-     "FLUX.1 [dev]",
+     "Phoenix 1.0 Ultra",
      52.8,
      null
     ],
     [
-     "Phoenix 1.0 Ultra",
+     "FLUX.1 [dev]",
      52.8,
      null
     ],
@@ -30993,12 +30993,12 @@
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.7,
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.7,
      null
     ],
@@ -31103,12 +31103,12 @@
      null
     ],
     [
-     "Bagel",
+     "Bria 3.2",
      34.1,
      null
     ],
     [
-     "Bria 3.2",
+     "Bagel",
      34.1,
      null
     ],
@@ -31203,17 +31203,17 @@
      null
     ],
     [
-     "PixVerse V6",
-     81.0,
-     null
-    ],
-    [
      "Kling 3.0 1080p (Pro)",
      81.0,
      null
     ],
     [
      "PixVerse V5.6",
+     81.0,
+     null
+    ],
+    [
+     "PixVerse V6",
      81.0,
      null
     ],
@@ -31243,12 +31243,12 @@
      null
     ],
     [
-     "Kling 3.0 Omni 720p (Standard)",
+     "Runway Gen-4.5",
      78.1,
      null
     ],
     [
-     "Runway Gen-4.5",
+     "Kling 3.0 Omni 720p (Standard)",
      78.1,
      null
     ],
@@ -31273,12 +31273,12 @@
      null
     ],
     [
-     "LTX-2.5 Pro",
+     "Wan 2.7",
      77.2,
      null
     ],
     [
-     "Wan 2.7",
+     "LTX-2.5 Pro",
      77.2,
      null
     ],
@@ -31333,12 +31333,12 @@
      null
     ],
     [
-     "Seedance 1.5 pro",
+     "Hailuo 2.3",
      71.3,
      null
     ],
     [
-     "Hailuo 2.3",
+     "Seedance 1.5 pro",
      71.3,
      null
     ],
@@ -31378,12 +31378,12 @@
      null
     ],
     [
-     "LTX-2 Pro",
+     "Kling 2.1 Master",
      62.5,
      null
     ],
     [
-     "Kling 2.1 Master",
+     "LTX-2 Pro",
      62.5,
      null
     ],
@@ -31493,12 +31493,12 @@
      null
     ],
     [
-     "Motion 2.0",
+     "Vidu Q1",
      40.1,
      null
     ],
     [
-     "Vidu Q1",
+     "Motion 2.0",
      40.1,
      null
     ],
@@ -31533,12 +31533,12 @@
      null
     ],
     [
-     "Kling 1.0",
+     "Pika 2.2",
      30.6,
      null
     ],
     [
-     "Pika 2.2",
+     "Kling 1.0",
      30.6,
      null
     ],
@@ -32256,12 +32256,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -32346,12 +32346,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -33586,6 +33586,15 @@
    "status": "partial",
    "items": "0",
    "pr": "61",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-22",
+   "time": "17:27",
+   "status": "partial",
+   "items": "0",
+   "pr": "62",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
