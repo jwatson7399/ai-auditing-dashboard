@@ -50,7 +50,7 @@ p{margin:0} a{color:var(--pick)}
 .toc-bar .label{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:8px}
 .toc-scroller{
   display:flex; gap:8px; overflow-x:auto; -webkit-overflow-scrolling:touch;
-  scrollbar-width:none; padding-bottom:2px;
+  scrollbar-width:none; padding-bottom:2px; padding-right:4px;
 }
 .toc-scroller::-webkit-scrollbar{display:none}
 .toc-scroller a{
@@ -229,7 +229,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
       <a href="#news">News</a>
       <a href="#biggest">Biggest move</a>
       <a href="#leads">Bench pack</a>
-      <a href="#cost">Cost / tiers</a>
+      <a href="#cost">Cost</a>
       <a href="#jobs">By job</a>
       <a href="#trust">Caveats</a>
     </div>
@@ -273,7 +273,7 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
         <summary>What this means for you <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
         <div class="explain">
           <div><h3>The job</h3><p>Can an agent follow a visual assembly manual — read the PDF, zoom, run code, and finish a multi-step physical build correctly? Closer to “hands + eyes in a sandbox” than to chat IQ.</p></div>
-          <div><h3>What changed</h3><p>Epoch launched FAB yesterday: 60 IKEA-build photos, agentic sandbox, 80-step budget, PDF/zoom/Python tools. Astra sits on top of the first filed field. Opus 5.5 isn’t on this report yet — don’t invent a gap.</p></div>
+          <div><h3>What changed</h3><p>Epoch launched FAB yesterday: 60 IKEA-build photos, agentic sandbox, 80-step budget, PDF/zoom/Python tools. Astra sits on top of the first leaderboard. Opus 5.5 isn’t on this report yet — don’t invent a gap.</p></div>
           <div><h3>Test name (for nerds)</h3><p>Epoch AI Furniture Assembly Benchmark (FAB). Highest API reasoning effort on the methodology page. Grader is GPT-5.6 Sol (lenient); human baseline not yet measured.</p></div>
         </div>
       </details>
@@ -313,9 +313,9 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
 
       <div class="ce-board" data-ce-mode="best-only">
         <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
-        <p class="ce-blurb"><b>Cost-effectiveness (CE) = Index ÷ AA $/task.</b> Ranked high to low across labs. Blue <b>Best {Model} deal</b> marks that model’s best thinking setting on CE — not its highest Index. Independent Artificial Analysis. No Worse deal badges.</p>
+        <p class="ce-blurb"><b>Cost-effectiveness (CE) = Index ÷ AA $/task.</b> Ranked high to low across labs. Blue <b>Best deal</b> badges (e.g. Best Luna, Best Sol, Best Opus) mark that model’s best thinking setting on CE — not its highest Index. Independent Artificial Analysis.</p>
         <div class="legend ce-legend">
-          <span><i class="sw p"></i><b>Best {Model} deal</b> — top CE among that model’s thinking settings (not highest Index)</span>
+          <span><i class="sw p"></i><b>Best deal for that model</b> (e.g. Best Luna / Best Sol / Best Opus) — top CE among that model’s thinking settings (not highest Index)</span>
           <span>Higher CE = more smarts per $ across labs</span>
         </div>
         <div class="cost-wrap ce">
@@ -407,7 +407,7 @@ const BENCH=[
  {id:'vals-index', title:'Overall job mix (Vals Index)', sub:'Official: Vals Index · independent · proprietary private+public suites',
   practical:'Best quick “who wins across finance/coding/legal + terminal work?” skim — not a public reproducible ruler.',
   tests:'Vals Index is a GDP-weighted composite across private and public suites (finance, coding, legal, plus Terminal-Bench 2.1 and related). It is independent of the labs but uses proprietary suites — useful signal, not a fully open ruler. Effort is often unstated on the Index page; companion posts sometimes note max with server-side fallbacks. Do not treat Vals $/test as AA $/task.',
-  daily:'If you want today’s Vals composite read, Opus 5.5 leads the filed field. Use job cards below for terminal, proofs, cyber, and spatial work.',
+  daily:'If you want today’s Vals composite read, Opus 5.5 leads the leaderboard. Use job cards below for terminal, proofs, cyber, and spatial work.',
   data:[
     ['Claude Opus 5.5','Vals Index',69.69],
     ['Claude Fable 5.1','Vals Index',68.83],
@@ -516,7 +516,7 @@ const CE_ROWS=[
  {m:'GPT-6 Luna', effort:'Medium thinking', index:29, dollars:0.02}
 ];
 function ceVal(r){return r.index/r.dollars}
-/* Same-model Best deal = highest CE among that model's thinking settings. Cross-lab compare = CE rank only. No Worse deal. */
+/* Same-model Best deal = highest CE among that model's thinking settings. Cross-lab compare = CE rank only. */
 function sameModel(a,b){return a.m===b.m}
 function isCeBestDeal(c, pool){
   const same=pool.filter(o => sameModel(o,c));
