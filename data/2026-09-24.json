@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-24",
- "built_at": "2026-09-24T14:31:23+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 79",
- "built_at_et": "10:31 AM",
+ "built_at": "2026-09-24T14:40:20+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 80",
+ "built_at_et": "10:40 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -29156,14 +29156,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -30393,12 +30393,12 @@
      null
     ],
     [
-     "MAI-Image-2.5-Pro",
+     "MAI-Image-2.6-Flash",
      87.9,
      null
     ],
     [
-     "MAI-Image-2.6-Flash",
+     "MAI-Image-2.5-Pro",
      87.9,
      null
     ],
@@ -30478,12 +30478,12 @@
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "grok-imagine-image",
      76.8,
      null
     ],
     [
-     "grok-imagine-image",
+     "Krea 2 Medium Turbo",
      76.8,
      null
     ],
@@ -30498,12 +30498,12 @@
      null
     ],
     [
-     "Luma UNI 1 Max",
+     "Ideogram 4.0 (Quality)",
      76.0,
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Luma UNI 1 Max",
      76.0,
      null
     ],
@@ -30553,12 +30553,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (High)",
+     "Imagen 4 Ultra",
      73.9,
      null
     ],
     [
-     "Imagen 4 Ultra",
+     "P-Image-Ideogram (High)",
      73.9,
      null
     ],
@@ -30568,12 +30568,12 @@
      null
     ],
     [
-     "MAI-Image-2-Efficient",
+     "Luma UNI 1",
      72.9,
      null
     ],
     [
-     "Luma UNI 1",
+     "MAI-Image-2-Efficient",
      72.9,
      null
     ],
@@ -30593,17 +30593,17 @@
      null
     ],
     [
-     "Recraft V4 Pro",
-     72.2,
-     null
-    ],
-    [
      "Ideogram 4.0 Fast (Quality)",
      72.2,
      null
     ],
     [
-     "Recraft V4",
+     "Recraft V4 Pro",
+     72.2,
+     null
+    ],
+    [
+     "Cosmos3-Super-Text2Image",
      72.0,
      null
     ],
@@ -30613,12 +30613,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Wan 2.7 Pro",
      72.0,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Recraft V4",
      72.0,
      null
     ],
@@ -30733,12 +30733,12 @@
      null
     ],
     [
-     "Vivago 2.0",
+     "ERNIE Image Turbo",
      63.8,
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Vivago 2.0",
      63.8,
      null
     ],
@@ -30748,12 +30748,12 @@
      null
     ],
     [
-     "Imagen 3 (v002)",
+     "P-Image-Ideogram (Very Low)",
      62.9,
      null
     ],
     [
-     "P-Image-Ideogram (Very Low)",
+     "Imagen 3 (v002)",
      62.9,
      null
     ],
@@ -30773,17 +30773,17 @@
      null
     ],
     [
-     "Dreamina 3.1",
-     62.3,
-     null
-    ],
-    [
      "Lucid Origin Ultra",
      62.3,
      null
     ],
     [
      "Reve Image (Halfmoon)",
+     62.3,
+     null
+    ],
+    [
+     "Dreamina 3.1",
      62.3,
      null
     ],
@@ -30858,12 +30858,12 @@
      null
     ],
     [
-     "Ideogram v2",
+     "HiDream-O1-Image-Dev",
      58.3,
      null
     ],
     [
-     "HiDream-O1-Image-Dev",
+     "Ideogram v2",
      58.3,
      null
     ],
@@ -30878,7 +30878,7 @@
      null
     ],
     [
-     "Z-Image Base",
+     "Infinity 8B",
      57.2,
      null
     ],
@@ -30888,7 +30888,7 @@
      null
     ],
     [
-     "Infinity 8B",
+     "Z-Image Base",
      57.2,
      null
     ],
@@ -30918,12 +30918,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] 4B",
+     "MAI Image 1",
      55.8,
      null
     ],
     [
-     "MAI Image 1",
+     "FLUX.2 [klein] 4B",
      55.8,
      null
     ],
@@ -30948,12 +30948,12 @@
      null
     ],
     [
-     "FLUX.1 [dev]",
+     "Phoenix 1.0 Ultra",
      52.8,
      null
     ],
     [
-     "Phoenix 1.0 Ultra",
+     "FLUX.1 [dev]",
      52.8,
      null
     ],
@@ -31088,12 +31088,12 @@
      null
     ],
     [
-     "Stable Diffusion 1.6",
+     "SDXL Lightning",
      36.0,
      null
     ],
     [
-     "SDXL Lightning",
+     "Stable Diffusion 1.6",
      36.0,
      null
     ],
@@ -31198,11 +31198,6 @@
      "grok"
     ],
     [
-     "PixVerse V5.6",
-     81.0,
-     null
-    ],
-    [
      "Kling 3.0 Omni 1080p (Pro)",
      81.0,
      null
@@ -31214,6 +31209,11 @@
     ],
     [
      "Kling 3.0 1080p (Pro)",
+     81.0,
+     null
+    ],
+    [
+     "PixVerse V5.6",
      81.0,
      null
     ],
@@ -31243,12 +31243,12 @@
      null
     ],
     [
-     "Runway Gen-4.5",
+     "Kling 3.0 Omni 720p (Standard)",
      78.1,
      null
     ],
     [
-     "Kling 3.0 Omni 720p (Standard)",
+     "Runway Gen-4.5",
      78.1,
      null
     ],
@@ -31273,12 +31273,12 @@
      null
     ],
     [
-     "Wan 2.7",
+     "LTX-2.5 Pro",
      77.2,
      null
     ],
     [
-     "LTX-2.5 Pro",
+     "Wan 2.7",
      77.2,
      null
     ],
@@ -31308,12 +31308,12 @@
      null
     ],
     [
-     "Kling O1 Standard (January)",
+     "Ray 3",
      72.9,
      null
     ],
     [
-     "Ray 3",
+     "Kling O1 Standard (January)",
      72.9,
      null
     ],
@@ -31328,17 +31328,17 @@
      null
     ],
     [
-     "Hailuo 2.3",
-     71.3,
-     null
-    ],
-    [
      "Seedance 1.5 pro",
      71.3,
      null
     ],
     [
      "PixVerse V5",
+     71.3,
+     null
+    ],
+    [
+     "Hailuo 2.3",
      71.3,
      null
     ],
@@ -31533,12 +31533,12 @@
      null
     ],
     [
-     "Kling 1.0",
+     "Pika 2.2",
      30.6,
      null
     ],
     [
-     "Pika 2.2",
+     "Kling 1.0",
      30.6,
      null
     ],
@@ -32256,12 +32256,12 @@
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
@@ -33721,6 +33721,15 @@
    "status": "partial",
    "items": "0",
    "pr": "78",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-24",
+   "time": "10:31",
+   "status": "partial",
+   "items": "0",
+   "pr": "79",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
