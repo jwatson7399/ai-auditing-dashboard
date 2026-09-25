@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-25",
- "built_at": "2026-09-25T14:05:43+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 82",
- "built_at_et": "10:05 AM",
+ "built_at": "2026-09-25T14:14:30+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 83",
+ "built_at_et": "10:14 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -29816,14 +29816,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -31073,12 +31073,12 @@
      null
     ],
     [
-     "Krea 2 Large",
+     "Wan 2.6 Image",
      76.8,
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Krea 2 Large",
      76.8,
      null
     ],
@@ -31108,12 +31108,12 @@
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "Recraft V4.1 Utility Pro",
      75.9,
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
+     "Krea 2 Medium Turbo",
      75.9,
      null
     ],
@@ -31138,12 +31138,12 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "GPT Image 1 (high)",
      74.8,
      null
     ],
     [
-     "GPT Image 1 (high)",
+     "Seedream 5.0 Lite",
      74.8,
      null
     ],
@@ -31168,12 +31168,12 @@
      null
     ],
     [
-     "FLUX.2 [dev] Turbo",
+     "Qwen Image Max 2512",
      73.3,
      null
     ],
     [
-     "Qwen Image Max 2512",
+     "FLUX.2 [dev] Turbo",
      73.3,
      null
     ],
@@ -31223,7 +31223,7 @@
      null
     ],
     [
-     "Recraft V4",
+     "Cosmos3-Super-Text2Image",
      71.4,
      null
     ],
@@ -31233,7 +31233,7 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Ideogram 4.0 Fast (Quality)",
      71.4,
      null
     ],
@@ -31243,7 +31243,7 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Recraft V4",
      71.4,
      null
     ],
@@ -31273,12 +31273,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "ImagineArt 2.0",
      69.5,
      null
     ],
     [
-     "ImagineArt 2.0",
+     "Cosmos3-Super-Text2Image-4Step",
      69.5,
      null
     ],
@@ -31358,17 +31358,17 @@
      null
     ],
     [
-     "Eigen Image",
-     63.2,
-     null
-    ],
-    [
      "ERNIE Image Turbo",
      63.2,
      null
     ],
     [
      "Vivago 2.0",
+     63.2,
+     null
+    ],
+    [
+     "Eigen Image",
      63.2,
      null
     ],
@@ -31383,12 +31383,12 @@
      null
     ],
     [
-     "Imagen 3 (v002)",
+     "Kling Image 3.0 Omni",
      62.1,
      null
     ],
     [
-     "Kling Image 3.0 Omni",
+     "Imagen 3 (v002)",
      62.1,
      null
     ],
@@ -31478,6 +31478,11 @@
      null
     ],
     [
+     "Ideogram v2",
+     57.7,
+     null
+    ],
+    [
      "Imagen 4 Fast",
      57.7,
      null
@@ -31488,17 +31493,12 @@
      null
     ],
     [
-     "Ideogram v2",
-     57.7,
-     null
-    ],
-    [
-     "FIBO",
+     "HiDream-O1-Image-Dev",
      57.3,
      null
     ],
     [
-     "HiDream-O1-Image-Dev",
+     "FIBO",
      57.3,
      null
     ],
@@ -31528,12 +31528,12 @@
      null
     ],
     [
-     "Recraft V3",
+     "Ideogram v2 Turbo",
      55.9,
      null
     ],
     [
-     "Ideogram v2 Turbo",
+     "Recraft V3",
      55.9,
      null
     ],
@@ -31623,12 +31623,12 @@
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.2,
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.2,
      null
     ],
@@ -31828,6 +31828,11 @@
      "grok"
     ],
     [
+     "PixVerse V6",
+     81.1,
+     null
+    ],
+    [
      "Kling 3.0 1080p (Pro)",
      81.1,
      null
@@ -31839,11 +31844,6 @@
     ],
     [
      "PixVerse V5.6",
-     81.1,
-     null
-    ],
-    [
-     "PixVerse V6",
      81.1,
      null
     ],
@@ -31868,22 +31868,22 @@
      null
     ],
     [
-     "Kling 3.0 Omni 720p (Standard)",
-     78.5,
-     null
-    ],
-    [
      "Veo 3.1 Lite",
      78.5,
      null
     ],
     [
-     "Veo 3.1",
-     78.3,
+     "Kling 3.0 Omni 720p (Standard)",
+     78.5,
      null
     ],
     [
      "Runway Gen-4.5",
+     78.3,
+     null
+    ],
+    [
+     "Veo 3.1",
      78.3,
      null
     ],
@@ -31898,12 +31898,12 @@
      null
     ],
     [
-     "Wan 2.7",
+     "Kling 3.0 720p (Standard)",
      77.6,
      null
     ],
     [
-     "Kling 3.0 720p (Standard)",
+     "Wan 2.7",
      77.6,
      null
     ],
@@ -31938,12 +31938,12 @@
      null
     ],
     [
-     "Ray 3",
+     "Kling O1 Standard (January)",
      73.1,
      null
     ],
     [
-     "Kling O1 Standard (January)",
+     "Ray 3",
      73.1,
      null
     ],
@@ -31958,7 +31958,7 @@
      null
     ],
     [
-     "PixVerse V5",
+     "Seedance 1.5 pro",
      71.5,
      null
     ],
@@ -31968,7 +31968,7 @@
      null
     ],
     [
-     "Seedance 1.5 pro",
+     "PixVerse V5",
      71.5,
      null
     ],
@@ -32103,12 +32103,12 @@
      null
     ],
     [
-     "Kling 1.6 Pro",
+     "Wan 2.1 14B",
      43.1,
      null
     ],
     [
-     "Wan 2.1 14B",
+     "Kling 1.6 Pro",
      43.1,
      null
     ],
@@ -32249,10 +32249,10 @@
     ]
    ],
    "missing": [
+    "Claude Opus 5",
     "GPT-5.6 Luna",
-    "Claude Fable 5",
     "GPT-5.6 Sol",
-    "Claude Opus 5"
+    "Claude Fable 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32651,10 +32651,10 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
-    "GPT-5.6 Sol",
     "Claude Fable 5",
-    "Claude Opus 5"
+    "Claude Opus 5",
+    "GPT-5.6 Luna",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32847,12 +32847,12 @@
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
@@ -32897,12 +32897,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -34219,6 +34219,15 @@
    "items": "10",
    "pr": "81",
    "notes": "AA public columns unavailable: gdpval; gdpval carried forward; gap: cost missing or carried forward"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-25",
+   "time": "10:05",
+   "status": "partial",
+   "items": "0",
+   "pr": "82",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
