@@ -161,6 +161,20 @@ details.more:not([open])>summary .hint .c{display:none}
 .held-strip .item{font-size:14px;line-height:1.45;max-width:72ch}
 .held-strip .item .k{font-weight:700;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:0.05em;margin-right:6px}
 
+.bench{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 16px 12px;margin-top:12px;scroll-margin-top:120px}
+.bench .title{font-family:var(--display);font-size:18px;font-weight:800;margin:0}
+.bench .sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+.bench .asof{display:inline-block;margin-top:6px;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:600;background:var(--ground);border:1px solid var(--line);color:var(--muted)}
+.bench .practical{font-size:14.5px;margin:10px 0 12px;max-width:56ch}
+.bench .practical b{color:var(--pick)}
+.jobs-note{font-size:14px;color:var(--muted);margin:0 0 12px;max-width:72ch}
+.deltas .rank-list{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:12px}
+.deltas .rank-list li{font-size:14.5px;line-height:1.45;max-width:72ch;color:var(--ink)}
+.deltas .rank-list li .job{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:3px}
+.deltas .rank-list li .lead-line{font-weight:600}
+.deltas .rank-list li .asof-inline{color:var(--muted);font-size:12.5px}
+.deltas h2{font-size:16px;margin-bottom:10px}
+
 .caveats p{color:var(--muted);max-width:72ch}
 .caveats p+p{margin-top:10px}
 .caveats b{color:var(--ink);font-weight:600}
@@ -192,18 +206,18 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
 
   <div class="lede">
     <p><b>Today in one breath.</b> Lead is <b>US frontier-AI governance</b>, not a model drop. Senators Warner, Schatz, and Kim <b>introduced</b> a Senate AI security bill that would give the government an early look at frontier models before release — introduced, not passed, and its odds are uncertain. <b>Politico reports</b>, on anonymous sourcing, that the White House asked OpenAI and Anthropic to hold new models from the UK AI safety institute pending a U.S. review. Read together: Washington first, allies second.</p>
-    <p>Also: Anthropic’s agent-trading experiment, Google’s orbital compute test, and new agent tooling from Docker and Microsoft. Held and revisit items are in the News panel.</p>
+    <p>Also: Anthropic’s agent-trading experiment, Google’s orbital compute test, and new agent tooling from Docker and Microsoft. Held and revisit items are in the News panel. Best-for-what scores below are carried from the Sep 23–24 filings.</p>
   </div>
 
   <div class="callout">
-    <b>Big caveat.</b> The Warner bill is <b>introduced, not passed</b> — treat it as a practitioner map of possible US compliance, not current law. The ONCD ask is a <b>Politico exclusive</b> on anonymous sourcing (White House/OpenAI no comment; Anthropic declined) — frame as “Politico reports,” not an official policy document. No new independent benchmark scores filed today; CE board is carried from the Sep 24 brief.
+    <b>Big caveat.</b> The Warner bill is <b>introduced, not passed</b> — treat it as a practitioner map of possible US compliance, not current law. The ONCD ask is a <b>Politico exclusive</b> on anonymous sourcing (White House/OpenAI no comment; Anthropic declined) — frame as “Politico reports,” not an official policy document. No new independent benchmark scores filed today; job-card scores and the CE board are carried from earlier briefs.
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
     <div class="label">Jump to</div>
     <div class="toc-scroller">
       <a href="#news">News</a>
-      <a href="#scores">Scores</a>
+      <a href="#jobs">Best for what</a>
       <a href="#cost">Cost</a>
       <a href="#trust">Caveats</a>
     </div>
@@ -227,11 +241,29 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
     </div>
   </section>
 
-  <section id="scores">
-    <h3>Independent scores</h3>
-    <div class="card">
-      <p style="max-width:70ch;font-size:14.5px"><b>No new independent scores filed today.</b> Governance / agent-infra day — Biggest independent move and Where they land are omitted. Standing cost-effectiveness board below is carried from the Sep 24 brief (AA Index ÷ $/task as filed through Sep 23).</p>
+  <section id="jobs">
+    <h3>Best for what — scores by job</h3>
+    <p class="jobs-note"><b>No new benchmark results were filed today</b> — these are the latest scores on file for each job.</p>
+    <div class="card deltas">
+      <h2>Where they land</h2>
+      <ul class="rank-list">
+        <li><span class="job">Overall smarts (AA Intelligence Index)</span><span class="lead-line">Opus 5.5 leads at 58</span> · Fable 5.1 53 · Astra 53 · Opus 5 51 <span class="asof-inline">· as of Sep 23</span></li>
+        <li><span class="job">Overall job mix (Vals Index)</span><span class="lead-line">Opus 5.5 leads at 69.69%</span> · Fable 5.1 68.83% · Opus 5 67.21% · Astra 66.61% <span class="asof-inline">· as of Sep 24</span></li>
+        <li><span class="job">Coding agents (AA Coding Agent, Codex harness)</span><span class="lead-line">Astra leads at 62</span> · Sol 57 · GPT-5.6 Sol 55 <span class="asof-inline">· as of Sep 23</span></li>
+        <li><span class="job">Terminal coding (AA Terminal-Bench 4.0)</span><span class="lead-line">Astra leads at 56</span> · Sol 44 · GPT-5.6 Sol 37 <span class="asof-inline">· as of Sep 23</span></li>
+        <li><span class="job">Terminal coding (Vals TB 2.1)</span><span class="lead-line">Opus 5.5 87.64%</span> · Astra 87.27% — photo-finish <span class="asof-inline">· as of Sep 24</span></li>
+        <li><span class="job">Harder terminal (Vals TB 4.0)</span><span class="lead-line">Opus 5.5 61.62%</span> — only filing <span class="asof-inline">· as of Sep 24</span></li>
+        <li><span class="job">Knowledge / less hallucination (AA-Omniscience)</span>Sol 27 · Luna 1 — only two filed <span class="asof-inline">· as of Sep 23</span></li>
+        <li><span class="job">Business workflows (AutomationBench-AA)</span>Sol 62% · Luna 53% — only two filed <span class="asof-inline">· as of Sep 23</span></li>
+        <li><span class="job">Puzzle reasoning (ARC-AGI-2 / -1)</span><span class="lead-line">Opus 5.5 High 93.3% / 98.5%</span> · Luna Max 59.3% / 86.7% <span class="asof-inline">· as of Sep 23</span></li>
+        <li><span class="job">Formal proofs (ProofBench v1.1)</span>Ceiling: Opus 5.5 / Fable 5.1 / AlephProver at 100%; Astra &amp; Opus 5 at 99% <span class="asof-inline">· as of Sep 24</span></li>
+        <li><span class="job">Spatial assembly (Epoch FAB)</span><span class="lead-line">Astra 80%</span> · Fable 5.1 70% · Opus 5 61% — new test; directional <span class="asof-inline">· as of Sep 24</span></li>
+        <li><span class="job">Cyber exploit / patch (CyberBench v1.1)</span>PoC: Muse Spark 1.3 Max 63.3% · Patch: Fable 5.1 &amp; Gemini 3.8 Flash tie at 87.5% <span class="asof-inline">· as of Sep 24</span></li>
+      </ul>
+      <p class="note" style="margin-top:12px"><b>Don’t mix harnesses:</b> AA Terminal-Bench ≠ Vals Terminal-Bench ≠ a lab’s own TB. AutomationBench-AA ≠ Anthropic/Zapier AutomationBench. ARC Provider Adapter ≠ Standard.</p>
     </div>
+    <div class="legend"><span><i class="sw"></i>Filed models (no new-model highlight today)</span><span>Top 3 per card · expand for the full field when more are filed</span><span>Independent AA / Vals / Epoch / ARC Prize</span></div>
+    <div id="benches"></div>
   </section>
 
   <section id="cost">
@@ -272,11 +304,12 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
       <p><b>Docker Kit Spec.</b> Docker has committed to submit Sandbox Kit Spec to CNCF — not yet accepted. Isolation claims are the vendor’s.</p>
       <p><b>Foundry / run-assert-eval.</b> Voice and long-running hosted agents are mostly preview. Billing-demo leak cut (30%→5.9%) is Microsoft’s own demo agent, small n, denominator changed — share the method (frozen test set; safety + helpfulness together), not the number.</p>
       <p><b>FLUX 3 Action.</b> 42.92% RoboLab-120 looks like best seed vs BFL’s own 41.60 mean; not yet on NVIDIA’s RoboLab leaderboard at announcement. Revisit when listed or independently reproduced.</p>
-      <p><b>No benches today.</b> Do not invent scores. CE board is carried — not a fresh AA audit.</p>
+      <p><b>No new benches today.</b> Do not invent scores. Job cards show the latest filed scores (Sep 23 AA/ARC, Sep 24 Vals/Epoch) and the CE board is carried — not a fresh audit.</p>
+      <p><b>Don’t blend Terminal-Bench harnesses.</b> AA TB 4.0, Vals TB 2.1 and Vals TB 4.0 are different setups; each card is labeled with its source. FAB is small-n with a lenient LLM grader; ProofBench is at a ceiling; Vals Index mixes private suites.</p>
     </div>
   </section>
 
-  <footer>Built for phone reading · AI Commentator · Sep 25, 2026 · US AI governance + agent infra · no new independent benches · AA CE board carried from Sep 24 (as-of Sep 23)</footer>
+  <footer>Built for phone reading · AI Commentator · Sep 25, 2026 · US AI governance + agent infra · no new independent benches · job cards carried from Sep 23–24 · AA CE board carried from Sep 24 (as-of Sep 23)</footer>
 </div>
 
 <script>
@@ -412,6 +445,143 @@ document.getElementById('newsList').innerHTML=NEWS.map(n=>{
 document.getElementById('heldStrip').innerHTML=HELD.map(h=>{
   return `<div class="item"><span class="k">${h.k}</span><b>${h.t}</b> — ${h.body} <a href="${h.url}" target="_blank" rel="noopener">${h.label}</a></div>`;
 }).join('');
+
+/* Best-for-what job cards. No new benchmark filings 2026-09-25: each card carries its latest filed scores.
+   Sep 24 = Vals / Epoch filings (2026-09-24 brief). Sep 23 = AA / ARC Prize filings (2026-09-23 brief) not superseded. */
+const BENCH=[
+ {id:'job-aa-index', asof:'Sep 23', title:'Overall smarts (composite Index)', sub:'Official: Artificial Analysis Intelligence Index · independent',
+  practical:'Quick “how smart overall?” skim across many tasks — a vibe-check, not a job card.',
+  tests:'Artificial Analysis blends many hard tasks (coding, math, knowledge, agents and more) into one composite score so you can skim the field fast. It is a headline IQ-style index rather than a single job skill, and each row is run at the thinking setting shown.',
+  daily:'Use it to shortlist, then pick the job card that matches your real work. Small Index gaps are not a reason to reshuffle your tools.',
+  data:[
+    ['Claude Opus 5.5','Max thinking · AA',58],['Claude Fable 5.1','Max thinking · AA',53],['GPT-6 Astra','Max thinking · AA',53],
+    ['Claude Opus 5','Max thinking · AA',51],['Muse Spark 1.3','Max thinking · AA',48],['GPT-6 Sol','Max thinking · AA',48],
+    ['GPT-5.6 Sol','Max thinking · AA',47],['Grok 4.7','Extra-high thinking · AA',46],['MiMo-V2.6-Pro','AA',46],
+    ['Qwen3.8 Max','AA',45],['GLM-5.3','Max thinking · AA',45],['Grok 4.6','High thinking · AA',44],['Kimi K3','Max thinking · AA',44],
+    ['GPT-5.6 Terra','Max thinking · AA',42],['Gemini 3.8 Flash','High thinking · AA',41],['DeepSeek V4.1 Flash','Max thinking · AA',39],
+    ['Claude Sonnet 5','Max thinking · AA',38],['GPT-6 Luna','Max thinking · AA',37],['GPT-5.6 Luna','Max thinking · AA',37],
+    ['DeepSeek V4 Pro 0813','Max thinking · AA',36]
+  ]},
+ {id:'job-vals-index', asof:'Sep 24', title:'Overall job mix (Vals Index)', sub:'Official: Vals Index · independent · proprietary private + public suites',
+  practical:'Quick “who wins across finance, coding, legal and terminal work?” skim — not a public, reproducible ruler.',
+  tests:'Vals Index is a GDP-weighted composite across private and public suites (finance, coding, legal, plus Terminal-Bench 2.1 and related). It is independent of the labs but uses proprietary suites, so it is useful signal rather than a fully open ruler. Thinking settings are often unstated on the Index page, and Vals $/test is a different ruler from AA $/task.',
+  daily:'Good for a broad “professional work” read; use the specific job cards for terminal, proofs, cyber and spatial work.',
+  data:[
+    ['Claude Opus 5.5','Vals Index',69.69],['Claude Fable 5.1','Vals Index',68.83],['Claude Opus 5','Vals Index',67.21],
+    ['GPT-6 Astra','Vals Index',66.61],['Claude Fable 5','Vals Index',66.04],['GPT-6 Sol','Max thinking · Vals',62.57],['GPT-6 Luna','Max thinking · Vals',58.45]
+  ]},
+ {id:'job-code-agent', asof:'Sep 23', title:'Coding agents (Codex harness)', sub:'Official: Artificial Analysis Coding Agent Index · independent',
+  practical:'For agents that plan, edit and finish multi-step coding work in a Codex-style loop.',
+  tests:'Measures how well a model acts as a coding agent in OpenAI’s Codex-style loop: plan, edit files, run tools and finish multi-step coding work. Rows are for that harness unless labeled otherwise (e.g. Antigravity). Do not mix with a different agent harness or a lab’s own agent demo.',
+  daily:'Most relevant if your coding agent runs in a Codex-like plan-edit-run loop; a different harness can reorder models.',
+  data:[
+    ['GPT-6 Astra','Max thinking · Codex · AA',62],['GPT-6 Sol','Max thinking · Codex · AA',57],['GPT-5.6 Sol','Max thinking · Codex · AA',55],
+    ['GPT-5.6 Luna','Max thinking · Codex · AA',43],['DeepSeek V4 Pro 0813','Max thinking · Codex · AA',43],['Gemini 3.8 Flash','High thinking · Antigravity · AA',42],
+    ['GPT-6 Luna','Max thinking · Codex · AA',41],['DeepSeek V4 Flash 0731','Max thinking · Codex · AA',39]
+  ]},
+ {id:'job-aa-tb40', asof:'Sep 23', title:'Terminal coding agents (AA Terminal-Bench 4.0)', sub:'Official: Terminal-Bench 4.0 · Artificial Analysis · not Vals',
+  practical:'For agents that live in a terminal — install, edit, run, fix — on AA’s harness.',
+  tests:'Puts the model in a real terminal to install packages, edit files, run commands and fix errors until a coding task finishes. This card is Artificial Analysis’s Terminal-Bench 4.0 setup; never average it with Vals Terminal-Bench or a lab’s own Terminal-Bench number.',
+  daily:'Use for shell-heavy agent work run through AA-style harnesses; compare only against other AA TB rows.',
+  data:[
+    ['GPT-6 Astra','Max thinking · Codex · AA',56],['GPT-6 Sol','Max thinking · AA',44],['GPT-5.6 Sol','Max thinking · Codex · AA',37],
+    ['GPT-5.6 Luna','Max thinking · Codex · AA',15],['Gemini 3.8 Flash','High thinking · Antigravity · AA',15],['GPT-6 Luna','Max thinking · AA',13],
+    ['DeepSeek V4 Flash 0731','Max thinking · Codex · AA',11],['DeepSeek V4 Pro 0813','Max thinking · Codex · AA',10]
+  ]},
+ {id:'job-vals-tb21', asof:'Sep 24', title:'Terminal coding agents (Vals TB 2.1)', sub:'Official: Terminal-Bench 2.1 · Vals AI · not AA · Opus row uses server-side fallbacks',
+  practical:'For agents that live in a terminal on Vals’ TB 2.1 harness — install, edit, run, fix.',
+  tests:'Terminal-Bench puts the model in a real shell to finish coding tasks end-to-end. This card is Vals’ TB 2.1 harness (temperature 1.0; server-side fallbacks to older models on refusals, which Vals also reports as fails in a stricter view). Never blend with Artificial Analysis Terminal-Bench or a lab’s own TB number.',
+  daily:'Relevant if your agent harness looks like Vals TB 2.1; a two-model field is a spot check, not a full race.',
+  data:[['Claude Opus 5.5','High thinking · Vals TB 2.1',87.64],['GPT-6 Astra','Vals TB 2.1',87.27]]},
+ {id:'job-vals-tb40', asof:'Sep 24', title:'Harder terminal coding (Vals TB 4.0)', sub:'Official: Terminal-Bench 4.0 · Vals AI · not AA · fallbacks-as-fail view: 53.54%',
+  practical:'Harder Vals terminal board — only one model filed so far.',
+  tests:'Vals Terminal-Bench 4.0 is a harder terminal-agent suite than TB 2.1: longer, messier shell tasks the agent must finish end-to-end. Runs use temperature 1.0 with server-side fallbacks on refusals, so Vals also shows a stricter fallbacks-as-fail view. Always label it “Vals TB 4.0” — AA TB 4.0 is a different harness with a different meaning.',
+  daily:'A single datapoint for very hard shell work; wait for a wider field before choosing on it.',
+  data:[['Claude Opus 5.5','Max thinking · Vals TB 4.0',61.62]]},
+ {id:'job-omni', asof:'Sep 23', title:'Knowledge / less hallucination', sub:'Official: AA-Omniscience Index · independent',
+  practical:'For “does it know stuff without making things up?” — higher is better.',
+  tests:'Checks factual knowledge under pressure and penalizes inventing answers when the model does not know. Higher means it knows more and hallucinates less on those prompts. Useful for research memos and knowledge-heavy chat, not for coding agents.',
+  daily:'Check this before trusting a model for fact-heavy answers without citations; cheap models can score very differently here than on smarts.',
+  data:[['GPT-6 Sol','Max thinking · AA',27],['GPT-6 Luna','Max thinking · AA',1]]},
+ {id:'job-workflows-aa', asof:'Sep 23', title:'Business workflows across apps (AA)', sub:'Official: AutomationBench-AA · independent · not Zapier’s table',
+  practical:'For multi-step business automations that hop across apps and tools.',
+  tests:'Scores multi-step business workflows that jump across apps and tools — the “do this, then that” automation people want from agents. This is Artificial Analysis’s AutomationBench-AA setup; do not blend it with the separate Anthropic/Zapier AutomationBench table.',
+  daily:'Use for workflow-agent decisions when you want an independent read rather than a vendor table.',
+  data:[['GPT-6 Sol','Max thinking · AA',62],['GPT-6 Luna','Max thinking · AA',53]]},
+ {id:'job-arc2', asof:'Sep 23', title:'Puzzle reasoning (ARC-AGI-2)', sub:'Official: ARC Prize Semi-Private · independent',
+  practical:'For abstract, invent-the-rule reasoning — not chat IQ.',
+  tests:'ARC-AGI-2 puzzles ask the model to infer an unseen rule from a few grid examples and apply it — closer to “can it invent the rule?” than to chat IQ or coding. Semi-Private is ARC Prize’s held-out board; the thinking setting (High vs Max) is part of each run.',
+  daily:'Signal for novel-problem reasoning; weigh it lightly for routine writing or coding work.',
+  data:[['Claude Opus 5.5','High thinking · ARC',93.3],['GPT-6 Luna','Max thinking · ARC',59.3]]},
+ {id:'job-arc1', asof:'Sep 23', title:'Easier puzzle set (ARC-AGI-1)', sub:'Official: ARC Prize Semi-Private · independent',
+  practical:'Older, easier ARC set — a ceiling check next to ARC-2.',
+  tests:'ARC-AGI-1 is the older, easier puzzle set from ARC Prize. Same abstract pattern work as ARC-2 but closer to a ceiling check. Useful as context next to the harder card, not as a substitute for job skills.',
+  daily:'Read alongside ARC-2: this shows the floor of puzzle ability, ARC-2 shows the stretch.',
+  data:[['Claude Opus 5.5','High thinking · ARC',98.5],['GPT-6 Luna','Max thinking · ARC',86.7]]},
+ {id:'job-arc3', asof:'Sep 23', title:'Harder interactive puzzles (ARC-AGI-3)', sub:'Official: ARC Prize Semi-Private · Provider Adapter harness · Standard harness not shown',
+  practical:'Hardest ARC generation — harness choice matters a lot.',
+  tests:'ARC-AGI-3 is an interactive puzzle generation: the agent explores small game-like environments and must work out goals and rules as it goes. Scores are usually tiny because the tasks are brutal. Provider Adapter and Standard are different harnesses and never belong on one bar.',
+  daily:'Treat as an early research signal, not a pick for any job today.',
+  data:[['GPT-6 Luna','Max thinking · Provider Adapter · ARC',0.59]]},
+ {id:'job-proof', asof:'Sep 24', title:'Formal math proofs (Lean)', sub:'Official: ProofBench v1.1 · Vals AI · at ceiling',
+  practical:'For agents that write machine-checked Lean proofs.',
+  tests:'ProofBench v1.1 is a private 100-problem Lean split with a turn-limited harness and tools to search the library, run code and submit a proof; a proof counts only if Lean checks it. Near-perfect results mean the board is at a ceiling and one-problem gaps are noise. AlephProver is a specialized prover on its own infrastructure — different affordances than general chat models.',
+  daily:'Tells you frontier models can clear this style of formal proof work; it is not a tiebreaker among the leaders.',
+  data:[
+    ['Claude Opus 5.5','Lean · Vals',100],['Claude Fable 5.1','Lean · Vals',100],['AlephProver','own infra · Vals',100],
+    ['GPT-6 Astra','Lean · Vals',99],['Claude Opus 5','Lean · Vals',99],['Claude Fable 5','Lean · Vals',95],
+    ['Kimi K3','Lean · Vals',87],['Aristotle','Lean · Vals',86],['GPT-5.6 Sol','Lean · Vals',83]
+  ]},
+ {id:'job-fab', asof:'Sep 24', title:'Spatial assembly / follow a manual', sub:'Official: Furniture Assembly Benchmark (FAB) · Epoch AI · small-n, LLM grader · Opus 5.5 not scored',
+  practical:'For agents that must read diagrams and finish multi-step physical builds in a sandbox.',
+  tests:'Epoch’s FAB gives an agent an IKEA-style PDF manual, a zoom tool and a Python interpreter under a fixed step budget, and asks it to work out a correct multi-step assembly. Runs use the highest API thinking setting. The grader is another LLM (lenient) and the sample is small, so treat it as directional.',
+  daily:'Relevant for “eyes + hands in a sandbox” agent work; it says little about your coding or writing stack.',
+  data:[['GPT-6 Astra','Agentic · Epoch FAB',80],['Claude Fable 5.1','Agentic · Epoch FAB',70],['Claude Opus 5','Agentic · Epoch FAB',61]]},
+ {id:'job-cyber-poc', asof:'Sep 24', title:'Cyber exploit / proof-of-concept', sub:'Official: CyberBench v1.1 PoC · Vals AI · lead filing only',
+  practical:'For “can it find and demonstrate a vulnerability?” agent work.',
+  tests:'CyberBench v1.1 PoC track asks an agent to find a vulnerability and produce a working proof-of-concept exploit; refusals count as fails. v1.1 is not comparable to v1. Only the lead filing is on file, so there is no full-field ranking.',
+  daily:'A security-agent signal for offensive testing work, not a general smarts claim.',
+  data:[['Muse Spark 1.3','Max thinking · PoC · Vals CyberBench',63.3]]},
+ {id:'job-cyber-patch', asof:'Sep 24', title:'Cyber patch / fix the hole', sub:'Official: CyberBench v1.1 Patch · Vals AI · joint lead filing only',
+  practical:'For “can it patch the vulnerability correctly?” work.',
+  tests:'CyberBench v1.1 Patch track scores whether the agent produces a correct fix for a known vulnerability. Finding a hole and fixing it are different jobs, so read this separately from the PoC card. Not comparable to v1.',
+  daily:'Most relevant for defensive, patch-heavy workflows.',
+  data:[['Claude Fable 5.1','Patch · Vals CyberBench',87.5],['Gemini 3.8 Flash','Patch · Vals CyberBench',87.5]]}
+];
+
+function sortedBench(b){return [...b.data].sort((a,c)=>c[2]-a[2])}
+function benchRows(data, scaleMax){
+  return data.map(d=>{
+    const pick=isSub(d[0])?' pick':'';
+    const w=Math.max(2, d[2]/scaleMax*100);
+    return `<div class="row${pick}"><div class="lbl">${d[0]}${d[1]?`<span class="cfg">${d[1]}</span>`:''}</div><div class="track"><div class="fill" style="width:${w}%"></div></div><div class="val">${d[2]}</div></div>`;
+  }).join('');
+}
+const benchRoot=document.getElementById('benches');
+BENCH.forEach(b=>{
+  const s=sortedBench(b); const top=s.slice(0,3);
+  const scaleMax=Math.max(...s.map(d=>d[2]));
+  const hasFull=s.length>3;
+  const summary=hasFull?'Full list and what it’s testing':'What it’s testing';
+  const fullChart=hasFull
+    ? `<p class="note" style="margin:0 0 8px">Full field (${s.length} models) — same scale as the top 3 above.</p><div class="chart">${benchRows(s, scaleMax)}</div>`
+    : `<p class="note" style="margin:0 0 4px">Only ${s.length} independent score${s.length===1?'':'s'} on file for this card — no wider field to expand yet.</p>`;
+  benchRoot.insertAdjacentHTML('beforeend',`<article class="bench" id="${b.id}">
+    <p class="title">${b.title}</p>
+    <p class="sub">${b.sub}</p>
+    <span class="asof">Scores as of ${b.asof}</span>
+    <p class="practical"><b>In practice:</b> ${b.practical}</p>
+    <div class="chart">${benchRows(top, scaleMax)}</div>
+    <details class="more">
+      <summary>${summary} <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
+      <div class="explain">
+        <div><h3>What it’s testing</h3><p>${b.tests}</p></div>
+        <div><h3>For your work</h3><p>${b.daily}</p></div>
+      </div>
+      ${fullChart}
+    </details>
+  </article>`);
+});
 
 const newsWrap=document.getElementById('newsWrap');
 const newsToggle=document.getElementById('newsToggle');
