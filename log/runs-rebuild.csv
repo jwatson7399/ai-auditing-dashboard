@@ -79,3 +79,4 @@ date,time_et,agent,status,items,pr,notes
 2026-09-25,10:05,rebuild,partial,0,82,numbers carried forward (--no-fetch)
 2026-09-25,10:14,rebuild,partial,0,83,numbers carried forward (--no-fetch)
 2026-09-25,10:47,rebuild,partial,0,84,numbers carried forward (--no-fetch)
+2026-09-25,13:07,rebuild,partial,10,85,AA public columns unavailable: gdpval; gdpval carried forward; gap: cost missing or carried forward
