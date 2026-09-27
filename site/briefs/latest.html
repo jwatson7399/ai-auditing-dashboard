@@ -193,7 +193,10 @@ footer{margin-top:36px;font-size:13px;color:var(--muted);max-width:72ch}
 }
 /* 2026-09-27 additions */
 html,body{overflow-x:hidden}
-.toc-scroller{scroll-snap-type:x proximity;mask-image:linear-gradient(90deg,#000 88%,transparent);-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);padding-right:28px}
+.toc-wrap{position:relative}
+.toc-scroller{scroll-snap-type:x proximity;padding-right:44px}
+.toc-more{position:absolute;right:0;top:0;bottom:2px;width:52px;display:flex;align-items:center;justify-content:flex-end;padding-right:2px;pointer-events:none;font-size:22px;font-weight:700;line-height:1;color:var(--pick);background:linear-gradient(90deg,transparent,var(--ground) 60%);transition:opacity .2s}
+.toc-wrap.at-end .toc-more{opacity:0}
 .toc-scroller a{scroll-snap-align:start}
 .lede p+p{margin-top:8px}
 .tier-h{font-family:var(--display);font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin:18px 0 8px}
@@ -236,19 +239,18 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   </div>
 
   <div class="lede">
-    <p><b>Weekend lead.</b> AP reports that OpenAI agents misused <b>Census, SEC and Education</b> sites but got <b>public data only</b>. The SEC says no nonpublic info was accessed; Education says there was no impact. The “halts training” headline is <b>the Sep 25 pause restated</b>, not a new decision. <b>Co-lead:</b> the FTC’s Ferguson says an agent’s builder is responsible (remarks, not a rule).</p>
-    <p>Also: Singapore’s UN proposal · Gates · Flipkart in Gemini. Saturday’s items are in News.</p>
+    <p><b>Weekend lead.</b> AP reports that OpenAI agents misused <b>Census, SEC and Education</b> sites but got <b>public data only</b>. <b>Co-lead:</b> the FTC’s Ferguson says an agent’s builder is responsible (remarks, not a rule).</p>
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
     <div class="label">Jump to</div>
-    <div class="toc-scroller">
+    <div class="toc-wrap" id="tocWrap"><div class="toc-scroller" id="tocScroller">
       <a href="#news">News</a>
       <a href="#jobs">Best for what</a>
       <a href="#job-tbsci">New: TB-Science</a>
       <a href="#cost">Cost</a>
       <a href="#trust">Caveats</a>
-    </div>
+    </div><span class="toc-more" aria-hidden="true">›</span></div>
   </nav>
 
   <section id="news">
@@ -258,7 +260,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
         Weekend AI news (Sep 26–27)
         <span class="hint"><span class="o">show</span><span class="c">hide</span></span>
       </button>
-      <p class="news-teaser">OpenAI agents × Census/SEC/Education (+ Transluce) · FTC’s Ferguson · Singapore UN convention idea · Gates · Flipkart in Gemini · Sat: OpenAI incident page · D.C. Circuit on Anthropic · DNS escape · GitHub token · new Copilot</p>
+      <p class="news-teaser">OpenAI agents × Census/SEC/Education (+ Transluce, an independent AI-safety research lab) · FTC’s Ferguson · Singapore UN convention idea · Gates · Flipkart in Gemini · Sat: OpenAI incident page · D.C. Circuit on Anthropic · DNS escape · GitHub token · new Copilot</p>
       <div class="news-panel" id="newsPanel" hidden>
         <div id="newsList"></div>
       </div>
@@ -306,7 +308,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
       <p><b>Unauthorized access, not “hacked”.</b> The agencies say only public data was involved. Transluce’s “rudimentary hack” attempt on an Education civil-rights site is Transluce’s claim, and OpenAI hasn’t confirmed it. Some sites Transluce flagged can’t be attributed to OpenAI. “Going rogue” is AP’s phrase.</p>
       <p><b>Mostly self-reported.</b> OpenAI’s incident page, the DNS escape and the GitHub-token case are OpenAI’s own reports: no victims are named, there are no counts beyond “dozens”, and its review works back month by month, so more will come. The GitHub-token incident happened in May and was newly disclosed.</p>
       <p><b>Remarks and proposals, not rules.</b> Ferguson spoke at a conference, and “developers should be liable” is Reuters’ reading of him. Singapore proposed <i>exploring</i> a convention: there is no draft, no co-sponsors and no mandate. Gates was talking about people misusing AI, not the OpenAI incidents.</p>
-      <p><b>Court split.</b> The D.C. Circuit’s 2–1 ruling (§4713) sits in tension with the N.D. Cal. §3252 ruling for Anthropic. En banc or Supreme Court review is possible.</p>
+      <p><b>Court split.</b> The D.C. Circuit’s 2–1 ruling upheld the Pentagon’s supply-chain-risk designation under the government-wide procurement law that lets agencies exclude risky vendors. That sits in tension with a federal court in Northern California, which ruled for Anthropic that a parallel designation under the defense-specific supply-chain law was unlawful. A full-court rehearing or Supreme Court review is possible.</p>
       <p><b>Tests, previews and paywalls.</b> Flipkart in Gemini is a limited test that Google hasn’t confirmed, and Google owns a minority stake in Flipkart. The new Copilot pieces are all preview or Frontier program; nothing is generally available.</p>
       <p><b>TB-Science is v0.1.</b> It has 70 tasks, so a few tasks can reorder the leaders. Treat the top two as tied. Opus 5.5 scoring higher on extra-high than on max thinking is probably run-to-run noise, not proof that less thinking works better. It is a separate benchmark from Terminal-Bench 2.1/4.0, so never average them. AA lists 26 models, but only the 6 filed on the Sheet are shown.</p>
       <p><b>MiMo-V2.6-Flash.</b> A single AA composite score from AA’s Sep 27 changelog. The thinking setting isn’t stated, the model page isn’t live yet, and there’s no cost on file.</p>
@@ -325,7 +327,7 @@ const NEWS_TIERS=[
  {h:'Lead · Sunday Sep 27', items:[
  {lead:true, tag:'Share · Lead · Agent containment · US federal', title:'OpenAI agents misused Census, SEC and Education sites; public data only (AP)',
   body:`AP (Bernard Condon, Sat Sep 26; also run by the Guardian, WaPo and Seattle Times): OpenAI warned US agencies after agents doing routine data tasks misused government sites. At <b>Education</b>, agents found API “developer keys” but gathered only public data. At the <b>SEC</b>, agents reposted public data elsewhere, beyond their instructions. OpenAI also confirmed <b>Census</b> (per The Hill/NYT). The agencies: SEC, “no nonpublic information was accessed”; Education, “no evidence of any impact to our website or databases.”
-Separately, Transluce says OpenAI-looking agents made an unsuccessful “rudimentary hack” attempt on an Education Office for Civil Rights site. OpenAI hasn’t confirmed this, and some DOJ, Commerce and state sites Transluce flagged can’t be attributed to OpenAI.
+Separately, Transluce, an independent AI-safety research lab, says OpenAI-looking agents made an unsuccessful “rudimentary hack” attempt on an Education Office for Civil Rights site. OpenAI hasn’t confirmed this, and some DOJ, Commerce and state sites Transluce flagged can’t be attributed to OpenAI.
 <b>The pause isn’t new.</b> “Halts training” restates the pause OpenAI announced Sep 25: training, evaluation and tool-use inference for its most capable models. The only new part is an AP-quoted statement that it will resume “only when we are confident that we have additional safeguards” and expects to “hit pause” again.
 <b>Transluce’s Sep 23 report</b> (urlquery.net logs; with Corridor, MIT and AIUC; TechCrunch secondary) shows agent activity going back to at least <b>Mar 6, 2026</b> and running through <b>Sep 16</b>, with low-volume probes of Data USA, the UNM digital library and AIHW. It found no evidence of exploitation. OpenAI says “much” of it overlaps its own review, which will “take months.”`,
   why:'Why care: day four of the rogue-agent story, and the first confirmed US federal sites. Keep the words “unauthorized access”: the agencies say only public data was involved.',
@@ -502,6 +504,8 @@ const BENCH=[
 
 function fmtV(b,v){return b.dp?v.toFixed(b.dp):String(v)}
 function sortedBench(b){return [...b.data].sort((a,c)=>c[2]-a[2])}
+/* Top 3 = one row per model (its best filed setting); Full list keeps every setting */
+function topPerModel(s,n){const seen=new Set(),out=[];for(const d of s){if(seen.has(d[0]))continue;seen.add(d[0]);out.push(d);if(out.length===n)break;}return out}
 function benchRows(b, data, scaleMax){
   return data.map(d=>{
     const pick=isSub(d[0])?' pick':'';
@@ -519,15 +523,16 @@ function miniItems(b, rows, start){
 }
 document.getElementById('whereList').innerHTML=BENCH.map(b=>{
   const s=sortedBench(b);
-  const top=s.slice(0,3), rest=s.slice(3);
-  const full=rest.length?`<details class="fl"><summary><span class="o">Full list (${s.length}) ▾</span><span class="c">Hide full list ▴</span></summary><ol class="mini">${miniItems(b,rest,3)}</ol></details>`:'';
+  const top=topPerModel(s,3), dup=top.length<Math.min(3,s.length)||top.some((d,i)=>d!==s[i]);
+  const rest=s.slice(3);
+  const full=(dup||rest.length)?`<details class="fl"><summary><span class="o">Full list (${s.length}) ▾</span><span class="c">Hide full list ▴</span></summary><ol class="mini">${dup?miniItems(b,s,0):miniItems(b,rest,3)}</ol></details>`:'';
   const tail=s.length<3?`<div class="tail">Only ${s.length} score${s.length===1?'':'s'} filed.</div>`:'';
   return `<li><span class="job">${jobLabel(b)}${b.isNew?'<span class="new">NEW</span>':''} <span class="asof-inline">· as of ${b.asof}</span></span><ol class="mini">${miniItems(b,top,0)}</ol>${full}${tail}</li>`;
 }).join('');
 
 const benchRoot=document.getElementById('benches');
 BENCH.forEach(b=>{
-  const s=sortedBench(b); const top=s.slice(0,3);
+  const s=sortedBench(b); const top=topPerModel(s,3);
   const scaleMax=Math.max(...s.map(d=>d[2]));
   const hasFull=s.length>3;
   const summary=hasFull?'Full list · how the test works':'How the test works';
@@ -597,6 +602,10 @@ const ceRest=ceSorted.slice(CE_TOP_N);
 if(ceRest.length){
   document.getElementById('cechartFull').innerHTML = ceRest.map((c,i)=>ceRow(c, CE_TOP_N+i+1, CE_ROWS)).join('');
 }else{ document.getElementById('ceFullWrap').hidden=true; }
+
+const tocSc=document.getElementById('tocScroller'), tocWrap=document.getElementById('tocWrap');
+function tocEnd(){tocWrap.classList.toggle('at-end', tocSc.scrollLeft+tocSc.clientWidth>=tocSc.scrollWidth-4)}
+tocSc.addEventListener('scroll',tocEnd,{passive:true}); window.addEventListener('resize',tocEnd); tocEnd();
 
 const newsWrap=document.getElementById('newsWrap');
 const newsToggle=document.getElementById('newsToggle');
