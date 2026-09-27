@@ -1718,6 +1718,31 @@ Confidence Intervals on Arena Score
 Fraction of Model A Wins in A vs. B Battles (Ties Excluded)
 Battle Count for Each Pair of Models (Ties Excluded)
 Average of Win Rates Against Each Opponent (Ties Excluded)
+claude-opus-5.5-max
+gpt-6-astra-max
+claude-fable-5.1-max
+qwen3.8-max
+claude-opus-5-max
+kimi-k3-max
+gpt-6-sol-max
+muse-spark-1.3-max
+grok-4.7-xhigh
+claude-opus-5-high
+qwen3.8-flash-next
+qwen3.8-max-0902
+deepseek-v4.1-flash-max
+glm-5.3-max
+hy4-preview
+claude-fable-5-high
+muse-spark-1.3 (xHigh)
+mimo-v2.6-pro
+grok-4.6-high
+gpt-5.6-sol-xhigh (codex-harne...
+0.0%
+20.0%
+40.0%
+60.0%
+80.0%
 USE CASES
 Chat with AI
 Build Apps & Websites
@@ -1761,3 +1786,5 @@ YouTube
 Discord
 
 © Arena Intelligence 2026
+
+0.0%
