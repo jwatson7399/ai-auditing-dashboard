@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-27",
- "built_at": "2026-09-27T20:44:36+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 88",
- "built_at_et": "4:44 PM",
+ "built_at": "2026-09-27T20:50:04+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 89",
+ "built_at_et": "4:50 PM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -30413,12 +30413,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -31205,12 +31205,12 @@
      "chatgpt"
     ],
     [
-     "MAI-Image-2.5",
+     "MAI-Image-2.6-Flash",
      87.3,
      null
     ],
     [
-     "MAI-Image-2.6-Flash",
+     "MAI-Image-2.5",
      87.3,
      null
     ],
@@ -31285,22 +31285,22 @@
      null
     ],
     [
-     "FLUX.2 [max]",
-     76.4,
-     null
-    ],
-    [
-     "HiDream-O1-Image-1.5",
-     76.4,
-     null
-    ],
-    [
      "Recraft V4.1 Utility",
      76.4,
      null
     ],
     [
+     "FLUX.2 [max]",
+     76.4,
+     null
+    ],
+    [
      "Seedream 4.5",
+     76.4,
+     null
+    ],
+    [
+     "HiDream-O1-Image-1.5",
      76.4,
      null
     ],
@@ -31320,12 +31320,12 @@
      null
     ],
     [
-     "Luma UNI 1 Max",
+     "Wan2.6 Text to Image",
      75.4,
      null
     ],
     [
-     "Wan2.6 Text to Image",
+     "Luma UNI 1 Max",
      75.4,
      null
     ],
@@ -31410,12 +31410,12 @@
      null
     ],
     [
-     "MAI-Image-2-Efficient",
+     "Wan 2.7",
      72.1,
      null
     ],
     [
-     "Wan 2.7",
+     "MAI-Image-2-Efficient",
      72.1,
      null
     ],
@@ -31430,12 +31430,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Very High)",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      71.5,
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "P-Image-Ideogram (Very High)",
      71.5,
      null
     ],
@@ -31480,12 +31480,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "ImagineArt 2.0",
      69.5,
      null
     ],
     [
-     "ImagineArt 2.0",
+     "Cosmos3-Super-Text2Image-4Step",
      69.5,
      null
     ],
@@ -31570,12 +31570,12 @@
      null
     ],
     [
-     "Eigen Image",
+     "Vivago 2.0",
      63.2,
      null
     ],
     [
-     "Vivago 2.0",
+     "Eigen Image",
      63.2,
      null
     ],
@@ -31595,18 +31595,13 @@
      null
     ],
     [
-     "Kling Image 3.0 Omni",
-     61.9,
-     null
-    ],
-    [
      "GPT Image 1 Mini (medium)",
      61.9,
      null
     ],
     [
-     "Lucid Origin Ultra",
-     61.8,
+     "Kling Image 3.0 Omni",
+     61.9,
      null
     ],
     [
@@ -31615,12 +31610,17 @@
      null
     ],
     [
-     "ERNIE Image",
-     61.7,
+     "Lucid Origin Ultra",
+     61.8,
      null
     ],
     [
      "Reve Image (Halfmoon)",
+     61.7,
+     null
+    ],
+    [
+     "ERNIE Image",
      61.7,
      null
     ],
@@ -31655,12 +31655,12 @@
      null
     ],
     [
-     "FLUX1.1 [pro]",
+     "FLUX.1 [pro]",
      58.7,
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "FLUX1.1 [pro]",
      58.7,
      null
     ],
@@ -31740,13 +31740,18 @@
      null
     ],
     [
+     "HiDream-I1-Fast",
+     55.7,
+     null
+    ],
+    [
      "Recraft V3",
      55.7,
      null
     ],
     [
-     "HiDream-I1-Fast",
-     55.7,
+     "FLUX.2 [klein] 4B",
+     55.2,
      null
     ],
     [
@@ -31760,17 +31765,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] 4B",
-     55.2,
-     null
-    ],
-    [
-     "LongCat Image",
+     "Image-01",
      54.7,
      null
     ],
     [
-     "Image-01",
+     "LongCat Image",
      54.7,
      null
     ],
@@ -31850,12 +31850,12 @@
      null
     ],
     [
-     "Step Image Edit 2",
+     "Luma Photon Flash",
      46.2,
      null
     ],
     [
-     "Luma Photon Flash",
+     "Step Image Edit 2",
      46.2,
      null
     ],
@@ -31875,12 +31875,12 @@
      null
     ],
     [
-     "Playground v2.5",
+     "DALLE 3",
      43.3,
      null
     ],
     [
-     "DALLE 3",
+     "Playground v2.5",
      43.3,
      null
     ],
@@ -32035,7 +32035,7 @@
      "grok"
     ],
     [
-     "Kling 3.0 Omni 1080p (Pro)",
+     "PixVerse V6",
      81.1,
      null
     ],
@@ -32050,7 +32050,7 @@
      null
     ],
     [
-     "PixVerse V6",
+     "Kling 3.0 Omni 1080p (Pro)",
      81.1,
      null
     ],
@@ -32085,12 +32085,12 @@
      null
     ],
     [
-     "Veo 3.1",
+     "Runway Gen-4.5",
      78.3,
      null
     ],
     [
-     "Runway Gen-4.5",
+     "Veo 3.1",
      78.3,
      null
     ],
@@ -32105,12 +32105,12 @@
      null
     ],
     [
-     "Kling 3.0 720p (Standard)",
+     "Wan 2.7",
      77.6,
      null
     ],
     [
-     "Wan 2.7",
+     "Kling 3.0 720p (Standard)",
      77.6,
      null
     ],
@@ -32165,7 +32165,7 @@
      null
     ],
     [
-     "Seedance 1.5 pro",
+     "PixVerse V5",
      71.5,
      null
     ],
@@ -32175,7 +32175,7 @@
      null
     ],
     [
-     "PixVerse V5",
+     "Seedance 1.5 pro",
      71.5,
      null
     ],
@@ -32300,12 +32300,12 @@
      null
     ],
     [
-     "Pika 2.0",
+     "HunyuanVideo-1.5 (Fal)",
      43.4,
      null
     ],
     [
-     "HunyuanVideo-1.5 (Fal)",
+     "Pika 2.0",
      43.4,
      null
     ],
@@ -32456,10 +32456,10 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
+    "Claude Opus 5",
     "Claude Fable 5",
     "GPT-5.6 Luna",
-    "Claude Opus 5"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32863,10 +32863,10 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
     "Claude Opus 5",
-    "GPT-5.6 Sol",
-    "Claude Fable 5"
+    "Claude Fable 5",
+    "GPT-5.6 Luna",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -34395,6 +34395,15 @@
    "items": "10",
    "pr": "87",
    "notes": "AA public columns unavailable: gdpval; gdpval carried forward; gap: cost missing or carried forward"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-27",
+   "time": "16:44",
+   "status": "partial",
+   "items": "0",
+   "pr": "88",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
