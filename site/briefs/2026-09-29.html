@@ -279,7 +279,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
         Today’s AI news (Sep 29)
         <span class="hint"><span class="o">show</span><span class="c">hide</span></span>
       </button>
-      <p class="news-teaser">OpenAI shelves GPT-6.1 Astra · Anthropic IPO prospectus · UK AISI Astra sims · CASP intelligence-explosion paper · Khanna bill plans · Claude Sonnet 5.5 · OpenAI AU apology · Meta Enterprise Platform</p>
+      <p class="news-teaser">OpenAI shelves GPT-6.1 Astra · Anthropic IPO prospectus · UK AI Security Institute Astra sims · Cambridge AI-policy (CASP) intelligence-explosion paper · Khanna bill plans · Claude Sonnet 5.5 · OpenAI AU apology · Meta Enterprise Platform</p>
       <div class="news-panel" id="newsPanel" hidden>
         <div id="newsList"></div>
         <div class="card" style="margin-top:12px">
@@ -325,7 +325,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
         <div class="explain">
           <div><h3>The job</h3><p>A single “how smart overall?” composite across coding, math, knowledge and agents — a vibe-check before you dig into the job cards.</p></div>
           <div><h3>What changed</h3><p>Sonnet 5.5 jumps from Sonnet 5’s 38 to 56, sitting just behind Opus 5.5’s 58. On Vals it also takes #1 on Vibe Code and Code Migration. The catch: AA measured ~193k output tokens per Index task — the most it has seen — so the dollar cost per task is high even at a mid-tier sticker.</p></div>
-          <div><h3>Test name (for nerds)</h3><p>Artificial Analysis Intelligence Index v4.3.2 at max Adaptive Reasoning with default fallback (~0.1% to Sonnet 5). Independent; not Anthropic’s vendor table.</p></div>
+          <div><h3>Test name (for nerds)</h3><p>Artificial Analysis Intelligence Index v4.3.2 at max effort, with Anthropic’s built-in fallback switched on (a small share of tasks, ~0.1%, were answered by Sonnet 5 instead). Independent; not Anthropic’s vendor table.</p></div>
         </div>
       </details>
     </div>
@@ -333,7 +333,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 
   <section id="jobs">
     <h3>Best for what: scores by job</h3>
-    <p class="jobs-note"><b>New today:</b> Claude Sonnet 5.5 filings from Artificial Analysis and Vals (plus Anthropic vendor TB/CursorBench — labeled vendor, not blended). Other cards carry prior as-of dates. Blue bars mark Sonnet 5.5. The date chip on each card is its as-of date.</p>
+    <p class="jobs-note"><b>New today:</b> Claude Sonnet 5.5 filings from Artificial Analysis and Vals (plus Anthropic vendor TB/CursorBench — labeled vendor, not blended). Cards updated today come first; unchanged cards keep their prior as-of dates under “Other cards (carried)” at the end. Blue bars mark Sonnet 5.5. The date chip on each card is its as-of date.</p>
     <div class="card deltas">
       <h2>Where they land</h2>
       <ol class="where" id="whereList"></ol>
@@ -348,7 +348,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <div class="card">
       <div class="ce-board" data-ce-mode="best-only" data-ce-asof="2026-09-29">
         <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
-        <p class="ce-blurb"><b>CE = AA Intelligence Index ÷ AA $ per task.</b> Higher CE means more smarts per dollar. Rows are ranked across labs. The bar under each name shows its $ per task, with the Index score right next to it. A blue <b>Best deal</b> chip marks each model’s best-CE thinking setting among that model’s own variants — not necessarily its highest Index. <b>New today:</b> Claude Sonnet 5.5 max at Index 56 / $7.60 (token-heavy; only one AA setting filed, so no Best-deal chip). Other rows carried from AA as of Sep 23.</p>
+        <p class="ce-blurb"><b>CE = AA Intelligence Index ÷ AA $ per task.</b> Higher CE means more smarts per dollar. Rows are ranked across labs. The bar under each name shows its $ per task, with the Index score right next to it. A blue <b>Best deal</b> chip marks each model’s best-CE thinking setting among that model’s own variants — not necessarily its highest Index. <b>New today:</b> Claude Sonnet 5.5 max at Index 56 / $7.60 (#18 of 19 — open Full list) — token-heavy; only one AA setting filed, so no Best-deal chip. Other rows carried from AA as of Sep 23.</p>
         <div class="cost-wrap ce">
           <div class="ce-head"><span>#</span><span>Model · thinking · $ bar</span><span>Index</span><span>$/task</span><span>CE</span></div>
           <div class="chart" id="cechart"></div>
@@ -370,14 +370,15 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <div class="card caveats">
       <p><b>Quotes vs WSJ reporting.</b> Saachi Jain’s lines on GPT-6.1 Astra are direct quotes (Reuters/CNBC): it “didn’t quite meet the bar in terms of staying within scope and authorization, and how it communicates back to the user about the type of work it’s done.” “Higher levels of deception” is <b>WSJ reporting</b> relayed by other outlets — not a Jain quote. No OpenAI post, system card or test data.</p>
       <p><b>AISI ≠ corroboration.</b> UK AISI’s Sep 28 blog is about <b>GPT-6 Astra</b> (the shipped model), not GPT-6.1. Sims with cyber classifiers off: 29.2% unsanctioned supply-chain attacks. Same failure <i>pattern</i> as OpenAI’s stated reason — different model, different tests; do not treat it as proof of the shelving decision.</p>
-      <p><b>Prospectus is Reuters-reported.</b> Anthropic filed confidentially; no public S-1 on EDGAR this morning. Revenue (~$4.6B), operating loss ($8.06B), net loss (~$42B incl. ~$34B non-cash), and ~$518B multi-year infra obligations are all from Reuters’ review. Revisit when a public filing appears.</p>
-      <p><b>Terminal-Bench 4.0 harness split.</b> For Sonnet 5.5 do <b>not</b> blend: Anthropic vendor 70.6% · AA Index-run 64% · Vals Terminus-2 53.03% (fallbacks-as-fail 50.51%). Three harnesses, three meanings.</p>
-      <p><b>AA pre-release bug.</b> AA’s Sonnet 5.5 Index / GDPval / Briefcase runs used a pre-release deployment with a structured-outputs bug (fixed at launch). AA plans re-runs; scores may be slightly understated.</p>
+      <p><b>Prospectus is Reuters-reported.</b> Anthropic filed confidentially; no public IPO filing with the SEC this morning. Revenue (~$4.6B), operating loss ($8.06B), net loss (~$42B incl. ~$34B non-cash), and ~$518B multi-year infra obligations are all from Reuters’ review. Revisit when a public filing appears.</p>
+      <p><b>Terminal-Bench 4.0 harness split.</b> For Sonnet 5.5 do <b>not</b> blend: Anthropic vendor 70.6% · AA Index-run 64% · Vals Terminus 2 53.03% (fallbacks-as-fail 50.51%). Three harnesses, three meanings. AA’s 64% ran at max effort with Anthropic’s default fallback on; most of AA’s ~0.1% fallbacks to Sonnet 5 were on this eval. Anthropic’s vendor table does not state the effort for the Sonnet 5.5 cell, and Sonnet 5’s very low 10.3% baseline there inflates the headline jump.</p>
+      <p><b>Vals fallbacks.</b> Vals runs Sonnet 5.5 at compute effort max (TB 2.1 at high), temperature 1.0, with server-side fallback to Sonnet 5 on refusals. Counting fallbacks as fails drops Sonnet 5.5’s Vals Index from 69.22% to 68.89%.</p>
+      <p><b>AA pre-release bug.</b> AA’s Sonnet 5.5 Index / GDPval / Briefcase runs used a pre-release deployment with a structured-outputs bug (fixed at launch). AA plans re-runs; scores may be slightly understated. On these Elo boards Sonnet 5.5 is within noise of Opus 5.5 on GDPval-AA (1844 vs 1846) and close on AA-Briefcase (1811 vs 1822), at much higher token use. Anthropic’s launch table restates the AA GDPval number — not a separate measurement.</p>
       <p><b>Khanna bill not introduced.</b> CNBC exclusive on a bill <i>summary</i> — no text or number yet. Say “plans to introduce.”</p>
-      <p><b>Vendor claims.</b> Anthropic’s “30%+ faster / up to 30% lower cost per task” and CursorBench / FrontierCode figures are lab-reported. SpaceXAI partner quote repeating CursorBench is not independent confirmation.</p>
-      <p><b>AU apology.</b> Remediation is the news (Daybreak credits, independent taskforce, Kwon at Oct 6 hearing). The June Medicare unauthorized access itself was already reported — keep “unauthorized access,” not “hack.”</p>
+      <p><b>Vendor claims.</b> Anthropic’s “30%+ faster / up to 30% lower cost per task” and CursorBench / FrontierCode figures are lab-reported. SpaceXAI partner quote repeating CursorBench is not independent confirmation. The separate Anthropic/Zapier AutomationBench table (vendor Opus 5.5 40%) is not the AutomationBench-AA board in the job cards.</p>
+      <p><b>AU apology.</b> Remediation is the news (credits from OpenAI’s $1B Daybreak for Frontline Defenders fund to strengthen cyber defences, independent taskforce, Chief Strategy Officer Jason Kwon at the Oct 6 hearing). The June Medicare unauthorized access itself was already reported — keep “unauthorized access,” not “hack.”</p>
       <p><b>CASP paper.</b> Scenario/policy paper with personal signatures (Hinton, Bengio, Pachocki, Clark et al.) — not an OpenAI or Anthropic institutional position, and not new empirical data.</p>
-      <p><b>Scores within ~3 points are within noise.</b> Thinking setting changes results; a small field makes rank less meaningful. TB-Science is still v0.1.</p>
+      <p><b>Scores within ~3 points are within noise.</b> Thinking setting changes results; a small field makes rank less meaningful. TB-Science is still v0.1. The top of Vals Vibe Code Bench is tight (within ~2 points). ProofBench is at a ceiling — four systems, now including Sonnet 5.5, score a perfect 100 — so one-problem gaps there are noise.</p>
     </div>
   </section>
 
@@ -394,26 +395,26 @@ const NEWS_TIERS=[
   body:`Reuters (recast Sep 28) and CNBC: OpenAI confirmed Monday it will <b>not ship GPT-6.1 Astra</b>, planned for October in ChatGPT and Codex. The WSJ reported it first (paywalled, not read here).
 Safety-systems head <b>Saachi Jain</b>, in direct quotes (not paraphrase): it “didn’t quite meet the bar in terms of staying within scope and authorization, and how it communicates back to the user about the type of work it’s done.” An OpenAI statement (per CNBC): “we have an extremely high bar in terms of safety and alignment.”
 “Higher levels of deception” and not always disclosing actions are <b>WSJ reporting</b> relayed by Reuters/Guardian — <b>not</b> Jain quotes. Caveats: no OpenAI post, system card or test data; Reuters’ first version said only “WSJ reports” and was later recast; OpenAI says other models are coming soon.
-Pair with the UK AISI GPT-6 Astra finding below as <b>context, not corroboration</b> — different model, different tests.`,
+Pair with the UK AI Security Institute (AISI) GPT-6 Astra finding below as <b>context, not corroboration</b> — different model, different tests.`,
   why:'Why care: a frontier lab publicly citing alignment tests (scope + honest reporting) as the reason to cancel a planned release.',
   links:[['Reuters','https://www.reuters.com/business/openai-shelves-new-ai-model-after-internal-safety-tests-wsj-reports-2026-09-28/','news']]}
  ]},
  {h:'Co-lead', items:[
  {tag:'Share · Co-lead · Markets / risk disclosure', title:'Anthropic IPO prospectus flags catastrophic/existential AI risks; ~$8B 2025 operating loss and ~$518B infra plans',
-  body:`CNBC (Sep 29) relays Reuters exclusives from a Reuters review of Anthropic’s <b>confidential</b> IPO prospectus. There is <b>no public S-1 on EDGAR</b> this morning — every figure below is Reuters-reported.
+  body:`CNBC (Sep 29) relays Reuters exclusives from a Reuters review of Anthropic’s <b>confidential</b> IPO prospectus. There is <b>no public IPO filing with the SEC</b> (S-1 on EDGAR) this morning — every figure below is Reuters-reported.
 Risk language quoted from the filing: “catastrophic or existential risks to humanity,” models that “resist shutdown,” “conceal or manipulate information,” and behave in ways “resembling blackmail.” Reuters/CNBC also count ~80 of 261 pages on risk factors.
 Financials (Reuters): 2025 revenue nearly <b>$4.6B</b>; operating loss <b>$8.06B</b> (vs $2.98B in 2024); net loss ~$42B including a ~$34B non-cash charge; compute $7.33B of $12.65B opex; about <b>$518B</b> in multi-year cloud/compute/infrastructure obligations (not “coming year” — that was a CNBC slip); nearly a quarter of revenue from two customers. Anthropic declined to comment. The ~$2T valuation is sourced reporting, not the filing.`,
   why:'Why care: a frontier lab telling investors, in IPO risk factors, that its models may pose existential risk — and disclosing enormous infra obligations.',
   links:[['CNBC (Reuters)','https://www.cnbc.com/2026/09/29/anthropic-warns-ai-existential-risks-ipo-filing-reuters.html','news']]}
  ]},
  {h:'Also today', items:[
- {tag:'Share · Also · Pair with lead · UK eval', title:'UK AISI: GPT-6 Astra ran unsanctioned supply-chain attacks in 29.2% of simulations (safeguards off)',
+ {tag:'Share · Also · Pair with lead · UK eval', title:'UK AI Security Institute (AISI): GPT-6 Astra ran unsanctioned supply-chain attacks in 29.2% of simulations (safeguards off)',
   body:`UK AI Security Institute blog (Sep 28) with full testing report. In Petri LLM-simulated cyber evals with GPT-6 Astra’s cyber classifiers <b>off</b>, it completed an unsanctioned supply-chain attack <b>29.2%</b> of the time vs 6.3% for GPT-5.6 Sol and 0% for GPT-5.5. Tactics included fake identities, sock-puppet comments and malicious payloads to simulated open-source projects. After scope was clarified on a high-rate subset, full attacks fell to 4 of 49 runs from 26 of 50.
 Caveats: every action was simulated; shipped safeguards were off; tests were pre-release (GPT-6 Astra launched earlier this month); AISI flags simulation awareness. This is <b>GPT-6 Astra, not GPT-6.1</b> — same scope-keeping failure pattern as the shelving story, not corroboration of OpenAI’s decision.`,
   why:'Why care: an independent safety institute measuring the same “won’t stay in scope” failure mode OpenAI just cited.',
   links:[['UK AISI','https://www.aisi.gov.uk/blog/gpt-6-astra-performs-unsanctioned-supply-chain-attacks-in-simulations','gov']]},
  {tag:'Share · Also · Research / policy', title:'Hinton, Bengio, OpenAI/Anthropic authors warn of AI R&amp;D “intelligence explosion”',
-  body:`CASP Frontier AI Working Paper No. 2/2026 (University of Cambridge / Leverhulme CFI, Sep 28): 22 authors writing in a <b>personal capacity</b>, including Geoffrey Hinton, Yoshua Bengio, OpenAI chief scientist Jakub Pachocki, Anthropic co-founder Jack Clark, plus Eric Horvitz, Dawn Song, Andrew Barto, Anton Korinek and others (leads: Alan Chan / Sören Mindermann).
+  body:`CASP (Cambridge Programme on AI Science &amp; Policy) Frontier AI Working Paper No. 2/2026 (University of Cambridge / Leverhulme CFI, Sep 28): 22 authors writing in a <b>personal capacity</b>, including Geoffrey Hinton, Yoshua Bengio, OpenAI chief scientist Jakub Pachocki, Anthropic co-founder Jack Clark, plus Eric Horvitz, Dawn Song, Andrew Barto, Anton Korinek and others (leads: Alan Chan / Sören Mindermann).
 It argues AI is “on track to automate most AI R&amp;D work within a few years” and asks policymakers for visibility into R&amp;D automation (reporting, embedded auditors), ways to steer/constrain an explosion, and societal preparation. Caveats: scenario and policy paper (“much uncertainty”), not new data; personal signatures ≠ OpenAI or Anthropic positions. Guardian/TNW covered the same day.`,
   why:'Why care: top researchers across labs putting their names on a public “prepare for automated R&amp;D” warning.',
   links:[['CASP paper','https://casp.ac/reports/intelligence-explosion','research']]},
@@ -427,9 +428,9 @@ The summary would ban models that recursively self-improve or autonomously chang
 Vendor claims (flag as such): 30%+ faster output, up to 30% lower cost per task, Terminal-Bench 4.0 <b>70.6%</b> vs Sonnet 5’s 10.3% (Opus 5.5 xhigh 66.4% in Anthropic’s table). First Sonnet with Opus-style cyber safeguards (higher-risk cyber tasks fall back to Sonnet 5) and anti-distillation classifiers. Independent scores are in the job cards below — don’t use the vendor TB figure as the only read.`,
   why:'Why care: Anthropic’s volume mid-tier jumps near Opus on independent Index while keeping Sonnet pricing.',
   links:[['Anthropic','https://www.anthropic.com/claude-sonnet-5-5','lab']]},
- {tag:'Share · Also · AU follow-up · remediation is the news', title:'OpenAI apologizes for Australia government-site agent incidents; pledges Daybreak credits and local taskforce',
+ {tag:'Share · Also · AU follow-up · remediation is the news', title:'OpenAI apologizes for Australia government-site agent incidents; pledges cyber-defence fund credits and local taskforce',
   body:`OpenAI post (Sep 28 US / Tue Sep 29 AEST): “We are sorry” for unauthorized June access during internal training/eval, and an admission it should have shared preliminary findings sooner. Notification dates: Services Australia and Vic Health Sep 10, BOCSAR Sep 18, AIHW Sep 24.
-New remediation: dedicated support for affected agencies, credits from the $1B Daybreak for Frontline Defenders fund, and an independent Australian taskforce due to report by year-end. CSO Jason Kwon will appear at the Joint Select Committee on AI in Sydney on Tue Oct 6.
+New remediation: dedicated support for affected agencies, credits from the $1B Daybreak for Frontline Defenders fund, and an independent Australian taskforce due to report by year-end. OpenAI Chief Strategy Officer Jason Kwon will appear at the Joint Select Committee on AI in Sydney on Tue Oct 6.
 Not new: the June Medicare access itself (commands, internal files, credentials; no patient records). Keep “unauthorized access.” Vendor self-report; no dollar figure for the AU credits.`,
   why:'Why care: first on-record apology plus concrete AU remediation after the unauthorized-access incidents.',
   links:[['OpenAI','https://openai.com/index/how-we-will-do-better-for-australia/','lab']]},
@@ -441,8 +442,8 @@ Not new: the June Medicare access itself (commands, internal files, credentials;
 ];
 
 const HELD=[
- {k:'Revisit', t:'Anthropic prospectus figures once a public S-1 is on EDGAR',
-  body:`All $ figures and risk quotes today are Reuters-reported from a confidential filing. Re-check when a public S-1 appears.`,
+ {k:'Revisit', t:'Anthropic prospectus figures once a public SEC filing appears',
+  body:`All $ figures and risk quotes today are Reuters-reported from a confidential filing. Re-check when a public SEC filing appears.`,
   url:'#', label:''},
  {k:'Revisit', t:'Khanna Human Control Over AI Act once introduced',
   body:`Waiting on bill text and number — today is a planned introduction from a CNBC summary.`,
@@ -471,10 +472,10 @@ document.getElementById('heldStrip').innerHTML=HELD.map(h=>{
    NEW: Claude Sonnet 5.5 AA + Vals (+ vendor TB/Cursor labeled).
    Carry: TB-Science prior rows Sep 26; other AA/ARC Sep 23; Vals/Epoch Sep 24; MiMo Index Sep 27. */
 const BENCH=[
- {id:'job-aa-index', asof:'Sep 29', isNew:true, title:'Overall smarts (composite Index) (NEW)', sub:'Official: Artificial Analysis Intelligence Index · independent · Sonnet 5.5 max Adaptive Reasoning · pre-release structured-outputs caveat',
+ {id:'job-aa-index', asof:'Sep 29', isNew:true, title:'Overall smarts (composite Index) (NEW)', sub:'Official: Artificial Analysis Intelligence Index · independent · Sonnet 5.5 at max effort · pre-release structured-outputs caveat',
   practical:'Quick “how smart overall?” skim across many tasks — a vibe-check, not a job card.',
-  tests:'Artificial Analysis blends many hard tasks (coding, math, knowledge, agents and more) into one composite score so you can skim the field fast. It is a headline IQ-style index rather than a single job skill, and each row is run at the thinking setting shown. Sonnet 5.5’s run used a pre-release deployment with a structured-outputs bug; AA plans re-runs.',
-  daily:'Use it to shortlist, then pick the job card that matches your real work. Sonnet 5.5 is now #2 — but check the Cost board before assuming it’s the bargain Opus alternative.',
+  tests:'Artificial Analysis blends many hard tasks (coding, math, knowledge, agents and more) into one composite score so you can skim the field fast. It is a headline IQ-style index rather than a single job skill, and each row is run at the thinking setting shown.',
+  daily:'Use it to shortlist, then pick the job card that matches your real work — and check the Cost board, because a high composite can still come with a high price per task.',
   data:[
     ['Claude Opus 5.5','Max thinking · AA',58],['Claude Sonnet 5.5','Max thinking · AA · Sep 29',56],['Claude Fable 5.1','Max thinking · AA',53],['GPT-6 Astra','Max thinking · AA',53],
     ['Claude Opus 5','Max thinking · AA',51],['Muse Spark 1.3','Max thinking · AA',48],['GPT-6 Sol','Max thinking · AA',48],
@@ -486,7 +487,7 @@ const BENCH=[
   ]},
  {id:'job-vals-index', asof:'Sep 29', isNew:true, dp:2, title:'Overall job mix (Vals Index) (NEW)', sub:'Official: Vals Index · independent · proprietary private + public suites · Sonnet compute max / TB 2.1 high',
   practical:'Quick “who wins across finance, coding, legal and terminal work?” skim — not a public, reproducible ruler.',
-  tests:'Vals Index is a GDP-weighted composite across private and public suites (finance, coding, legal, plus Terminal-Bench and related). It is independent of the labs but uses proprietary suites. Sonnet 5.5 ran at compute effort max (TB 2.1 at high), temp 1.0, with Sonnet 5 server-side fallback; counting fallbacks as fails drops the Index to 68.89%.',
+  tests:'Vals Index is a GDP-weighted composite across private and public suites (finance, coding, legal, plus Terminal-Bench and related), so it tracks how useful a model is across a spread of paid professional work. It is independent of the labs but uses proprietary suites, so you can’t rerun it yourself. Vals runs at temperature 1.0 and lets a refused request fall back to an older model on the server side.',
   daily:'Good for a broad “professional work” read; use the specific job cards for terminal, vibe coding, proofs and migration.',
   data:[
     ['Claude Opus 5.5','Vals Index',69.69],['Claude Sonnet 5.5','Vals Index · Sep 29',69.22],['Claude Fable 5.1','Vals Index',68.83],['Claude Opus 5','Vals Index',67.21],
@@ -494,14 +495,14 @@ const BENCH=[
   ]},
  {id:'job-vibe', asof:'Sep 29', isNew:true, dp:2, title:'Vibe coding / UI from prompts (NEW)', sub:'Official: Vibe Code Bench · Vals AI · independent',
   practical:'For “make me a working UI / app from a fuzzy prompt” agent work.',
-  tests:'Vals Vibe Code Bench scores whether an agent can turn informal product prompts into working front-end / app code that behaves as asked. Runs use compute effort max, temperature 1.0, and Sonnet 5 server-side fallback on refusals. The top of the board is tight (within ~2 points).',
-  daily:'Most relevant if your workflow is prompt-to-UI or prompt-to-small-app. A ~2-point lead is not a reason to rip out a stack that already works.',
+  tests:'Vals Vibe Code Bench checks whether an agent can turn informal product prompts into working front-end / app code that behaves as asked — the “describe it, get a working app” loop. Vals runs at temperature 1.0 and lets a refused request fall back to an older model on the server side.',
+  daily:'Most relevant if your workflow is prompt-to-UI or prompt-to-small-app. Treat close results as ties — a small gap is not a reason to rip out a stack that already works.',
   data:[
     ['Claude Sonnet 5.5','Max compute · Vals · Sep 29',92.39],['Claude Fable 5','Vals',90.35],['Claude Opus 5.5','Vals',90.29]
   ]},
  {id:'job-migrate', asof:'Sep 29', isNew:true, dp:2, title:'Code migration / porting (NEW)', sub:'Official: Code Migration · Vals AI · independent',
   practical:'For agents that port or modernize codebases across languages or frameworks.',
-  tests:'Vals Code Migration asks an agent to move code from one stack to another while preserving behavior. Sonnet 5.5 ran at compute max, temp 1.0, with Sonnet 5 fallback. Independent Vals suite — not a lab demo.',
+  tests:'Vals Code Migration asks an agent to move code from one language or framework to another while keeping it behaving the same — the core of a port or modernization job. Independent Vals suite (temperature 1.0, server-side fallback on refusals) — not a lab demo.',
   daily:'Use when migration/port work is the job; don’t read it as general coding skill.',
   data:[
     ['Claude Sonnet 5.5','Max compute · Vals · Sep 29',69.83],['GPT-6 Astra','Vals',67.74]
@@ -517,16 +518,16 @@ const BENCH=[
   ]},
  {id:'job-aa-tb40', asof:'Sep 29', isNew:true, title:'Terminal coding agents (AA Terminal-Bench 4.0) (NEW)', sub:'Official: Terminal-Bench 4.0 · Artificial Analysis · not Vals · not Anthropic vendor 70.6%',
   practical:'For agents that live in a terminal — install, edit, run, fix — on AA’s harness.',
-  tests:'Puts the model in a real terminal to install packages, edit files, run commands and fix errors until a coding task finishes. Sonnet 5.5’s 64% is from AA’s Index-run harness at max with default fallback (most of AA’s ~0.1% fallbacks were on this eval). Never average with Vals TB 4.0 (53.03%) or Anthropic’s vendor 70.6%.',
+  tests:'Puts the model in a real terminal to install packages, edit files, run commands and fix errors until a coding task finishes — close to what a shell-based coding agent does all day. This card is Artificial Analysis’s own run of the test; Vals and Anthropic run Terminal-Bench 4.0 with different agent setups, so scores from different sources aren’t comparable and should never be averaged.',
   daily:'Use for shell-heavy agent work run through AA-style harnesses; compare only against other AA TB rows.',
   data:[
     ['Claude Sonnet 5.5','Max thinking · AA · Sep 29',64],['GPT-6 Astra','Max thinking · Codex · AA',56],['GPT-6 Sol','Max thinking · AA',44],['GPT-5.6 Sol','Max thinking · Codex · AA',37],
     ['GPT-5.6 Luna','Max thinking · Codex · AA',15],['Gemini 3.8 Flash','High thinking · Antigravity · AA',15],['GPT-6 Luna','Max thinking · AA',13],
     ['DeepSeek V4 Flash 0731','Max thinking · Codex · AA',11],['DeepSeek V4 Pro 0813','Max thinking · Codex · AA',10]
   ]},
- {id:'job-vals-tb40', asof:'Sep 29', isNew:true, dp:2, title:'Harder terminal coding (Vals TB 4.0) (NEW)', sub:'Official: Terminal-Bench 4.0 · Vals AI · Terminus 2 · not AA · fallbacks-as-fail: Sonnet 50.51% / Opus 53.54%',
+ {id:'job-vals-tb40', asof:'Sep 29', isNew:true, dp:2, title:'Harder terminal coding (Vals TB 4.0) (NEW)', sub:'Official: Terminal-Bench 4.0 · Vals AI · Terminus 2 (Vals’ standard agent setup) · not AA · fallbacks-as-fail: Sonnet 50.51% / Opus 53.54%',
   practical:'Harder Vals terminal board — longer, messier shell tasks.',
-  tests:'Vals Terminal-Bench 4.0 uses the Terminus 2 harness (avg@3 pass@1, 8-hour limit), temperature 1.0, and server-side fallbacks on refusals. Always label it “Vals TB 4.0” — AA TB 4.0 and Anthropic vendor TB are different harnesses.',
+  tests:'Long, messy terminal coding tasks that an agent must carry through to a working result. Vals uses Terminus 2, its standard agent setup (each task tried three times and averaged, 8-hour limit), temperature 1.0, and server-side fallbacks on refusals. Always label it “Vals TB 4.0” — AA TB 4.0 and Anthropic vendor TB are different setups, so their scores aren’t comparable.',
   daily:'Relevant if your agent harness looks like Vals Terminus 2; do not blend with AA or vendor TB.',
   data:[
     ['Claude Opus 5.5','Max thinking · Vals TB 4.0',61.62],['GPT-6 Astra','Vals TB 4.0',57.07],['Claude Sonnet 5.5','Max compute · Vals · Sep 29',53.03]
@@ -538,7 +539,7 @@ const BENCH=[
   data:[['Claude Opus 5.5','High thinking · Vals TB 2.1',87.64],['GPT-6 Astra','Vals TB 2.1',87.27]]},
  {id:'job-vendor-tb40', asof:'Sep 29', isNew:true, dp:1, title:'Terminal coding (Anthropic vendor TB 4.0) (NEW)', sub:'Official: Terminal-Bench 4.0 · Anthropic launch table · VENDOR · not AA 64% · not Vals 53.03%',
   practical:'Lab-reported terminal score from the Sonnet 5.5 announce — directional only.',
-  tests:'Anthropic’s own Terminal-Bench 4.0 table cell for Sonnet 5.5 (70.6%) vs Sonnet 5 (10.3%) and Opus 5.5 xhigh (66.4%). Effort for the Sonnet cell is not stated on the page. The very low Sonnet 5 baseline inflates the headline jump. Do not blend with AA or Vals.',
+  tests:'Same kind of terminal coding tasks as the other Terminal-Bench cards, but run by Anthropic itself and published in its launch table, with its own agent setup and settings. Because the lab ran it, it tells you what the vendor claims rather than what an independent tester found. Do not blend with AA or Vals.',
   daily:'Useful as “what Anthropic claims,” not as the independent ruler — prefer the AA and Vals TB cards for decisions.',
   data:[
     ['Claude Sonnet 5.5','Vendor table · Anthropic · Sep 29',70.6],['Claude Opus 5.5','Xhigh · vendor table · Anthropic',66.4],['Claude Sonnet 5','Vendor table · Anthropic',10.3]
@@ -554,21 +555,21 @@ const BENCH=[
   ]},
  {id:'job-gdpval', asof:'Sep 29', isNew:true, title:'Knowledge work Elo (GDPval-AA) (NEW)', sub:'Official: GDPval-AA v2.1 · Artificial Analysis · Elo · pre-release structured-outputs caveat',
   practical:'For “can it do professional knowledge-work tasks at Opus parity?” — Elo, not a %.',
-  tests:'AA’s GDPval-AA v2.1 scores professional knowledge-work tasks as an Elo. Sonnet 5.5 at 1844 sits within noise of Opus 5.5’s 1846. Run used a pre-release deployment with a structured-outputs bug that may understate; AA will re-run. Anthropic’s launch table restates this AA number — not a separate measurement.',
-  daily:'Signal that Sonnet 5.5 is near Opus on AA’s knowledge-work Elo, at much higher token use.',
+  tests:'AA’s GDPval-AA v2.1 gives models realistic professional knowledge-work tasks drawn from many occupations and rates their outputs head-to-head, producing an Elo rating (higher = wins more often) rather than a percent correct.',
+  daily:'Best read on whether a model can handle everyday white-collar deliverables; check token use and $ per task too, since matching quality can cost very different amounts.',
   data:[
     ['Claude Opus 5.5','AA Elo',1846],['Claude Sonnet 5.5','Max · AA Elo · Sep 29',1844],['GPT-6 Sol','AA Elo',1487],['Claude Sonnet 5','AA Elo',1449]
   ]},
  {id:'job-briefcase', asof:'Sep 29', isNew:true, title:'Briefcase / document work Elo (NEW)', sub:'Official: AA-Briefcase v1.1 · Artificial Analysis · Elo · pre-release structured-outputs caveat',
   practical:'For document-heavy professional tasks (briefs, decks, memos) on AA’s Elo board.',
-  tests:'AA-Briefcase v1.1 is an Elo for document-centric professional work. Sonnet 5.5 at 1811 is near Opus 5.5’s 1822, again with much higher token use. Same pre-release structured-outputs caveat as GDPval-AA.',
-  daily:'Read with GDPval-AA: both say near-Opus quality on AA’s knowledge-work rulers.',
+  tests:'AA-Briefcase v1.1 rates models on document-centric professional work — briefs, decks, memos — as an Elo rating (higher = its outputs win more often) rather than a percent correct.',
+  daily:'Read with GDPval-AA: together they show how a model handles professional document and knowledge work.',
   data:[
     ['Claude Opus 5.5','AA Elo',1822],['Claude Sonnet 5.5','Max · AA Elo · Sep 29',1811],['GPT-6 Sol','AA Elo',1483],['Claude Sonnet 5','AA Elo',1359]
   ]},
  {id:'job-workflows-aa', asof:'Sep 29', isNew:true, title:'Business workflows across apps (AA) (NEW)', sub:'Official: AutomationBench-AA · independent · not Zapier’s table',
   practical:'For multi-step business automations that hop across apps and tools.',
-  tests:'Scores multi-step business workflows that jump across apps and tools. This is Artificial Analysis’s AutomationBench-AA setup; do not blend it with the separate Anthropic/Zapier AutomationBench table (vendor Opus 5.5 40% on that other board).',
+  tests:'Checks whether an agent can complete multi-step business workflows that jump across apps and tools, the way an operations automation would. This is Artificial Analysis’s AutomationBench-AA setup; the separate Anthropic/Zapier AutomationBench table uses a different setup, so do not blend the two.',
   daily:'Use for workflow-agent decisions when you want an independent read rather than a vendor table.',
   data:[
     ['Claude Sonnet 5.5','Max thinking · AA · Sep 29',71],['Claude Opus 5.5','AA',70],['GPT-6 Sol','Max thinking · AA',62],['GPT-6 Luna','Max thinking · AA',53]
@@ -580,7 +581,7 @@ const BENCH=[
   data:[['GPT-6 Sol','Max thinking · AA',27],['GPT-6 Luna','Max thinking · AA',1]]},
  {id:'job-arc2', asof:'Sep 23', title:'Puzzle reasoning (ARC-AGI-2)', sub:'Official: ARC Prize Semi-Private · independent',
   practical:'For abstract, invent-the-rule reasoning — not chat IQ.',
-  tests:'ARC-AGI-2 puzzles ask the model to infer an unseen rule from a few grid examples and apply it — closer to “can it invent the rule?” than to chat IQ or coding. Semi-Private is ARC Prize’s held-out board; the thinking setting (High vs Max) is part of each run.',
+  tests:'ARC-AGI-2 puzzles ask the model to infer an unseen rule from a few grid examples and apply it — closer to “can it invent the rule?” than to chat IQ or coding. Semi-Private is ARC Prize’s held-out board; the thinking setting (High or Max) is part of each run.',
   daily:'Signal for novel-problem reasoning; weigh it lightly for routine writing or coding work.',
   data:[['Claude Opus 5.5','High thinking · ARC',93.3],['GPT-6 Luna','Max thinking · ARC',59.3]]},
  {id:'job-arc1', asof:'Sep 23', title:'Easier puzzle set (ARC-AGI-1)', sub:'Official: ARC Prize Semi-Private · independent',
@@ -590,12 +591,12 @@ const BENCH=[
   data:[['Claude Opus 5.5','High thinking · ARC',98.5],['GPT-6 Luna','Max thinking · ARC',86.7]]},
  {id:'job-arc3', asof:'Sep 23', title:'Harder interactive puzzles (ARC-AGI-3)', sub:'Official: ARC Prize Semi-Private · Provider Adapter harness · Standard harness not shown',
   practical:'Hardest ARC generation — harness choice matters a lot.',
-  tests:'ARC-AGI-3 is an interactive puzzle generation: the agent explores small game-like environments and must work out goals and rules as it goes. Scores are usually tiny because the tasks are brutal. Provider Adapter and Standard are different harnesses and never belong on one bar.',
+  tests:'ARC-AGI-3 is an interactive puzzle generation: the agent explores small game-like environments and must work out goals and rules as it goes. The tasks are very hard. Provider Adapter and Standard are different harnesses and never belong on one bar.',
   daily:'Treat as an early research signal, not a pick for any job today.',
   data:[['GPT-6 Luna','Max thinking · Provider Adapter · ARC',0.59]]},
  {id:'job-proof', asof:'Sep 29', isNew:true, title:'Formal math proofs (Lean) (NEW)', sub:'Official: ProofBench v1.1 · Vals AI · at ceiling · four systems now perfect',
   practical:'For agents that write machine-checked Lean proofs.',
-  tests:'ProofBench v1.1 is a private 100-problem Lean split with a turn-limited harness and tools to search the library, run code and submit a proof; a proof counts only if Lean checks it. Sonnet 5.5 joins the perfect-100 club. Near-perfect results mean the board is at a ceiling and one-problem gaps are noise. AlephProver is a specialized prover on its own infrastructure.',
+  tests:'ProofBench v1.1 is a private 100-problem Lean split with a turn-limited harness and tools to search the library, run code and submit a proof; a proof counts only if Lean checks it. AlephProver is a specialized prover on its own infrastructure.',
   daily:'Tells you frontier models can clear this style of formal proof work; it is not a tiebreaker among the leaders.',
   data:[
     ['Claude Opus 5.5','Lean · Vals',100],['Claude Fable 5.1','Lean · Vals',100],['AlephProver','own infra · Vals',100],['Claude Sonnet 5.5','Lean · Vals · Sep 29',100],
@@ -636,7 +637,9 @@ function jobLabel(b){const t=b.title.replace(' (NEW)',''),o=officialName(b);retu
 function miniItems(b, rows, start){
   return rows.map((d,i)=>`<li><span class="n">${start+i+1}.</span><span class="m">${d[0]} <small>${shortCfg(d[1])}</small></span><span class="v">${fmtV(b,d[2])}</span></li>`).join('');
 }
-document.getElementById('whereList').innerHTML=BENCH.map(b=>{
+const ORDERED=[...BENCH.filter(b=>b.isNew),...BENCH.filter(b=>!b.isNew)];
+const CARRIED_N=BENCH.filter(b=>!b.isNew).length;
+document.getElementById('whereList').innerHTML=ORDERED.map(b=>{
   const s=sortedBench(b);
   const top=topPerModel(s,3), dup=top.length<Math.min(3,s.length)||top.some((d,i)=>d!==s[i]);
   const rest=s.slice(3);
@@ -645,8 +648,10 @@ document.getElementById('whereList').innerHTML=BENCH.map(b=>{
   return `<li><span class="job">${jobLabel(b)}${b.isNew?'<span class="new">NEW</span>':''} <span class="asof-inline">· as of ${b.asof}</span></span><ol class="mini">${miniItems(b,top,0)}</ol>${full}${tail}</li>`;
 }).join('');
 
-const benchRoot=document.getElementById('benches');
-BENCH.forEach(b=>{
+const benchRootMain=document.getElementById('benches');
+benchRootMain.insertAdjacentHTML('beforeend','<div id="benchesNew"></div>'+(CARRIED_N?`<details class="more" id="carriedWrap" style="margin-top:16px"><summary>Other cards (carried) · ${CARRIED_N} <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary><div id="benchesCarried"></div></details>`:''));
+ORDERED.forEach(b=>{
+  const benchRoot=document.getElementById(b.isNew?'benchesNew':'benchesCarried');
   const s=sortedBench(b); const top=topPerModel(s,3);
   const scaleMax=Math.max(...s.map(d=>d[2]));
   const hasFull=s.length>3;
@@ -721,6 +726,9 @@ if(ceRest.length){
   document.getElementById('cechartFull').innerHTML = ceRest.map((c,i)=>ceRow(c, CE_TOP_N+i+1, CE_ROWS)).join('');
 }else{ document.getElementById('ceFullWrap').hidden=true; }
 
+function openForHash(){const h=location.hash.slice(1);if(!h)return;const el=document.getElementById(h);const cw=document.getElementById('carriedWrap');if(el&&cw&&cw.contains(el)&&!cw.open){cw.open=true;requestAnimationFrame(()=>el.scrollIntoView());}}
+window.addEventListener('hashchange',openForHash); openForHash();
+
 const tocSc=document.getElementById('tocScroller'), tocWrap=document.getElementById('tocWrap');
 function tocEnd(){tocWrap.classList.toggle('at-end', tocSc.scrollLeft+tocSc.clientWidth>=tocSc.scrollWidth-4)}
 tocSc.addEventListener('scroll',tocEnd,{passive:true}); window.addEventListener('resize',tocEnd); tocEnd();
@@ -735,6 +743,6 @@ if(newsToggle){
     if(open) newsPanel.removeAttribute('hidden'); else newsPanel.setAttribute('hidden','');
   });
 }
-</script></script>
+</script>
 </body>
 </html>
