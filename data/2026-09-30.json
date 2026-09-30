@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-30",
- "built_at": "2026-09-30T14:16:32+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 96",
- "built_at_et": "10:16 AM",
+ "built_at": "2026-09-30T14:38:05+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 97",
+ "built_at_et": "10:38 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -30716,12 +30716,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -31508,12 +31508,12 @@
      "chatgpt"
     ],
     [
-     "MAI-Image-2.5",
+     "MAI-Image-2.6-Flash",
      87.6,
      null
     ],
     [
-     "MAI-Image-2.6-Flash",
+     "MAI-Image-2.5",
      87.6,
      null
     ],
@@ -31628,12 +31628,12 @@
      null
     ],
     [
-     "Luma UNI 1 Max",
+     "Krea 2 Medium",
      75.4,
      null
     ],
     [
-     "Krea 2 Medium",
+     "Luma UNI 1 Max",
      75.4,
      null
     ],
@@ -31643,12 +31643,12 @@
      null
     ],
     [
-     "GPT Image 1 (high)",
+     "Seedream 5.0 Lite",
      75.0,
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "GPT Image 1 (high)",
      75.0,
      null
     ],
@@ -31683,17 +31683,17 @@
      null
     ],
     [
-     "P-Image-Ideogram (High)",
-     73.2,
-     null
-    ],
-    [
      "Ming-Image-0.1-Design",
      73.2,
      null
     ],
     [
      "Imagen 4 Ultra",
+     73.2,
+     null
+    ],
+    [
+     "P-Image-Ideogram (High)",
      73.2,
      null
     ],
@@ -31713,18 +31713,23 @@
      null
     ],
     [
-     "Recraft V4.1",
+     "Wan 2.7",
      72.3,
      null
     ],
     [
-     "Wan 2.7",
+     "Recraft V4.1",
      72.3,
      null
     ],
     [
      "MAI-Image-2-Efficient",
      72.2,
+     null
+    ],
+    [
+     "Recraft V4 Pro",
+     71.8,
      null
     ],
     [
@@ -31738,16 +31743,6 @@
      null
     ],
     [
-     "Recraft V4 Pro",
-     71.8,
-     null
-    ],
-    [
-     "Ideogram 4.0 Fast (Quality)",
-     71.6,
-     null
-    ],
-    [
      "P-Image-Ideogram (Very High)",
      71.6,
      null
@@ -31758,8 +31753,8 @@
      null
     ],
     [
-     "Recraft V4.1 Pro",
-     71.5,
+     "Ideogram 4.0 Fast (Quality)",
+     71.6,
      null
     ],
     [
@@ -31768,12 +31763,17 @@
      null
     ],
     [
-     "Ideogram 4.0 Instant",
-     71.4,
+     "Recraft V4.1 Pro",
+     71.5,
      null
     ],
     [
      "Wan 2.7 Pro",
+     71.4,
+     null
+    ],
+    [
+     "Ideogram 4.0 Instant",
      71.4,
      null
     ],
@@ -31798,12 +31798,12 @@
      null
     ],
     [
-     "ImagineArt 2.0",
+     "Cosmos3-Super-Text2Image-4Step",
      69.7,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "ImagineArt 2.0",
      69.7,
      null
     ],
@@ -31858,12 +31858,12 @@
      null
     ],
     [
-     "image-1",
+     "Z-Image Turbo",
      65.7,
      null
     ],
     [
-     "Z-Image Turbo",
+     "image-1",
      65.7,
      null
     ],
@@ -31883,12 +31883,12 @@
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Eigen Image",
      63.4,
      null
     ],
     [
-     "Eigen Image",
+     "ERNIE Image Turbo",
      63.4,
      null
     ],
@@ -31908,7 +31908,7 @@
      null
     ],
     [
-     "Imagen 3 (v002)",
+     "GPT Image 1 Mini (medium)",
      62.2,
      null
     ],
@@ -31918,7 +31918,7 @@
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Imagen 3 (v002)",
      62.2,
      null
     ],
@@ -31973,12 +31973,12 @@
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "FLUX1.1 [pro]",
      58.8,
      null
     ],
     [
-     "FLUX1.1 [pro]",
+     "FLUX.1 [pro]",
      58.8,
      null
     ],
@@ -32148,12 +32148,12 @@
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.2,
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.2,
      null
     ],
@@ -32168,12 +32168,12 @@
      null
     ],
     [
-     "Luma Photon Flash",
+     "Step Image Edit 2",
      46.2,
      null
     ],
     [
-     "Step Image Edit 2",
+     "Luma Photon Flash",
      46.2,
      null
     ],
@@ -32258,12 +32258,12 @@
      null
     ],
     [
-     "Bagel",
+     "Bria 3.2",
      33.6,
      null
     ],
     [
-     "Bria 3.2",
+     "Bagel",
      33.6,
      null
     ],
@@ -32358,17 +32358,17 @@
      null
     ],
     [
-     "Kling 3.0 Omni 1080p (Pro)",
-     81.1,
-     null
-    ],
-    [
      "Kling 3.0 1080p (Pro)",
      81.1,
      null
     ],
     [
      "PixVerse V6",
+     81.1,
+     null
+    ],
+    [
+     "Kling 3.0 Omni 1080p (Pro)",
      81.1,
      null
     ],
@@ -32403,12 +32403,12 @@
      null
     ],
     [
-     "Veo 3.1",
+     "Runway Gen-4.5 (720p)",
      78.3,
      null
     ],
     [
-     "Runway Gen-4.5 (720p)",
+     "Veo 3.1",
      78.3,
      null
     ],
@@ -32483,7 +32483,7 @@
      null
     ],
     [
-     "PixVerse V5",
+     "Hailuo 2.3",
      71.5,
      null
     ],
@@ -32493,7 +32493,7 @@
      null
     ],
     [
-     "Hailuo 2.3",
+     "PixVerse V5",
      71.5,
      null
     ],
@@ -32618,22 +32618,22 @@
      null
     ],
     [
-     "HunyuanVideo-1.5 (Fal)",
-     43.4,
-     null
-    ],
-    [
      "Pika 2.0",
      43.4,
      null
     ],
     [
-     "Kling 1.6 Pro",
-     43.1,
+     "HunyuanVideo-1.5 (Fal)",
+     43.4,
      null
     ],
     [
      "Wan 2.1 14B",
+     43.1,
+     null
+    ],
+    [
+     "Kling 1.6 Pro",
      43.1,
      null
     ],
@@ -32678,12 +32678,12 @@
      null
     ],
     [
-     "Kling 1.0",
+     "Pika 2.2",
      30.7,
      null
     ],
     [
-     "Pika 2.2",
+     "Kling 1.0",
      30.7,
      null
     ],
@@ -32774,10 +32774,10 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
     "Claude Opus 5",
     "GPT-5.6 Sol",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Luna",
+    "Claude Fable 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -33181,10 +33181,10 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
     "Claude Opus 5",
     "GPT-5.6 Sol",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Luna",
+    "Claude Fable 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -33427,12 +33427,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -34677,6 +34677,15 @@
    "items": "10",
    "pr": "95",
    "notes": "AA public columns unavailable: gdpval; gdpval carried forward; gap: cost missing or carried forward"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-30",
+   "time": "10:16",
+   "status": "partial",
+   "items": "0",
+   "pr": "96",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
