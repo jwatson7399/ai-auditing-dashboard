@@ -255,7 +255,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   </div>
 
   <div class="lede">
-    <p><b>Lead:</b> President Trump and leaders of Anthropic, OpenAI, Google, Meta, xAI and Nvidia signed a voluntary <b>Joint Commitment on Frontier Responsibilities</b> — internal controls, outside audits, board oversight; no penalties. <b>Co-lead:</b> OpenAI’s <b>GPT-6.1 Sol</b> nears Astra on its own tests at ~a fifth of Astra’s token price.</p>
+    <p><b>Lead:</b> President Trump and leaders of Anthropic, OpenAI, Google, Meta, xAI and Nvidia signed a voluntary <b>Joint Commitment on Frontier Responsibilities</b> — internal controls, outside audits, board oversight; no penalties. <b>Co-lead:</b> OpenAI’s <b>GPT-6.1 Sol</b> nears Astra on OpenAI’s own tests at about a fifth of Astra’s token price.</p>
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
@@ -427,13 +427,13 @@ The Broad Institute pancreatic-cancer (PDAC) result is <b>Microsoft-reported</b>
   why:'Why care: a biology world-model research system with wet-lab claims — company-reported, no paper yet.',
   links:[['Microsoft Research','https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/','research']]},
  {tag:'Share · Also · Research · licence split', title:'Meta/UW paper: Context Language Models that natively edit their own context',
-  body:`arXiv 2609.37725 (v1, submitted Sep 29, 2026): authors include Rulin Shao (UW and Meta Superintelligence Labs, corresponding), plus UW/MSL, MIT and Trillium Labs. Context Language Models (CLMs) treat the live context as a file the model can rewrite. The gains are <b>author-reported</b> and not peer-reviewed (e.g. 11.4% higher accuracy with 21.5% fewer FLOPs on BrowseComp-Plus; RL lifts Qwen3.5-9B from 28.8% to 42.5%).
+  body:`arXiv 2609.37725 (v1, submitted Sep 29, 2026): authors include Rulin Shao (UW and Meta Superintelligence Labs, corresponding), plus UW/MSL, MIT and Trillium Labs. Context Language Models (CLMs) treat the live context as a file the model can rewrite. The gains are <b>author-reported</b> and not peer-reviewed (e.g. 11.4% higher accuracy with 21.5% fewer FLOPs (units of computing work) on BrowseComp-Plus; RL (reinforcement learning) lifts Qwen3.5-9B from 28.8% to 42.5%).
 Licence split: the paper is CC BY 4.0, but the facebookresearch code is <b>CC BY-NC 4.0</b> (non-commercial). The authors themselves flag editable context as a new channel for persistent prompt injections.`,
   why:'Why care: models that rewrite their own working memory — author-reported preprint, non-commercial code licence.',
   links:[['arXiv','https://arxiv.org/abs/2609.37725','research']]},
  {tag:'Share · Also · Industry · flag prior date', title:'Amazon Bedrock Managed Agents (OpenAI-powered) enter preview in 3 US regions',
-  body:`AWS What’s New (Sep 29) confirms Amazon Bedrock Managed Agents, powered by OpenAI, in preview in US East (N. Virginia), US West (Oregon) and US East (Ohio). It is a customised, AWS-native OpenAI Agents API with durable sessions, MCP (Model Context Protocol) tool connections, a per-agent IAM (AWS access-permissions) role, human approval before consequential actions and CloudTrail logging. No extra BMA charge in preview beyond the underlying resources; pricing may change at general availability.
-Flag the date: OpenAI first announced BMA in “limited preview” on <b>Apr 28, 2026</b>, so the news is preview availability, not a brand-new product.`,
+  body:`AWS What’s New (Sep 29) confirms Amazon Bedrock Managed Agents, powered by OpenAI, in preview in US East (N. Virginia), US West (Oregon) and US East (Ohio). It is a customised, AWS-native OpenAI Agents API with durable sessions, MCP (Model Context Protocol) tool connections, a per-agent IAM (AWS access-permissions) role, human approval before consequential actions and CloudTrail (AWS’s activity log) logging. No extra Bedrock Managed Agents charge in preview beyond the underlying resources; pricing may change at general availability.
+Flag the date: OpenAI first announced Bedrock Managed Agents in “limited preview” on <b>Apr 28, 2026</b>, so the news is preview availability, not a brand-new product.`,
   why:'Why care: OpenAI-powered agents now in Bedrock preview in three US regions — first announced Apr 28.',
   links:[['AWS What’s New','https://aws.amazon.com/about-aws/whats-new/2026/09/bedrock-managed-agents-preview/','lab']]}
  ]}
@@ -553,7 +553,7 @@ const BENCH=[
     ['Claude Opus 5.5','AA Elo',1822],['Claude Sonnet 5.5','Max · AA Elo',1811],
     ['GPT-6 Astra','Max · AA Elo',1569],['GPT-6.1 Sol','Max · AA Elo · Sep 29',1564],['GPT-6 Sol','AA Elo',1483],['Claude Sonnet 5','AA Elo',1359]
   ]},
- {id:'job-proof', asof:'Sep 29', isNew:true, title:'Formal math proofs (Lean) (NEW)', sub:'Official: ProofBench v1.1 · Vals AI · near ceiling / saturation',
+ {id:'job-proof', asof:'Sep 29', isNew:true, title:'Formal math proofs (Lean, a proof-checking language) (NEW)', sub:'Official: ProofBench v1.1 · Vals AI · near ceiling / saturation',
   practical:'For agents that write machine-checked Lean proofs.',
   tests:'ProofBench v1.1 is a private 100-problem Lean split with a turn-limited harness and tools to search the library, run code and submit a proof; a proof counts only if Lean checks it. AlephProver is a specialized prover on its own infrastructure.',
   daily:'Tells you frontier models can clear this style of formal proof work; it is not a tiebreaker among the leaders.',
@@ -562,7 +562,7 @@ const BENCH=[
     ['GPT-6 Astra','Lean · Vals',99],['GPT-6.1 Sol','Max · Vals · Sep 29',99],['Claude Opus 5','Lean · Vals',99],['Claude Fable 5','Lean · Vals',95],
     ['Kimi K3','Lean · Vals',87],['Aristotle','Lean · Vals',86],['GPT-5.6 Sol','Lean · Vals',83]
   ]},
- {id:'job-deepswe', asof:'Sep 29', isNew:true, dp:1, title:'Complex SWE in real codebases (vendor DeepSWE) (NEW)', sub:'Official: DeepSWE v1.1 · OpenAI launch chart · VENDOR · Sol’s best chart setting is High effort 75.2% (Max 71.9% and Xhigh lower)',
+ {id:'job-deepswe', asof:'Sep 29', isNew:true, dp:1, title:'Complex SWE in real codebases (vendor DeepSWE) (NEW)', sub:'Official: DeepSWE v1.1 · OpenAI launch chart · VENDOR · Sol’s best chart setting is High effort 75.2% (Max 71.9%; Xhigh also below High)',
   practical:'Lab-reported software-engineering agent score — directional only.',
   tests:'DeepSWE v1.1 evaluates complex software-engineering tasks in real codebases. This card is OpenAI’s own announce-page chart, not an independent run.',
   daily:'Useful as “what OpenAI claims on DeepSWE,” not as an independent ruler — wait for third-party boards before stack decisions.',
@@ -686,7 +686,7 @@ function shortCfg(c){const f=(c||'').split(' · ')[0];return /thinking|not state
 function jobLabel(b){const t=b.title.replace(' (NEW)',''),o=officialName(b);return t.indexOf(o)>=0?t:`${t} · ${o}`}
 
 function miniItems(b, rows, start){
-  return rows.map((d,i)=>`<li><span class="n">${start+i+1}.</span><span class="m">${d[0]} <small>${shortCfg(d[1])}</small></span><span class="v">${fmtV(b,d[2])}</span></li>`).join('');
+  return rows.map((d,i)=>`<li><span class="n">${start+i+1}.</span><span class="m">${d[0]}${shortCfg(d[1])?` <small>${shortCfg(d[1])}</small>`:''}</span><span class="v">${fmtV(b,d[2])}</span></li>`).join('');
 }
 const ORDERED=[...BENCH.filter(b=>b.isNew),...BENCH.filter(b=>!b.isNew)];
 const CARRIED_N=BENCH.filter(b=>!b.isNew).length;
