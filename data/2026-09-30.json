@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-30",
- "built_at": "2026-09-30T14:50:07+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 98",
- "built_at_et": "10:50 AM",
+ "built_at": "2026-09-30T14:57:20+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 99",
+ "built_at_et": "10:57 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -31643,12 +31643,12 @@
      null
     ],
     [
-     "GPT Image 1 (high)",
+     "Seedream 5.0 Lite",
      75.0,
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "GPT Image 1 (high)",
      75.0,
      null
     ],
@@ -31673,12 +31673,12 @@
      null
     ],
     [
-     "Qwen Image Max 2512",
+     "FLUX.2 [dev] Turbo",
      73.4,
      null
     ],
     [
-     "FLUX.2 [dev] Turbo",
+     "Qwen Image Max 2512",
      73.4,
      null
     ],
@@ -31688,12 +31688,12 @@
      null
     ],
     [
-     "Imagen 4 Ultra",
+     "Ming-Image-0.1-Design",
      73.2,
      null
     ],
     [
-     "Ming-Image-0.1-Design",
+     "Imagen 4 Ultra",
      73.2,
      null
     ],
@@ -31713,12 +31713,12 @@
      null
     ],
     [
-     "Recraft V4.1",
+     "Wan 2.7",
      72.3,
      null
     ],
     [
-     "Wan 2.7",
+     "Recraft V4.1",
      72.3,
      null
     ],
@@ -31728,12 +31728,12 @@
      null
     ],
     [
-     "Recraft V4 Pro",
+     "Cosmos3-Super-Text2Image",
      71.8,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Recraft V4 Pro",
      71.8,
      null
     ],
@@ -31748,12 +31748,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "P-Image-Ideogram (Very High)",
      71.6,
      null
     ],
     [
-     "P-Image-Ideogram (Very High)",
+     "Ideogram 4.0 Fast (Quality)",
      71.6,
      null
     ],
@@ -31768,12 +31768,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Instant",
+     "Wan 2.7 Pro",
      71.4,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Ideogram 4.0 Instant",
      71.4,
      null
     ],
@@ -31843,12 +31843,12 @@
      null
     ],
     [
-     "HunyuanImage 3.0",
+     "Vivago 2.1",
      66.1,
      null
     ],
     [
-     "Vivago 2.1",
+     "HunyuanImage 3.0",
      66.1,
      null
     ],
@@ -31858,12 +31858,12 @@
      null
     ],
     [
-     "Z-Image Turbo",
+     "image-1",
      65.7,
      null
     ],
     [
-     "image-1",
+     "Z-Image Turbo",
      65.7,
      null
     ],
@@ -31908,12 +31908,12 @@
      null
     ],
     [
-     "Imagen 3 (v002)",
+     "Kling Image 3.0 Omni",
      62.2,
      null
     ],
     [
-     "Kling Image 3.0 Omni",
+     "Imagen 3 (v002)",
      62.2,
      null
     ],
@@ -31928,12 +31928,12 @@
      null
     ],
     [
-     "ERNIE Image",
+     "Lucid Origin Ultra",
      61.9,
      null
     ],
     [
-     "Lucid Origin Ultra",
+     "ERNIE Image",
      61.9,
      null
     ],
@@ -32008,12 +32008,12 @@
      null
     ],
     [
-     "Ideogram v2",
+     "Imagen 4 Fast",
      57.8,
      null
     ],
     [
-     "Imagen 4 Fast",
+     "Ideogram v2",
      57.8,
      null
     ],
@@ -32038,12 +32038,12 @@
      null
     ],
     [
-     "Infinity 8B",
+     "Midjourney v6",
      56.6,
      null
     ],
     [
-     "Midjourney v6",
+     "Infinity 8B",
      56.6,
      null
     ],
@@ -32193,12 +32193,12 @@
      null
     ],
     [
-     "Playground v2.5",
+     "DALLE 3",
      43.4,
      null
     ],
     [
-     "DALLE 3",
+     "Playground v2.5",
      43.4,
      null
     ],
@@ -32353,22 +32353,22 @@
      "grok"
     ],
     [
-     "Kling 3.0 1080p (Pro)",
-     81.1,
-     null
-    ],
-    [
-     "Kling 3.0 Omni 1080p (Pro)",
-     81.1,
-     null
-    ],
-    [
      "PixVerse V6",
      81.1,
      null
     ],
     [
      "PixVerse V5.6",
+     81.1,
+     null
+    ],
+    [
+     "Kling 3.0 1080p (Pro)",
+     81.1,
+     null
+    ],
+    [
+     "Kling 3.0 Omni 1080p (Pro)",
      81.1,
      null
     ],
@@ -32403,12 +32403,12 @@
      null
     ],
     [
-     "Veo 3.1",
+     "Runway Gen-4.5 (720p)",
      78.3,
      null
     ],
     [
-     "Runway Gen-4.5 (720p)",
+     "Veo 3.1",
      78.3,
      null
     ],
@@ -32483,17 +32483,17 @@
      null
     ],
     [
-     "Seedance 1.5 pro",
-     71.5,
-     null
-    ],
-    [
      "Hailuo 2.3",
      71.5,
      null
     ],
     [
      "PixVerse V5",
+     71.5,
+     null
+    ],
+    [
+     "Seedance 1.5 pro",
      71.5,
      null
     ],
@@ -32628,12 +32628,12 @@
      null
     ],
     [
-     "Wan 2.1 14B",
+     "Kling 1.6 Pro",
      43.1,
      null
     ],
     [
-     "Kling 1.6 Pro",
+     "Wan 2.1 14B",
      43.1,
      null
     ],
@@ -32775,9 +32775,9 @@
    ],
    "missing": [
     "GPT-5.6 Sol",
-    "Claude Opus 5",
+    "Claude Fable 5",
     "GPT-5.6 Luna",
-    "Claude Fable 5"
+    "Claude Opus 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -33183,8 +33183,8 @@
    "missing": [
     "Claude Opus 5",
     "GPT-5.6 Sol",
-    "GPT-5.6 Luna",
-    "Claude Fable 5"
+    "Claude Fable 5",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -33342,12 +33342,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -33427,12 +33427,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -34694,6 +34694,15 @@
    "status": "partial",
    "items": "0",
    "pr": "97",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-30",
+   "time": "10:50",
+   "status": "partial",
+   "items": "0",
+   "pr": "98",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
