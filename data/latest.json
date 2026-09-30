@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-09-30",
- "built_at": "2026-09-30T14:38:05+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 97",
- "built_at_et": "10:38 AM",
+ "built_at": "2026-09-30T14:50:07+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 98",
+ "built_at_et": "10:50 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -30311,14 +30311,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -30716,12 +30716,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -31593,12 +31593,12 @@
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "FLUX.2 [max]",
      76.5,
      null
     ],
     [
-     "FLUX.2 [max]",
+     "HiDream-O1-Image-1.5",
      76.5,
      null
     ],
@@ -31628,12 +31628,12 @@
      null
     ],
     [
-     "Krea 2 Medium",
+     "Luma UNI 1 Max",
      75.4,
      null
     ],
     [
-     "Luma UNI 1 Max",
+     "Krea 2 Medium",
      75.4,
      null
     ],
@@ -31643,12 +31643,12 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "GPT Image 1 (high)",
      75.0,
      null
     ],
     [
-     "GPT Image 1 (high)",
+     "Seedream 5.0 Lite",
      75.0,
      null
     ],
@@ -31673,17 +31673,17 @@
      null
     ],
     [
-     "FLUX.2 [dev] Turbo",
-     73.4,
-     null
-    ],
-    [
      "Qwen Image Max 2512",
      73.4,
      null
     ],
     [
-     "Ming-Image-0.1-Design",
+     "FLUX.2 [dev] Turbo",
+     73.4,
+     null
+    ],
+    [
+     "P-Image-Ideogram (High)",
      73.2,
      null
     ],
@@ -31693,17 +31693,17 @@
      null
     ],
     [
-     "P-Image-Ideogram (High)",
+     "Ming-Image-0.1-Design",
      73.2,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "HunyuanImage 3.0 Instruct",
      73.0,
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "Cosmos3-Super-Text2Image (agentic)",
      73.0,
      null
     ],
@@ -31713,12 +31713,12 @@
      null
     ],
     [
-     "Wan 2.7",
+     "Recraft V4.1",
      72.3,
      null
     ],
     [
-     "Recraft V4.1",
+     "Wan 2.7",
      72.3,
      null
     ],
@@ -31733,18 +31733,13 @@
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
-     71.8,
-     null
-    ],
-    [
      "Cosmos3-Super-Text2Image",
      71.8,
      null
     ],
     [
-     "P-Image-Ideogram (Very High)",
-     71.6,
+     "Nano Banana (Gemini 2.5 Flash Image)",
+     71.8,
      null
     ],
     [
@@ -31758,8 +31753,8 @@
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
-     71.5,
+     "P-Image-Ideogram (Very High)",
+     71.6,
      null
     ],
     [
@@ -31768,12 +31763,17 @@
      null
     ],
     [
-     "Wan 2.7 Pro",
-     71.4,
+     "FLUX.2 [dev] Flash",
+     71.5,
      null
     ],
     [
      "Ideogram 4.0 Instant",
+     71.4,
+     null
+    ],
+    [
+     "Wan 2.7 Pro",
      71.4,
      null
     ],
@@ -31798,12 +31798,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "ImagineArt 2.0",
      69.7,
      null
     ],
     [
-     "ImagineArt 2.0",
+     "Cosmos3-Super-Text2Image-4Step",
      69.7,
      null
     ],
@@ -31818,12 +31818,12 @@
      null
     ],
     [
-     "Wan 2.5 Preview",
+     "Qwen Image 2.0 (2026-03-03)",
      68.4,
      null
     ],
     [
-     "Qwen Image 2.0 (2026-03-03)",
+     "Wan 2.5 Preview",
      68.4,
      null
     ],
@@ -31833,22 +31833,22 @@
      null
     ],
     [
-     "Recraft V4.1 Flash",
-     67.8,
-     null
-    ],
-    [
      "ImagineArt 1.5 Preview",
      67.8,
      null
     ],
     [
-     "Vivago 2.1",
-     66.1,
+     "Recraft V4.1 Flash",
+     67.8,
      null
     ],
     [
      "HunyuanImage 3.0",
+     66.1,
+     null
+    ],
+    [
+     "Vivago 2.1",
      66.1,
      null
     ],
@@ -31883,12 +31883,12 @@
      null
     ],
     [
-     "Eigen Image",
+     "ERNIE Image Turbo",
      63.4,
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Eigen Image",
      63.4,
      null
     ],
@@ -31908,7 +31908,7 @@
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Imagen 3 (v002)",
      62.2,
      null
     ],
@@ -31918,7 +31918,7 @@
      null
     ],
     [
-     "Imagen 3 (v002)",
+     "GPT Image 1 Mini (medium)",
      62.2,
      null
     ],
@@ -31973,12 +31973,12 @@
      null
     ],
     [
-     "FLUX1.1 [pro]",
+     "FLUX.1 [pro]",
      58.8,
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "FLUX1.1 [pro]",
      58.8,
      null
     ],
@@ -32008,12 +32008,12 @@
      null
     ],
     [
-     "Imagen 4 Fast",
+     "Ideogram v2",
      57.8,
      null
     ],
     [
-     "Ideogram v2",
+     "Imagen 4 Fast",
      57.8,
      null
     ],
@@ -32038,12 +32038,12 @@
      null
     ],
     [
-     "Midjourney v6",
+     "Infinity 8B",
      56.6,
      null
     ],
     [
-     "Infinity 8B",
+     "Midjourney v6",
      56.6,
      null
     ],
@@ -32168,12 +32168,12 @@
      null
     ],
     [
-     "Step Image Edit 2",
+     "Luma Photon Flash",
      46.2,
      null
     ],
     [
-     "Luma Photon Flash",
+     "Step Image Edit 2",
      46.2,
      null
     ],
@@ -32193,12 +32193,12 @@
      null
     ],
     [
-     "DALLE 3",
+     "Playground v2.5",
      43.4,
      null
     ],
     [
-     "Playground v2.5",
+     "DALLE 3",
      43.4,
      null
     ],
@@ -32353,12 +32353,12 @@
      "grok"
     ],
     [
-     "PixVerse V5.6",
+     "Kling 3.0 1080p (Pro)",
      81.1,
      null
     ],
     [
-     "Kling 3.0 1080p (Pro)",
+     "Kling 3.0 Omni 1080p (Pro)",
      81.1,
      null
     ],
@@ -32368,7 +32368,7 @@
      null
     ],
     [
-     "Kling 3.0 Omni 1080p (Pro)",
+     "PixVerse V5.6",
      81.1,
      null
     ],
@@ -32393,22 +32393,22 @@
      null
     ],
     [
-     "Kling 3.0 Omni 720p (Standard)",
-     78.5,
-     null
-    ],
-    [
      "Veo 3.1 Lite",
      78.5,
      null
     ],
     [
-     "Runway Gen-4.5 (720p)",
-     78.3,
+     "Kling 3.0 Omni 720p (Standard)",
+     78.5,
      null
     ],
     [
      "Veo 3.1",
+     78.3,
+     null
+    ],
+    [
+     "Runway Gen-4.5 (720p)",
      78.3,
      null
     ],
@@ -32483,12 +32483,12 @@
      null
     ],
     [
-     "Hailuo 2.3",
+     "Seedance 1.5 pro",
      71.5,
      null
     ],
     [
-     "Seedance 1.5 pro",
+     "Hailuo 2.3",
      71.5,
      null
     ],
@@ -32774,8 +32774,8 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
     "GPT-5.6 Sol",
+    "Claude Opus 5",
     "GPT-5.6 Luna",
     "Claude Fable 5"
    ],
@@ -33427,12 +33427,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -34685,6 +34685,15 @@
    "status": "partial",
    "items": "0",
    "pr": "96",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-09-30",
+   "time": "10:38",
+   "status": "partial",
+   "items": "0",
+   "pr": "97",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
