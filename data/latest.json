@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-01",
- "built_at": "2026-10-01T14:11:08+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 101",
- "built_at_et": "10:11 AM",
+ "built_at": "2026-10-01T14:22:57+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 102",
+ "built_at_et": "10:22 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -31030,12 +31030,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -31892,12 +31892,12 @@
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Krea 2 Large",
      77.0,
      null
     ],
     [
-     "Krea 2 Large",
+     "Wan 2.6 Image",
      77.0,
      null
     ],
@@ -31917,12 +31917,12 @@
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "HiDream-O1-Image-1.5",
      76.1,
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "Krea 2 Medium Turbo",
      76.1,
      null
     ],
@@ -31957,12 +31957,12 @@
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Seedream 5.0 Lite",
      74.9,
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Ideogram 4.0 (Quality)",
      74.9,
      null
     ],
@@ -31997,12 +31997,12 @@
      null
     ],
     [
-     "Ming-Image-0.1-Design",
+     "P-Image-Ideogram (High)",
      73.2,
      null
     ],
     [
-     "P-Image-Ideogram (High)",
+     "Ming-Image-0.1-Design",
      73.2,
      null
     ],
@@ -32017,12 +32017,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "HunyuanImage 3.0 Instruct",
      72.8,
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "Cosmos3-Super-Text2Image (agentic)",
      72.8,
      null
     ],
@@ -32032,7 +32032,7 @@
      null
     ],
     [
-     "MAI-Image-2-Efficient",
+     "Wan 2.7",
      72.1,
      null
     ],
@@ -32042,7 +32042,7 @@
      null
     ],
     [
-     "Wan 2.7",
+     "MAI-Image-2-Efficient",
      72.1,
      null
     ],
@@ -32067,11 +32067,6 @@
      null
     ],
     [
-     "Recraft V4.1 Pro",
-     71.4,
-     null
-    ],
-    [
      "P-Image-Ideogram (Very High)",
      71.4,
      null
@@ -32082,17 +32077,22 @@
      null
     ],
     [
+     "Recraft V4.1 Pro",
+     71.4,
+     null
+    ],
+    [
      "Ideogram 4.0 Fast (Quality)",
      71.3,
      null
     ],
     [
-     "Recraft V4",
+     "Wan 2.7 Pro",
      71.2,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Recraft V4",
      71.2,
      null
     ],
@@ -32137,12 +32137,12 @@
      null
     ],
     [
-     "Wan 2.5 Preview",
+     "Qwen Image 2.0 (2026-03-03)",
      68.2,
      null
     ],
     [
-     "Qwen Image 2.0 (2026-03-03)",
+     "Wan 2.5 Preview",
      68.2,
      null
     ],
@@ -32177,17 +32177,17 @@
      null
     ],
     [
+     "Z-Image Turbo",
+     65.5,
+     null
+    ],
+    [
      "FLUX.2 [klein] 9B",
      65.5,
      null
     ],
     [
      "image-1",
-     65.5,
-     null
-    ],
-    [
-     "Z-Image Turbo",
      65.5,
      null
     ],
@@ -32202,7 +32202,7 @@
      null
     ],
     [
-     "Eigen Image",
+     "Vivago 2.0",
      63.2,
      null
     ],
@@ -32212,7 +32212,7 @@
      null
     ],
     [
-     "Vivago 2.0",
+     "Eigen Image",
      63.2,
      null
     ],
@@ -32232,12 +32232,12 @@
      null
     ],
     [
-     "Kling Image 3.0 Omni",
+     "P-Image-Ideogram (Very Low)",
      62.0,
      null
     ],
     [
-     "P-Image-Ideogram (Very Low)",
+     "Kling Image 3.0 Omni",
      62.0,
      null
     ],
@@ -32577,12 +32577,12 @@
      null
     ],
     [
-     "Bagel",
+     "Bria 3.2",
      33.7,
      null
     ],
     [
-     "Bria 3.2",
+     "Bagel",
      33.7,
      null
     ],
@@ -32838,11 +32838,11 @@
     ]
    ],
    "missing": [
+    "Grok 4.6",
     "Claude Fable 5",
     "GPT-5.6 Sol",
     "GPT-5.6 Luna",
-    "Claude Opus 5",
-    "Grok 4.6"
+    "Claude Opus 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -33226,10 +33226,10 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
     "GPT-5.6 Sol",
-    "Grok 4.6",
     "GPT-5.6 Luna",
+    "Grok 4.6",
+    "Claude Fable 5",
     "Claude Opus 5"
    ],
    "confidence": "Clear lead",
@@ -33388,12 +33388,12 @@
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
@@ -33423,12 +33423,12 @@
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
@@ -34741,6 +34741,15 @@
    "items": "10",
    "pr": "100",
    "notes": "AA public columns unavailable: gdpval; gdpval carried forward; gap: cost missing or carried forward"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-01",
+   "time": "10:11",
+   "status": "partial",
+   "items": "0",
+   "pr": "101",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
