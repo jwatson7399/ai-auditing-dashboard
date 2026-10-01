@@ -492,7 +492,7 @@ const BENCH=[
     ['GPT-5.6 Sol','Max thinking · AA',47],['Grok 4.7','Extra-high thinking · AA',46],['MiMo-V2.6-Pro','Setting not stated · AA',46],
     ['Qwen3.8 Max','AA',45],['GLM-5.3','Max thinking · AA',45],['Grok 4.6','High thinking · AA',44],['Kimi K3','Max thinking · AA',44],
     ['GPT-5.6 Terra','Max thinking · AA',42],['Gemini 3.8 Flash','High thinking · AA',41],['DeepSeek V4.1 Flash','Max thinking · AA',39],
-    ['MiMo-V2.6-Flash','Setting not stated · AA · Sep 27',38],['Claude Sonnet 5','Max thinking · AA',38],['GPT-6 Luna','Max thinking · AA',37],['GPT-5.6 Luna','Max thinking · AA',37],
+    ['MiMo-V2.6-Flash','Reasoning mode · AA · Sep 27',38],['Claude Sonnet 5','Max thinking · AA',38],['GPT-6 Luna','Max thinking · AA',37],['GPT-5.6 Luna','Max thinking · AA',37],
     ['DeepSeek V4 Pro 0813','Max thinking · AA',36],['JT-4.1 Flash 236B A21B','China Mobile · AA · Sep 29',34],['Solar Mini 4','Reasoning mode · AA · Sep 30',24],['DeepSeek V4 Pro 0813 Non-reasoning','AA · Sep 29',20]
   ]},
  {id:'job-vals-index', asof:'Sep 30', isNew:true, dp:2, title:'Overall job mix (Vals Index) (NEW)', sub:'Official: Vals Index v2.1 · independent · Updated 9/30 · proprietary suites · Argon #1 of 41',
@@ -611,26 +611,26 @@ const BENCH=[
     ['GPT-6 Astra','Lean · Vals',99],['GPT-6.1 Sol','Max · Vals · Sep 29',99],['Claude Opus 5','Lean · Vals',99],['Claude Fable 5','Lean · Vals',95],
     ['Kimi K3','Lean · Vals',87],['Aristotle','Lean · Vals',86],['GPT-5.6 Sol','Lean · Vals',83]
   ]},
- {id:'job-osworld', asof:'Sep 29', dp:1, title:'Computer-use workflows (vendor OSWorld)', sub:'Official: OSWorld 2.0 offline · OpenAI launch chart · VENDOR · partial reward · not full pass rates',
+ {id:'job-osworld', asof:'Sep 29', vendor:true, dp:1, title:'Computer-use workflows (vendor OSWorld)', sub:'Official: OSWorld 2.0 offline · OpenAI launch chart · VENDOR · partial reward · not full pass rates',
   practical:'Lab-reported computer-use agent score on an offline set — directional only.',
   tests:'OSWorld 2.0’s offline set evaluates agents on demanding computer-use workflows. This card is OpenAI’s announce-page chart using a partial-reward metric on the v2026.08.08 release — do not compare it with full-task OSWorld pass rates from other sources.',
   daily:'Useful as “what OpenAI claims on computer use,” not as a cross-lab pass-rate comparison.',
   data:[
-    ['GPT-6 Astra','Max · vendor OpenAI',73.5],['GPT-6.1 Sol','Max · vendor OpenAI · Sep 29',71.4],['GPT-6 Sol','Max · vendor OpenAI',64.4]
+    ['GPT-6 Astra','Max · vendor OpenAI',73.5,'OpenAI chart'],['GPT-6.1 Sol','Max · vendor OpenAI · Sep 29',71.4,'OpenAI chart'],['GPT-6 Sol','Max · vendor OpenAI',64.4,'OpenAI chart']
   ]},
- {id:'job-vendor-tbsci', asof:'Sep 29', dp:1, title:'Science workflows in a terminal (vendor)', sub:'Official: Terminal-Bench Science 0.1 · OpenAI launch chart · VENDOR · harness differs from AA Science board',
+ {id:'job-vendor-tbsci', asof:'Sep 29', vendor:true, dp:1, title:'Science workflows in a terminal (vendor)', sub:'Official: Terminal-Bench Science 0.1 · OpenAI launch chart · VENDOR · harness differs from AA Science board',
   practical:'Lab-reported science-terminal score — do not blend with AA Terminal-Bench-Science.',
   tests:'Same kind of expert-written research workflows in a terminal as the AA Terminal-Bench-Science card, but run by OpenAI on its announce page with a different harness. Do not average with Artificial Analysis’s Science board.',
   daily:'Prefer the independent AA Science card for decisions; this is the vendor claim for context.',
   data:[
-    ['GPT-6 Astra','Max · vendor OpenAI',68.1],['GPT-6.1 Sol','Max · vendor OpenAI · Sep 29',57.0],['GPT-6 Sol','Max · vendor OpenAI',27.6]
+    ['GPT-6 Astra','Max · vendor OpenAI',68.1,'OpenAI chart'],['GPT-6.1 Sol','Max · vendor OpenAI · Sep 29',57.0,'OpenAI chart'],['GPT-6 Sol','Max · vendor OpenAI',27.6,'OpenAI chart']
   ]},
- {id:'job-gdppdf', asof:'Sep 29', title:'Professional PDF Q&amp;A (vendor GDP.pdf)', sub:'Official: GDP.pdf · OpenAI launch chart · VENDOR · Sol at High effort (its best chart setting) 32%',
+ {id:'job-gdppdf', asof:'Sep 29', vendor:true, title:'Professional PDF Q&amp;A (vendor GDP.pdf)', sub:'Official: GDP.pdf · OpenAI launch chart · VENDOR · Sol at High effort (its best chart setting) 32%',
   practical:'Lab-reported score on answering questions about complex real-world PDFs.',
   tests:'GDP.pdf asks models to answer professional questions about complex real-world PDFs (tables, charts, diagrams, fine print) from finance, healthcare, legal and related domains. This card is OpenAI’s announce chart, not AA’s independent all-models GDP.pdf board.',
   daily:'Directional vendor signal for document-heavy professional Q&amp;A; prefer independent boards when they land.',
   data:[
-    ['GPT-6 Astra','vendor OpenAI',32.2],['GPT-6.1 Sol','High · vendor OpenAI · Sep 29',32]
+    ['GPT-6 Astra','vendor OpenAI',32.2,'OpenAI chart'],['GPT-6.1 Sol','High · vendor OpenAI · Sep 29',32,'OpenAI chart']
   ]},
  {id:'job-tbsci', asof:'Sep 29', dp:1, title:'Science workflows in a terminal (AA)', sub:'Official: Terminal-Bench-Science 0.1 · Artificial Analysis · mini-swe-agent harness · not Terminal-Bench 2.1/4.0 · not OpenAI vendor chart',
   practical:'For agents that run real research pipelines (analysis, simulation, math tooling) from a shell.',
@@ -646,12 +646,12 @@ const BENCH=[
   tests:'Terminal-Bench puts the model in a real shell to finish coding tasks end-to-end. This card is Vals’ TB 2.1 harness with Terminus 2 (temperature 1.0; server-side fallbacks to older models on refusals). Never blend with Artificial Analysis Terminal-Bench, Vals TB 4.0 mini-swe-agent, or a lab’s own TB number.',
   daily:'Relevant if your agent harness looks like Vals TB 2.1; a two-model field is a spot check, not a full race.',
   data:[['Claude Opus 5.5','High thinking · Vals TB 2.1',87.64],['GPT-6 Astra','Vals TB 2.1',87.27]]},
- {id:'job-vendor-tb40', asof:'Sep 29', dp:1, title:'Terminal coding (Anthropic vendor TB 4.0)', sub:'Official: Terminal-Bench 4.0 · Anthropic launch table · VENDOR · not AA · not Vals',
+ {id:'job-vendor-tb40', asof:'Sep 29', vendor:true, dp:1, title:'Terminal coding (Anthropic vendor TB 4.0)', sub:'Official: Terminal-Bench 4.0 · Anthropic launch table · VENDOR · not AA · not Vals',
   practical:'Lab-reported terminal score from the Sonnet 5.5 announce — directional only.',
   tests:'Same kind of terminal coding tasks as the other Terminal-Bench cards, but run by Anthropic itself and published in its launch table, with its own agent setup and settings. Because the lab ran it, it tells you what the vendor claims rather than what an independent tester found. Do not blend with AA or Vals.',
   daily:'Useful as “what Anthropic claims,” not as the independent ruler — prefer the AA and Vals TB cards for decisions.',
   data:[
-    ['Claude Sonnet 5.5','Vendor table · Anthropic · Sep 29',70.6],['Claude Opus 5.5','Extra-high · vendor table · Anthropic',66.4],['Claude Sonnet 5','Vendor table · Anthropic',10.3]
+    ['Claude Sonnet 5.5','Vendor table · Anthropic · Sep 29',70.6,'Anthropic table'],['Claude Opus 5.5','Extra-high · vendor table · Anthropic',66.4,'Anthropic table'],['Claude Sonnet 5','Vendor table · Anthropic',10.3,'Anthropic table']
   ]},
  {id:'job-code-agent', asof:'Sep 23', title:'Coding agents (Codex harness)', sub:'Official: Artificial Analysis Coding Agent Index · independent',
   practical:'For agents that plan, edit and finish multi-step coding work in a Codex-style loop.',
@@ -717,7 +717,7 @@ function whereItem(b){
   const top=topPerModel(s,3), dup=top.length<Math.min(3,s.length)||top.some((d,i)=>d!==s[i]);
   const rest=s.slice(3);
   const full=(dup||rest.length)?`<details class="fl"><summary><span class="o">Full list (${s.length}) ▾</span><span class="c">Hide full list ▴</span></summary><ol class="mini">${dup?miniItems(b,s,0):miniItems(b,rest,3)}</ol></details>`:'';
-  const tail=s.length<3?`<div class="tail">Only ${s.length} score${s.length===1?'':'s'} filed.</div>`:'';
+  const tail=s.length<3?`<div class="tail">${b.vendor?'Vendor-reported; not comparable across labs. ':''}Only ${s.length} score${s.length===1?'':'s'} filed.</div>`:'';
   return `<li><span class="job">${jobLabel(b)}${b.isNew?'<span class="new">NEW</span>':''} <span class="asof-inline">· as of ${b.asof}</span></span><ol class="mini">${miniItems(b,top,0)}</ol>${full}${tail}</li>`;
 }
 document.getElementById('whereList').innerHTML=ORDERED.filter(b=>b.isNew).map(whereItem).join('');
@@ -734,7 +734,9 @@ ORDERED.forEach(b=>{
   const fn=b.fieldNote?` ${b.fieldNote}`:'';
   const fullChart=hasFull
     ? `<p class="note" style="margin:0 0 8px">Full list: ${s.length} filed scores, on the same scale as the ${b.vendor?'rows':'top 3'} above.${fn}</p><div class="chart">${benchRows(b, s, scaleMax)}</div>`
-    : `<p class="note" style="margin:0 0 4px">Only ${s.length} independent score${s.length===1?'':'s'} filed for this card, so there’s no wider field to show yet.${fn}</p>`;
+    : (b.vendor
+      ? `<p class="note" style="margin:0 0 4px">Vendor-reported; not comparable across labs. ${s.length} score${s.length===1?'':'s'} filed for this card.${fn}</p>`
+      : `<p class="note" style="margin:0 0 4px">Only ${s.length} independent score${s.length===1?'':'s'} filed for this card, so there’s no wider field to show yet.${fn}</p>`);
   benchRoot.insertAdjacentHTML('beforeend',`<article class="bench" id="${b.id}">
     <p class="title">${b.title}</p>
     <p class="sub">${b.sub}</p>
