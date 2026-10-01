@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-01",
- "built_at": "2026-10-01T14:22:57+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 102",
- "built_at_et": "10:22 AM",
+ "built_at": "2026-10-01T14:33:38+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 103",
+ "built_at_et": "10:33 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -30620,14 +30620,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -31030,12 +31030,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -31917,12 +31917,12 @@
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "Krea 2 Medium Turbo",
      76.1,
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "HiDream-O1-Image-1.5",
      76.1,
      null
     ],
@@ -31942,12 +31942,12 @@
      null
     ],
     [
-     "Luma UNI 1 Max",
+     "Ideogram 4.5 (High)",
      75.3,
      null
     ],
     [
-     "Ideogram 4.5 (High)",
+     "Luma UNI 1 Max",
      75.3,
      null
     ],
@@ -31962,12 +31962,12 @@
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "GPT Image 1 (high)",
      74.9,
      null
     ],
     [
-     "GPT Image 1 (high)",
+     "Ideogram 4.0 (Quality)",
      74.9,
      null
     ],
@@ -31977,12 +31977,12 @@
      null
     ],
     [
-     "FLUX.2 [pro]",
+     "Ideogram 4.0",
      74.0,
      null
     ],
     [
-     "Ideogram 4.0",
+     "FLUX.2 [pro]",
      74.0,
      null
     ],
@@ -31997,17 +31997,17 @@
      null
     ],
     [
-     "P-Image-Ideogram (High)",
-     73.2,
-     null
-    ],
-    [
      "Ming-Image-0.1-Design",
      73.2,
      null
     ],
     [
      "Imagen 4 Ultra",
+     73.2,
+     null
+    ],
+    [
+     "P-Image-Ideogram (High)",
      73.2,
      null
     ],
@@ -32032,17 +32032,17 @@
      null
     ],
     [
+     "MAI-Image-2-Efficient",
+     72.1,
+     null
+    ],
+    [
      "Wan 2.7",
      72.1,
      null
     ],
     [
      "Recraft V4.1",
-     72.1,
-     null
-    ],
-    [
-     "MAI-Image-2-Efficient",
      72.1,
      null
     ],
@@ -32057,22 +32057,22 @@
      null
     ],
     [
-     "Recraft V4 Pro",
-     71.6,
-     null
-    ],
-    [
      "Nano Banana (Gemini 2.5 Flash Image)",
      71.6,
      null
     ],
     [
-     "P-Image-Ideogram (Very High)",
-     71.4,
+     "Recraft V4 Pro",
+     71.6,
      null
     ],
     [
      "HunyuanImage 3.0 (Tencent Cloud)",
+     71.4,
+     null
+    ],
+    [
+     "P-Image-Ideogram (Very High)",
      71.4,
      null
     ],
@@ -32087,12 +32087,12 @@
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Recraft V4",
      71.2,
      null
     ],
     [
-     "Recraft V4",
+     "Wan 2.7 Pro",
      71.2,
      null
     ],
@@ -32107,12 +32107,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Medium)",
+     "HunyuanImage 3.5 (Preview)",
      70.1,
      null
     ],
     [
-     "HunyuanImage 3.5 (Preview)",
+     "P-Image-Ideogram (Medium)",
      70.1,
      null
     ],
@@ -32137,12 +32137,12 @@
      null
     ],
     [
-     "Qwen Image 2.0 (2026-03-03)",
+     "Wan 2.5 Preview",
      68.2,
      null
     ],
     [
-     "Wan 2.5 Preview",
+     "Qwen Image 2.0 (2026-03-03)",
      68.2,
      null
     ],
@@ -32177,7 +32177,7 @@
      null
     ],
     [
-     "Z-Image Turbo",
+     "image-1",
      65.5,
      null
     ],
@@ -32187,7 +32187,7 @@
      null
     ],
     [
-     "image-1",
+     "Z-Image Turbo",
      65.5,
      null
     ],
@@ -32202,7 +32202,7 @@
      null
     ],
     [
-     "Vivago 2.0",
+     "Eigen Image",
      63.2,
      null
     ],
@@ -32212,7 +32212,7 @@
      null
     ],
     [
-     "Eigen Image",
+     "Vivago 2.0",
      63.2,
      null
     ],
@@ -32242,12 +32242,12 @@
      null
     ],
     [
-     "ERNIE Image",
+     "Dreamina 3.1",
      61.9,
      null
     ],
     [
-     "Dreamina 3.1",
+     "ERNIE Image",
      61.9,
      null
     ],
@@ -32292,12 +32292,12 @@
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "GLM-Image",
      58.8,
      null
     ],
     [
-     "GLM-Image",
+     "FLUX.1 [pro]",
      58.8,
      null
     ],
@@ -32327,12 +32327,12 @@
      null
     ],
     [
-     "Imagen 4 Fast",
+     "Ideogram v2",
      57.7,
      null
     ],
     [
-     "Ideogram v2",
+     "Imagen 4 Fast",
      57.7,
      null
     ],
@@ -32357,12 +32357,12 @@
      null
     ],
     [
-     "Infinity 8B",
+     "Midjourney v6",
      56.5,
      null
     ],
     [
-     "Midjourney v6",
+     "Infinity 8B",
      56.5,
      null
     ],
@@ -32392,12 +32392,12 @@
      null
     ],
     [
-     "SRPO",
+     "FLUX.2 [klein] 4B",
      55.0,
      null
     ],
     [
-     "FLUX.2 [klein] 4B",
+     "SRPO",
      55.0,
      null
     ],
@@ -32562,12 +32562,12 @@
      null
     ],
     [
-     "Stable Diffusion 1.6",
+     "SDXL Lightning",
      35.6,
      null
     ],
     [
-     "SDXL Lightning",
+     "Stable Diffusion 1.6",
      35.6,
      null
     ],
@@ -32577,12 +32577,12 @@
      null
     ],
     [
-     "Bria 3.2",
+     "Bagel",
      33.7,
      null
     ],
     [
-     "Bagel",
+     "Bria 3.2",
      33.7,
      null
     ],
@@ -32747,12 +32747,12 @@
      null
     ],
     [
-     "Vidu Q3 Turbo",
+     "Vidu Q3 Pro",
      29.0,
      null
     ],
     [
-     "Vidu Q3 Pro",
+     "Vidu Q3 Turbo",
      29.0,
      null
     ],
@@ -32838,11 +32838,11 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
-    "Claude Fable 5",
-    "GPT-5.6 Sol",
     "GPT-5.6 Luna",
-    "Claude Opus 5"
+    "Claude Opus 5",
+    "GPT-5.6 Sol",
+    "Grok 4.6",
+    "Claude Fable 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -33226,11 +33226,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
     "GPT-5.6 Luna",
     "Grok 4.6",
+    "Claude Opus 5",
     "Claude Fable 5",
-    "Claude Opus 5"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -33388,12 +33388,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -33473,12 +33473,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -34749,6 +34749,15 @@
    "status": "partial",
    "items": "0",
    "pr": "101",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-01",
+   "time": "10:22",
+   "status": "partial",
+   "items": "0",
+   "pr": "102",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
