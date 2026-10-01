@@ -1,10 +1,12 @@
 import contextlib
 import copy
 import io
+import json
 from pathlib import Path
 import sys
 import unittest
 
+FIXTURES = Path(__file__).resolve().parent / 'fixtures'
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 from public_sources import AA_COLUMNS, ARENA_URLS, arena_source_date, effort_key, parse_aa_table, parse_arena_table
 import rebuild
@@ -46,6 +48,32 @@ class SourceTests(unittest.TestCase):
         self.assertIn('gdpval', errors)
         rows = aa_rows(); rows[2].pop()
         with self.assertRaises(ValueError): parse_aa_table(rows)
+
+    def test_captured_gdpval_v2_1_table_parses(self):
+        # Real header and rows captured September 20, 2026, the day after v2.1 replaced v2.
+        rows = json.loads((FIXTURES / 'aa-leaderboard-2026-09-20.json').read_text())['rows']
+        result, errors = parse_aa_table(rows)
+        self.assertNotIn('gdpval', errors)
+        self.assertEqual(result['gdpval'][0]['name'], 'Claude Fable 5.1 (max with fallback)')
+        self.assertEqual(result['gdpval'][0]['value'], 62)
+
+    def test_superseded_gdpval_v2_label_is_refused(self):
+        rows = aa_rows(); rows[0][1] = 'GDPval-AA v2\nAgentic Real-World Work Tasks, (Elo-500)/2000'
+        result, errors = parse_aa_table(rows)
+        self.assertIn('gdpval', errors)
+        self.assertNotIn('gdpval', result)
+        rows[0][1] = 'GDPval-AA v2.2\nAgentic Real-World Work Tasks, (Elo-500)/2000'
+        self.assertIn('gdpval', parse_aa_table(rows)[1])
+
+    def test_gdpval_version_change_is_a_new_baseline(self):
+        source = {'src': 'Artificial Analysis public leaderboard', 'url': 'u', 'scale': 'percent', 'elo': False,
+                  'name': 'GDPval-AA', 'settings': {}}
+        models = {f'M{i}': 50.0 for i in range(30)}
+        old = dict(source, field='GDPval-AA v2\nAgentic Real-World Work Tasks, (Elo-500)/2000', d=models)
+        new = dict(source, field=AA_COLUMNS['gdpval'], d={m: v - 3 for m, v in models.items()})
+        self.assertFalse(rebuild.comparable_boards(new, old))
+        self.assertIsNone(rebuild.uniform_shift(new, old))
+        self.assertTrue(rebuild.comparable_boards(new, dict(new)))
 
     def test_duplicate_models_rejected(self):
         rows = aa_rows(); rows.append(rows[1])
@@ -194,6 +222,42 @@ class SourceTests(unittest.TestCase):
         self.assertIsNone(rows[0]['cost_per_task'])
 
 
+
+
+class StatusWordingTests(unittest.TestCase):
+    TODAY = '2026-09-21'
+
+    def strip(self, prs=()):
+        rows = [{'date': self.TODAY, 'time_et': '09:22', 'agent': 'commentator', 'status': 'blocked',
+                 'items': '0', 'pr': '68', 'notes': 'data missing'}]
+        return {r['agent']: r for r in rebuild.health_strip(rows, self.TODAY, prs=prs) if r['date'] == self.TODAY}
+
+    def test_missing_log_is_not_reported_as_a_failed_run(self):
+        health = self.strip()
+        self.assertEqual(health['News Scout']['status'], 'no merged log')
+        self.assertIn('no pull request opened today', health['News Scout']['notes'])
+        self.assertEqual(health['Commentator']['status'], 'blocked')
+        self.assertNotIn('did not run', str(health))
+
+    def test_open_pr_is_cited_by_log_path_and_date_without_claiming_success(self):
+        prs = [{'number': 67, 'title': 'anything', 'logs': ['log/runs-news-scout.csv'], 'opened_et': self.TODAY},
+               {'number': 57, 'title': 'News Scout', 'logs': ['log/runs-news-scout.csv'], 'opened_et': '2026-09-18'},
+               {'number': 70, 'title': 'Editor ran fine today', 'logs': [], 'opened_et': self.TODAY}]
+        health = self.strip(prs)
+        self.assertEqual(health['News Scout']['pr'], '67')
+        self.assertIn('unconfirmed', health['News Scout']['notes'])
+        self.assertEqual(health['News Scout']['status'], 'no merged log')
+        # A title alone, or an older pull request, is not evidence.
+        self.assertEqual(health['Editor']['pr'], '')
+        self.assertIn('no pull request opened today', health['Editor']['notes'])
+
+    def test_carried_news_states_its_real_date(self):
+        meta = rebuild.carried_news_meta({'editor_file': 'inbox/news/2026-09-07-edited.md', 'considered': '4',
+                                          'note': 'Chosen by the Editor agent'}, self.TODAY)
+        self.assertEqual(meta['carried_from'], '2026-09-07')
+        self.assertIn('from 2026-09-07 (14 days old)', meta['note'])
+        self.assertNotIn('yesterday', meta['note'])
+        self.assertIn('unknown date', rebuild.carried_news_meta({}, self.TODAY)['note'])
 
 
 class RebuildIntegrationTests(unittest.TestCase):

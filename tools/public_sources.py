@@ -9,8 +9,13 @@ AA_URL = "https://artificialanalysis.ai/leaderboards/models"
 ARENA_URLS = {"text": "https://arena.ai/leaderboard/text", "webdev": "https://arena.ai/leaderboard/code"}
 ELO_RANGE = (800, 2000)
 PUBLIC_METRICS = ("gdpval", "omni", "nohalluc")
+# Labels are matched exactly, version included. A renamed column is reported and
+# carried forward until someone confirms what changed; never loosen this to a
+# prefix match. v2.1 (September 19, 2026) kept the (Elo-500)/2000 scale but
+# re-anchored the Elo and changed the fit, so its values sit about 3 points
+# below v2 and are a new baseline, not a continuation.
 AA_COLUMNS = {
-    "gdpval": "GDPval-AA v2\nAgentic Real-World Work Tasks, (Elo-500)/2000",
+    "gdpval": "GDPval-AA v2.1\nAgentic Real-World Work Tasks, (Elo-500)/2000",
     "omni": "AA-Omniscience Accuracy\nKnowledge",
     "nohalluc": "AA-Omniscience Non-Hallucination Rate\n1 - Hallucination Rate",
     "cost": "Cost per Task\nUSD",
