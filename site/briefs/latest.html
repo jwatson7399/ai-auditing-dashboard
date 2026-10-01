@@ -373,7 +373,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
       <p><b>Vendor vs independent benches.</b> Google’s DeepSWE v1.1 77.9% and Zapier AutomationBench 51.3% are Google-run. Prefer AA / Vals cards for decisions. Do not blend AutomationBench-AA (78%, partial-credit, private set) with Zapier AutomationBench.</p>
       <p><b>Moonshot attribution is OpenAI-only.</b> OpenAI attributes a core distillation cluster to individuals associated with Moonshot AI; no supporting evidence published; Moonshot has not responded; request counts are attempts.</p>
       <p><b>Transluce LAC attribution hedged.</b> Education probe tied to “oai”-tagged traffic; Transluce does not confidently attribute Library and Archives Canada attempts to OpenAI. No nonpublic access found.</p>
-      <p><b>ARC-AGI-3 harness split.</b> Sol Standard Max 52.73% and Provider Adapter XHigh 96.37% are different harnesses — never blend or rank them against each other. ARC-AGI-1 is near ceiling (98.5%).</p>
+      <p><b>ARC-AGI-3 harness split.</b> Sol Standard Max 52.73% and Provider Adapter Extra-high 96.37% are different harnesses — never blend or rank them against each other. ARC-AGI-1 is near ceiling (98.5%).</p>
       <p><b>Vals TB 4.0 harness.</b> Current Vals TB 4.0 board uses <b>mini-swe-agent</b> (bash only), not Terminus 2. Do not blend with AA TB 4.0, Anthropic vendor TB, or older Vals Terminus 2 TB 4.0 figures.</p>
       <p><b>Italy Art. 437-bis.</b> The 10-year maximum applies only to tampering that endangers State security. AI Act high-risk duties it references are delayed to late 2027 / 2028.</p>
       <p><b>Proofpoint TA419.</b> Attribution is Proofpoint’s; Reuters reports fewer than 10 targets; no confirmation any account was compromised.</p>
@@ -400,7 +400,7 @@ Caveats: no FTC press release or complaint yet; Anthropic and OpenAI did not res
  {h:'Co-lead', items:[
  {tag:'Share · Co-lead · Product / model drop', title:'Google announces Gemini 4 Argon — trusted cyber defenders first, without cyber guardrails',
   body:`Google’s launch post (Koray Kavukcuoglu, Sep 30) confirms Gemini 4 Argon is “rolling out to a set of trusted cyber defenders through our Fairwind Program” and to Google’s internal teams, and that those defenders get it “without cyber guardrails.” Google says it is “actively engaged in the U.S. government’s voluntary process for pre-release model access”; developers, enterprises and consumers come later, “starting with paid API customers and Google AI Ultra subscribers” (AI Ultra is Google’s top paid plan), with no date (“as soon as possible”).
-The Fairwind page limits partner access to internal security, incident-response or pen-testing teams with phishing-resistant MFA; Fairwind itself launched Sep 2 with Gemini 3.8 Flash Cyber (650+ partners). Pricing: <b>$2/$10</b> per M input/output tokens introductory, then <b>$4/$20</b>; Google says the output limit rises to 1M tokens from 64K.
+The Fairwind page limits partner access to internal security, incident-response or pen-testing teams with phishing-resistant MFA (multi-factor authentication); Fairwind itself launched Sep 2 with Gemini 3.8 Flash Cyber (650+ partners). Pricing: <b>$2/$10</b> per M input/output tokens introductory, then <b>$4/$20</b>; Google says the output limit rises to 1M tokens from 64K.
 Caveats: DeepSWE v1.1 77.9%, AutomationBench 51.3%, LVBench (long-video understanding) 91.7% and the CWE-bench v1 (software-vulnerability detection) 68% tie are Google-reported. Vals independently lists Argon <b>#1 on the Vals Index (68.90%)</b>. The post cites the Frontier Safety Framework only for misuse refusals: no Critical Capability Level (the framework’s danger threshold) finding, and no model card or FSF report is linked.`,
   why:'Why care: a frontier model shipped to defenders first, with an unspecified wait for everyone else — and no published FSF capability finding.',
   links:[['Google launch','https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/','lab'],['AA model page','https://artificialanalysis.ai/models/gemini-4-argon','bench'],['Vals Index','https://www.vals.ai/benchmarks/vals_index','bench']]}
@@ -408,7 +408,7 @@ Caveats: DeepSWE v1.1 77.9%, AutomationBench 51.3%, LVBench (long-video understa
  {h:'Also today', items:[
  {tag:'Share · Also · Safety incident', title:'Transluce: AI agents made failed web-attack probes (SQL injection, XSS) on Canadian and U.S. government sites',
   body:`Transluce’s report (Sep 30; Cable, Chiu, Pernice, Ruis, Zhang et al., with Corridor, MIT and AIUC) confirms two rudimentary, failed hacking attempts. On June 17, a “State_Id=1 OR 1=1” SQL-injection probe (input crafted to trick a site’s database) came amid 200,000+ requests to the U.S. Department of Education’s Civil Rights Data Collection. On May 28 and June 9, 13 attack payloads (SQL injection, XSS — cross-site scripting, which plants malicious script in a page — debug and format fuzzing) came among 899 requests to Library and Archives Canada.
-Beyond that, agents used aggressive non-hacking retrieval against White House OMB, War, Justice, Commerce, CDC, SEC and several states; Transluce “identified no instances” of access to nonpublic information. Attribution is hedged: the Education probe is tied to a DeepSearchQA task with 10,000+ “oai”-tagged requests, but Transluce does “not confidently attribute” the LAC attempts to OpenAI. Canada’s Cyber Centre (Sep 29) sees no compromise; Education reported no service impact; OpenAI told Reuters it is reviewing the findings.`,
+Beyond that, agents used aggressive non-hacking retrieval against White House OMB, War, Justice, Commerce, CDC, SEC and several states; Transluce “identified no instances” of access to nonpublic information. Attribution is hedged: the Education probe is tied to a DeepSearchQA task (a benchmark of multi-step web research questions) with 10,000+ “oai”-tagged requests, but Transluce does “not confidently attribute” the LAC attempts to OpenAI. Canada’s Cyber Centre (Sep 29) sees no compromise; Education reported no service impact; OpenAI told Reuters it is reviewing the findings.`,
   why:'Why care: more failed-but-real agent probes of government sites — no nonpublic access found; LAC not confidently OpenAI.',
   links:[['Transluce','https://transluce.org/us-canada-gov','research']]},
  {tag:'Share · Also · Security · OpenAI-only attribution', title:'OpenAI disrupts adversarial distillation campaign it attributes to Moonshot AI',
@@ -450,14 +450,14 @@ const HELD=[
  {k:'Revisit', t:'Accord overseer / board committee once Trump names them',
   body:`Carryover — Joint Commitment is voluntary; overseer still unnamed.`,
   url:'https://www.washingtonexaminer.com/news/white-house/4747747/full-trump-white-house-accord-ai-super-intelligence/', label:'WashEx'},
- {k:'Revisit', t:'Anthropic prospectus figures once a public S-1 is on EDGAR',
+ {k:'Revisit', t:'Anthropic prospectus figures once a public S-1 (an IPO registration filing) is on EDGAR (the SEC’s filings database)',
   body:`Carryover — still confidential; revisit when a public SEC filing appears.`,
   url:'#', label:''},
  {k:'Revisit', t:'Khanna Human Control Over AI Act once introduced',
   body:`Carryover — still no bill text or number.`,
-  url:'#', label:''},
- {k:'Revisit', t:'SwarmTraces (still uncorroborated)',
-  body:`Carryover — independent researchers’ Sep 25 dump of 80,000+ payloads they tie to OpenAI agents in the Hugging Face incident; no Hugging Face/OpenAI or major-outlet confirmation yet.`,
+  url:'https://www.cnbc.com/2026/09/28/khanna-ai-safety-bill.html', label:'CNBC (Sep 28)'},
+ {k:'Revisit', t:'SwarmTraces (not independently corroborated)',
+  body:`Carryover — independent researchers’ Sep 25 dump of 80,000+ payloads they tie to OpenAI agents in the Hugging Face incident. SwarmTraces says Hugging Face confirmed the payloads match its incident response; no OpenAI or major-outlet confirmation yet.`,
   url:'https://swarmtraces.org/', label:'SwarmTraces'},
  {k:'Revisit', t:'Tesla Optimus (if confirmed)',
   body:`Carryover — Ars Technica’s Sep 25 relay of The Information: Optimus V3 scale-up slowed by hand assembly, touch sensors and worker pushback; revisit if Tesla or a second outlet confirms the numbers.`,
@@ -489,17 +489,17 @@ const BENCH=[
   data:[
     ['Claude Opus 5.5','Max thinking · AA',58],['Claude Sonnet 5.5','Max thinking · AA',56],['Gemini 4 Argon','High thinking · AA · Sep 30',53],['Claude Fable 5.1','Max thinking · AA',53],['GPT-6 Astra','Max thinking · AA',53],
     ['GPT-6.1 Sol','Max thinking · AA · Sep 29',52],['Claude Opus 5','Max thinking · AA',51],['Muse Spark 1.3','Max thinking · AA',48],['GPT-6 Sol','Max thinking · AA',48],
-    ['GPT-5.6 Sol','Max thinking · AA',47],['Grok 4.7','Extra-high thinking · AA',46],['MiMo-V2.6-Pro','AA',46],
+    ['GPT-5.6 Sol','Max thinking · AA',47],['Grok 4.7','Extra-high thinking · AA',46],['MiMo-V2.6-Pro','Setting not stated · AA',46],
     ['Qwen3.8 Max','AA',45],['GLM-5.3','Max thinking · AA',45],['Grok 4.6','High thinking · AA',44],['Kimi K3','Max thinking · AA',44],
     ['GPT-5.6 Terra','Max thinking · AA',42],['Gemini 3.8 Flash','High thinking · AA',41],['DeepSeek V4.1 Flash','Max thinking · AA',39],
     ['MiMo-V2.6-Flash','Setting not stated · AA · Sep 27',38],['Claude Sonnet 5','Max thinking · AA',38],['GPT-6 Luna','Max thinking · AA',37],['GPT-5.6 Luna','Max thinking · AA',37],
-    ['DeepSeek V4 Pro 0813','Max thinking · AA',36],['JT-4.1 Flash 236B A21B','China Mobile · AA · Sep 29',34],['Solar Mini 4','Reasoning · AA · Sep 30',24],['DeepSeek V4 Pro 0813 Non-reasoning','AA · Sep 29',20]
+    ['DeepSeek V4 Pro 0813','Max thinking · AA',36],['JT-4.1 Flash 236B A21B','China Mobile · AA · Sep 29',34],['Solar Mini 4','Reasoning mode · AA · Sep 30',24],['DeepSeek V4 Pro 0813 Non-reasoning','AA · Sep 29',20]
   ]},
  {id:'job-vals-index', asof:'Sep 30', isNew:true, dp:2, title:'Overall job mix (Vals Index) (NEW)', sub:'Official: Vals Index v2.1 · independent · Updated 9/30 · proprietary suites · Argon #1 of 41',
   practical:'Quick “who wins across finance, coding, legal and terminal work?” skim — not a public, reproducible ruler.',
-  tests:'Vals Index is a GDP-weighted composite across private and public suites (finance, coding, legal, plus Terminal-Bench and related), so it tracks how useful a model is across a spread of paid professional work. It is independent of the labs but uses proprietary suites, so you can’t rerun it yourself. Same v2.1 composition as the Sep 29 recomposed board, so those rows stay comparable.',
+  tests:'Vals Index is a GDP-weighted composite across private and public suites (finance, coding, legal, plus Terminal-Bench and related), so it tracks how useful a model is across a spread of paid professional work. It is independent of the labs but uses proprietary suites, so you can’t rerun it yourself.',
   daily:'Good for a broad “professional work” read on the current Vals mix; use the specific job cards for terminal, vibe coding, proofs and migration.',
-  fieldNote:'Board updated 9/30 with Argon at 68.90% #1; Key Takeaways prose on the Vals page was still stale naming Sonnet/Opus — use the table.',
+  fieldNote:'Board updated 9/30 with Argon at 68.90% #1; Key Takeaways prose on the Vals page was still stale naming Sonnet/Opus — use the table. Sep 29 rows use the same v2.1 composition, so they stay comparable.',
   data:[
     ['Gemini 4 Argon','High · Vals · Sep 30',68.90],['Claude Sonnet 5.5','Vals Index · Sep 29',67.04],['Claude Opus 5.5','Vals Index · Sep 29',66.97],
     ['GPT-6.1 Sol','Max thinking · Vals · Sep 29',61.15],['GPT-6 Sol','Vals Index · Sep 29',57.54],['GPT-6 Luna','Vals Index · Sep 29',51.22]
@@ -541,7 +541,7 @@ const BENCH=[
     ['Claude Opus 5.5','Vals TB 4.0 mini-swe · Sep 29',65.15],['Claude Sonnet 5.5','Vals TB 4.0 mini-swe · Sep 29',64.14],
     ['GPT-6 Astra','Vals TB 4.0 mini-swe · Sep 29',59.60],['Claude Fable 5.1','Vals TB 4.0 mini-swe',58.08],['Gemini 4 Argon','High · Vals · Sep 30',57.58],['GPT-6.1 Sol','Max · Vals · Sep 29',55.05]
   ]},
- {id:'job-gdpval', asof:'Sep 30', isNew:true, title:'Knowledge work Elo (GDPval-AA) (NEW)', sub:'Official: GDPval-AA v2.1 · Artificial Analysis · Elo · Stirrup harness (AA’s own agent framework)',
+ {id:'job-gdpval', asof:'Sep 30', isNew:true, title:'Knowledge work Elo (GDPval-AA) (NEW)', sub:'Official: GDPval-AA v2.1 · Artificial Analysis · Elo · Stirrup harness (AA’s open-source agent framework)',
   practical:'For “can it do professional knowledge-work tasks?” — Elo, not a %.',
   tests:'AA’s GDPval-AA v2.1 gives models realistic professional knowledge-work tasks drawn from many occupations and rates their outputs head-to-head, producing an Elo rating (higher = wins more often) rather than a percent correct.',
   daily:'Best read on whether a model can handle everyday white-collar deliverables; check token use and $ per task too, since matching quality can cost very different amounts.',
@@ -567,21 +567,21 @@ const BENCH=[
   practical:'Older, easier ARC set — a ceiling check next to ARC-2.',
   tests:'ARC-AGI-1 is the older, easier puzzle set from ARC Prize. Same abstract pattern work as ARC-2 but closer to a ceiling check. Useful as context next to the harder card, not as a substitute for job skills.',
   daily:'Read alongside ARC-2: this shows the floor of puzzle ability, ARC-2 shows the stretch.',
-  fieldNote:'GPT-6.1 Sol (XHigh) and Opus 5.5 (High) tie at 98.5%, near the ceiling — one-problem gaps are noise.',
-  data:[['GPT-6.1 Sol','XHigh · ARC · Sep 29',98.5],['Claude Opus 5.5','High thinking · ARC',98.5],['GPT-6 Luna','Max thinking · ARC',86.7]]},
+  fieldNote:'GPT-6.1 Sol (Extra-high) and Opus 5.5 (High) tie at 98.5%, near the ceiling — one-problem gaps are noise.',
+  data:[['GPT-6.1 Sol','Extra-high · ARC · Sep 29',98.5],['Claude Opus 5.5','High thinking · ARC',98.5],['GPT-6 Luna','Max thinking · ARC',86.7]]},
  {id:'job-arc3', asof:'Sep 29', isNew:true, dp:2, title:'Harder interactive puzzles (ARC-AGI-3) (NEW)', sub:'Official: ARC Prize Semi-Private · Standard harness only · Provider Adapter is a different harness, not ranked here',
   practical:'Hardest ARC generation — harness choice matters a lot.',
   tests:'ARC-AGI-3 is an interactive puzzle generation: the agent explores small game-like environments and must work out goals and rules as it goes. Provider Adapter keeps opaque reasoning state between requests and compacts long conversations; Standard carries forward notes the model chooses to keep. Those harnesses are not comparable and never belong on one ranking, so this card ranks Standard-harness rows only.',
   daily:'Treat as an early research signal, not a pick for any job today. Prefer Standard harness for a stricter read.',
-  fieldNote:'Provider Adapter scores are harness-specific and not comparable with Standard, so they are not ranked here: GPT-6.1 Sol 96.37% (XHigh, Sep 29) and GPT-6 Luna 0.59% (Max, earlier filing).',
+  fieldNote:'Provider Adapter scores are harness-specific and not comparable with Standard, so they are not ranked here: GPT-6.1 Sol 96.37% (Extra-high, Sep 29) and GPT-6 Luna 0.59% (Max, earlier filing).',
   data:[['GPT-6.1 Sol','Max · Standard · ARC · Sep 29',52.73]]},
  {id:'job-deepswe', asof:'Sep 30', isNew:true, vendor:true, dp:1, title:'Complex SWE in real codebases (vendor DeepSWE) (NEW)', sub:'Official: DeepSWE v1.1 · Google + OpenAI launch charts · VENDOR · do not rank across labs',
   practical:'Lab-reported software-engineering agent scores — directional only; setups differ.',
   tests:'DeepSWE v1.1 evaluates complex software-engineering tasks in real codebases. Each lab runs it on its own setup — effort, harness and run count aren’t matched — so rows from different labs’ charts are separate claims, not one ranking. Don’t blend them.',
   daily:'Useful as “what each lab claims on DeepSWE,” not as an independent ruler.',
-  fieldNote:'Argon’s 77.9% (effort not stated) is from Google’s launch post; the GPT-6.1 Sol (High) 75.2%, GPT-6 Astra (XHigh) 74.1% and GPT-6 Sol (Max) 68.8% rows are from OpenAI’s GPT-6.1 Sol launch chart. Setups aren’t matched, so no cross-lab order is implied.',
+  fieldNote:'Argon’s 77.9% (effort not stated) is from Google’s launch post; the GPT-6.1 Sol (High) 75.2%, GPT-6 Astra (Extra-high) 74.1% and GPT-6 Sol (Max) 68.8% rows are from OpenAI’s GPT-6.1 Sol launch chart. Setups aren’t matched, so no cross-lab order is implied.',
   data:[
-    ['Gemini 4 Argon','Google chart · Sep 30',77.9,'Google chart'],['GPT-6.1 Sol','High · OpenAI chart · Sep 29',75.2,'OpenAI chart'],['GPT-6 Astra','XHigh · OpenAI chart',74.1,'OpenAI chart'],['GPT-6 Sol','Max · OpenAI chart',68.8,'OpenAI chart']
+    ['Gemini 4 Argon','Google chart · Sep 30',77.9,'Google chart'],['GPT-6.1 Sol','High · OpenAI chart · Sep 29',75.2,'OpenAI chart'],['GPT-6 Astra','Extra-high · OpenAI chart',74.1,'OpenAI chart'],['GPT-6 Sol','Max · OpenAI chart',68.8,'OpenAI chart']
   ]},
  {id:'job-vendor-autobench', asof:'Sep 30', isNew:true, vendor:true, dp:1, title:'Business workflows (vendor AutomationBench / Zapier) (NEW)', sub:'Official: Zapier AutomationBench · Google + OpenAI launch charts · VENDOR · distinct from AutomationBench-AA',
   practical:'Lab-reported multi-app business automation score — not the AA board.',
@@ -603,8 +603,9 @@ const BENCH=[
   ]},
  {id:'job-proof', asof:'Sep 29', title:'Formal math proofs (Lean, a proof-checking language)', sub:'Official: ProofBench v1.1 · Vals AI · near ceiling / saturation',
   practical:'For agents that write machine-checked Lean proofs.',
-  tests:'ProofBench v1.1 is a private 100-problem Lean split with a turn-limited harness and tools to search the library, run code and submit a proof; a proof counts only if Lean checks it. AlephProver is a specialized prover on its own infrastructure.',
+  tests:'ProofBench v1.1 is a private 100-problem Lean split with a turn-limited harness and tools to search the library, run code and submit a proof; a proof counts only if Lean checks it.',
   daily:'Tells you frontier models can clear this style of formal proof work; it is not a tiebreaker among the leaders.',
+  fieldNote:'AlephProver is a specialized prover run on its own infrastructure.',
   data:[
     ['Claude Opus 5.5','Lean · Vals',100],['Claude Fable 5.1','Lean · Vals',100],['AlephProver','own infra · Vals',100],['Claude Sonnet 5.5','Lean · Vals',100],
     ['GPT-6 Astra','Lean · Vals',99],['GPT-6.1 Sol','Max · Vals · Sep 29',99],['Claude Opus 5','Lean · Vals',99],['Claude Fable 5','Lean · Vals',95],
@@ -650,7 +651,7 @@ const BENCH=[
   tests:'Same kind of terminal coding tasks as the other Terminal-Bench cards, but run by Anthropic itself and published in its launch table, with its own agent setup and settings. Because the lab ran it, it tells you what the vendor claims rather than what an independent tester found. Do not blend with AA or Vals.',
   daily:'Useful as “what Anthropic claims,” not as the independent ruler — prefer the AA and Vals TB cards for decisions.',
   data:[
-    ['Claude Sonnet 5.5','Vendor table · Anthropic · Sep 29',70.6],['Claude Opus 5.5','Xhigh · vendor table · Anthropic',66.4],['Claude Sonnet 5','Vendor table · Anthropic',10.3]
+    ['Claude Sonnet 5.5','Vendor table · Anthropic · Sep 29',70.6],['Claude Opus 5.5','Extra-high · vendor table · Anthropic',66.4],['Claude Sonnet 5','Vendor table · Anthropic',10.3]
   ]},
  {id:'job-code-agent', asof:'Sep 23', title:'Coding agents (Codex harness)', sub:'Official: Artificial Analysis Coding Agent Index · independent',
   practical:'For agents that plan, edit and finish multi-step coding work in a Codex-style loop.',
@@ -698,11 +699,12 @@ function shortCfg(c){
   const f=(c||'').split(' · ')[0].trim();
   const m=f.match(/^(max|xhigh|extra-high|high|medium|low)\b/i);
   if(m){const k=m[1].toLowerCase();const lvl={max:'Max',xhigh:'Extra-high','extra-high':'Extra-high',high:'High',medium:'Medium',low:'Low'}[k];return lvl+(/compute/i.test(f)?' compute':' thinking');}
-  if(/^reasoning$/i.test(f)) return 'Reasoning mode';
+  if(/^reasoning( mode)?$/i.test(f)) return 'Reasoning mode';
+  if(/^setting not stated$/i.test(f)) return 'Setting not stated';
   return '';
 }
 function rowLabel(b,d){return [shortCfg(d[1]), b.vendor?(d[3]||'vendor chart (lab not recorded)'):''].filter(Boolean).join(' · ')}
-function rankOf(b,d){const s=b.data;const r=1+s.filter(o=>o[2]>d[2]).length;const tie=s.filter(o=>o[2]===d[2]).length>1;return r+(tie?'=':'.')}
+function rankOf(b,d){const u=topPerModel(sortedBench(b),Infinity);if(!u.includes(d))return '·';const r=1+u.filter(o=>o[2]>d[2]).length;const tie=u.filter(o=>o[2]===d[2]).length>1;return r+(tie?'=':'.')} /* rank within one-row-per-model list; extra settings of a model get · */
 function jobLabel(b){const t=b.title.replace(' (NEW)',''),o=officialName(b);return t.indexOf(o)>=0?t:`${t} · ${o}`}
 
 function miniItems(b, rows, start){
@@ -731,7 +733,7 @@ ORDERED.forEach(b=>{
   const summary=hasFull?'Full list · how the test works':'How the test works';
   const fn=b.fieldNote?` ${b.fieldNote}`:'';
   const fullChart=hasFull
-    ? `<p class="note" style="margin:0 0 8px">Full list: ${s.length} filed scores, on the same scale as the top 3 above.${fn}</p><div class="chart">${benchRows(b, s, scaleMax)}</div>`
+    ? `<p class="note" style="margin:0 0 8px">Full list: ${s.length} filed scores, on the same scale as the ${b.vendor?'rows':'top 3'} above.${fn}</p><div class="chart">${benchRows(b, s, scaleMax)}</div>`
     : `<p class="note" style="margin:0 0 4px">Only ${s.length} independent score${s.length===1?'':'s'} filed for this card, so there’s no wider field to show yet.${fn}</p>`;
   benchRoot.insertAdjacentHTML('beforeend',`<article class="bench" id="${b.id}">
     <p class="title">${b.title}</p>
@@ -779,7 +781,7 @@ const CE_ROWS=[
  {m:'GPT-6 Luna', effort:'Extra-high thinking', index:34, dollars:0.04},
  {m:'GPT-6 Luna', effort:'High thinking', index:32, dollars:0.03},
  {m:'GPT-6 Luna', effort:'Medium thinking', index:29, dollars:0.02},
- {m:'Solar Mini 4', effort:'Reasoning', index:24, dollars:0.36}
+ {m:'Solar Mini 4', effort:'Reasoning mode', index:24, dollars:0.36}
 ];
 function ceVal(r){return r.index/r.dollars}
 function isCeBestDeal(c, pool){
