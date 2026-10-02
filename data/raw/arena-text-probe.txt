@@ -57,7 +57,7 @@ Score Range
 Min
 953
 Max
-1525
+1526
 Input Price
 Min
 $0.00
@@ -79,9 +79,9 @@ Overall
 
 View overall rankings across various AI models in text-to-text tasks across math, coding, creative writing, and other open-ended domains.
 
-Sep 30, 2026
-8,602,501 votes
-410 models
+Oct 2, 2026
+8,626,731 votes
+413 models
 Hide Filters
 Models
 Labs
@@ -111,7 +111,7 @@ Google · Proprietary
 1525
 ±9
 Preliminary
-	4,942	$2 / $10	1M
+	4,932	$2 / $10	1M
 
 2
 	
@@ -123,7 +123,7 @@ Anthropic · Proprietary
 	
 1505
 ±3
-	77,193	$5 / $25	1M
+	77,636	$5 / $25	1M
 
 3
 	
@@ -133,21 +133,21 @@ Anthropic · Proprietary
 claude-fable-5-high
 Anthropic · Proprietary
 	
-1505
+1504
 ±4
-	37,900	$10 / $50	1M
+	38,387	$10 / $50	1M
 
 4
 	
 2
-14
+13
 	
 claude-opus-5.5-high
 Anthropic · Proprietary
 	
 1504
-±10
-	3,932	$4 / $20	1M
+±9
+	4,552	$4 / $20	1M
 
 5
 	
@@ -157,106 +157,106 @@ Anthropic · Proprietary
 claude-opus-4-7-high
 Anthropic · Proprietary
 	
-1502
+1501
 ±4
-	64,607	$5 / $25	1M
+	64,946	$5 / $25	1M
 
 6
 	
 2
-14
+13
 	
 claude-fable-5.1-max
 Anthropic · Proprietary
 	
 1501
-±7
-	11,241	$10 / $50	1M
+±6
+	11,800	$10 / $50	1M
 
 7
 	
 3
-15
+14
 	
 claude-opus-4-6
 Anthropic · Proprietary
 	
 1497
 ±3
-	81,769	$5 / $25	1M
+	82,189	$5 / $25	1M
 
 8
 	
+4
+19
+	
+gemini-3.8-flash-high
+Google · Proprietary
+	
+1495
+±5
+Preliminary
+	26,298	$0.75 / $3.75	1M
+
+9
+	
 3
-20
+22
 	
 muse-spark-1.3-max
 Meta · Proprietary
 	
-1495
+1494
 ±6
-	11,698	$1.25 / $4.25	1M
+	12,343	$1.25 / $4.25	1M
 
-9
+10
 	
 4
-17
+18
 	
 claude-opus-4-7
 Anthropic · Proprietary
 	
 1494
 ±4
-	65,705	$5 / $25	1M
+	66,058	$5 / $25	1M
 
-10
+11
 	
 2
-26
+27
 	
 muse-spark-1.2 (xHigh)
 Meta · Proprietary
 	
 1494
-±10
-	3,833	$1.25 / $4.25	N/A
-
-11
-	
-4
-20
-	
-gemini-3.8-flash-high
-Google · Proprietary
-	
-1494
-±5
-Preliminary
-	24,828	$0.75 / $3.75	1M
+±9
+	4,356	$1.25 / $4.25	N/A
 
 12
 	
 5
-22
+23
 	
 muse-spark-1.1
 Meta · Proprietary
 	
-1492
+1491
 ±4
-	36,558	$1.25 / $4.25	N/A
+	37,238	$1.25 / $4.25	N/A
 
 13
 	
-5
-22
+8
+24
 	
 claude-opus-5-high
 Anthropic · Proprietary
 	
-1491
+1490
 ±4
-	58,380	$5 / $25	1M
+	59,482	$5 / $25	1M
 
 14
 	
@@ -268,24 +268,36 @@ Anthropic · Proprietary
 	
 1489
 ±5
-	28,351	$5 / $25	1M
+	28,937	$5 / $25	1M
 
 15
 	
 5
-27
+29
 	
 muse-spark
 Meta · Proprietary
 	
 1489
 ±6
-	14,128	N/A	N/A
+	14,120	N/A	N/A
 
 16
 	
 8
-28
+29
+	
+kimi-k3-max
+Moonshot · Kimi K3 license
+	
+1488
+±5
+	28,280	N/A	N/A
+
+17
+	
+8
+29
 	
 gemini-3.7-flash-high
 Google · Proprietary
@@ -293,36 +305,24 @@ Google · Proprietary
 1488
 ±5
 Preliminary
-	20,851	$0.75 / $3.75	1M
-
-17
-	
-8
-27
-	
-kimi-k3-max
-Moonshot · Kimi K3 license
-	
-1488
-±5
-	27,719	N/A	N/A
+	21,539	$0.75 / $3.75	1M
 
 18
 	
 9
-27
+28
 	
 gemini-3.1-pro-preview
 Google · Proprietary
 	
 1487
 ±3
-	121,225	$1 / $6	1M
+	121,806	$1 / $6	1M
 
 19
 	
-9
-28
+10
+29
 	
 gemini-3-pro
 Google · Proprietary
@@ -333,704 +333,740 @@ Google · Proprietary
 
 20
 	
-11
-34
+10
+36
 	
 gpt-5.6-sol-xhigh
 OpenAI · Proprietary
 	
 1484
 ±4
-	36,002	$4 / $20	N/A
+	36,656	$4 / $20	N/A
 
 21
 	
+8
+47
+	
+gpt-6.1-sol-max
+OpenAI · Proprietary
+	
+1483
+±11
+	3,071	N/A	N/A
+
+22
+	
 11
-37
+38
 	
 gemini-3.6-flash-high
 Google · Proprietary
 	
 1483
 ±4
-	35,640	$0.75 / $3.75	1M
+	36,070	$0.75 / $3.75	1M
 
-22
+23
+	
+12
+43
+	
+qwen3.8-max
+Alibaba · Proprietary
+	
+1482
+±5
+	23,353	$2 / $6	1M
+
+24
 	
 13
-39
+41
+	
+claude-opus-4-8-high
+Anthropic · Proprietary
+	
+1482
+±4
+	63,974	$5 / $25	1M
+
+25
+	
+13
+41
 	
 gpt-5.5-high
 OpenAI · Proprietary
 	
 1481
 ±4
-	69,312	$5 / $30	1.1M
+	69,202	$5 / $30	1.1M
 
-23
+26
 	
-13
-40
-	
-claude-opus-4-8-high
-Anthropic · Proprietary
-	
-1481
-±4
-	63,577	$5 / $25	1M
-
-24
-	
-13
-42
-	
-qwen3.8-max
-Alibaba · Proprietary
-	
-1481
-±5
-	22,809	$1.69 / $5.07	1M
-
-25
-	
-9
-48
+10
+50
 	
 mimo-v2.6-pro
 Xiaomi · MIT
 	
 1480
 ±9
-	4,074	$0.43 / $0.87	1.1M
+	4,056	$0.43 / $0.87	1.1M
 
-26
+27
 	
-13
-44
+15
+46
 	
 glm-5.3-max
 Z.ai · MIT
 	
-1479
+1478
 ±6
-	17,268	$1.40 / $4.40	1M
+	17,857	$1.40 / $4.40	1M
 
-27
+28
 	
 20
-44
+46
 	
 gemini-3.5-flash-high
 Google · Proprietary
 	
 1477
 ±4
-	47,981	$0.75 / $4.50	1M
+	48,420	$0.75 / $4.50	1M
 
-28
+29
+	
+16
+50
+	
+gpt-6-astra-max
+OpenAI · Proprietary
+	
+1477
+±7
+	9,156	N/A	N/A
+
+30
 	
 20
-44
+46
 	
 gpt-5.5
 OpenAI · Proprietary
 	
 1477
 ±4
-	70,894	$5 / $30	1.1M
+	70,781	$5 / $30	1.1M
 
-29
+31
 	
 20
-46
+48
 	
 gemini-3.5-flash-medium
 Google · Proprietary
 	
 1476
 ±4
-	46,735	$0.75 / $4.50	1M
+	47,187	$0.75 / $4.50	1M
 
-30
-	
-18
-51
-	
-gpt-6-astra-max
-OpenAI · Proprietary
-	
-1476
-±7
-	8,565	N/A	N/A
-
-31
+32
 	
 20
-46
+48
+	
+glm-5.2-max
+Z.ai · MIT
+	
+1476
+±4
+	45,399	$1.40 / $4.40	1M
+
+33
+	
+20
+48
 	
 gpt-5.2-chat-latest-20260210
 OpenAI · Proprietary
 	
 1476
 ±4
-	35,943	$1.75 / $14	128K
+	35,937	$1.75 / $14	128K
 
-32
-	
-20
-46
-	
-glm-5.2-max
-Z.ai · MIT
-	
-1475
-±4
-	44,949	$1.40 / $4.40	1M
-
-33
+34
 	
 21
-46
+48
 	
 gpt-5.4-high
 OpenAI · Proprietary
 	
 1475
 ±4
-	64,648	$2.50 / $15	1.1M
-
-34
-	
-21
-49
-	
-grok-4.20-beta1
-SpaceXAI · Proprietary
-	
-1475
-±5
-	27,840	N/A	N/A
+	64,642	$2.50 / $15	1.1M
 
 35
 	
-14
-57
+13
+59
 	
 qwen3.7-max-preview
 Alibaba · Proprietary
 	
 1475
 ±10
-	3,924	$1.48 / $4.42	1M
+	3,920	$1.48 / $4.42	1M
 
 36
 	
+21
+51
+	
+grok-4.20-beta1
+SpaceXAI · Proprietary
+	
+1475
+±5
+	27,827	N/A	N/A
+
+37
+	
 22
-48
+50
 	
 claude-opus-4-8
 Anthropic · Proprietary
 	
 1475
 ±4
-	64,711	$5 / $25	1M
+	65,072	$5 / $25	1M
 
-37
+38
 	
-23
-49
+20
+57
+	
+deepseek-v4.1-flash-max
+DeepSeek · MIT
+	
+1474
+±7
+	8,728	$0.30 / $1.20	1M
+
+39
+	
+24
+52
 	
 claude-opus-4-5-20251101-high-32k
 Anthropic · Proprietary
 	
 1474
 ±4
-	37,446	$5 / $25	200K
+	37,448	$5 / $25	200K
 
-38
-	
-21
-53
-	
-glm-5.3-flash
-Z.ai · MIT
-	
-1474
-±5
-	21,644	$0.06 / $0.20	1M
-
-39
+40
 	
 22
-55
+56
 	
 gpt-5.5-instant
 OpenAI · Proprietary
 	
 1473
 ±5
-	27,101	$5 / $30	1.1M
-
-40
-	
-20
-56
-	
-deepseek-v4.1-flash-max
-DeepSeek · MIT
-	
-1473
-±7
-	8,125	$0.30 / $1.20	1M
+	27,098	$5 / $30	1.1M
 
 41
 	
+22
+57
+	
+glm-5.3-flash
+Z.ai · MIT
+	
+1473
+±5
+	22,971	$0.06 / $0.20	1M
+
+42
+	
 24
-53
+56
 	
 gemini-3-flash
 Google · Proprietary
 	
 1473
 ±4
-	31,255	$0.50 / $3	1M
+	31,259	$0.50 / $3	1M
 
-42
+43
 	
-24
-51
+25
+53
 	
 claude-sonnet-4-6
 Anthropic · Proprietary
 	
 1472
 ±4
-	70,828	$1.50 / $7.50	1M
+	70,747	$1.50 / $7.50	1M
 
-43
+44
 	
 25
-55
+57
 	
 grok-4.20-beta-0309-reasoning
 SpaceXAI · Proprietary
 	
 1472
 ±4
-	66,372	$1.25 / $2.50	1M
+	66,334	$1.25 / $2.50	1M
 
-44
+45
+	
+20
+66
+	
+claude-sonnet-5.5-xhigh
+Anthropic · Proprietary
+	
+1471
+±10
+	3,145	$2 / $10	1M
+
+46
 	
 25
-55
+57
 	
 grok-4.20-multi-agent-beta-0309
 SpaceXAI · Proprietary
 	
 1471
 ±4
-	64,838	$1.25 / $2.50	1M
+	64,788	$1.25 / $2.50	1M
 
-45
+47
 	
 28
-55
+57
 	
 claude-opus-4-5-20251101
 Anthropic · Proprietary
 	
 1470
 ±3
-	72,799	$5 / $25	200K
+	72,772	$5 / $25	200K
 
-46
+48
 	
-28
-58
+29
+61
 	
 ernie-5.1
 Baidu · Proprietary
 	
 1468
 ±5
-	39,421	$0.56 / $2.54	119K
+	39,396	$0.56 / $2.54	119K
 
-47
+49
 	
-32
-58
+33
+61
 	
 mimo-v2.5-pro
 Xiaomi · MIT
 	
-1467
+1468
 ±4
-	70,317	$0.43 / $0.87	1.1M
+	70,871	$0.43 / $0.87	1.1M
 
-48
+50
 	
-34
-63
+36
+65
 	
 grok-4.5
 SpaceXAI · Proprietary
 	
 1466
 ±4
-	39,339	$2 / $6	500K
+	39,789	$2 / $6	500K
 
-49
+51
 	
-38
-60
-	
-grok-4.1-thinking
-SpaceXAI · Proprietary
-	
-1465
-±3
-	66,373	N/A	N/A
-
-50
-	
-36
-64
+37
+66
 	
 gpt-5.6-terra-xhigh
 OpenAI · Proprietary
 	
 1465
 ±4
-	37,056	$2 / $12	N/A
+	37,663	$2 / $12	N/A
 
-51
+52
 	
-38
-64
+39
+63
+	
+grok-4.1-thinking
+SpaceXAI · Proprietary
+	
+1465
+±3
+	66,366	N/A	N/A
+
+53
+	
+39
+66
 	
 gpt-5.4
 OpenAI · Proprietary
 	
 1465
 ±4
-	67,753	$2.50 / $15	1.1M
+	67,707	$2.50 / $15	1.1M
 
-52
+54
 	
-36
-66
+38
+69
 	
 qwen3.5-max-preview
 Alibaba · Proprietary
 	
 1465
 ±5
-	22,566	$1.20 / $6	N/A
+	22,555	$1.20 / $6	N/A
 
-53
+55
 	
-40
-64
+41
+66
 	
 glm-5.1
 Z.ai · MIT
 	
 1465
 ±4
-	57,877	$1.40 / $4.40	202.8K
+	58,358	$1.40 / $4.40	202.8K
 
-54
+56
 	
-32
-74
+33
+76
 	
 deepseek-v4-pro-high-20260813
 DeepSeek · MIT
 	
 1464
 ±7
-	9,825	$1.32 / $3.96	N/A
+	9,780	$1.32 / $3.96	N/A
 
-55
+57
 	
-44
-74
+46
+76
 	
 claude-sonnet-5-high
 Anthropic · Proprietary
 	
 1462
 ±4
-	45,191	$2 / $10	1M
+	45,739	$2 / $10	1M
 
-56
+58
 	
-45
-74
+46
+77
 	
 kimi-k2.6
 Moonshot · Modified MIT
 	
 1461
 ±4
-	39,950	$0.95 / $4	262.1K
+	39,936	$0.95 / $4	262.1K
 
-57
+59
 	
-40
-79
+39
+82
 	
 qwen3.6-max-preview
 Alibaba · Proprietary
 	
 1460
 ±8
-	5,408	$1.03 / $6.16	262.1K
+	5,406	$1.03 / $6.16	262.1K
 
-58
+60
 	
-48
-74
+49
+77
 	
 grok-4.1
 SpaceXAI · Proprietary
 	
 1459
 ±3
-	68,498	N/A	N/A
+	68,478	N/A	N/A
 
-59
+61
 	
-50
-75
+51
+78
 	
 gemini-3-flash (thinking-minimal)
 Google · Proprietary
 	
 1458
 ±3
-	90,888	$0.50 / $3	1M
+	90,842	$0.50 / $3	1M
 
-60
+62
 	
-49
-76
+50
+79
 	
 deepseek-v4-pro
 DeepSeek · MIT
 	
 1458
 ±4
-	57,549	$1.32 / $3.96	1M
+	57,478	$1.32 / $3.96	1M
 
-61
+63
 	
-49
-77
+50
+80
 	
 glm-5
 Z.ai · MIT
 	
 1458
 ±4
-	29,203	$1 / $3.20	204.8K
+	29,174	$1 / $3.20	204.8K
 
-62
+64
 	
-46
-81
+47
+86
 	
-hy3
-Tencent · Apache 2.0
+gpt-6-sol-max
+OpenAI · Proprietary
 	
 1457
 ±7
-	10,239	$0.08 / $0.33	262.1K
+	8,787	$2 / $10	1.1M
 
-63
+65
 	
-54
-76
+56
+79
 	
 claude-sonnet-4-5-20250929-high-32k
 Anthropic · Proprietary
 	
 1457
 ±3
-	83,682	$3 / $15	1M
+	83,670	$3 / $15	1M
 
-64
+66
 	
-54
-78
+55
+81
 	
 dola-seed-2.0-pro
 Bytedance · Proprietary
 	
-1457
+1456
 ±3
-	78,956	N/A	N/A
+	78,890	N/A	N/A
 
-65
+67
 	
-53
-79
+49
+87
+	
+hy3
+Tencent · Apache 2.0
+	
+1456
+±7
+	10,476	$0.13 / $0.53	262.1K
+
+68
+	
+55
+82
 	
 qwen3.7-plus
 Alibaba · Proprietary
 	
 1456
 ±4
-	42,001	$0.32 / $1.28	1M
+	41,908	$0.32 / $1.28	1M
 
-66
+69
 	
-48
-85
-	
-gpt-6-sol-max
-OpenAI · Proprietary
-	
-1456
-±7
-	7,574	$2 / $10	1.1M
-
-67
-	
-54
-79
+56
+82
 	
 gpt-5.1-high
 OpenAI · Proprietary
 	
 1456
 ±4
-	41,568	$0.63 / $5	400K
+	41,577	$0.63 / $5	400K
 
-68
+70
 	
-54
-79
+56
+82
 	
 claude-sonnet-4-5-20250929
 Anthropic · Proprietary
 	
 1455
 ±3
-	82,438	$3 / $15	1M
+	82,425	$3 / $15	1M
 
-69
+71
 	
-54
-79
+56
+84
+	
+gemini-3.5-flash-lite
+Google · Proprietary
+	
+1455
+±4
+	35,763	$0.15 / $1.25	1M
+
+72
+	
+56
+83
 	
 deepseek-v4-pro-high-preview
 DeepSeek · MIT
 	
 1455
 ±4
-	54,823	$1.32 / $3.96	1M
+	54,767	$1.32 / $3.96	1M
 
-70
+73
 	
-54
-85
+56
+88
 	
-gemini-3.5-flash-lite
-Google · Proprietary
+grok-4.6-high
+SpaceXAI · Proprietary
 	
 1454
-±4
-	35,335	$0.15 / $1.25	1M
+±5
+	23,680	$2 / $6	500K
 
-71
+74
 	
-49
-90
+47
+98
 	
-mimo-v2.6-flash
-Xiaomi · MIT
+Step 5 Preview
+StepFun · Proprietary
 	
 1454
-±8
-	5,465	$0.14 / $0.28	1M
+±11
+	2,701	N/A	N/A
 
-72
+75
 	
-54
-85
+58
+88
 	
 gpt-5.6-luna-xhigh
 OpenAI · Proprietary
 	
 1453
 ±4
-	37,593	$0.20 / $1.20	N/A
+	38,275	$0.20 / $1.20	N/A
 
-73
+76
 	
-54
-85
-	
-grok-4.6-high
-SpaceXAI · Proprietary
-	
-1453
-±5
-	23,012	$2 / $6	500K
-
-74
-	
-53
-90
+55
+93
 	
 gemma-4-31b
 Google · Apache 2.0
 	
 1453
 ±7
-	6,137	$0.99 / $1.49	131.1K
+	6,133	$0.99 / $1.49	131.1K
 
-75
+77
 	
-61
-88
+56
+97
+	
+mimo-v2.6-flash
+Xiaomi · MIT
+	
+1452
+±8
+	6,053	$0.14 / $0.28	1M
+
+78
+	
+63
+91
 	
 kimi-k2.5-thinking
 Moonshot · Modified MIT
 	
 1450
 ±3
-	74,623	$0.60 / $3	N/A
+	74,565	$0.60 / $3	N/A
 
-76
+79
 	
-59
-89
+61
+92
 	
 gpt-5.3-chat-latest
 OpenAI · Proprietary
 	
 1450
 ±4
-	34,303	$1.75 / $14	128K
+	34,296	$1.75 / $14	128K
 
-77
+80
 	
-62
-88
+64
+91
 	
 claude-opus-4-1-20250805-thinking-16k
 Anthropic · Proprietary
 	
 1450
 ±3
-	49,334	$15 / $75	200K
+	49,306	$15 / $75	200K
 
-78
+81
 	
-58
-96
+60
+99
 	
 ernie-5.0-preview-1203
 Baidu · Proprietary
@@ -1039,70 +1075,70 @@ Baidu · Proprietary
 ±7
 	9,788	N/A	N/A
 
-79
+82
 	
-68
-91
+69
+93
 	
 claude-opus-4-1-20250805
 Anthropic · Proprietary
 	
 1448
 ±3
-	76,927	$7.50 / $37.50	200K
+	76,920	$7.50 / $37.50	200K
 
-80
+83
 	
-63
-95
+65
+97
 	
 mimo-v2-pro
 Xiaomi · Proprietary
 	
 1448
 ±5
-	25,397	$1.10 / $3.30	1M
+	25,396	$1.10 / $3.30	1M
 
-81
+84
 	
-69
-95
+70
+97
 	
 gpt-5.4-mini-high
 OpenAI · Proprietary
 	
 1447
 ±4
-	63,311	$0.75 / $4.50	400K
+	63,290	$0.75 / $4.50	400K
 
-82
+85
 	
-69
-95
+71
+99
 	
 ernie-5.0-0110
 Baidu · Proprietary
 	
-1447
+1446
 ±4
-	36,422	N/A	N/A
+	36,413	N/A	N/A
 
-83
+86
 	
-73
-95
+75
+98
 	
 gemini-2.5-pro
 Google · Proprietary
 	
 1446
 ±2
-	124,859	$1.25 / $10	1M
+	124,834	$1.25 / $10	1M
 
-84
+87
 	
-69
-101
+71
+105
 	
 gpt-4.5-preview-2025-02-27
 OpenAI · Proprietary
@@ -1111,334 +1147,334 @@ OpenAI · Proprietary
 ±6
 	14,547	$75 / $150	128K
 
-85
+88
 	
-68
-106
-	
-gpt-6-luna-max
-OpenAI · Proprietary
-	
-1444
-±7
-	7,654	$0.10 / $0.50	1.1M
-
-86
-	
-73
-101
+75
+104
 	
 qwen3.6-plus
 Alibaba · Proprietary
 	
 1443
 ±4
-	48,092	$0.33 / $1.95	1M
+	48,062	$0.33 / $1.95	1M
 
-87
+89
 	
-76
-100
+78
+102
 	
 chatgpt-4o-latest-20250326
 OpenAI · Proprietary
 	
 1443
 ±3
-	81,601	$5 / $15	128K
+	81,595	$5 / $15	128K
 
-88
+90
 	
-69
+73
 111
+	
+gpt-6-luna-max
+OpenAI · Proprietary
+	
+1443
+±7
+	10,014	$0.10 / $0.50	1.1M
+
+91
+	
+72
+114
 	
 grok-4.7-xhigh
 SpaceXAI · Proprietary
 	
 1442
 ±8
-	5,675	$2 / $6	500K
+	6,405	$2 / $6	500K
 
-89
+92
 	
-75
-105
-	
-inkling
-Thinky · Apache 2.0
-	
-1442
-±5
-	34,594	$1 / $4.05	524.3K
-
-90
-	
-79
-104
+80
+107
 	
 qwen3.5-397b-a17b
 Alibaba · Apache 2.0
 	
 1442
 ±3
-	88,092	$0.55 / $3.50	262.1K
+	88,660	$0.55 / $3.50	262.1K
 
-91
+93
 	
-73
-109
+75
+112
 	
 glm-4.7
 Z.ai · MIT
 	
-1442
+1441
 ±6
-	12,219	$0.60 / $2.20	204.8K
+	12,228	$0.60 / $2.20	204.8K
 
-92
+94
 	
-78
-105
+80
+108
 	
 grok-4.3
 SpaceXAI · Proprietary
 	
 1441
 ±4
-	71,269	$1.25 / $2.50	1M
+	71,150	$1.25 / $2.50	1M
 
-93
+95
 	
-79
+77
 109
+	
+inkling
+Thinky · Apache 2.0
+	
+1441
+±5
+	35,204	$0.95 / $4.05	524.3K
+
+96
+	
+80
+112
 	
 minimax-m3
 MiniMax · MiniMax Community License
 	
 1440
 ±4
-	58,171	$0.30 / $1.20	524.3K
+	58,757	$0.30 / $1.20	524.3K
 
-94
+97
 	
-79
-115
-	
-qwen3.8-27b
-Alibaba · Apache 2.0
-	
-1439
-±5
-	17,777	$0.40 / $3	262.1K
-
-95
-	
-84
-110
+87
+113
 	
 gpt-5.1
 OpenAI · Proprietary
 	
-1438
+1439
 ±4
-	44,311	$0.63 / $5	400K
+	44,298	$0.63 / $5	400K
 
-96
+98
 	
-83
-111
+85
+114
 	
 deepseek-v4-flash-high-preview
 DeepSeek · MIT
 	
 1438
 ±4
-	51,691	$0.30 / $1.20	1M
+	51,648	$0.30 / $1.20	1M
 
-97
+99
 	
-79
+83
 118
+	
+qwen3.8-27b
+Alibaba · Apache 2.0
+	
+1438
+±5
+	18,462	$0.40 / $3	262.1K
+
+100
+	
+80
+121
 	
 gemma-4-26b-a4b
 Google · Apache 2.0
 	
 1437
 ±7
-	6,083	N/A	N/A
+	6,081	N/A	N/A
 
-98
+101
 	
-84
-111
+87
+114
 	
 gpt-5.2-high
 OpenAI · Proprietary
 	
 1437
 ±4
-	49,549	$0.88 / $7	400K
-
-99
-	
-84
-115
-	
-longcat-flash-chat-2602-exp
-Meituan · Proprietary
-	
-1437
-±5
-	29,235	N/A	N/A
-
-100
-	
-85
-115
-	
-deepseek-v4-flash
-DeepSeek · MIT
-	
-1436
-±4
-	51,869	$0.30 / $1.20	1M
-
-101
-	
-87
-115
-	
-gpt-5.2
-OpenAI · Proprietary
-	
-1436
-±3
-	83,682	$0.88 / $7	400K
+	49,542	$0.88 / $7	400K
 
 102
 	
 87
 118
 	
-gpt-5-high
-OpenAI · Proprietary
+longcat-flash-chat-2602-exp
+Meituan · Proprietary
 	
-1434
+1437
 ±5
-	31,487	$0.63 / $5	400K
+	29,211	N/A	N/A
 
 103
 	
-87
+88
 118
+	
+deepseek-v4-flash
+DeepSeek · MIT
+	
+1436
+±4
+	51,850	$0.30 / $1.20	1M
+
+104
+	
+90
+118
+	
+gpt-5.2
+OpenAI · Proprietary
+	
+1436
+±3
+	83,656	$0.88 / $7	400K
+
+105
+	
+89
+121
+	
+gpt-5-high
+OpenAI · Proprietary
+	
+1435
+±5
+	31,489	$0.63 / $5	400K
+
+106
+	
+90
+121
 	
 qwen3-max-preview
 Alibaba · Proprietary
 	
 1434
 ±5
-	27,239	$0.78 / $3.90	262.1K
+	27,232	$0.78 / $3.90	262.1K
 
-104
+107
 	
-84
+91
 122
-	
-glm-5v-turbo
-Z.ai · Proprietary
-	
-1434
-±6
-	10,448	$1.20 / $4	202.8K
-
-105
-	
-88
-118
 	
 mimo-v2.5
 Xiaomi · MIT
 	
 1434
 ±4
-	47,292	$0.14 / $0.28	1.1M
+	47,266	$0.14 / $0.28	1.1M
 
-106
+108
 	
-91
-119
+88
+128
+	
+glm-5v-turbo
+Z.ai · Proprietary
+	
+1433
+±6
+	10,436	$1.20 / $4	202.8K
+
+109
+	
+93
+122
 	
 gemini-3.1-flash-lite-preview
 Google · Proprietary
 	
 1433
 ±4
-	64,094	$0.25 / $1.50	1M
+	64,047	$0.25 / $1.50	1M
 
-107
+110
 	
-93
-122
+96
+125
 	
 o3-2025-04-16
 OpenAI · Proprietary
 	
 1432
 ±4
-	58,598	$2 / $8	200K
+	58,583	$2 / $8	200K
 
-108
+111
 	
-91
-127
+93
+130
 	
 mimo-v2-omni
 Xiaomi · Proprietary
 	
 1431
 ±6
-	20,611	$0.44 / $2.20	256K
+	20,596	$0.44 / $2.20	256K
 
-109
+112
 	
-90
-130
+92
+133
 	
 kimi-k2.5-instant
 Moonshot · Modified MIT
 	
 1431
 ±7
-	8,355	$0.45 / $2.25	262.1K
+	8,356	$0.45 / $2.25	262.1K
 
-110
+113
 	
-97
-124
+100
+128
 	
 grok-4-1-fast-reasoning
 SpaceXAI · Proprietary
 	
 1430
 ±3
-	57,425	$0.20 / $0.50	128K
+	57,427	$0.20 / $0.50	128K
 
-111
+114
 	
-97
-125
+100
+128
 	
 kimi-k2-thinking-turbo
 Moonshot · Modified MIT
 	
 1430
 ±3
-	63,225	$0.57 / $2.30	131.1K
+	63,210	$0.57 / $2.30	131.1K
 
-112
+115
 	
-97
-134
+100
+137
 	
 mistral-medium-3.5
 Mistral · Modified MIT
@@ -1447,22 +1483,22 @@ Mistral · Modified MIT
 ±6
 	11,757	$0.75 / $3.75	262.1K
 
-113
+116
 	
-101
-134
+104
+137
 	
 gpt-5-chat
 OpenAI · Proprietary
 	
 1427
 ±4
-	31,017	$5 / $30	N/A
+	31,009	$5 / $30	N/A
 
-114
+117
 	
-91
-139
+94
+142
 	
 amazon-nova-experimental-chat-26-02-10
 Amazon · Proprietary
@@ -1471,82 +1507,82 @@ Amazon · Proprietary
 ±10
 	3,519	N/A	N/A
 
-115
+118
 	
-97
-136
+100
+139
 	
 nvidia-nemotron-3-ultra-550b-a55b-nvfp4
 Nvidia · OpenMDW-1.1
 	
 1426
 ±7
-	11,532	N/A	N/A
+	11,515	N/A	N/A
 
-116
+119
 	
-101
-134
+104
+137
 	
 claude-opus-4-20250514-thinking-16k
 Anthropic · Proprietary
 	
 1426
 ±4
-	35,693	$15 / $75	200K
+	35,691	$15 / $75	200K
 
-117
+120
 	
-94
-144
+97
+147
 	
 muse-glimmer
 Meta · Apache-2.0
 	
 1425
 ±10
-	3,897	N/A	N/A
+	3,893	N/A	N/A
 
-118
+121
 	
-101
-139
+104
+142
 	
 deepseek-v3.2-exp-thinking
 DeepSeek · MIT
 	
 1425
 ±7
-	8,948	$0.27 / $0.41	163.8K
+	8,947	$0.27 / $0.41	163.8K
 
-119
+122
 	
-106
-134
+109
+137
 	
 deepseek-v3.2
 DeepSeek · MIT
 	
 1425
 ±3
-	48,004	$0.28 / $0.42	163.8K
+	47,999	$0.28 / $0.42	163.8K
 
-120
+123
 	
-106
-135
+109
+138
 	
 glm-4.6
 Z.ai · MIT
 	
 1424
 ±4
-	35,668	$0.43 / $1.75	204.8K
+	35,662	$0.43 / $1.75	204.8K
 
-121
+124
 	
-105
-140
+107
+143
 	
 qwen3-max-2025-09-23
 Alibaba · Proprietary
@@ -1555,70 +1591,70 @@ Alibaba · Proprietary
 ±7
 	8,969	$0.78 / $3.90	262.1K
 
-122
+125
 	
-110
-136
+113
+139
 	
 deepseek-v3.2-thinking
 DeepSeek · MIT
 	
 1423
 ±4
-	41,966	$0.28 / $0.42	163.8K
+	41,975	$0.28 / $0.42	163.8K
 
-123
+126
 	
-111
-136
+114
+139
 	
 qwen3-235b-a22b-instruct-2507
 Alibaba · Apache 2.0
 	
 1422
 ±3
-	97,808	$0.26 / $1.06	N/A
+	97,788	$0.26 / $1.06	N/A
 
-124
+127
 	
-106
-144
+109
+147
 	
 deepseek-v3.2-exp
 DeepSeek · MIT
 	
 1422
 ±6
-	11,943	$0.27 / $0.41	163.8K
+	11,944	$0.27 / $0.41	163.8K
 
-125
+128
 	
-108
-143
+110
+146
 	
 deepseek-r1-0528
 DeepSeek · MIT
 	
 1422
 ±6
-	18,060	$0.50 / $2.15	163.8K
+	18,059	$0.50 / $2.15	163.8K
 
-126
+129
 	
-110
-147
+113
+150
 	
 grok-4-fast-chat
 SpaceXAI · Proprietary
 	
 1419
 ±8
-	6,323	$3 / $15	256K
+	6,320	$3 / $15	256K
 
-127
+130
 	
-108
-150
+110
+153
 	
 ernie-5.0-preview-1022
 Baidu · Proprietary
@@ -1627,34 +1663,46 @@ Baidu · Proprietary
 ±9
 	4,724	N/A	N/A
 
-128
+131
 	
-111
-146
+114
+149
 	
 kimi-k2-0905-preview
 Moonshot · Modified MIT
 	
 1419
 ±7
-	11,539	$0.60 / $2.50	262.1K
+	11,531	$0.60 / $2.50	262.1K
 
-129
+132
 	
-112
-145
+115
+148
 	
 kimi-k2-0711-preview
 Moonshot · Modified MIT
 	
 1418
 ±5
-	26,967	$0.60 / $2.50	131.1K
+	26,959	$0.60 / $2.50	131.1K
 
-130
+133
 	
-112
-147
+110
+156
+	
+deepseek-v3.1-terminus-thinking
+DeepSeek · MIT
+	
+1417
+±10
+	3,354	$0.30 / $1	163.8K
+
+134
+	
+115
+150
 	
 deepseek-v3.1
 DeepSeek · MIT
@@ -1663,130 +1711,118 @@ DeepSeek · MIT
 ±6
 	14,540	$1.23 / $4.94	N/A
 
-131
+135
 	
-109
-154
-	
-deepseek-v3.1-terminus-thinking
-DeepSeek · MIT
-	
-1417
-±10
-	3,357	$0.30 / $1	163.8K
-
-132
-	
-116
-147
+119
+150
 	
 qwen3.5-122b-a10b
 Alibaba · Apache 2.0
 	
 1416
 ±4
-	29,666	$0.26 / $2.08	262.1K
+	29,651	$0.26 / $2.08	262.1K
 
-133
+136
 	
-112
-150
+115
+153
 	
 deepseek-v3.1-thinking
 DeepSeek · MIT
 	
 1416
 ±7
-	11,413	$1.23 / $4.94	N/A
+	11,409	$1.23 / $4.94	N/A
 
-134
+137
 	
-120
-147
+123
+150
 	
 minimax-m2.7
 MiniMax · Modified MIT
 	
 1415
 ±3
-	79,403	$0.30 / $1.20	204.8K
+	79,944	$0.30 / $1.20	204.8K
 
-135
+138
 	
-120
-147
-	
-gpt-4.1-2025-04-14
-OpenAI · Proprietary
-	
-1415
-±4
-	50,007	$2 / $8	1M
-
-136
-	
-111
-157
+114
+161
 	
 deepseek-v3.1-terminus
 DeepSeek · MIT
 	
 1415
 ±10
-	3,602	$0.30 / $1	163.8K
+	3,599	$0.30 / $1	163.8K
 
-137
+139
 	
-120
+123
 150
+	
+gpt-4.1-2025-04-14
+OpenAI · Proprietary
+	
+1415
+±4
+	49,991	$2 / $8	1M
+
+140
+	
+123
+153
 	
 claude-opus-4-20250514
 Anthropic · Proprietary
 	
 1414
 ±4
-	42,804	$5 / $25	200K
+	42,792	$5 / $25	200K
 
-138
+141
 	
-122
-147
+125
+150
 	
 mistral-large-3
 Mistral · Apache 2.0
 	
 1414
 ±3
-	78,986	$0.50 / $1.50	N/A
+	79,452	$0.50 / $1.50	N/A
 
-139
+142
 	
-123
-147
+126
+150
 	
 claude-haiku-4-5-20251001
 Anthropic · Proprietary
 	
 1414
 ±2
-	142,743	$1 / $5	200K
+	143,402	$1 / $5	200K
 
-140
+143
 	
-117
-154
+120
+157
 	
 qwen3-vl-235b-a22b-instruct
 Alibaba · Apache 2.0
 	
 1413
 ±7
-	11,250	$0.21 / $1.90	262.1K
+	11,241	$0.21 / $1.90	262.1K
 
-141
+144
 	
-112
-159
+115
+163
 	
 amazon-nova-experimental-chat-26-01-10
 Amazon · Proprietary
@@ -1795,142 +1831,142 @@ Amazon · Proprietary
 ±10
 	3,534	N/A	N/A
 
-142
+145
 	
-124
-153
+127
+156
 	
 grok-3-preview-02-24
 SpaceXAI · Proprietary
 	
 1411
 ±4
-	32,389	$3 / $15	131.1K
+	32,386	$3 / $15	131.1K
 
-143
+146
 	
-123
-156
+126
+159
 	
 glm-4.5
 Z.ai · MIT
 	
 1411
 ±5
-	23,668	$0.60 / $2.20	131.1K
+	23,661	$0.60 / $2.20	131.1K
 
-144
+147
 	
-126
-154
+129
+157
 	
 grok-4-0709
 SpaceXAI · Proprietary
 	
 1411
 ±4
-	39,409	$1.25 / $2.50	256K
+	39,398	$1.25 / $2.50	256K
 
-145
+148
 	
-128
-154
+131
+157
 	
 gemini-2.5-flash
 Google · Proprietary
 	
 1409
 ±2
-	125,029	$0.30 / $2.50	1M
+	125,012	$0.30 / $2.50	1M
 
-146
+149
 	
-123
-162
+126
+165
 	
 hunyuan-hy3-preview
 Tencent · tencent-hunyuan-community
 	
 1409
 ±7
-	6,871	$0.29 / $1.17	262.1K
+	6,874	$0.29 / $1.17	262.1K
 
-147
+150
 	
-127
-158
+130
+161
 	
 qwen3.5-27b
 Alibaba · Apache 2.0
 	
 1409
 ±4
-	28,618	$0.20 / $1.56	262.1K
+	28,612	$0.20 / $1.56	262.1K
 
-148
+151
 	
-135
-157
+138
+160
 	
 mistral-medium-2508
 Mistral · Proprietary
 	
 1408
 ±3
-	94,995	$0.40 / $2	131.1K
+	94,966	$0.40 / $2	131.1K
 
-149
+152
 	
-135
-162
+138
+165
 	
 Inkling Small
 Thinky · Apache 2.0
 	
 1405
 ±5
-	26,446	$0.45 / $1.20	524.3K
+	27,070	$0.45 / $1.20	524.3K
 
-150
+153
 	
-135
-162
+138
+165
 	
 grok-4-fast-reasoning
 SpaceXAI · Proprietary
 	
 1405
 ±5
-	18,148	$0.20 / $0.50	N/A
+	18,142	$0.20 / $0.50	N/A
 
-151
+154
 	
-138
-164
+141
+167
 	
 gemini-2.5-flash-preview-09-2025
 Google · Proprietary
 	
 1403
 ±4
-	32,847	$0.30 / $2.50	1M
+	32,839	$0.30 / $2.50	1M
 
-152
+155
 	
-139
-165
+143
+168
 	
 qwen3-235b-a22b-no-thinking
 Alibaba · Apache 2.0
 	
 1403
 ±5
-	37,284	$0.46 / $1.82	131.1K
+	37,279	$0.46 / $1.82	131.1K
 
-153
+156
 	
-143
-165
+146
+168
 	
 o1-2024-12-17
 OpenAI · Proprietary
@@ -1939,22 +1975,34 @@ OpenAI · Proprietary
 ±4
 	27,807	$15 / $60	200K
 
-154
+157
 	
-144
-165
+147
+168
 	
 claude-sonnet-4-20250514-thinking-32k
 Anthropic · Proprietary
 	
 1402
 ±4
-	33,923	$3 / $15	200K
+	33,913	$3 / $15	200K
 
-155
+158
 	
-138
-171
+148
+168
+	
+gpt-5.4-nano-high
+OpenAI · Proprietary
+	
+1401
+±4
+	62,249	$0.20 / $1.25	400K
+
+159
+	
+141
+173
 	
 longcat-flash-chat
 Meituan · MIT
@@ -1963,46 +2011,34 @@ Meituan · MIT
 ±6
 	11,123	$0.20 / $0.80	131.1K
 
-156
+160
 	
 146
-165
-	
-gpt-5.4-nano-high
-OpenAI · Proprietary
-	
-1401
-±4
-	62,300	$0.20 / $1.25	400K
-
-157
-	
-143
-173
+176
 	
 qwen3-235b-a22b-thinking-2507
 Alibaba · Apache 2.0
 	
 1400
 ±7
-	8,776	$0.23 / $2.30	131.1K
+	8,774	$0.23 / $2.30	131.1K
 
-158
+161
 	
-147
-172
+150
+175
 	
 qwen3-next-80b-a3b-instruct
 Alibaba · Apache 2.0
 	
 1399
 ±5
-	22,607	$0.10 / $1.10	262.1K
+	22,603	$0.10 / $1.10	262.1K
 
-159
+162
 	
-148
-174
+151
+177
 	
 deepseek-r1
 DeepSeek · MIT
@@ -2011,154 +2047,154 @@ DeepSeek · MIT
 ±5
 	18,524	$0.70 / $2.50	64K
 
-160
+163
 	
-151
-176
+154
+179
 	
 qwen3.5-flash
 Alibaba · Proprietary
 	
 1396
 ±4
-	61,687	N/A	N/A
+	61,669	N/A	N/A
 
-161
+164
 	
-151
-178
+154
+181
 	
 deepseek-v3-0324
 DeepSeek · MIT
 	
 1396
 ±4
-	44,762	$1.14 / $4.56	N/A
+	44,758	$1.14 / $4.56	N/A
 
-162
+165
 	
-138
-185
-	
-hunyuan-vision-1.5-thinking
-Tencent · Proprietary
-	
-1395
-±12
-	2,159	N/A	N/A
-
-163
-	
-148
-181
+151
+184
 	
 qwen3-vl-235b-a22b-thinking
 Alibaba · Apache 2.0
 	
 1395
 ±7
-	7,809	$0.40 / $4	131.1K
+	7,805	$0.40 / $4	131.1K
 
-164
+166
 	
-148
-183
+141
+188
+	
+hunyuan-vision-1.5-thinking
+Tencent · Proprietary
+	
+1395
+±12
+	2,158	N/A	N/A
+
+167
+	
+150
+186
 	
 amazon-nova-experimental-chat-12-10
 Amazon · Proprietary
 	
 1394
 ±9
-	3,727	N/A	N/A
+	3,728	N/A	N/A
 
-165
+168
 	
-152
-180
+155
+183
 	
 qwen3.5-35b-a3b
 Alibaba · Apache 2.0
 	
 1394
 ±4
-	30,410	$0.16 / $1.30	262.1K
+	30,408	$0.15 / $1	262.1K
 
-166
+169
 	
-156
-180
+159
+183
 	
 step-3.5-flash
 StepFun · Apache 2.0
 	
 1393
 ±4
-	60,236	$0.10 / $0.30	262.1K
+	60,207	$0.10 / $0.30	262.1K
 
-167
+170
 	
-156
-181
+159
+184
 	
 mimo-v2-flash (non-thinking)
 Xiaomi · MIT
 	
 1392
 ±3
-	48,012	$0.10 / $0.30	262.1K
+	47,998	$0.10 / $0.30	262.1K
 
-168
+171
 	
-156
-183
+160
+186
 	
 minimax-m2.5
 MiniMax · Modified MIT
 	
 1391
 ±4
-	42,734	$0.27 / $1.08	204.8K
+	42,730	$0.27 / $1.08	204.8K
 
-169
+172
 	
-156
-183
+159
+186
 	
 o4-mini-2025-04-16
 OpenAI · Proprietary
 	
 1391
 ±4
-	44,636	$1.10 / $4.40	200K
+	44,626	$1.10 / $4.40	200K
 
-170
+173
 	
-156
-183
+159
+186
 	
 claude-sonnet-4-20250514
 Anthropic · Proprietary
 	
 1391
 ±4
-	38,917	$3 / $15	200K
+	38,912	$3 / $15	200K
 
-171
+174
 	
-157
-183
+160
+186
 	
 gpt-5-mini-high
 OpenAI · Proprietary
 	
 1390
 ±5
-	26,645	$0.13 / $1	400K
+	26,638	$0.13 / $1	400K
 
-172
+175
 	
-158
-183
+161
+186
 	
 o1-preview
 OpenAI · Proprietary
@@ -2167,82 +2203,82 @@ OpenAI · Proprietary
 ±5
 	31,122	$15 / $60	N/A
 
-173
+176
 	
-160
-183
+163
+186
 	
 claude-3-7-sonnet-20250219-thinking-32k
 Anthropic · Proprietary
 	
 1388
 ±4
-	38,036	$3 / $15	200K
+	38,033	$3 / $15	200K
 
-174
+177
 	
-161
-185
+164
+188
 	
 mistral-medium-2505
 Mistral · Proprietary
 	
-1387
+1388
 ±5
-	32,616	$0.40 / $2	131.1K
+	32,615	$0.40 / $2	131.1K
 
-175
+178
 	
-160
-185
+163
+188
 	
 qwen3-coder-480b-a35b-instruct
 Alibaba · Apache 2.0
 	
 1387
 ±5
-	25,011	$0.65 / $3.25	1M
+	25,006	$0.65 / $3.25	1M
 
-176
+179
 	
-156
-187
+159
+190
 	
 hunyuan-t1-20250711
 Tencent · Proprietary
 	
 1387
 ±9
-	4,574	N/A	N/A
+	4,572	N/A	N/A
 
-177
+180
 	
-159
-185
+162
+188
 	
 mimo-v2-flash (thinking)
 Xiaomi · MIT
 	
 1387
 ±6
-	11,118	$0.10 / $0.30	262.1K
+	11,115	$0.10 / $0.30	262.1K
 
-178
+181
 	
-161
-185
+164
+188
 	
 solar-pro4
 Upstage · Proprietary
 	
 1386
 ±6
-	15,135	$0.09 / $0.36	524.3K
+	15,819	$0.09 / $0.36	524.3K
 
-179
+182
 	
-162
-186
+165
+190
 	
 minimax-m2.1-preview
 MiniMax · MIT
@@ -2251,34 +2287,22 @@ MiniMax · MIT
 ±5
 	17,187	$0.30 / $1.20	204.8K
 
-180
+183
 	
-166
-188
-	
-qwen3-30b-a3b-instruct-2507
-Alibaba · Apache 2.0
-	
-1383
-±5
-	23,182	$0.05 / $0.19	262.1K
-
-181
-	
-166
-187
+169
+190
 	
 gpt-4.1-mini-2025-04-14
 OpenAI · Proprietary
 	
 1383
 ±4
-	38,549	$0.40 / $1.60	1M
+	38,547	$0.40 / $1.60	1M
 
-182
+184
 	
-164
-191
+167
+194
 	
 hunyuan-turbos-20250416
 Tencent · Proprietary
@@ -2287,22 +2311,34 @@ Tencent · Proprietary
 ±7
 	10,577	N/A	N/A
 
-183
+185
 	
-173
+169
 191
+	
+qwen3-30b-a3b-instruct-2507
+Alibaba · Apache 2.0
+	
+1383
+±5
+	23,174	$0.05 / $0.19	262.1K
+
+186
+	
+176
+194
 	
 gemini-2.5-flash-lite-preview-09-2025-no-thinking
 Google · Proprietary
 	
 1379
 ±3
-	47,253	$0.10 / $0.40	1M
+	47,254	$0.10 / $0.40	1M
 
-184
+187
 	
-162
-199
+165
+203
 	
 glm-4.6v
 Z.ai · MIT
@@ -2311,58 +2347,58 @@ Z.ai · MIT
 ±11
 	2,830	$0.30 / $0.90	131.1K
 
-185
+188
 	
-173
-192
+176
+195
 	
 trinity-large-preview
 Apache 2.0
 	
 1379
 ±4
-	31,220	$0.15 / $0.45	131K
+	31,201	$0.15 / $0.45	131K
 
-186
+189
 	
-178
-194
+181
+197
 	
 qwen3-235b-a22b
 Alibaba · Apache 2.0
 	
 1375
 ±5
-	25,826	$0.46 / $1.82	131.1K
+	25,825	$0.46 / $1.82	131.1K
 
-187
+190
 	
-179
-194
+181
+197
 	
 gemini-2.5-flash-lite-preview-06-17-thinking
 Google · Proprietary
 	
 1375
 ±5
-	32,178	$0.10 / $0.40	1M
+	32,175	$0.10 / $0.40	1M
 
-188
+191
 	
-182
-193
+185
+196
 	
 claude-3-5-sonnet-20241022
 Anthropic · Proprietary
 	
 1374
 ±3
-	87,644	$3 / $15	200K
+	87,638	$3 / $15	200K
 
-189
+192
 	
-181
-194
+184
+197
 	
 qwen2.5-max
 Alibaba · Proprietary
@@ -2371,10 +2407,10 @@ Alibaba · Proprietary
 ±4
 	32,411	N/A	N/A
 
-190
+193
 	
-182
-195
+185
+198
 	
 glm-4.5-air
 Z.ai · MIT
@@ -2383,94 +2419,94 @@ Z.ai · MIT
 ±4
 	30,454	$0.13 / $0.85	131.1K
 
-191
+194
 	
-182
-198
+185
+200
 	
 claude-3-7-sonnet-20250219
 Anthropic · Proprietary
 	
-1372
+1373
 ±4
-	42,411	$3 / $15	200K
+	42,401	$3 / $15	200K
 
-192
+195
 	
-184
-202
+187
+205
 	
 qwen3-next-80b-a3b-thinking
 Alibaba · Apache 2.0
 	
 1369
 ±6
-	13,382	$0.15 / $1.20	262.1K
+	13,371	$0.15 / $1.20	262.1K
 
-193
+196
 	
-185
-204
+188
+207
 	
 trinity-large-thinking
 Apache 2.0
 	
 1367
 ±5
-	30,281	$0.25 / $0.80	262.1K
+	30,265	$0.25 / $0.80	262.1K
 
-194
+197
 	
-189
-205
+192
+208
 	
 gemma-3-27b-it
 Google · Gemma
 	
 1365
 ±4
-	46,437	$0.08 / $0.45	131.1K
+	46,425	$0.08 / $0.45	131.1K
 
-195
+198
 	
-186
-208
+189
+211
 	
 glm-4.7-flash
 Z.ai · MIT
 	
 1365
 ±6
-	11,979	$0.06 / $0.40	200K
+	11,977	$0.06 / $0.40	200K
 
-196
+199
 	
-190
-207
+194
+210
 	
 amazon-nova-experimental-chat-11-10
 Amazon · Proprietary
 	
 1364
 ±4
-	25,992	N/A	N/A
+	25,995	N/A	N/A
 
-197
+200
 	
-191
-207
+194
+210
 	
 minimax-m1
 MiniMax · Apache 2.0
 	
 1364
 ±4
-	34,048	$0.55 / $2.20	1M
+	34,042	$0.55 / $2.20	1M
 
-198
+201
 	
-190
-208
+193
+211
 	
 o3-mini-high
 OpenAI · Proprietary
@@ -2479,46 +2515,46 @@ OpenAI · Proprietary
 ±5
 	18,589	$1.10 / $4.40	200K
 
-199
+202
 	
-190
-208
+193
+211
 	
 grok-3-mini-high
 SpaceXAI · Proprietary
 	
 1363
 ±5
-	15,506	$0.25 / $1.27	N/A
+	15,505	$0.25 / $1.27	N/A
 
-200
+203
 	
-192
-219
+194
+222
 	
 nvidia-nemotron-3-super-120b-a12b
 Nvidia · NVIDIA Open Model
 	
-1361
+1360
 ±7
-	7,861	N/A	N/A
+	7,859	N/A	N/A
 
-201
+204
 	
-192
-213
+195
+216
 	
 gemini-2.0-flash-001
 Google · Proprietary
 	
 1360
 ±4
-	43,317	$0.10 / $0.40	1M
+	43,310	$0.10 / $0.40	1M
 
-202
+205
 	
-193
-219
+196
+222
 	
 deepseek-v3
 DeepSeek · DeepSeek
@@ -2527,58 +2563,58 @@ DeepSeek · DeepSeek
 ±5
 	21,770	$1.14 / $4.56	N/A
 
-203
+206
 	
-193
-220
+196
+223
 	
 grok-3-mini-beta
 SpaceXAI · Proprietary
 	
 1358
 ±5
-	20,814	$1.25 / $2.50	131.1K
+	20,813	$1.25 / $2.50	131.1K
 
-204
+207
 	
-194
-223
+197
+226
 	
 mistral-small-2506
 Mistral · Apache 2.0
 	
 1356
 ±5
-	17,353	$0.10 / $0.30	32K
+	17,348	$0.10 / $0.30	32K
 
-205
+208
 	
-192
-228
+195
+231
 	
 intellect-3
 MIT
 	
 1356
 ±8
-	5,421	$0.20 / $1.10	131.1K
+	5,417	$0.20 / $1.10	131.1K
 
-206
+209
 	
-200
-226
+203
+229
 	
 command-a-03-2025
 Cohere · CC-BY-NC-4.0
 	
 1354
 ±3
-	55,477	$2.50 / $10	256K
+	55,467	$2.50 / $10	256K
 
-207
+210
 	
-200
-228
+203
+231
 	
 gemini-2.0-flash-lite-preview-02-05
 Google · Proprietary
@@ -2587,34 +2623,34 @@ Google · Proprietary
 ±4
 	24,955	$0.07 / $0.30	1M
 
-208
+211
 	
-195
-230
+198
+233
 	
 glm-4.5v
 Z.ai · MIT
 	
 1352
 ±8
-	4,811	$0.60 / $1.80	65.5K
+	4,807	$0.60 / $1.80	65.5K
 
-209
+212
 	
-201
-228
+204
+231
 	
 gpt-oss-120b
 OpenAI · Apache 2.0
 	
 1352
 ±4
-	30,039	$0.15 / $0.60	131.1K
+	30,018	$0.15 / $0.60	131.1K
 
-210
+213
 	
-201
-228
+204
+231
 	
 gemini-1.5-pro-002
 Google · Proprietary
@@ -2623,22 +2659,35 @@ Google · Proprietary
 ±3
 	55,606	$3.50 / $10.50	2.1M
 
-211
+214
 	
-200
-232
+204
+233
+	
+nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4
+Nvidia · OpenMDW-1.1
+	
+1350
+±6
+Preliminary
+	14,877	N/A	N/A
+
+215
+	
+203
+235
 	
 step-3
 StepFun · Apache 2.0
 	
 1349
 ±8
-	6,272	$0.57 / $1.42	65.5K
+	6,266	$0.57 / $1.42	65.5K
 
-212
+216
 	
-195
-240
+198
+243
 	
 hunyuan-turbos-20250226
 Tencent · Proprietary
@@ -2647,47 +2696,34 @@ Tencent · Proprietary
 ±12
 	2,220	N/A	N/A
 
-213
+217
 	
-201
-231
-	
-nvidia-nemotron-3.5-lightning-30b-a3b-nvfp4
-Nvidia · OpenMDW-1.1
-	
-1349
-±6
-Preliminary
-	14,326	N/A	N/A
-
-214
-	
-201
-232
+204
+235
 	
 amazon-nova-experimental-chat-10-20
 Amazon · Proprietary
 	
 1348
 ±6
-	11,596	N/A	N/A
+	11,590	N/A	N/A
 
-215
+218
 	
-204
-229
+207
+232
 	
 o3-mini
 OpenAI · Proprietary
 	
 1348
 ±4
-	56,573	$0.55 / $2.20	200K
+	56,564	$0.55 / $2.20	200K
 
-216
+219
 	
-197
-242
+200
+245
 	
 llama-3.1-nemotron-ultra-253b-v1
 Nvidia · Nvidia Open Model
@@ -2696,10 +2732,10 @@ Nvidia · Nvidia Open Model
 ±12
 	2,549	$0.60 / $1.80	131.1K
 
-217
+220
 	
-200
-242
+203
+245
 	
 amazon-nova-experimental-chat-10-09
 Amazon · Proprietary
@@ -2708,10 +2744,10 @@ Amazon · Proprietary
 ±11
 	2,765	N/A	N/A
 
-218
+221
 	
-200
-240
+203
+243
 	
 qwen3-32b
 Alibaba · Apache 2.0
@@ -2720,10 +2756,10 @@ Alibaba · Apache 2.0
 ±9
 	3,926	$0.08 / $0.28	131.1K
 
-219
+222
 	
-206
-231
+209
+234
 	
 gpt-4o-2024-05-13
 OpenAI · Proprietary
@@ -2732,10 +2768,10 @@ OpenAI · Proprietary
 ±3
 	112,881	$5 / $15	128K
 
-220
+223
 	
-201
-240
+204
+243
 	
 qwen-plus-0125
 Alibaba · Proprietary
@@ -2744,46 +2780,46 @@ Alibaba · Proprietary
 ±8
 	5,819	$0.40 / $1.20	131.1K
 
-221
+224
 	
-205
-241
+208
+244
 	
 ling-flash-2.0
 Ant Group · MIT
 	
 1344
 ±7
-	6,889	N/A	N/A
+	6,887	N/A	N/A
 
-222
+225
 	
-205
-242
+208
+245
 	
 minimax-m2
 MiniMax · Apache 2.0
 	
 1343
 ±8
-	6,819	$0.30 / $1.20	204.8K
+	6,817	$0.30 / $1.20	204.8K
 
-223
+226
 	
-201
-244
+204
+247
 	
 mercury-2
 Inception AI · Proprietary
 	
 1343
 ±11
-	3,198	$0.25 / $0.75	128K
+	3,197	$0.25 / $0.75	128K
 
-224
+227
 	
-210
-238
+213
+241
 	
 claude-3-5-sonnet-20240620
 Anthropic · Proprietary
@@ -2792,10 +2828,10 @@ Anthropic · Proprietary
 ±3
 	82,419	$3 / $15	200K
 
-225
+228
 	
-203
-244
+206
+247
 	
 nvidia-llama-3.3-nemotron-super-49b-v1.5
 Nvidia · Nvidia Open
@@ -2804,10 +2840,10 @@ Nvidia · Nvidia Open
 ±10
 	3,308	$0.10 / $0.40	131.1K
 
-226
+229
 	
-205
-243
+208
+246
 	
 glm-4-plus-0111
 Z.ai · Proprietary
@@ -2816,10 +2852,10 @@ Z.ai · Proprietary
 ±8
 	5,760	N/A	N/A
 
-227
+230
 	
-204
-244
+207
+247
 	
 gemma-3-12b-it
 Google · Gemma
@@ -2828,10 +2864,10 @@ Google · Gemma
 ±10
 	3,829	$0.05 / $0.15	131.1K
 
-228
+231
 	
-204
-249
+207
+252
 	
 hunyuan-turbo-0110
 Tencent · Proprietary
@@ -2840,34 +2876,34 @@ Tencent · Proprietary
 ±12
 	2,290	N/A	N/A
 
-229
+232
 	
-206
-249
+209
+252
 	
 granite-4.2-30b
 IBM · Apache 2.0
 	
 1340
 ±10
-	3,416	N/A	N/A
+	3,401	N/A	N/A
 
-230
+233
 	
-211
-247
+214
+250
 	
 gpt-5-nano-high
 OpenAI · Proprietary
 	
-1337
+1338
 ±7
-	8,115	$0.03 / $0.20	400K
+	8,112	$0.03 / $0.20	400K
 
-231
+234
 	
-216
-244
+219
+247
 	
 o1-mini
 OpenAI · Proprietary
@@ -2876,10 +2912,10 @@ OpenAI · Proprietary
 ±4
 	51,981	$1.10 / $4.40	N/A
 
-232
+235
 	
-216
-247
+219
+250
 	
 gemini-advanced-0514
 Google · Proprietary
@@ -2888,22 +2924,22 @@ Google · Proprietary
 ±5
 	50,148	N/A	N/A
 
-233
+236
 	
-216
-245
+219
+248
 	
 qwq-32b
 Alibaba · Apache 2.0
 	
 1336
 ±4
-	25,084	$0.50 / $1	16.4K
+	25,078	$0.50 / $1	16.4K
 
-234
+237
 	
-217
-244
+220
+247
 	
 grok-2-2024-08-13
 SpaceXAI · Proprietary
@@ -2912,10 +2948,10 @@ SpaceXAI · Proprietary
 ±4
 	63,498	$2 / $10	131.1K
 
-235
+238
 	
-216
-246
+219
+248
 	
 gpt-4o-2024-08-06
 OpenAI · Proprietary
@@ -2924,10 +2960,10 @@ OpenAI · Proprietary
 ±4
 	45,499	$2.50 / $10	128K
 
-236
+239
 	
-217
-245
+220
+248
 	
 llama-3.1-405b-instruct-bf16
 Meta · Llama 3.1 Community
@@ -2936,22 +2972,22 @@ Meta · Llama 3.1 Community
 ±4
 	41,375	$4 / $4	32.8K
 
-237
+240
 	
-216
-249
+219
+252
 	
 nova-2-lite
 Amazon · Proprietary
 	
 1335
 ±6
-	12,393	$0.30 / $2.50	1M
+	12,392	$0.30 / $2.50	1M
 
-238
+241
 	
-214
-255
+217
+258
 	
 step-2-16k-exp-202412
 StepFun · Proprietary
@@ -2960,34 +2996,34 @@ StepFun · Proprietary
 ±9
 	4,833	N/A	N/A
 
-239
+242
 	
-220
-249
+223
+251
 	
 llama-3.1-405b-instruct-fp8
 Meta · Llama 3.1 Community
 	
-1333
+1334
 ±4
 	59,656	$4 / $4	32.8K
 
-240
+243
 	
-224
-258
+227
+261
 	
 olmo-3.1-32b-instruct
 Ai2 · Apache 2.0
 	
 1329
 ±6
-	11,794	$0.20 / $0.60	65.5K
+	11,801	$0.20 / $0.60	65.5K
 
-241
+244
 	
-225
-258
+228
+261
 	
 yi-lightning
 Proprietary
@@ -2996,10 +3032,10 @@ Proprietary
 ±5
 	27,332	N/A	N/A
 
-242
+245
 	
-216
-269
+219
+272
 	
 llama-3.3-nemotron-49b-super-v1
 Nvidia · Nvidia
@@ -3008,34 +3044,34 @@ Nvidia · Nvidia
 ±12
 	2,218	N/A	N/A
 
-243
+246
 	
-233
-258
+236
+261
 	
 llama-4-maverick-17b-128e-instruct
 Meta · Llama 4
 	
 1327
 ±4
-	39,266	$0.63 / $1.80	131.1K
+	39,262	$0.63 / $1.80	131.1K
 
-244
+247
 	
-232
-259
+236
+262
 	
 qwen3-30b-a3b
 Alibaba · Apache 2.0
 	
-1327
+1326
 ±5
-	26,036	$0.12 / $0.50	131.1K
+	26,037	$0.12 / $0.50	131.1K
 
-245
+248
 	
-221
-269
+224
+272
 	
 hunyuan-large-2025-02-10
 Tencent · Proprietary
@@ -3044,22 +3080,22 @@ Tencent · Proprietary
 ±10
 	3,738	N/A	N/A
 
-246
+249
 	
-239
-259
+242
+262
 	
 claude-3-5-haiku-20241022
 Anthropic · Proprietary
 	
 1325
 ±3
-	68,877	$1 / $5	200K
+	68,873	$1 / $5	200K
 
-247
+250
 	
-239
-263
+242
+266
 	
 gpt-4-turbo-2024-04-09
 OpenAI · Proprietary
@@ -3068,10 +3104,10 @@ OpenAI · Proprietary
 ±4
 	98,114	$10 / $30	128K
 
-248
+251
 	
-239
-263
+242
+266
 	
 gemini-1.5-pro-001
 Google · Proprietary
@@ -3080,10 +3116,10 @@ Google · Proprietary
 ±4
 	79,138	$3.50 / $10.50	2.1M
 
-249
+252
 	
-230
-269
+233
+272
 	
 deepseek-v2.5-1210
 DeepSeek · DeepSeek
@@ -3092,22 +3128,22 @@ DeepSeek · DeepSeek
 ±8
 	6,795	N/A	N/A
 
-250
+253
 	
-235
-269
+239
+272
 	
 ring-flash-2.0
 Ant Group · MIT
 	
 1323
 ±7
-	6,934	N/A	N/A
+	6,932	N/A	N/A
 
-251
+254
 	
-235
-271
+238
+273
 	
 gpt-4.1-nano-2025-04-14
 OpenAI · Proprietary
@@ -3116,10 +3152,10 @@ OpenAI · Proprietary
 ±8
 	6,103	$0.10 / $0.40	1M
 
-252
+255
 	
-239
-265
+242
+268
 	
 claude-3-opus-20240229
 Anthropic · Proprietary
@@ -3128,10 +3164,10 @@ Anthropic · Proprietary
 ±3
 	194,909	$15 / $75	200K
 
-253
+256
 	
-212
-283
+216
+286
 	
 molmo-2-8b
 Ai2 · Apache 2.0
@@ -3140,22 +3176,22 @@ Ai2 · Apache 2.0
 ±21
 	818	$0.20 / $0.20	36.9K
 
-254
+257
 	
-239
-268
+242
+271
 	
 llama-4-scout-17b-16e-instruct
 Meta · Llama
 	
 1322
 ±5
-	29,668	$0.05 / $0.10	16.4K
+	29,667	$0.05 / $0.10	16.4K
 
-255
+258
 	
-239
-272
+242
+275
 	
 step-1o-turbo-202506
 StepFun · Proprietary
@@ -3164,10 +3200,10 @@ StepFun · Proprietary
 ±7
 	8,845	N/A	N/A
 
-256
+259
 	
-240
-271
+243
+273
 	
 glm-4-plus
 Z.ai · Proprietary
@@ -3176,10 +3212,10 @@ Z.ai · Proprietary
 ±5
 	26,126	$0.44 / $1.76	204.8K
 
-257
+260
 	
-240
-273
+243
+276
 	
 qwen-max-0919
 Alibaba · Qwen
@@ -3188,22 +3224,22 @@ Alibaba · Qwen
 ±6
 	16,478	$1.60 / $6.40	32.8K
 
-258
+261
 	
-245
-271
+248
+273
 	
 llama-3.3-70b-instruct
 Meta · Llama-3.3
 	
 1318
 ±4
-	54,371	$0.10 / $0.32	131.1K
+	54,366	$0.10 / $0.32	131.1K
 
-259
+262
 	
-245
-271
+248
+274
 	
 gpt-4o-mini-2024-07-18
 OpenAI · Proprietary
@@ -3212,34 +3248,34 @@ OpenAI · Proprietary
 ±4
 	68,697	$0.15 / $0.60	128K
 
-260
+263
 	
-240
-277
+243
+280
 	
 gpt-oss-20b
 OpenAI · Apache 2.0
 	
 1318
 ±6
-	10,371	$0.02 / $0.11	131.1K
+	10,368	$0.02 / $0.11	131.1K
 
-261
+264
 	
-243
-274
+246
+277
 	
 gemma-3n-e4b-it
 Google · Gemma
 	
 1317
 ±5
-	22,038	$0.06 / $0.12	32.8K
+	22,042	$0.06 / $0.12	32.8K
 
-262
+265
 	
-245
-278
+248
+281
 	
 qwen2.5-plus-1127
 Alibaba · Proprietary
@@ -3248,10 +3284,10 @@ Alibaba · Proprietary
 ±6
 	10,187	N/A	N/A
 
-263
+266
 	
-248
-277
+251
+280
 	
 mistral-large-2407
 Mistral · Mistral Research
@@ -3260,10 +3296,10 @@ Mistral · Mistral Research
 ±4
 	45,459	$2 / $6	131.1K
 
-264
+267
 	
-248
-278
+251
+281
 	
 athene-v2-chat
 NexusFlow
@@ -3272,22 +3308,22 @@ NexusFlow
 ±5
 	24,739	N/A	N/A
 
-265
+268
 	
-247
-278
+250
+281
 	
 nvidia-nemotron-3-nano-30b-a3b-bf16
 Nvidia · NVIDIA Open Model
 	
 1314
 ±5
-	15,724	$0.06 / $0.24	262.1K
+	15,722	$0.06 / $0.24	262.1K
 
-266
+269
 	
-248
-278
+251
+281
 	
 gpt-4-0125-preview
 OpenAI · Proprietary
@@ -3296,10 +3332,10 @@ OpenAI · Proprietary
 ±4
 	93,439	$10 / $30	128K
 
-267
+270
 	
-249
-278
+252
+281
 	
 gpt-4-1106-preview
 OpenAI · Proprietary
@@ -3308,10 +3344,10 @@ OpenAI · Proprietary
 ±4
 	100,105	$10 / $30	128K
 
-268
+271
 	
-245
-282
+248
+285
 	
 hunyuan-standard-2025-02-10
 Tencent · Proprietary
@@ -3320,10 +3356,10 @@ Tencent · Proprietary
 ±10
 	3,904	N/A	N/A
 
-269
+272
 	
-257
-281
+260
+284
 	
 gemini-1.5-flash-002
 Google · Proprietary
@@ -3332,10 +3368,10 @@ Google · Proprietary
 ±4
 	34,902	$0.07 / $0.30	1M
 
-270
+273
 	
-260
-281
+263
+284
 	
 grok-2-mini-2024-08-13
 SpaceXAI · Proprietary
@@ -3344,10 +3380,10 @@ SpaceXAI · Proprietary
 ±4
 	52,567	$2 / $10	131.1K
 
-271
+274
 	
-260
-282
+263
+285
 	
 deepseek-v2.5
 DeepSeek · DeepSeek
@@ -3356,10 +3392,10 @@ DeepSeek · DeepSeek
 ±5
 	24,572	N/A	N/A
 
-272
+275
 	
-259
-282
+262
+286
 	
 athene-70b-0725
 CC-BY-NC-4.0
@@ -3368,10 +3404,10 @@ CC-BY-NC-4.0
 ±6
 	19,621	N/A	N/A
 
-273
+276
 	
-253
-284
+256
+287
 	
 olmo-3-32b-think
 Ai2 · Apache 2.0
@@ -3380,22 +3416,10 @@ Ai2 · Apache 2.0
 ±8
 	5,811	$0.15 / $0.50	65.5K
 
-274
+277
 	
-247
-294
-	
-mercury
-Inception AI · Proprietary
-	
-1306
-±14
-	1,948	$0.25 / $0.75	128K
-
-275
-	
-262
-282
+265
+286
 	
 mistral-large-2411
 Mistral · MRL
@@ -3404,34 +3428,46 @@ Mistral · MRL
 ±4
 	28,073	$2 / $6	128K
 
-276
+278
 	
-260
-284
+250
+297
+	
+mercury
+Inception AI · Proprietary
+	
+1305
+±14
+	1,949	$0.25 / $0.75	128K
+
+279
+	
+263
+287
 	
 magistral-medium-2506
 Mistral · Proprietary
 	
 1305
 ±6
-	11,435	$2 / $5	40K
+	11,432	$2 / $5	40K
 
-277
+280
 	
-253
-291
+259
+294
 	
 granite-4.1-8b
 IBM · Apache 2.0
 	
-1305
+1304
 ±10
-	4,166	$0.05 / $0.10	131.1K
+	4,161	$0.05 / $0.10	131.1K
 
-278
+281
 	
-258
-291
+261
+294
 	
 gemma-3-4b-it
 Google · Gemma
@@ -3440,22 +3476,22 @@ Google · Gemma
 ±9
 	4,171	$0.05 / $0.10	131.1K
 
-279
+282
 	
-267
-284
+270
+287
 	
 mistral-small-3.1-24b-instruct-2503
 Mistral · Apache 2.0
 	
 1303
 ±5
-	32,556	$0.10 / $0.30	32K
+	32,551	$0.10 / $0.30	32K
 
-280
+283
 	
-267
-284
+270
+287
 	
 qwen2.5-72b-instruct
 Alibaba · Qwen
@@ -3464,10 +3500,10 @@ Alibaba · Qwen
 ±4
 	39,406	$1.20 / $1.20	N/A
 
-281
+284
 	
-267
-295
+270
+298
 	
 llama-3.1-nemotron-70b-instruct
 Nvidia · Llama 3.1
@@ -3476,22 +3512,22 @@ Nvidia · Llama 3.1
 ±8
 	7,140	$1.20 / $1.20	131.1K
 
-282
+285
 	
-269
-297
+272
+300
 	
 hunyuan-large-vision
 Tencent · Proprietary
 	
 1294
 ±9
-	5,250	N/A	N/A
+	5,248	N/A	N/A
 
-283
+286
 	
-278
-295
+281
+298
 	
 llama-3.1-70b-instruct
 Meta · Llama 3.1 Community
@@ -3500,10 +3536,10 @@ Meta · Llama 3.1 Community
 ±4
 	55,240	$0.40 / $0.40	131.1K
 
-284
+287
 	
-278
-296
+281
+299
 	
 amazon-nova-pro-v1.0
 Amazon · Proprietary
@@ -3512,10 +3548,22 @@ Amazon · Proprietary
 ±5
 	24,745	$0.80 / $3.20	300K
 
-285
+288
 	
-280
-296
+274
+308
+	
+granite-4.2-3b
+IBM · Apache 2.0
+	
+1290
+±12
+	3,247	N/A	N/A
+
+289
+	
+283
+299
 	
 gemma-2-27b-it
 Google · Gemma license
@@ -3524,10 +3572,10 @@ Google · Gemma license
 ±3
 	75,754	$0.65 / $0.65	8.2K
 
-286
+290
 	
-278
-299
+281
+302
 	
 jamba-1.5-large
 Jamba Open
@@ -3536,22 +3584,22 @@ Jamba Open
 ±7
 	8,662	$2 / $8	256K
 
-287
+291
 	
-273
-305
+277
+308
 	
-granite-4.2-3b
+granite-4.2-8b
 IBM · Apache 2.0
 	
-1289
-±12
-	3,266	N/A	N/A
+1288
+±11
+	3,237	$0.06 / $0.25	131.1K
 
-288
+292
 	
-278
-299
+281
+302
 	
 reka-core-20240904
 Proprietary
@@ -3560,10 +3608,10 @@ Proprietary
 ±7
 	7,312	N/A	N/A
 
-289
+293
 	
-280
-297
+283
+300
 	
 gpt-4-0314
 OpenAI · Proprietary
@@ -3572,34 +3620,22 @@ OpenAI · Proprietary
 ±5
 	54,173	$30 / $60	8.2K
 
-290
+294
 	
-274
-305
-	
-granite-4.2-8b
-IBM · Apache 2.0
-	
-1288
-±11
-	3,255	$0.06 / $0.25	131.1K
-
-291
-	
-278
-305
+281
+308
 	
 ibm-granite-h-small
 IBM · Apache 2.0
 	
 1287
 ±8
-	5,581	N/A	N/A
+	5,576	N/A	N/A
 
-292
+295
 	
-278
-305
+281
+308
 	
 llama-3.1-nemotron-51b-instruct
 Nvidia · Llama 3.1
@@ -3608,22 +3644,22 @@ Nvidia · Llama 3.1
 ±10
 	3,749	N/A	N/A
 
-293
+296
 	
-281
-299
+284
+302
 	
 gemini-1.5-flash-001
 Google · Proprietary
 	
-1287
+1286
 ±5
 	62,833	$0.07 / $0.30	1M
 
-294
+297
 	
-280
-304
+283
+307
 	
 olmo-3.1-32b-think
 Ai2 · Apache 2.0
@@ -3632,10 +3668,10 @@ Ai2 · Apache 2.0
 ±7
 	8,278	$0.15 / $0.50	65.5K
 
-295
+298
 	
-278
-305
+281
+308
 	
 llama-3.1-tulu-3-70b
 Ai2 · Llama 3.1
@@ -3644,10 +3680,10 @@ Ai2 · Llama 3.1
 ±10
 	2,846	N/A	N/A
 
-296
+299
 	
-285
-305
+288
+308
 	
 claude-3-sonnet-20240229
 Anthropic · Proprietary
@@ -3656,10 +3692,10 @@ Anthropic · Proprietary
 ±4
 	109,284	$3 / $15	200K
 
-297
+300
 	
-283
-305
+286
+308
 	
 gemma-2-9b-it-simpo
 MIT
@@ -3668,10 +3704,10 @@ MIT
 ±7
 	10,072	$0.03 / $0.09	8.2K
 
-298
+301
 	
-287
-306
+290
+309
 	
 nemotron-4-340b-instruct
 Nvidia · NVIDIA Open Model
@@ -3680,22 +3716,22 @@ Nvidia · NVIDIA Open Model
 ±5
 	19,659	N/A	N/A
 
-299
+302
 	
-290
-305
+293
+308
 	
 llama-3-70b-instruct
 Meta · Llama 3 Community
 	
-1276
+1277
 ±4
 	156,876	$0.51 / $0.74	8.2K
 
-300
+303
 	
-287
-308
+290
+311
 	
 command-r-plus-08-2024
 Cohere · CC-BY-NC-4.0
@@ -3704,10 +3740,10 @@ Cohere · CC-BY-NC-4.0
 ±7
 	9,866	$2.50 / $10	128K
 
-301
+304
 	
-290
-306
+293
+309
 	
 gpt-4-0613
 OpenAI · Proprietary
@@ -3716,10 +3752,10 @@ OpenAI · Proprietary
 ±4
 	88,723	$30 / $60	8.2K
 
-302
+305
 	
-290
-308
+293
+311
 	
 mistral-small-24b-instruct-2501
 Mistral · Apache 2.0
@@ -3728,10 +3764,10 @@ Mistral · Apache 2.0
 ±6
 	14,681	$0.05 / $0.08	32.8K
 
-303
+306
 	
-290
-309
+293
+312
 	
 glm-4-0520
 Z.ai · Proprietary
@@ -3740,10 +3776,10 @@ Z.ai · Proprietary
 ±7
 	9,788	N/A	N/A
 
-304
+307
 	
-290
-311
+293
+314
 	
 reka-flash-20240904
 Proprietary
@@ -3752,10 +3788,10 @@ Proprietary
 ±7
 	7,536	N/A	N/A
 
-305
+308
 	
-291
-313
+294
+316
 	
 qwen2.5-coder-32b-instruct
 Alibaba · Apache 2.0
@@ -3764,10 +3800,10 @@ Alibaba · Apache 2.0
 ±8
 	5,432	$0.87 / $0.87	32K
 
-306
+309
 	
-299
-314
+302
+317
 	
 c4ai-aya-expanse-32b
 Cohere · CC-BY-NC-4.0
@@ -3776,10 +3812,10 @@ Cohere · CC-BY-NC-4.0
 ±5
 	27,124	$0.50 / $1.50	128K
 
-307
+310
 	
-301
-312
+304
+315
 	
 gemma-2-9b-it
 Google · Gemma license
@@ -3788,10 +3824,10 @@ Google · Gemma license
 ±4
 	54,611	$0.03 / $0.09	8.2K
 
-308
+311
 	
-301
-315
+304
+318
 	
 deepseek-coder-v2
 DeepSeek · DeepSeek License
@@ -3800,10 +3836,10 @@ DeepSeek · DeepSeek License
 ±6
 	15,147	$0.14 / $0.28	128K
 
-309
+312
 	
-303
-316
+306
+319
 	
 qwen2-72b-instruct
 Alibaba · Qianwen LICENSE
@@ -3812,10 +3848,10 @@ Alibaba · Qianwen LICENSE
 ±5
 	37,325	$0.90 / $0.90	32.8K
 
-310
+313
 	
-304
-315
+307
+318
 	
 command-r-plus
 Cohere · CC-BY-NC-4.0
@@ -3824,10 +3860,10 @@ Cohere · CC-BY-NC-4.0
 ±4
 	77,554	$3 / $15	128K
 
-311
+314
 	
-305
-315
+308
+318
 	
 claude-3-haiku-20240307
 Anthropic · Proprietary
@@ -3836,10 +3872,10 @@ Anthropic · Proprietary
 ±4
 	117,701	$0.25 / $1.25	200K
 
-312
+315
 	
-304
-316
+307
+319
 	
 amazon-nova-lite-v1.0
 Amazon · Proprietary
@@ -3848,10 +3884,10 @@ Amazon · Proprietary
 ±5
 	19,372	$0.06 / $0.24	300K
 
-313
-	
-306
 316
+	
+309
+319
 	
 gemini-1.5-flash-8b-001
 Google · Proprietary
@@ -3860,10 +3896,10 @@ Google · Proprietary
 ±4
 	35,558	$0.07 / $0.30	1M
 
-314
+317
 	
-308
-316
+311
+319
 	
 phi-4
 Microsoft · MIT
@@ -3872,10 +3908,10 @@ Microsoft · MIT
 ±5
 	24,126	$0.07 / $0.14	16.4K
 
-315
+318
 	
-307
-323
+310
+326
 	
 olmo-2-0325-32b-instruct
 Ai2 · Apache-2.0
@@ -3884,10 +3920,10 @@ Ai2 · Apache-2.0
 ±11
 	3,334	$0.05 / $0.20	128K
 
-316
+319
 	
-311
-322
+314
+325
 	
 command-r-08-2024
 Cohere · CC-BY-NC-4.0
@@ -3896,10 +3932,10 @@ Cohere · CC-BY-NC-4.0
 ±7
 	10,140	$0.15 / $0.60	128K
 
-317
+320
 	
-315
-325
+318
+328
 	
 mistral-large-2402
 Mistral · Proprietary
@@ -3908,10 +3944,10 @@ Mistral · Proprietary
 ±5
 	62,436	$8 / $24	32K
 
-318
+321
 	
-315
-325
+318
+328
 	
 amazon-nova-micro-v1.0
 Amazon · Proprietary
@@ -3920,10 +3956,10 @@ Amazon · Proprietary
 ±5
 	19,364	$0.04 / $0.14	128K
 
-319
+322
 	
-315
-328
+318
+331
 	
 jamba-1.5-mini
 Jamba Open
@@ -3932,10 +3968,10 @@ Jamba Open
 ±7
 	8,858	$0.20 / $0.40	256K
 
-320
+323
 	
-315
-332
+318
+335
 	
 ministral-8b-2410
 Mistral · MRL
@@ -3944,10 +3980,10 @@ Mistral · MRL
 ±9
 	4,781	$0.10 / $0.10	131.1K
 
-321
+324
 	
-315
-332
+318
+335
 	
 gemini-pro-dev-api
 Google · Proprietary
@@ -3956,10 +3992,10 @@ Google · Proprietary
 ±7
 	18,354	$0.35 / $1.05	32.8K
 
-322
+325
 	
-317
-332
+320
+335
 	
 qwen1.5-110b-chat
 Alibaba · Qianwen LICENSE
@@ -3968,10 +4004,10 @@ Alibaba · Qianwen LICENSE
 ±6
 	26,195	N/A	N/A
 
-323
+326
 	
-316
-334
+319
+337
 	
 reka-flash-21b-20240226-online
 Proprietary
@@ -3980,10 +4016,10 @@ Proprietary
 ±7
 	15,450	N/A	N/A
 
-324
+327
 	
-317
-332
+320
+335
 	
 qwen1.5-72b-chat
 Alibaba · Qianwen LICENSE
@@ -3992,10 +4028,10 @@ Alibaba · Qianwen LICENSE
 ±5
 	39,302	N/A	N/A
 
-325
+328
 	
-315
-335
+318
+338
 	
 hunyuan-standard-256k
 Tencent · Proprietary
@@ -4004,10 +4040,10 @@ Tencent · Proprietary
 ±12
 	2,728	N/A	N/A
 
-326
+329
 	
-319
-334
+322
+337
 	
 mixtral-8x22b-instruct-v0.1
 Mistral · Apache 2.0
@@ -4016,10 +4052,10 @@ Mistral · Apache 2.0
 ±5
 	51,416	$0.90 / $0.90	65.5K
 
-327
+330
 	
-320
-335
+323
+338
 	
 command-r
 Cohere · CC-BY-NC-4.0
@@ -4028,10 +4064,10 @@ Cohere · CC-BY-NC-4.0
 ±5
 	54,036	$0.15 / $0.60	128K
 
-328
+331
 	
-319
-335
+322
+338
 	
 reka-flash-21b-20240226
 Proprietary
@@ -4040,10 +4076,10 @@ Proprietary
 ±6
 	24,806	N/A	N/A
 
-329
+332
 	
-320
-335
+323
+338
 	
 gpt-3.5-turbo-0125
 OpenAI · Proprietary
@@ -4052,10 +4088,10 @@ OpenAI · Proprietary
 ±5
 	66,207	$0.50 / $1.50	16.4K
 
-330
+333
 	
-324
-335
+327
+338
 	
 llama-3-8b-instruct
 Meta · Llama 3 Community
@@ -4064,10 +4100,10 @@ Meta · Llama 3 Community
 ±4
 	104,642	$0.14 / $0.14	8.2K
 
-331
+334
 	
-319
-339
+322
+342
 	
 gemini-pro
 Google · Proprietary
@@ -4076,10 +4112,10 @@ Google · Proprietary
 ±12
 	6,390	$0.35 / $1.05	32.8K
 
-332
+335
 	
-320
-337
+323
+340
 	
 c4ai-aya-expanse-8b
 Cohere · CC-BY-NC-4.0
@@ -4088,10 +4124,10 @@ Cohere · CC-BY-NC-4.0
 ±7
 	9,818	N/A	N/A
 
-333
+336
 	
-324
-337
+327
+340
 	
 mistral-medium
 Mistral · Proprietary
@@ -4100,10 +4136,10 @@ Mistral · Proprietary
 ±5
 	34,550	$1.50 / $7.50	262.1K
 
-334
+337
 	
-320
-340
+323
+343
 	
 llama-3.1-tulu-3-8b
 Ai2 · Llama 3.1
@@ -4112,10 +4148,10 @@ Ai2 · Llama 3.1
 ±11
 	2,896	N/A	N/A
 
-335
+338
 	
-326
-342
+329
+345
 	
 zephyr-orpo-141b-A35b-v0.1
 Apache 2.0
@@ -4124,10 +4160,10 @@ Apache 2.0
 ±11
 	4,652	N/A	N/A
 
-336
+339
 	
-331
-340
+334
+343
 	
 yi-1.5-34b-chat
 Apache-2.0
@@ -4136,10 +4172,10 @@ Apache-2.0
 ±5
 	24,146	N/A	N/A
 
-337
-	
-333
 340
+	
+336
+343
 	
 llama-3.1-8b-instruct
 Meta · Llama 3.1 Community
@@ -4148,10 +4184,10 @@ Meta · Llama 3.1 Community
 ±4
 	49,605	$0.05 / $0.08	131.1K
 
-338
+341
 	
-331
-346
+334
+349
 	
 granite-3.1-8b-instruct
 IBM · Apache 2.0
@@ -4160,10 +4196,10 @@ IBM · Apache 2.0
 ±11
 	3,090	N/A	N/A
 
-339
+342
 	
-333
-347
+336
+350
 	
 gpt-3.5-turbo-1106
 OpenAI · Proprietary
@@ -4172,10 +4208,10 @@ OpenAI · Proprietary
 ±9
 	16,619	$1 / $2	16.4K
 
-340
+343
 	
-334
-346
+337
+349
 	
 qwen1.5-32b-chat
 Alibaba · Qianwen LICENSE
@@ -4184,10 +4220,10 @@ Alibaba · Qianwen LICENSE
 ±6
 	21,741	N/A	N/A
 
-341
+344
 	
-337
-347
+340
+350
 	
 gemma-2-2b-it
 Google · Gemma license
@@ -4196,10 +4232,10 @@ Google · Gemma license
 ±4
 	46,616	N/A	N/A
 
-342
+345
 	
-337
-348
+340
+351
 	
 phi-3-medium-4k-instruct
 Microsoft · MIT
@@ -4208,10 +4244,10 @@ Microsoft · MIT
 ±5
 	25,055	$0.17 / $0.68	N/A
 
-343
+346
 	
-338
-348
+341
+351
 	
 mixtral-8x7b-instruct-v0.1
 Mistral · Apache 2.0
@@ -4220,10 +4256,10 @@ Mistral · Apache 2.0
 ±4
 	73,503	$0.63 / $0.63	32K
 
-344
+347
 	
-338
-353
+341
+356
 	
 dbrx-instruct-preview
 DBRX LICENSE
@@ -4232,10 +4268,10 @@ DBRX LICENSE
 ±6
 	32,191	$0.60 / $0.60	32.8K
 
-345
+348
 	
-338
-357
+341
+360
 	
 qwen1.5-14b-chat
 Alibaba · Qianwen LICENSE
@@ -4244,10 +4280,10 @@ Alibaba · Qianwen LICENSE
 ±7
 	17,839	$0.30 / $0.30	N/A
 
-346
+349
 	
-338
-357
+341
+360
 	
 internlm2_5-20b-chat
 Other
@@ -4256,10 +4292,10 @@ Other
 ±7
 	9,901	$0 / $0	32.8K
 
-347
+350
 	
-340
-364
+343
+367
 	
 deepseek-llm-67b-chat
 DeepSeek · DeepSeek License
@@ -4268,10 +4304,10 @@ DeepSeek · DeepSeek License
 ±11
 	4,932	N/A	N/A
 
-348
+351
 	
-342
-363
+345
+366
 	
 wizardlm-70b
 Microsoft · Llama 2 Community
@@ -4280,10 +4316,10 @@ Microsoft · Llama 2 Community
 ±9
 	8,214	N/A	N/A
 
-349
+352
 	
-344
-360
+347
+363
 	
 yi-34b-chat
 Yi License
@@ -4292,10 +4328,10 @@ Yi License
 ±7
 	15,483	$0.90 / $0.90	4.1K
 
-350
+353
 	
-344
-364
+347
+367
 	
 granite-3.0-8b-instruct
 IBM · Apache 2.0
@@ -4304,10 +4340,10 @@ IBM · Apache 2.0
 ±9
 	6,638	N/A	N/A
 
-351
+354
 	
-344
-364
+347
+367
 	
 openchat-3.5
 Apache-2.0
@@ -4316,10 +4352,10 @@ Apache-2.0
 ±10
 	7,968	$0.20 / $0.20	N/A
 
-352
+355
 	
-344
-363
+347
+366
 	
 openchat-3.5-0106
 Apache-2.0
@@ -4328,10 +4364,10 @@ Apache-2.0
 ±8
 	12,637	N/A	N/A
 
-353
+356
 	
-345
-360
+348
+363
 	
 gemma-1.1-7b-it
 Google · Gemma license
@@ -4340,10 +4376,10 @@ Google · Gemma license
 ±6
 	23,893	$0.03 / $0.09	8.2K
 
-354
+357
 	
-345
-364
+348
+367
 	
 snowflake-arctic-instruct
 Apache 2.0
@@ -4352,10 +4388,10 @@ Apache 2.0
 ±6
 	32,832	N/A	N/A
 
-355
+358
 	
-344
-364
+347
+367
 	
 granite-3.1-2b-instruct
 IBM · Apache 2.0
@@ -4364,10 +4400,10 @@ IBM · Apache 2.0
 ±11
 	3,188	N/A	N/A
 
-356
+359
 	
-345
-364
+348
+367
 	
 tulu-2-dpo-70b
 AI2 ImpACT Low-risk
@@ -4376,10 +4412,10 @@ AI2 ImpACT Low-risk
 ±10
 	6,535	N/A	N/A
 
-357
+360
 	
-345
-368
+348
+371
 	
 openhermes-2.5-mistral-7b
 Apache-2.0
@@ -4388,10 +4424,10 @@ Apache-2.0
 ±10
 	5,006	$0.17 / $0.17	N/A
 
-358
+361
 	
-347
-366
+350
+369
 	
 vicuna-33b
 Non-commercial
@@ -4400,10 +4436,10 @@ Non-commercial
 ±6
 	22,479	$0 / $0	2K
 
-359
+362
 	
-347
-368
+350
+371
 	
 phi-3-small-8k-instruct
 Microsoft · MIT
@@ -4412,10 +4448,10 @@ Microsoft · MIT
 ±6
 	17,766	$0.15 / $0.60	N/A
 
-360
+363
 	
-347
-370
+350
+373
 	
 starling-lm-7b-beta
 Apache-2.0
@@ -4424,10 +4460,10 @@ Apache-2.0
 ±7
 	16,056	N/A	N/A
 
-361
+364
 	
-349
-368
+352
+371
 	
 llama-2-70b-chat
 Meta · Llama 2 Community
@@ -4436,10 +4472,10 @@ Meta · Llama 2 Community
 ±5
 	38,492	$0.70 / $2.80	4.1K
 
-362
+365
 	
-349
-371
+352
+374
 	
 starling-lm-7b-alpha
 CC-BY-NC-4.0
@@ -4448,10 +4484,10 @@ CC-BY-NC-4.0
 ±8
 	10,224	N/A	N/A
 
-363
+366
 	
-351
-371
+354
+374
 	
 llama-3.2-3b-instruct
 Meta · Llama 3.2
@@ -4460,10 +4496,10 @@ Meta · Llama 3.2
 ±8
 	7,936	$0.05 / $0.33	131.1K
 
-364
+367
 	
-349
-374
+352
+377
 	
 nous-hermes-2-mixtral-8x7b-dpo
 Apache-2.0
@@ -4472,10 +4508,10 @@ Apache-2.0
 ±12
 	3,777	$0.90 / $0.90	N/A
 
-365
+368
 	
-361
-377
+364
+380
 	
 granite-3.0-2b-instruct
 IBM · Apache 2.0
@@ -4484,10 +4520,10 @@ IBM · Apache 2.0
 ±8
 	6,837	N/A	N/A
 
-366
+369
 	
-357
-382
+360
+385
 	
 llama2-70b-steerlm-chat
 Nvidia · Llama 2 Community
@@ -4496,10 +4532,10 @@ Nvidia · Llama 2 Community
 ±13
 	3,585	N/A	N/A
 
-367
+370
 	
-358
-381
+361
+384
 	
 qwq-32b-preview
 Alibaba · Apache 2.0
@@ -4508,10 +4544,10 @@ Alibaba · Apache 2.0
 ±11
 	3,231	$0.50 / $1	16.4K
 
-368
+371
 	
-358
-384
+361
+387
 	
 solar-10.7b-instruct-v1.0
 CC-BY-NC-4.0
@@ -4520,10 +4556,10 @@ CC-BY-NC-4.0
 ±13
 	4,155	$0.30 / $0.30	N/A
 
-369
+372
 	
-357
-386
+360
+389
 	
 dolphin-2.2.1-mistral-7b
 Apache-2.0
@@ -4532,10 +4568,10 @@ Apache-2.0
 ±15
 	1,679	$0.50 / $0.50	16.4K
 
-370
+373
 	
-362
-384
+365
+387
 	
 mpt-30b-chat
 CC-BY-NC-SA-4.0
@@ -4544,10 +4580,10 @@ CC-BY-NC-SA-4.0
 ±12
 	2,572	N/A	N/A
 
-371
+374
 	
-364
-382
+367
+385
 	
 wizardlm-13b
 Microsoft · Llama 2 Community
@@ -4556,10 +4592,10 @@ Microsoft · Llama 2 Community
 ±9
 	7,044	$0.30 / $0.30	N/A
 
-372
+375
 	
-364
-381
+367
+384
 	
 mistral-7b-instruct-v0.2
 Mistral · Apache-2.0
@@ -4568,10 +4604,10 @@ Mistral · Apache-2.0
 ±7
 	19,402	$0.20 / $0.20	32.8K
 
-373
+376
 	
-361
-388
+364
+391
 	
 falcon-180b-chat
 Falcon-180B TII License
@@ -4580,10 +4616,10 @@ Falcon-180B TII License
 ±17
 	1,295	N/A	N/A
 
-374
+377
 	
-364
-387
+367
+390
 	
 qwen1.5-7b-chat
 Alibaba · Qianwen LICENSE
@@ -4592,10 +4628,10 @@ Alibaba · Qianwen LICENSE
 ±10
 	4,737	$0.20 / $0.20	N/A
 
-375
+378
 	
-365
-386
+368
+389
 	
 phi-3-mini-4k-instruct-june-2024
 Microsoft · MIT
@@ -4604,22 +4640,22 @@ Microsoft · MIT
 ±6
 	12,297	$0.13 / $0.52	4.1K
 
-376
+379
 	
-366
-386
+369
+389
 	
 vicuna-13b
 Llama 2 Community
 	
-1141
+1142
 ±7
 	19,367	$0.30 / $0.30	N/A
 
-377
+380
 	
-366
-386
+369
+389
 	
 llama-2-13b-chat
 Meta · Llama 2 Community
@@ -4628,10 +4664,10 @@ Meta · Llama 2 Community
 ±7
 	19,174	$0.25 / $0.25	4.1K
 
-378
+381
 	
-365
-389
+368
+392
 	
 qwen-14b-chat
 Alibaba · Qianwen LICENSE
@@ -4640,10 +4676,10 @@ Alibaba · Qianwen LICENSE
 ±11
 	4,964	N/A	N/A
 
-379
+382
 	
-365
-388
+368
+391
 	
 palm-2
 Google · Proprietary
@@ -4652,10 +4688,10 @@ Google · Proprietary
 ±9
 	8,554	$0.50 / $0.50	25.8K
 
-380
+383
 	
-366
-389
+369
+392
 	
 gemma-7b-it
 Google · Gemma license
@@ -4664,10 +4700,10 @@ Google · Gemma license
 ±9
 	8,925	$0.05 / $0.08	8.2K
 
-381
+384
 	
-366
-389
+369
+392
 	
 codellama-34b-instruct
 Meta · Llama 2 Community
@@ -4676,10 +4712,10 @@ Meta · Llama 2 Community
 ±9
 	7,366	$0.35 / $1.40	16.4K
 
-382
+385
 	
-370
-391
+373
+394
 	
 zephyr-7b-beta
 MIT
@@ -4688,10 +4724,10 @@ MIT
 ±9
 	11,118	$0.15 / $0.15	16.4K
 
-383
+386
 	
-372
-391
+375
+394
 	
 phi-3-mini-128k-instruct
 Microsoft · MIT
@@ -4700,10 +4736,10 @@ Microsoft · MIT
 ±7
 	20,685	$0.13 / $0.52	N/A
 
-384
+387
 	
-376
-391
+379
+394
 	
 phi-3-mini-4k-instruct
 Microsoft · MIT
@@ -4712,10 +4748,10 @@ Microsoft · MIT
 ±6
 	20,118	$0.13 / $0.52	N/A
 
-385
+388
 	
-370
-393
+373
+396
 	
 guanaco-33b
 Non-commercial
@@ -4724,10 +4760,10 @@ Non-commercial
 ±12
 	2,921	N/A	N/A
 
-386
+389
 	
-368
-394
+371
+397
 	
 zephyr-7b-alpha
 MIT
@@ -4736,10 +4772,10 @@ MIT
 ±16
 	1,785	N/A	N/A
 
-387
+390
 	
-377
-394
+380
+397
 	
 stripedhyena-nous-7b
 Apache 2.0
@@ -4748,10 +4784,10 @@ Apache 2.0
 ±11
 	5,182	$0.20 / $0.20	N/A
 
-388
+391
 	
-372
-395
+375
+398
 	
 codellama-70b-instruct
 Meta · Llama 2 Community
@@ -4760,10 +4796,10 @@ Meta · Llama 2 Community
 ±18
 	1,143	$0.70 / $2.80	16.4K
 
-389
+392
 	
-382
-394
+385
+397
 	
 gemma-1.1-2b-it
 Google · Gemma license
@@ -4772,10 +4808,10 @@ Google · Gemma license
 ±8
 	10,854	N/A	N/A
 
-390
+393
 	
-382
-394
+385
+397
 	
 vicuna-7b
 Llama 2 Community
@@ -4784,10 +4820,10 @@ Llama 2 Community
 ±9
 	6,923	$0.20 / $0.20	N/A
 
-391
+394
 	
-379
-396
+382
+399
 	
 smollm2-1.7b-instruct
 Apache 2.0
@@ -4796,10 +4832,10 @@ Apache 2.0
 ±14
 	2,199	N/A	N/A
 
-392
-	
-385
 395
+	
+388
+398
 	
 llama-3.2-1b-instruct
 Meta · Llama 3.2
@@ -4808,10 +4844,10 @@ Meta · Llama 3.2
 ±8
 	8,045	$0.03 / $0.20	60K
 
-393
+396
 	
-385
-395
+388
+398
 	
 mistral-7b-instruct
 Mistral · Apache 2.0
@@ -4820,10 +4856,10 @@ Mistral · Apache 2.0
 ±9
 	8,977	$0.07 / $0.28	4.1K
 
-394
+397
 	
-386
-395
+389
+398
 	
 llama-2-7b-chat
 Meta · Llama 2 Community
@@ -4832,10 +4868,10 @@ Meta · Llama 2 Community
 ±7
 	14,148	$0.15 / $0.15	4.1K
 
-395
-	
-390
 398
+	
+393
+401
 	
 gemma-2b-it
 Google · Gemma license
@@ -4844,10 +4880,10 @@ Google · Gemma license
 ±11
 	4,780	$0.10 / $0.10	N/A
 
-396
+399
 	
-394
-398
+397
+401
 	
 qwen1.5-4b-chat
 Alibaba · Qianwen LICENSE
@@ -4856,10 +4892,10 @@ Alibaba · Qianwen LICENSE
 ±9
 	7,597	$0.10 / $0.10	N/A
 
-397
+400
 	
-395
-402
+398
+405
 	
 olmo-7b-instruct
 Ai2 · Apache-2.0
@@ -4868,10 +4904,10 @@ Ai2 · Apache-2.0
 ±11
 	6,328	$0.20 / $0.20	N/A
 
-398
+401
 	
-397
-402
+400
+405
 	
 koala-13b
 Non-commercial
@@ -4880,10 +4916,10 @@ Non-commercial
 ±10
 	6,965	N/A	N/A
 
-399
-	
-397
 402
+	
+400
+405
 	
 alpaca-13b
 Non-commercial
@@ -4892,10 +4928,10 @@ Non-commercial
 ±11
 	5,745	N/A	N/A
 
-400
-	
-395
 403
+	
+398
+406
 	
 gpt4all-13b-snoozy
 Non-commercial
@@ -4904,10 +4940,10 @@ Non-commercial
 ±15
 	1,743	N/A	N/A
 
-401
+404
 	
-397
-403
+400
+406
 	
 mpt-7b-chat
 CC-BY-NC-SA-4.0
@@ -4916,22 +4952,22 @@ CC-BY-NC-SA-4.0
 ±12
 	3,924	N/A	N/A
 
-402
+405
 	
-397
-403
+400
+406
 	
 chatglm3-6b
 Apache-2.0
 	
-1056
+1057
 ±12
 	4,658	N/A	N/A
 
-403
+406
 	
-400
-405
+403
+408
 	
 RWKV-4-Raven-14B
 Apache 2.0
@@ -4940,10 +4976,10 @@ Apache 2.0
 ±11
 	4,845	N/A	N/A
 
-404
+407
 	
-403
-405
+406
+408
 	
 chatglm2-6b
 Apache-2.0
@@ -4952,10 +4988,10 @@ Apache-2.0
 ±14
 	2,658	N/A	N/A
 
-405
+408
 	
-403
-405
+406
+408
 	
 oasst-pythia-12b
 Apache 2.0
@@ -4964,22 +5000,22 @@ Apache 2.0
 ±11
 	6,310	N/A	N/A
 
-406
-	
-406
 409
+	
+409
+412
 	
 chatglm-6b
 Non-commercial
 	
 996
-±13
+±12
 	4,914	N/A	N/A
 
-407
+410
 	
-406
 409
+412
 	
 fastchat-t5-3b
 Apache 2.0
@@ -4988,10 +5024,10 @@ Apache 2.0
 ±12
 	4,203	N/A	N/A
 
-408
+411
 	
-406
 409
+412
 	
 dolly-v2-12b
 MIT
@@ -5000,10 +5036,10 @@ MIT
 ±13
 	3,412	N/A	N/A
 
-409
+412
 	
-406
-410
+409
+413
 	
 llama-13b
 Meta · Non-commercial
@@ -5012,10 +5048,10 @@ Meta · Non-commercial
 ±16
 	2,391	$0.23 / $0.23	N/A
 
-410
+413
 	
-409
-410
+412
+413
 	
 stablelm-tuned-alpha-7b
 CC-BY-NC-SA-4.0
@@ -5026,9 +5062,955 @@ CC-BY-NC-SA-4.0
 View all
 Default Leaderboard Plots
 Confidence Intervals on Arena Score
+gemini-4-argon-high
+claude-opus-4-6-high
+claude-fable-5-high
+claude-opus-5.5-high
+claude-opus-4-7-high
+claude-fable-5.1-max
+claude-opus-4-6
+gemini-3.8-flash-high
+muse-spark-1.3-max
+claude-opus-4-7
+muse-spark-1.2 (xHigh)
+muse-spark-1.1
+claude-opus-5-high
+claude-opus-5-max
+muse-spark
+kimi-k3-max
+gemini-3.7-flash-high
+gemini-3.1-pro-preview
+gemini-3-pro
+gpt-5.6-sol-xhigh
+1480
+1490
+1500
+1510
+1520
+1530
+Model
+Arena Score
 Fraction of Model A Wins in A vs. B Battles (Ties Excluded)
+0.33
+0.36
+0.43
+0.38
+0.45
+0.50
+0.47
+0.46
+0.42
+0.46
+0.44
+0.51
+0.41
+0.46
+0.0
+0.47
+0.45
+0.48
+0.0
+0.0
+0.0
+0.49
+0.0
+0.0
+0.0
+0.0
+0.45
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.38
+0.0
+0.0
+0.30
+0.46
+0.45
+0.43
+0.46
+0.44
+0.47
+0.48
+0.52
+0.49
+0.36
+0.53
+0.44
+0.40
+0.47
+0.54
+0.47
+0.0
+0.63
+0.52
+0.31
+0.38
+0.51
+0.45
+0.50
+0.50
+0.66
+0.53
+0.41
+0.51
+0.63
+0.48
+0.46
+0.47
+0.0
+0.57
+0.0
+0.53
+0.0
+0.55
+0.51
+0.50
+0.44
+0.54
+0.46
+0.54
+0.46
+0.38
+0.43
+0.49
+0.47
+0.47
+0.49
+0.44
+0.0
+0.0
+0.43
+0.46
+0.0
+0.53
+0.0
+0.42
+0.0
+0.0
+0.52
+0.0
+0.42
+0.0
+0.0
+0.55
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.0
+0.53
+0.0
+0.0
+0.43
+0.55
+0.54
+0.47
+0.58
+0.41
+0.62
+0.51
+0.51
+0.57
+0.63
+0.57
+0.51
+0.0
+0.0
+0.56
+0.53
+0.60
+0.0
+0.54
+0.46
+0.50
+0.52
+0.47
+0.54
+0.50
+0.50
+0.51
+0.53
+0.52
+0.58
+0.58
+0.0
+0.49
+0.0
+0.51
+0.54
+0.56
+0.0
+0.59
+0.42
+0.44
+0.40
+0.58
+0.40
+0.45
+0.46
+0.45
+0.46
+0.47
+0.43
+0.0
+0.42
+0.43
+0.0
+0.53
+0.52
+0.47
+0.0
+0.49
+0.36
+0.47
+0.63
+0.50
+0.40
+0.67
+0.48
+0.35
+0.43
+0.43
+0.0
+0.57
+0.42
+0.37
+0.0
+0.53
+0.38
+0.64
+0.0
+0.56
+0.33
+0.47
+0.47
+0.29
+0.48
+0.29
+0.48
+0.48
+0.60
+0.0
+0.57
+0.53
+0.48
+0.43
+0.45
+0.51
+0.49
+0.51
+0.0
+0.54
+0.43
+0.57
+0.55
+0.51
+0.44
+0.48
+0.54
+0.56
+0.0
+0.40
+0.57
+0.54
+0.47
+0.49
+0.0
+0.57
+0.59
+0.48
+0.0
+0.58
+0.42
+0.50
+0.53
+0.49
+0.64
+0.50
+0.58
+0.0
+0.44
+0.52
+0.65
+0.55
+0.49
+0.49
+0.0
+0.62
+0.47
+0.52
+0.0
+0.54
+0.38
+0.46
+0.49
+0.17
+0.53
+0.57
+0.0
+0.42
+0.46
+0.52
+0.52
+0.54
+0.50
+0.38
+0.58
+0.54
+0.34
+0.53
+0.55
+0.53
+0.29
+0.50
+0.60
+0.50
+0.60
+0.0
+0.43
+0.50
+0.52
+0.71
+0.33
+0.55
+0.50
+0.59
+0.0
+0.46
+0.50
+0.56
+0.0
+0.50
+0.42
+0.45
+0.52
+0.40
+0.0
+0.40
+0.47
+0.36
+0.56
+0.52
+0.60
+0.60
+0.46
+0.42
+0.48
+0.54
+0.50
+0.54
+0.0
+0.55
+0.53
+0.60
+0.50
+0.0
+0.60
+0.50
+0.83
+0.51
+0.49
+0.71
+0.50
+0.42
+0.53
+0.53
+0.0
+0.46
+0.55
+0.57
+0.0
+0.62
+0.42
+0.47
+0.0
+0.50
+0.48
+0.40
+0.51
+0.47
+0.45
+0.53
+0.37
+0.60
+0.48
+0.46
+0.0
+0.56
+0.49
+0.55
+0.0
+0.57
+0.29
+0.0
+0.53
+0.40
+0.55
+0.50
+0.54
+0.50
+0.43
+0.53
+0.53
+0.56
+0.50
+0.45
+0.58
+0.50
+0.62
+0.54
+0.51
+0.64
+0.0
+0.71
+0.58
+0.47
+0.58
+0.71
+0.62
+0.58
+0.57
+0.67
+0.64
+0.58
+0.54
+0.57
+0.0
+0.49
+0.69
+0.70
+0.0
+0.67
+gemini-4-argon-high
+claude-opus-4-6-high
+claude-fable-5-high
+claude-opus-5.5-high
+claude-opus-4-7-high
+claude-fable-5.1-max
+claude-opus-4-6
+gemini-3.8-flash-high
+muse-spark-1.3-max
+claude-opus-4-7
+muse-spark-1.2 (xHigh)
+muse-spark-1.1
+claude-opus-5-high
+claude-opus-5-max
+muse-spark
+kimi-k3-max
+gemini-3.7-flash-high
+gemini-3.1-pro-preview
+gemini-3-pro
+gpt-5.6-sol-xhigh
+gpt-5.6-sol-xhigh
+gemini-3-pro
+gemini-3.1-pro-preview
+gemini-3.7-flash-high
+kimi-k3-max
+muse-spark
+claude-opus-5-max
+claude-opus-5-high
+muse-spark-1.1
+muse-spark-1.2 (xHigh)
+claude-opus-4-7
+muse-spark-1.3-max
+gemini-3.8-flash-high
+claude-opus-4-6
+claude-fable-5.1-max
+claude-opus-4-7-high
+claude-opus-5.5-high
+claude-fable-5-high
+claude-opus-4-6-high
+gemini-4-argon-high
+0
+0.2
+0.4
+0.6
+0.8
+1
+Model B
+Model A
 Battle Count for Each Pair of Models (Ties Excluded)
+64
+181
+251
+39
+192
+109
+218
+309
+119
+189
+43
+378
+641
+303
+0
+301
+239
+424
+0
+0
+0
+69
+0
+0
+0
+0
+101
+0
+0
+0
+0
+0
+0
+0
+0
+0
+0
+96
+0
+0
+57
+1104
+505
+35
+970
+145
+1232
+284
+121
+1086
+56
+406
+664
+316
+155
+308
+211
+0
+96
+424
+48
+86
+186
+49
+107
+123
+87
+287
+131
+77
+8
+218
+417
+205
+0
+170
+0
+211
+0
+239
+47
+129
+227
+28
+138
+96
+133
+226
+89
+158
+40
+245
+480
+236
+0
+0
+170
+308
+0
+301
+0
+151
+0
+0
+97
+0
+130
+0
+0
+95
+0
+0
+0
+0
+0
+0
+0
+155
+0
+0
+58
+129
+227
+34
+131
+109
+129
+270
+100
+119
+38
+306
+562
+0
+0
+236
+205
+316
+0
+303
+91
+257
+414
+83
+232
+188
+267
+516
+231
+263
+89
+617
+0
+562
+0
+480
+417
+664
+0
+641
+59
+228
+259
+36
+216
+96
+201
+289
+85
+213
+47
+0
+617
+306
+0
+245
+218
+406
+0
+378
+11
+45
+41
+8
+45
+6
+44
+20
+7
+53
+0
+47
+89
+38
+0
+40
+8
+56
+0
+43
+12
+718
+299
+7
+768
+7
+820
+21
+5
+0
+53
+213
+263
+119
+95
+158
+77
+1086
+0
+189
+51
+7
+106
+35
+9
+86
+13
+222
+0
+5
+7
+85
+231
+100
+0
+89
+131
+121
+0
+119
+43
+12
+253
+82
+11
+128
+33
+0
+222
+21
+20
+289
+516
+270
+0
+226
+287
+284
+0
+309
+34
+830
+304
+6
+712
+7
+0
+33
+13
+820
+44
+201
+267
+129
+130
+133
+87
+1232
+101
+218
+41
+4
+86
+24
+5
+0
+7
+128
+86
+7
+6
+96
+188
+109
+0
+96
+123
+145
+0
+109
+12
+679
+284
+5
+0
+5
+712
+11
+9
+768
+45
+216
+232
+131
+97
+138
+107
+970
+0
+192
+53
+5
+38
+0
+5
+24
+6
+82
+35
+7
+8
+36
+83
+34
+0
+28
+49
+35
+0
+39
+52
+274
+0
+38
+284
+86
+304
+253
+106
+299
+41
+259
+414
+227
+0
+227
+186
+505
+0
+251
+21
+0
+274
+5
+679
+4
+830
+12
+7
+718
+45
+228
+257
+129
+151
+129
+86
+1104
+69
+181
+0
+21
+52
+53
+12
+41
+34
+43
+51
+12
+11
+59
+91
+58
+0
+47
+48
+57
+0
+64
+gemini-4-argon-high
+claude-opus-4-6-high
+claude-fable-5-high
+claude-opus-5.5-high
+claude-opus-4-7-high
+claude-fable-5.1-max
+claude-opus-4-6
+gemini-3.8-flash-high
+muse-spark-1.3-max
+claude-opus-4-7
+muse-spark-1.2 (xHigh)
+muse-spark-1.1
+claude-opus-5-high
+claude-opus-5-max
+muse-spark
+kimi-k3-max
+gemini-3.7-flash-high
+gemini-3.1-pro-preview
+gemini-3-pro
+gpt-5.6-sol-xhigh
+gpt-5.6-sol-xhigh
+gemini-3-pro
+gemini-3.1-pro-preview
+gemini-3.7-flash-high
+kimi-k3-max
+muse-spark
+claude-opus-5-max
+claude-opus-5-high
+muse-spark-1.1
+muse-spark-1.2 (xHigh)
+claude-opus-4-7
+muse-spark-1.3-max
+gemini-3.8-flash-high
+claude-opus-4-6
+claude-fable-5.1-max
+claude-opus-4-7-high
+claude-opus-5.5-high
+claude-fable-5-high
+claude-opus-4-6-high
+gemini-4-argon-high
+0
+500
+1000
+Model B
+Model A
 Average of Win Rates Against Each Opponent (Ties Excluded)
+gemini-4-argon-high
+claude-opus-5.5-high
+claude-opus-5-max
+gemini-3.8-flash-high
+claude-opus-5-high
+muse-spark-1.3-max
+claude-opus-4-6-high
+claude-fable-5.1-max
+gemini-3.7-flash-high
+claude-fable-5-high
+claude-opus-4-7-high
+muse-spark
+muse-spark-1.2 (xHigh)
+claude-opus-4-6
+kimi-k3-max
+gemini-3.1-pro-preview
+claude-opus-4-7
+muse-spark-1.1
+gpt-5.6-sol-xhigh
+gemini-3-pro
+0.0%
+20.0%
+40.0%
+60.0%
+80.0%
 USE CASES
 Chat with AI
 Build Apps & Websites
@@ -5072,3 +6054,5 @@ YouTube
 Discord
 
 © Arena Intelligence 2026
+
+0.0%
