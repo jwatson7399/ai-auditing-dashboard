@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-02",
- "built_at": "2026-10-02T14:22:42+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 106",
- "built_at_et": "10:22 AM",
+ "built_at": "2026-10-02T14:37:32+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 107",
+ "built_at_et": "10:37 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -29917,14 +29917,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -31189,22 +31189,22 @@
      null
     ],
     [
-     "Wan 2.6 Image",
-     77.0,
-     null
-    ],
-    [
      "Krea 2 Large",
      77.0,
      null
     ],
     [
-     "Seedream 4.5",
-     76.5,
+     "Wan 2.6 Image",
+     77.0,
      null
     ],
     [
      "Recraft V4.1 Utility",
+     76.5,
+     null
+    ],
+    [
+     "Seedream 4.5",
      76.5,
      null
     ],
@@ -31239,12 +31239,12 @@
      null
     ],
     [
-     "Ideogram 4.5 (High)",
+     "Luma UNI 1 Max",
      75.3,
      null
     ],
     [
-     "Luma UNI 1 Max",
+     "Ideogram 4.5 (High)",
      75.3,
      null
     ],
@@ -31259,12 +31259,12 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Ideogram 4.0 (Quality)",
      74.9,
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Seedream 5.0 Lite",
      74.9,
      null
     ],
@@ -31294,17 +31294,17 @@
      null
     ],
     [
+     "Imagen 4 Ultra",
+     73.2,
+     null
+    ],
+    [
      "P-Image-Ideogram (High)",
      73.2,
      null
     ],
     [
      "Ming-Image-0.1-Design",
-     73.2,
-     null
-    ],
-    [
-     "Imagen 4 Ultra",
      73.2,
      null
     ],
@@ -31334,12 +31334,12 @@
      null
     ],
     [
-     "Wan 2.7",
+     "MAI-Image-2-Efficient",
      72.1,
      null
     ],
     [
-     "MAI-Image-2-Efficient",
+     "Wan 2.7",
      72.1,
      null
     ],
@@ -31364,17 +31364,17 @@
      null
     ],
     [
+     "Recraft V4.1 Pro",
+     71.4,
+     null
+    ],
+    [
      "P-Image-Ideogram (Very High)",
      71.4,
      null
     ],
     [
      "HunyuanImage 3.0 (Tencent Cloud)",
-     71.4,
-     null
-    ],
-    [
-     "Recraft V4.1 Pro",
      71.4,
      null
     ],
@@ -31434,12 +31434,12 @@
      null
     ],
     [
-     "Qwen Image 2.0 (2026-03-03)",
+     "Wan 2.5 Preview",
      68.2,
      null
     ],
     [
-     "Wan 2.5 Preview",
+     "Qwen Image 2.0 (2026-03-03)",
      68.2,
      null
     ],
@@ -31474,17 +31474,17 @@
      null
     ],
     [
+     "FLUX.2 [klein] 9B",
+     65.5,
+     null
+    ],
+    [
      "Z-Image Turbo",
      65.5,
      null
     ],
     [
      "image-1",
-     65.5,
-     null
-    ],
-    [
-     "FLUX.2 [klein] 9B",
      65.5,
      null
     ],
@@ -31499,17 +31499,17 @@
      null
     ],
     [
+     "Eigen Image",
+     63.2,
+     null
+    ],
+    [
      "Vivago 2.0",
      63.2,
      null
     ],
     [
      "ERNIE Image Turbo",
-     63.2,
-     null
-    ],
-    [
-     "Eigen Image",
      63.2,
      null
     ],
@@ -31624,12 +31624,12 @@
      null
     ],
     [
-     "Imagen 4 Fast",
+     "Ideogram v2",
      57.7,
      null
     ],
     [
-     "Ideogram v2",
+     "Imagen 4 Fast",
      57.7,
      null
     ],
@@ -31654,12 +31654,12 @@
      null
     ],
     [
-     "Midjourney v6",
+     "Infinity 8B",
      56.5,
      null
     ],
     [
-     "Infinity 8B",
+     "Midjourney v6",
      56.5,
      null
     ],
@@ -31764,12 +31764,12 @@
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.2,
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.2,
      null
     ],
@@ -31784,12 +31784,12 @@
      null
     ],
     [
-     "Step Image Edit 2",
+     "Luma Photon Flash",
      46.1,
      null
     ],
     [
-     "Luma Photon Flash",
+     "Step Image Edit 2",
      46.1,
      null
     ],
@@ -32130,11 +32130,11 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
+    "GPT-5.6 Sol",
     "Grok 4.6",
-    "Claude Opus 5",
+    "Claude Fable 5",
     "GPT-5.6 Luna",
-    "GPT-5.6 Sol"
+    "Claude Opus 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32518,11 +32518,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
-    "Claude Fable 5",
-    "Grok 4.6",
     "GPT-5.6 Sol",
-    "Claude Opus 5"
+    "Grok 4.6",
+    "Claude Fable 5",
+    "Claude Opus 5",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32560,14 +32560,14 @@
      "chatgpt"
     ],
     [
-     "Muse Spark 1.3",
-     77.1,
-     null
-    ],
-    [
      "Grok 4.6",
      77.1,
      "grok"
+    ],
+    [
+     "Muse Spark 1.3",
+     77.1,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -34051,6 +34051,15 @@
    "items": "8",
    "pr": "105",
    "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-02",
+   "time": "10:22",
+   "status": "partial",
+   "items": "0",
+   "pr": "106",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
