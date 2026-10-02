@@ -255,7 +255,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   </div>
 
   <div class="lede">
-    <p><b>Lead:</b> Bipartisan Murphy–Hawley bill would make AI-agent operators and careless developers criminally liable for agent hacking — announced, no bill text yet. <b>Co-lead:</b> California Attorney General Rob Bonta subpoenaed OpenAI over cyber incidents — separate from the FTC’s confirmed industry-wide probe of AI labs (Oct 1).</p>
+    <p><b>Lead:</b> Bipartisan Murphy–Hawley bill would make AI-agent operators and careless developers criminally liable for agent hacking — announced, no bill text yet. <b>Co-lead:</b> California Attorney General Rob Bonta subpoenaed OpenAI over cyber incidents — apart from the FTC’s confirmed industry-wide probe of AI labs (reported Sep 30).</p>
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
@@ -306,7 +306,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
       <p class="note" style="margin:0 0 8px">Crowd-sourced <b>human-preference Elo</b>, not an accuracy / pass-rate test — don’t blend with Vibe Code or other coding %. Board dated Oct 1 (838,388 votes, 138 models). <b>Independent (LMArena)</b>.</p>
       <div class="pair">
         <div class="col">
-          <div class="lab">Claude Opus 5.5<br/>Max · 1</div>
+          <div class="lab">Claude Opus 5.5<br/>Max · #1</div>
           <div class="track"><div class="fill neu" style="height:100%">1815</div></div>
         </div>
         <div class="col">
@@ -332,7 +332,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 
   <section id="jobs">
     <h3>Best for what: scores by job</h3>
-    <p class="jobs-note"><b>New today:</b> LMArena Code Arena WebDev (preference Elo), Grok 4.7 at Low thinking on the AA Intelligence Index (42 at $1.25/task), and MAI-Transcribe-2-Streaming on AA streaming WER (2.5% #1 of 38). Cards updated today come first; unchanged cards keep their prior as-of dates under “Other cards (carried)” at the end. <b>Some scores are carried from earlier days</b> where today’s Sheet rows don’t replace them. No single model gets the blue accent (no newly audited frontier chat model). The date chip on each card is its as-of date.</p>
+    <p class="jobs-note"><b>New today:</b> LMArena Code Arena WebDev (preference Elo), Grok 4.7 at Low thinking on the AA Intelligence Index (42 at $1.25/task), and MAI-Transcribe-2-Streaming on AA streaming WER (2.5% #1 of 38). Cards updated today come first; unchanged cards keep their prior as-of dates under “Other cards (carried)” at the end. <b>Some scores are carried from earlier days</b> where today’s filed results don’t replace them. No single model gets the blue accent (no newly audited frontier chat model). The date chip on each card is its as-of date.</p>
     <div class="card deltas">
       <h2>Where they land</h2>
       <ol class="where" id="whereList"></ol>
@@ -358,7 +358,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
             <div class="chart" id="cechartFull"></div>
           </div>
         </details>
-        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> Luna and MiMo-V2.6-Pro still get the most Index per AA dollar. Grok 4.7 at Low thinking (CE ≈ 33.6) is a much better $/point buy than Grok 4.7 Extra-high (CE ≈ 12.3) if you can live with Index 42 vs 46. Argon sits lower-mid on CE (#17 of 23) at its $1.99 launch price. Sonnet 5.5 Max is near the bottom on cost-effectiveness (#22 of 23) despite its WebDev result. <b>Best deal</b> marks each model’s cheapest-per-point setting — the one that buys the most Index per dollar among that model’s own settings.</p>
+        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> Luna and MiMo-V2.6-Pro still get the most Index per AA dollar. Grok 4.7 at Low thinking (CE ≈ 33.6) is a much better $/point buy than Grok 4.7 Extra-high (CE ≈ 12.3) if you can live with Index 42 vs 46. Argon sits lower-mid on CE (#17 of 23) at its $1.99 launch price. Sonnet 5.5 Max is near the bottom on cost-effectiveness (#22 of 23), despite Sonnet 5.5’s strong WebDev showing (Extra-high setting). <b>Best deal</b> marks each model’s cheapest-per-point setting — the one that buys the most Index per dollar among that model’s own settings.</p>
         <p class="note"><b>MiMo-V2.6-Flash</b> (Index 38, as of Sep 27) isn’t ranked here because no AA $/task for it is on file. Thinking labels are the settings AA tested, which may not match a chat app’s default. Argon’s intro sticker is $2/$10 per million input/output tokens; AA’s $1.99 is cost per Index task at high effort (launch discount; $3.98 at standard $4/$20).</p>
       </div>
     </div>
@@ -499,10 +499,10 @@ const BENCH=[ {id:'job-webdev', asof:'Oct 1', isNew:true, title:'Web apps people
   practical:'For “which model’s web UI do humans like better?” — vibe ranking, not unit tests.',
   tests:'LMArena Code Arena WebDev is a crowd-sourced human-preference Elo arena: people vote between paired web-app outputs. Higher Elo means wins more head-to-heads. It is not a pass-rate / accuracy test, so never blend or rank it against Vibe Code Bench or other coding % scores. Confidence intervals (CIs, the likely range of a model’s true rating) and vote counts matter — overlapping CIs mean a statistical tie.',
   daily:'Use when front-end look-and-feel preference is the question. For “does the code work?”, prefer Vibe Code or AA Coding Index.',
-  fieldNote:'Board dated Oct 1 (838,388 votes, 138 models). Opus 5.5 Max 1815 ±16 (LMArena #1, rank spread 1–2, 2,062 votes). GPT-6 Astra Max 1788 ±10 (#2, spread 2–3, 6,123 votes) and Sonnet 5.5 Extra-high 1786 ±18 (#3, spread 1–4, 1,531 votes), shown tied 2= here. Opus leads Astra outright (their intervals don’t overlap); Sonnet Extra-high’s interval overlaps both. GPT-6.1 Sol Max 1758 ±17 (#4, spread 3–5). Claude Fable 5.1 Max 1749 ±10 (#5, spread 4–5, 6,318 votes) is from the LMArena board, not yet filed on the Sheet. Sonnet 5.5 High 1715 (LMArena #6). Changelog Oct 1 added Sonnet Extra-high.',
+  fieldNote:'Board dated Oct 1 (838,388 votes, 138 models). Opus 5.5 Max 1815 ±16 (LMArena #1, rank spread 1–2, 2,062 votes). GPT-6 Astra Max 1788 ±10 (#2, spread 2–3, 6,123 votes) and Sonnet 5.5 Extra-high 1786 ±18 (#3, spread 1–4, 1,531 votes), shown tied 2= here. Opus leads Astra outright (their intervals don’t overlap); Sonnet Extra-high’s interval overlaps both. GPT-6.1 Sol Max 1758 ±17 (#4, spread 3–5). Claude Fable 5.1 Max 1749 ±10 (#5, spread 4–5, 6,318 votes) is from the LMArena board, not yet in our filed data. Sonnet 5.5 High 1715 (LMArena #6). Changelog Oct 1 added Sonnet Extra-high.',
   data:[
     ['Claude Opus 5.5','Max thinking · LMArena · Oct 1',1815],['GPT-6 Astra','Max thinking · LMArena · Oct 1',1788],['Claude Sonnet 5.5','Extra-high thinking · LMArena · Oct 1 · NEW',1786],
-    ['GPT-6.1 Sol','Max thinking · LMArena · Oct 1',1758],['Claude Fable 5.1','Max thinking · LMArena board (not yet on Sheet) · Oct 1',1749],['Claude Sonnet 5.5','High thinking · LMArena · Oct 1',1715]
+    ['GPT-6.1 Sol','Max thinking · LMArena · Oct 1',1758],['Claude Fable 5.1','Max thinking · LMArena board (not yet in our filed data) · Oct 1',1749],['Claude Sonnet 5.5','High thinking · LMArena · Oct 1',1715]
   ]},
  {id:'job-stt-stream', asof:'Oct 1', isNew:true, lowerBetter:true, dp:1, title:'Streaming speech-to-text accuracy (NEW)', sub:'Official: AA-WER Streaming Index (Final Transcription) · independent · lower is better · MAI-Transcribe-2-Streaming #1 of 38',
   practical:'For real-time speech-to-text agents — word error rate, not an LLM chat score.',
@@ -570,7 +570,7 @@ const BENCH=[ {id:'job-webdev', asof:'Oct 1', isNew:true, title:'Web apps people
   daily:'Relevant if your agent harness looks like Vals mini-swe-agent; do not blend with AA, Terminus 2, or vendor TB.',
   data:[
     ['Claude Opus 5.5','Setting not stated · Vals TB 4.0 mini-swe · Sep 29',65.15],['Claude Sonnet 5.5','Setting not stated · Vals TB 4.0 mini-swe · Sep 29',64.14],
-    ['GPT-6 Astra','Setting not stated · Vals TB 4.0 mini-swe · Sep 29',59.60],['Claude Fable 5.1','Setting not stated · Vals TB 4.0 mini-swe',58.08],['Gemini 4 Argon','High thinking · Vals · Sep 30',57.58],['GPT-6.1 Sol','Max thinking · Vals · Sep 29',55.05]
+    ['GPT-6 Astra','Setting not stated · Vals TB 4.0 mini-swe · Sep 29',59.60],['Claude Fable 5.1','Setting not stated · Vals TB 4.0 mini-swe · Sep 29',58.08],['Gemini 4 Argon','High thinking · Vals · Sep 30',57.58],['GPT-6.1 Sol','Max thinking · Vals · Sep 29',55.05]
   ]},
  {id:'job-gdpval', asof:'Sep 30', title:'Knowledge work Elo (GDPval-AA)', sub:'Official: GDPval-AA v2.1 · Artificial Analysis · Elo · Stirrup harness (AA’s open-source agent framework)',
   practical:'For “can it do professional knowledge-work tasks?” — Elo, not a %.',
@@ -700,9 +700,9 @@ const BENCH=[ {id:'job-webdev', asof:'Oct 1', isNew:true, title:'Web apps people
   data:[['GPT-6 Sol','Max thinking · AA',27],['GPT-6 Luna','Max thinking · AA',1]]},
  {id:'job-fab', asof:'Sep 24', title:'Spatial assembly / follow a manual', sub:'Official: Furniture Assembly Benchmark (FAB) · Epoch AI · small-n, LLM grader · Opus 5.5 not scored',
   practical:'For agents that must read diagrams and finish multi-step physical builds in a sandbox.',
-  tests:'Epoch’s FAB gives an agent an IKEA-style PDF manual, a zoom tool and a Python interpreter under a fixed step budget, and asks it to work out a correct multi-step assembly. Runs use the highest API thinking setting. The grader is another LLM (lenient) and the sample is small, so treat it as directional.',
+  tests:'Epoch’s FAB gives an agent an IKEA-style PDF manual, a zoom tool and a Python interpreter under a fixed step budget, and asks it to work out a correct multi-step assembly. Epoch runs each model at the highest reasoning effort its API supports. The grader is another LLM (lenient) and the sample is small, so treat it as directional.',
   daily:'Relevant for “eyes + hands in a sandbox” agent work; it says little about your coding or writing stack.',
-  data:[['GPT-6 Astra','Setting not stated · Agentic · Epoch FAB',80],['Claude Fable 5.1','Setting not stated · Agentic · Epoch FAB',70],['Claude Opus 5','Setting not stated · Agentic · Epoch FAB',61]]},
+  data:[['GPT-6 Astra','Highest API effort · Agentic · Epoch FAB',80],['Claude Fable 5.1','Highest API effort · Agentic · Epoch FAB',70],['Claude Opus 5','Highest API effort · Agentic · Epoch FAB',61]]},
  {id:'job-cyber-poc', asof:'Sep 24', title:'Cyber exploit / proof-of-concept', sub:'Official: CyberBench v1.1 PoC · Vals AI · lead filing only',
   practical:'For “can it find and demonstrate a vulnerability?” agent work.',
   tests:'CyberBench v1.1 PoC track asks an agent to find a vulnerability and produce a working proof-of-concept exploit; refusals count as fails. v1.1 is not comparable to v1.',
@@ -737,6 +737,7 @@ function shortCfg(c){
   if(m){const k=m[1].toLowerCase();const lvl={max:'Max',xhigh:'Extra-high','extra-high':'Extra-high',high:'High',medium:'Medium',low:'Low'}[k];return lvl+(/compute/i.test(f)?' compute':' thinking');}
   if(/^reasoning( mode)?$/i.test(f)) return 'Reasoning mode';
   if(/^setting not stated$/i.test(f)) return 'Setting not stated';
+  if(/^highest api effort$/i.test(f)) return 'Highest API effort';
   return '';
 }
 function rowLabel(b,d){return [shortCfg(d[1]), b.vendor?(d[3]||'vendor chart (lab not recorded)'):''].filter(Boolean).join(' · ')}
