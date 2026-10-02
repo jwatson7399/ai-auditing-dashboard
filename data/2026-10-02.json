@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-02",
- "built_at": "2026-10-02T14:37:32+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 107",
- "built_at_et": "10:37 AM",
+ "built_at": "2026-10-02T14:49:35+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 108",
+ "built_at_et": "10:49 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -29917,14 +29917,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -31189,12 +31189,12 @@
      null
     ],
     [
-     "Krea 2 Large",
+     "Wan 2.6 Image",
      77.0,
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Krea 2 Large",
      77.0,
      null
     ],
@@ -31254,12 +31254,12 @@
      null
     ],
     [
-     "GPT Image 1 (high)",
+     "Ideogram 4.0 (Quality)",
      74.9,
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "GPT Image 1 (high)",
      74.9,
      null
     ],
@@ -31299,12 +31299,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (High)",
+     "Ming-Image-0.1-Design",
      73.2,
      null
     ],
     [
-     "Ming-Image-0.1-Design",
+     "P-Image-Ideogram (High)",
      73.2,
      null
     ],
@@ -31314,12 +31314,12 @@
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "Cosmos3-Super-Text2Image (agentic)",
      72.8,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "HunyuanImage 3.0 Instruct",
      72.8,
      null
     ],
@@ -31349,11 +31349,6 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
-     71.6,
-     null
-    ],
-    [
      "Nano Banana (Gemini 2.5 Flash Image)",
      71.6,
      null
@@ -31364,17 +31359,22 @@
      null
     ],
     [
+     "Cosmos3-Super-Text2Image",
+     71.6,
+     null
+    ],
+    [
+     "HunyuanImage 3.0 (Tencent Cloud)",
+     71.4,
+     null
+    ],
+    [
      "Recraft V4.1 Pro",
      71.4,
      null
     ],
     [
      "P-Image-Ideogram (Very High)",
-     71.4,
-     null
-    ],
-    [
-     "HunyuanImage 3.0 (Tencent Cloud)",
      71.4,
      null
     ],
@@ -31404,12 +31404,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Medium)",
+     "HunyuanImage 3.5 (Preview)",
      70.1,
      null
     ],
     [
-     "HunyuanImage 3.5 (Preview)",
+     "P-Image-Ideogram (Medium)",
      70.1,
      null
     ],
@@ -31474,17 +31474,17 @@
      null
     ],
     [
+     "image-1",
+     65.5,
+     null
+    ],
+    [
      "FLUX.2 [klein] 9B",
      65.5,
      null
     ],
     [
      "Z-Image Turbo",
-     65.5,
-     null
-    ],
-    [
-     "image-1",
      65.5,
      null
     ],
@@ -31504,12 +31504,12 @@
      null
     ],
     [
-     "Vivago 2.0",
+     "ERNIE Image Turbo",
      63.2,
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Vivago 2.0",
      63.2,
      null
     ],
@@ -31539,12 +31539,12 @@
      null
     ],
     [
-     "ERNIE Image",
+     "Dreamina 3.1",
      61.9,
      null
     ],
     [
-     "Dreamina 3.1",
+     "ERNIE Image",
      61.9,
      null
     ],
@@ -31654,12 +31654,12 @@
      null
     ],
     [
-     "Infinity 8B",
+     "Midjourney v6",
      56.5,
      null
     ],
     [
-     "Midjourney v6",
+     "Infinity 8B",
      56.5,
      null
     ],
@@ -31764,12 +31764,12 @@
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.2,
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.2,
      null
     ],
@@ -31784,12 +31784,12 @@
      null
     ],
     [
-     "Luma Photon Flash",
+     "Step Image Edit 2",
      46.1,
      null
     ],
     [
-     "Step Image Edit 2",
+     "Luma Photon Flash",
      46.1,
      null
     ],
@@ -31874,12 +31874,12 @@
      null
     ],
     [
-     "Bria 3.2",
+     "Bagel",
      33.7,
      null
     ],
     [
-     "Bagel",
+     "Bria 3.2",
      33.7,
      null
     ],
@@ -32039,12 +32039,12 @@
      null
     ],
     [
-     "Vidu Q3 Pro",
+     "Vidu Q3 Turbo",
      29.7,
      null
     ],
     [
-     "Vidu Q3 Turbo",
+     "Vidu Q3 Pro",
      29.7,
      null
     ],
@@ -32130,11 +32130,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
+    "Claude Opus 5",
+    "GPT-5.6 Luna",
     "Grok 4.6",
     "Claude Fable 5",
-    "GPT-5.6 Luna",
-    "Claude Opus 5"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32518,11 +32518,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
+    "Claude Opus 5",
+    "GPT-5.6 Luna",
     "Grok 4.6",
     "Claude Fable 5",
-    "Claude Opus 5",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32715,12 +32715,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -32765,12 +32765,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -34059,6 +34059,15 @@
    "status": "partial",
    "items": "0",
    "pr": "106",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-02",
+   "time": "10:37",
+   "status": "partial",
+   "items": "0",
+   "pr": "107",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
