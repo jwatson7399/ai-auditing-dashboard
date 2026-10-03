@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-03",
- "built_at": "2026-10-03T14:25:54+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 112",
- "built_at_et": "10:25 AM",
+ "built_at": "2026-10-03T14:32:06+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 113",
+ "built_at_et": "10:32 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -30392,12 +30392,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -31264,22 +31264,22 @@
      null
     ],
     [
-     "Krea 2 Large",
-     76.9,
-     null
-    ],
-    [
      "Wan 2.6 Image",
      76.9,
      null
     ],
     [
-     "Seedream 4.5",
-     76.5,
+     "Krea 2 Large",
+     76.9,
      null
     ],
     [
      "Recraft V4.1 Utility",
+     76.5,
+     null
+    ],
+    [
+     "Seedream 4.5",
      76.5,
      null
     ],
@@ -31389,12 +31389,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "HunyuanImage 3.0 Instruct",
      72.7,
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "Cosmos3-Super-Text2Image (agentic)",
      72.7,
      null
     ],
@@ -31404,17 +31404,17 @@
      null
     ],
     [
+     "Recraft V4.1",
+     72.1,
+     null
+    ],
+    [
      "MAI-Image-2-Efficient",
      72.1,
      null
     ],
     [
      "Wan 2.7",
-     72.1,
-     null
-    ],
-    [
-     "Recraft V4.1",
      72.1,
      null
     ],
@@ -31434,12 +31434,12 @@
      null
     ],
     [
-     "Recraft V4.1 Pro",
+     "Ideogram 4.0 Fast (Quality)",
      71.4,
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      71.4,
      null
     ],
@@ -31449,7 +31449,7 @@
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Recraft V4.1 Pro",
      71.4,
      null
     ],
@@ -31554,12 +31554,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "image-1",
      65.5,
      null
     ],
     [
-     "image-1",
+     "FLUX.2 [klein] 9B",
      65.5,
      null
     ],
@@ -31574,12 +31574,12 @@
      null
     ],
     [
-     "Eigen Image",
+     "Vivago 2.0",
      63.2,
      null
     ],
     [
-     "Vivago 2.0",
+     "Eigen Image",
      63.2,
      null
     ],
@@ -31614,22 +31614,22 @@
      null
     ],
     [
-     "Dreamina 3.1",
-     61.8,
-     null
-    ],
-    [
      "ERNIE Image",
      61.8,
      null
     ],
     [
-     "Lucid Origin Ultra",
-     61.7,
+     "Dreamina 3.1",
+     61.8,
      null
     ],
     [
      "Reve Image (Halfmoon)",
+     61.7,
+     null
+    ],
+    [
+     "Lucid Origin Ultra",
      61.7,
      null
     ],
@@ -31669,12 +31669,12 @@
      null
     ],
     [
-     "FLUX1.1 [pro]",
+     "GLM-Image",
      58.7,
      null
     ],
     [
-     "GLM-Image",
+     "FLUX1.1 [pro]",
      58.7,
      null
     ],
@@ -31699,12 +31699,12 @@
      null
     ],
     [
-     "Imagen 4 Fast",
+     "Ideogram v2",
      57.6,
      null
     ],
     [
-     "Ideogram v2",
+     "Imagen 4 Fast",
      57.6,
      null
     ],
@@ -31734,12 +31734,12 @@
      null
     ],
     [
-     "Infinity 8B",
+     "HiDream-I1-Dev",
      56.4,
      null
     ],
     [
-     "HiDream-I1-Dev",
+     "Infinity 8B",
      56.4,
      null
     ],
@@ -31764,12 +31764,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] 4B",
+     "SRPO",
      54.9,
      null
     ],
     [
-     "SRPO",
+     "FLUX.2 [klein] 4B",
      54.9,
      null
     ],
@@ -31929,12 +31929,12 @@
      null
     ],
     [
-     "SDXL Lightning",
+     "Stable Diffusion 3 Medium",
      35.6,
      null
     ],
     [
-     "Stable Diffusion 3 Medium",
+     "SDXL Lightning",
      35.6,
      null
     ],
@@ -32084,12 +32084,12 @@
      null
     ],
     [
-     "Veo 3.1 Fast",
+     "Veo 3.1",
      46.9,
      null
     ],
     [
-     "Veo 3.1",
+     "Veo 3.1 Fast",
      46.9,
      null
     ],
@@ -32215,11 +32215,11 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
     "Claude Fable 5",
-    "Grok 4.6",
+    "GPT-5.6 Luna",
     "GPT-5.6 Sol",
-    "GPT-5.6 Luna"
+    "Claude Opus 5",
+    "Grok 4.6"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32608,11 +32608,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
+    "Claude Fable 5",
     "GPT-5.6 Luna",
     "Claude Opus 5",
-    "Claude Fable 5",
-    "Grok 4.6"
+    "Grok 4.6",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32770,12 +32770,12 @@
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
@@ -32805,12 +32805,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -32855,12 +32855,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -34149,6 +34149,15 @@
    "status": "partial",
    "items": "0",
    "pr": "111",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-03",
+   "time": "10:25",
+   "status": "partial",
+   "items": "0",
+   "pr": "112",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
