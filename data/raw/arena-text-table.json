@@ -1205,7 +1205,7 @@
       "deepseek-v3.1-terminus-thinking\nDeepSeek \u00b7 MIT",
       "1417\n\u00b110",
       "3,354",
-      "$0.30 / $1",
+      "$0.27 / $1",
       "163.8K"
     ],
     [
@@ -1250,7 +1250,7 @@
       "deepseek-v3.1-terminus\nDeepSeek \u00b7 MIT",
       "1415\n\u00b110",
       "3,599",
-      "$0.30 / $1",
+      "$0.27 / $1",
       "163.8K"
     ],
     [
@@ -3729,7 +3729,7 @@
       "N/A"
     ]
   ],
-  "fetched_at": "2026-10-02T17:51:19.324093+00:00",
+  "fetched_at": "2026-10-03T16:13:46.172022+00:00",
   "source_updated": "2026-10-02",
   "heading": "Text Arena\n\ud83c\udfc6\nOverall"
 }
