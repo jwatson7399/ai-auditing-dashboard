@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-03",
- "built_at": "2026-10-03T11:14:35+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 110",
- "built_at_et": "7:14 AM",
+ "built_at": "2026-10-03T14:13:33+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 111",
+ "built_at_et": "10:13 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -29982,14 +29982,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -30392,12 +30392,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -31264,12 +31264,12 @@
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Krea 2 Large",
      76.9,
      null
     ],
     [
-     "Krea 2 Large",
+     "Wan 2.6 Image",
      76.9,
      null
     ],
@@ -31289,12 +31289,12 @@
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "FLUX.2 [max]",
      76.1,
      null
     ],
     [
-     "FLUX.2 [max]",
+     "HiDream-O1-Image-1.5",
      76.1,
      null
     ],
@@ -31324,12 +31324,12 @@
      null
     ],
     [
-     "Krea 2 Medium",
+     "Seedream 5.0 Lite",
      75.0,
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Krea 2 Medium",
      75.0,
      null
     ],
@@ -31404,6 +31404,11 @@
      null
     ],
     [
+     "Recraft V4.1",
+     72.1,
+     null
+    ],
+    [
      "MAI-Image-2-Efficient",
      72.1,
      null
@@ -31414,12 +31419,7 @@
      null
     ],
     [
-     "Recraft V4.1",
-     72.1,
-     null
-    ],
-    [
-     "Recraft V4 Pro",
+     "FLUX.2 [dev] Flash",
      71.7,
      null
     ],
@@ -31429,12 +31429,17 @@
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "Recraft V4 Pro",
      71.7,
      null
     ],
     [
      "Recraft V4.1 Pro",
+     71.4,
+     null
+    ],
+    [
+     "HunyuanImage 3.0 (Tencent Cloud)",
      71.4,
      null
     ],
@@ -31449,22 +31454,17 @@
      null
     ],
     [
-     "HunyuanImage 3.0 (Tencent Cloud)",
-     71.4,
-     null
-    ],
-    [
      "P-Image-Ideogram (Very High)",
      71.3,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Recraft V4",
      71.1,
      null
     ],
     [
-     "Recraft V4",
+     "Wan 2.7 Pro",
      71.1,
      null
     ],
@@ -31524,12 +31524,12 @@
      null
     ],
     [
-     "ImagineArt 1.5 Preview",
+     "Recraft V4.1 Flash",
      67.6,
      null
     ],
     [
-     "Recraft V4.1 Flash",
+     "ImagineArt 1.5 Preview",
      67.6,
      null
     ],
@@ -31549,7 +31549,7 @@
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "Z-Image Turbo",
      65.5,
      null
     ],
@@ -31559,7 +31559,7 @@
      null
     ],
     [
-     "Z-Image Turbo",
+     "FLUX.2 [klein] 9B",
      65.5,
      null
     ],
@@ -31604,22 +31604,22 @@
      null
     ],
     [
-     "P-Image-Ideogram (Very Low)",
-     61.9,
-     null
-    ],
-    [
      "Kling Image 3.0 Omni",
      61.9,
      null
     ],
     [
-     "Dreamina 3.1",
-     61.8,
+     "P-Image-Ideogram (Very Low)",
+     61.9,
      null
     ],
     [
      "ERNIE Image",
+     61.8,
+     null
+    ],
+    [
+     "Dreamina 3.1",
      61.8,
      null
     ],
@@ -31689,22 +31689,22 @@
      null
     ],
     [
-     "P-Image",
-     58.0,
-     null
-    ],
-    [
      "Luma Photon",
      58.0,
      null
     ],
     [
-     "Ideogram v2",
-     57.6,
+     "P-Image",
+     58.0,
      null
     ],
     [
      "Imagen 4 Fast",
+     57.6,
+     null
+    ],
+    [
+     "Ideogram v2",
      57.6,
      null
     ],
@@ -31734,12 +31734,12 @@
      null
     ],
     [
-     "Infinity 8B",
+     "HiDream-I1-Dev",
      56.4,
      null
     ],
     [
-     "HiDream-I1-Dev",
+     "Infinity 8B",
      56.4,
      null
     ],
@@ -31764,12 +31764,12 @@
      null
     ],
     [
-     "SRPO",
+     "FLUX.2 [klein] 4B",
      54.9,
      null
     ],
     [
-     "FLUX.2 [klein] 4B",
+     "SRPO",
      54.9,
      null
     ],
@@ -31839,12 +31839,12 @@
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.1,
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.1,
      null
     ],
@@ -31929,12 +31929,12 @@
      null
     ],
     [
-     "SDXL Lightning",
+     "Stable Diffusion 3 Medium",
      35.6,
      null
     ],
     [
-     "Stable Diffusion 3 Medium",
+     "SDXL Lightning",
      35.6,
      null
     ],
@@ -32009,12 +32009,12 @@
      null
     ],
     [
-     "MiniMax H3 (768p)",
+     "MiniMax H3 Max (based on MiniMax H3)",
      95.8,
      null
     ],
     [
-     "MiniMax H3 Max (based on MiniMax H3)",
+     "MiniMax H3 (768p)",
      95.8,
      null
     ],
@@ -32084,12 +32084,12 @@
      null
     ],
     [
-     "Veo 3.1",
+     "Veo 3.1 Fast",
      46.9,
      null
     ],
     [
-     "Veo 3.1 Fast",
+     "Veo 3.1",
      46.9,
      null
     ],
@@ -32215,11 +32215,11 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
-    "GPT-5.6 Sol",
-    "Claude Opus 5",
     "Claude Fable 5",
-    "GPT-5.6 Luna"
+    "Grok 4.6",
+    "GPT-5.6 Luna",
+    "GPT-5.6 Sol",
+    "Claude Opus 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32609,10 +32609,10 @@
    ],
    "missing": [
     "Claude Fable 5",
-    "Grok 4.6",
     "GPT-5.6 Sol",
-    "Claude Opus 5",
-    "GPT-5.6 Luna"
+    "Grok 4.6",
+    "GPT-5.6 Luna",
+    "Claude Opus 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32650,14 +32650,14 @@
      "chatgpt"
     ],
     [
-     "Muse Spark 1.3",
-     77.1,
-     null
-    ],
-    [
      "Grok 4.6",
      77.1,
      "grok"
+    ],
+    [
+     "Muse Spark 1.3",
+     77.1,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -32805,12 +32805,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -34132,6 +34132,15 @@
    "items": "8",
    "pr": "109",
    "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-03",
+   "time": "07:14",
+   "status": "partial",
+   "items": "0",
+   "pr": "110",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
