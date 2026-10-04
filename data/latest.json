@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-04",
- "built_at": "2026-10-04T14:06:28+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 116",
- "built_at_et": "10:06 AM",
+ "built_at": "2026-10-04T14:21:22+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 117",
+ "built_at_et": "10:21 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -29711,14 +29711,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -30121,12 +30121,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -31018,12 +31018,12 @@
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "FLUX.2 [max]",
      76.1,
      null
     ],
     [
-     "FLUX.2 [max]",
+     "HiDream-O1-Image-1.5",
      76.1,
      null
     ],
@@ -31078,12 +31078,12 @@
      null
     ],
     [
-     "FLUX.2 [pro]",
+     "Ideogram 4.0",
      74.0,
      null
     ],
     [
-     "Ideogram 4.0",
+     "FLUX.2 [pro]",
      74.0,
      null
     ],
@@ -31098,22 +31098,22 @@
      null
     ],
     [
-     "Imagen 4 Ultra",
-     73.1,
-     null
-    ],
-    [
      "Ming-Image-0.1-Design",
      73.1,
      null
     ],
     [
-     "P-Image-Ideogram (High)",
-     73.0,
+     "Imagen 4 Ultra",
+     73.1,
      null
     ],
     [
      "FLUX.2 [dev] Turbo",
+     73.0,
+     null
+    ],
+    [
+     "P-Image-Ideogram (High)",
      73.0,
      null
     ],
@@ -31133,7 +31133,7 @@
      null
     ],
     [
-     "Recraft V4.1",
+     "MAI-Image-2-Efficient",
      72.1,
      null
     ],
@@ -31143,13 +31143,8 @@
      null
     ],
     [
-     "MAI-Image-2-Efficient",
+     "Recraft V4.1",
      72.1,
-     null
-    ],
-    [
-     "Recraft V4 Pro",
-     71.7,
      null
     ],
     [
@@ -31163,17 +31158,22 @@
      null
     ],
     [
+     "Recraft V4 Pro",
+     71.7,
+     null
+    ],
+    [
+     "HunyuanImage 3.0 (Tencent Cloud)",
+     71.4,
+     null
+    ],
+    [
      "Recraft V4.1 Pro",
      71.4,
      null
     ],
     [
      "Nano Banana (Gemini 2.5 Flash Image)",
-     71.4,
-     null
-    ],
-    [
-     "HunyuanImage 3.0 (Tencent Cloud)",
      71.4,
      null
     ],
@@ -31198,12 +31198,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Instant",
+     "HiDream-O1-Image",
      71.0,
      null
     ],
     [
-     "HiDream-O1-Image",
+     "Ideogram 4.0 Instant",
      71.0,
      null
     ],
@@ -31278,17 +31278,17 @@
      null
     ],
     [
+     "image-1",
+     65.5,
+     null
+    ],
+    [
      "FLUX.2 [klein] 9B",
      65.5,
      null
     ],
     [
      "Z-Image Turbo",
-     65.5,
-     null
-    ],
-    [
-     "image-1",
      65.5,
      null
     ],
@@ -31353,12 +31353,12 @@
      null
     ],
     [
-     "Lucid Origin Ultra",
+     "Reve Image (Halfmoon)",
      61.7,
      null
     ],
     [
-     "Reve Image (Halfmoon)",
+     "Lucid Origin Ultra",
      61.7,
      null
     ],
@@ -31393,7 +31393,7 @@
      null
     ],
     [
-     "GLM-Image",
+     "FLUX1.1 [pro]",
      58.7,
      null
     ],
@@ -31403,7 +31403,7 @@
      null
     ],
     [
-     "FLUX1.1 [pro]",
+     "GLM-Image",
      58.7,
      null
     ],
@@ -31418,12 +31418,12 @@
      null
     ],
     [
-     "Luma Photon",
+     "P-Image",
      58.0,
      null
     ],
     [
-     "P-Image",
+     "Luma Photon",
      58.0,
      null
     ],
@@ -31568,12 +31568,12 @@
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.1,
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.1,
      null
     ],
@@ -31658,12 +31658,12 @@
      null
     ],
     [
-     "Stable Diffusion 3 Medium",
+     "SDXL Lightning",
      35.6,
      null
     ],
     [
-     "SDXL Lightning",
+     "Stable Diffusion 3 Medium",
      35.6,
      null
     ],
@@ -31944,11 +31944,11 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Sol",
     "GPT-5.6 Luna",
-    "Claude Opus 5",
     "Claude Fable 5",
     "Grok 4.6",
-    "GPT-5.6 Sol"
+    "Claude Opus 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32337,11 +32337,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
-    "Grok 4.6",
-    "Claude Opus 5",
     "GPT-5.6 Sol",
-    "Claude Fable 5"
+    "Claude Fable 5",
+    "Grok 4.6",
+    "GPT-5.6 Luna",
+    "Claude Opus 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32584,12 +32584,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -33870,6 +33870,15 @@
    "items": "8",
    "pr": "115",
    "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-04",
+   "time": "10:06",
+   "status": "partial",
+   "items": "0",
+   "pr": "116",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
