@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-04",
- "built_at": "2026-10-04T14:21:22+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 117",
- "built_at_et": "10:21 AM",
+ "built_at": "2026-10-04T14:28:29+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 118",
+ "built_at_et": "10:28 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -30121,12 +30121,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -30993,12 +30993,12 @@
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Krea 2 Large",
      76.9,
      null
     ],
     [
-     "Krea 2 Large",
+     "Wan 2.6 Image",
      76.9,
      null
     ],
@@ -31053,12 +31053,12 @@
      null
     ],
     [
-     "Krea 2 Medium",
+     "Seedream 5.0 Lite",
      75.0,
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Krea 2 Medium",
      75.0,
      null
     ],
@@ -31133,7 +31133,7 @@
      null
     ],
     [
-     "MAI-Image-2-Efficient",
+     "Recraft V4.1",
      72.1,
      null
     ],
@@ -31143,7 +31143,7 @@
      null
     ],
     [
-     "Recraft V4.1",
+     "MAI-Image-2-Efficient",
      72.1,
      null
     ],
@@ -31153,22 +31153,22 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
-     71.7,
-     null
-    ],
-    [
      "Recraft V4 Pro",
      71.7,
      null
     ],
     [
-     "HunyuanImage 3.0 (Tencent Cloud)",
-     71.4,
+     "Cosmos3-Super-Text2Image",
+     71.7,
      null
     ],
     [
      "Recraft V4.1 Pro",
+     71.4,
+     null
+    ],
+    [
+     "HunyuanImage 3.0 (Tencent Cloud)",
      71.4,
      null
     ],
@@ -31188,12 +31188,12 @@
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Recraft V4",
      71.1,
      null
     ],
     [
-     "Recraft V4",
+     "Wan 2.7 Pro",
      71.1,
      null
     ],
@@ -31283,12 +31283,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "Z-Image Turbo",
      65.5,
      null
     ],
     [
-     "Z-Image Turbo",
+     "FLUX.2 [klein] 9B",
      65.5,
      null
     ],
@@ -31333,12 +31333,12 @@
      null
     ],
     [
-     "Kling Image 3.0 Omni",
+     "P-Image-Ideogram (Very Low)",
      61.9,
      null
     ],
     [
-     "P-Image-Ideogram (Very Low)",
+     "Kling Image 3.0 Omni",
      61.9,
      null
     ],
@@ -31418,12 +31418,12 @@
      null
     ],
     [
-     "P-Image",
+     "Luma Photon",
      58.0,
      null
     ],
     [
-     "Luma Photon",
+     "P-Image",
      58.0,
      null
     ],
@@ -31463,12 +31463,12 @@
      null
     ],
     [
-     "HiDream-I1-Dev",
+     "Infinity 8B",
      56.4,
      null
     ],
     [
-     "Infinity 8B",
+     "HiDream-I1-Dev",
      56.4,
      null
     ],
@@ -31493,12 +31493,12 @@
      null
     ],
     [
-     "SRPO",
+     "FLUX.2 [klein] 4B",
      54.9,
      null
     ],
     [
-     "FLUX.2 [klein] 4B",
+     "SRPO",
      54.9,
      null
     ],
@@ -31658,12 +31658,12 @@
      null
     ],
     [
-     "SDXL Lightning",
+     "Stable Diffusion 3 Medium",
      35.6,
      null
     ],
     [
-     "Stable Diffusion 3 Medium",
+     "SDXL Lightning",
      35.6,
      null
     ],
@@ -31798,12 +31798,12 @@
      null
     ],
     [
-     "Kling 3.0 1080p (Pro)",
+     "PixVerse V6",
      58.4,
      null
     ],
     [
-     "PixVerse V6",
+     "Kling 3.0 1080p (Pro)",
      58.4,
      null
     ],
@@ -31944,11 +31944,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
-    "GPT-5.6 Luna",
     "Claude Fable 5",
+    "Claude Opus 5",
+    "GPT-5.6 Luna",
     "Grok 4.6",
-    "Claude Opus 5"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32337,11 +32337,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
-    "Claude Fable 5",
     "Grok 4.6",
-    "GPT-5.6 Luna",
-    "Claude Opus 5"
+    "Claude Fable 5",
+    "Claude Opus 5",
+    "GPT-5.6 Sol",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -33878,6 +33878,15 @@
    "status": "partial",
    "items": "0",
    "pr": "116",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-04",
+   "time": "10:21",
+   "status": "partial",
+   "items": "0",
+   "pr": "117",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
