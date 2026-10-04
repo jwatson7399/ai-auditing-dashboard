@@ -208,6 +208,7 @@ html,body{overflow-x:hidden}
 .where>li{font-size:14px;line-height:1.4;max-width:72ch}
 .where .job{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.04em;color:var(--muted);margin-bottom:4px}
 .where .job .asof-inline{text-transform:none;letter-spacing:0;font-weight:500}
+.bench .new{display:inline-block;margin-left:6px;padding:0 6px;border-radius:999px;font-size:10px;font-weight:700;background:var(--pick-soft);color:var(--pick);letter-spacing:0.04em}
 .where .new{display:inline-block;margin-left:6px;padding:0 6px;border-radius:999px;font-size:10px;font-weight:700;background:var(--pick-soft);color:var(--pick);letter-spacing:0.04em}
 ol.mini{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:2px}
 ol.mini li{display:grid;grid-template-columns:22px 1fr auto;gap:6px;align-items:baseline;font-size:13.5px;border-bottom:1px dashed var(--line);padding:3px 0}
@@ -250,13 +251,13 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <h1>AI Updates</h1>
     <div class="chips">
       <span class="chip mid">Lead: Robinson quits OpenAI over safety culture</span>
-      <span class="chip mid">Co-lead: Muse builds pages for people in your life</span>
+      <span class="chip mid">Co-lead: Muse told to build pages for people in your life</span>
       <span class="chip good">Scores carried · no new benches</span>
     </div>
   </div>
 
   <div class="lede">
-    <p><b>Lead:</b> David Robinson, who led OpenAI’s launch safety reports, has quit. In an Atlantic essay he says “iterative deployment” “guarantees periodic failures”; labs should run “like nuclear-power plants or busy airports.” OpenAI (Drew Pusateri) says it pauses training or holds back models “when we need to slow down.” <b>Co-lead:</b> Meta’s Muse is instructed to build “a page for every person in the user’s life,” updated hourly (WIRED); Meta says Muse gathers context “based on public information and from what you’ve chosen to share.”</p>
+    <p><b>Lead:</b> David Robinson, who led OpenAI’s launch safety reports, has quit, writing in the Atlantic that “iterative deployment” “guarantees periodic failures.” <b>Co-lead:</b> Meta’s AI agent Muse is told to build “a page for every person in the user’s life,” updated hourly (WIRED).</p>
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
@@ -268,6 +269,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
       <a href="#job-agent-ni">Agent Arena</a>
       <a href="#job-text-en">Text Elo</a>
       <a href="#job-vision">Vision Elo</a>
+      <a href="#job-webdev">WebDev Elo</a>
       <a href="#cost">Cost</a>
       <a href="#trust">Caveats</a>
     </div><span class="toc-more" aria-hidden="true">›</span></div>
@@ -293,7 +295,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 
   <section id="jobs">
     <h3>Best for what: scores by job</h3>
-    <p class="jobs-note"><b>No new benchmark rows today.</b> Every job card and the cost board below are carried from the Oct 3 brief (as-of dates unchanged: Ling / AA Index as of Oct 3; Agent NI / Text / Vision as of Oct 2; others keep their earlier as-of). No single model gets the blue accent. The date chip on each card is its as-of date.</p>
+    <p class="jobs-note"><b>No new benchmark scores today.</b> One card is marked UPDATED: <b>LMArena WebDev</b>, whose tie grouping was corrected on Oct 3. The Text and Vision cards now show every model tracked elsewhere in this brief that is on those boards (boards still dated Oct 2). The date chip on each card is its as-of date. Terms used below: <b>AA</b> = Artificial Analysis, an independent testing firm; <b>Agent NI</b> = Net Improvement, LMArena Agent Arena’s score for how much better real agent sessions go with a model; <b>Elo</b> = a head-to-head rating built from people’s votes (higher wins more often); <b>WER</b> = word error rate (lower is better). No single model gets the blue accent.</p>
     <div class="card deltas">
       <h2>Where they land</h2>
       <ol class="where" id="whereList"></ol>
@@ -308,7 +310,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <div class="card">
       <div class="ce-board" data-ce-mode="best-only" data-ce-asof="2026-10-04">
         <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
-        <p class="ce-blurb"><b>CE = AA Intelligence Index ÷ AA $ per task.</b> Higher CE means more smarts per dollar. Rows are ranked across labs. The bar under each name shows its $ per task, with the Index score right next to it. A blue <b>Best deal</b> chip marks each model’s best-CE thinking setting among that model’s own variants — not necessarily its highest Index. Only that best row gets a rank; a model’s other settings show “·” and sit in the Full list. <b>Carried from Oct 3:</b> Ling 3.1 Flash (Index 41 / $0.99, Reasoning mode; open weights) plus AA rows as of Sep 23 (+ Sonnet 5.5 / Sol Sep 29, Argon + Solar Mini 4 Sep 30, Grok 4.7 Low Oct 1). No new AA cost filings today.</p>
+        <p class="ce-blurb"><b>CE = AA Intelligence Index ÷ AA $ per task.</b> Higher CE means more smarts per dollar. Rows are ranked across labs. The bar under each name shows its $ per task, with the Index score right next to it. A blue <b>Best deal</b> chip marks each model’s best-CE thinking setting among that model’s own variants — not necessarily its highest Index. Only that best row gets a rank; a model’s other settings show “·” and sit in the Full list. <b>Carried from Oct 3:</b> Ling 3.1 Flash (Index 41 / $0.99, Reasoning mode; open weights) plus AA rows as of Sep 23 (+ Sonnet 5.5 / Sol Sep 29, Argon + Solar Mini 4 Sep 30, Grok 4.7 Low Oct 1).</p>
         <div class="cost-wrap ce">
           <div class="ce-head"><span>#</span><span>Model · thinking · $ bar</span><span>Index</span><span>$/task</span><span>CE</span></div>
           <div class="chart" id="cechart"></div>
@@ -319,7 +321,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
             <div class="chart" id="cechartFull"></div>
           </div>
         </details>
-        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> Luna and MiMo-V2.6-Pro still get the most Index per AA dollar. Ling 3.1 Flash (CE ≈ 41.4) remains a strong open-weights $/point buy near the Flash tier. Grok 4.7 at Low thinking (CE ≈ 33.6) remains a better $/point buy than Extra-high among Grok settings. Sonnet 5.5 Max stays near the bottom on cost-effectiveness despite strong preference-board showings. <b>Best deal</b> marks each model’s cheapest-per-point setting — the one that buys the most Index per dollar among that model’s own settings.</p>
+        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> Luna and MiMo-V2.6-Pro still get the most Index per AA dollar. Ling 3.1 Flash (CE ≈ 41.4) remains a strong open-weights $/point buy. Grok 4.7 at Low thinking (CE ≈ 33.6) remains a better $/point buy than Extra-high among Grok settings. Sonnet 5.5 Max stays near the bottom on cost-effectiveness despite strong preference-board showings. <b>Best deal</b> marks each model’s cheapest-per-point setting — the one that buys the most Index per dollar among that model’s own settings.</p>
         <p class="note" style="margin-bottom:8px"><b>GPT-6 Astra (Max)</b>, one of the five tied at the top of the carried Agent Arena board, ranks only #11 of 13 here: Index 53 at $3.26 per task (CE ≈ 16.3) — a top-tier score at one of the higher prices per point.</p>
         <p class="note"><b>MiMo-V2.6-Flash</b> (Index 38, as of Sep 27) isn’t ranked here because we don’t have an AA $/task figure for it. Thinking labels are the settings AA tested, which may not match a chat app’s default. Ling’s AA token prices are $0.30/$0.90 per 1M input/output with an 80% cache discount; AA’s $0.99 is cost per Index task at the Reasoning setting.</p>
       </div>
@@ -329,54 +331,54 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   <section id="trust">
     <h3>Caveats</h3>
     <div class="card caveats">
-      <p><b>Robinson essay is one former employee’s account.</b> He says he “led the drafting of our current Preparedness Framework, and oversaw the writing of safety reports on 12 frontier launches,” and that he “resigned this week.” “Culture is broken” is the Atlantic headline’s wording, not a line in the essay body. He has hired a PR firm (Spitfire Strategies) and says “the decision to speak out is mine alone.” Separate from the Oct 1–3 WSJ report that OpenAI “parted ways” with three other safety researchers — don’t imply a link. OpenAI commented on the record (Drew Pusateri to TechCrunch); it did not decline.</p>
+      <p><b>Robinson essay is one former employee’s account.</b> He says he “led the drafting of our current Preparedness Framework, and oversaw the writing of safety reports on 12 frontier launches,” and that he “resigned this week.” “Culture is broken” is the Atlantic headline’s wording, not a line in the essay body. He has hired a PR firm (Spitfire Strategies) and says “the decision to speak out is mine alone.” This is a separate matter from the <a href="https://www.wsj.com/tech/ai/openai-parts-ways-with-researchers-who-allegedly-shared-confidential-information-aebac528" target="_blank" rel="noopener">WSJ report</a> covered in the Oct 3 brief, in which OpenAI parted ways with three safety researchers who allegedly shared confidential information. OpenAI commented on the record (Drew Pusateri to TechCrunch).</p>
       <p><b>Muse relationship pages rest on instruction files,</b> not observed profiles of real people. WIRED’s headline framing (“all your friends and family”) is the outlet’s. Meta (Daniel Roberts) is on record that Muse gathers context “based on public information and from what you’ve chosen to share.” Per-user VM and wipe/disconnect claims in the story are WIRED’s unattributed description — only confirmation-before-actions and the audit log are attributed to Meta in the piece.</p>
-      <p><b>Kolibri licence is weights + config only.</b> Apache-2.0 covers the published weights and configuration files; Aleph Alpha retains rights to code, architecture, parameter settings and training methods. All cited benches (GPQA Diamond, AIME 2025, SWE-Bench Verified, etc.) are vendor-run; no independent leaderboard entry yet. Blog says German share of pre-training is 21.3%; the model card says about 23.9%.</p>
+      <p><b>Kolibri licence is weights + config only.</b> Apache-2.0 covers the published weights and configuration files. The model card: “The license especially does not extend to underlying code, model architecture, parameter settings or any training method.” All cited benches (GPQA Diamond, AIME 2025, SWE-Bench Verified, etc.) are vendor-run; no independent leaderboard entry yet, and no AA (Artificial Analysis) cost data yet. Blog says German share of pre-training is 21.3%; the model card says about 23.9%.</p>
       <p><b>Trillium funding figures are targets,</b> not money raised: “an undisclosed sum from Schmidt Sciences, Halcyon Futures, and others”; founders aim to raise $40–100M and plan to spend $30M on training over 18 months (WIRED, Oct 2).</p>
       <p><b>Guided Vision is not for navigation.</b> Google: available on Android 9+ where Gemini Live is supported; “not a medical device, mobility aid, or white cane replacement”; “not intended for navigation, safe-travel guidance, or obstacle detection.” Built with Aira.</p>
-      <p><b>Bessent / Axios “propose” restates Sep 25.</b> The White House fact sheet already says the U.S. and China “agreed to establish a bilateral communication channel for SI incidents.” “Propose” is Axios’s paraphrase; none of Bessent’s direct quotes name a notification system.</p>
-      <p><b>Irving TIME essay is opinion,</b> not news: former UK AISI chief scientist (now Resolution) puts ~50% chance “we all die” and calls to “stop frontier AI development immediately.” Personal estimate; TIME notes opinions need not reflect its editors.</p>
-      <p><b>Carried scores.</b> No new benchmark rows for Oct 4; every job card and the CE board repeat the Oct 3 filings (see each card’s as-of date). Agent Arena Net Improvement ≠ Elo; Text/Vision are preference Elo, not accuracy. Prefer AA / Vals / LMArena / Epoch for decisions; do not blend harnesses. Scores within ~3 points are within noise on most % boards; Elo / NI CIs matter on LMArena.</p>
+      <p><b>Bessent / Axios “propose” restates Sep 25.</b> The White House fact sheet already says the U.S. and China “agreed to establish a bilateral communication channel for SI incidents” (SI = “super intelligence,” the term the two governments agreed to use). “Propose” is Axios’s paraphrase; none of Bessent’s direct quotes name a notification system.</p>
+      <p><b>Irving TIME essay is opinion,</b> not news: former chief scientist at the UK AI Security Institute (AISI), now at Resolution, puts ~50% chance “we all die” and calls to “stop frontier AI development immediately.” Personal estimate; TIME notes opinions need not reflect its editors.</p>
+      <p><b>Carried scores.</b> No new benchmark scores for Oct 4; the job cards and the CE board show the scores from the Oct 3 brief (see each card’s as-of date), with WebDev’s tie grouping corrected and the Text and Vision cards widened. Agent Arena Net Improvement ≠ Elo; Text/Vision are preference Elo, not accuracy. Prefer AA / Vals / LMArena / Epoch for decisions; do not blend harnesses. Scores within ~3 points are within noise on most % boards; Elo / NI CIs matter on LMArena.</p>
     </div>
   </section>
 
-  <footer>Built for phone reading · AI Commentator · Sunday Oct 4, 2026 · lead: Robinson quits OpenAI (Atlantic) · co-lead: Muse relationship pages (WIRED) · scores carried from Oct 3 · CE board carried (Ling + AA Sep 23/29/30 + Grok Low Oct 1)</footer>
+  <footer>Built for phone reading · AI Commentator · Sunday Oct 4, 2026 · lead: Robinson quits OpenAI (Atlantic) · co-lead: Muse relationship pages (WIRED) · scores carried from Oct 3 (WebDev tie corrected) · CE board carried (Ling + AA Sep 23/29/30 + Grok Low Oct 1)</footer>
 </div>
 
 
 <script>
-const ACCENT_MODELS=[]; /* SUBJECTS=[] — no newly audited frontier chat model; no blue accent */
+const ACCENT_MODELS=[]; /* no newly audited frontier chat model; no blue accent */
 function isSub(n){return ACCENT_MODELS.some(s=>n.indexOf(s)===0)}
 
 const NEWS_TIERS=[
  {h:'Lead · Sunday Oct 4', items:[
- {lead:true, tag:'Share · Lead · Lab safety culture', title:'David Robinson quits OpenAI; Atlantic essay says iterative deployment “guarantees periodic failures”',
-  body:`The original is Robinson’s Atlantic essay “I Quit OpenAI Because Its Culture Is Broken” (Oct 3, 7:00 am ET). In his words, he “resigned this week,” “led the drafting of our current Preparedness Framework, and oversaw the writing of safety reports on 12 frontier launches.” He says iterative deployment “by its very nature, guarantees periodic failures—and the scale of those failures is growing as systems get more capable,” and that frontier labs “need to run like nuclear-power plants or busy airports.” “Culture is broken” is the headline’s wording, not a line in the essay body.
-OpenAI commented on the record (it did not decline). Spokesperson Drew Pusateri told TechCrunch: “We’re making sure our models don’t become more capable than we can safely manage and secure, and we pause training or hold back models when we need to slow down. We’re making significant changes to strengthen security in our research and testing environments, train models to not just complete tasks but do so responsibly, expand our work with third-party evaluators, and improve real-time monitoring so we can detect and respond to concerning behavior earlier in the training process.” The Guardian quotes an unnamed spokesperson saying OpenAI continues to “strengthen our safety and security practices to address the risks we see today.”
-Corroboration: the Guardian (Dan Milmo, Oct 3) and Reuters (Mrinmay Dey, Oct 3) cover the essay. Business Insider (Stephen Council, Lauren Edmonds) broke the departure as an exclusive on Fri Oct 2 and says he “left last week”; his essay says “this week.” Caveats: one former employee’s account; he has hired a PR firm (Spitfire Strategies) and says “the decision to speak out is mine alone.” Separate from the WSJ report that OpenAI “parted ways” with three other safety researchers — don’t imply a link.`,
+ {lead:true, tag:'Lead · Lab safety culture', title:'David Robinson quits OpenAI; Atlantic essay says iterative deployment “guarantees periodic failures”',
+  body:`The original is Robinson’s Atlantic essay “I Quit OpenAI Because Its Culture Is Broken” (Oct 3, 7:00 am ET). In his words, he “resigned this week,” “led the drafting of our current Preparedness Framework, and oversaw the writing of safety reports on 12 frontier launches.” (The Preparedness Framework is OpenAI’s policy for testing models for severe risks before release.) He says iterative deployment “by its very nature, guarantees periodic failures—and the scale of those failures is growing as systems get more capable,” and that frontier labs “need to run like nuclear-power plants or busy airports.” “Culture is broken” is the headline’s wording, not a line in the essay body.
+OpenAI commented. Spokesperson Drew Pusateri told TechCrunch: “We’re making sure our models don’t become more capable than we can safely manage and secure, and we pause training or hold back models when we need to slow down. We’re making significant changes to strengthen security in our research and testing environments, train models to not just complete tasks but do so responsibly, expand our work with third-party evaluators, and improve real-time monitoring so we can detect and respond to concerning behavior earlier in the training process.” The Guardian quotes an unnamed spokesperson saying OpenAI continues to “strengthen our safety and security practices to address the risks we see today.”
+Sourcing: <a href="https://www.businessinsider.com/safety-leader-david-robinson-resigns-from-openai-2026-10" target="_blank" rel="noopener">Business Insider</a> (Stephen Council and Lauren Edmonds) broke the departure as an exclusive on Fri Oct 2 at 7:15 pm ET (updated Oct 3, 8:43 am ET); an OpenAI spokesperson told BI he “left last week,” while his essay says “this week.” <a href="https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken" target="_blank" rel="noopener">The Guardian</a> (Dan Milmo, Oct 3, 3:41 pm ET) and <a href="https://www.reuters.com/legal/litigation/openai-safety-employee-quits-says-time-trial-error-is-over-2026-10-03/" target="_blank" rel="noopener">Reuters</a> (Mrinmay Dey, Oct 3) cover the essay. Caveats: one former employee’s account; he has hired a PR firm (Spitfire Strategies) and says “the decision to speak out is mine alone.” This is a separate matter from the <a href="https://www.wsj.com/tech/ai/openai-parts-ways-with-researchers-who-allegedly-shared-confidential-information-aebac528" target="_blank" rel="noopener">WSJ report</a> covered in the Oct 3 brief, in which OpenAI parted ways with three safety researchers who allegedly shared confidential information.`,
   why:'Why care: the person who wrote OpenAI’s launch safety reports says publicly that its method guarantees growing failures.',
-  links:[['The Atlantic (essay)','https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/','primary'],['TechCrunch (Pusateri quote)','https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/','news']]}
+  links:[['The Atlantic — Robinson essay (Oct 3, 7:00 am ET)','https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/','primary'],['Business Insider — Stephen Council and Lauren Edmonds (scoop, Fri Oct 2, 7:15 pm ET)','https://www.businessinsider.com/safety-leader-david-robinson-resigns-from-openai-2026-10','news'],['The Guardian — Dan Milmo (Oct 3)','https://www.theguardian.com/technology/2026/oct/03/openai-safety-leader-quits-warning-ai-companys-culture-is-broken','news'],['Reuters — Mrinmay Dey (Oct 3)','https://www.reuters.com/legal/litigation/openai-safety-employee-quits-says-time-trial-error-is-over-2026-10-03/','news'],['TechCrunch (Pusateri quote)','https://techcrunch.com/2026/10/03/openai-safety-employee-resigns-claiming-the-companys-culture-is-broken/','news'],['WSJ (separate Oct 3-brief story)','https://www.wsj.com/tech/ai/openai-parts-ways-with-researchers-who-allegedly-shared-confidential-information-aebac528','news']]}
  ]},
  {h:'Co-lead', items:[
- {tag:'Share · Co-lead · Consumer privacy', title:'Muse instructed to build “a page for every person in the user’s life,” updated hourly',
-  body:`WIRED’s Kernel Panic newsletter (Lily Hay Newman and Matt Burgess, Oct 3) reports on instructions that independent researcher Karan Joshi extracted and shared with WIRED. They tell Muse to create “a page for every person in the user’s life” in an hourly process covering family, partners, friends, colleagues, “collaborators” and people you “follow.” Pages have sections such as Facts, History, The relationship, In common, Open threads and Strengthening; Muse may use only the “evidence” it has, so a page can start “sparse.”
+ {tag:'Co-lead · Consumer privacy', title:'Meta’s AI agent Muse instructed to build “a page for every person in the user’s life,” updated hourly',
+  body:`WIRED’s Kernel Panic newsletter (Lily Hay Newman and Matt Burgess, Oct 3) reports on instructions that independent researcher Karan Joshi extracted and shared with WIRED. They tell Muse, Meta’s AI agent, to create “a page for every person in the user’s life” in an hourly process covering family, partners, friends, colleagues, “collaborators” and people you “follow.” Pages have sections such as Facts, History, The relationship, In common, Open threads and Strengthening; Muse may use only the “evidence” it has, so a page can start “sparse.”
 Meta’s response, in full as WIRED prints it: spokesperson Daniel Roberts said, “For any agent to be useful and actually help you achieve your goals, it needs to have context about you and those you interact with. Muse gathers that based on public information and from what you’ve chosen to share, which is how it remembers the person who sent you an invoice is in fact the plumber who you previously hired to complete work in your bathroom or which flowers your spouse said they liked best.”
 Caveats: the story rests on instruction files, not observed profiles of real people; the headline’s “all your friends and family” is WIRED’s framing. Meta “has maintained” the files were meant to be accessible. The per-user VM and users’ ability to “wipe memories or disconnect external services” are WIRED’s unattributed description — only the confirmation-before-actions step and the audit log are attributed to Meta in the piece.`,
   why:'Why care: Meta confirms on record that Muse builds context on the people users interact with, partly from “public information.”',
   links:[['WIRED','https://www.wired.com/story/muse-creates-detailed-profiles-of-all-your-friends-and-family/','primary']]}
  ]},
  {h:'Also today', items:[
- {tag:'Share · Also · Open-weight model', title:'Aleph Alpha releases Kolibri: English–German MoE, 78.1B total / 3.46B active',
-  body:`Aleph Alpha blog (Oct 3) and Hugging Face model card for Aleph-Alpha/Kolibri-1. Specs: 78.1B total parameters and 3.46B active per token (the blog’s “3B active” is rounding); mixture-of-experts with 384 routed experts plus 1 shared, 6 routed per token, 50 layers; English and German; 262,144-token native context (1M by extrapolation); pre-trained on 20T tokens on 768 B200 GPUs from scratch.
-Licence, component by component: weights and config files are Apache-2.0, but the card says those rights “only apply to the weights and configuration files published in this repository” and “do not extend to underlying code, model architecture, parameter settings or any training method.” Training code isn’t released. Every benchmark cited is Aleph Alpha–run on its own harnesses (e.g. GPQA Diamond 84.3, AIME 2025 96.9, SWE-Bench Verified 66.4); no independent leaderboard entry yet. “Trained on infrastructure in Germany and Finland” and “no foreign control” are the company’s own claims. Inconsistency: German share of pre-training is 21.3% in the blog but about 23.9% on the card.`,
+ {tag:'Also · Open-weight model', title:'Aleph Alpha releases Kolibri: English–German mixture-of-experts model, 78.1B total / 3.46B active parameters',
+  body:`Aleph Alpha blog (Oct 3) and Hugging Face model card for Aleph-Alpha/Kolibri-1. Specs: 78.1B total parameters and 3.46B active per token (the blog’s “3B active” is rounding); mixture-of-experts (MoE: each token is handled by a few specialist sub-networks rather than the whole model) with 384 routed experts plus 1 shared, 6 routed per token, 50 layers; English and German; 262,144-token native context (1M by extrapolation); pre-trained from scratch on 20T tokens using 768 Nvidia B200 data-centre GPUs.
+Licence, component by component: weights and config files are Apache-2.0, but the card says those rights “only apply to the weights and configuration files published in this repository” and “The license especially does not extend to underlying code, model architecture, parameter settings or any training method.” Training code isn’t released. No AA (Artificial Analysis) cost data yet. Every benchmark cited is Aleph Alpha–run on its own harnesses (e.g. GPQA Diamond 84.3, AIME 2025 96.9, SWE-Bench Verified 66.4); no independent leaderboard entry yet. “Trained on infrastructure in Germany and Finland” and “no foreign control” are the company’s own claims. Inconsistency: German share of pre-training is 21.3% in the blog but about 23.9% on the card.`,
   why:'Why care: a sovereign EN/DE open-weight MoE — but Apache covers weights/config only, and the benches are vendor-run.',
   links:[['Aleph Alpha blog','https://aleph-alpha.com/en/blog/kolibri-has-landed-a-sovereign-open-weight-model/','lab'],['Hugging Face Kolibri-1','https://huggingface.co/Aleph-Alpha/Kolibri-1','code']]},
- {tag:'Share · Also · Open research org', title:'Trillium Labs launches to publish post-training and RSI experiments in the open',
+ {tag:'Also · Open research org', title:'Trillium Labs launches to publish post-training and recursive self-improvement (RSI) experiments in the open',
   body:`WIRED (Will Knight, Oct 2): nonprofit Trillium Labs, founded by Nathan Lambert and Tom Zick, will publish experiments on post-training, recursive self-improvement (RSI) and how reinforcement learning shapes model behaviour so outside researchers can replicate them. Affiliations per WIRED: Lambert previously worked at Ai2 and Hugging Face; Zick worked at Harvard and helped Charles Schwab on “responsible AI” policies; the two met as UC Berkeley graduate students.
 Funding: “an undisclosed sum from Schmidt Sciences, Halcyon Futures, and others.” The founders “aim to raise $40 to $100 million in total and plan to spend $30 million on training over the next 18 months” — targets, not money raised.`,
   why:'Why care: a nonprofit betting that high-stakes post-training / RSI work can be done in public.',
   links:[['WIRED','https://www.wired.com/story/trillium-labs-wants-to-do-high-risk-ai-research-in-the-open/','primary']]},
- {tag:'Share · Also · Accessibility', title:'Google launches Guided Vision in Gemini Live for blind and low-vision users',
+ {tag:'Also · Accessibility', title:'Google launches Guided Vision in Gemini Live for blind and low-vision users',
   body:`Google blog (Isha Sheth and Scott Adams, Oct 1): Guided Vision in Gemini Live gives spoken descriptions and reframing cues (e.g. “pan slowly to the right, tilt downward, or step back”) when you share your camera. Built with Aira — “tens of thousands of hours” of visual-interpretation work and 1,000+ Aira Trusted Testers.
 Availability, in Google’s words: “Android devices running Android 9 and above in regions and languages where Gemini Live is supported.” The post doesn’t mention iOS and names no country list beyond testing feedback from India, Brazil, Singapore, Indonesia, Japan “and more.” Google’s caveats: it “can make mistakes,” is “not a medical device, mobility aid, or white cane replacement,” and is “not intended for navigation, safe-travel guidance, or obstacle detection.”`,
   why:'Why care: camera-guided spoken assistance lands in Gemini Live — with a clear “not for navigation” line.',
@@ -389,13 +391,13 @@ const HELD=[
   body:`Restates the incident channel the U.S. and China “agreed to establish” in the Sep 25 White House fact sheet. “Propose” is Axios’s paraphrase — none of Bessent’s direct quotes name a notification system. Verbatim: “We want safe acceleration”; on executives warning they could lose control, “Well, then they should slow down.”`,
   url:'https://www.axios.com/2026/10/03/china-ai-bessent-axios-show', label:'Axios'},
  {k:'Held', t:'Geoffrey Irving TIME opinion: ~50% chance “we all die”; stop frontier AI immediately',
-  body:`Former UK AISI chief scientist, now Resolution chief scientist. Personal estimate with no new evidence; use at most as colour under the Robinson lead.`,
+  body:`Former chief scientist at the UK AI Security Institute (AISI), now Resolution’s chief scientist. Personal estimate with no new evidence.`,
   url:'https://time.com/article/2026/10/03/we-won-t-know-the-answers-to-ai-s-most-important-questions-until-its-too-late/', label:'TIME'},
- {k:'Watch', t:'US–China AI/SI incident channel if Treasury or State publishes a protocol, Beijing responds, or the SI Dialogue round due by November',
+ {k:'Watch', t:'US–China AI/SI incident channel (SI = “super intelligence,” the fact sheet’s term) if Treasury or State publishes a protocol, Beijing responds, or the SI Dialogue round due by November',
   body:`Sep 25 fact sheet already “agreed to establish”; still no published protocol.`,
-  url:'https://www.whitehouse.gov/', label:'WH (Sep 25)'},
+  url:'https://www.whitehouse.gov/fact-sheets/2026/09/fact-sheet-president-donald-j-trump-advances-a-fair-and-reciprocal-relationship-with-china-while-hosting-historic-state-visit/', label:'WH (Sep 25)'},
  {k:'Watch', t:'Robinson if OpenAI says more or other safety staff follow',
-  body:`Atlantic essay Oct 3; separate from the three researchers OpenAI parted ways with.`,
+  body:`Atlantic essay Oct 3; a separate matter from the three researchers OpenAI parted ways with (WSJ).`,
   url:'https://www.theatlantic.com/technology/2026/10/openai-safety-team-resignation/688881/', label:'Atlantic'},
  {k:'Watch', t:'Muse relationship pages if Meta changes the feature or regulators weigh in',
   body:`WIRED on instruction files; Meta on record for public + shared context only.`,
@@ -407,8 +409,8 @@ const HELD=[
   body:`Held claim; revisit on independent evidence.`,
   url:'https://www.tavus.io/griffin', label:'Tavus'},
  {k:'Watch', t:'xAI v. Minnesota appeal once briefing or an opinion clarifies scope',
-  body:`One-line injunction pending appeal (No. 26-2806); no opinion yet.`,
-  url:'https://storage.courtlistener.com/recap/gov.uscourts.ca8.115489/gov.uscourts.ca8.115489.00805625031.0.pdf', label:'Order'},
+  body:`One-line order, Oct 2 (No. 26-2806); no opinion yet.`,
+  url:'https://storage.courtlistener.com/recap/gov.uscourts.ca8.115489/gov.uscourts.ca8.115489.00805625031.0.pdf', label:'Order granting xAI’s motion for injunction pending appeal'},
  {k:'Watch', t:'Apple Full Disk Access controls once they ship in a macOS release',
   body:`Apple announced additional controls; no ship date or version.`,
   url:'https://developer.apple.com/news/?id=10022026a', label:'Apple'},
@@ -416,44 +418,44 @@ const HELD=[
   body:`WSJ exclusive Oct 1; organisation and names still unconfirmed here.`,
   url:'https://www.wsj.com/tech/ai/openai-parts-ways-with-researchers-who-allegedly-shared-confidential-information-aebac528', label:'WSJ'},
  {k:'Revisit', t:'Murphy–Hawley bill once text or a bill number exists',
-  body:`Carryover — announced; no Congress.gov number yet.`,
+  body:`Announced; no Congress.gov number yet.`,
   url:'https://www.murphy.senate.gov/newsroom/press-releases/murphy-hawley-announce-breakthrough-bipartisan-legislation-to-force-ai-developers-to-prioritize-safety-or-face-prison-time', label:'Murphy'},
  {k:'Revisit', t:'Bonta subpoena if its contents or OpenAI’s response surface',
-  body:`Carryover — investigative step only; demands not public.`,
+  body:`Investigative step only; demands not public.`,
   url:'https://oag.ca.gov/news/press-releases/part-ongoing-investigation-attorney-general-bonta-serves-investigative-subpoena', label:'CA DOJ'},
- {k:'Revisit', t:'FTC probe once CIDs issue or the FTC/companies comment on record',
-  body:`Carryover — no FTC release or complaint yet.`,
-  url:'https://nypost.com/2026/09/30/us-news/ftc-opens-sweeping-probe-of-anthropic-openai-and-other-super-intelligence-models/', label:'NYPost'},
- {k:'Revisit', t:'Gemini 4 Argon once a model card / FSF report or a broad-availability date appears',
-  body:`Carryover — defenders-first Fairwind access only.`,
+ {k:'Revisit', t:'FTC probe once CIDs (civil investigative demands, the FTC’s compulsory requests for documents and testimony) issue or the companies comment on record',
+  body:`An FTC spokesperson confirmed the investigation to CBS News on Sep 30 (the New York Post first reported it); no FTC release or complaint yet.`,
+  url:'https://www.cbsnews.com/news/ftc-investigation-openai-anthropic-ai-safety/', label:'CBS News (FTC on record)'},
+ {k:'Revisit', t:'Gemini 4 Argon once a model card / FSF report (Google’s Frontier Safety Framework) or a broad-availability date appears',
+  body:`Defenders-first access only, via Fairwind (Google’s programme for trusted cyber defenders).`,
   url:'https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/', label:'Google'},
  {k:'Revisit', t:'Moonshot attribution if corroborated',
-  body:`Carryover — OpenAI-only attribution; Moonshot has not responded.`,
+  body:`OpenAI-only attribution; Moonshot has not responded.`,
   url:'https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/', label:'OpenAI'},
- {k:'Revisit', t:'Quine PDAC results if a paper, data or Broad statement appears',
-  body:`Carryover — Microsoft Research’s Quine biology claims remain Microsoft-reported.`,
+ {k:'Revisit', t:'Quine pancreatic-cancer (PDAC, pancreatic ductal adenocarcinoma) results if a paper, data or Broad Institute statement appears',
+  body:`Quine is Microsoft Research’s AI system for biology research; its claims remain Microsoft-reported.`,
   url:'https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/', label:'MSR'},
  {k:'Revisit', t:'Accord overseer / board committee once named',
-  body:`Carryover — Joint Commitment is voluntary; overseer still unnamed.`,
+  body:`Joint Commitment is voluntary; overseer still unnamed.`,
   url:'https://www.washingtonexaminer.com/news/white-house/4747747/full-trump-white-house-accord-ai-super-intelligence/', label:'WashEx'},
- {k:'Revisit', t:'Anthropic prospectus figures once a public S-1 is on EDGAR',
-  body:`Carryover — still confidential.`,
-  url:'https://www.cnbc.com/2026/09/29/anthropic-warns-ai-existential-risks-ipo-filing-reuters.html', label:'CNBC (Reuters)'},
+ {k:'Revisit', t:'Anthropic prospectus figures once a public S-1 (IPO registration statement) is on EDGAR (the SEC’s public database of company documents)',
+  body:`Still confidential; no public Anthropic S-1 on EDGAR. Reuters exclusive (Echo Wang, Aditya Soni) on the risk-factor language.`,
+  url:'https://www.reuters.com/business/finance/anthropic-warns-ai-may-pose-existential-risks-humanity-ipo-filing-2026-09-29/', label:'Reuters'},
  {k:'Revisit', t:'Khanna Human Control Over AI Act once introduced',
-  body:`Carryover — still no bill text or number.`,
+  body:`Still no bill text or number.`,
   url:'https://www.cnbc.com/2026/09/28/khanna-ai-safety-bill.html', label:'CNBC'},
  {k:'Revisit', t:'SwarmTraces (not independently corroborated)',
-  body:`Carryover — independent dump; no OpenAI or major-outlet confirmation yet.`,
+  body:`Independent dump; no OpenAI or major-outlet confirmation yet.`,
   url:'https://swarmtraces.org/', label:'SwarmTraces'},
  {k:'Revisit', t:'Tesla Optimus (if Tesla or a second outlet confirms the numbers)',
-  body:`Carryover — Ars relay of The Information on Optimus V3 scale-up issues.`,
-  url:'https://arstechnica.com/ai/2026/09/tesla-workers-balk-at-training-optimus-humanoid-robots-as-replacements/', label:'Ars Technica'}
+  body:`The Information’s report (paywalled) on Optimus V3 scale-up issues.`,
+  url:'https://www.theinformation.com/articles/teslas-optimus-hits-snags-hands-suppliers-scale-up-begins', label:'The Information'}
 ];
 
 document.getElementById('newsList').innerHTML=NEWS_TIERS.map(t=>{
   const cards=t.items.map(n=>{
     const paras=n.body.trim().split(/\n+/).map(p=>`<p>${p.trim()}</p>`).join('');
-    return `<article class="card story${n.lead?' lead':''}"><div class="tag">${n.tag}</div><h4>${n.title}</h4><div class="body">${paras}</div><p class="why">${n.why}</p><div class="links">${n.links.map(l=>`<div><a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a> <span>· ${l[2]}</span></div>`).join('')}</div></article>`;
+    return `<article class="card story${n.lead?' lead':''}"><div class="tag">${String(n.tag).replace(/^\s*Share\s*·\s*/i,'')}</div><h4>${n.title}</h4><div class="body">${paras}</div><p class="why">${n.why}</p><div class="links">${n.links.map(l=>`<div><a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a> <span>· ${l[2]}</span></div>`).join('')}</div></article>`;
   }).join('');
   return `<div class="tier-h">${t.h}</div><div class="news-tier">${cards}</div>`;
 }).join('');
@@ -464,9 +466,8 @@ document.getElementById('heldStrip').innerHTML=HELD.map(h=>{
 
 
 /* Best-for-what job cards, 2026-10-04.
-   ZERO new benchmark rows. Full carry from Oct 3 brief.
-   As-of dates unchanged: AA Index / Ling Oct 3; Agent NI / Text / Vision Oct 2; others earlier.
-   isNew/updated flags stripped — all cards carried. SUBJECTS / ACCENT_MODELS = []. */
+   No new benchmark scores. WebDev marked updated (tie correction from Oct 3).
+   Text/Vision widened to every tracked model on the Oct 2 boards. ACCENT_MODELS = []. */
 
 const BENCH=[ {id:'job-aa-index', asof:'Oct 3', title:'Overall smarts (composite Index)', sub:'Official: Artificial Analysis Intelligence Index · independent · Ling 3.1 Flash as of Oct 3; other scores carried',
   practical:'Quick “how smart overall?” skim across many tasks — a vibe-check, not a job card.',
@@ -481,32 +482,72 @@ const BENCH=[ {id:'job-aa-index', asof:'Oct 3', title:'Overall smarts (composite
     ['MiMo-V2.6-Flash','Reasoning mode · AA · Sep 27',38],['Claude Sonnet 5','Max thinking · AA',38],['GPT-6 Luna','Max thinking · AA',37],['GPT-5.6 Luna','Max thinking · AA',37],
     ['DeepSeek V4 Pro 0813','Max thinking · AA',36],['JT-4.1 Flash 236B A21B','Setting not stated · China Mobile · AA · Sep 29',34],['Solar Mini 4','Reasoning mode · AA · Sep 30',24],['DeepSeek V4 Pro 0813','Non-reasoning · AA · Sep 29',20]
   ]},
- {id:'job-agent-ni', asof:'Oct 2', dp:2, title:'Agent sessions that go better (Net Improvement)', sub:'Official: LMArena Agent Arena Overall · Net Improvement · NOT Elo · board Oct 2 · 2,158,478 sessions · 51 models · five tied for #1 (all their rank spreads include #1)', ciTies:[['Claude Fable 5.1','Claude Opus 5.5','Claude Sonnet 5.5','GPT-6 Astra','GPT-6.1 Sol']],
+ {id:'job-agent-ni', asof:'Oct 2', dp:2, title:'Agent sessions that go better (Net Improvement)', sub:'Official: LMArena Agent Arena Overall · Net Improvement (NI) · NOT Elo · board Oct 2 · 2,158,478 sessions · 51 models · all five shown tie at 1= (their intervals overlap)', ciTies:[['Claude Fable 5.1','Claude Opus 5.5','Claude Sonnet 5.5','GPT-6 Astra','GPT-6.1 Sol']],
   practical:'For “which model makes real user agent sessions go better?” — a treatment effect, not a preference Elo or a pass rate.',
   tests:'Net Improvement is how much better a real user’s agent session goes with this model than with the average model, in percentage points. Because each session is sent to a randomly chosen model, LMArena can measure it as a treatment effect — the causal difference the model itself makes — from implicit behaviour signals (task outcome, praise/complaint, steering burden, bash recovery, tool hallucination). It is not an Elo score and not a pass-rate agent bench. ± marks the confidence interval (the likely range of the true value); values drift down as the average model improves. Overlapping intervals mean a statistical tie.',
   daily:'Use when you care about agent helpfulness in the wild. Do not blend with LMArena Text/WebDev Elo or with Terminal-Bench / Vals agent pass rates.',
-  fieldNote:'Board dated Oct 2 (2,158,478 sessions, 51 models). LMArena’s displayed order: Claude Fable 5.1 Max 14.31% ±1.90% (#1, rank spread 1–5, 15,130 sessions); Claude Opus 5.5 High 13.82% ±2.17% (#2, spread 1–6, 5,359); Claude Sonnet 5.5 Max 12.52% ±3.09% (#3, spread 1–9, 5,219); GPT-6 Astra Max 12.27% ±2.23% (#4, spread 1–7, 11,717); GPT-6.1 Sol Max 11.23% ±2.76% (#5, spread 1–10, 6,278). All five have rank spreads that include #1, so they are shown tied 1= here; the next model, GPT-6 Sol Max (#6), has a spread of 2–12. Changelog Oct 2 added Sonnet 5.5 Max and GPT-6.1 Sol Max.',
+  fieldNote:'Board dated Oct 2 (2,158,478 sessions, 51 models). Tie rule, used on every ranked card in this brief: models whose confidence intervals overlap, directly or through a chain of overlaps, share one tie group. LMArena’s displayed order: Claude Fable 5.1 Max 14.31% ±1.90% (12.41–16.21; #1, 15,130 sessions); Claude Opus 5.5 High 13.82% ±2.17% (11.65–15.99; #2, 5,359); Claude Sonnet 5.5 Max 12.52% ±3.09% (9.43–15.61; #3, 5,219); GPT-6 Astra Max 12.27% ±2.23% (10.04–14.50; #4, 11,717); GPT-6.1 Sol Max 11.23% ±2.76% (8.47–13.99; #5, 6,278). Every pair of these five overlaps directly — even the widest gap, Fable 5.1 vs Sol, overlaps (Sol’s top 13.99 is above Fable 5.1’s bottom 12.41) — so there are no non-overlapping pairs and Sol joins the group: all five are 1=. The next model, GPT-6 Sol Max (#6, 9.71% ±2.37%), would also chain in but is not shown on this card. Changelog Oct 2 added Sonnet 5.5 Max and GPT-6.1 Sol Max.',
   data:[
     ['Claude Fable 5.1','Max thinking · LMArena Agent · Oct 2',14.31],['Claude Opus 5.5','High thinking · LMArena Agent · Oct 2',13.82],['Claude Sonnet 5.5','Max thinking · LMArena Agent · Oct 2',12.52],
     ['GPT-6 Astra','Max thinking · LMArena Agent · Oct 2',12.27],['GPT-6.1 Sol','Max thinking · LMArena Agent · Oct 2',11.23]
   ]},
- {id:'job-text-en', asof:'Oct 2', title:'Text people prefer — English Elo', sub:'Official: LMArena Text Arena (English) · preference Elo · NOT accuracy · style control · board Oct 2 · 4,177,243 votes · rank = order among the models shown; each label gives LMArena’s own board rank', boardRank:true, ciTies:[['GPT-6.1 Sol','Claude Sonnet 5.5']],
+ {id:'job-text-en', asof:'Oct 2', title:'Text people prefer — English Elo', sub:'Official: LMArena Text Arena (English) · preference Elo · NOT accuracy · style control · board Oct 2 · 4,177,243 votes · every model tracked elsewhere in this brief that is on the board · each label leads with LMArena’s own rank, then the rank among these', boardRank:true, ciTies:[['Gemini 4 Argon','Claude Fable 5','Claude Opus 5.5','Muse Spark 1.3','Gemini 3.8 Flash','Claude Fable 5.1','GPT-6.1 Sol','MiMo-V2.6-Pro','Kimi K3','Claude Opus 5','Claude Sonnet 5.5','Qwen3.8 Max','GLM-5.3','DeepSeek V4.1 Flash','GPT-5.6 Sol','GPT-6 Astra','DeepSeek V4 Pro 0813','Claude Sonnet 5','MiMo-V2.6-Flash','GPT-5.6 Terra','GPT-5.6 Luna','GPT-6 Sol','Grok 4.6','GPT-6 Luna','Grok 4.7']],
   practical:'For “which model’s English replies do humans prefer?” — vibe ranking, not fact-check accuracy.',
   tests:'LMArena Text Arena (English) is a crowd-sourced human-preference Elo arena on English prompts: people vote between paired replies. Higher Elo means wins more head-to-heads. It is not an accuracy / pass-rate test. This is the English-prompt board; LMArena’s Overall text board can order models differently. Confidence intervals (CIs, the likely range of a model’s true rating) and vote counts matter; overlapping CIs mean a statistical tie.',
   daily:'Use for English chat preference. Prefer knowledge / hallucination cards when factual correctness is the job.',
-  fieldNote:'Board dated Oct 2 (4,177,243 votes, 413 models; style control on). Gemini 4 Argon High 1533 ±14 is LMArena #1 with a rank spread of 1–2, marked Preliminary (some votes collected before release); its interval touches Claude Opus 4.6 High at 1514 ±5 (#2, not on this card). Argon’s interval clears both models below. GPT-6.1 Sol Max 1496 ±17 (#13, spread 2–55, 1,149 votes) and Claude Sonnet 5.5 Extra-high 1492 ±17 (#17, spread 3–61, 1,196 votes) overlap, so they are shown tied. Changelog Oct 2 added Sonnet Extra-high.',
+  fieldNote:'Board dated Oct 2 (4,177,243 votes, 413 models; style control on). Shown: every model tracked elsewhere in this brief that is on this board — 25 models, plus Claude Opus 5’s Max setting (LMArena #20) as a “·” row. Each label leads with LMArena’s own rank and gives the ± confidence interval. Tie rule (chained overlap): models whose intervals overlap, directly or through a chain of overlapping neighbours, share one tie group. Here the chain links all 25 into one group, so all are 1= — that means no clean ordering among them, not that they are equal. Pairs that do NOT overlap directly: Gemini 4 Argon (1533 ±14, LMArena #1, Preliminary — some votes collected before release) overlaps only Claude Opus 5.5 (1506 ±14, #6), whose wide interval links it to the rest; Argon’s low end (1519.1) sits just above Claude Fable 5’s high end (1519.0). Claude Fable 5 (1513 ±6, #3) overlaps only Opus 5.5, Muse Spark 1.3, GPT-6.1 Sol, MiMo-V2.6-Pro and Sonnet 5.5. At the bottom, GPT-6 Luna (1445 ±10, #103) and Grok 4.7 (1445 ±12, #104) overlap only GPT-6 Sol, Grok 4.6 and each other. Claude Opus 4.6 High (1514, #2) isn’t shown because it isn’t tracked elsewhere in this brief.',
   data:[
-    ['Gemini 4 Argon','High thinking · LMArena #1 of 413 · Text EN · Oct 2 · Preliminary',1533,'#1 of 413'],['GPT-6.1 Sol','Max thinking · LMArena #13 of 413 · Text EN · Oct 2',1496,'#13 of 413'],['Claude Sonnet 5.5','Extra-high thinking · LMArena #17 of 413 · Text EN · Oct 2',1492,'#17 of 413']
+['Gemini 4 Argon','High thinking · ±14 · Text EN · Oct 2 · Preliminary',1533,'#1 of 413'],
+['Claude Fable 5','High thinking · ±6 · Text EN · Oct 2',1513,'#3 of 413'],
+['Claude Opus 5.5','High thinking · ±14 · Text EN · Oct 2',1506,'#6 of 413'],
+['Muse Spark 1.3','Max thinking · ±9 · Text EN · Oct 2',1499,'#8 of 413'],
+['Gemini 3.8 Flash','High thinking · ±7 · Text EN · Oct 2 · Preliminary',1498,'#10 of 413'],
+['Claude Fable 5.1','Max thinking · ±9 · Text EN · Oct 2',1498,'#11 of 413'],
+['GPT-6.1 Sol','Max thinking · ±17 · Text EN · Oct 2',1496,'#13 of 413'],
+['MiMo-V2.6-Pro','Setting not stated · ±15 · Text EN · Oct 2',1496,'#14 of 413'],
+['Kimi K3','Max thinking · ±6 · Text EN · Oct 2',1495,'#15 of 413'],
+['Claude Opus 5','High thinking · ±5 · Text EN · Oct 2',1493,'#16 of 413'],
+['Claude Sonnet 5.5','Extra-high thinking · ±17 · Text EN · Oct 2',1492,'#17 of 413'],
+['Qwen3.8 Max','Setting not stated · ±7 · Text EN · Oct 2',1492,'#18 of 413'],
+['Claude Opus 5','Max thinking · ±7 · Text EN · Oct 2',1491,'#20 of 413'],
+['GLM-5.3','Max thinking · ±8 · Text EN · Oct 2',1490,'#23 of 413'],
+['DeepSeek V4.1 Flash','Max thinking · ±10 · Text EN · Oct 2',1489,'#24 of 413'],
+['GPT-5.6 Sol','Extra-high thinking · ±6 · Text EN · Oct 2',1489,'#25 of 413'],
+['GPT-6 Astra','Max thinking · ±10 · Text EN · Oct 2',1488,'#26 of 413'],
+['DeepSeek V4 Pro 0813','High thinking · ±10 · Text EN · Oct 2',1479,'#42 of 413'],
+['Claude Sonnet 5','High thinking · ±5 · Text EN · Oct 2',1472,'#56 of 413'],
+['MiMo-V2.6-Flash','Setting not stated · ±12 · Text EN · Oct 2',1472,'#57 of 413'],
+['GPT-5.6 Terra','Extra-high thinking · ±6 · Text EN · Oct 2',1471,'#58 of 413'],
+['GPT-5.6 Luna','Extra-high thinking · ±6 · Text EN · Oct 2',1467,'#66 of 413'],
+['GPT-6 Sol','Max thinking · ±11 · Text EN · Oct 2',1462,'#76 of 413'],
+['Grok 4.6','High thinking · ±7 · Text EN · Oct 2',1458,'#82 of 413'],
+['GPT-6 Luna','Max thinking · ±10 · Text EN · Oct 2',1445,'#103 of 413'],
+['Grok 4.7','Extra-high thinking · ±12 · Text EN · Oct 2',1445,'#104 of 413']
   ]},
- {id:'job-vision', asof:'Oct 2', title:'Images people prefer (Vision Elo)', sub:'Official: LMArena Vision Arena · Overall · preference Elo · NOT accuracy · board Oct 2 · 1,436,923 votes · rank = order among the models shown; each label gives LMArena’s own board rank', boardRank:true, ciTies:[['Claude Fable 5','GPT-6.1 Sol','Claude Sonnet 5.5']],
+ {id:'job-vision', asof:'Oct 2', title:'Images people prefer (Vision Elo)', sub:'Official: LMArena Vision Arena · Overall · preference Elo · NOT accuracy · board Oct 2 · 1,436,923 votes · every model tracked elsewhere in this brief that is on the board · each label leads with LMArena’s own rank, then the rank among these', boardRank:true, ciTies:[['Claude Fable 5','Qwen3.8 Max','GPT-6.1 Sol','Gemini 3.8 Flash','Muse Spark 1.3','Claude Opus 5','Claude Fable 5.1','GPT-5.6 Sol','GPT-6 Astra','Claude Sonnet 5.5','GPT-5.6 Terra','Claude Sonnet 5','Grok 4.6','GPT-5.6 Luna','MiMo-V2.6-Flash','MiMo-V2.6-Pro']],
   practical:'For “which model’s image answers do humans prefer?” — vibe ranking, not vision accuracy benches.',
   tests:'LMArena Vision Arena is a crowd-sourced human-preference Elo arena: people vote between paired vision responses. Higher Elo means wins more head-to-heads. It is not an accuracy test. Confidence intervals and vote counts matter — overlapping CIs mean a statistical tie.',
   daily:'Use for multimodal preference. Prefer dedicated vision accuracy suites when correctness is the job.',
-  fieldNote:'Board dated Oct 2 (1,436,923 votes, 159 models; style control). Claude Fable 5 High 1309 ±7 (LMArena #1, rank spread 1–10) and GPT-6.1 Sol Max 1291 ±16 (#10, spread 1–37, 1,408 votes) overlap. Sol’s interval also overlaps Claude Sonnet 5.5 Extra-high at 1268 ±15 (#35, spread 9–53, 1,608 votes), so all three are shown tied here — though Fable 5’s interval (1302–1316) does clear Sonnet’s (1253–1283). Changelog Oct 2 added Sonnet Extra-high.',
+  fieldNote:'Board dated Oct 2 (1,436,923 votes, 159 models; style control). Shown: every model tracked elsewhere in this brief that is on this board (16 models). Each label leads with LMArena’s own rank and gives the ± confidence interval. Same chained-overlap tie rule: the chain links all 16 into one group (1=), which means no clean ordering, not equal quality. Pairs that do NOT overlap directly: Claude Fable 5 (1309 ±7, LMArena #1) overlaps only Qwen3.8 Max (1301 ±7, #2), GPT-6.1 Sol (1291 ±16, #10) and Gemini 3.8 Flash (1290 ±12, #11, Preliminary), so it clears everything from Muse Spark 1.3 (1290 ±10, #12) down. At the bottom, MiMo-V2.6-Pro (1245 ±15, #55) overlaps only Claude Sonnet 5.5, Claude Sonnet 5, Grok 4.6, GPT-5.6 Luna and MiMo-V2.6-Flash.',
   data:[
-    ['Claude Fable 5','High thinking · LMArena #1 of 159 · Vision · Oct 2',1309,'#1 of 159'],['GPT-6.1 Sol','Max thinking · LMArena #10 of 159 · Vision · Oct 2',1291,'#10 of 159'],['Claude Sonnet 5.5','Extra-high thinking · LMArena #35 of 159 · Vision · Oct 2',1268,'#35 of 159']
+['Claude Fable 5','High thinking · ±7 · Vision · Oct 2',1309,'#1 of 159'],
+['Qwen3.8 Max','Setting not stated · ±7 · Vision · Oct 2',1301,'#2 of 159'],
+['GPT-6.1 Sol','Max thinking · ±16 · Vision · Oct 2',1291,'#10 of 159'],
+['Gemini 3.8 Flash','High thinking · ±12 · Vision · Oct 2 · Preliminary',1290,'#11 of 159'],
+['Muse Spark 1.3','Max thinking · ±10 · Vision · Oct 2',1290,'#12 of 159'],
+['Claude Opus 5','High thinking · ±7 · Vision · Oct 2',1289,'#14 of 159'],
+['Claude Fable 5.1','Max thinking · ±10 · Vision · Oct 2',1288,'#15 of 159'],
+['GPT-5.6 Sol','Extra-high thinking · ±8 · Vision · Oct 2',1285,'#18 of 159'],
+['GPT-6 Astra','Max thinking · ±11 · Vision · Oct 2',1284,'#20 of 159'],
+['Claude Sonnet 5.5','Extra-high thinking · ±15 · Vision · Oct 2',1268,'#35 of 159'],
+['GPT-5.6 Terra','Extra-high thinking · ±8 · Vision · Oct 2',1268,'#36 of 159'],
+['Claude Sonnet 5','High thinking · ±7 · Vision · Oct 2',1264,'#39 of 159'],
+['Grok 4.6','High thinking · ±9 · Vision · Oct 2',1263,'#41 of 159'],
+['GPT-5.6 Luna','Extra-high thinking · ±8 · Vision · Oct 2',1260,'#44 of 159'],
+['MiMo-V2.6-Flash','Setting not stated · ±13 · Vision · Oct 2',1247,'#53 of 159'],
+['MiMo-V2.6-Pro','Setting not stated · ±15 · Vision · Oct 2',1245,'#55 of 159']
   ]},
- {id:'job-webdev', asof:'Oct 1', title:'Web apps people prefer (LMArena WebDev)', sub:'Official: LMArena Code Arena WebDev · Overall · preference Elo · NOT accuracy · Sonnet 5.5 Extra-high added Oct 1', ciTies:[['Claude Opus 5.5','GPT-6 Astra','Claude Sonnet 5.5','GPT-6.1 Sol','Claude Fable 5.1']],
+ {id:'job-webdev', asof:'Oct 1', updated:true, correction:'Corrected Oct 3: Opus 1799–1831 overlaps Sonnet Extra-high 1768–1804, so all five tie at 1=.', title:'Web apps people prefer (LMArena WebDev)', sub:'Official: LMArena Code Arena WebDev · Overall · preference Elo · NOT accuracy · Sonnet 5.5 Extra-high added Oct 1', ciTies:[['Claude Opus 5.5','GPT-6 Astra','Claude Sonnet 5.5','GPT-6.1 Sol','Claude Fable 5.1']],
   practical:'For “which model’s web UI do humans like better?” — vibe ranking, not unit tests.',
   tests:'LMArena Code Arena WebDev is a crowd-sourced human-preference Elo arena: people vote between paired web-app outputs. Higher Elo means wins more head-to-heads. It is not a pass-rate / accuracy test, so never blend or rank it against Vibe Code Bench or other coding % scores. Confidence intervals (CIs, the likely range of a model’s true rating) and vote counts matter — overlapping CIs mean a statistical tie.',
   daily:'Use when front-end look-and-feel preference is the question. For “does the code work?”, prefer Vibe Code or AA Coding Index.',
@@ -550,7 +591,7 @@ const BENCH=[ {id:'job-aa-index', asof:'Oct 3', title:'Overall smarts (composite
   ]},
  {id:'job-vibe', asof:'Sep 30', dp:2, title:'Vibe coding / UI from prompts', sub:'Official: Vibe Code Bench v1.1 · Vals AI · independent',
   practical:'For “make me a working UI / app from a fuzzy prompt” agent work.',
-  tests:'Vals Vibe Code Bench checks whether an agent can turn informal product prompts into working front-end / app code that behaves as asked — the “describe it, get a working app” loop. Vals runs at temperature 1.0 and lets a refused request fall back to an older model on the server side.',
+  tests:'Vals Vibe Code Bench checks whether an agent can turn informal product prompts into working front-end / app code that behaves as asked — the “describe it, get a working app” loop.',
   daily:'Most relevant if your workflow is prompt-to-UI or prompt-to-small-app. Treat close results as ties — a small gap is not a reason to rip out a stack that already works.',
   data:[
     ['Claude Sonnet 5.5','Max compute · Vals',92.39],['Gemini 4 Argon','High thinking · Vals · Sep 30',91.91],['Claude Fable 5','Setting not stated · Vals',90.35],['Claude Opus 5.5','Setting not stated · Vals',90.29],
@@ -558,7 +599,7 @@ const BENCH=[ {id:'job-aa-index', asof:'Oct 3', title:'Overall smarts (composite
   ]},
  {id:'job-migrate', asof:'Sep 30', dp:2, title:'Code migration / porting', sub:'Official: Code Migration · Vals AI · independent · Argon ±4.35 pts',
   practical:'For agents that port or modernize codebases across languages or frameworks.',
-  tests:'Vals Code Migration asks an agent to move code from one language or framework to another while keeping it behaving the same — the core of a port or modernization job. Independent Vals suite (temperature 1.0, server-side fallback on refusals) — not a lab demo.',
+  tests:'Vals Code Migration asks an agent to move code from one language or framework to another while keeping it behaving the same — the core of a port or modernization job. Independent Vals suite — not a lab demo.',
   daily:'Use when migration/port work is the job; don’t read it as general coding skill. Wide error bars can shuffle mid-pack order.',
   data:[
     ['Claude Sonnet 5.5','Max compute · Vals',69.83],['Gemini 4 Argon','High thinking · Vals · Sep 30',68.17],['GPT-6 Astra','Setting not stated · Vals',67.74],['Claude Opus 5.5','Setting not stated · Vals',66.65],['GPT-6.1 Sol','Max thinking · Vals · Sep 29',65.12]
@@ -567,7 +608,7 @@ const BENCH=[ {id:'job-aa-index', asof:'Oct 3', title:'Overall smarts (composite
   practical:'Harder Vals terminal board — longer, messier shell tasks on the mini-swe-agent harness.',
   tests:'Long, messy terminal coding tasks that an agent must carry through to a working result. Vals runs TB 4.0 with mini-swe-agent (bash only, score averaged over 3 runs, 8-hour limit) — not Terminus 2. When a provider refuses a task, some rows let an older model from the same lab answer instead (a provider-side fallback), which can flatter the score. This card is the Vals mini-swe-agent run; AA TB 4.0 and Anthropic’s vendor TB are different setups, so their scores aren’t comparable.',
   daily:'Relevant if your agent harness looks like Vals mini-swe-agent; do not blend with AA, Terminus 2, or vendor TB.',
-  fieldNote:'Vals page updated Oct 1. Five Anthropic rows include provider-side fallback. Claude Opus 5.5 had 22 of 198 task attempts served by Opus 5 or Claude Opus 4.8; counting those as failures lowers it from 65.15% to 58.08%, behind Claude Sonnet 5.5 (62.63% on that basis; 4 attempts served by Claude Sonnet 5) and GPT-6 Astra (59.60%; no fallback listed for it). Claude Fable 5.1 58.08% is from the same Oct 1 update: 22 of its attempts were served by the Opus 5 fallback, and counting those as failures gives 50.00%.',
+  fieldNote:'Vals page updated Oct 1. Vals: “Five Anthropic rows include provider-side fallback” (five Anthropic rows on Vals’ page; three shown here: Opus 5.5, Sonnet 5.5, Fable 5.1). Claude Opus 5.5 had 22 of 198 task attempts served by Opus 5 or Claude Opus 4.8; counting those as failures lowers it from 65.15% to 58.08%, behind Claude Sonnet 5.5 (62.63% on that basis; 4 attempts served by Claude Sonnet 5) and GPT-6 Astra (59.60%; no fallback listed for it). Claude Fable 5.1 58.08% is from the same Oct 1 update: 22 of its attempts were served by the Opus 5 fallback, and counting those as failures gives 50.00%.',
   data:[
     ['Claude Opus 5.5','Setting not stated · Vals TB 4.0 mini-swe · w/ fallbacks · Oct 1',65.15],['Claude Sonnet 5.5','Setting not stated · Vals TB 4.0 mini-swe · w/ fallbacks · Oct 1',64.14],
     ['GPT-6 Astra','Setting not stated · Vals TB 4.0 mini-swe · Oct 1',59.60],['Claude Fable 5.1','Setting not stated · Vals TB 4.0 mini-swe · w/ fallbacks · Oct 1',58.08],['Gemini 4 Argon','High thinking · Vals TB 4.0 mini-swe · Oct 1',57.58],['GPT-6.1 Sol','Max thinking · Vals TB 4.0 mini-swe · Oct 1',55.05]
@@ -672,11 +713,12 @@ const BENCH=[ {id:'job-aa-index', asof:'Oct 3', title:'Overall smarts (composite
     ['GPT-6 Astra','Max thinking · AA',63.3],['Claude Opus 5.5','Extra-high thinking · default fallback · AA',61.9],['Claude Opus 5.5','Max thinking · default fallback · AA',59.0],
     ['Claude Sonnet 5.5','Max thinking · AA · Sep 29',53.0],['Claude Opus 5.5','High thinking · AA',49.0],['Claude Fable 5.1','Max thinking · AA',43.3],['GPT-6 Sol','Max thinking · AA',30.0]
   ]},
- {id:'job-vals-tb21', asof:'Sep 24', title:'Terminal coding agents (Vals TB 2.1)', sub:'Official: Terminal-Bench 2.1 · Vals AI · Terminus 2 · not AA · Opus row uses server-side fallbacks',
+ {id:'job-vals-tb21', asof:'Sep 24', title:'Terminal coding agents (Vals TB 2.1)', sub:'Official: Terminal-Bench 2.1 · Vals AI · Terminus 2 · not AA · Opus row used refusal fallbacks (Vals’ term)',
   practical:'For agents that live in a terminal on Vals’ TB 2.1 harness — install, edit, run, fix.',
-  tests:'Terminal-Bench puts the model in a real shell to finish coding tasks end-to-end. This card is Vals’ TB 2.1 harness with Terminus 2 (temperature 1.0; server-side fallbacks to older models on refusals). Never blend with Artificial Analysis Terminal-Bench, Vals TB 4.0 mini-swe-agent, or a lab’s own TB number.',
+  tests:'Terminal-Bench puts the model in a real shell to finish coding tasks end-to-end. This card is Vals’ TB 2.1 harness with Terminus 2. When a model refuses a task, some runs let an older model from the same lab answer instead (a refusal fallback, in Vals’ words), which can flatter the score. Never blend with Artificial Analysis Terminal-Bench, Vals TB 4.0 mini-swe-agent, or a lab’s own TB number.',
   daily:'Relevant if your agent harness looks like Vals TB 2.1; a two-model field is a spot check, not a full race.',
-  data:[['Claude Opus 5.5','High thinking · Vals TB 2.1',87.64],['GPT-6 Astra','Setting not stated · Vals TB 2.1',87.27]]},
+  fieldNote:'Vals’ note: Opus 5.5’s run used Opus 5 and Claude Opus 4.8 as fallbacks on 26 of 267 tasks; counting those as failures lowers it from 87.64% to 79.77%, behind Astra.',
+  data:[['Claude Opus 5.5','High thinking · Vals TB 2.1 · w/ fallbacks',87.64],['GPT-6 Astra','Setting not stated · Vals TB 2.1',87.27]]},
  {id:'job-vendor-tb40', asof:'Sep 29', vendor:true, dp:1, title:'Terminal coding (Anthropic vendor TB 4.0)', sub:'Official: Terminal-Bench 4.0 · Anthropic launch table · VENDOR · not AA · not Vals',
   practical:'Lab-reported terminal score from the Sonnet 5.5 announce — directional only.',
   tests:'Same kind of terminal coding tasks as the other Terminal-Bench cards, but run by Anthropic itself and published in its launch table, with its own agent setup and settings. Because the lab ran it, it tells you what the vendor claims rather than what an independent tester found. Do not blend with AA or Vals.',
@@ -726,7 +768,7 @@ function benchRows(b, data, scaleMax){
       ? Math.max(2, ((scaleMax-d[2])/(scaleMax-scaleMin||1))*100)
       : Math.max(2, d[2]/scaleMax*100);
     const val=b.lowerBetter?fmtV(b,d[2])+'%':fmtV(b,d[2]);
-    const rr=b.ciTies?rankOf(b,d):'·'; const rk=rr==='·'?'':(b.boardRank?rr.replace(/\.$/,'')+' among these · ':'#'+rr.replace(/\.$/,'')+' · ');
+    const rr=b.ciTies?rankOf(b,d):'·'; const lm=(b.boardRank&&d[3])?'LMArena '+d[3]+' · ':''; const rk=lm+(rr==='·'?(b.boardRank?'other setting, not ranked · ':''):(b.boardRank?rr.replace(/\.$/,'')+' among these · ':'#'+rr.replace(/\.$/,'')+' · '));
     return `<div class="row${pick}"><div class="lbl">${d[0]}${d[1]?`<span class="cfg">${rk}${d[1]}</span>`:''}</div><div class="track"><div class="fill" style="width:${w}%"></div></div><div class="val">${val}</div></div>`;
   }).join('');
 }
@@ -741,7 +783,7 @@ function shortCfg(c){
   if(/^highest api effort$/i.test(f)) return 'Highest API effort';
   return '';
 }
-function rowLabel(b,d){return [shortCfg(d[1]), (!b.vendor&&/w\/ fallbacks/.test(d[1]))?'w/ fallbacks':'', b.vendor?(d[3]||'vendor chart (lab not recorded)'):(b.boardRank&&d[3]?'LMArena '+d[3]:'')].filter(Boolean).join(' · ')}
+function rowLabel(b,d){return [(!b.vendor&&b.boardRank&&d[3])?'LMArena '+d[3]:'', shortCfg(d[1]), (!b.vendor&&/w\/ fallbacks/.test(d[1]))?'w/ fallbacks':'', b.vendor?(d[3]||'vendor chart (lab not recorded)'):''].filter(Boolean).join(' · ')}
 function tieVal(b,u,d){const g=(b.ciTies||[]).find(g=>g.includes(d[0]));if(!g)return d[2];const m=u.filter(o=>g.includes(o[0])).map(o=>o[2]);return b.lowerBetter?Math.min(...m):Math.max(...m)} /* models in a ciTies group (overlapping confidence intervals) share the group's best value for ranking */
 function rankOf(b,d){const u=topPerModel(sortedBench(b),Infinity);if(!u.includes(d))return '·';const v=tieVal(b,u,d);const better=(o)=>b.lowerBetter?tieVal(b,u,o)<v:tieVal(b,u,o)>v;const r=1+u.filter(better).length;const tie=u.filter(o=>tieVal(b,u,o)===v).length>1;return r+(tie?'=':'.')} /* rank within one-row-per-model list; extra settings of a model get · */
 function jobLabel(b){const t=b.title.replace('',''),o=officialName(b);return t.indexOf(o)>=0?t:`${t} · ${o}`}
@@ -750,24 +792,25 @@ function miniItems(b, rows, start){
   return rows.map((d,i)=>{const lab=rowLabel(b,d);const v=b.lowerBetter?fmtV(b,d[2])+'%':fmtV(b,d[2]);return `<li><span class="n">${b.vendor?'·':rankOf(b,d)}</span><span class="m">${d[0]}${lab?` <small>${lab}</small>`:''}</span><span class="v">${v}</span></li>`}).join('');
 }
 const isFront=b=>b.isNew||b.updated;
-const ALL_CARRIED=!BENCH.some(isFront);
-const ORDERED=ALL_CARRIED?BENCH.slice():[...BENCH.filter(isFront),...BENCH.filter(b=>!isFront(b))];
-const CARRIED_N=ALL_CARRIED?0:BENCH.filter(b=>!isFront(b)).length;
+/* Front = new or updated cards. Carried cards ALWAYS collapse behind their toggles, even when no card is new or updated. */
+const FRONT=BENCH.filter(isFront), CARRIED=BENCH.filter(b=>!isFront(b));
+const ORDERED=[...FRONT,...CARRIED];
+const CARRIED_N=CARRIED.length;
 function whereItem(b){
   const s=sortedBench(b);
   const top=topPerModel(s,3), dup=top.length<Math.min(3,s.length)||top.some((d,i)=>d!==s[i]);
   const rest=s.slice(3);
-  const full=(dup||rest.length)?`<details class="fl"><summary><span class="o">Full list (${s.length}) ▾</span><span class="c">Hide full list ▴</span></summary><ol class="mini">${dup?miniItems(b,s,0):miniItems(b,rest,3)}</ol></details>`:'';
+  const full=(dup||rest.length)?`<details class="fl"><summary><span class="o">Full list (${dup?s.length:rest.length+' more'}) ▾</span><span class="c">Hide full list ▴</span></summary><ol class="mini">${dup?miniItems(b,s,0):miniItems(b,rest,3)}</ol></details>`:'';
   const tail=s.length<3?`<div class="tail">${b.vendor?'Vendor-reported; not comparable across labs. ':''}Only ${s.length} score${s.length===1?'':'s'} so far.</div>`:'';
-  return `<li><span class="job">${jobLabel(b)}${b.isNew?'<span class="new">NEW</span>':(b.updated?'<span class="new">UPDATED</span>':'')} <span class="asof-inline">· as of ${b.asof}</span></span><ol class="mini">${miniItems(b,top,0)}</ol>${full}${tail}</li>`;
+  return `<li><span class="job">${jobLabel(b)}${b.isNew?'<span class="new">NEW</span>':(b.updated?'<span class="new">UPDATED</span>':'')} <span class="asof-inline">· as of ${b.asof}</span></span><ol class="mini">${miniItems(b,top,0)}</ol>${b.correction?`<div class="tail">${b.correction}</div>`:''}${full}${tail}</li>`;
 }
-document.getElementById('whereList').innerHTML=(ALL_CARRIED?ORDERED:ORDERED.filter(isFront)).map(whereItem).join('');
-if(CARRIED_N){document.getElementById('whereList').insertAdjacentHTML('afterend',`<details class="more" id="whereCarriedWrap" style="margin-top:14px"><summary>Other jobs (carried) · ${CARRIED_N} <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary><ol class="where" style="margin-top:10px">${ORDERED.filter(b=>!isFront(b)).map(whereItem).join('')}</ol></details>`);}
+document.getElementById('whereList').innerHTML=FRONT.length?FRONT.map(whereItem).join(''):'<li class="where-none" style="list-style:none">No new or updated cards today — every job is under “Other jobs (carried)” below.</li>';
+if(CARRIED_N){document.getElementById('whereList').insertAdjacentHTML('afterend',`<details class="more" id="whereCarriedWrap" style="margin-top:14px"><summary>Other jobs (carried) · ${CARRIED_N} <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary><ol class="where" style="margin-top:10px">${CARRIED.map(whereItem).join('')}</ol></details>`);}
 
 const benchRootMain=document.getElementById('benches');
 benchRootMain.insertAdjacentHTML('beforeend','<div id="benchesNew"></div>'+(CARRIED_N?`<details class="more" id="carriedWrap" style="margin-top:16px"><summary>Other cards (carried) · ${CARRIED_N} <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary><div id="benchesCarried"></div></details>`:''));
 ORDERED.forEach(b=>{
-  const benchRoot=document.getElementById((ALL_CARRIED||isFront(b))?'benchesNew':'benchesCarried');
+  const benchRoot=document.getElementById(isFront(b)?'benchesNew':'benchesCarried');
   const s=sortedBench(b); const top=topPerModel(s,3);
   const scaleMax=Math.max(...s.map(d=>d[2]));
   const hasFull=s.length>3;
@@ -781,7 +824,7 @@ ORDERED.forEach(b=>{
   benchRoot.insertAdjacentHTML('beforeend',`<article class="bench" id="${b.id}">
     <p class="title">${b.title}</p>
     <p class="sub">${b.sub}</p>
-    <span class="asof">As of ${b.asof}</span>
+    <span class="asof">As of ${b.asof}</span>${b.updated?' <span class="new">UPDATED</span>':''}${b.correction?`<p class="note" style="margin:6px 0 0">${b.correction}</p>`:''}
     <p class="practical"><b>In practice:</b> ${b.practical}</p>
     <div class="chart">${benchRows(b, top, scaleMax)}</div>
     <details class="more">
@@ -801,7 +844,7 @@ ORDERED.forEach(b=>{
 /* Cost-effectiveness: AA Intelligence Index / AA Cost per Task (USD).
    Carried from Oct 3: Ling 3.1 Flash Index 41 / $0.99 (Reasoning mode; open weights)
    + AA as of 2026-09-23 + Sonnet/Sol Sep 29 + Argon/Solar Mini 4 Sep 30 + Grok Low Oct 1.
-   MiMo-V2.6-Flash omitted: no AA $/task on file. No new AA cost filings today. */
+   MiMo-V2.6-Flash omitted: no AA $/task figure. */
 const CE_ROWS=[
  {m:'Claude Opus 5.5', effort:'Max thinking', index:58, dollars:5.98},
  {m:'Claude Opus 5.5', effort:'Extra-high thinking', index:56, dollars:3.46},
