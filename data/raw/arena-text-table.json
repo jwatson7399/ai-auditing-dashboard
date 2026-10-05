@@ -1,6 +1,6 @@
 {
   "url": "https://arena.ai/leaderboard/text",
-  "title": "LLM Leaderboard - Best Text & Chat AI Models Compared",
+  "title": "Text Arena: LLM Rankings & AI Model Benchmarks",
   "rows": [
     [
       "Rank",
@@ -611,7 +611,7 @@
       "hy3\nTencent \u00b7 Apache 2.0",
       "1456\n\u00b17",
       "10,476",
-      "$0.13 / $0.53",
+      "$0.08 / $0.33",
       "262.1K"
     ],
     [
@@ -1205,7 +1205,7 @@
       "deepseek-v3.1-terminus-thinking\nDeepSeek \u00b7 MIT",
       "1417\n\u00b110",
       "3,354",
-      "$0.27 / $1",
+      "$0.30 / $1",
       "163.8K"
     ],
     [
@@ -1250,7 +1250,7 @@
       "deepseek-v3.1-terminus\nDeepSeek \u00b7 MIT",
       "1415\n\u00b110",
       "3,599",
-      "$0.27 / $1",
+      "$0.30 / $1",
       "163.8K"
     ],
     [
@@ -3729,7 +3729,7 @@
       "N/A"
     ]
   ],
-  "fetched_at": "2026-10-04T16:50:48.164130+00:00",
+  "fetched_at": "2026-10-05T20:38:34.623946+00:00",
   "source_updated": "2026-10-02",
   "heading": "Text Arena\n\ud83c\udfc6\nOverall"
 }

@@ -76,9 +76,7 @@ Max
 Text Arena
 🏆
 Overall
-
 View overall rankings across various AI models in text-to-text tasks across math, coding, creative writing, and other open-ended domains.
-
 Oct 2, 2026
 8,626,731 votes
 413 models
@@ -905,7 +903,7 @@ Tencent · Apache 2.0
 	
 1456
 ±7
-	10,476	$0.13 / $0.53	262.1K
+	10,476	$0.08 / $0.33	262.1K
 
 68
 	
@@ -1697,7 +1695,7 @@ DeepSeek · MIT
 	
 1417
 ±10
-	3,354	$0.27 / $1	163.8K
+	3,354	$0.30 / $1	163.8K
 
 134
 	
@@ -1757,7 +1755,7 @@ DeepSeek · MIT
 	
 1415
 ±10
-	3,599	$0.27 / $1	163.8K
+	3,599	$0.30 / $1	163.8K
 
 139
 	
