@@ -303,7 +303,7 @@ Tencent · Apache 2.0
 1633
 +9/-9
 Preliminary
-	5,088	$0.75 / $2.25	1M
+	5,088	$0.83 / $2.50	1M
 
 18
 	
@@ -737,7 +737,7 @@ Tencent · Apache 2.0
 	
 1507
 +9/-9
-	5,802	$0.08 / $0.33	262.1K
+	5,802	$0.13 / $0.53	262.1K
 
 54
 	
@@ -1133,7 +1133,7 @@ Alibaba · Apache 2.0
 	
 1399
 +5/-5
-	21,280	$0.55 / $3.50	262.1K
+	21,280	$0.45 / $3	262.1K
 
 87
 	
@@ -1601,7 +1601,7 @@ Alibaba · Apache 2.0
 	
 1253
 +17/-17
-	1,617	$0.15 / $1	262.1K
+	1,617	$0.08 / $0.75	262.1K
 
 126
 	
@@ -1764,31 +1764,6 @@ Confidence Intervals on Arena Score
 Fraction of Model A Wins in A vs. B Battles (Ties Excluded)
 Battle Count for Each Pair of Models (Ties Excluded)
 Average of Win Rates Against Each Opponent (Ties Excluded)
-claude-opus-5.5-max
-claude-sonnet-5.5-xhigh
-gpt-6-astra-max
-claude-fable-5.1-max
-gpt-6.1-sol-max
-qwen3.8-max
-claude-sonnet-5.5-high
-claude-opus-5-max
-gemini-4-argon-high
-kimi-k3-max
-gpt-6-sol-max
-qwen3.8-max-0902
-muse-spark-1.3-max
-grok-4.7-xhigh
-claude-opus-5-high
-qwen3.8-flash-next
-glm-5.3-max
-hy4-preview
-muse-spark-1.3 (xHigh)
-claude-fable-5-high
-0.0%
-20.0%
-40.0%
-60.0%
-80.0%
 USE CASES
 Chat with AI
 Build Apps & Websites
@@ -1832,5 +1807,3 @@ YouTube
 Discord
 
 © Arena Intelligence 2026
-
-0.0%
