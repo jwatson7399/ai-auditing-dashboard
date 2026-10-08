@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-08",
- "built_at": "2026-10-08T15:19:15+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 130",
- "built_at_et": "11:19 AM",
+ "built_at": "2026-10-08T15:42:53+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 131",
+ "built_at_et": "11:42 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -31050,12 +31050,12 @@
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Krea 2 Large",
      76.8,
      null
     ],
     [
-     "Krea 2 Large",
+     "Wan 2.6 Image",
      76.8,
      null
     ],
@@ -31075,12 +31075,12 @@
      null
     ],
     [
-     "FLUX.2 [max]",
+     "HiDream-O1-Image-1.5",
      76.0,
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "FLUX.2 [max]",
      76.0,
      null
     ],
@@ -31155,7 +31155,7 @@
      null
     ],
     [
-     "FLUX.2 [dev] Turbo",
+     "P-Image-Ideogram (High)",
      73.0,
      null
     ],
@@ -31165,7 +31165,7 @@
      null
     ],
     [
-     "P-Image-Ideogram (High)",
+     "FLUX.2 [dev] Turbo",
      73.0,
      null
     ],
@@ -31210,7 +31210,7 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Recraft V4 Pro",
      71.4,
      null
     ],
@@ -31220,17 +31220,12 @@
      null
     ],
     [
-     "Recraft V4 Pro",
+     "Ideogram 4.0 Fast (Quality)",
      71.4,
      null
     ],
     [
-     "P-Image-Ideogram (Very High)",
-     71.3,
-     null
-    ],
-    [
-     "Wan 2.7 Pro",
+     "Recraft V4.1 Pro",
      71.3,
      null
     ],
@@ -31240,7 +31235,12 @@
      null
     ],
     [
-     "Recraft V4.1 Pro",
+     "P-Image-Ideogram (Very High)",
+     71.3,
+     null
+    ],
+    [
+     "Wan 2.7 Pro",
      71.3,
      null
     ],
@@ -31360,17 +31360,17 @@
      null
     ],
     [
-     "ERNIE Image Turbo",
-     63.1,
-     null
-    ],
-    [
      "Eigen Image",
      63.1,
      null
     ],
     [
      "Vivago 2.0",
+     63.1,
+     null
+    ],
+    [
+     "ERNIE Image Turbo",
      63.1,
      null
     ],
@@ -31385,12 +31385,12 @@
      null
     ],
     [
-     "Kling Image 3.0 Omni",
+     "Imagen 3 (v002)",
      62.0,
      null
     ],
     [
-     "Imagen 3 (v002)",
+     "Kling Image 3.0 Omni",
      62.0,
      null
     ],
@@ -31450,12 +31450,12 @@
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "FLUX1.1 [pro]",
      58.6,
      null
     ],
     [
-     "FLUX1.1 [pro]",
+     "FLUX.1 [pro]",
      58.6,
      null
     ],
@@ -31510,7 +31510,7 @@
      null
     ],
     [
-     "Midjourney v6",
+     "HiDream-O1-Image-Dev",
      56.5,
      null
     ],
@@ -31520,7 +31520,7 @@
      null
     ],
     [
-     "HiDream-O1-Image-Dev",
+     "Midjourney v6",
      56.5,
      null
     ],
@@ -31625,12 +31625,12 @@
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.1,
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.1,
      null
     ],
@@ -31670,12 +31670,12 @@
      null
     ],
     [
-     "Playground v2.5",
+     "DALLE 3",
      43.3,
      null
     ],
     [
-     "DALLE 3",
+     "Playground v2.5",
      43.3,
      null
     ],
@@ -32001,10 +32001,10 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
-    "GPT-5.6 Sol",
     "Grok 4.6",
     "GPT-5.6 Luna",
+    "GPT-5.6 Sol",
+    "Claude Opus 5",
     "Claude Fable 5"
    ],
    "confidence": "Within noise",
@@ -32394,10 +32394,10 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
     "Claude Opus 5",
-    "GPT-5.6 Luna",
+    "Grok 4.6",
     "Claude Fable 5",
+    "GPT-5.6 Luna",
     "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
@@ -32556,12 +32556,12 @@
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
@@ -32591,12 +32591,12 @@
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
@@ -33657,6 +33657,15 @@
    "items": "8",
    "pr": "129",
    "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-08",
+   "time": "11:19",
+   "status": "partial",
+   "items": "0",
+   "pr": "130",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
