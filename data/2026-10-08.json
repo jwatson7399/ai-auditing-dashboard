@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-08",
- "built_at": "2026-10-08T15:42:53+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 131",
- "built_at_et": "11:42 AM",
+ "built_at": "2026-10-08T15:50:14+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 132",
+ "built_at_et": "11:50 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -31075,12 +31075,12 @@
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "FLUX.2 [max]",
      76.0,
      null
     ],
     [
-     "FLUX.2 [max]",
+     "HiDream-O1-Image-1.5",
      76.0,
      null
     ],
@@ -31135,12 +31135,12 @@
      null
     ],
     [
-     "Ideogram 4.0",
+     "FLUX.2 [pro]",
      73.9,
      null
     ],
     [
-     "FLUX.2 [pro]",
+     "Ideogram 4.0",
      73.9,
      null
     ],
@@ -31155,7 +31155,7 @@
      null
     ],
     [
-     "P-Image-Ideogram (High)",
+     "FLUX.2 [dev] Turbo",
      73.0,
      null
     ],
@@ -31165,7 +31165,7 @@
      null
     ],
     [
-     "FLUX.2 [dev] Turbo",
+     "P-Image-Ideogram (High)",
      73.0,
      null
     ],
@@ -31210,11 +31210,6 @@
      null
     ],
     [
-     "Recraft V4 Pro",
-     71.4,
-     null
-    ],
-    [
      "Cosmos3-Super-Text2Image",
      71.4,
      null
@@ -31225,12 +31220,17 @@
      null
     ],
     [
+     "Recraft V4 Pro",
+     71.4,
+     null
+    ],
+    [
      "Recraft V4.1 Pro",
      71.3,
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Wan 2.7 Pro",
      71.3,
      null
     ],
@@ -31240,7 +31240,7 @@
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      71.3,
      null
     ],
@@ -31340,12 +31340,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "image-1",
      65.4,
      null
     ],
     [
-     "image-1",
+     "FLUX.2 [klein] 9B",
      65.4,
      null
     ],
@@ -31360,12 +31360,12 @@
      null
     ],
     [
-     "Eigen Image",
+     "Vivago 2.0",
      63.1,
      null
     ],
     [
-     "Vivago 2.0",
+     "Eigen Image",
      63.1,
      null
     ],
@@ -31400,17 +31400,17 @@
      null
     ],
     [
+     "Lucid Origin Ultra",
+     61.6,
+     null
+    ],
+    [
      "Dreamina 3.1",
      61.6,
      null
     ],
     [
      "Reve Image (Halfmoon)",
-     61.6,
-     null
-    ],
-    [
-     "Lucid Origin Ultra",
      61.6,
      null
     ],
@@ -31455,12 +31455,12 @@
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "GLM-Image",
      58.6,
      null
     ],
     [
-     "GLM-Image",
+     "FLUX.1 [pro]",
      58.6,
      null
     ],
@@ -31510,7 +31510,7 @@
      null
     ],
     [
-     "HiDream-O1-Image-Dev",
+     "Midjourney v6",
      56.5,
      null
     ],
@@ -31520,7 +31520,7 @@
      null
     ],
     [
-     "Midjourney v6",
+     "HiDream-O1-Image-Dev",
      56.5,
      null
     ],
@@ -31715,12 +31715,12 @@
      null
     ],
     [
-     "Stable Diffusion 3 Medium",
+     "SDXL Lightning",
      35.6,
      null
     ],
     [
-     "SDXL Lightning",
+     "Stable Diffusion 3 Medium",
      35.6,
      null
     ],
@@ -32001,11 +32001,11 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
+    "Claude Fable 5",
     "GPT-5.6 Luna",
+    "Grok 4.6",
     "GPT-5.6 Sol",
-    "Claude Opus 5",
-    "Claude Fable 5"
+    "Claude Opus 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32394,11 +32394,11 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
-    "Grok 4.6",
+    "GPT-5.6 Sol",
     "Claude Fable 5",
     "GPT-5.6 Luna",
-    "GPT-5.6 Sol"
+    "Grok 4.6",
+    "Claude Opus 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32591,12 +32591,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -33665,6 +33665,15 @@
    "status": "partial",
    "items": "0",
    "pr": "130",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-08",
+   "time": "11:42",
+   "status": "partial",
+   "items": "0",
+   "pr": "131",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
