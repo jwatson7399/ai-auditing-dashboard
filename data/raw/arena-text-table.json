@@ -1,5 +1,5 @@
 {
-  "url": "https://arena.ai/leaderboard/text",
+  "url": "https://arena.ai/leaderboard/chat/text",
   "title": "Text Arena: LLM Rankings & AI Model Benchmarks",
   "rows": [
     [
@@ -665,7 +665,7 @@
       "hy3\nTencent \u00b7 Apache 2.0",
       "1454\n\u00b16",
       "11,284",
-      "$0.08 / $0.33",
+      "$0.13 / $0.53",
       "262.1K"
     ],
     [
@@ -836,7 +836,7 @@
       "qwen3.5-397b-a17b\nAlibaba \u00b7 Apache 2.0",
       "1442\n\u00b13",
       "91,190",
-      "$0.45 / $3",
+      "$0.55 / $3.50",
       "262.1K"
     ],
     [
@@ -1044,7 +1044,7 @@
       "1429\n\u00b19",
       "4,179",
       "$0.68 / $2.09",
-      "524.3K"
+      "1M"
     ],
     [
       "116",
@@ -1466,7 +1466,7 @@
       "qwen3-next-80b-a3b-instruct\nAlibaba \u00b7 Apache 2.0",
       "1399\n\u00b15",
       "22,763",
-      "$0.09 / $1.10",
+      "$0.10 / $1.10",
       "262.1K"
     ],
     [
@@ -1511,7 +1511,7 @@
       "qwen3.5-35b-a3b\nAlibaba \u00b7 Apache 2.0",
       "1394\n\u00b14",
       "30,493",
-      "$0.15 / $1",
+      "$0.08 / $0.75",
       "262.1K"
     ],
     [
@@ -2366,7 +2366,7 @@
       "llama-3.3-70b-instruct\nMeta \u00b7 Llama-3.3",
       "1318\n\u00b14",
       "54,504",
-      "$0.10 / $0.32",
+      "$0.22 / $0.50",
       "131.1K"
     ],
     [
@@ -3738,7 +3738,7 @@
       "N/A"
     ]
   ],
-  "fetched_at": "2026-10-08T18:50:09.495305+00:00",
+  "fetched_at": "2026-10-09T18:20:27.978255+00:00",
   "source_updated": "2026-10-08",
   "heading": "Text Arena\n\ud83c\udfc6\nOverall"
 }
