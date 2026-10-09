@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-09",
- "built_at": "2026-10-09T14:54:07+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 135",
- "built_at_et": "10:54 AM",
+ "built_at": "2026-10-09T14:59:00+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 136",
+ "built_at_et": "10:59 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -31161,17 +31161,17 @@
      null
     ],
     [
-     "Wan 2.6 Image",
-     76.8,
-     null
-    ],
-    [
      "Krea 2 Large",
      76.8,
      null
     ],
     [
-     "Seedream 4.5",
+     "Wan 2.6 Image",
+     76.8,
+     null
+    ],
+    [
+     "Recraft V4.1 Utility",
      76.3,
      null
     ],
@@ -31181,7 +31181,7 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "Seedream 4.5",
      76.3,
      null
     ],
@@ -31271,12 +31271,12 @@
      null
     ],
     [
-     "Imagen 4 Ultra",
+     "FLUX.2 [dev] Turbo",
      73.0,
      null
     ],
     [
-     "FLUX.2 [dev] Turbo",
+     "Imagen 4 Ultra",
      73.0,
      null
     ],
@@ -31321,7 +31321,7 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Recraft V4 Pro",
      71.4,
      null
     ],
@@ -31331,18 +31331,8 @@
      null
     ],
     [
-     "Recraft V4 Pro",
+     "Cosmos3-Super-Text2Image",
      71.4,
-     null
-    ],
-    [
-     "P-Image-Ideogram (Very High)",
-     71.3,
-     null
-    ],
-    [
-     "Recraft V4.1 Pro",
-     71.3,
      null
     ],
     [
@@ -31356,17 +31346,27 @@
      null
     ],
     [
+     "Recraft V4.1 Pro",
+     71.3,
+     null
+    ],
+    [
+     "P-Image-Ideogram (Very High)",
+     71.3,
+     null
+    ],
+    [
      "Recraft V4",
      71.2,
      null
     ],
     [
-     "HunyuanImage 3.0 (Tencent Cloud)",
+     "Ideogram 4.0 Instant",
      71.0,
      null
     ],
     [
-     "Ideogram 4.0 Instant",
+     "HunyuanImage 3.0 (Tencent Cloud)",
      71.0,
      null
     ],
@@ -31386,12 +31386,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "ImagineArt 2.0",
      69.4,
      null
     ],
     [
-     "ImagineArt 2.0",
+     "Cosmos3-Super-Text2Image-4Step",
      69.4,
      null
     ],
@@ -31446,17 +31446,17 @@
      null
     ],
     [
-     "Z-Image Turbo",
-     65.4,
-     null
-    ],
-    [
      "image-1",
      65.4,
      null
     ],
     [
      "FLUX.2 [klein] 9B",
+     65.4,
+     null
+    ],
+    [
+     "Z-Image Turbo",
      65.4,
      null
     ],
@@ -31471,17 +31471,17 @@
      null
     ],
     [
+     "Vivago 2.0",
+     63.1,
+     null
+    ],
+    [
      "Eigen Image",
      63.1,
      null
     ],
     [
      "ERNIE Image Turbo",
-     63.1,
-     null
-    ],
-    [
-     "Vivago 2.0",
      63.1,
      null
     ],
@@ -31511,12 +31511,12 @@
      null
     ],
     [
-     "Dreamina 3.1",
+     "Lucid Origin Ultra",
      61.6,
      null
     ],
     [
-     "Lucid Origin Ultra",
+     "Dreamina 3.1",
      61.6,
      null
     ],
@@ -31561,17 +31561,17 @@
      null
     ],
     [
+     "GLM-Image",
+     58.6,
+     null
+    ],
+    [
      "FLUX.1 [pro]",
      58.6,
      null
     ],
     [
      "FLUX1.1 [pro]",
-     58.6,
-     null
-    ],
-    [
-     "GLM-Image",
      58.6,
      null
     ],
@@ -31586,12 +31586,12 @@
      null
     ],
     [
-     "Luma Photon",
+     "P-Image",
      57.8,
      null
     ],
     [
-     "P-Image",
+     "Luma Photon",
      57.8,
      null
     ],
@@ -31621,17 +31621,17 @@
      null
     ],
     [
-     "Infinity 8B",
-     56.5,
-     null
-    ],
-    [
      "Midjourney v6",
      56.5,
      null
     ],
     [
      "HiDream-O1-Image-Dev",
+     56.5,
+     null
+    ],
+    [
+     "Infinity 8B",
      56.5,
      null
     ],
@@ -31696,12 +31696,12 @@
      null
     ],
     [
-     "FLUX.1 [dev]",
+     "Stable Diffusion 3.5 Large",
      51.8,
      null
     ],
     [
-     "Stable Diffusion 3.5 Large",
+     "FLUX.1 [dev]",
      51.8,
      null
     ],
@@ -31736,12 +31736,12 @@
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.1,
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.1,
      null
     ],
@@ -31781,12 +31781,12 @@
      null
     ],
     [
-     "DALLE 3",
+     "Playground v2.5",
      43.3,
      null
     ],
     [
-     "Playground v2.5",
+     "DALLE 3",
      43.3,
      null
     ],
@@ -32117,9 +32117,9 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Sol",
     "GPT-5.6 Luna",
     "Claude Opus 5",
-    "GPT-5.6 Sol",
     "Claude Fable 5",
     "Grok 4.6"
    ],
@@ -32505,11 +32505,11 @@
     ]
    ],
    "missing": [
+    "Grok 4.6",
+    "GPT-5.6 Sol",
     "GPT-5.6 Luna",
     "Claude Opus 5",
-    "Claude Fable 5",
-    "GPT-5.6 Sol",
-    "Grok 4.6"
+    "Claude Fable 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32747,12 +32747,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -33780,6 +33780,15 @@
    "status": "partial",
    "items": "0",
    "pr": "134",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-09",
+   "time": "10:54",
+   "status": "partial",
+   "items": "0",
+   "pr": "135",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
