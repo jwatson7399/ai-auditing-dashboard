@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-11",
- "built_at": "2026-10-11T14:29:57+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 144",
- "built_at_et": "10:29 AM",
+ "built_at": "2026-10-11T14:36:24+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 145",
+ "built_at_et": "10:36 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -31178,12 +31178,12 @@
      null
     ],
     [
-     "Krea 2 Large",
+     "Wan 2.6 Image",
      76.8,
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Krea 2 Large",
      76.8,
      null
     ],
@@ -31193,17 +31193,17 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
-     76.1,
-     null
-    ],
-    [
      "Krea 2 Medium Turbo",
      76.1,
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "Recraft V4.1 Utility",
+     76.1,
+     null
+    ],
+    [
+     "FLUX.2 [max]",
      76.0,
      null
     ],
@@ -31213,7 +31213,7 @@
      null
     ],
     [
-     "FLUX.2 [max]",
+     "HiDream-O1-Image-1.5",
      76.0,
      null
     ],
@@ -31243,12 +31243,12 @@
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Seedream 5.0 Lite",
      74.9,
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Ideogram 4.0 (Quality)",
      74.9,
      null
     ],
@@ -31303,12 +31303,12 @@
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "Cosmos3-Super-Text2Image (agentic)",
      72.6,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "HunyuanImage 3.0 Instruct",
      72.6,
      null
     ],
@@ -31463,7 +31463,7 @@
      null
     ],
     [
-     "Z-Image Turbo",
+     "image-1",
      65.4,
      null
     ],
@@ -31473,7 +31473,7 @@
      null
     ],
     [
-     "image-1",
+     "Z-Image Turbo",
      65.4,
      null
     ],
@@ -31488,12 +31488,12 @@
      null
     ],
     [
-     "Eigen Image",
+     "ERNIE Image Turbo",
      63.2,
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Eigen Image",
      63.2,
      null
     ],
@@ -31538,12 +31538,12 @@
      null
     ],
     [
-     "Reve Image (Halfmoon)",
+     "ERNIE Image",
      61.5,
      null
     ],
     [
-     "ERNIE Image",
+     "Reve Image (Halfmoon)",
      61.5,
      null
     ],
@@ -31578,12 +31578,12 @@
      null
     ],
     [
-     "FLUX1.1 [pro]",
+     "FLUX.1 [pro]",
      58.6,
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "FLUX1.1 [pro]",
      58.6,
      null
     ],
@@ -31603,12 +31603,12 @@
      null
     ],
     [
-     "P-Image",
+     "Luma Photon",
      57.8,
      null
     ],
     [
-     "Luma Photon",
+     "P-Image",
      57.8,
      null
     ],
@@ -31638,17 +31638,17 @@
      null
     ],
     [
-     "HiDream-O1-Image-Dev",
-     56.5,
-     null
-    ],
-    [
      "Infinity 8B",
      56.5,
      null
     ],
     [
      "Midjourney v6",
+     56.5,
+     null
+    ],
+    [
+     "HiDream-O1-Image-Dev",
      56.5,
      null
     ],
@@ -31753,12 +31753,12 @@
      null
     ],
     [
-     "Ideogram v2a",
+     "Krea 1",
      49.1,
      null
     ],
     [
-     "Krea 1",
+     "Ideogram v2a",
      49.1,
      null
     ],
@@ -31798,12 +31798,12 @@
      null
     ],
     [
-     "DALLE 3",
+     "Playground v2.5",
      43.3,
      null
     ],
     [
-     "Playground v2.5",
+     "DALLE 3",
      43.3,
      null
     ],
@@ -32038,12 +32038,12 @@
      null
     ],
     [
-     "Vidu Q3 Turbo",
+     "Vidu Q3 Pro",
      29.4,
      null
     ],
     [
-     "Vidu Q3 Pro",
+     "Vidu Q3 Turbo",
      29.4,
      null
     ],
@@ -32135,10 +32135,10 @@
    ],
    "missing": [
     "Claude Fable 5",
-    "Grok 4.6",
-    "GPT-5.6 Luna",
     "GPT-5.6 Sol",
-    "Claude Opus 5"
+    "GPT-5.6 Luna",
+    "Claude Opus 5",
+    "Grok 4.6"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32522,11 +32522,11 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
-    "Grok 4.6",
-    "Claude Opus 5",
+    "GPT-5.6 Sol",
     "GPT-5.6 Luna",
-    "GPT-5.6 Sol"
+    "Claude Opus 5",
+    "Claude Fable 5",
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32564,14 +32564,14 @@
      "chatgpt"
     ],
     [
-     "Grok 4.6",
-     77.1,
-     "grok"
-    ],
-    [
      "Muse Spark 1.3",
      77.1,
      null
+    ],
+    [
+     "Grok 4.6",
+     77.1,
+     "grok"
     ],
     [
      "Qwen3.8 Max",
@@ -32679,12 +32679,12 @@
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
@@ -32714,12 +32714,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -33833,6 +33833,15 @@
    "status": "partial",
    "items": "0",
    "pr": "143",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-11",
+   "time": "10:29",
+   "status": "partial",
+   "items": "0",
+   "pr": "144",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
