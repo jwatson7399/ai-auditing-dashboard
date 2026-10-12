@@ -34,6 +34,17 @@
 .ns-mv{font-size:11px;color:var(--muted)}
 .ns-note{font-size:12.5px;color:var(--muted);margin-top:8px;max-width:72ch}
 /* NS:CSS:END */
+/* STICKYTOC:BEGIN */
+html,body{overflow-x:clip!important;overflow-y:visible!important}
+.toc-bar{position:sticky;top:0;z-index:50;margin:14px -20px 0;padding:4px 20px!important;height:44px;box-sizing:border-box;display:flex;align-items:center;background:var(--surface);border-bottom:1px solid var(--line);box-shadow:0 1px 4px rgba(31,34,51,.08)}
+.toc-bar .label{display:none}
+.toc-bar .toc-wrap{flex:1;min-width:0}
+.toc-scroller{padding-top:0!important;padding-bottom:0!important;align-items:center}
+.toc-wrap{height:34px}
+.toc-scroller a{padding:6px 11px!important;font-size:13px;line-height:20px}
+.toc-more{background:linear-gradient(90deg,transparent,var(--surface) 60%)}
+section,.bench,[id^="job-"],#ns-60,#ns-jobs,#ns-score{scroll-margin-top:60px}
+/* STICKYTOC:END */
 </style>
 </head>
 <body>
@@ -288,6 +299,9 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   <nav class="toc-bar" id="contents" aria-label="Contents">
     <div class="label">Jump to</div>
     <div class="toc-wrap" id="tocWrap"><div class="toc-scroller" id="tocScroller">
+      <a href="#ns-60">60-second</a>
+      <a href="#ns-jobs">Pick your job</a>
+      <a href="#ns-score">Scoreboard</a>
       <a href="#news">News</a>
       <a href="#boards">Boards / STT non-stream</a>
       <a href="#biggest">Biggest move</a>
