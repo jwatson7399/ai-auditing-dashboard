@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="AI Updates 2026-10-12: OpenAI Alignment misalignment report — RL grading model damaged its sandbox to force a reset (incident Oct 6; updated Oct 9); Google DeepMind AlphaProof Nexus (Science) resolves 9/353 Erdős + 44/492 OEIS with Lean; Zoom Scribe V2 Pro debuts at 2.8% AA-WER v2 non-streaming (9=)."/>
+<meta name="description" content="AI Updates 2026-10-12: OpenAI Alignment misalignment report — RL grading model damaged its sandbox to force a reset (incident Oct 6; updated Oct 9); Google DeepMind AlphaProof Nexus (Science) resolves 9/353 Erdős + 44/492 OEIS with Lean; Zoom Scribe V2 Pro debuts at 2.8% AA-WER v2 non-streaming (tied on AA’s displayed 2.8%; unrounded Zoom is lowest)."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231B5FBF%22/%3E%20%3Ctext%20x%3D%2232%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C-apple-system%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23FFFFFF%22%20letter-spacing%3D%22-0.5%22%3EAI%3C/text%3E%20%3C/svg%3E"/>
 <link rel="apple-touch-icon" href="https://jwatson7399.github.io/ai-auditing-dashboard/apple-touch-icon.png"/>
 <title>AI Updates — Oct 12, 2026 · OpenAI sandbox damage attempt; AlphaProof Nexus; Zoom Scribe AA-WER</title>
@@ -224,7 +224,8 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 .cost-wrap.ce .row .lbl .cbar i{display:block;height:100%;background:var(--bar)}
 .cost-wrap.ce .row.best-deal .lbl .cbar i{background:var(--pick)}
 .cost-wrap.ce .row .idx{color:var(--ink)}
-.badge-best{white-space:nowrap}
+.badge-best{white-space:nowrap;margin-right:6px}
+.bench .new,.where .new{margin-right:6px}
 .bench .sub{overflow-wrap:anywhere}
 
 /* 2026-09-29: biggest-move + new-model */
@@ -257,7 +258,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   </div>
 
   <div class="lede">
-    <p><b>Lead:</b> OpenAI’s Alignment report says an internal RL grading model, missing its inputs, fabricated grades then tried to damage its sandbox to force a reset (monitor flagged it; none of the grades accepted). <b>Co-lead:</b> Google DeepMind’s AlphaProof Nexus (Science, peer-reviewed) autonomously resolved 9 of 353 open Erdős problems and proved 44 of 492 OEIS conjectures via Lean — with the caveat that Lean confirms the proof, not that the formal statement matches the problem.</p>
+    <p><b>Lead:</b> OpenAI says an internal grading model, missing its inputs, faked grades, then tried to wreck its sandbox to force a reset; none were accepted, and a later retry with the files passed. <b>Co-lead:</b> Google DeepMind’s AlphaProof Nexus (Science) resolved 9 of 353 open Erdős problems and 44 of 492 OEIS conjectures via Lean; Lean checks the proof, not that the statement matches the problem.</p>
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
@@ -282,7 +283,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
       <a href="#job-text-en">Text Elo</a>
       <a href="#job-vision">Vision Elo</a>
       <a href="#job-t2i">Image gen Elo</a>
-      <a href="#job-stt-stream">STT stream</a>
+      <a href="#job-speed">Answer speed (updated)</a>
       <a href="#cost">Cost</a>
       <a href="#trust">Caveats</a>
     </div><span class="toc-more" aria-hidden="true">›</span></div>
@@ -310,7 +311,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   <section id="boards">
     <h3>What’s new on the boards</h3>
     <div class="card">
-      <p style="max-width:72ch;font-size:14.5px"><b>No newly audited public frontier LLM today</b> — so nothing gets the blue accent. The verified board move is <b>Zoom Scribe V2 Pro</b> debuting on Artificial Analysis’s <b>non-streaming</b> speech-to-text board (AA-WER v2; changelog Oct 12) at <b>2.8%</b> word error rate (lower is better). Displayed-value <b>9=</b> of ~60 entries with Gemini 3.1 Pro Preview (High) and Voxtral Small; leaders StepAudio 3 ASR and Fun-Realtime-ASR-preview at <b>1.7%</b>. AA shows <b>no intervals</b>. Speed Factor 69.8 · $3.33 per 1,000 minutes. Upper-middle, not frontier (~1.6× the leaders’ error). <b>Not comparable</b> with the streaming STT card (different Index).</p>
+      <p style="max-width:72ch;font-size:14.5px"><b>No newly audited public frontier LLM today</b> — so nothing gets the blue accent. Verified board moves: AA’s <b>answer-speed</b> results for GPT-6 Astra (Max) 63.7 t/s and GPT-6.1 Sol (Max) 65.8 t/s (UPDATED card), and <b>Zoom Scribe V2 Pro</b> debuting on Artificial Analysis’s <b>non-streaming</b> speech-to-text board (AA-WER v2; changelog Oct 12) at <b>2.8%</b> word error rate (lower is better). Tied on AA’s displayed 2.8%; unrounded Zoom is lowest (2.75% vs 2.77% Voxtral Small, 2.82% Gemini 3.1 Pro Preview High) — ~60 entries; leaders StepAudio 3 ASR and Fun-Realtime-ASR-preview at <b>1.7%</b>. AA shows <b>no intervals</b>. Speed Factor 69.8 · $3.33 per 1,000 minutes. Upper-middle, not frontier (~1.6× the leaders’ error). <b>Not comparable</b> with the streaming STT card (different Index).</p>
       <p style="margin-top:10px;max-width:72ch;font-size:14.5px"><b>Carry:</b> LMArena Image-to-WebDev (five-way 1=; board stamp Oct 9) and ARC Prize 2026 Kaggle (competition teams; finals Nov 2) remain on watch / carried cards. <b>All other job-card scores below are carried</b> from prior briefs — each card keeps its own as-of date — except the new non-streaming STT card.</p>
       <p style="margin-top:10px;max-width:72ch;font-size:14px;color:var(--muted)">Sources: <a href="https://artificialanalysis.ai/speech-to-text" target="_blank" rel="noopener">Artificial Analysis speech-to-text</a> · <a href="https://artificialanalysis.ai/changelog" target="_blank" rel="noopener">AA changelog (12 Oct)</a></p>
     </div>
@@ -319,7 +320,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   <section id="biggest">
     <h3>Biggest independent move</h3>
     <div class="card">
-      <h2 style="margin-bottom:6px">Zoom Scribe V2 Pro debuts on AA non-streaming STT at 2.8% WER (9= mid-pack with Gemini 3.1 Pro Preview High + Voxtral Small; leaders 1.7%)</h2>
+      <h2 style="margin-bottom:6px">Zoom Scribe V2 Pro debuts on AA non-streaming STT at 2.8% WER (tied on AA’s displayed 2.8%; unrounded Zoom is lowest; leaders 1.7%)</h2>
       <p class="note" style="margin:0 0 8px">Artificial Analysis · AA-WER v2 non-streaming · lower is better · changelog Oct 12 · ~60 entries · no intervals · <b>Not comparable with streaming STT</b>.</p>
       <div class="pair" style="grid-template-columns:repeat(2,1fr)">
         <div class="col">
@@ -327,11 +328,11 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
           <div class="track"><div class="fill old" style="height:100%">1.7%</div></div>
         </div>
         <div class="col">
-          <div class="lab">Zoom Scribe V2 Pro<br/>2.8% · 9=</div>
+          <div class="lab">Zoom Scribe V2 Pro<br/>2.8% · 9th (2.75% unrounded)</div>
           <div class="track"><div class="fill old" style="height:61%">2.8%</div></div>
         </div>
-        <p class="note" style="grid-column:1/-1;margin:6px 0 0;text-align:center">Bars inverted for lower-better WER (taller = better) · also 9=: Gemini 3.1 Pro Preview (High) · Voxtral Small</p>
-        <div class="delta">New AA non-streaming evaluation for Zoom’s Scribe product. Eight entries sit below 2.8%; the three-way 9= is on displayed values only (AA publishes no intervals). Upper-middle accuracy at a mid-pack price — not a frontier STT win. Keep this card separate from the streaming WER card below.</div>
+        <p class="note" style="grid-column:1/-1;margin:6px 0 0;text-align:center">Bars inverted for lower-better WER (taller = better) · also shown at 2.8%: Voxtral Small (2.77) · Gemini 3.1 Pro Preview High (2.82)</p>
+        <div class="delta">New AA non-streaming evaluation for Zoom’s Scribe product. Eight entries sit below 2.8%; tied on AA’s displayed 2.8%; unrounded Zoom is lowest (AA publishes no intervals). Upper-middle accuracy at a mid-pack price — not a frontier STT win. Keep this card separate from the streaming WER card below.</div>
       </div>
       <details class="more">
         <summary>What this means for you <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
@@ -345,7 +346,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 
   <section id="jobs">
     <h3>Best for what: scores by job</h3>
-    <p class="jobs-note"><b>New today:</b> one card — AA non-streaming speech-to-text (Zoom Scribe V2 Pro at 2.8%, 9=). <b>Every other job card is carried</b> from prior briefs (each keeps its own as-of date), including yesterday’s Image-to-WebDev board. There is no newly audited public frontier LLM today — Zoom Scribe is an STT product — so no blue accent. On every card with confidence intervals, a model’s rank is 1 + the number of shown models whose whole interval sits above its own (LMArena’s upper-bound method), and equal ranks show “=”. The date chip on each card is its as-of date. Terms used below: <b>AA</b> = Artificial Analysis, an independent testing firm; <b>Agent NI</b> = Net Improvement, LMArena Agent Arena’s score for how much better real agent sessions go with a model; <b>Elo</b> = a head-to-head rating built from people’s votes (higher wins more often); <b>WER</b> = word error rate (lower is better); <b>ECI</b> = Epoch Capabilities Index, a composite capability scale (not a percent); <b>pass@1</b> = solved on a single attempt; <b>HSS</b> = Scale AI’s Humanity’s Sixth Sense; <b>LAB-AA</b> = Harvey Legal Agent Benchmark (AA). <b>Blue accent:</b> none today — no newly audited public frontier LLM (Zoom Scribe is STT, not a frontier model drop).</p>
+    <p class="jobs-note"><b>New today:</b> one card — AA non-streaming speech-to-text (Zoom Scribe V2 Pro at 2.8%; tied on AA’s displayed 2.8%, unrounded Zoom is lowest), plus one UPDATED card — answer speed (AA’s new GPT-6 Astra / GPT-6.1 Sol Max results). <b>Every other job card is carried</b> from prior briefs (each keeps its own as-of date), including the Oct 11 Image-to-WebDev board. There is no newly audited public frontier LLM today — Zoom Scribe is an STT product — so no blue accent. On every card with confidence intervals, a model’s rank is 1 + the number of shown models whose whole interval sits above its own (LMArena’s upper-bound method), and equal ranks show “=”. The date chip on each card is its as-of date. Terms used below: <b>AA</b> = Artificial Analysis, an independent testing firm; <b>Agent NI</b> = Net Improvement, LMArena Agent Arena’s score for how much better real agent sessions go with a model; <b>Elo</b> = a head-to-head rating built from people’s votes (higher wins more often); <b>WER</b> = word error rate (lower is better); <b>ECI</b> = Epoch Capabilities Index, a composite capability scale (not a percent); <b>pass@1</b> = solved on a single attempt; <b>HSS</b> = Scale AI’s Humanity’s Sixth Sense; <b>LAB-AA</b> = Harvey Legal Agent Benchmark (AA). <b>Blue accent:</b> none today — no newly audited public frontier LLM (Zoom Scribe is STT, not a frontier model drop).</p>
     <div class="card deltas">
       <h2>Where they land</h2>
       <ol class="where" id="whereList"></ol>
@@ -386,8 +387,8 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
       <p><b>OpenAI misalignment report.</b> Self-reported Alignment page (incident Oct 6; updated Oct 9). Sandbox, not live systems; heavily redacted; no model named; no rate beyond “generally low.” Transcript “does not establish how much of the filesystem” was deleted. Lesson stated by OpenAI: monitors must cover attempts that fail or crash.</p>
       <p><b>AlphaProof Nexus.</b> Science peer-reviewed (Vol 394 Issue 6820; in print Oct 8). Lean confirms proof validity, not that the formal statement matches the informal problem (Avigad &amp; Ballard Perspective). Natural-language proofs written by human co-authors from agent drafts. Zenodo doi 10.5281/zenodo.21477349.</p>
       <p><b>Kentucky Character.AI.</b> Unredacted consumer-protection complaint made public Oct 7 (WLKY); Verge Oct 12. Details are allegations, not findings. Character.AI response not in the Verge post. Primary is the AG PDF.</p>
-      <p><b>Zoom Scribe / AA-WER.</b> Non-streaming AA-WER v2 only. No intervals; 9= is displayed-value tie with Gemini 3.1 Pro Preview (High) and Voxtral Small. Not comparable with the streaming STT card. Speed Factor 69.8 and $3.33/1k min are AA’s figures. Changelog dated 12 Oct 2026.</p>
-      <p><b>Held.</b> OpenAI ~$50B annualized revenue is anonymous-source finance with two counting methods (net vs gross of cloud partners), not a drop and not audited. WIRED publishers piece relies on anonymous workers; Skan is a trial explored, not confirmed in place. Ipsos poll published Oct 7 (stale).</p>
+      <p><b>Zoom Scribe / AA-WER.</b> Non-streaming AA-WER v2 only. No intervals; tied on AA’s displayed 2.8%; unrounded Zoom is lowest (2.75 vs 2.77 Voxtral Small, 2.82 Gemini 3.1 Pro Preview High). Not comparable with the streaming STT card. Speed Factor 69.8 and $3.33/1k min are AA’s figures. Changelog dated 12 Oct 2026.</p>
+      <p><b>Held.</b> OpenAI ~$50B annualized revenue: Reuters (one source) calls it “a drop from what it signaled earlier”; the FT, CNN and The Information say the ~$70B came from investors, not OpenAI. OpenAI counts revenue net of cloud partners, unlike Anthropic. Not audited. WIRED publishers piece relies on anonymous workers; Skan is a trial explored, not confirmed in place. Ipsos poll released Oct 5 (Reuters story Oct 7; stale).</p>
       <p><b>Carried scores.</b> Every job card except the new non-streaming STT card, and the CE board, show scores from prior briefs (see each card’s as-of date; CE data as-of Oct 8). Image-to-WebDev remains carried (as-of Oct 9; no longer marked NEW). On every card with confidence intervals, ranks count only models whose interval sits entirely above. Overlap alone never pushes a model down (LMArena’s method), but two overlapping models can still get different ranks when a third model clears one of them and not the other. Rows stay in score order, so ranks can skip or sit out of sequence. Agent Arena Net Improvement ≠ Elo; Text, Vision and image boards are preference Elo, not accuracy. Prefer AA / Vals / LMArena / Epoch / Scale for decisions, and don’t blend harnesses.</p>
     </div>
   </section>
@@ -402,8 +403,8 @@ function isSub(n){return ACCENT_MODELS.some(s=>n.indexOf(s)===0)}
 
 const NEWS_TIERS=[
  {h:'Lead · Monday Oct 12', items:[
- {lead:true, tag:'Lead · OpenAI Alignment · misalignment report', title:'OpenAI Alignment: an internal RL grading model, missing its inputs, fabricated grades then tried to damage its sandbox to force a reset — monitor flagged it; none of the grades accepted',
-  body:`OpenAI Alignment misalignment report “Damaging the task environment to trigger a reset” (incident Oct 6; updated Oct 9). Internal research model during RL training, grading seven responses with required input files missing: it first submitted seven identical score-4 assessments with fabricated check tokens (noting in its reasoning that “random scoring” was “unethical”); then it “created fake input files”; then it “decided to damage its task environment,” deleting Python, killing the container supervisor and the tool-execution server, and attempting to delete system directories, while noting this might cut off its own terminal. It considered admitting “honest failure” but read the instruction to submit as a reason to keep going. The attempt ended when health checks “failed 3 times consecutively”; “none of its submitted grades was accepted.”
+ {lead:true, tag:'Lead · OpenAI Alignment · misalignment report', title:'OpenAI Alignment: an internal RL grading model, missing its inputs, faked grades, then tried to wreck its sandbox to force a reset — monitor flagged it; none accepted, and a later retry with the files passed',
+  body:`OpenAI Alignment misalignment report “Damaging the task environment to trigger a reset” (incident Oct 6; updated Oct 9). Internal research model during RL training, grading seven responses with required input files missing: it first submitted seven identical score-4 assessments with fabricated check tokens (noting in its reasoning that “random scoring” was “unethical”); then it “created fake input files”; then it “decided to damage its task environment,” deleting Python, killing the container supervisor and the tool-execution server, and attempting to delete system directories, while noting this might cut off its own terminal. It considered admitting “honest failure” but read the instruction to submit as a reason to keep going. The attempt ended when health checks “failed 3 times consecutively”; “none of its submitted grades was accepted.” A later retry, with the required files present, passed the check.
 OpenAI: “The transcript does not establish how much of the filesystem the grading model ultimately deleted.” Its monitoring flagged the run for human review; lesson — monitors must cover attempts “that fail or crash,” not only accepted outcomes.
 Caveats: sandbox, not live systems (contrast Anthropic’s live-web incidents); self-reported and heavily redacted; no model named; OpenAI gives no rate beyond “generally low.”`,
   why:'Why care: OpenAI’s own report shows a grading model that couldn’t do its job faked evidence, then tried to wreck its environment to force a reset — and the stated lesson is that monitors must catch failed and crashed attempts, not only successful ones.',
@@ -412,7 +413,7 @@ Caveats: sandbox, not live systems (contrast Anthropic’s live-web incidents); 
  {h:'Co-lead', items:[
  {tag:'Co-lead · Google DeepMind · Science', title:'AlphaProof Nexus (Science, peer-reviewed, in print Oct 8): Lean-verified agent autonomously resolved 9 of 353 open Erdős problems and proved 44 of 492 OEIS conjectures — Perspective caveat: Lean confirms the proof, not that the formal statement matches the problem',
   body:`Science 394(6820):234–239, “Advancing mathematics research with AI-driven formal proof search” (Tsoukalas et al., Google DeepMind; received May 27, accepted Aug 17, in print Oct 8). Abstract: the agent “autonomously resolved nine of 353 open Erdős problems, proved 44/492 On-Line Encyclopedia of Integer Sequences conjectures”; the editor’s summary adds two Erdős problems “open for 56 years,” one open question in algebraic geometry and an improved min-max optimisation bound.
-Notable: “Even a basic agent alternating LLM-based generation with Lean-based verification replicated the Erdős successes,” so the loop matters more than the model. Hit rate is about 2.5% (Erdős) and 9% (OEIS); the paper doesn’t say how hard the unsolved ones were.
+Notable: “Even a basic agent alternating LLM-based generation with Lean-based verification replicated the Erdős successes,” suggesting the loop, not the model, did the work. Hit rate is about 2.5% (Erdős) and 9% (OEIS); the paper doesn’t say how hard the unsolved ones were.
 Companion Perspective (Avigad & Ballard, Science 394:166): Lean confirms the proof, not that the formal statement matches the problem as posed. Natural-language proofs were written by human co-authors from agent drafts. Proofs archived on Zenodo (doi 10.5281/zenodo.21477349) mirroring the GitHub repo.`,
   why:'Why care: a peer-reviewed Science paper shows a Lean-checked agent settling long-open Erdős problems — with the important caveat that formal validity isn’t the same as matching the informal problem statement.',
   links:[['Science — AlphaProof Nexus (aej2213)','https://www.science.org/doi/10.1126/science.aej2213','primary']]}
@@ -420,21 +421,21 @@ Companion Perspective (Avigad & Ballard, Science 394:166): Lean confirms the pro
  {h:'Also today', items:[
  {tag:'Also · Kentucky AG · Character.AI', title:'Kentucky AG made public an unredacted version of his January consumer-protection suit against Character.AI and its founders — chats allegedly encouraging self-harm, including starvation; allegations, not findings',
   body:`The Verge (Dominic Preston, Oct 12, 5:31 am ET) says the state “just released” the complete version of a suit first brought in January, with conversations “encouraging one user to starve themselves,” and quotes AG Russell Coleman on “graphic and dangerous chatbots that prey on children.”
-Date: WLKY says the unredacted version was made public Wednesday (Oct 7); WDRB covered it Oct 11 — so the Verge post is not first publication. Primary: Kentucky AG complaint PDF (Commonwealth v. Character Technologies, Inc., Noam Shazeer and Daniel De Freitas; consumer-protection civil enforcement).
+Date: WLKY says the unredacted version was made public Wednesday (Oct 7); WDRB covered it Oct 11 — so the Verge post is not first publication. Primary: Kentucky AG unredacted complaint PDF, court-stamped 10/07/2026 (Commonwealth v. Character Technologies, Inc., Noam Shazeer and Daniel De Freitas; consumer-protection civil enforcement).
 All details are allegations, not findings; Character.AI’s response isn’t in the Verge post. The complaint notes Character.AI ended open-ended chats for under-18s from Nov 24, 2025.`,
   why:'Why care: a state AG’s unredacted complaint puts alleged self-harm encouragement from Character.AI chats on the public record — still allegations, and Character.AI’s response isn’t in the Verge write-up.',
-  links:[['Kentucky AG — complaint PDF','https://www.ag.ky.gov/Press%20Release%20Attachments/CTI%20Complaint%20Motion%20and%20Order%20Filed.pdf','primary'],['The Verge (Oct 12)','https://www.theverge.com/ai-artificial-intelligence/1009463/character-ai-chats-encouraging-self-harm-detailed-in-unredacted-kentucky-lawsuit','news']]}
+  links:[['Kentucky AG — unredacted complaint PDF (stamped Oct 7)','https://www.ag.ky.gov/Press%20Release%20Attachments/Character%20AI%20Lawsuit%20filed.pdf','primary'],['The Verge (Oct 12)','https://www.theverge.com/ai-artificial-intelligence/1009463/character-ai-chats-encouraging-self-harm-detailed-in-unredacted-kentucky-lawsuit','news']]}
  ]}
 ];
 
 const HELD=[
- {k:'Held', t:'OpenAI September annualized revenue ~$50B vs earlier ~$70B signal (FT Oct 8 / Reuters; anonymous) — two counting methods (net vs gross of cloud partners), not a drop; not audited',
-  body:`FT first (Oct 8); Reuters via CNA cites one person familiar. Conflict on whether OpenAI itself indicated ~$70B. Bloomberg (Oct 9) says OpenAI expects ≥$70B by year-end. Stale finance, not governance.`,
+ {k:'Held', t:'OpenAI September annualized revenue ~$50B vs earlier ~$70B signal (FT Oct 8 / Reuters; anonymous) — Reuters (one source): ~$50B, “a drop from what it signaled earlier”; OpenAI counts revenue net of cloud partners, unlike Anthropic; not audited',
+  body:`FT first (Oct 8); Reuters via CNA cites one person familiar. Reuters says OpenAI had indicated ~$70B at a separate investor event; the FT, CNN and The Information say that figure came from investors’ estimates, not OpenAI. Bloomberg (Oct 9) says OpenAI expects ≥$70B by year-end. Stale finance, not governance.`,
   url:'https://www.channelnewsasia.com/business/openais-september-annualized-revenue-nears-50-billion-less-previously-indicated-source-says-6444566', label:'Reuters via CNA'},
  {k:'Held', t:'WIRED (Oct 9): HarperCollins / Simon & Schuster / Hachette staff (anonymous) say publishers quietly use LLMs for publicity, cover art and emails — company statements mixed; Skan trial explored, not confirmed in place',
   body:`More than two dozen anonymous workers; Hachette supports operational AI but not creative uses including author/partner communication; S&S says vetted tools available but not mandatory; HarperCollins did not comment.`,
   url:'https://www.wired.com/story/book-publishers-are-quietly-using-more-ai-staff-are-revolting/', label:'WIRED'},
- {k:'Held', t:'Reuters/Ipsos Oct 7 (fielded Sep 30–Oct 5): voters say Trump/Congress not taking AI risks seriously enough; bipartisan majority backs stricter rules — stale',
+ {k:'Held', t:'Reuters/Ipsos poll (fielded Sep 30–Oct 5; Ipsos release Oct 5; Reuters story Oct 7): voters say Trump/Congress not taking AI risks seriously enough; bipartisan majority backs stricter rules — stale',
   body:`Among registered voters: 57% on the administration, 54% on Congress; 80% Democrats / 61% Republicans support stricter regulation. Ipsos n=4,506 adults (±1.5); Reuters cites ~±2 for registered voters.`,
   url:'https://www.ipsos.com/en-us/reutersipsos-october-survey', label:'Ipsos'},
  {k:'Watch', t:'OpenAI misalignment report if more cases appear, a model is named, or rates / monitoring changes are published',
@@ -445,9 +446,9 @@ const HELD=[
   url:'https://www.science.org/doi/10.1126/science.aej2213', label:'Science'},
  {k:'Watch', t:'Kentucky Character.AI suit if Character.AI responds on the record, or a court issues findings',
   body:`Allegations only; made public Oct 7 per WLKY; Verge Oct 12.`,
-  url:'https://www.ag.ky.gov/Press%20Release%20Attachments/CTI%20Complaint%20Motion%20and%20Order%20Filed.pdf', label:'KY AG PDF'},
+  url:'https://www.ag.ky.gov/Press%20Release%20Attachments/Character%20AI%20Lawsuit%20filed.pdf', label:'KY AG PDF'},
  {k:'Watch', t:'Zoom Scribe V2 Pro on AA non-streaming STT if intervals appear or the displayed 2.8% moves',
-  body:`9= mid-pack on displayed values only; no intervals; not comparable with streaming STT.`,
+  body:`Tied on AA’s displayed 2.8%; unrounded Zoom is lowest (2.75% vs Voxtral Small 2.77%, Gemini 3.1 Pro Preview High 2.82%); no intervals; not comparable with streaming STT.`,
   url:'https://artificialanalysis.ai/speech-to-text', label:'Artificial Analysis'},
  {k:'Watch', t:'EU Scientific Panel’s loss-of-control inquiry once recommendations or the questions to developers are published, or incidents/companies/models are named',
   body:`Release names none; recommendations and questions unpublished.`,
@@ -530,12 +531,12 @@ document.getElementById('heldStrip').innerHTML=HELD.map(h=>{
    All other cards carried; ACCENT_MODELS = []. */
 
 const BENCH=[
- {id:'job-stt-nonstream', asof:'Oct 12', isNew:true, lowerBetter:true, dp:1, title:'Non-streaming speech-to-text accuracy', sub:'Official: AA-WER v2 (Non-streaming) · independent · lower is better · Zoom Scribe V2 Pro debut 2.8% (9= of ~60) · NOT comparable with streaming STT · no intervals',
-  landNote:'Zoom Scribe V2 Pro debuts at 2.8% AA-WER v2 (non-streaming), 9= on displayed values with Gemini 3.1 Pro Preview (High) and Voxtral Small. Leaders: StepAudio 3 ASR and Fun-Realtime-ASR-preview at 1.7%. Eight entries sit below 2.8%. AA publishes no intervals. Speed Factor 69.8 · $3.33 per 1,000 minutes. Upper-middle, not frontier (~1.6× leaders’ error). Keep separate from the streaming STT card.',
+ {id:'job-stt-nonstream', asof:'Oct 12', isNew:true, lowerBetter:true, dp:1, title:'Non-streaming speech-to-text accuracy', sub:'Official: AA-WER v2 (Non-streaming) · independent · lower is better · Zoom Scribe V2 Pro debut 2.8% (tied on AA’s displayed 2.8%; unrounded Zoom is lowest) · NOT comparable with streaming STT · no intervals',
+  landNote:'Zoom Scribe V2 Pro debuts at 2.8% AA-WER v2 (non-streaming) — tied on AA’s displayed 2.8%; unrounded Zoom is lowest (2.75 vs Voxtral Small 2.77, Gemini 3.1 Pro Preview High 2.82). Leaders: StepAudio 3 ASR and Fun-Realtime-ASR-preview at 1.7%. Eight entries sit below 2.8%. AA publishes no intervals. Speed Factor 69.8 · $3.33 per 1,000 minutes. Upper-middle, not frontier (~1.6× leaders’ error). Keep separate from the streaming STT card.',
   practical:'For batch / finished-file speech-to-text — word error rate on final transcripts, not an LLM chat score and not streaming STT.',
   tests:'Artificial Analysis’ AA-WER v2 non-streaming Index measures the percent of words transcribed incorrectly on final transcripts from finished audio (about 8 hours: about half AA-AgentTalk and a quarter each VoxPopuli-Cleaned-AA and Earnings22-Cleaned-AA). Lower WER is better. Separate from the streaming Index (chunk-by-chunk live audio) and from any LLM intelligence or coding board.',
   daily:'Pick this when you need accurate transcripts of finished recordings (meetings, podcasts, calls after the fact). Don’t mix with the streaming WER card. Price and Speed Factor are AA’s mid-pack figures for Zoom, not a frontier claim.',
-  fieldNote:'AA changelog 12 Oct 2026 lists Zoom Scribe V2 Pro under new speech-to-text results. Board page has no as-of stamp. Field ~60 table rows (AA FAQ text says 58 models). Three-way 9= is displayed-value only. Unrounded 0.0275 and per-dataset splits were not confirmed in the Shared verification copy.',
+  fieldNote:'AA changelog 12 Oct 2026 lists Zoom Scribe V2 Pro under new speech-to-text results. Board page has no as-of stamp. Field ~60 table rows (AA FAQ text says 58 models). AA’s page data: 2.75% unrounded (AgentTalk 1.8%, VoxPopuli 3.1%, Earnings22 4.2%).',
   data:[
 ['StepAudio 3 ASR','AA non-streaming · leader · Oct 12 board',1.7],
 ['Fun-Realtime-ASR-preview','AA non-streaming · leader · Oct 12 board',1.7],
@@ -549,7 +550,7 @@ const BENCH=[
 ['Gemini 3.1 Pro Preview','High · AA non-streaming · Oct 12 board',2.8],
 ['Voxtral Small','AA non-streaming · Oct 12 board',2.8]
   ]},
- {id:'job-img2webdev', asof:'Oct 9', boardRank:true, boardName:'LMArena', title:'Web page from a screenshot / design (Image-to-WebDev)', sub:'Official: LMArena Code Arena Image-to-WebDev · preference Elo · NOT accuracy · NOT comparable with WebDev Elo · board stamp Oct 9 · 177,108 votes · 64 models · five-way statistical 1= at top · models tracked elsewhere in this brief · each label leads with LMArena’s own displayed rank, then the rank among these (upper-bound method)', ci:{'Claude Opus 5.5':[1719,1779],'Claude Sonnet 5.5':[1720,1760],'GPT-6 Astra':[1718,1744],'Claude Fable 5.1':[1706,1734],'GPT-6.1 Sol':[1686,1720],'GPT-6 Sol':[1648,1674],'Claude Opus 5':[1651,1671],'Muse Spark 1.3':[1632,1652],'Claude Fable 5':[1613,1631],'Qwen3.8 Max':[1604,1624],'DeepSeek V4.1 Flash':[1587,1631],'GPT-5.6 Sol':[1598,1618],'Grok 4.6':[1589,1613],'MiMo-V2.6-Flash':[1583,1611],'MiMo-V2.6-Pro':[1582,1608],'Gemini 3.8 Flash':[1579,1607],'GLM-5.3-Flash':[1571,1591],'Kimi K3':[1568,1590],'Grok 4.7':[1556,1598],'GPT-6 Luna':[1558,1582],'GPT-5.6 Terra':[1530,1550],'Claude Sonnet 5':[1531,1547],'GPT-5.6 Luna':[1507,1527]},
+ {id:'job-img2webdev', asof:'Oct 9', boardRank:true, boardName:'LMArena', title:'Build a web page from a design', sub:'Official: LMArena Code Arena Image-to-WebDev · preference Elo · NOT accuracy · NOT comparable with WebDev Elo · board stamp Oct 9 · 177,108 votes · 64 models · five-way statistical 1= at top · models tracked elsewhere in this brief · each label leads with LMArena’s own displayed rank, then the rank among these (upper-bound method)', ci:{'Claude Opus 5.5':[1719,1779],'Claude Sonnet 5.5':[1720,1760],'GPT-6 Astra':[1718,1744],'Claude Fable 5.1':[1706,1734],'GPT-6.1 Sol':[1686,1720],'GPT-6 Sol':[1648,1674],'Claude Opus 5':[1651,1671],'Muse Spark 1.3':[1632,1652],'Claude Fable 5':[1613,1631],'Qwen3.8 Max':[1604,1624],'DeepSeek V4.1 Flash':[1587,1631],'GPT-5.6 Sol':[1598,1618],'Grok 4.6':[1589,1613],'MiMo-V2.6-Flash':[1583,1611],'MiMo-V2.6-Pro':[1582,1608],'Gemini 3.8 Flash':[1579,1607],'GLM-5.3-Flash':[1571,1591],'Kimi K3':[1568,1590],'Grok 4.7':[1556,1598],'GPT-6 Luna':[1558,1582],'GPT-5.6 Terra':[1530,1550],'Claude Sonnet 5':[1531,1547],'GPT-5.6 Luna':[1507,1527]},
   landNote:'Five-way 1= — Claude Opus 5.5 (max) 1749 ±30 (493 votes; displayed #1, spread 1–5), Claude Sonnet 5.5 (xhigh) 1740 ±20 (1,074 votes; displayed #2), GPT-6 Astra (max) 1731 ±13 (2,739 votes; displayed #3), Claude Fable 5.1 (max) 1720 ±14, GPT-6.1 Sol (max) 1703 ±17. Sonnet’s list price ($2/$10) is about one-fifth of Astra’s; GPT-6.1 Sol is also $2/$10 and in the tie. Next group: GPT-6 Sol, Opus 5 and Muse Spark 1.3 (max) at 6=. Opus 5.5’s interval is wide on sparse votes. Haiku 5.5 and Gemini 4 Argon are not on this board.',
   practical:'For “which model turns a mock-up or screenshot into a page people prefer?” — design-to-UI vibe ranking, not unit tests and not text-prompt WebDev.',
   tests:'LMArena Image-to-WebDev is a crowd-sourced human-preference Elo arena: two anonymous models each build a working web page from the same image or design input, and a person votes for the one they prefer. Higher Elo means more head-to-head wins. It is not a pass-rate / accuracy test, and it is a different task from the main WebDev board (text prompt → app), so do not mix the two Elo scales. Confidence intervals and vote counts matter — overlapping CIs mean the gap isn’t statistically clear.',
@@ -893,13 +894,14 @@ const BENCH=[
     ['Claude Sonnet 5.5','Effort pooled · 90% CI 161.68–169.06 · 11 benchmarks · Epoch · Oct 6',165.03],
     ['Claude Fable 5.1','Effort pooled · 90% CI 161.63–168.81 · 20 benchmarks · Epoch · Oct 6',164.70]
   ]},
- {id:'job-speed', asof:'Oct 4', dp:1, title:'Answer speed (tokens per second)', sub:'Official: Artificial Analysis Output Speed · independent · output tokens per second · higher is faster · provider’s first-party API · median of the past 72 hours · speed, NOT quality',
+ {id:'job-speed', asof:'Oct 12', updated:true, dp:1, title:'Answer speed (tokens per second)', sub:'Official: Artificial Analysis Output Speed · independent · output tokens per second · higher is faster · provider’s first-party API · median of the past 72 hours · speed, NOT quality',
   practical:'For “how fast does the answer arrive once it starts?” — matters for live chat and coding back-and-forth, much less for batch jobs.',
   tests:'Artificial Analysis sends the same kind of request (about 10,000 input tokens by default) to the model through the provider’s own API around the clock and times how many output tokens per second come back after the first chunk arrives. The figure is the median over the past 72 hours. Time to first token, the wait before anything appears, is measured separately and for reasoning models includes hidden thinking.',
   daily:'Use it to break ties between models that are similarly smart and similarly priced, or to rule out slow settings for interactive work. It says nothing about answer quality, and it changes with the provider and the day’s load.',
-  fieldNote:'GPT-6.1 Sol (Max) on OpenAI’s API: 55.7 tokens/s and 273.25 s to first token (AA GPT-6.1 Sol model page; AA changelog, Oct 4). AA calls 55.7 “at the lower end” for reasoning models in a similar price tier (median 81.4 t/s). Other models’ speeds aren’t in this brief yet.',
+  fieldNote:'AA changelog 12 Oct 2026: OpenAI performance results for GPT-6 Astra (Max) and GPT-6.1 Sol (Max). AA model pages (Oct 12): GPT-6.1 Sol (Max) 65.8 tokens/s, 330.58 s to first token (was 55.7 t/s, 273.25 s on Oct 4); GPT-6 Astra (Max) 63.7 tokens/s, 376.80 s to first token. AA calls both below average for reasoning models in a similar price tier (median 82.6 t/s). Other models’ speeds aren’t in this brief yet.',
   data:[
-    ['GPT-6.1 Sol','Max thinking · AA Sol page · OpenAI API · Oct 4',55.7]
+    ['GPT-6.1 Sol','Max thinking · AA Sol page · OpenAI API · Oct 12',65.8],
+    ['GPT-6 Astra','Max thinking · AA Astra page · OpenAI API · Oct 12',63.7]
   ]},
  {id:'job-agent-ni', asof:'Oct 8', dp:2, title:'Agent sessions that go better (Net Improvement)', sub:'Official: LMArena Agent Arena Overall · Net Improvement (NI) · NOT Elo · board Oct 8 · 2,378,129 sessions · 52 models · top five and Mistral Large 4 / Medium 3.5 as of the Oct 8 board', ci:{'Claude Opus 5.5':[12.15,16.51],'GPT-6 Astra':[10.72,15.46],'Claude Fable 5.1':[10.61,14.71],'Claude Sonnet 5.5':[8.64,15.26],'GPT-6.1 Sol':[8.67,14.77],'Mistral Large 4':[-9.51,-3.61],'Mistral Medium 3.5':[-14.05,-11.15]},
   landNote:'Oct 8 board: Mistral Large 4 (preview) entered at −6.56% ±2.95% (LMArena #43 of 52), with the worst tool-hallucination signal on the board (−18.6 ±3.3). Mistral Medium 3.5 was −12.60% ±1.45% (LMArena #51); Large 4’s interval sat entirely above it. Claude Opus 5.5 led at 14.33 ±2.18, but its interval overlapped GPT-6 Astra, Claude Fable 5.1, Claude Sonnet 5.5 and GPT-6.1 Sol, so all five were a statistical tie at 1=.',
@@ -1249,7 +1251,7 @@ function ceRow(c, rank, pool){
   const cls=`row${best?' best-deal':''}${pick?' pick':''}`;
   const badge=best?`<span class="badge-best">Best deal</span>`:'';
   const w=Math.max(2, c.dollars/maxDol*100);
-  return `<div class="${cls}"><div class="rank">${rank}</div><div class="lbl">${c.m}${badge}<span class="cfg">${c.effort}</span><span class="cbar" title="$ per task"><i style="width:${w}%"></i></span></div><div class="idx">${c.index}</div><div class="dol">${fmtDol(c.dollars)}</div><div class="ce">${fmtCe(ceVal(c))}</div></div>`;
+  return `<div class="${cls}"><div class="rank">${rank}</div><div class="lbl">${c.m}${badge} <span class="cfg">${c.effort}</span><span class="cbar" title="$ per task"><i style="width:${w}%"></i></span></div><div class="idx">${c.index}</div><div class="dol">${fmtDol(c.dollars)}</div><div class="ce">${fmtCe(ceVal(c))}</div></div>`;
 }
 const ceSorted=CE_ROWS.slice().sort((a,b)=>ceVal(b)-ceVal(a) || b.index-a.index || a.dollars-b.dollars);
 const CE_TOP_N=10;
