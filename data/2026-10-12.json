@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-12",
- "built_at": "2026-10-12T19:00:56+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 154",
- "built_at_et": "3:00 PM",
+ "built_at": "2026-10-12T19:29:51+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 155",
+ "built_at_et": "3:29 PM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -29891,14 +29891,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -31188,12 +31188,12 @@
      null
     ],
     [
-     "Seedream 4.5",
+     "Krea 2 Medium Turbo",
      76.4,
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "Seedream 4.5",
      76.4,
      null
     ],
@@ -31218,12 +31218,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
+     "Wan2.6 Text to Image",
      75.6,
      null
     ],
     [
-     "Wan2.6 Text to Image",
+     "Recraft V4.1 Utility Pro",
      75.6,
      null
     ],
@@ -31243,7 +31243,7 @@
      null
     ],
     [
-     "GPT Image 1 (high)",
+     "Ideogram 4.0 (Quality)",
      74.9,
      null
     ],
@@ -31253,7 +31253,7 @@
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "GPT Image 1 (high)",
      74.9,
      null
     ],
@@ -31263,12 +31263,12 @@
      null
     ],
     [
-     "Ideogram 4.0",
+     "FLUX.2 [pro]",
      73.9,
      null
     ],
     [
-     "FLUX.2 [pro]",
+     "Ideogram 4.0",
      73.9,
      null
     ],
@@ -31288,12 +31288,12 @@
      null
     ],
     [
-     "Imagen 4 Ultra",
+     "P-Image-Ideogram (High)",
      73.0,
      null
     ],
     [
-     "P-Image-Ideogram (High)",
+     "Imagen 4 Ultra",
      73.0,
      null
     ],
@@ -31343,12 +31343,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "FLUX.2 [dev] Flash",
      71.6,
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "Cosmos3-Super-Text2Image",
      71.6,
      null
     ],
@@ -31358,7 +31358,7 @@
      null
     ],
     [
-     "HunyuanImage 3.0 (Tencent Cloud)",
+     "Ideogram 4.0 Instant",
      71.2,
      null
     ],
@@ -31368,7 +31368,7 @@
      null
     ],
     [
-     "Ideogram 4.0 Instant",
+     "HunyuanImage 3.0 (Tencent Cloud)",
      71.2,
      null
     ],
@@ -31453,12 +31453,12 @@
      null
     ],
     [
-     "HunyuanImage 3.0",
+     "Kolors 2.1",
      65.8,
      null
     ],
     [
-     "Kolors 2.1",
+     "HunyuanImage 3.0",
      65.8,
      null
     ],
@@ -31493,12 +31493,12 @@
      null
     ],
     [
-     "Vivago 2.0",
+     "ERNIE Image Turbo",
      63.1,
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Vivago 2.0",
      63.1,
      null
     ],
@@ -31528,12 +31528,7 @@
      null
     ],
     [
-     "Lucid Origin Ultra",
-     61.6,
-     null
-    ],
-    [
-     "Reve Image (Halfmoon)",
+     "ERNIE Image",
      61.6,
      null
     ],
@@ -31543,7 +31538,12 @@
      null
     ],
     [
-     "ERNIE Image",
+     "Reve Image (Halfmoon)",
+     61.6,
+     null
+    ],
+    [
+     "Lucid Origin Ultra",
      61.6,
      null
     ],
@@ -31578,17 +31578,17 @@
      null
     ],
     [
+     "FLUX1.1 [pro]",
+     58.6,
+     null
+    ],
+    [
      "FLUX.1 [pro]",
      58.6,
      null
     ],
     [
      "GLM-Image",
-     58.6,
-     null
-    ],
-    [
-     "FLUX1.1 [pro]",
      58.6,
      null
     ],
@@ -31613,12 +31613,12 @@
      null
     ],
     [
-     "Ideogram v2",
+     "Imagen 4 Fast",
      57.7,
      null
     ],
     [
-     "Imagen 4 Fast",
+     "Ideogram v2",
      57.7,
      null
     ],
@@ -31638,17 +31638,17 @@
      null
     ],
     [
+     "Infinity 8B",
+     56.5,
+     null
+    ],
+    [
      "Midjourney v6",
      56.5,
      null
     ],
     [
      "HiDream-O1-Image-Dev",
-     56.5,
-     null
-    ],
-    [
-     "Infinity 8B",
      56.5,
      null
     ],
@@ -31798,12 +31798,12 @@
      null
     ],
     [
-     "DALLE 3",
+     "Playground v2.5",
      43.3,
      null
     ],
     [
-     "Playground v2.5",
+     "DALLE 3",
      43.3,
      null
     ],
@@ -31848,12 +31848,12 @@
      null
     ],
     [
-     "SDXL Lightning",
+     "Stable Diffusion 1.6",
      35.6,
      null
     ],
     [
-     "Stable Diffusion 1.6",
+     "SDXL Lightning",
      35.6,
      null
     ],
@@ -32038,12 +32038,12 @@
      null
     ],
     [
-     "Vidu Q3 Turbo",
+     "Vidu Q3 Pro",
      29.4,
      null
     ],
     [
-     "Vidu Q3 Pro",
+     "Vidu Q3 Turbo",
      29.4,
      null
     ],
@@ -32134,11 +32134,11 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
-    "GPT-5.6 Luna",
-    "GPT-5.6 Sol",
+    "Claude Fable 5",
     "Claude Opus 5",
-    "Claude Fable 5"
+    "Grok 4.6",
+    "GPT-5.6 Sol",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32522,11 +32522,11 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
     "Claude Fable 5",
-    "GPT-5.6 Luna",
+    "Claude Opus 5",
     "GPT-5.6 Sol",
-    "Claude Opus 5"
+    "Grok 4.6",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32679,12 +32679,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -33896,6 +33896,15 @@
    "status": "partial",
    "items": "0",
    "pr": "153",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-12",
+   "time": "15:00",
+   "status": "partial",
+   "items": "0",
+   "pr": "154",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
