@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-12",
- "built_at": "2026-10-12T14:53:00+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 148",
- "built_at_et": "10:53 AM",
+ "built_at": "2026-10-12T14:54:28+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 149",
+ "built_at_et": "10:54 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -31188,12 +31188,12 @@
      null
     ],
     [
-     "Seedream 4.5",
+     "Krea 2 Medium Turbo",
      76.4,
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "Seedream 4.5",
      76.4,
      null
     ],
@@ -31203,12 +31203,12 @@
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "grok-imagine-image",
      76.0,
      null
     ],
     [
-     "grok-imagine-image",
+     "HiDream-O1-Image-1.5",
      76.0,
      null
     ],
@@ -31218,12 +31218,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
+     "Wan2.6 Text to Image",
      75.6,
      null
     ],
     [
-     "Wan2.6 Text to Image",
+     "Recraft V4.1 Utility Pro",
      75.6,
      null
     ],
@@ -31248,12 +31248,12 @@
      null
     ],
     [
-     "GPT Image 1 (high)",
+     "Seedream 5.0 Lite",
      74.9,
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "GPT Image 1 (high)",
      74.9,
      null
     ],
@@ -31278,12 +31278,12 @@
      null
     ],
     [
-     "Qwen Image Max 2512",
+     "Ming-Image-0.1-Design",
      73.2,
      null
     ],
     [
-     "Ming-Image-0.1-Design",
+     "Qwen Image Max 2512",
      73.2,
      null
     ],
@@ -31338,17 +31338,17 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
-     71.6,
-     null
-    ],
-    [
      "FLUX.2 [dev] Flash",
      71.6,
      null
     ],
     [
      "Cosmos3-Super-Text2Image",
+     71.6,
+     null
+    ],
+    [
+     "Ideogram 4.0 Fast (Quality)",
      71.6,
      null
     ],
@@ -31363,17 +31363,17 @@
      null
     ],
     [
-     "HunyuanImage 3.0 (Tencent Cloud)",
-     71.2,
-     null
-    ],
-    [
      "Recraft V4",
      71.2,
      null
     ],
     [
      "Ideogram 4.0 Instant",
+     71.2,
+     null
+    ],
+    [
+     "HunyuanImage 3.0 (Tencent Cloud)",
      71.2,
      null
     ],
@@ -31453,12 +31453,12 @@
      null
     ],
     [
-     "Kolors 2.1",
+     "HunyuanImage 3.0",
      65.8,
      null
     ],
     [
-     "HunyuanImage 3.0",
+     "Kolors 2.1",
      65.8,
      null
     ],
@@ -31493,12 +31493,12 @@
      null
     ],
     [
-     "ERNIE Image Turbo",
+     "Vivago 2.0",
      63.1,
      null
     ],
     [
-     "Vivago 2.0",
+     "ERNIE Image Turbo",
      63.1,
      null
     ],
@@ -31528,12 +31528,12 @@
      null
     ],
     [
-     "Lucid Origin Ultra",
+     "Dreamina 3.1",
      61.6,
      null
     ],
     [
-     "ERNIE Image",
+     "Lucid Origin Ultra",
      61.6,
      null
     ],
@@ -31543,7 +31543,7 @@
      null
     ],
     [
-     "Dreamina 3.1",
+     "ERNIE Image",
      61.6,
      null
     ],
@@ -31578,7 +31578,7 @@
      null
     ],
     [
-     "FLUX.1 [pro]",
+     "GLM-Image",
      58.6,
      null
     ],
@@ -31588,7 +31588,7 @@
      null
     ],
     [
-     "GLM-Image",
+     "FLUX.1 [pro]",
      58.6,
      null
     ],
@@ -31598,12 +31598,12 @@
      null
     ],
     [
-     "HunyuanImage 2.1",
+     "P-Image",
      58.1,
      null
     ],
     [
-     "P-Image",
+     "HunyuanImage 2.1",
      58.1,
      null
     ],
@@ -31638,17 +31638,17 @@
      null
     ],
     [
+     "Midjourney v6",
+     56.5,
+     null
+    ],
+    [
      "HiDream-O1-Image-Dev",
      56.5,
      null
     ],
     [
      "Infinity 8B",
-     56.5,
-     null
-    ],
-    [
-     "Midjourney v6",
      56.5,
      null
     ],
@@ -32038,12 +32038,12 @@
      null
     ],
     [
-     "Vidu Q3 Turbo",
+     "Vidu Q3 Pro",
      29.4,
      null
     ],
     [
-     "Vidu Q3 Pro",
+     "Vidu Q3 Turbo",
      29.4,
      null
     ],
@@ -32136,9 +32136,9 @@
    "missing": [
     "GPT-5.6 Luna",
     "GPT-5.6 Sol",
-    "Grok 4.6",
+    "Claude Fable 5",
     "Claude Opus 5",
-    "Claude Fable 5"
+    "Grok 4.6"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32524,9 +32524,9 @@
    "missing": [
     "GPT-5.6 Luna",
     "GPT-5.6 Sol",
+    "Claude Fable 5",
     "Claude Opus 5",
-    "Grok 4.6",
-    "Claude Fable 5"
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32714,12 +32714,12 @@
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
@@ -32764,12 +32764,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -33842,6 +33842,15 @@
    "status": "partial",
    "items": "0",
    "pr": "147",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-12",
+   "time": "10:53",
+   "status": "partial",
+   "items": "0",
+   "pr": "148",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
