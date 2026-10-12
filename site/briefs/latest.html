@@ -39,17 +39,14 @@
 <body>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
 <style>
-:root{
-  --ground:#F1F3F6; --surface:#FFFFFF; --ink:#172029; --muted:#5F6B78; --line:#DDE2E8;
-  --bar:#C3CBD4; --bar-text:#3A4552; --pick:#1B5FBF; --pick-soft:#E3ECFA; --old:#8B95A3;
-  --good:#1E7F4F; --mid:#9A6B00; --weak:#B3463B; --good-soft:#E2F2E8; --mid-soft:#F8EFD6; --weak-soft:#F9E3E0;
-  --display:'Manrope',system-ui,sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
-}
-@media (prefers-color-scheme: dark){ :root{
-  --ground:#0F1418; --surface:#171D24; --ink:#E7ECF1; --muted:#95A0AC; --line:#2A333D;
-  --bar:#3A4652; --bar-text:#C2CBD4; --pick:#6A9CF2; --pick-soft:#1C2B45; --old:#6A7380;
-  --good:#5FC58E; --mid:#E0B24C; --weak:#EF7F72; --good-soft:#15301F; --mid-soft:#332A10; --weak-soft:#3A1C18;
-}}
+/* PALETTE:BEGIN */
+:root{--ground:#FFFFFF;--surface:#FFFFFF;--ink:#1F2233;--muted:#5C6178;--line:#E6E3F0;--bar:#D7D2F0;--bar-text:#3A3560;--pick:#5B3FC4;--pick-soft:#ECE7FD;--old:#6E7390;--good:#1C7A4E;--mid:#8F5B00;--weak:#B23A4E;--good-soft:#E1F5EA;--mid-soft:#FDF0D5;--weak-soft:#FCE4E8;--display:'Manrope',system-ui,sans-serif; --body:'IBM Plex Sans',system-ui,sans-serif; --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;color-scheme:light}
+#ns-60{--pick:#B03A7A;--pick-soft:#FCE6F1;--ground:#FFF5FA;background:var(--ground);border-radius:12px}
+#ns-jobs{--pick:#1D6FA5;--pick-soft:#E2F1FB;--ground:#F2F9FE;background:var(--ground);border-radius:12px}
+#ns-score{--pick:#5B3FC4;--pick-soft:#ECE7FD;--ground:#F7F5FE;background:var(--ground);border-radius:12px}
+#news{--pick:#0F7A6C;--pick-soft:#DDF5F0;background:var(--ground);border-radius:12px}
+#cost{--pick:#9A5A00;--pick-soft:#FDF0D5;background:var(--ground);border-radius:12px}
+/* PALETTE:END */
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.55}
