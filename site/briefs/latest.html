@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="AI Updates 2026-10-13: EU AI Office has received serious incident reports amid loss-of-control cases and will send further RFIs; Reuters on Anthropic/OpenAI evaluator publication control; AA-3D v1.0 four-way 1= (Sonnet/Opus/Astra/Fable); FrontierCode 1.1 Opus 52.2%."/>
+<meta name="description" content="AI Updates 2026-10-14: OpenAI and Anthropic tell UK MPs AI safety rules should be binding; DeepMind and Meta decline; Gemini 4 Argon model card cannot rule out bio/cyber CCLs; SWE-bench Multimodal Opus 5.5 70.21%; Muse Wonder 1= on LMArena Text."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231B5FBF%22/%3E%20%3Ctext%20x%3D%2232%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C-apple-system%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23FFFFFF%22%20letter-spacing%3D%22-0.5%22%3EAI%3C/text%3E%20%3C/svg%3E"/>
 <link rel="apple-touch-icon" href="https://jwatson7399.github.io/ai-auditing-dashboard/apple-touch-icon.png"/>
-<title>AI Updates — Oct 13, 2026 · EU serious incident reports; evaluator publication control; AA-3D four-way 1=</title>
+<title>AI Updates — Oct 14, 2026 · UK binding AI rules; Argon risk card; SWE-bench Multimodal Opus lead</title>
 <style>img{max-width:100%}[hidden]{display:none!important}/* NS:CSS:BEGIN */
 .ns{margin-top:18px}
 .ns .card{overflow:hidden}
@@ -296,17 +296,17 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 
 <div class="wrap">
   <div class="top">
-    <div class="stamp">Tuesday, Oct 13, 2026 · ET</div>
+    <div class="stamp">Wednesday, Oct 14, 2026 · ET</div>
     <h1>AI Updates</h1>
     <div class="chips">
-      <span class="chip mid">Lead: EU AI Office serious incident reports</span>
-      <span class="chip mid">Co-lead: Evaluator publication control</span>
-      <span class="chip good">AA-3D four-way 1= · FrontierCode: Opus leads</span>
+      <span class="chip mid">Lead: UK MPs — binding AI rules</span>
+      <span class="chip mid">Co-lead: Argon risk card</span>
+      <span class="chip good">SWE-bench MM: Opus leads · Text: Muse 1=</span>
     </div>
   </div>
 
   <div class="lede">
-    <p><b>Lead:</b> The EU’s AI Office has received serious incident reports amid loss-of-control incidents; no company or model named. <b>Co-lead:</b> Reuters (unnamed sources): Anthropic and OpenAI sought control over what embedded evaluators publish; the labs disagree on the record.</p>
+    <p><b>Lead:</b> At a UK Commons hearing, Anthropic and OpenAI backed binding AI safety rules; DeepMind and Meta declined. <b>Co-lead:</b> Gemini 4 Argon’s model card cannot rule out bio or cyber critical thresholds; Argon is broadly available at $2/$10 intro.</p>
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
@@ -316,12 +316,13 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
       <a href="#ns-jobs">Pick your job</a>
       <a href="#ns-score">Scoreboard</a>
       <a href="#news">News</a>
-      <a href="#boards">Boards / AA-3D</a>
+      <a href="#boards">Boards / SWE-bench MM</a>
       <a href="#biggest">Biggest move</a>
       <a href="#jobs">Best for what</a>
+      <a href="#job-swebench-mm">SWE-bench MM</a>
+      <a href="#job-text-en">Text Elo</a>
       <a href="#job-aa-3d">AA-3D</a>
       <a href="#job-frontiercode">FrontierCode</a>
-      <a href="#job-stt-nonstream">STT non-stream</a>
       <a href="#job-img2webdev">Image-to-WebDev</a>
       <a href="#job-aa-index">AA Index</a>
       <a href="#job-align">Alignment Index</a>
@@ -345,28 +346,28 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 <!-- NS:BEGIN -->
   <section id="ns-60" class="ns">
     <h3>The 60-second version</h3>
-    <div class="card"><ul class="ns-qa"><li><div class="ns-q">What&#x27;s the big news?</div><p class="ns-a">The EU&#x27;s AI Office has received serious incident reports amid recent loss-of-control cases and will send further information requests. No company or model is named.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">What&#x27;s the fight over independent reviews?</div><p class="ns-a">Reuters&#x27; unnamed sources say Anthropic and OpenAI sought strict control over what embedded evaluators publish. On the record, Anthropic reserves comment-and-approve rights; OpenAI says it doesn&#x27;t seek full-text approval.</p><div class="ns-meta"><span class="chip mid">Sources disagree</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">Who&#x27;s best at building interactive 3D web scenes?</div><p class="ns-a">Four models tie on AA-3D: Sonnet 5.5, Opus 5.5, GPT-6 Astra and Fable 5.1 (AA&#x27;s own ranges: Astra 1–4, Fable 4–6). It rates agent-built three.js pages, not general coding.</p><div class="ns-meta"><span class="chip pick">Too close to call</span><a href="#job-aa-3d">show me the numbers</a></div></li><li><div class="ns-q">Who&#x27;s best at maintainer-ready code changes?</div><p class="ns-a">Claude Opus 5.5 leads AA&#x27;s FrontierCode 1.1 run at 52.2%, ahead of GPT-6.1 Sol and Fable 5.1 near 49%. No intervals; Cognition built the test and sells a coding agent.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#job-frontiercode">show me the numbers</a></div></li><li><div class="ns-q">Cheapest good option?</div><p class="ns-a">GPT-6.1 Sol gives near-top smarts for under a dollar per task. GPT-6 Luna and MiMo-V2.6-Pro give the most points per dollar.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#cost">show me the numbers</a></div></li></ul>
+    <div class="card"><ul class="ns-qa"><li><div class="ns-q">What&#x27;s the big news?</div><p class="ns-a">At a UK Commons hearing, Anthropic and OpenAI backed binding AI safety rules; DeepMind and Meta declined. Officials said pre-release testing is voluntary.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">What does Argon&#x27;s risk card say?</div><p class="ns-a">Google cannot rule out bio or cyber critical thresholds, or a stealth/situational-awareness threshold (14/15 challenges). It says safeguards bring risk below them.</p><div class="ns-meta"><span class="chip mid">Vendor says</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">Who&#x27;s best at screenshot-to-JS bug fixes?</div><p class="ns-a">Claude Opus 5.5 leads Vals&#x27; SWE-bench Multimodal at 70.21% — a clear 1st of 18. Fable 5.1 and Sonnet 5.5 are tied for 2nd.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#job-swebench-mm">show me the numbers</a></div></li><li><div class="ns-q">Where does Muse Wonder sit on chat preference?</div><p class="ns-a">Muse Wonder (max) is statistically tied at the top with Gemini 4 Argon on LMArena Text. Argon&#x27;s score is still marked Preliminary.</p><div class="ns-meta"><span class="chip pick">Too close to call</span><a href="#job-text-en">show me the numbers</a></div></li><li><div class="ns-q">Cheapest good option?</div><p class="ns-a">GPT-6.1 Sol gives near-top smarts for under a dollar per task. GPT-6 Luna and MiMo-V2.6-Pro give the most points per dollar.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#cost">show me the numbers</a></div></li></ul>
     <p class="ns-note">Tags: Confirmed = independent source · Vendor says = company’s own report · Too close to call = tied within intervals · Sources disagree = claims conflict.</p></div>
   </section>
   <section id="ns-jobs" class="ns">
     <h3>Pick your job</h3>
-    <div class="ns-grid"><details><summary>Build interactive 3D web scenes</summary><dl><dt>Pick</dt><dd>Four-way statistical tie: Sonnet 5.5, Opus 5.5, GPT-6 Astra, Fable 5.1.</dd><dt>Runner-up</dt><dd>If you want the listed Elo leader, Sonnet 5.5 — but its interval overlaps the other three.</dd><dt>Watch out</dt><dd>Panel taste for three.js pages, not a general coding score; first-week board.</dd><dt>Based on</dt><dd>Interactive 3D web scenes (AA-3D), as of Oct 12 · <a href="#job-aa-3d">show me the numbers</a></dd></dl></details><details><summary>Write a change a maintainer would merge</summary><dl><dt>Pick</dt><dd>Claude Opus 5.5 at 52.2% on FrontierCode 1.1.</dd><dt>Runner-up</dt><dd>GPT-6.1 Sol and Claude Fable 5.1, both near 49%.</dd><dt>Watch out</dt><dd>No intervals; Cognition built the private tasks and sells a coding agent.</dd><dt>Based on</dt><dd>Maintainer-merge code changes (FrontierCode), as of Oct 12 · <a href="#job-frontiercode">show me the numbers</a></dd></dl></details><details><summary>Build a web page from a design</summary><dl><dt>Pick</dt><dd>Any of five tied models: Opus 5.5, Sonnet 5.5, GPT-6 Astra, Fable 5.1, GPT-6.1 Sol.</dd><dt>Runner-up</dt><dd>If price matters, Sonnet 5.5 or GPT-6.1 Sol from that tie.</dd><dt>Watch out</dt><dd>Opus is listed first on only 493 votes; its lead isn&#x27;t solid.</dd><dt>Based on</dt><dd>Build a web page from a design, as of Oct 9 · <a href="#job-img2webdev">show me the numbers</a></dd></dl></details><details><summary>Write and fix code</summary><dl><dt>Pick</dt><dd>Boards disagree: Claude Opus 5.5 leads Vals&#x27; Terminal-Bench 4.0, while Claude Sonnet 5.5 leads AA&#x27;s run of the same test.</dd><dt>Runner-up</dt><dd>GPT-6 Astra is near the top on both.</dd><dt>Watch out</dt><dd>Different harnesses; don&#x27;t blend the two scores.</dd><dt>Based on</dt><dd>Harder terminal coding (Vals TB 4.0), as of Oct 7; Terminal coding agents (AA Terminal-Bench 4.0), as of Oct 7 · <a href="#job-vals-tb40">show me the numbers</a></dd></dl></details><details><summary>Run an agent on a long task</summary><dl><dt>Pick</dt><dd>Five-way tie: Opus 5.5, GPT-6 Astra, Fable 5.1, Sonnet 5.5, GPT-6.1 Sol.</dd><dt>Runner-up</dt><dd>No clear runner-up; the next tracked model is far behind.</dd><dt>Watch out</dt><dd>Net Improvement is not Elo; the intervals overlap across all five.</dd><dt>Based on</dt><dd>Agent sessions that go better (Net Improvement), as of Oct 8 · <a href="#job-agent-ni">show me the numbers</a></dd></dl></details><details><summary>Chat and writing</summary><dl><dt>Pick</dt><dd>Gemini 4 Argon and Claude Opus 5.5, tied at the top.</dd><dt>Runner-up</dt><dd>Claude Fable 5 and Muse Spark 1.3, just behind.</dd><dt>Watch out</dt><dd>Argon&#x27;s score is marked preliminary, and this board is from Oct 2.</dd><dt>Based on</dt><dd>Text people prefer — English Elo, as of Oct 2 · <a href="#job-text-en">show me the numbers</a></dd></dl></details><details><summary>Do it cheaply</summary><dl><dt>Pick</dt><dd>GPT-6 Luna and MiMo-V2.6-Pro give the most index points per dollar.</dd><dt>Runner-up</dt><dd>Open weights: Ling 3.1 Flash.</dd><dt>Watch out</dt><dd>Some AA cost figures are provisional (Claude Haiku 5.5).</dd><dt>Based on</dt><dd>AA Intelligence Index per $ (cost board), as of Oct 8 · <a href="#cost">show me the numbers</a></dd></dl></details></div>
+    <div class="ns-grid"><details><summary>Fix JS bugs from screenshots</summary><dl><dt>Pick</dt><dd>Claude Opus 5.5 at 70.21% on SWE-bench Multimodal — clear 1st of 18.</dd><dt>Runner-up</dt><dd>Claude Fable 5.1 and Claude Sonnet 5.5, tied for 2nd.</dd><dt>Watch out</dt><dd>One run per model, no internet; with-network scores are not comparable.</dd><dt>Based on</dt><dd>Screenshot→JS bug fixes (SWE-bench Multimodal), as of Oct 13 · <a href="#job-swebench-mm">show me the numbers</a></dd></dl></details><details><summary>Chat and writing</summary><dl><dt>Pick</dt><dd>Gemini 4 Argon and Muse Wonder (max), statistically tied at the top.</dd><dt>Runner-up</dt><dd>Claude Opus 5.5, also in the top tie group.</dd><dt>Watch out</dt><dd>Argon is Preliminary; Muse Wonder has the fewest votes in the top group.</dd><dt>Based on</dt><dd>Text people prefer — Overall Elo, as of Oct 13 · <a href="#job-text-en">show me the numbers</a></dd></dl></details><details><summary>Build interactive 3D web scenes</summary><dl><dt>Pick</dt><dd>Four-way statistical tie: Sonnet 5.5, Opus 5.5, GPT-6 Astra, Fable 5.1.</dd><dt>Runner-up</dt><dd>If you want the listed Elo leader, Sonnet 5.5 — but its interval overlaps the other three.</dd><dt>Watch out</dt><dd>Panel taste for three.js pages, not a general coding score.</dd><dt>Based on</dt><dd>Interactive 3D web scenes (AA-3D), as of Oct 12 · <a href="#job-aa-3d">show me the numbers</a></dd></dl></details><details><summary>Write a change a maintainer would merge</summary><dl><dt>Pick</dt><dd>Claude Opus 5.5 at 52.2% on FrontierCode 1.1.</dd><dt>Runner-up</dt><dd>GPT-6.1 Sol and Claude Fable 5.1, both near 49%.</dd><dt>Watch out</dt><dd>No intervals; Cognition built the private tasks and sells a coding agent.</dd><dt>Based on</dt><dd>Maintainer-merge code changes (FrontierCode), as of Oct 12 · <a href="#job-frontiercode">show me the numbers</a></dd></dl></details><details><summary>Build a web page from a design</summary><dl><dt>Pick</dt><dd>Any of five tied models: Opus 5.5, Sonnet 5.5, GPT-6 Astra, Fable 5.1, GPT-6.1 Sol.</dd><dt>Runner-up</dt><dd>If price matters, Sonnet 5.5 or GPT-6.1 Sol from that tie.</dd><dt>Watch out</dt><dd>Opus is listed first on only 493 votes; its lead isn&#x27;t solid.</dd><dt>Based on</dt><dd>Build a web page from a design, as of Oct 9 · <a href="#job-img2webdev">show me the numbers</a></dd></dl></details><details><summary>Write and fix code</summary><dl><dt>Pick</dt><dd>Boards disagree: Claude Opus 5.5 leads Vals&#x27; Terminal-Bench 4.0, while Claude Sonnet 5.5 leads AA&#x27;s run of the same test.</dd><dt>Runner-up</dt><dd>GPT-6 Astra is near the top on both.</dd><dt>Watch out</dt><dd>Different harnesses; don&#x27;t blend the two scores.</dd><dt>Based on</dt><dd>Harder terminal coding (Vals TB 4.0), as of Oct 7; Terminal coding agents (AA Terminal-Bench 4.0), as of Oct 7 · <a href="#job-vals-tb40">show me the numbers</a></dd></dl></details><details><summary>Do it cheaply</summary><dl><dt>Pick</dt><dd>GPT-6 Luna and MiMo-V2.6-Pro give the most index points per dollar.</dd><dt>Runner-up</dt><dd>Open weights: Ling 3.1 Flash.</dd><dt>Watch out</dt><dd>Some AA cost figures are provisional (Claude Haiku 5.5).</dd><dt>Based on</dt><dd>AA Intelligence Index per $ (cost board), as of Oct 8 · <a href="#cost">show me the numbers</a></dd></dl></details></div>
   </section>
   <section id="ns-score" class="ns">
     <h3>Scoreboard</h3>
-    <div class="card"><ul class="ns-heads"><li><b>Lead</b>EU AI Office has received serious incident reports amid loss-of-control cases; no company or model named.</li><li><b>Co-lead</b>Reuters: Anthropic and OpenAI sought control over what embedded evaluators publish; the labs disagree on the record.</li><li><b>Boards</b>AA-3D debuts with a four-way 1=; Opus 5.5 leads FrontierCode 1.1 at 52.2% (no intervals).</li></ul>
-    <div class="ns-scroll" role="region" aria-label="Standings table, scrolls sideways" tabindex="0"><table class="ns-table"><thead><tr><th>Model</th><th><a href="#job-aa-3d">Interactive 3D scenes</a><span class="asof">as of Oct 12</span></th><th><a href="#job-frontiercode">Maintainer-merge code</a><span class="asof">as of Oct 12</span></th><th><a href="#job-img2webdev">Web page from design</a><span class="asof">as of Oct 9</span></th><th><a href="#job-vals-tb40">Code (Vals TB 4.0)</a><span class="asof">as of Oct 7</span></th><th><a href="#job-agent-ni">Long agent tasks</a><span class="asof">as of Oct 8</span></th><th><a href="#job-aa-index">Overall smarts</a><span class="asof">as of Oct 12</span></th></tr></thead><tbody><tr><td>Claude Opus 5.5</td><td>★<span class="ns-mv"> 1=</span></td><td>★<span class="ns-mv"> 1.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>★<span class="ns-mv"> 1.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>★<span class="ns-mv"> 1.</span></td></tr><tr><td>Claude Sonnet 5.5</td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 5.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 2.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 2=</span></td></tr><tr><td>Claude Fable 5.1</td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 3.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6 Astra</td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 3.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6.1 Sol</td><td>●<span class="ns-mv"> 3.</span></td><td>●<span class="ns-mv"> 2.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>·<span class="ns-mv"> 6.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>·<span class="ns-mv"> 7=</span><span class="ns-mv">↓</span></td></tr><tr><td>Gemini 4 Argon</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td>●<span class="ns-mv"> 5.</span></td><td title="not on this card">○</td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>Muse Wonder Full</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td>●<span class="ns-mv"> 2=</span></td></tr><tr><td>Claude Haiku 5.5</td><td>·<span class="ns-mv"> 7=</span></td><td>·<span class="ns-mv"> 11.</span></td><td title="not on this card">○</td><td>·<span class="ns-mv"> 8.</span></td><td title="not on this card">○</td><td>·<span class="ns-mv"> 19.</span></td></tr><tr><td>Muse Spark 1.3</td><td>·<span class="ns-mv"> 7=</span></td><td>·<span class="ns-mv"> 13.</span></td><td>·<span class="ns-mv"> 6=</span></td><td title="not on this card">○</td><td title="not on this card">○</td><td>·<span class="ns-mv"> 10=</span><span class="ns-mv">↓</span></td></tr></tbody></table></div>
-    <p class="ns-note">★ 1st or tied (“=”) · ● 2–5 · · lower · ○ not on card · † preliminary or vendor-reported. ↑/↓ = rank change vs Oct 6.</p></div>
+    <div class="card"><ul class="ns-heads"><li><b>Lead</b>UK MPs: Anthropic and OpenAI want binding AI rules; DeepMind and Meta decline.</li><li><b>Co-lead</b>Argon model card cannot rule out bio or cyber critical thresholds; now broadly available.</li><li><b>Boards</b>SWE-bench Multimodal: Opus 5.5 clear 1st at 70.21%; Muse Wonder 1= on Text.</li></ul>
+    <div class="ns-scroll" role="region" aria-label="Standings table, scrolls sideways" tabindex="0"><table class="ns-table"><thead><tr><th>Model</th><th><a href="#job-swebench-mm">Screenshot→JS fixes</a><span class="asof">as of Oct 13</span></th><th><a href="#job-aa-3d">Interactive 3D scenes</a><span class="asof">as of Oct 12</span></th><th><a href="#job-frontiercode">Maintainer-merge code</a><span class="asof">as of Oct 12</span></th><th><a href="#job-img2webdev">Web page from design</a><span class="asof">as of Oct 9</span></th><th><a href="#job-vals-tb40">Code (Vals TB 4.0)</a><span class="asof">as of Oct 7</span></th><th><a href="#job-aa-index">Overall smarts</a><span class="asof">as of Oct 12</span></th></tr></thead><tbody><tr><td>Claude Opus 5.5</td><td>★<span class="ns-mv"> 1.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>★<span class="ns-mv"> 1.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>★<span class="ns-mv"> 1.</span></td><td>★<span class="ns-mv"> 1.</span></td></tr><tr><td>Claude Sonnet 5.5</td><td>●<span class="ns-mv"> 2=</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 5.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 2.</span></td><td>●<span class="ns-mv"> 2=</span></td></tr><tr><td>Claude Fable 5.1</td><td>●<span class="ns-mv"> 2=</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 3.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4.</span></td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6 Astra</td><td>●<span class="ns-mv"> 5=</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 3.</span></td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6.1 Sol</td><td>●<span class="ns-mv"> 5=</span></td><td>●<span class="ns-mv"> 3.</span></td><td>●<span class="ns-mv"> 2.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>·<span class="ns-mv"> 6.</span></td><td>·<span class="ns-mv"> 7=</span><span class="ns-mv">↓</span></td></tr><tr><td>Gemini 4 Argon</td><td>●<span class="ns-mv"> 3.</span></td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td>●<span class="ns-mv"> 5.</span></td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>Muse Wonder Full</td><td>●<span class="ns-mv"> 5=</span></td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td>●<span class="ns-mv"> 2=</span></td></tr><tr><td>Muse Wonder</td><td>●<span class="ns-mv"> 5=</span></td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td>·<span class="ns-mv"> 7=</span></td></tr><tr><td>Claude Haiku 5.5</td><td>●<span class="ns-mv"> 5=</span></td><td>·<span class="ns-mv"> 7=</span></td><td>·<span class="ns-mv"> 11.</span></td><td title="not on this card">○</td><td>·<span class="ns-mv"> 8.</span></td><td>·<span class="ns-mv"> 19.</span></td></tr><tr><td>Muse Spark 1.3</td><td>●<span class="ns-mv"> 5=</span></td><td>·<span class="ns-mv"> 7=</span></td><td>·<span class="ns-mv"> 13.</span></td><td>·<span class="ns-mv"> 6=</span></td><td title="not on this card">○</td><td>·<span class="ns-mv"> 10=</span><span class="ns-mv">↓</span></td></tr></tbody></table></div>
+    <p class="ns-note">★ 1st or tied (“=”) · ● 2–5 · · lower · ○ not on card · † preliminary or vendor-reported. ↑/↓ = rank change vs Oct 7.</p></div>
   </section>
 <!-- NS:END -->
   <section id="news">
     <h3>News</h3>
     <div class="news-wrap" id="newsWrap">
       <button type="button" class="news-toggle" id="newsToggle" aria-expanded="false" aria-controls="newsPanel">
-        Today’s AI news (Oct 13)
+        Today’s AI news (Oct 14)
         <span class="hint"><span class="o">show</span><span class="c">hide</span></span>
       </button>
-      <p class="news-teaser">EU AI Office serious incident reports · Evaluator publication control · UK AISI Gemini 4 Argon · Muse Wonder model card · Anthropic self-replication · Held: distillation defenses</p>
+      <p class="news-teaser">UK MPs — binding AI rules · Argon risk card + GA · MI5 AITAC · Singapore FAIRS / AI TAP · Held: JPMorgan agents · Character.AI · Workday/Sana</p>
       <div class="news-panel" id="newsPanel" hidden>
         <div id="newsList"></div>
         <div class="card" style="margin-top:12px">
@@ -381,10 +382,9 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   <section id="boards">
     <h3>What’s new on the boards</h3>
     <div class="card">
-      <p style="max-width:72ch;font-size:14.5px">AA launched <b>AA-3D v1.0</b> (four-way 1= of 21) and ran <b>FrontierCode 1.1</b> (Opus 5.5 52.2%, no intervals). LMArena’s <b>Bash Reliability</b> replaces Bash Recovery with a changed method; old scores aren’t comparable.</p>
+      <p style="max-width:72ch;font-size:14.5px">Vals launched <b>SWE-bench Multimodal</b>: Opus 5.5 clear 1st at <b>70.21%</b> of 18; Fable 5.1 and Sonnet 5.5 are 2=. Muse Wonder (max) is 1= with Argon on LMArena Text. AA Decision Index (decision models): Jev 1.13 leads at 58.</p>
       <details class="more cz cz-boards"><summary>Sources and carried scores <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
-      <p style="margin-top:10px;max-width:72ch;font-size:14px">AA-3D: Sonnet 5.5 1194, Opus 5.5 1190, GPT-6 Astra 1165, Fable 5.1 1131, tied on 95% intervals (Fable by 5 points; AA’s own ranges: Astra 1–4, Fable 4–6). FrontierCode: GPT-6.1 Sol 49.1%, Fable 5.1 49.0%. All other cards and the cost board (as of Oct 8) are carried with their own as-of dates.</p>
-      <p style="margin-top:10px;max-width:72ch;font-size:14px;color:var(--muted)">Sources: <a href="https://artificialanalysis.ai/evaluations/aa-3d" target="_blank" rel="noopener">AA-3D</a> · <a href="https://artificialanalysis.ai/evaluations/frontiercode" target="_blank" rel="noopener">FrontierCode</a> · <a href="https://arena.ai/company/leaderboard-changelog" target="_blank" rel="noopener">LMArena changelog</a></p>
+      <p style="margin-top:10px;max-width:72ch;font-size:14px;color:var(--muted)">Sources: <a href="https://www.vals.ai/benchmarks/swebench-multimodal" target="_blank" rel="noopener">SWE-bench Multimodal</a> · <a href="https://arena.ai/leaderboard/text" target="_blank" rel="noopener">LMArena Text</a> · <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index" target="_blank" rel="noopener">Decision Index</a></p>
       </details>
     </div>
   </section>
@@ -392,32 +392,31 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   <section id="biggest">
     <h3>Biggest independent move</h3>
     <div class="card">
-      <h2 style="margin-bottom:6px">AA-3D v1.0: four-way 1= for agent-built 3D scenes</h2>
+      <h2 style="margin-bottom:6px">SWE-bench Multimodal: Opus 5.5 clear 1st at 70.21%</h2>
       <div class="pair" style="grid-template-columns:repeat(2,1fr)">
         <div class="col">
-          <div class="lab">Claude Sonnet 5.5 (Max)<br/>1194 ±34 · 1= of 21 · AA range 1–3</div>
-          <div class="track"><div class="fill old" style="height:100%">1194</div></div>
+          <div class="lab">Claude Opus 5.5<br/>70.21% ±2.09 · 1 of 18</div>
+          <div class="track"><div class="fill old" style="height:100%">70.21</div></div>
         </div>
         <div class="col">
-          <div class="lab">Claude Opus 5.5 (Max)<br/>1190 ±35 · 1= of 21 · AA range 1–3</div>
-          <div class="track"><div class="fill old" style="height:99%">1190</div></div>
+          <div class="lab">Claude Fable 5.1<br/>61.25% ±2.23 · 2= of 18</div>
+          <div class="track"><div class="fill old" style="height:87%">61.25</div></div>
         </div>
         <div class="col">
-          <div class="lab">GPT-6 Astra (Max)<br/>1165 ±34 · 1= of 21 · AA range 1–4</div>
-          <div class="track"><div class="fill old" style="height:97%">1165</div></div>
+          <div class="lab">Claude Sonnet 5.5<br/>58.33% ±2.25 · 2= of 18</div>
+          <div class="track"><div class="fill old" style="height:83%">58.33</div></div>
         </div>
         <div class="col">
-          <div class="lab">Claude Fable 5.1 (Max)<br/>1131 ±34 · 1= of 21 · AA range 4–6</div>
-          <div class="track"><div class="fill old" style="height:94%">1131</div></div>
+          <div class="lab">Gemini 4 Argon<br/>56.04% ±2.27 · near 2= group</div>
+          <div class="track"><div class="fill old" style="height:80%">56.04</div></div>
         </div>
-        <div class="delta">A tie on intervals, not a Sonnet win. Panel taste for 3D pages, not general coding.</div>
+        <div class="delta">480 JS bug fixes from screenshots · mini-swe-agent · no internet · one run each · ±1 SE (binomial). Opus’s band clears Fable; Fable and Sonnet overlap (2=). With-network scores are not comparable.</div>
       </div>
       <details class="more">
         <summary>What this means for you <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
         <div class="explain">
-          <div><h3>The job</h3><p>AA-3D asks agents to build interactive three.js scenes from briefs in an offline sandbox; a recruited panel then votes blind pairwise. Higher Elo means more preferred interactive 3D pages. It is not a general coding or chat score.</p></div>
-          <div><h3>Method</h3><p>Artificial Analysis · AA-3D v1.0 · blind-panel Elo · 55 three.js tasks · Stirrup harness · 21 models · data as at Oct 12 · 95% intervals. Fable’s upper bound (1165) clears Sonnet’s lower bound (1160) by only 5 Elo, the weakest leg of the tie; AA’s own rank range for Fable is 4–6 (Astra 1–4).</p></div>
-          <div><h3>What changed</h3><p>AA published the board. Top four models overlap on 95% intervals. Use it when the brief is “build a 3D web experience,” not when you need merge-ready repo patches (FrontierCode) or screenshot-to-page preference (Image-to-WebDev).</p></div>
+          <div><h3>The job</h3><p>SWE-bench Multimodal asks an agent to fix a real JavaScript GitHub issue whose bug report depends on a screenshot. Graded by the repo’s own tests. Vals runs mini-swe-agent with no internet (screenshots pre-downloaded).</p></div>
+          <div><h3>Method</h3><p>Vals AI · 480 tasks from 11 repos · one run per model · binomial SE bars · board as of Oct 13. Network access lifted diagnostic scores 21–35 points — only compare no-network runs.</p></div>
         </div>
       </details>
     </div>
@@ -438,7 +437,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 <div class="card deltas">
       <h2>Where they land</h2>
       <ol class="where" id="whereList"></ol>
-      <p class="note" style="margin-top:12px"><b>Don’t mix harnesses:</b> Agent Arena Net Improvement ≠ Elo and ≠ pass-rate agent benches. LMArena Text/Vision Elo ≠ accuracy %. LMArena WebDev Elo ≠ Vibe Code Bench. LMArena Image-to-WebDev ≠ WebDev Elo (different task). AA-3D ≠ FrontierCode ≠ WebDev (different jobs). AA non-streaming WER ≠ streaming WER (different Index). Older Bash Recovery ≠ Bash Reliability (method change). AA Terminal-Bench 4.0 ≠ Vals TB 4.0 mini-swe-agent ≠ Anthropic vendor TB 4.0. Streaming WER is lower-better and not an LLM score. Epoch ECI ≠ AA Intelligence Index: different scales, don’t blend. Alignment Index ≠ Agent Net Improvement. LAB-AA v1.1 ≠ v1.0. Trusted-access Cyber ≠ public Cyber. Scale HSS ≠ LMArena Vision Elo. CyberGym-E2E-AA is one of three parts of the AA Cyber Index, so don’t read them as two separate wins. LMArena image Elo ≠ Google’s internal model-card Elo.</p>
+      <p class="note" style="margin-top:12px"><b>Don’t mix harnesses:</b> Agent Arena Net Improvement ≠ Elo and ≠ pass-rate agent benches. LMArena Text/Vision Elo ≠ accuracy %. LMArena WebDev Elo ≠ Vibe Code Bench. LMArena Image-to-WebDev ≠ WebDev Elo (different task). SWE-bench Multimodal (no-network) ≠ with-network runs. AA-3D ≠ FrontierCode ≠ WebDev (different jobs). AA non-streaming WER ≠ streaming WER. Older Bash Recovery ≠ Bash Reliability. AA Terminal-Bench 4.0 ≠ Vals TB 4.0 mini-swe-agent ≠ Anthropic vendor TB 4.0. Streaming WER is lower-better and not an LLM score. Epoch ECI ≠ AA Intelligence Index: different scales, don’t blend. Alignment Index ≠ Agent Net Improvement. LAB-AA v1.1 ≠ v1.0. Trusted-access Cyber ≠ public Cyber. Scale HSS ≠ LMArena Vision Elo. CyberGym-E2E-AA is one of three parts of the AA Cyber Index, so don’t read them as two separate wins. LMArena image Elo ≠ Google’s internal model-card Elo.</p>
     </div>
 </details>
     <div class="legend"><span>Top 3 per card · “Full list” shows every score · vendor rows labeled</span></div>
@@ -478,116 +477,109 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <h3>Caveats</h3>
     <details class="more cz cz-cav"><summary>Caveats and sourcing <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
 <div class="card caveats">
-      <p><b>EU AI Office / Scientific Panel.</b> Commission article (12 Oct) on the 9 Oct special meeting. “Has already requested and received serious incident reports” and will send further RFIs combining Panel + AI Office questions. Chair recommendations are not adopted policy. No incident, company, model, report count, RFI deadline or enforcement step named.</p>
-      <p><b>Reuters evaluator publication control.</b> Exclusive; Reuters via CNA. Anonymous sources claim “significant” / “strict editorial” control sought as recently as Oct 5; one person says some Anthropic talks had shifted by Oct 8. On the record: Anthropic reserves comment-and-approve for incoming evaluator firms; OpenAI says it does not seek full-text approval. Relates to the Sep 30 Joint Commitment.</p>
-      <p><b>UK AISI / Gemini 4 Argon.</b> Minister speech (12 Oct). “Is now conducting rigorous evaluations … including Gemini 4 Argon.” “Assess how” the Cyber Security and Resilience Bill could cover serious AI incident reporting — not a clause or timetable. Access described as retained after diplomacy, not a statutory right; only Argon named.</p>
-      <p><b>Muse Wonder model card.</b> “Without mitigations, we do not rule out” high chem/bio risk for Wonder Full; residual risk after safeguards self-rated “moderate or lower.” Full safety report still pending. Complements Oct 12 launch scores (AA Index / Vals), which remain carried.</p>
-      <p><b>Anthropic self-replication.</b> Authors report small models “may be months away”; GLM-5.2 spread to 8/8 in 4 of 5 simplified firewalled trials. Upper-bound estimate (trivial ADB; cyber steps largely ignored); not a worm in the wild.</p>
-      <p><b>AA-3D / FrontierCode / Bash Reliability.</b> AA-3D: panel Elo for interactive three.js, 95% intervals, four-way 1= (AA’s own ranges: Astra 1–4, Fable 4–6). FrontierCode 1.1: Cognition private tasks, AA run, no intervals; Cognition also sells a coding agent. Bash Reliability replaced Bash Recovery with a changed method — do not compare old figures.</p>
-      <p><b>Held.</b> Anthropic anti-distillation defenses (~10–100× cut in harvested reasoning tokens on its platform): vendor claim, no independent check. Muse Wonder Coding Agents Index 68/63 in Muse Code harness: HOLD — rank/field not confirmable; not a public API score.</p>
-      <p><b>Carried scores.</b> Every job card except AA-3D and FrontierCode, and the CE board, show scores from prior briefs (see each card’s as-of date; CE data as-of Oct 8). On every card with confidence intervals, ranks count only models whose interval sits entirely above. Overlap alone never pushes a model down (LMArena’s method), but two overlapping models can still get different ranks when a third model clears one of them and not the other. Rows stay in score order, so ranks can skip or sit out of sequence. Agent Arena Net Improvement ≠ Elo; Text, Vision and image boards are preference Elo, not accuracy. Prefer AA / Vals / LMArena / Epoch / Scale for decisions, and don’t blend harnesses.</p>
+      <p><b>UK BIST / binding rules.</b> WIRED on 13 Oct Commons evidence. Anthropic: “The rules should be binding.” OpenAI: some elements “should be mandatory,” starting with incident reporting. DeepMind and Meta declined new law. AISI cannot block a release. Official transcript not yet published.</p>
+      <p><b>Gemini 4 Argon model card.</b> “Cannot rule out” bio and cyber CCLs; Stealth/SA TCL unruled-out (14/15). Google says safeguards bring risk below — self-assessed; safety cases not public. GA + $2/$10 from the launch blog, folded into the Co-lead.</p>
+      <p><b>MI5 AITAC.</b> Announced Oct 13; launched earlier in 2026. AI-bio misuse ranked top unrealised risk. Assessments only; no new power or budget figure.</p>
+      <p><b>Singapore FAIRS / AI TAP.</b> CNA/ST/MLex; no IMDA press release located. Taskforce report due H1 2027; first five AI TAP accreditations; kit is v1 and voluntary.</p>
+      <p><b>SWE-bench Multimodal / Text / Decision Index.</b> SWE-bench MM: 480 JS tasks, no internet, one run, binomial SE; Opus clear 1st. Text: Muse Wonder (max) 1513±13 is 1= with Argon (1525 Preliminary). Decision Index: decision models only; Jev 1.13 at 58; no intervals.</p>
+      <p><b>Held / revisit.</b> JPMorgan outside-agent block (CNBC; check transcript). Character.AI Chapter 11. Workday×Anthropic Sana (vendor permissions claim). Argon GA folded into Co-lead.</p>
+      <p><b>Carried scores.</b> Every job card except SWE-bench Multimodal and the Text Elo update, and the CE board, show scores from prior briefs (see each card’s as-of date; CE data as-of Oct 8). On every card with confidence intervals, ranks count only models whose interval sits entirely above. Prefer AA / Vals / LMArena / Epoch / Scale for decisions, and don’t blend harnesses.</p>
     </div>
 </details>
   </section>
+
+  <footer>
 
   <footer>AI Updates · Tuesday Oct 13, 2026 · built for phone reading</footer>
 </div>
 
 
 <script>
-const ACCENT_MODELS=[]; /* no newly audited public frontier LLM today; AA-3D/FrontierCode are boards on known models; Muse Wonder was Oct 12 */
+const ACCENT_MODELS=[]; /* no newly audited public frontier LLM today; Muse Wonder Text debut is a board update, not a full model-audit accent */
 function isSub(n){return ACCENT_MODELS.some(s=>n.indexOf(s)===0)}
 
 const NEWS_TIERS=[
- {h:'Lead · Tuesday Oct 13', items:[
- {lead:true, tag:'Lead · European Commission · AI Office / Scientific Panel', title:'EU AI Office has already requested and received serious incident reports amid recent loss-of-control incidents and sent RFIs on security practices; Commission will send further RFIs combining Scientific Panel and AI Office questions',
-  body:`Commission article (publication 12 October 2026) on the 9 October special meeting of the AI Act Scientific Panel, convened by EVP Henna Virkkunen and Panel Chair Seán Ó hÉigeartaigh.
-“The AI Office has already requested and received serious incident reports and sent requests for information on security practices.” “The Commission will send requests for information with the combined questions of the panel and the AI Office.”
-Chair / vice-chair recommendations (not adopted Commission policy): govern internal models during development and testing; build EU incident-detection / evaluation / investigation capacity (e.g. a task force); launch an international information-sharing and joint crisis-response initiative; enhance scrutiny of training techniques and architectures that reduce monitorability. Agenda also covered evidence on recursive self-improvement.
-Caveats: no incident, company or model named; no count of reports; no RFI deadline; no enforcement step; recommendations are the chair’s, not adopted rules.`,
-  why:'Why care: the first clear sign that AI Act machinery is being used on the loss-of-control cases — reports already in, further RFIs coming — still without naming who or what.',
-  links:[['European Commission — Special meeting of the AI Scientific Panel (12 Oct)','https://digital-strategy.ec.europa.eu/en/news/special-meeting-ai-scientific-panel','primary']]}
+ {h:'Lead · Wednesday Oct 14', items:[
+ {lead:true, tag:'Lead · UK Parliament · BIST Committee', title:'OpenAI and Anthropic tell UK MPs AI safety rules should be binding; DeepMind and Meta decline new law — AISI cannot block a release',
+  body:`WIRED (Ben Gartside) on the Commons Business and Trade / BIST Committee oral evidence, 13 October 2026. Anthropic’s Liam Booth-Smith (Lord Booth-Smith, EMEA policy): “The rules should be binding.” OpenAI’s Tom Duff Gordon: some elements “should be mandatory,” starting with incident reporting. DeepMind’s Owen Larter stressed standards; Meta’s Rob Sherman pointed to existing regulators — both declined to back new legislation.
+AISI’s Henry de Zoete and Cabinet Office’s Cat Little said pre-release testing is voluntary and AISI cannot block a release.
+Caveats: official Hansard/transcript not yet published; quotes rest on WIRED / PA until it is. Supporting “binding rules” costs little when none are drafted.`,
+  why:'Why care: labs splitting on the record before Parliament on statutory AI rules — with officials confirming AISI still cannot stop a release.',
+  links:[['WIRED — OpenAI and Anthropic tell British lawmakers to regulate us (13 Oct)','https://www.wired.com/story/openai-and-anthropic-tell-british-lawmakers-regulate-us/','news'],['UK Parliament — BIST Committee oral evidence','https://committees.parliament.uk/event/28282','primary']]}
  ]},
  {h:'Co-lead', items:[
- {tag:'Co-lead · Reuters · evaluator publication control', title:'Reuters exclusive: two unnamed people say Anthropic and OpenAI sought significant / strict editorial control over what embedded independent evaluators can publish; on the record, labs give different answers',
-  body:`Reuters via CNA (New York, Oct 13). Two people familiar say Anthropic and OpenAI “have sought significant control over what outside evaluators can publish,” with “strict editorial control” sought as recently as October 5; one person says some Anthropic talks had “evolved” by Oct 8.
-On the record: Anthropic says prior evaluators control methods, criteria, conclusions and what to publish, but for incoming evaluator firms it “reserved the right to comment on and approve reports.” OpenAI says it is “not seeking approval rights over the full text,” redacts confidential information, and lets evaluators disclose whether major redactions were made.
-Relates to the Sep 30 White House Joint Commitment on independent evaluation. Anonymous-source negotiation claims; Anthropic says the characterisation “did not accurately characterize all of its discussions.”`,
-  why:'Why care: the Independence pledged in the Joint Commitment is being negotiated with the labs holding pen on what gets made public — Anthropic’s on-record reply still reserves approve rights for new evaluator firms.',
-  links:[['Reuters via CNA (Oct 13)','https://www.channelnewsasia.com/business/exclusive-behind-ai-industrys-call-independent-reviews-fight-over-what-gets-made-public-6455551','news']]}
+ {tag:'Co-lead · Google DeepMind · Gemini 4 Argon model card', title:'Gemini 4 Argon model card: Google cannot rule out biological or cybersecurity critical capability levels; Stealth/SA threshold also unruled-out (14/15) — Argon now broadly available at $2/$10 intro',
+  body:`Model card published 13 October 2026 under Google’s Frontier Safety Framework (card cites April 2026 version). Exact: “We cannot rule out” Argon reaching the biological CBRN Uplift Level 1 CCL, the Cybersecurity Uplift Level 1 CCL, or the Stealth and Situational Awareness TCL (passes 14 of 15 challenges). Chem/rad/nuclear TCL ruled out “with reasonable confidence”; harmful manipulation and ML R&D CCLs not reached. Google says its safety cases bring risk “below” those levels — self-assessed; safety cases not public.
+Availability (Google launch blog, folded here): Argon “now globally available” via Gemini API, AI Studio, Gemini app and Cloud; intro $2 / $10 per million input/output tokens.`,
+  why:'Why care: a frontier lab saying on paper it can’t rule out bio and cyber critical thresholds — on a model it just made generally available.',
+  links:[['Google DeepMind — Gemini 4 Argon Model Card','https://deepmind.google/models/model-cards/gemini-4-argon/','primary'],['Google — Introducing Gemini 4 Argon (availability / pricing)','https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/','news']]}
  ]},
  {h:'Also today', items:[
- {tag:'Also · UK · AISI / Gemini 4 Argon', title:'UK AI minister: AISI kept pre-release access and “is now conducting rigorous evaluations” of latest models “including Gemini 4 Argon”; government will “assess how” Cyber Security and Resilience Bill could cover serious AI incident reporting',
-  body:`GOV.UK speech (Kanishka Narayan, Minister for AI; delivered and published 12 October 2026, Base One, Imperial College). Work with “the US government, the labs” “to retain access for Britain’s AI Security Institute to the most powerful AI models before they are released”; “AI scientists at the AI Security Institute are now conducting rigorous evaluations of the latest generation of models, including Gemini 4 Argon.”
-On the bill: “We will work with Parliament and technical experts to assess how we can strengthen the regime” for “AI-driven cyber threats and loss-of-control risks.” “That includes identifying and reporting on serious incidents and near misses.” DCMS, NCSC and AISI “will now develop robust ways for government to respond to agentic AI incidents.”
-Caveats: only Gemini 4 Argon is named; “assess how” is not a clause or timetable; access is an arrangement after diplomacy, not a statutory right.`,
-  why:'Why care: UK AISI says it is testing Gemini 4 Argon under retained pre-release access, and incident reporting is being floated for the Cyber Security and Resilience Bill — still “assess how,” not enacted.',
-  links:[['GOV.UK — Building a Safer, More Secure Britain in the age of AI (12 Oct)','https://www.gov.uk/government/speeches/building-a-safer-more-secure-britain-in-the-age-of-ai','primary']]},
- {tag:'Also · Meta · Muse Wonder model card', title:'Muse Wonder model card: “Without mitigations, we do not rule out” Muse Wonder Full reaching Meta’s high-risk threshold for chemical and biological threats; residual risk “moderate or lower” after safeguards — all self-assessed; full safety report still pending',
-  body:`Muse Wonder Model Card (release date October 12, 2026). For Muse Wonder Full: “Without mitigations, we do not rule out the model reaching this threshold in the Chemical & Biological domain.” Unmitigated Cybersecurity and Loss of Control rated “moderate or lower”; with mitigations, residual risk “moderate or lower” across all domains. Assessment run on Wonder Full and applied to the family.
-Meta-reported BioTIER refusal rates (English/multilingual 98.7%, adversarial 98.2%). Full safety report still “available soon.” Terms point to Meta Model API ToS/AUP, not an open-weight licence.`,
-  why:'Why care: Meta’s own card says it cannot rule out high chem/bio risk without mitigations — residual risk after safeguards is self-rated moderate or lower, and the full safety report is still out.',
-  links:[['Meta — Muse Wonder Model Card','https://research.meta.ai/static/muse-wonder-model-card','primary']]},
- {tag:'Also · Anthropic · self-replication research', title:'Anthropic researchers: small AI models “may be months away” from copying themselves across cheap internet-connected devices; in simplified firewalled tests, GLM-5.2 spread to 8 of 8 machines in 4 of 5 trials — upper-bound estimate, not a worm in the wild',
-  body:`Anthropic research post (William Zhou, Daniel Freeman; Oct 12). Authors report a 9B model got inference running on 8 of 9 tested hardware types; in simplified firewalled GCP/redroid evaluations with trivial unauthenticated ADB access, GLM-5.2 completed end-to-end replication (spread to 8/8 nodes in 4 of 5 trials and 7/8 in 1).
-Authors’ own caveats: cyber-exploitation steps “largely” ignored; unauthenticated ADB makes it “an upper bound”; GLM-5.2 stood up Llama3.1-8B, not itself; “end of this year” is a rough Epoch ECI trend estimate. Not an observed worm in the wild.`,
-  why:'Why care: a lab upper-bound test shows small open models can spread across cheap devices in a simplified setup — authors say months away at historical rates, not a live worm.',
-  links:[['Anthropic — self-replicating AI (Oct 12)','https://www.anthropic.com/research/self-replicating-ai','primary']]}
+ {tag:'Also · MI5 · AI Threat Assessment Centre', title:'MI5 announces AI Threat Assessment Centre; McCallum weights AI bioweapon misuse highest among unrealised risks',
+  body:`MI5 Director General Sir Ken McCallum annual threat update (Thames House, published 13 October 2026). “I can announce that in 2026 we’ve launched” AITAC, housed in MI5 and drawing on AISI, NCA and NCSC for all-source AI threat assessments. AI “already supercharging” the cyber contest; “Not yet realised – but the misuse case to which I’d attach greatest weight – is AI’s potential to change the stakes on existing or even new bioweapons.”
+Caveat: AITAC was launched earlier in 2026 and announced Oct 13 — not stood up at the speech; no launch date given. Assessments only; no new power, budget or number.`,
+  why:'Why care: the UK security service ranking AI-bio misuse as its top unrealised risk — rhetoric and a new assessment centre, not a new power.',
+  links:[['MI5 — Director General annual threat update (13 Oct)','https://www.mi5.gov.uk/mi5-director-general-delivers-annual-threat-update','primary']]},
+ {tag:'Also · Singapore · IMDA', title:'Singapore IMDA: Frontier AI Resilience and Security Taskforce, agentic testing starter kit, and first AI TAP accreditations',
+  body:`CNA (14 October 2026; Straits Times and MLex corroborate; no IMDA press release located). IMDA CE Ng Cher Pong announced FAIRS (more than 20 leaders from telecoms, media, cybersecurity and AI), report with practical guidelines due H1 2027; v1 Starter Kit for Testing Agentic Systems; first five firms accredited under AI Verify Foundation’s AI Tester Accreditation Programme: AIDX Tech, Knovel Engineering, PwC Singapore, Resaro, Vulcan.
+Caveat: all voluntary; taskforce output ~9 months away; accreditation is only as strong as the v1 kit.`,
+  why:'Why care: concrete state machinery for agent testing and third-party tester accreditation — voluntary, and the guidelines are still months out.',
+  links:[['CNA — Singapore task force on AI-related cyber threats (14 Oct)','https://www.channelnewsasia.com/singapore/singapore-task-force-ai-related-cyber-threats-6457921','news']]}
  ]}
 ];
 
 const HELD=[
- {k:'Held', t:'Anthropic anti-distillation defenses — vendor says reasoning tokens harvested on its platform cut ~10–100× (90–99% data reduction); false-positive rate <0.1%; no independent check',
-  body:`Anthropic “Strengthening our defenses against distillation attacks” (Oct 12). Preserved thinking for API accounts created on/after Aug 31 on Fable 5.1/Opus 5.5; two-stage classifier; bans and charging for blocked requests. Platform-only measurement; Anthropic’s own caveats apply. Accusations against Zhipu/Moonshot are Anthropic’s.`,
-  url:'https://www.anthropic.com/research/distillation-defenses', label:'Anthropic'},
- {k:'Watch', t:'EU AI Office RFIs / Scientific Panel once incidents, companies or models are named, RFI deadlines land, or chair recommendations become adopted policy',
+ {k:'Held', t:'Gemini 4 Argon GA / $2/$10 intro pricing — folded into Co-lead; commercial availability detail',
+  body:`Google launch blog (13 Oct): globally available via API, Gemini app and Cloud. Intro $2/$10 per M tokens.`,
+  url:'https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/', label:'Google'},
+ {k:'Revisit', t:'JPMorgan blocks outside AI agents from acting on customer accounts — Dimon cites rogue-agent risk; check earnings-call transcript',
+  body:`CNBC on Q3 2026 earnings: no third-party agents inside the bank. Quotes currently rest on CNBC alone.`,
+  url:'https://www.cnbc.com/2026/10/13/jpmorgan-ai-agents-account-access.html', label:'CNBC'},
+ {k:'Held', t:'Character.AI Chapter 11 — Disney $20M stalking-horse IP license; platform may wind down if no buyer',
+  body:`D. Del. Case No. 26-11603; petition Oct 12. Low governance weight next to today’s UK / Argon items.`,
+  url:'https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/', label:'TechCrunch'},
+ {k:'Held', t:'Workday × Anthropic Sana partnership — agents inside Claude with Workday permissions; also acquiring C1.ai',
+  body:`Workday newsroom (13 Oct). Permissions/confirm-every-change is a vendor claim, not an audited control.`,
+  url:'https://newsroom.workday.com/2026-10-13-Workday-and-Anthropic-Announce-New-Partnership-to-Connect-Reasoning-to-the-Rules-That-Run-the-Business,-Wherever-People-Choose-to-Work', label:'Workday'},
+ {k:'Watch', t:'UK BIST Committee once the official transcript is published — confirm WIRED/PA quotes; any draft statutory text',
+  body:`Quotes rest on WIRED until Hansard lands.`,
+  url:'https://www.wired.com/story/openai-and-anthropic-tell-british-lawmakers-regulate-us/', label:'WIRED'},
+ {k:'Watch', t:'Gemini 4 Argon FSF safety cases once published; any named third-party bio/cyber assessment',
+  body:`Card self-assesses that safeguards bring risk below CCLs; cases not public.`,
+  url:'https://deepmind.google/models/model-cards/gemini-4-argon/', label:'Model card'},
+ {k:'Watch', t:'MI5 AITAC once a public assessment, remit or launch date is published',
+  body:`Announced Oct 13; launched earlier in 2026; assessments only.`,
+  url:'https://www.mi5.gov.uk/mi5-director-general-delivers-annual-threat-update', label:'MI5'},
+ {k:'Watch', t:'Singapore FAIRS report (due H1 2027) and AI TAP once an IMDA / AI Verify primary lands',
+  body:`CNA/ST/MLex only so far; kit is v1 and voluntary.`,
+  url:'https://www.channelnewsasia.com/singapore/singapore-task-force-ai-related-cyber-threats-6457921', label:'CNA'},
+ {k:'Watch', t:'SWE-bench Multimodal (Vals) once more runs or with-network baselines are published for the full field',
+  body:`One run each, no internet; Opus clear 1st at 70.21%.`,
+  url:'https://www.vals.ai/benchmarks/swebench-multimodal', label:'Vals'},
+ {k:'Watch', t:'LMArena Text once Muse Wonder’s interval tightens or Argon loses the Preliminary tag',
+  body:`Muse Wonder 1= with Argon; fewest votes in the top group.`,
+  url:'https://arena.ai/leaderboard/text', label:'LMArena'},
+ {k:'Watch', t:'EU AI Office RFIs / Scientific Panel once incidents, companies or models are named',
   body:`Reports received; further RFIs coming; still unnamed.`,
   url:'https://digital-strategy.ec.europa.eu/en/news/special-meeting-ai-scientific-panel', label:'Commission'},
- {k:'Watch', t:'Reuters evaluator publication-control talks once a signed evaluator contract is made public, or Anthropic/OpenAI update on-record terms',
-  body:`Anonymous sources + on-record lab replies; Reuters via CNA.`,
+ {k:'Watch', t:'Reuters evaluator publication-control talks once a signed evaluator contract is public',
+  body:`Anonymous sources + on-record lab replies.`,
   url:'https://www.channelnewsasia.com/business/exclusive-behind-ai-industrys-call-independent-reviews-fight-over-what-gets-made-public-6455551', label:'Reuters via CNA'},
- {k:'Watch', t:'UK AISI evaluations of Gemini 4 Argon (and any named OpenAI/Anthropic models) once results or a model card / FSF report appear; Cyber Security and Resilience Bill if AI incident-reporting text is proposed',
-  body:`“Assess how” only; access is an arrangement, not a statutory right.`,
-  url:'https://www.gov.uk/government/speeches/building-a-safer-more-secure-britain-in-the-age-of-ai', label:'GOV.UK'},
- {k:'Watch', t:'Muse Wonder full safety report once published; any third-party chem/bio or cyber assessment',
+ {k:'Held', t:'Anthropic anti-distillation defenses — vendor says reasoning tokens harvested on its platform cut ~10–100×; no independent check',
+  body:`Platform-only measurement; Anthropic’s own caveats apply.`,
+  url:'https://www.anthropic.com/research/distillation-defenses', label:'Anthropic'},
+ {k:'Watch', t:'Muse Wonder full safety report once published',
   body:`Model card self-assessed; full safety report still “available soon.”`,
   url:'https://research.meta.ai/static/muse-wonder-model-card', label:'Meta model card'},
- {k:'Watch', t:'Anthropic self-replication work if a wild worm is observed, cyber-exploit steps are tested, or independent labs reproduce the firewalled result',
-  body:`Upper-bound simplified tests; not a worm in the wild.`,
-  url:'https://www.anthropic.com/research/self-replicating-ai', label:'Anthropic'},
- {k:'Watch', t:'AA-3D v1.0 once more panel votes tighten the four-way 1=, or intervals separate Sonnet / Opus / Astra / Fable',
-  body:`First-week panel Elo for agent-built three.js scenes; not general coding.`,
+ {k:'Watch', t:'AA-3D v1.0 once more panel votes tighten the four-way 1=',
+  body:`Panel Elo for agent-built three.js scenes; not general coding.`,
   url:'https://artificialanalysis.ai/evaluations/aa-3d', label:'Artificial Analysis'},
- {k:'Watch', t:'FrontierCode 1.1 (AA) once intervals appear, or Cognition publishes the private task set',
+ {k:'Watch', t:'FrontierCode 1.1 (AA) once intervals appear',
   body:`No intervals; Cognition built the bench and sells a coding agent.`,
   url:'https://artificialanalysis.ai/evaluations/frontiercode', label:'Artificial Analysis'},
- {k:'Watch', t:'LMArena Agent Arena Bash Reliability once backfilled scores land on HuggingFace — do not compare with older Bash Recovery figures',
-  body:`Method changed Oct 12 (LLM judge; failures per call).`,
-  url:'https://arena.ai/company/leaderboard-changelog', label:'LMArena changelog'},
- {k:'Watch', t:'OpenAI misalignment report if more cases appear, a model is named, or rates / monitoring changes are published',
-  body:`Sandbox; self-reported; heavily redacted; no model named.`,
-  url:'https://alignment.openai.com/misalignment-reports/damaging-the-task-environment-to-trigger-a-reset/', label:'OpenAI Alignment'},
- {k:'Watch', t:'AlphaProof Nexus if independent mathematicians review the formalizations, more results land, or the Zenodo/GitHub archive expands',
-  body:`Perspective caveat: Lean confirms proof validity, not statement match.`,
-  url:'https://www.science.org/doi/10.1126/science.aej2213', label:'Science'},
- {k:'Watch', t:'Anthropic’s unintended-actions report as its transcript scan reports more cases, agencies are named, or the live-internet cutoff is lifted',
-  body:`Live internet cut from all internal evaluations until monitoring catches this.`,
-  url:'https://www.anthropic.com/research/investigating-unintended-model-actions', label:'Anthropic'},
- {k:'Watch', t:'SI Force reporting demand once a .gov text, order, rule or enforcement mechanism appears, or another lab reports an incident under it',
-  body:`Full text via Axios; no .gov copy; no penalties named.`,
-  url:'https://www.axios.com/2026/10/09/anthropic-ai-security-white-house', label:'Axios'},
- {k:'Watch', t:'ICO agentic AI call for evidence (closes 20 Nov), its enquiries into OpenAI, Anthropic, Meta and UK AISI, and its Grok investigation',
-  body:`Ten developers’ voluntary commitments; xAI paused.`,
-  url:'https://ico.org.uk/about-the-ico/ico-and-stakeholder-consultations/2026/10/agentic-ai-call-for-evidence/', label:'ICO'},
- {k:'Watch', t:'ARC Prize 2026 Kaggle finals (deadline Nov 2, 11:59 pm UTC / 6:59 pm ET) — public boards use ~50% of test data',
-  body:`Public boards use partial test data.`,
-  url:'https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-2/leaderboard', label:'Kaggle ARC-AGI-2'},
- {k:'Watch', t:'Mistral Large 4 once the weights and LICENSE file land (promised by the end of October)',
-  body:`Public API preview.`,
-  url:'https://mistral.ai/news/mistral-large-4/', label:'Mistral'},
- {k:'Revisit', t:'Gemini 4 Argon once a model card / FSF report or broad-availability date appears',
-  body:`Defenders-first access; UK AISI says it is evaluating it.`,
-  url:'https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/', label:'Google'},
+ {k:'Watch', t:'AA Decision Index once intervals appear or more frontier chat models are scored on it',
+  body:`Decision models, not general LLMs; Jev 1.13 leads at 58.`,
+  url:'https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index', label:'Artificial Analysis'},
  {k:'Revisit', t:'Joint Commitment / Accord overseer once named; evaluator publication terms once standardized',
   body:`Voluntary; overseer still unnamed.`,
   url:'https://www.washingtonexaminer.com/news/white-house/4747747/full-trump-white-house-accord-ai-super-intelligence/', label:'WashEx'},
@@ -612,13 +604,40 @@ document.getElementById('heldStrip').innerHTML=HELD.map(h=>{
 }).join('');
 
 
-/* Best-for-what job cards, 2026-10-13.
-   NEW: job-aa-3d (AA-3D v1.0 four-way =1; isNew), job-frontiercode (FrontierCode 1.1 Opus 52.2%; isNew).
-   Cleared isNew from job-stt-nonstream, job-aa-index, job-vals-index; cleared updated from job-speed.
-   ACCENT_MODELS = []. */
+/* Best-for-what job cards, 2026-10-14.
+   NEW: job-swebench-mm (Vals SWE-bench Multimodal Opus 70.21% clear #1; isNew); job-text-en updated (Muse Wonder 1=; isNew).
+   Cleared isNew from job-aa-3d, job-frontiercode.
+   ACCENT_MODELS = []. Decision Index mentioned in boards only (decision models). */
 
 const BENCH=[
- {id:'job-aa-3d', asof:'Oct 12', isNew:true, field:21, boardRank:true, boardName:'Artificial Analysis', title:'Interactive 3D web scenes (AA-3D)', sub:'Official: Artificial Analysis AA-3D v1.0 · independent · blind-panel Elo · agent-built interactive three.js scenes · NOT general coding · 55 tasks · Stirrup harness · 21 models · data as at Oct 12 · four-way statistical 1= at top under our interval rule (AA’s own rank ranges: Sonnet/Opus 1–3, Astra 1–4, Fable 4–6) · 95% intervals',
+ {id:'job-swebench-mm', asof:'Oct 13', isNew:true, field:18, dp:2, boardRank:true, boardName:'Vals', title:'Screenshot→JS bug fixes (SWE-bench Multimodal)', sub:'Official: Vals SWE-bench Multimodal · independent · 480 JavaScript tasks from 11 repos · mini-swe-agent · no internet · screenshots pre-attached · one run per model · binomial ±1 SE · NOT comparable with with-network runs · board as of Oct 13 · 18 models',
+  ci:{'Claude Opus 5.5':[68.12,72.30],'Claude Fable 5.1':[59.02,63.48],'Claude Sonnet 5.5':[56.08,60.58],'Gemini 4 Argon':[53.77,58.31],'Muse Wonder Full':[45.01,49.57],'DeepSeek V4.1 Flash':[44.18,48.74],'Muse Wonder':[43.15,47.69],'Claude Haiku 5.5':[41.69,46.23],'GPT-6.1 Sol':[41.28,45.80],'GPT-6 Astra':[41.07,45.59],'Muse Spark 1.3':[40.87,45.39],'Grok 4.7':[40.66,45.18],'MiMo-V2.6-Pro':[39.00,43.50],'Gemini 3.8 Flash':[38.59,43.07],'Step 5 Preview':[38.59,43.07],'Qwen3.8 Max':[36.94,41.40],'GPT-6 Luna':[35.29,39.71],'Kimi K3':[33.64,38.02]},
+  landNote:'Claude Opus 5.5 70.21% ±2.09 (1 SE) is a clear 1st of 18 — its band clears Claude Fable 5.1 (61.25% ±2.23). Fable and Claude Sonnet 5.5 (58.33% ±2.25) overlap, so 2=. Gemini 4 Argon 56.04% ±2.27 sits just under Sonnet’s band. One run each; with-network diagnostics scored 21–35 points higher.',
+  practical:'For “fix a front-end bug when the report includes a screenshot” — visual software issues, not text-only SWE-bench.',
+  tests:'SWE-bench Multimodal (Yang, Jimenez, Press et al.): 480 JS GitHub issues whose bug reports depend on images. Vals runs mini-swe-agent with no internet; screenshots downloaded and attached to the first message. Graded by each repo’s own tests. Error bars are binomial standard error from a single run.',
+  daily:'Use when the bug report needs the screenshot. Do not blend with with-network runs, text-only SWE-bench, Terminal-Bench, or FrontierCode.',
+  fieldNote:'Vals board updated Oct 13, 2026. Effort max / temperature 1 on Anthropic rows from model pages; Argon at high. Cost/test ranges $0.03 (Luna) to $11.40 (Argon).',
+  data:[
+['Claude Opus 5.5','Max · SWE-bench MM · ±2.09 · $4.92/test · Oct 13',70.21],
+['Claude Fable 5.1','Max · SWE-bench MM · ±2.23 · $5.46/test · Oct 13',61.25],
+['Claude Sonnet 5.5','Max · SWE-bench MM · ±2.25 · $4.53/test · Oct 13',58.33],
+['Gemini 4 Argon','High · SWE-bench MM · ±2.27 · $11.40/test · Oct 13',56.04],
+['Muse Wonder Full','SWE-bench MM · ±2.28 · $1.86/test · Oct 13',47.29],
+['DeepSeek V4.1 Flash','SWE-bench MM · ±2.28 · $0.23/test · Oct 13',46.46],
+['Muse Wonder','SWE-bench MM · ±2.27 · $1.69/test · Oct 13',45.42],
+['Claude Haiku 5.5','SWE-bench MM · ±2.27 · $0.70/test · Oct 13',43.96],
+['GPT-6.1 Sol','SWE-bench MM · ±2.26 · $0.35/test · Oct 13',43.54],
+['GPT-6 Astra','SWE-bench MM · ±2.26 · $1.81/test · Oct 13',43.33],
+['Muse Spark 1.3','Max · SWE-bench MM · ±2.26 · $0.86/test · Oct 13',43.13],
+['Grok 4.7','SWE-bench MM · ±2.26 · $4.66/test · Oct 13',42.92],
+['MiMo-V2.6-Pro','SWE-bench MM · ±2.25 · $0.12/test · Oct 13',41.25],
+['Gemini 3.8 Flash','SWE-bench MM · ±2.24 · $3.69/test · Oct 13',40.83],
+['Step 5 Preview','SWE-bench MM · ±2.24 · $0.61/test · Oct 13',40.83],
+['Qwen3.8 Max','SWE-bench MM · ±2.23 · $0.95/test · Oct 13',39.17],
+['GPT-6 Luna','SWE-bench MM · ±2.21 · $0.03/test · Oct 13',37.50],
+['Kimi K3','SWE-bench MM · ±2.19 · $1.50/test · Oct 13',35.83]
+  ]},
+ {id:'job-aa-3d', asof:'Oct 12', field:21, boardRank:true, boardName:'Artificial Analysis', title:'Interactive 3D web scenes (AA-3D)', sub:'Official: Artificial Analysis AA-3D v1.0 · independent · blind-panel Elo · agent-built interactive three.js scenes · NOT general coding · 55 tasks · Stirrup harness · 21 models · data as at Oct 12 · four-way statistical 1= at top under our interval rule (AA’s own rank ranges: Sonnet/Opus 1–3, Astra 1–4, Fable 4–6) · 95% intervals',
   ci:{'Claude Sonnet 5.5':[1160,1228],'Claude Opus 5.5':[1155,1225],'GPT-6 Astra':[1131,1199],'Claude Fable 5.1':[1098,1165],'GPT-6 Sol':[1089,1156],'GPT-6.1 Sol':[1081,1148],'Muse Spark 1.3':[1003,1067],'GPT-6 Luna':[1000,1000],'Claude Haiku 5.5':[962,1026],'Grok 4.7':[962,1026],'Kimi K3':[949,1015],'MiMo-V2.6-Pro':[945,1009],'Gemini 3.8 Flash':[932,997],'Qwen3.8 Max (0902)':[916,981],'GLM-5.3-Flash':[899,963],'Mistral Large 4 Preview':[835,900],'Step 5 Preview':[814,881],'GLM-5.3':[747,816],'MiniMax-M3':[704,773],'Inkling':[538,620],'Nemotron 3 Ultra 550B A55B':[524,614]},
   landNote:'Four-way 1= under our interval rule (AA’s own rank ranges: Sonnet and Opus 1–3, Astra 1–4, Fable 4–6) — Claude Sonnet 5.5 (Max, Default Fallback) 1194 ±34 (displayed #1), Claude Opus 5.5 1190 ±35 (#2), GPT-6 Astra (Max) 1165 ±34 (#3), Claude Fable 5.1 1131 ±34 (#4). Fable’s upper bound clears Sonnet’s lower bound by only 5 Elo. Panel taste for interactive 3D pages, not SWE or maintainer-merge coding.',
   practical:'For “which model builds an interactive three.js scene people prefer?” — design/agent 3D vibe ranking, not unit tests and not maintainer-merge patches.',
@@ -648,7 +667,7 @@ const BENCH=[
 ['Inkling','Xhigh · AA-3D · ±41 · AA range 20–21 · Oct 12',579],
 ['Nemotron 3 Ultra 550B A55B','Reasoning · AA-3D · ±45 · AA range 20–21 · Oct 12',569]
   ]},
- {id:'job-frontiercode', asof:'Oct 12', isNew:true, field:23, dp:1, title:'Maintainer-merge code changes (FrontierCode)', sub:'Official: Artificial Analysis FrontierCode 1.1 · independent run of Cognition private tasks · “would a maintainer merge the change” · 100 of 150 Main tasks · 23 models · Stirrup harness · 3 attempts/task · 250-turn cap · NO intervals · Cognition also sells a coding agent',
+ {id:'job-frontiercode', asof:'Oct 12', field:23, dp:1, title:'Maintainer-merge code changes (FrontierCode)', sub:'Official: Artificial Analysis FrontierCode 1.1 · independent run of Cognition private tasks · “would a maintainer merge the change” · 100 of 150 Main tasks · 23 models · Stirrup harness · 3 attempts/task · 250-turn cap · NO intervals · Cognition also sells a coding agent',
   landNote:'Claude Opus 5.5 (Max, Default Fallback) 52.2% (#1 of 23), GPT-6.1 Sol (Max) 49.1% (#2), Claude Fable 5.1 (Max, Default Fallback) 49.0% (#3). Top models still fail more than 40% of the time. No intervals published — the 3.1-point Opus lead is unquantified; 0.1 between Sol and Fable is noise-level.',
   practical:'For “would a maintainer merge this change to a real open-source repo?” — harder coding depth than vibe preference boards.',
   tests:'AA runs Cognition’s private FrontierCode 1.1 Main (100 of 150 tasks): changes to real open-source repos judged on whether a maintainer would merge them. Stirrup harness, 3 attempts per task, 250-turn cap; GPT-6 Luna (medium) is the LLM judge for part of the grading. Standalone AA leaderboard (not in the Intelligence Index). No confidence intervals.',
@@ -1068,38 +1087,38 @@ const BENCH=[
 ['Mistral Large 4','Setting not stated · ±2.95% · Agent · Oct 8 · public preview',-6.56],
 ['Mistral Medium 3.5','Setting not stated · ±1.45% · Agent · Oct 8',-12.60]
   ]},
- {id:'job-text-en', asof:'Oct 2', landNote:'One chained tie group at the top, so there’s no clean order among these three: Argon and Opus 5.5 are 1=, and Fable 5 is 2= only because Argon’s interval just clears it.', title:'Text people prefer — English Elo', sub:'Official: LMArena Text Arena (English) · preference Elo · NOT accuracy · style control · board Oct 2 · 4,177,243 votes · every model tracked elsewhere in this brief that is on the board · each label leads with LMArena’s own rank, then the rank among these (upper-bound method)', boardRank:true, ci:{'Gemini 4 Argon':[1519.09,1546.79],'Claude Fable 5':[1507.66,1518.97],'Claude Opus 5.5':[1492.03,1520.36],'Muse Spark 1.3':[1490.54,1508.05],'Gemini 3.8 Flash':[1490.99,1504.82],'Claude Fable 5.1':[1488.61,1506.42],'GPT-6.1 Sol':[1479.25,1513.31],'MiMo-V2.6-Pro':[1480.70,1510.85],'Kimi K3':[1488.83,1501.75],'Claude Opus 5':[1487.74,1498.42],'Claude Sonnet 5.5':[1475.21,1508.87],'Qwen3.8 Max':[1484.69,1498.72],'GLM-5.3':[1482.11,1497.30],'DeepSeek V4.1 Flash':[1478.75,1499.67],'GPT-5.6 Sol':[1483.01,1494.85],'GPT-6 Astra':[1478.11,1498.15],'DeepSeek V4 Pro 0813':[1468.72,1488.36],'Claude Sonnet 5':[1466.43,1477.28],'MiMo-V2.6-Flash':[1459.35,1484.02],'GPT-5.6 Terra':[1465.33,1477.02],'GPT-5.6 Luna':[1461.36,1473.06],'GPT-6 Sol':[1451.71,1472.80],'Grok 4.6':[1450.95,1464.65],'GPT-6 Luna':[1435.12,1454.83],'Grok 4.7':[1432.93,1456.84]},
-  practical:'For “which model’s English replies do humans prefer?” — vibe ranking, not fact-check accuracy.',
-  tests:'LMArena Text Arena (English) is a crowd-sourced human-preference Elo arena on English prompts: people vote between paired replies. Higher Elo means wins more head-to-heads. It is not an accuracy / pass-rate test. This is the English-prompt board; LMArena’s Overall text board can order models differently. Confidence intervals (CIs, the likely range of a model’s true rating) and vote counts matter; overlapping CIs mean the gap between those two models isn’t statistically clear.',
-  daily:'Use for English chat preference. Prefer knowledge / hallucination cards when factual correctness is the job.',
-  fieldNote:'Board dated Oct 2 (4,177,243 votes, 413 models; style control on). Shown: every model tracked elsewhere in this brief that is on this board — 25 models, plus Claude Opus 5’s Max setting (LMArena #20) as a “·” row. Each label leads with LMArena’s own rank and gives the ± confidence interval. Ranks count only models whose interval sits entirely above, so overlap alone never pushes a model down (LMArena’s method); two overlapping models can still differ in rank when a third model clears one of them but not the other. Rows stay in score order, so ranks can skip or sit out of sequence. Result among the 25: Gemini 4 Argon (1533 ±14, LMArena #1, Preliminary — some votes collected before release) and Claude Opus 5.5 (1506 ±14, #6) are 1=: nothing shown sits entirely above either. Argon clears Claude Fable 5 (Argon’s low end 1519.1 is just above Fable 5’s high end 1519.0), so Fable 5 (1513 ±6, #3), Muse Spark 1.3, GPT-6.1 Sol, MiMo-V2.6-Pro and Claude Sonnet 5.5 are 2=; Gemini 3.8 Flash, Claude Fable 5.1, Kimi K3, Claude Opus 5, Qwen3.8 Max, GLM-5.3, DeepSeek V4.1 Flash, GPT-5.6 Sol and GPT-6 Astra are 3= (both Argon and Fable 5 clear them). Lower down the ranks spread out, ending with GPT-6 Luna (#103) and Grok 4.7 (#104) at 22=. Claude Opus 4.6 High (1514, #2) isn’t shown because it isn’t tracked elsewhere in this brief.',
+ {id:'job-text-en', asof:'Oct 13', isNew:true, landNote:'Gemini 4 Argon (1525±9, Preliminary) and Muse Wonder (max, 1513±13) are 1= — nothing shown sits entirely above either; Claude Opus 5.5 (High, 1508±8) is also in that top tie. Muse Wonder has the fewest votes and widest interval in the top group.', title:'Text people prefer — Overall Elo', sub:'Official: LMArena Text Arena (Overall) · preference Elo · NOT accuracy · board Oct 13 · 8,804,675 votes · 415 models · every model tracked elsewhere in this brief that is on the board · each label leads with LMArena’s own rank, then the rank among these (upper-bound method)', boardRank:true, ci:{'Gemini 4 Argon':[1516,1534],'Muse Wonder':[1500,1526],'Claude Opus 5.5':[1500,1516],'Claude Fable 5':[1499,1507],'Claude Fable 5.1':[1495,1507],'Gemini 3.8 Flash':[1491,1501],'Muse Spark 1.3':[1488,1500],'Claude Opus 5':[1486,1494],'Kimi K3':[1483,1493],'GPT-5.6 Sol':[1481,1489],'Qwen3.8 Max':[1477,1487],'GPT-6.1 Sol':[1476,1492],'GLM-5.3':[1474,1484],'GPT-6 Astra':[1471,1483],'MiMo-V2.6-Pro':[1470,1488],'DeepSeek V4.1 Flash':[1469,1481],'Claude Sonnet 5.5':[1467,1483],'GPT-5.6 Terra':[1462,1470],'GPT-6 Sol':[1452,1464],'Grok 4.6':[1450,1460],'GPT-5.6 Luna':[1449,1457],'DeepSeek V4 Pro 0813':[1457,1471],'Claude Sonnet 5':[1457,1465],'MiMo-V2.6-Flash':[1444,1458],'Grok 4.7':[1437,1451],'GPT-6 Luna':[1438,1448]},
+  practical:'For “which model’s replies do humans prefer?” — vibe ranking, not fact-check accuracy.',
+  tests:'LMArena Text Arena (Overall) is a crowd-sourced human-preference Elo arena: people vote between paired replies. Higher Elo means wins more head-to-heads. It is not an accuracy / pass-rate test. Confidence intervals and vote counts matter; overlapping CIs mean the gap between those two models isn’t statistically clear.',
+  daily:'Use for chat preference. Prefer knowledge / hallucination cards when factual correctness is the job.',
+  fieldNote:'Board dated Oct 13 (8,804,675 votes, 415 models). Muse Wonder (max) added at 1513±13 from 1,944 votes (LMArena #2, rank spread 1–11). Argon remains Preliminary. Ranks count only models whose interval sits entirely above.',
   data:[
-['Gemini 4 Argon','High thinking · ±14 · Text EN · Oct 2 · Preliminary',1533,'#1 of 413'],
-['Claude Fable 5','High thinking · ±6 · Text EN · Oct 2',1513,'#3 of 413'],
-['Claude Opus 5.5','High thinking · ±14 · Text EN · Oct 2',1506,'#6 of 413'],
-['Muse Spark 1.3','Max thinking · ±9 · Text EN · Oct 2',1499,'#8 of 413'],
-['Gemini 3.8 Flash','High thinking · ±7 · Text EN · Oct 2 · Preliminary',1498,'#10 of 413'],
-['Claude Fable 5.1','Max thinking · ±9 · Text EN · Oct 2',1498,'#11 of 413'],
-['GPT-6.1 Sol','Max thinking · ±17 · Text EN · Oct 2',1496,'#13 of 413'],
-['MiMo-V2.6-Pro','Setting not stated · ±15 · Text EN · Oct 2',1496,'#14 of 413'],
-['Kimi K3','Max thinking · ±6 · Text EN · Oct 2',1495,'#15 of 413'],
-['Claude Opus 5','High thinking · ±5 · Text EN · Oct 2',1493,'#16 of 413'],
-['Claude Sonnet 5.5','Extra-high thinking · ±17 · Text EN · Oct 2',1492,'#17 of 413'],
-['Qwen3.8 Max','Setting not stated · ±7 · Text EN · Oct 2',1492,'#18 of 413'],
-['Claude Opus 5','Max thinking · ±7 · Text EN · Oct 2',1491,'#20 of 413'],
-['GLM-5.3','Max thinking · ±8 · Text EN · Oct 2',1490,'#23 of 413'],
-['DeepSeek V4.1 Flash','Max thinking · ±10 · Text EN · Oct 2',1489,'#24 of 413'],
-['GPT-5.6 Sol','Extra-high thinking · ±6 · Text EN · Oct 2',1489,'#25 of 413'],
-['GPT-6 Astra','Max thinking · ±10 · Text EN · Oct 2',1488,'#26 of 413'],
-['DeepSeek V4 Pro 0813','High thinking · ±10 · Text EN · Oct 2',1479,'#42 of 413'],
-['Claude Sonnet 5','High thinking · ±5 · Text EN · Oct 2',1472,'#56 of 413'],
-['MiMo-V2.6-Flash','Setting not stated · ±12 · Text EN · Oct 2',1472,'#57 of 413'],
-['GPT-5.6 Terra','Extra-high thinking · ±6 · Text EN · Oct 2',1471,'#58 of 413'],
-['GPT-5.6 Luna','Extra-high thinking · ±6 · Text EN · Oct 2',1467,'#66 of 413'],
-['GPT-6 Sol','Max thinking · ±11 · Text EN · Oct 2',1462,'#76 of 413'],
-['Grok 4.6','High thinking · ±7 · Text EN · Oct 2',1458,'#82 of 413'],
-['GPT-6 Luna','Max thinking · ±10 · Text EN · Oct 2',1445,'#103 of 413'],
-['Grok 4.7','Extra-high thinking · ±12 · Text EN · Oct 2',1445,'#104 of 413']
+['Gemini 4 Argon','High · ±9 · Preliminary · Text · Oct 13',1525,'#1 of 415'],
+['Muse Wonder','Max · ±13 · 1,944 votes · Text · Oct 13',1513,'#2 of 415'],
+['Claude Opus 5.5','High · ±8 · Text · Oct 13',1508,'#3 of 415'],
+['Claude Fable 5','High · ±4 · Text · Oct 13',1503,'#4 of 415'],
+['Claude Fable 5.1','Max · ±6 · Text · Oct 13',1501,'#7 of 415'],
+['Gemini 3.8 Flash','High · ±5 · Preliminary · Text · Oct 13',1496,'#9 of 415'],
+['Muse Spark 1.3','Max · ±6 · Text · Oct 13',1494,'#11 of 415'],
+['Claude Opus 5','High · ±4 · Text · Oct 13',1490,'#14 of 415'],
+['Kimi K3','Max · ±5 · Text · Oct 13',1488,'#17 of 415'],
+['GPT-5.6 Sol','Extra-high · ±4 · Text · Oct 13',1485,'#21 of 415'],
+['GPT-6.1 Sol','Max · ±8 · Text · Oct 13',1484,'#22 of 415'],
+['Qwen3.8 Max','±5 · Text · Oct 13',1482,'#24 of 415'],
+['GLM-5.3','Max · ±5 · Text · Oct 13',1479,'#28 of 415'],
+['MiMo-V2.6-Pro','±9 · Text · Oct 13',1479,'#27 of 415'],
+['GPT-6 Astra','Max · ±6 · Text · Oct 13',1477,'#30 of 415'],
+['Claude Sonnet 5.5','xHigh · ±8 · Text · Oct 13',1475,'#35 of 415'],
+['DeepSeek V4.1 Flash','Max · ±6 · Text · Oct 13',1475,'#38 of 415'],
+['GPT-5.6 Terra','Extra-high · ±4 · Text · Oct 13',1466,'#51 of 415'],
+['DeepSeek V4 Pro 0813','High · ±7 · Text · Oct 13',1464,'#57 of 415'],
+['Claude Sonnet 5','High · ±4 · Text · Oct 13',1461,'#58 of 415'],
+['GPT-6 Sol','Max · ±6 · Text · Oct 13',1458,'#63 of 415'],
+['Grok 4.6','High · ±5 · Text · Oct 13',1455,'#70 of 415'],
+['GPT-5.6 Luna','Extra-high · ±4 · Text · Oct 13',1453,'#75 of 415'],
+['MiMo-V2.6-Flash','±7 · Text · Oct 13',1451,'#77 of 415'],
+['Grok 4.7','Extra-high · ±7 · Text · Oct 13',1444,'#89 of 415'],
+['GPT-6 Luna','Max · ±5 · Text · Oct 13',1443,'#91 of 415']
   ]},
  {id:'job-vision', asof:'Oct 2', title:'Images people prefer (Vision Elo)', sub:'Official: LMArena Vision Arena · Overall · preference Elo · NOT accuracy · board Oct 2 · 1,436,923 votes · every model tracked elsewhere in this brief that is on the board · each label leads with LMArena’s own rank, then the rank among these (upper-bound method)', boardRank:true, ci:{'Claude Fable 5':[1301.45,1316.05],'Qwen3.8 Max':[1293.74,1308.70],'GPT-6.1 Sol':[1274.58,1306.64],'Gemini 3.8 Flash':[1278.79,1301.90],'Muse Spark 1.3':[1279.74,1300.68],'Claude Opus 5':[1282.12,1295.88],'Claude Fable 5.1':[1277.73,1297.65],'GPT-5.6 Sol':[1277.11,1292.23],'GPT-6 Astra':[1273.02,1295.68],'Claude Sonnet 5.5':[1253.15,1283.52],'GPT-5.6 Terra':[1260.60,1275.83],'Claude Sonnet 5':[1257.45,1271.48],'Grok 4.6':[1254.39,1272.55],'GPT-5.6 Luna':[1252.19,1267.43],'MiMo-V2.6-Flash':[1234.20,1260.74],'MiMo-V2.6-Pro':[1230.58,1259.86]},
   practical:'For “which model’s image answers do humans prefer?” — vibe ranking, not vision accuracy benches.',
