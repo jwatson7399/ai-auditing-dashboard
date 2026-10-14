@@ -45,6 +45,19 @@ html,body{overflow-x:clip!important;overflow-y:visible!important}
 .toc-more{background:linear-gradient(90deg,transparent,var(--surface) 60%)}
 section,.bench,[id^="job-"],#ns-60,#ns-jobs,#ns-score{scroll-margin-top:60px}
 /* STICKYTOC:END */
+/* CONCISE:BEGIN */
+.jl{list-style:none;margin:0 0 10px;padding:0;display:grid;gap:0}
+.jl li{font-size:13.5px;line-height:1.35;padding:6px 0;border-bottom:1px solid var(--line)}
+.jl li:last-child{border-bottom:0}
+.jl a{font-weight:700;color:var(--ink,inherit);text-decoration:none}
+.jl .jl-asof{display:inline-block;margin-left:4px;padding:0 7px;border-radius:999px;font-size:11px;font-weight:600;background:var(--ground);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.jl .jl-v{font-size:11px;font-weight:600;color:var(--mid);white-space:nowrap}
+.jl .jl-r{color:var(--muted)}
+.jl .new{display:inline-block;margin-left:4px;padding:0 6px;border-radius:999px;font-size:10px;font-weight:700;background:var(--pick-soft);color:var(--pick)}
+.how-l{margin:8px 0 0;padding-left:18px;font-size:13px;color:var(--muted)}
+.how-l li{margin:2px 0}
+details.cz{margin:10px 0}
+/* CONCISE:END */
 </style>
 </head>
 <body>
@@ -288,12 +301,12 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <div class="chips">
       <span class="chip mid">Lead: EU AI Office serious incident reports</span>
       <span class="chip mid">Co-lead: Evaluator publication control</span>
-      <span class="chip good">AA-3D four-way 1= · FrontierCode Opus lead · other scores carried</span>
+      <span class="chip good">AA-3D four-way 1= · FrontierCode: Opus leads</span>
     </div>
   </div>
 
   <div class="lede">
-    <p><b>Lead:</b> The EU’s AI Office has received serious incident reports amid recent loss-of-control incidents and will send further requests; no company or model named. <b>Co-lead:</b> Reuters (unnamed sources): Anthropic and OpenAI sought control over what embedded evaluators publish; the labs disagree on the record.</p>
+    <p><b>Lead:</b> The EU’s AI Office has received serious incident reports amid loss-of-control incidents; no company or model named. <b>Co-lead:</b> Reuters (unnamed sources): Anthropic and OpenAI sought control over what embedded evaluators publish; the labs disagree on the record.</p>
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
@@ -332,8 +345,8 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 <!-- NS:BEGIN -->
   <section id="ns-60" class="ns">
     <h3>The 60-second version</h3>
-    <div class="card"><ul class="ns-qa"><li><div class="ns-q">What&#x27;s the big news?</div><p class="ns-a">The EU&#x27;s AI Office says it has already got serious incident reports amid recent loss-of-control cases and will send further information requests combining Scientific Panel and AI Office questions. No company or model is named.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">What&#x27;s the fight over independent reviews?</div><p class="ns-a">Reuters says two people familiar with talks claim Anthropic and OpenAI wanted strict control over what embedded evaluators can make public. On the record, Anthropic reserves approve rights for incoming evaluator firms; OpenAI says it does not seek full-report approval.</p><div class="ns-meta"><span class="chip mid">Sources disagree</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">Who&#x27;s best at building interactive 3D web scenes?</div><p class="ns-a">Four models are statistically tied on Artificial Analysis&#x27;s AA-3D board: Claude Sonnet 5.5, Claude Opus 5.5, GPT-6 Astra and Claude Fable 5.1, though AA&#x27;s own rank ranges put Astra at 1–4 and Fable at 4–6. It measures panel taste for agent-built three.js pages, not general coding.</p><div class="ns-meta"><span class="chip pick">Too close to call</span><a href="#job-aa-3d">show me the numbers</a></div></li><li><div class="ns-q">Who&#x27;s best at maintainer-ready code changes?</div><p class="ns-a">On AA&#x27;s FrontierCode 1.1 run, Claude Opus 5.5 leads at 52.2%, ahead of GPT-6.1 Sol and Claude Fable 5.1 near 49%. No intervals, and Cognition both built the test and sells a coding agent.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#job-frontiercode">show me the numbers</a></div></li><li><div class="ns-q">Is the UK testing Gemini 4 Argon?</div><p class="ns-a">The AI minister says UK AISI kept pre-release access and is evaluating latest models including Gemini 4 Argon. Access is a diplomacy arrangement, not a statute, and only Argon is named.</p><div class="ns-meta"><span class="chip mid">Vendor says</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">Cheapest good option?</div><p class="ns-a">GPT-6.1 Sol still gives near-top smarts for well under a dollar per task. For bargain-bin prices, GPT-6 Luna and MiMo-V2.6-Pro give the most points per dollar.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#cost">show me the numbers</a></div></li></ul>
-    <p class="ns-note">How sure: <b>Confirmed</b> = independent or peer-reviewed source · <b>Vendor says</b> = the company’s own report · <b>Too close to call</b> = tied within the board’s intervals · <b>Sources disagree</b> = reported claims and on-record replies conflict.</p></div>
+    <div class="card"><ul class="ns-qa"><li><div class="ns-q">What&#x27;s the big news?</div><p class="ns-a">The EU&#x27;s AI Office has received serious incident reports amid recent loss-of-control cases and will send further information requests. No company or model is named.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">What&#x27;s the fight over independent reviews?</div><p class="ns-a">Reuters&#x27; unnamed sources say Anthropic and OpenAI sought strict control over what embedded evaluators publish. On the record, Anthropic reserves comment-and-approve rights; OpenAI says it doesn&#x27;t seek full-text approval.</p><div class="ns-meta"><span class="chip mid">Sources disagree</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">Who&#x27;s best at building interactive 3D web scenes?</div><p class="ns-a">Four models tie on AA-3D: Sonnet 5.5, Opus 5.5, GPT-6 Astra and Fable 5.1 (AA&#x27;s own ranges: Astra 1–4, Fable 4–6). It rates agent-built three.js pages, not general coding.</p><div class="ns-meta"><span class="chip pick">Too close to call</span><a href="#job-aa-3d">show me the numbers</a></div></li><li><div class="ns-q">Who&#x27;s best at maintainer-ready code changes?</div><p class="ns-a">Claude Opus 5.5 leads AA&#x27;s FrontierCode 1.1 run at 52.2%, ahead of GPT-6.1 Sol and Fable 5.1 near 49%. No intervals; Cognition built the test and sells a coding agent.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#job-frontiercode">show me the numbers</a></div></li><li><div class="ns-q">Cheapest good option?</div><p class="ns-a">GPT-6.1 Sol gives near-top smarts for under a dollar per task. GPT-6 Luna and MiMo-V2.6-Pro give the most points per dollar.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#cost">show me the numbers</a></div></li></ul>
+    <p class="ns-note">Tags: Confirmed = independent source · Vendor says = company’s own report · Too close to call = tied within intervals · Sources disagree = claims conflict.</p></div>
   </section>
   <section id="ns-jobs" class="ns">
     <h3>Pick your job</h3>
@@ -341,9 +354,9 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   </section>
   <section id="ns-score" class="ns">
     <h3>Scoreboard</h3>
-    <div class="card"><ul class="ns-heads"><li><b>Lead</b>EU AI Office has received serious incident reports amid loss-of-control cases and will send further RFIs; no company or model named.</li><li><b>Co-lead</b>Reuters: Anthropic and OpenAI sought control over what embedded evaluators can make public; labs disagree on the record.</li><li><b>Board move</b>AA-3D debuts: Sonnet 5.5, Opus 5.5, Astra and Fable 5.1 tied at 1= of 21 under our interval rule; AA&#x27;s own ranges put Astra at 1–4, Fable at 4–6.</li><li><b>Board move</b>FrontierCode 1.1 (AA): Opus 5.5 leads at 52.2%; no intervals. LMArena replaces Bash Recovery with Bash Reliability (not comparable).</li></ul>
+    <div class="card"><ul class="ns-heads"><li><b>Lead</b>EU AI Office has received serious incident reports amid loss-of-control cases; no company or model named.</li><li><b>Co-lead</b>Reuters: Anthropic and OpenAI sought control over what embedded evaluators publish; the labs disagree on the record.</li><li><b>Boards</b>AA-3D debuts with a four-way 1=; Opus 5.5 leads FrontierCode 1.1 at 52.2% (no intervals).</li></ul>
     <div class="ns-scroll" role="region" aria-label="Standings table, scrolls sideways" tabindex="0"><table class="ns-table"><thead><tr><th>Model</th><th><a href="#job-aa-3d">Interactive 3D scenes</a><span class="asof">as of Oct 12</span></th><th><a href="#job-frontiercode">Maintainer-merge code</a><span class="asof">as of Oct 12</span></th><th><a href="#job-img2webdev">Web page from design</a><span class="asof">as of Oct 9</span></th><th><a href="#job-vals-tb40">Code (Vals TB 4.0)</a><span class="asof">as of Oct 7</span></th><th><a href="#job-agent-ni">Long agent tasks</a><span class="asof">as of Oct 8</span></th><th><a href="#job-aa-index">Overall smarts</a><span class="asof">as of Oct 12</span></th></tr></thead><tbody><tr><td>Claude Opus 5.5</td><td>★<span class="ns-mv"> 1=</span></td><td>★<span class="ns-mv"> 1.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>★<span class="ns-mv"> 1.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>★<span class="ns-mv"> 1.</span></td></tr><tr><td>Claude Sonnet 5.5</td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 5.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 2.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 2=</span></td></tr><tr><td>Claude Fable 5.1</td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 3.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6 Astra</td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 3.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6.1 Sol</td><td>●<span class="ns-mv"> 3.</span></td><td>●<span class="ns-mv"> 2.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>·<span class="ns-mv"> 6.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>·<span class="ns-mv"> 7=</span><span class="ns-mv">↓</span></td></tr><tr><td>Gemini 4 Argon</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td>●<span class="ns-mv"> 5.</span></td><td title="not on this card">○</td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>Muse Wonder Full</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td>●<span class="ns-mv"> 2=</span></td></tr><tr><td>Claude Haiku 5.5</td><td>·<span class="ns-mv"> 7=</span></td><td>·<span class="ns-mv"> 11.</span></td><td title="not on this card">○</td><td>·<span class="ns-mv"> 8.</span></td><td title="not on this card">○</td><td>·<span class="ns-mv"> 19.</span></td></tr><tr><td>Muse Spark 1.3</td><td>·<span class="ns-mv"> 7=</span></td><td>·<span class="ns-mv"> 13.</span></td><td>·<span class="ns-mv"> 6=</span></td><td title="not on this card">○</td><td title="not on this card">○</td><td>·<span class="ns-mv"> 10=</span><span class="ns-mv">↓</span></td></tr></tbody></table></div>
-    <p class="ns-note">★ top or tied for top (“=” = tied within the board’s intervals) · ● ranks 2–5 · · listed lower · ○ not on this card. Small number = rank on the card. † preliminary, provisional or vendor-reported. ↑/↓ = rank change vs the Oct 6 brief, shown only where that board has been refreshed since. Each column keeps its own as-of date; tap a heading for the full card.</p></div>
+    <p class="ns-note">★ 1st or tied (“=”) · ● 2–5 · · lower · ○ not on card · † preliminary or vendor-reported. ↑/↓ = rank change vs Oct 6.</p></div>
   </section>
 <!-- NS:END -->
   <section id="news">
@@ -368,17 +381,18 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   <section id="boards">
     <h3>What’s new on the boards</h3>
     <div class="card">
-      <p style="max-width:72ch;font-size:14.5px"><b>No newly audited public frontier LLM today</b> — so nothing gets the accent highlight. Verified board moves: Artificial Analysis launched <b>AA-3D v1.0</b> (Oct 12), a blind-panel Elo board for agent-built interactive three.js scenes — Claude Sonnet 5.5 <b>1194</b>, Claude Opus 5.5 <b>1190</b>, GPT-6 Astra <b>1165</b>, Claude Fable 5.1 <b>1131</b> are statistically tied at <b>1= of 21</b> on 95% intervals (Fable only by a 5-point margin); AA’s own rank ranges put Astra at 1–4 and Fable at 4–6. On AA’s run of Cognition’s private <b>FrontierCode 1.1</b> (would a maintainer merge the change; 23 models, <b>no intervals</b>), Opus 5.5 leads at <b>52.2%</b> ahead of GPT-6.1 Sol (49.1%) and Fable 5.1 (49.0%). LMArena replaced Agent Arena’s Bash Recovery signal with <b>Bash Reliability</b> (changed method — LLM judge, failures per call), so older Bash Recovery scores are <b>not comparable</b>.</p>
-      <p style="margin-top:10px;max-width:72ch;font-size:14.5px"><b>Carry:</b> All other job-card scores below, and the CE board (data as-of Oct 8), are carried from prior briefs — each card keeps its own as-of date — except the AA-3D and FrontierCode cards. Muse Wonder / Wonder Full rows on AA Index and Vals Index stay on those cards (as-of Oct 12; no longer marked as today’s accent). Zoom Scribe non-streaming STT stays carried (as-of Oct 12).</p>
+      <p style="max-width:72ch;font-size:14.5px">AA launched <b>AA-3D v1.0</b> (four-way 1= of 21) and ran <b>FrontierCode 1.1</b> (Opus 5.5 52.2%, no intervals). LMArena’s <b>Bash Reliability</b> replaces Bash Recovery with a changed method; old scores aren’t comparable.</p>
+      <details class="more cz cz-boards"><summary>Sources and carried scores <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
+      <p style="margin-top:10px;max-width:72ch;font-size:14px">AA-3D: Sonnet 5.5 1194, Opus 5.5 1190, GPT-6 Astra 1165, Fable 5.1 1131, tied on 95% intervals (Fable by 5 points; AA’s own ranges: Astra 1–4, Fable 4–6). FrontierCode: GPT-6.1 Sol 49.1%, Fable 5.1 49.0%. All other cards and the cost board (as of Oct 8) are carried with their own as-of dates.</p>
       <p style="margin-top:10px;max-width:72ch;font-size:14px;color:var(--muted)">Sources: <a href="https://artificialanalysis.ai/evaluations/aa-3d" target="_blank" rel="noopener">AA-3D</a> · <a href="https://artificialanalysis.ai/evaluations/frontiercode" target="_blank" rel="noopener">FrontierCode</a> · <a href="https://arena.ai/company/leaderboard-changelog" target="_blank" rel="noopener">LMArena changelog</a></p>
+      </details>
     </div>
   </section>
 
   <section id="biggest">
     <h3>Biggest independent move</h3>
     <div class="card">
-      <h2 style="margin-bottom:6px">AA-3D v1.0 debuts — four-way statistical 1= (Sonnet 5.5 / Opus 5.5 / Astra / Fable 5.1) for agent-built interactive 3D scenes; AA’s own rank ranges: Astra 1–4, Fable 4–6</h2>
-      <p class="note" style="margin:0 0 8px">Artificial Analysis · AA-3D v1.0 · blind-panel Elo · 55 three.js tasks · Stirrup harness · 21 models · data as at Oct 12 · 95% intervals · panel taste for interactive 3D, <b>not</b> general coding.</p>
+      <h2 style="margin-bottom:6px">AA-3D v1.0: four-way 1= for agent-built 3D scenes</h2>
       <div class="pair" style="grid-template-columns:repeat(2,1fr)">
         <div class="col">
           <div class="lab">Claude Sonnet 5.5 (Max)<br/>1194 ±34 · 1= of 21 · AA range 1–3</div>
@@ -396,13 +410,13 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
           <div class="lab">Claude Fable 5.1 (Max)<br/>1131 ±34 · 1= of 21 · AA range 4–6</div>
           <div class="track"><div class="fill old" style="height:94%">1131</div></div>
         </div>
-        <p class="note" style="grid-column:1/-1;margin:6px 0 0;text-align:center">Fable’s upper bound (1165) clears Sonnet’s lower bound (1160) by only 5 Elo — the weakest leg of the four-way tie; AA’s own rank range for Fable is 4–6 (Astra 1–4)</p>
-        <div class="delta">First-week panel board. Read it as a four-way tie on intervals, not a Sonnet win. Measures whether people prefer the interactive three.js page an agent built — not SWE pass rates or maintainer-merge coding (see FrontierCode below).</div>
+        <div class="delta">A tie on intervals, not a Sonnet win. Panel taste for 3D pages, not general coding.</div>
       </div>
       <details class="more">
         <summary>What this means for you <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
         <div class="explain">
           <div><h3>The job</h3><p>AA-3D asks agents to build interactive three.js scenes from briefs in an offline sandbox; a recruited panel then votes blind pairwise. Higher Elo means more preferred interactive 3D pages. It is not a general coding or chat score.</p></div>
+          <div><h3>Method</h3><p>Artificial Analysis · AA-3D v1.0 · blind-panel Elo · 55 three.js tasks · Stirrup harness · 21 models · data as at Oct 12 · 95% intervals. Fable’s upper bound (1165) clears Sonnet’s lower bound (1160) by only 5 Elo, the weakest leg of the tie; AA’s own rank range for Fable is 4–6 (Astra 1–4).</p></div>
           <div><h3>What changed</h3><p>AA published the board. Top four models overlap on 95% intervals. Use it when the brief is “build a 3D web experience,” not when you need merge-ready repo patches (FrontierCode) or screenshot-to-page preference (Image-to-WebDev).</p></div>
         </div>
       </details>
@@ -411,13 +425,23 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 
   <section id="jobs">
     <h3>Best for what: scores by job</h3>
-    <p class="jobs-note">Two cards — AA-3D v1.0 (four-way 1= on 95% intervals; AA’s own ranges: Astra 1–4, Fable 4–6) and FrontierCode 1.1 (Opus 5.5 at 52.2%; no intervals), plus a method-change note that Bash Reliability is not comparable with older Bash Recovery. <b>Every other job card is carried</b> from prior briefs (each keeps its own as-of date), including Zoom Scribe non-streaming STT, AA Index and Vals Index (Muse Wonder rows stay; accent cleared). There is no newly audited public frontier LLM today — AA-3D and FrontierCode are boards on known models — so no accent highlight. On every card with confidence intervals, a model’s rank is 1 + the number of shown models whose whole interval sits above its own (LMArena’s upper-bound method), and equal ranks show “=”. The date chip on each card is its as-of date. Terms used below: <b>AA</b> = Artificial Analysis, an independent testing firm; <b>Agent NI</b> = Net Improvement, LMArena Agent Arena’s score for how much better real agent sessions go with a model; <b>Elo</b> = a head-to-head rating built from people’s votes (higher wins more often); <b>WER</b> = word error rate (lower is better); <b>ECI</b> = Epoch Capabilities Index, a composite capability scale (not a percent); <b>pass@1</b> = solved on a single attempt; <b>HSS</b> = Scale AI’s Humanity’s Sixth Sense; <b>LAB-AA</b> = Harvey Legal Agent Benchmark (AA). <b>Accent highlight:</b> none today — no newly audited public frontier LLM (AA-3D / FrontierCode are boards on known models).</p>
-    <div class="card deltas">
+    <!-- JL:BEGIN -->
+    <ol class="jl" id="jobList"></ol>
+    <details class="more how" id="howRank"><summary>How we rank <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary><ul class="how-l">
+      <li><b>Top pick</b> = rank 1 on that card; runner-up = the next rank. On cards with intervals, rank = 1 + models whose whole interval sits above (LMArena’s rule), so overlaps show “=” and are listed as “tied”.</li>
+      <li>Each card keeps its own as-of date. Vendor-reported cards are labeled and never ranked across labs.</li>
+      <li>Independent boards first (AA, Vals, LMArena, Epoch, Scale, ARC). Don’t blend harnesses or scales.</li>
+      <li>AA = Artificial Analysis · Elo = vote-based rating · Agent NI = Agent Arena Net Improvement (not Elo) · WER = word error rate, lower is better · ECI = Epoch Capabilities Index.</li>
+    </ul></details>
+    <!-- JL:END -->
+    <details class="more cz cz-where"><summary>Where they land: card notes <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
+<div class="card deltas">
       <h2>Where they land</h2>
       <ol class="where" id="whereList"></ol>
       <p class="note" style="margin-top:12px"><b>Don’t mix harnesses:</b> Agent Arena Net Improvement ≠ Elo and ≠ pass-rate agent benches. LMArena Text/Vision Elo ≠ accuracy %. LMArena WebDev Elo ≠ Vibe Code Bench. LMArena Image-to-WebDev ≠ WebDev Elo (different task). AA-3D ≠ FrontierCode ≠ WebDev (different jobs). AA non-streaming WER ≠ streaming WER (different Index). Older Bash Recovery ≠ Bash Reliability (method change). AA Terminal-Bench 4.0 ≠ Vals TB 4.0 mini-swe-agent ≠ Anthropic vendor TB 4.0. Streaming WER is lower-better and not an LLM score. Epoch ECI ≠ AA Intelligence Index: different scales, don’t blend. Alignment Index ≠ Agent Net Improvement. LAB-AA v1.1 ≠ v1.0. Trusted-access Cyber ≠ public Cyber. Scale HSS ≠ LMArena Vision Elo. CyberGym-E2E-AA is one of three parts of the AA Cyber Index, so don’t read them as two separate wins. LMArena image Elo ≠ Google’s internal model-card Elo.</p>
     </div>
-    <div class="legend"><span><i class="sw p"></i>No accent today · TODAY: AA-3D + FrontierCode · other job-card scores carried</span><span>Top 3 per card · “Full list” shows every score we have</span><span>Independent AA / Vals / Epoch / ARC / LMArena · vendor rows labeled</span></div>
+</details>
+    <div class="legend"><span>Top 3 per card · “Full list” shows every score · vendor rows labeled</span></div>
     <div id="benches"></div>
   </section>
 
@@ -426,7 +450,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <div class="card">
       <div class="ce-board" data-ce-mode="best-only" data-ce-asof="2026-10-08">
         <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
-        <p class="ce-blurb"><b>CE = AA Intelligence Index ÷ AA $ per task.</b> Higher CE means more smarts per dollar. Rows are ranked across labs. The bar under each name shows its $ per task, with the Index score right next to it. A blue <b>Best deal</b> chip marks each model’s best-CE thinking setting among that model’s own variants — not necessarily its highest Index. Only that best row gets a rank; a model’s other settings show “·” and sit in the Full list. None on this $/task board (today’s verified moves are AA-3D and FrontierCode, not Index / $/task rows). Muse Wonder cost figures still aren’t plotted here — this board’s cost data are as of Oct 8. <b>Carried:</b> Claude Haiku 5.5 (Index 43 / $0.21 Max, AA Oct 7; provisional), Mistral Large 4 Preview (Index 38 / $1.13, AA Oct 6; LMArena list price now $0.68/$2.09, not used for CE), Ling 3.1 Flash (Index 41 / $0.99, Reasoning mode; open weights, Oct 3) plus AA rows as of Sep 23 (+ Sonnet 5.5 / Sol Sep 29, Argon + Solar Mini 4 Sep 30, Grok 4.7 Low Oct 1).</p>
+        <p class="ce-blurb"><b>CE = AA Intelligence Index ÷ AA $ per task</b>; higher means more smarts per dollar. <b>Best deal</b> marks each model’s best-CE setting, the only one ranked. Data as of Oct 8.</p>
         <div class="cost-wrap ce">
           <div class="ce-head"><span>#</span><span>Model · thinking · $ bar</span><span>Index</span><span>$/task</span><span>CE</span></div>
           <div class="chart" id="cechart"></div>
@@ -437,18 +461,23 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
             <div class="chart" id="cechartFull"></div>
           </div>
         </details>
-        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this today:</b> Luna and MiMo-V2.6-Pro still get the most Index per AA dollar. Ling 3.1 Flash (CE ≈ 41.4) remains a strong open-weights $/point buy. Grok 4.7 at Low thinking (CE ≈ 33.60) remains a better $/point buy than Extra-high among Grok settings. Sonnet 5.5 Max stays near the bottom on cost-effectiveness despite strong preference-board showings; its AA cost is from Sep 29, before Anthropic halved Sonnet 5.5’s cache-read price on Oct 7 ($0.20 to $0.10 per million tokens). <b>Carried:</b> Claude Haiku 5.5 (Max) at CE ≈ 205 (Index 43 at $0.21), behind GPT-6 Luna and MiMo-V2.6-Pro — AA calls that cost provisional (excludes the >100k-token price step). Mistral Large 4 Preview stays at CE ≈ 33.63 on AA’s $1.13/task (Oct 6), just ahead of Grok 4.7 Low (33.63 vs 33.60; both show 33.6); LMArena’s halved $0.68/$2.09 list price is not an AA Index cost and isn’t used here. <b>Best deal</b> marks each model’s cheapest-per-point setting — the one that buys the most Index per dollar among that model’s own settings.</p>
+        <p style="max-width:70ch;font-size:14.5px;margin:16px 0 8px"><b>Use this:</b> GPT-6 Luna and MiMo-V2.6-Pro buy the most Index per dollar; Ling 3.1 Flash (CE ≈ 41.4) is the best open-weights buy.</p>
+        <details class="more cz cz-cenotes"><summary>Cost notes <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
+        <p class="note" style="margin-bottom:8px">Muse Wonder isn’t plotted (no AA cost data on this Oct 8 board). <b>Carried:</b> Claude Haiku 5.5 (Index 43 / $0.21 Max, AA Oct 7; provisional, excludes the >100k-token price step) at CE ≈ 205, behind Luna and MiMo-V2.6-Pro; Mistral Large 4 Preview (Index 38 / $1.13, AA Oct 6) at CE ≈ 33.63, just ahead of Grok 4.7 Low (33.60; both show 33.6); LMArena’s $0.68/$2.09 list price isn’t an AA Index cost and isn’t used. Ling 3.1 Flash (Index 41 / $0.99, Reasoning mode; open weights, Oct 3) plus AA rows as of Sep 23 (+ Sonnet 5.5 / Sol Sep 29, Argon + Solar Mini 4 Sep 30, Grok 4.7 Low Oct 1).</p>
+        <p class="note" style="margin-bottom:8px">Grok 4.7 at Low thinking is a better $/point buy than Extra-high. Sonnet 5.5 Max sits near the bottom on CE; its AA cost is from Sep 29, before Anthropic halved its cache-read price on Oct 7 ($0.20 to $0.10 per million tokens).</p>
         <p class="note" style="margin-bottom:8px"><b>GPT-6 Astra (Max)</b>, one of the five sharing rank 1= on the carried Agent Arena board, ranks only #13 of 15 here: Index 53 at $3.26 per task (CE ≈ 16.3) — a top-tier score at one of the higher prices per point.</p>
         <p class="note" style="margin-bottom:8px"><b>Kolibri</b> (Aleph Alpha, released Oct 3) and <b>Reflection AI’s Beam</b> (previewed Oct 5; weights not out): no AA cost data yet, so neither is on this board.</p>
         <p class="note" style="margin-bottom:8px"><b>GPT-6.1 Sol (Max)</b> ranks #6 here (Index 52 at $0.72 per task, CE ≈ 72.2), but AA’s Oct 4 speed reading shows it is slow: 55.7 tokens per second and 273 seconds to the first token on OpenAI’s API. Cheap per point is not the same as quick.</p>
         <p class="note"><b>MiMo-V2.6-Flash</b> (Index 38, as of Sep 27) isn’t ranked here because we don’t have an AA $/task figure for it. Thinking labels are the settings AA tested, which may not match a chat app’s default. Ling’s AA token prices are $0.30/$0.90 per 1M input/output with an 80% cache discount; AA’s $0.99 is cost per Index task at the Reasoning setting.</p>
+        </details>
       </div>
     </div>
   </section>
 
   <section id="trust">
     <h3>Caveats</h3>
-    <div class="card caveats">
+    <details class="more cz cz-cav"><summary>Caveats and sourcing <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
+<div class="card caveats">
       <p><b>EU AI Office / Scientific Panel.</b> Commission article (12 Oct) on the 9 Oct special meeting. “Has already requested and received serious incident reports” and will send further RFIs combining Panel + AI Office questions. Chair recommendations are not adopted policy. No incident, company, model, report count, RFI deadline or enforcement step named.</p>
       <p><b>Reuters evaluator publication control.</b> Exclusive; Reuters via CNA. Anonymous sources claim “significant” / “strict editorial” control sought as recently as Oct 5; one person says some Anthropic talks had shifted by Oct 8. On the record: Anthropic reserves comment-and-approve for incoming evaluator firms; OpenAI says it does not seek full-text approval. Relates to the Sep 30 Joint Commitment.</p>
       <p><b>UK AISI / Gemini 4 Argon.</b> Minister speech (12 Oct). “Is now conducting rigorous evaluations … including Gemini 4 Argon.” “Assess how” the Cyber Security and Resilience Bill could cover serious AI incident reporting — not a clause or timetable. Access described as retained after diplomacy, not a statutory right; only Argon named.</p>
@@ -458,9 +487,10 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
       <p><b>Held.</b> Anthropic anti-distillation defenses (~10–100× cut in harvested reasoning tokens on its platform): vendor claim, no independent check. Muse Wonder Coding Agents Index 68/63 in Muse Code harness: HOLD — rank/field not confirmable; not a public API score.</p>
       <p><b>Carried scores.</b> Every job card except AA-3D and FrontierCode, and the CE board, show scores from prior briefs (see each card’s as-of date; CE data as-of Oct 8). On every card with confidence intervals, ranks count only models whose interval sits entirely above. Overlap alone never pushes a model down (LMArena’s method), but two overlapping models can still get different ranks when a third model clears one of them and not the other. Rows stay in score order, so ranks can skip or sit out of sequence. Agent Arena Net Improvement ≠ Elo; Text, Vision and image boards are preference Elo, not accuracy. Prefer AA / Vals / LMArena / Epoch / Scale for decisions, and don’t blend harnesses.</p>
     </div>
+</details>
   </section>
 
-  <footer>Built for phone reading · AI Commentator · Tuesday Oct 13, 2026 · Lead: EU AI Office serious incident reports. Co-lead: evaluator publication control. Boards: AA-3D four-way 1= · FrontierCode Opus 52.2%. Other job-card and CE scores carried, each with its own as-of date.</footer>
+  <footer>AI Updates · Tuesday Oct 13, 2026 · built for phone reading</footer>
 </div>
 
 
@@ -1304,9 +1334,8 @@ ORDERED.forEach(b=>{
       : `<p class="note" style="margin:0 0 4px">Only ${s.length} independent score${s.length===1?'':'s'} on this card.${fn}</p>`);
   benchRoot.insertAdjacentHTML('beforeend',`<article class="bench" id="${b.id}">
     <p class="title">${b.title}</p>
-    <p class="sub">${b.sub}</p>
     <span class="asof">As of ${b.asof}</span>${b.isNew?' <span class="new">NEW</span>':(b.updated?' <span class="new">UPDATED</span>':'')}${b.correction?`<p class="note" style="margin:6px 0 0">${b.correction}</p>`:''}
-    <p class="practical"><b>In practice:</b> ${b.practical}</p>${b.landNote?`<p class="note" style="margin:6px 0 0">${b.landNote}</p>`:''}
+    <p class="practical"><b>In practice:</b> ${b.practical}</p>
     <div class="chart">${benchRows(b, top, scaleMax)}</div>
     <details class="more">
       <summary>${summary} <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
@@ -1314,6 +1343,7 @@ ORDERED.forEach(b=>{
         <div><h3>How it works</h3><p>${b.tests}</p></div>
         <div><h3>What it means for your work</h3><p>${b.daily}</p></div>
       </div>
+      <p class="sub" style="margin:8px 0 4px">${b.sub}</p>${b.landNote?`<p class="note" style="margin:4px 0 8px">${b.landNote}</p>`:''}
       ${fullChart}
     </details>
   </article>`);
@@ -1385,6 +1415,17 @@ if(ceRest.length||ceOther.length){
     + (ceOther.length?`<p class="note" style="margin:12px 0 6px">Other thinking settings of models ranked above (not ranked separately):</p>`+ceOther.map(c=>ceRow(c, '·', CE_ROWS)).join(''):'');
 }else{ document.getElementById('ceFullWrap').hidden=true; }
 
+/* JOBLIST:BEGIN */
+(function(){const el=document.getElementById('jobList');if(!el)return;
+const fmt=(g,n)=>!g.length?'—':(g.length>1?'tied: '+g.slice(0,n).join(', ')+(g.length>n?` +${g.length-n} more`:''):g[0]);
+el.innerHTML=ORDERED.map(b=>{const u=topPerModel(sortedBench(b),Infinity);let line;
+ if(b.vendor){line=`highest on vendor chart: ${u[0]?u[0][0]:'—'} <span class="jl-r">(not ranked across labs)</span>`;}
+ else{const rk=u.map(d=>[d[0],rankOf(b,d)]).filter(x=>x[1]!=='·').map(x=>[x[0],parseInt(x[1],10)]);
+  if(!rk.length){line='—'}else{const r0=Math.min(...rk.map(x=>x[1]));const rest=rk.filter(x=>x[1]>r0);
+  const r1=rest.length?Math.min(...rest.map(x=>x[1])):null;
+  line=fmt(rk.filter(x=>x[1]===r0).map(x=>x[0]),6)+`<span class="jl-r"> · runner-up: ${fmt(r1==null?[]:rest.filter(x=>x[1]===r1).map(x=>x[0]),2)}</span>`;}}
+ return `<li><a href="#${b.id}">${b.title}</a>${b.isNew?'<span class="new">NEW</span>':''}<span class="jl-asof">${b.asof}</span>${b.vendor?' <span class="jl-v">vendor-reported</span>':''}<br>${line}</li>`;}).join('');})();
+/* JOBLIST:END */
 function openForHash(){const h=location.hash.slice(1);if(!h)return;const el=document.getElementById(h);const cw=document.getElementById('carriedWrap');if(el&&cw&&cw.contains(el)&&!cw.open){cw.open=true;requestAnimationFrame(()=>el.scrollIntoView());}}
 window.addEventListener('hashchange',openForHash); openForHash();
 
