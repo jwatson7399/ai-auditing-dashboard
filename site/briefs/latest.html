@@ -15,24 +15,29 @@
 .ns-qa li:last-child{border-bottom:0;padding-bottom:0}
 .ns-q{font-weight:700;font-size:15px}
 .ns-a{font-size:14.5px;margin:4px 0;max-width:72ch}
-.ns-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12.5px}
+.ns-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px}
 .ns-meta a{color:var(--muted)}
-.ns-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
-.ns-grid details{border:1px solid var(--line);border-radius:10px;padding:8px 10px;background:var(--surface)}
-.ns-grid summary{cursor:pointer;font-weight:700;font-size:14.5px}
-.ns-grid dl{margin:8px 0 0;font-size:14px}
-.ns-grid dt{font-weight:600;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.05em;margin-top:6px}
-.ns-grid dd{margin:2px 0 0}
-.ns-heads{list-style:none;margin:0 0 12px;padding:0;display:grid;gap:6px}
-.ns-heads b{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-right:6px}
-.ns-scroll{overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:8px}
-.ns-table{border-collapse:collapse;font-size:13px;min-width:560px;width:100%}
+.ns-jl{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.ns-jl li{padding:7px 0;border-bottom:1px solid var(--line);font-size:14px}
+.ns-jl li:last-child{border-bottom:0}
+.ns-jl a{font-weight:700}
+.ns-jl .w{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.ns-scroll{max-width:100%;border:1px solid var(--line);border-radius:8px}
+.ns-table{border-collapse:collapse;font-size:13px;width:100%}
 .ns-table th,.ns-table td{padding:5px 7px;border-bottom:1px solid var(--line);text-align:center;white-space:nowrap}
-.ns-table th:first-child,.ns-table td:first-child{text-align:left;position:sticky;left:0;background:var(--surface)}
-.ns-table thead th{font-size:11.5px;vertical-align:bottom;white-space:normal;min-width:70px}
-.ns-table .asof{display:block;font-weight:400;color:var(--muted);font-size:11px}
-.ns-mv{font-size:11px;color:var(--muted)}
-.ns-note{font-size:12.5px;color:var(--muted);margin-top:8px;max-width:72ch}
+.ns-table th:first-child,.ns-table td:first-child{text-align:left;background:var(--surface)}
+.ns-table thead th{font-size:13px;vertical-align:bottom;white-space:normal;min-width:70px}
+.ns-table .asof{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.ns-mv{font-size:13px;color:var(--muted)}
+.ns-note{font-size:13px;color:var(--muted);margin-top:8px;max-width:72ch}
+@media(max-width:640px){
+ .ns-table thead{display:none}
+ .ns-table,.ns-table tbody,.ns-table tr{display:block;width:100%}
+ .ns-table tr{display:grid;grid-template-columns:repeat(2,1fr);gap:2px 10px;padding:8px 6px;border-bottom:1px solid var(--line)}
+ .ns-table td{display:block;border:0;padding:1px 0;text-align:left;white-space:normal}
+ .ns-table td:first-child{grid-column:1/-1;font-weight:700;font-size:14px}
+ .ns-table td[data-l]::before{content:attr(data-l) ": ";color:var(--muted)}
+}
 /* NS:CSS:END */
 /* STICKYTOC:BEGIN */
 html,body{overflow-x:clip!important;overflow-y:visible!important}
@@ -50,13 +55,16 @@ section,.bench,[id^="job-"],#ns-60,#ns-jobs,#ns-score{scroll-margin-top:60px}
 .jl li{font-size:13.5px;line-height:1.35;padding:6px 0;border-bottom:1px solid var(--line)}
 .jl li:last-child{border-bottom:0}
 .jl a{font-weight:700;color:var(--ink,inherit);text-decoration:none}
-.jl .jl-asof{display:inline-block;margin-left:4px;padding:0 7px;border-radius:999px;font-size:11px;font-weight:600;background:var(--ground);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
-.jl .jl-v{font-size:11px;font-weight:600;color:var(--mid);white-space:nowrap}
+.jl .jl-asof{display:inline-block;margin-left:4px;padding:0 7px;border-radius:999px;font-size:13px;font-weight:600;background:var(--ground);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
+.jl .jl-v{font-size:13px;font-weight:600;color:var(--mid);white-space:nowrap}
 .jl .jl-r{color:var(--muted)}
-.jl .new{display:inline-block;margin-left:4px;padding:0 6px;border-radius:999px;font-size:10px;font-weight:700;background:var(--pick-soft);color:var(--pick)}
+.jl .jl-g{list-style:none;margin:10px 0 0;padding:0;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-bottom:0!important}
+.jl .new{display:inline-block;margin-left:4px;padding:0 6px;border-radius:999px;font-size:13px;font-weight:700;background:var(--pick-soft);color:var(--pick)}
 .how-l{margin:8px 0 0;padding-left:18px;font-size:13px;color:var(--muted)}
 .how-l li{margin:2px 0}
 details.cz{margin:10px 0}
+.stamp,.chip,.toc-scroller a,.jl .jl-asof,.jl .jl-v,.jl .new,.ns-meta,.ns-note,.ns-mv,.ns-table thead th,.ns-table .asof,.story .tag,.held-strip .item .k,.bench .sub,.bench .asof,.bench .new,.legend,.pair .lab,.row .lbl,.row .val,.cost-wrap .row .lbl,.cost-wrap .row .score,.cost-wrap.ce .row .rank,.cost-wrap.ce .row .lbl,.cost-wrap.ce .row .idx,.cost-wrap.ce .row .dol,.cost-wrap.ce .row .ce,.cost-head,.cost-wrap.ce .ce-head,ol.mini li .n,ol.mini li .v,details.fl>summary,.where .job,.where .tail,.newmodel .k,.news-teaser{font-size:13px!important}
+.row .lbl .cfg,.cost-wrap .row .lbl .cfg,.cost-wrap.ce .row .lbl .cfg,ol.mini li .m small,.badge-best,.toc-bar .label,.bench .new,.where .new{font-size:13px!important}
 /* CONCISE:END */
 </style>
 </head>
@@ -301,7 +309,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <div class="chips">
       <span class="chip mid">Lead: UK MPs — binding AI rules</span>
       <span class="chip mid">Co-lead: Argon risk card</span>
-      <span class="chip good">SWE-bench MM: Opus leads · Text: Muse 1=</span>
+      <span class="chip good">Screenshot bug-fix test: Opus leads</span>
     </div>
   </div>
 
@@ -316,62 +324,43 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
       <a href="#ns-jobs">Pick your job</a>
       <a href="#ns-score">Scoreboard</a>
       <a href="#news">News</a>
-      <a href="#boards">Boards / SWE-bench MM</a>
-      <a href="#biggest">Biggest move</a>
+      <a href="#boards">Boards</a>
       <a href="#jobs">Best for what</a>
-      <a href="#job-swebench-mm">SWE-bench MM</a>
-      <a href="#job-text-en">Text Elo</a>
-      <a href="#job-aa-3d">AA-3D</a>
-      <a href="#job-frontiercode">FrontierCode</a>
-      <a href="#job-img2webdev">Image-to-WebDev</a>
-      <a href="#job-aa-index">AA Index</a>
-      <a href="#job-align">Alignment Index</a>
-      <a href="#job-lab-aa">LAB-AA v1.1</a>
-      <a href="#job-aa-cyber">Cyber Index</a>
-      <a href="#job-webdev">WebDev Elo</a>
-      <a href="#job-agent-ni">Agent Arena</a>
-      <a href="#job-vibe">Vibe Code</a>
-      <a href="#job-vals-index">Vals Index</a>
-      <a href="#job-hss">Sixth Sense (HSS)</a>
-      <a href="#job-eci">Epoch ECI</a>
-      <a href="#job-text-en">Text Elo</a>
-      <a href="#job-vision">Vision Elo</a>
-      <a href="#job-t2i">Image gen Elo</a>
-      <a href="#job-speed">Answer speed</a>
       <a href="#cost">Cost</a>
-      <a href="#trust">Caveats</a>
-    </div><span class="toc-more" aria-hidden="true">›</span></div>
+      <a href="#trust">Sourcing</a>
+</div><span class="toc-more" aria-hidden="true">›</span></div>
   </nav>
 
 <!-- NS:BEGIN -->
   <section id="ns-60" class="ns">
     <h3>The 60-second version</h3>
     <div class="card"><ul class="ns-qa"><li><div class="ns-q">What&#x27;s the big news?</div><p class="ns-a">At a UK Commons hearing, Anthropic and OpenAI backed binding AI safety rules; DeepMind and Meta declined. Officials said pre-release testing is voluntary.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">What does Argon&#x27;s risk card say?</div><p class="ns-a">Google cannot rule out bio or cyber critical thresholds, or a stealth/situational-awareness threshold (14/15 challenges). It says safeguards bring risk below them.</p><div class="ns-meta"><span class="chip mid">Vendor says</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">Who&#x27;s best at screenshot-to-JS bug fixes?</div><p class="ns-a">Claude Opus 5.5 leads Vals&#x27; SWE-bench Multimodal at 70.21% — a clear 1st of 18. Fable 5.1 and Sonnet 5.5 are tied for 2nd.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#job-swebench-mm">show me the numbers</a></div></li><li><div class="ns-q">Where does Muse Wonder sit on chat preference?</div><p class="ns-a">Muse Wonder (max) is statistically tied at the top with Gemini 4 Argon on LMArena Text. Argon&#x27;s score is still marked Preliminary.</p><div class="ns-meta"><span class="chip pick">Too close to call</span><a href="#job-text-en">show me the numbers</a></div></li><li><div class="ns-q">Cheapest good option?</div><p class="ns-a">GPT-6.1 Sol gives near-top smarts for under a dollar per task. GPT-6 Luna and MiMo-V2.6-Pro give the most points per dollar.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#cost">show me the numbers</a></div></li></ul>
-    <p class="ns-note">Tags: Confirmed = independent source · Vendor says = company’s own report · Too close to call = tied within intervals · Sources disagree = claims conflict.</p></div>
+    </div>
   </section>
   <section id="ns-jobs" class="ns">
     <h3>Pick your job</h3>
-    <div class="ns-grid"><details><summary>Fix JS bugs from screenshots</summary><dl><dt>Pick</dt><dd>Claude Opus 5.5 at 70.21% on SWE-bench Multimodal — clear 1st of 18.</dd><dt>Runner-up</dt><dd>Claude Fable 5.1 and Claude Sonnet 5.5, tied for 2nd.</dd><dt>Watch out</dt><dd>One run per model, no internet; with-network scores are not comparable.</dd><dt>Based on</dt><dd>Screenshot→JS bug fixes (SWE-bench Multimodal), as of Oct 13 · <a href="#job-swebench-mm">show me the numbers</a></dd></dl></details><details><summary>Chat and writing</summary><dl><dt>Pick</dt><dd>Gemini 4 Argon and Muse Wonder (max), statistically tied at the top.</dd><dt>Runner-up</dt><dd>Claude Opus 5.5, also in the top tie group.</dd><dt>Watch out</dt><dd>Argon is Preliminary; Muse Wonder has the fewest votes in the top group.</dd><dt>Based on</dt><dd>Text people prefer — Overall Elo, as of Oct 13 · <a href="#job-text-en">show me the numbers</a></dd></dl></details><details><summary>Build interactive 3D web scenes</summary><dl><dt>Pick</dt><dd>Four-way statistical tie: Sonnet 5.5, Opus 5.5, GPT-6 Astra, Fable 5.1.</dd><dt>Runner-up</dt><dd>If you want the listed Elo leader, Sonnet 5.5 — but its interval overlaps the other three.</dd><dt>Watch out</dt><dd>Panel taste for three.js pages, not a general coding score.</dd><dt>Based on</dt><dd>Interactive 3D web scenes (AA-3D), as of Oct 12 · <a href="#job-aa-3d">show me the numbers</a></dd></dl></details><details><summary>Write a change a maintainer would merge</summary><dl><dt>Pick</dt><dd>Claude Opus 5.5 at 52.2% on FrontierCode 1.1.</dd><dt>Runner-up</dt><dd>GPT-6.1 Sol and Claude Fable 5.1, both near 49%.</dd><dt>Watch out</dt><dd>No intervals; Cognition built the private tasks and sells a coding agent.</dd><dt>Based on</dt><dd>Maintainer-merge code changes (FrontierCode), as of Oct 12 · <a href="#job-frontiercode">show me the numbers</a></dd></dl></details><details><summary>Build a web page from a design</summary><dl><dt>Pick</dt><dd>Any of five tied models: Opus 5.5, Sonnet 5.5, GPT-6 Astra, Fable 5.1, GPT-6.1 Sol.</dd><dt>Runner-up</dt><dd>If price matters, Sonnet 5.5 or GPT-6.1 Sol from that tie.</dd><dt>Watch out</dt><dd>Opus is listed first on only 493 votes; its lead isn&#x27;t solid.</dd><dt>Based on</dt><dd>Build a web page from a design, as of Oct 9 · <a href="#job-img2webdev">show me the numbers</a></dd></dl></details><details><summary>Write and fix code</summary><dl><dt>Pick</dt><dd>Boards disagree: Claude Opus 5.5 leads Vals&#x27; Terminal-Bench 4.0, while Claude Sonnet 5.5 leads AA&#x27;s run of the same test.</dd><dt>Runner-up</dt><dd>GPT-6 Astra is near the top on both.</dd><dt>Watch out</dt><dd>Different harnesses; don&#x27;t blend the two scores.</dd><dt>Based on</dt><dd>Harder terminal coding (Vals TB 4.0), as of Oct 7; Terminal coding agents (AA Terminal-Bench 4.0), as of Oct 7 · <a href="#job-vals-tb40">show me the numbers</a></dd></dl></details><details><summary>Do it cheaply</summary><dl><dt>Pick</dt><dd>GPT-6 Luna and MiMo-V2.6-Pro give the most index points per dollar.</dd><dt>Runner-up</dt><dd>Open weights: Ling 3.1 Flash.</dd><dt>Watch out</dt><dd>Some AA cost figures are provisional (Claude Haiku 5.5).</dd><dt>Based on</dt><dd>AA Intelligence Index per $ (cost board), as of Oct 8 · <a href="#cost">show me the numbers</a></dd></dl></details></div>
+    <div class="card"><ul class="ns-jl"><li><a href="#job-swebench-mm">Fix JS bugs from screenshots</a><span class="w">Watch out: One run per model, no internet; with-network scores are not comparable.</span></li><li><a href="#job-text-en">Chat and writing</a><span class="w">Watch out: Argon is Preliminary; Muse Wonder has the fewest votes in the top group.</span></li><li><a href="#job-aa-3d">Build interactive 3D web scenes</a><span class="w">Watch out: Panel taste for three.js pages, not a general coding score.</span></li><li><a href="#job-frontiercode">Write a change a maintainer would merge</a><span class="w">Watch out: No intervals; Cognition built the private tasks and sells a coding agent.</span></li><li><a href="#job-img2webdev">Build a web page from a design</a><span class="w">Watch out: Opus is listed first on only 493 votes; its lead isn&#x27;t solid.</span></li><li><a href="#job-vals-tb40">Write and fix code</a><span class="w">Watch out: Different harnesses; don&#x27;t blend the two scores.</span></li><li><a href="#cost">Do it cheaply</a><span class="w">Watch out: Some AA cost figures are provisional (Claude Haiku 5.5).</span></li></ul></div>
   </section>
   <section id="ns-score" class="ns">
     <h3>Scoreboard</h3>
-    <div class="card"><ul class="ns-heads"><li><b>Lead</b>UK MPs: Anthropic and OpenAI want binding AI rules; DeepMind and Meta decline.</li><li><b>Co-lead</b>Argon model card cannot rule out bio or cyber critical thresholds; now broadly available.</li><li><b>Boards</b>SWE-bench Multimodal: Opus 5.5 clear 1st at 70.21%; Muse Wonder 1= on Text.</li></ul>
-    <div class="ns-scroll" role="region" aria-label="Standings table, scrolls sideways" tabindex="0"><table class="ns-table"><thead><tr><th>Model</th><th><a href="#job-swebench-mm">Screenshot→JS fixes</a><span class="asof">as of Oct 13</span></th><th><a href="#job-aa-3d">Interactive 3D scenes</a><span class="asof">as of Oct 12</span></th><th><a href="#job-frontiercode">Maintainer-merge code</a><span class="asof">as of Oct 12</span></th><th><a href="#job-img2webdev">Web page from design</a><span class="asof">as of Oct 9</span></th><th><a href="#job-vals-tb40">Code (Vals TB 4.0)</a><span class="asof">as of Oct 7</span></th><th><a href="#job-aa-index">Overall smarts</a><span class="asof">as of Oct 12</span></th></tr></thead><tbody><tr><td>Claude Opus 5.5</td><td>★<span class="ns-mv"> 1.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>★<span class="ns-mv"> 1.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>★<span class="ns-mv"> 1.</span></td><td>★<span class="ns-mv"> 1.</span></td></tr><tr><td>Claude Sonnet 5.5</td><td>●<span class="ns-mv"> 2=</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 5.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 2.</span></td><td>●<span class="ns-mv"> 2=</span></td></tr><tr><td>Claude Fable 5.1</td><td>●<span class="ns-mv"> 2=</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 3.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4.</span></td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6 Astra</td><td>●<span class="ns-mv"> 5=</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 4.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>●<span class="ns-mv"> 3.</span></td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6.1 Sol</td><td>●<span class="ns-mv"> 5=</span></td><td>●<span class="ns-mv"> 3.</span></td><td>●<span class="ns-mv"> 2.</span></td><td>★<span class="ns-mv"> 1=</span></td><td>·<span class="ns-mv"> 6.</span></td><td>·<span class="ns-mv"> 7=</span><span class="ns-mv">↓</span></td></tr><tr><td>Gemini 4 Argon</td><td>●<span class="ns-mv"> 3.</span></td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td>●<span class="ns-mv"> 5.</span></td><td>●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>Muse Wonder Full</td><td>●<span class="ns-mv"> 5=</span></td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td>●<span class="ns-mv"> 2=</span></td></tr><tr><td>Muse Wonder</td><td>●<span class="ns-mv"> 5=</span></td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td title="not on this card">○</td><td>·<span class="ns-mv"> 7=</span></td></tr><tr><td>Claude Haiku 5.5</td><td>●<span class="ns-mv"> 5=</span></td><td>·<span class="ns-mv"> 7=</span></td><td>·<span class="ns-mv"> 11.</span></td><td title="not on this card">○</td><td>·<span class="ns-mv"> 8.</span></td><td>·<span class="ns-mv"> 19.</span></td></tr><tr><td>Muse Spark 1.3</td><td>●<span class="ns-mv"> 5=</span></td><td>·<span class="ns-mv"> 7=</span></td><td>·<span class="ns-mv"> 13.</span></td><td>·<span class="ns-mv"> 6=</span></td><td title="not on this card">○</td><td>·<span class="ns-mv"> 10=</span><span class="ns-mv">↓</span></td></tr></tbody></table></div>
-    <p class="ns-note">★ 1st or tied (“=”) · ● 2–5 · · lower · ○ not on card · † preliminary or vendor-reported. ↑/↓ = rank change vs Oct 7.</p></div>
+    <div class="card">
+    <div class="ns-scroll" role="region" aria-label="Standings table" tabindex="0"><table class="ns-table"><thead><tr><th>Model</th><th><a href="#job-swebench-mm">Screenshot→JS fixes</a><span class="asof">as of Oct 13</span></th><th><a href="#job-aa-3d">Interactive 3D scenes</a><span class="asof">as of Oct 12</span></th><th><a href="#job-frontiercode">Maintainer-merge code</a><span class="asof">as of Oct 12</span></th><th><a href="#job-img2webdev">Web page from design</a><span class="asof">as of Oct 9</span></th><th><a href="#job-vals-tb40">Code (Vals TB 4.0)</a><span class="asof">as of Oct 7</span></th><th><a href="#job-aa-index">Overall smarts</a><span class="asof">as of Oct 12</span></th></tr></thead><tbody><tr><td>Claude Opus 5.5</td><td data-l="SWE-MM">★<span class="ns-mv"> 1.</span></td><td data-l="3D">★<span class="ns-mv"> 1=</span></td><td data-l="Frontier">★<span class="ns-mv"> 1.</span></td><td data-l="Img→Web">★<span class="ns-mv"> 1=</span></td><td data-l="Vals TB">★<span class="ns-mv"> 1.</span></td><td data-l="Index">★<span class="ns-mv"> 1.</span></td></tr><tr><td>Claude Sonnet 5.5</td><td data-l="SWE-MM">●<span class="ns-mv"> 2=</span></td><td data-l="3D">★<span class="ns-mv"> 1=</span></td><td data-l="Frontier">●<span class="ns-mv"> 5.</span></td><td data-l="Img→Web">★<span class="ns-mv"> 1=</span></td><td data-l="Vals TB">●<span class="ns-mv"> 2.</span></td><td data-l="Index">●<span class="ns-mv"> 2=</span></td></tr><tr><td>Claude Fable 5.1</td><td data-l="SWE-MM">●<span class="ns-mv"> 2=</span></td><td data-l="3D">★<span class="ns-mv"> 1=</span></td><td data-l="Frontier">●<span class="ns-mv"> 3.</span></td><td data-l="Img→Web">★<span class="ns-mv"> 1=</span></td><td data-l="Vals TB">●<span class="ns-mv"> 4.</span></td><td data-l="Index">●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6 Astra</td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="3D">★<span class="ns-mv"> 1=</span></td><td data-l="Frontier">●<span class="ns-mv"> 4.</span></td><td data-l="Img→Web">★<span class="ns-mv"> 1=</span></td><td data-l="Vals TB">●<span class="ns-mv"> 3.</span></td><td data-l="Index">●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6.1 Sol</td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="3D">●<span class="ns-mv"> 3.</span></td><td data-l="Frontier">●<span class="ns-mv"> 2.</span></td><td data-l="Img→Web">★<span class="ns-mv"> 1=</span></td><td data-l="Vals TB">·<span class="ns-mv"> 6.</span></td><td data-l="Index">·<span class="ns-mv"> 7=</span><span class="ns-mv">↓</span></td></tr><tr><td>Gemini 4 Argon</td><td data-l="SWE-MM">●<span class="ns-mv"> 3.</span></td><td data-l="3D" title="not on this card">○</td><td data-l="Frontier" title="not on this card">○</td><td data-l="Img→Web" title="not on this card">○</td><td data-l="Vals TB">●<span class="ns-mv"> 5.</span></td><td data-l="Index">●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>Muse Wonder Full</td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="3D" title="not on this card">○</td><td data-l="Frontier" title="not on this card">○</td><td data-l="Img→Web" title="not on this card">○</td><td data-l="Vals TB" title="not on this card">○</td><td data-l="Index">●<span class="ns-mv"> 2=</span></td></tr><tr><td>Muse Wonder</td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="3D" title="not on this card">○</td><td data-l="Frontier" title="not on this card">○</td><td data-l="Img→Web" title="not on this card">○</td><td data-l="Vals TB" title="not on this card">○</td><td data-l="Index">·<span class="ns-mv"> 7=</span></td></tr><tr><td>Claude Haiku 5.5</td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="3D">·<span class="ns-mv"> 7=</span></td><td data-l="Frontier">·<span class="ns-mv"> 11.</span></td><td data-l="Img→Web" title="not on this card">○</td><td data-l="Vals TB">·<span class="ns-mv"> 8.</span></td><td data-l="Index">·<span class="ns-mv"> 19.</span></td></tr><tr><td>Muse Spark 1.3</td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="3D">·<span class="ns-mv"> 7=</span></td><td data-l="Frontier">·<span class="ns-mv"> 13.</span></td><td data-l="Img→Web">·<span class="ns-mv"> 6=</span></td><td data-l="Vals TB" title="not on this card">○</td><td data-l="Index">·<span class="ns-mv"> 10=</span><span class="ns-mv">↓</span></td></tr></tbody></table></div>
+    <p class="ns-note">↑/↓ = rank change vs Oct 7. Symbols: <a href="#howRank">How we rank</a>.</p></div>
   </section>
 <!-- NS:END -->
   <section id="news">
     <h3>News</h3>
     <div class="news-wrap" id="newsWrap">
+      <div id="newsOpen"></div>
       <button type="button" class="news-toggle" id="newsToggle" aria-expanded="false" aria-controls="newsPanel">
-        Today’s AI news (Oct 14)
+        More news and held items (Oct 14)
         <span class="hint"><span class="o">show</span><span class="c">hide</span></span>
       </button>
-      <p class="news-teaser">UK MPs — binding AI rules · Argon risk card + GA · MI5 AITAC · Singapore FAIRS / AI TAP · Held: JPMorgan agents · Character.AI · Workday/Sana</p>
+      <p class="news-teaser">MI5 AI threat centre · Singapore agent-testing taskforce · Held: JPMorgan agents · Character.AI · Workday</p>
       <div class="news-panel" id="newsPanel" hidden>
         <div id="newsList"></div>
         <div class="card" style="margin-top:12px">
-          <h2 style="font-size:16px;margin-bottom:8px">Held / revisit (compact)</h2>
+          <h2 style="font-size:16px;margin-bottom:8px">Held / revisit</h2>
           <p class="note" style="margin:0 0 8px">Watch list pruned to open items most relevant this week; the full carryover list is in prior briefs.</p>
           <div class="held-strip" id="heldStrip"></div>
         </div>
@@ -382,42 +371,9 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   <section id="boards">
     <h3>What’s new on the boards</h3>
     <div class="card">
-      <p style="max-width:72ch;font-size:14.5px">Vals launched <b>SWE-bench Multimodal</b>: Opus 5.5 clear 1st at <b>70.21%</b> of 18; Fable 5.1 and Sonnet 5.5 are 2=. Muse Wonder (max) is 1= with Argon on LMArena Text. AA Decision Index (decision models): Jev 1.13 leads at 58.</p>
+      <p style="max-width:72ch;font-size:14.5px">Updated cards: <a href="#job-swebench-mm">screenshot bug-fix test</a> (new from Vals) and <a href="#job-text-en">Text Elo (Overall)</a>. AA Decision Index: Jev 1.13 leads the decision-model entries at 58; LLMs such as Opus 5.5 reach 79.</p>
       <details class="more cz cz-boards"><summary>Sources and carried scores <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
       <p style="margin-top:10px;max-width:72ch;font-size:14px;color:var(--muted)">Sources: <a href="https://www.vals.ai/benchmarks/swebench-multimodal" target="_blank" rel="noopener">SWE-bench Multimodal</a> · <a href="https://arena.ai/leaderboard/text" target="_blank" rel="noopener">LMArena Text</a> · <a href="https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index" target="_blank" rel="noopener">Decision Index</a></p>
-      </details>
-    </div>
-  </section>
-
-  <section id="biggest">
-    <h3>Biggest independent move</h3>
-    <div class="card">
-      <h2 style="margin-bottom:6px">SWE-bench Multimodal: Opus 5.5 clear 1st at 70.21%</h2>
-      <div class="pair" style="grid-template-columns:repeat(2,1fr)">
-        <div class="col">
-          <div class="lab">Claude Opus 5.5<br/>70.21% ±2.09 · 1 of 18</div>
-          <div class="track"><div class="fill old" style="height:100%">70.21</div></div>
-        </div>
-        <div class="col">
-          <div class="lab">Claude Fable 5.1<br/>61.25% ±2.23 · 2= of 18</div>
-          <div class="track"><div class="fill old" style="height:87%">61.25</div></div>
-        </div>
-        <div class="col">
-          <div class="lab">Claude Sonnet 5.5<br/>58.33% ±2.25 · 2= of 18</div>
-          <div class="track"><div class="fill old" style="height:83%">58.33</div></div>
-        </div>
-        <div class="col">
-          <div class="lab">Gemini 4 Argon<br/>56.04% ±2.27 · near 2= group</div>
-          <div class="track"><div class="fill old" style="height:80%">56.04</div></div>
-        </div>
-        <div class="delta">480 JS bug fixes from screenshots · mini-swe-agent · no internet · one run each · ±1 SE (binomial). Opus’s band clears Fable; Fable and Sonnet overlap (2=). With-network scores are not comparable.</div>
-      </div>
-      <details class="more">
-        <summary>What this means for you <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
-        <div class="explain">
-          <div><h3>The job</h3><p>SWE-bench Multimodal asks an agent to fix a real JavaScript GitHub issue whose bug report depends on a screenshot. Graded by the repo’s own tests. Vals runs mini-swe-agent with no internet (screenshots pre-downloaded).</p></div>
-          <div><h3>Method</h3><p>Vals AI · 480 tasks from 11 repos · one run per model · binomial SE bars · board as of Oct 13. Network access lifted diagnostic scores 21–35 points — only compare no-network runs.</p></div>
-        </div>
       </details>
     </div>
   </section>
@@ -427,10 +383,12 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <!-- JL:BEGIN -->
     <ol class="jl" id="jobList"></ol>
     <details class="more how" id="howRank"><summary>How we rank <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary><ul class="how-l">
-      <li><b>Top pick</b> = rank 1 on that card; runner-up = the next rank. On cards with intervals, rank = 1 + models whose whole interval sits above (LMArena’s rule), so overlaps show “=” and are listed as “tied”.</li>
-      <li>Each card keeps its own as-of date. Vendor-reported cards are labeled and never ranked across labs.</li>
-      <li>Independent boards first (AA, Vals, LMArena, Epoch, Scale, ARC). Don’t blend harnesses or scales.</li>
-      <li>AA = Artificial Analysis · Elo = vote-based rating · Agent NI = Agent Arena Net Improvement (not Elo) · WER = word error rate, lower is better · ECI = Epoch Capabilities Index.</li>
+      <li><b>Top pick</b> = rank 1 on that card. Runners show as “Next: …” — the next rank, or “(+n)” when more share it. On cards with intervals, rank = 1 + models whose whole interval sits above (LMArena’s rule), so overlaps show “=”.</li>
+      <li><b>Tags</b> (60-second): Confirmed = independent source · Vendor says = company’s own report · Too close to call = tied within intervals · Sources disagree = claims conflict.</li>
+      <li><b>Scoreboard symbols:</b> ★ 1st or tied (“=”) · ● 2–5 · · lower · ○ not on this card · † preliminary or vendor-reported · ↑/↓ = rank change vs the week-ago brief.</li>
+      <li><b>Cost:</b> CE = AA Intelligence Index ÷ AA $ per task (higher = more smarts per dollar). Best deal = each model’s best-CE setting.</li>
+      <li><b>Jargon:</b> ±1 SE (binomial) = one-run error bar from a yes/no success rate · mini-swe-agent = the small agent harness Vals uses · AA = Artificial Analysis · Elo = vote-based preference rating · Agent NI = Agent Arena Net Improvement (not Elo) · WER = word error rate, lower is better · ECI = Epoch Capabilities Index.</li>
+      <li>Each card keeps its own as-of date. Vendor-reported cards are labeled and never ranked across labs. Independent boards first (AA, Vals, LMArena, Epoch, Scale, ARC). Don’t blend harnesses or scales.</li>
     </ul></details>
     <!-- JL:END -->
     <details class="more cz cz-where"><summary>Where they land: card notes <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
@@ -449,7 +407,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <div class="card">
       <div class="ce-board" data-ce-mode="best-only" data-ce-asof="2026-10-08">
         <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
-        <p class="ce-blurb"><b>CE = AA Intelligence Index ÷ AA $ per task</b>; higher means more smarts per dollar. <b>Best deal</b> marks each model’s best-CE setting, the only one ranked. Data as of Oct 8.</p>
+        <p class="ce-blurb"><b>Best deal</b> = each model’s best cost-effectiveness setting (Index per dollar). Data as of Oct 8. Formula in <a href="#howRank">How we rank</a>.</p>
         <div class="cost-wrap ce">
           <div class="ce-head"><span>#</span><span>Model · thinking · $ bar</span><span>Index</span><span>$/task</span><span>CE</span></div>
           <div class="chart" id="cechart"></div>
@@ -474,23 +432,20 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   </section>
 
   <section id="trust">
-    <h3>Caveats</h3>
-    <details class="more cz cz-cav"><summary>Caveats and sourcing <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
+    <h3>Sourcing and caveats</h3>
+    <details class="more cz cz-cav"><summary>Sourcing and caveats <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
 <div class="card caveats">
-      <p><b>UK BIST / binding rules.</b> WIRED on 13 Oct Commons evidence. Anthropic: “The rules should be binding.” OpenAI: some elements “should be mandatory,” starting with incident reporting. DeepMind and Meta declined new law. AISI cannot block a release. Official transcript not yet published.</p>
-      <p><b>Gemini 4 Argon model card.</b> “Cannot rule out” bio and cyber CCLs; Stealth/SA TCL unruled-out (14/15). Google says safeguards bring risk below — self-assessed; safety cases not public. GA + $2/$10 from the launch blog, folded into the Co-lead.</p>
-      <p><b>MI5 AITAC.</b> Announced Oct 13; launched earlier in 2026. AI-bio misuse ranked top unrealised risk. Assessments only; no new power or budget figure.</p>
-      <p><b>Singapore FAIRS / AI TAP.</b> CNA/ST/MLex; no IMDA press release located. Taskforce report due H1 2027; first five AI TAP accreditations; kit is v1 and voluntary.</p>
-      <p><b>SWE-bench Multimodal / Text / Decision Index.</b> SWE-bench MM: 480 JS tasks, no internet, one run, binomial SE; Opus clear 1st. Text: Muse Wonder (max) 1513±13 is 1= with Argon (1525 Preliminary). Decision Index: decision models only; Jev 1.13 at 58; no intervals.</p>
-      <p><b>Held / revisit.</b> JPMorgan outside-agent block (CNBC; check transcript). Character.AI Chapter 11. Workday×Anthropic Sana (vendor permissions claim). Argon GA folded into Co-lead.</p>
-      <p><b>Carried scores.</b> Every job card except SWE-bench Multimodal and the Text Elo update, and the CE board, show scores from prior briefs (see each card’s as-of date; CE data as-of Oct 8). On every card with confidence intervals, ranks count only models whose interval sits entirely above. Prefer AA / Vals / LMArena / Epoch / Scale for decisions, and don’t blend harnesses.</p>
+      <p><b>UK binding rules.</b> Quotes rest on WIRED (13 Oct) until the Business, Innovation, Science and Trade Committee transcript is published.</p>
+      <p><b>Gemini 4 Argon model card.</b> Thresholds and safeguards are Google’s own assessment; the safety cases are not public.</p>
+      <p><b>MI5 AITAC.</b> Announced Oct 13 but launched earlier in 2026. Assessments only; no new power or budget.</p>
+      <p><b>Singapore FAIRS / AI TAP.</b> Sourced from CNA, Straits Times and MLex. The report is due H1 2027; the testing kit is v1 and voluntary.</p>
+      <p><b>AA Decision Index.</b> Built for decision models; Jev 1.13 leads those at 58, while LLMs such as Opus 5.5 reach 79. No intervals.</p>
+      <p><b>Carried scores.</b> Cards without a NEW tag, and the cost board (Oct 8), carry scores from earlier briefs; each shows its as-of date.</p>
     </div>
 </details>
   </section>
 
-  <footer>
-
-  <footer>AI Updates · Tuesday Oct 13, 2026 · built for phone reading</footer>
+  <footer>AI Updates · Wednesday Oct 14, 2026 · built for phone reading</footer>
 </div>
 
 
@@ -500,18 +455,19 @@ function isSub(n){return ACCENT_MODELS.some(s=>n.indexOf(s)===0)}
 
 const NEWS_TIERS=[
  {h:'Lead · Wednesday Oct 14', items:[
- {lead:true, tag:'Lead · UK Parliament · BIST Committee', title:'OpenAI and Anthropic tell UK MPs AI safety rules should be binding; DeepMind and Meta decline new law — AISI cannot block a release',
-  body:`WIRED (Ben Gartside) on the Commons Business and Trade / BIST Committee oral evidence, 13 October 2026. Anthropic’s Liam Booth-Smith (Lord Booth-Smith, EMEA policy): “The rules should be binding.” OpenAI’s Tom Duff Gordon: some elements “should be mandatory,” starting with incident reporting. DeepMind’s Owen Larter stressed standards; Meta’s Rob Sherman pointed to existing regulators — both declined to back new legislation.
-AISI’s Henry de Zoete and Cabinet Office’s Cat Little said pre-release testing is voluntary and AISI cannot block a release.
-Caveats: official Hansard/transcript not yet published; quotes rest on WIRED / PA until it is. Supporting “binding rules” costs little when none are drafted.`,
-  why:'Why care: labs splitting on the record before Parliament on statutory AI rules — with officials confirming AISI still cannot stop a release.',
-  links:[['WIRED — OpenAI and Anthropic tell British lawmakers to regulate us (13 Oct)','https://www.wired.com/story/openai-and-anthropic-tell-british-lawmakers-regulate-us/','news'],['UK Parliament — BIST Committee oral evidence','https://committees.parliament.uk/event/28282','primary']]}
+ {lead:true, tag:'Lead · UK Parliament', title:'OpenAI and Anthropic tell UK MPs AI safety rules should be binding; DeepMind and Meta decline',
+  body:`WIRED, 13 Oct: at the Commons Business, Innovation, Science and Trade Committee, Anthropic’s Liam Booth-Smith said “The rules should be binding.” OpenAI’s Tom Duff Gordon said some elements “should be mandatory,” starting with incident reporting. DeepMind and Meta declined to back new legislation.
+Officials from AISI and the Cabinet Office said pre-release testing is voluntary and AISI cannot block a release.
+Caveat: the official transcript is not out yet, so quotes rest on WIRED.`,
+  why:'Why it matters: labs split on the record over statutory AI rules, and the UK still cannot stop a release.',
+  links:[['WIRED — OpenAI and Anthropic tell British lawmakers to regulate us (13 Oct)','https://www.wired.com/story/openai-and-anthropic-tell-british-lawmakers-regulate-us/','news'],['UK Parliament — committee oral evidence','https://committees.parliament.uk/event/28282','primary']]}
  ]},
  {h:'Co-lead', items:[
- {tag:'Co-lead · Google DeepMind · Gemini 4 Argon model card', title:'Gemini 4 Argon model card: Google cannot rule out biological or cybersecurity critical capability levels; Stealth/SA threshold also unruled-out (14/15) — Argon now broadly available at $2/$10 intro',
-  body:`Model card published 13 October 2026 under Google’s Frontier Safety Framework (card cites April 2026 version). Exact: “We cannot rule out” Argon reaching the biological CBRN Uplift Level 1 CCL, the Cybersecurity Uplift Level 1 CCL, or the Stealth and Situational Awareness TCL (passes 14 of 15 challenges). Chem/rad/nuclear TCL ruled out “with reasonable confidence”; harmful manipulation and ML R&D CCLs not reached. Google says its safety cases bring risk “below” those levels — self-assessed; safety cases not public.
-Availability (Google launch blog, folded here): Argon “now globally available” via Gemini API, AI Studio, Gemini app and Cloud; intro $2 / $10 per million input/output tokens.`,
-  why:'Why care: a frontier lab saying on paper it can’t rule out bio and cyber critical thresholds — on a model it just made generally available.',
+ {tag:'Co-lead · Google DeepMind', title:'Gemini 4 Argon model card: Google cannot rule out bio or cyber critical thresholds; Argon now broadly available at $2/$10',
+  body:`Model card, 13 Oct: “We cannot rule out” Argon reaching the biological or cybersecurity uplift critical levels, or the stealth and situational-awareness threshold (passes 14 of 15 challenges). Chem/rad/nuclear ruled out “with reasonable confidence.”
+Google’s launch blog: generally available via the Gemini API, AI Studio, the Gemini app and Cloud at an intro $2 / $10 per million input/output tokens.
+Caveat: Google says safeguards bring risk below those levels; that is self-assessed and the safety cases are not public.`,
+  why:'Why it matters: a lab says on paper it can’t rule out bio and cyber critical thresholds on a model it just released broadly.',
   links:[['Google DeepMind — Gemini 4 Argon Model Card','https://deepmind.google/models/model-cards/gemini-4-argon/','primary'],['Google — Introducing Gemini 4 Argon (availability / pricing)','https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/','news']]}
  ]},
  {h:'Also today', items:[
@@ -521,7 +477,7 @@ Caveat: AITAC was launched earlier in 2026 and announced Oct 13 — not stood up
   why:'Why care: the UK security service ranking AI-bio misuse as its top unrealised risk — rhetoric and a new assessment centre, not a new power.',
   links:[['MI5 — Director General annual threat update (13 Oct)','https://www.mi5.gov.uk/mi5-director-general-delivers-annual-threat-update','primary']]},
  {tag:'Also · Singapore · IMDA', title:'Singapore IMDA: Frontier AI Resilience and Security Taskforce, agentic testing starter kit, and first AI TAP accreditations',
-  body:`CNA (14 October 2026; Straits Times and MLex corroborate; no IMDA press release located). IMDA CE Ng Cher Pong announced FAIRS (more than 20 leaders from telecoms, media, cybersecurity and AI), report with practical guidelines due H1 2027; v1 Starter Kit for Testing Agentic Systems; first five firms accredited under AI Verify Foundation’s AI Tester Accreditation Programme: AIDX Tech, Knovel Engineering, PwC Singapore, Resaro, Vulcan.
+  body:`CNA (14 October 2026; Straits Times and MLex corroborate). IMDA CE Ng Cher Pong announced FAIRS (more than 20 leaders from telecoms, media, cybersecurity and AI), report with practical guidelines due H1 2027; v1 Starter Kit for Testing Agentic Systems; first five firms accredited under AI Verify Foundation’s AI Tester Accreditation Programme: AIDX Tech, Knovel Engineering, PwC Singapore, Resaro, Vulcan.
 Caveat: all voluntary; taskforce output ~9 months away; accreditation is only as strong as the v1 kit.`,
   why:'Why care: concrete state machinery for agent testing and third-party tester accreditation — voluntary, and the guidelines are still months out.',
   links:[['CNA — Singapore task force on AI-related cyber threats (14 Oct)','https://www.channelnewsasia.com/singapore/singapore-task-force-ai-related-cyber-threats-6457921','news']]}
@@ -529,79 +485,36 @@ Caveat: all voluntary; taskforce output ~9 months away; accreditation is only as
 ];
 
 const HELD=[
- {k:'Held', t:'Gemini 4 Argon GA / $2/$10 intro pricing — folded into Co-lead; commercial availability detail',
-  body:`Google launch blog (13 Oct): globally available via API, Gemini app and Cloud. Intro $2/$10 per M tokens.`,
-  url:'https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/', label:'Google'},
- {k:'Revisit', t:'JPMorgan blocks outside AI agents from acting on customer accounts — Dimon cites rogue-agent risk; check earnings-call transcript',
-  body:`CNBC on Q3 2026 earnings: no third-party agents inside the bank. Quotes currently rest on CNBC alone.`,
+ {k:'Revisit', t:'JPMorgan blocks outside AI agents from acting on customer accounts',
+  body:`CNBC on Q3 earnings; check the call transcript.`,
   url:'https://www.cnbc.com/2026/10/13/jpmorgan-ai-agents-account-access.html', label:'CNBC'},
- {k:'Held', t:'Character.AI Chapter 11 — Disney $20M stalking-horse IP license; platform may wind down if no buyer',
-  body:`D. Del. Case No. 26-11603; petition Oct 12. Low governance weight next to today’s UK / Argon items.`,
+ {k:'Held', t:'Character.AI enters Chapter 11 sale process',
+  body:`Agreed to sell some assets to Disney for $20M plus a non-exclusive perpetual licence; no bid or buyer yet, and the platform may wind down.`,
   url:'https://techcrunch.com/2026/10/13/just-5-years-in-interactive-chatbot-platform-character-ai-files-for-bankruptcy/', label:'TechCrunch'},
- {k:'Held', t:'Workday × Anthropic Sana partnership — agents inside Claude with Workday permissions; also acquiring C1.ai',
-  body:`Workday newsroom (13 Oct). Permissions/confirm-every-change is a vendor claim, not an audited control.`,
+ {k:'Held', t:'Workday × Anthropic partnership: Workday agents inside Claude with Workday permissions',
+  body:`Permission controls are a vendor claim, not an audited control.`,
   url:'https://newsroom.workday.com/2026-10-13-Workday-and-Anthropic-Announce-New-Partnership-to-Connect-Reasoning-to-the-Rules-That-Run-the-Business,-Wherever-People-Choose-to-Work', label:'Workday'},
- {k:'Watch', t:'UK BIST Committee once the official transcript is published — confirm WIRED/PA quotes; any draft statutory text',
-  body:`Quotes rest on WIRED until Hansard lands.`,
-  url:'https://www.wired.com/story/openai-and-anthropic-tell-british-lawmakers-regulate-us/', label:'WIRED'},
- {k:'Watch', t:'Gemini 4 Argon FSF safety cases once published; any named third-party bio/cyber assessment',
-  body:`Card self-assesses that safeguards bring risk below CCLs; cases not public.`,
-  url:'https://deepmind.google/models/model-cards/gemini-4-argon/', label:'Model card'},
- {k:'Watch', t:'MI5 AITAC once a public assessment, remit or launch date is published',
-  body:`Announced Oct 13; launched earlier in 2026; assessments only.`,
-  url:'https://www.mi5.gov.uk/mi5-director-general-delivers-annual-threat-update', label:'MI5'},
- {k:'Watch', t:'Singapore FAIRS report (due H1 2027) and AI TAP once an IMDA / AI Verify primary lands',
-  body:`CNA/ST/MLex only so far; kit is v1 and voluntary.`,
-  url:'https://www.channelnewsasia.com/singapore/singapore-task-force-ai-related-cyber-threats-6457921', label:'CNA'},
- {k:'Watch', t:'SWE-bench Multimodal (Vals) once more runs or with-network baselines are published for the full field',
-  body:`One run each, no internet; Opus clear 1st at 70.21%.`,
-  url:'https://www.vals.ai/benchmarks/swebench-multimodal', label:'Vals'},
- {k:'Watch', t:'LMArena Text once Muse Wonder’s interval tightens or Argon loses the Preliminary tag',
-  body:`Muse Wonder 1= with Argon; fewest votes in the top group.`,
-  url:'https://arena.ai/leaderboard/text', label:'LMArena'},
- {k:'Watch', t:'EU AI Office RFIs / Scientific Panel once incidents, companies or models are named',
-  body:`Reports received; further RFIs coming; still unnamed.`,
-  url:'https://digital-strategy.ec.europa.eu/en/news/special-meeting-ai-scientific-panel', label:'Commission'},
- {k:'Watch', t:'Reuters evaluator publication-control talks once a signed evaluator contract is public',
-  body:`Anonymous sources + on-record lab replies.`,
-  url:'https://www.channelnewsasia.com/business/exclusive-behind-ai-industrys-call-independent-reviews-fight-over-what-gets-made-public-6455551', label:'Reuters via CNA'},
- {k:'Held', t:'Anthropic anti-distillation defenses — vendor says reasoning tokens harvested on its platform cut ~10–100×; no independent check',
-  body:`Platform-only measurement; Anthropic’s own caveats apply.`,
-  url:'https://www.anthropic.com/research/distillation-defenses', label:'Anthropic'},
- {k:'Watch', t:'Muse Wonder full safety report once published',
-  body:`Model card self-assessed; full safety report still “available soon.”`,
-  url:'https://research.meta.ai/static/muse-wonder-model-card', label:'Meta model card'},
- {k:'Watch', t:'AA-3D v1.0 once more panel votes tighten the four-way 1=',
-  body:`Panel Elo for agent-built three.js scenes; not general coding.`,
-  url:'https://artificialanalysis.ai/evaluations/aa-3d', label:'Artificial Analysis'},
- {k:'Watch', t:'FrontierCode 1.1 (AA) once intervals appear',
-  body:`No intervals; Cognition built the bench and sells a coding agent.`,
-  url:'https://artificialanalysis.ai/evaluations/frontiercode', label:'Artificial Analysis'},
- {k:'Watch', t:'AA Decision Index once intervals appear or more frontier chat models are scored on it',
-  body:`Decision models, not general LLMs; Jev 1.13 leads at 58.`,
-  url:'https://artificialanalysis.ai/evaluations/artificial-analysis-decision-index', label:'Artificial Analysis'},
- {k:'Revisit', t:'Joint Commitment / Accord overseer once named; evaluator publication terms once standardized',
-  body:`Voluntary; overseer still unnamed.`,
-  url:'https://www.washingtonexaminer.com/news/white-house/4747747/full-trump-white-house-accord-ai-super-intelligence/', label:'WashEx'},
- {k:'Revisit', t:'Murphy–Hawley bill once text or a bill number exists',
-  body:`Announced Oct 1; no text yet.`,
-  url:'https://www.murphy.senate.gov/newsroom/press-releases/murphy-hawley-announce-breakthrough-bipartisan-legislation-to-force-ai-developers-to-prioritize-safety-or-face-prison-time', label:'Murphy'},
- {k:'Revisit', t:'FTC probe once CIDs issue or the companies comment on record',
-  body:`FTC confirmed the investigation to CBS; no release yet.`,
-  url:'https://www.cbsnews.com/news/ftc-investigation-openai-anthropic-ai-safety/', label:'CBS News'}
+ {k:'Watch', t:'UK committee transcript: confirm the WIRED quotes',
+  body:`Any draft statutory text.`,
+  url:'https://committees.parliament.uk/event/28282', label:'UK Parliament'},
+ {k:'Watch', t:'Gemini 4 Argon safety cases, or any third-party bio/cyber assessment',
+  body:`Self-assessed so far.`,
+  url:'https://deepmind.google/models/model-cards/gemini-4-argon/', label:'Model card'}
 ];
 
-document.getElementById('newsList').innerHTML=NEWS_TIERS.map(t=>{
-  const cards=t.items.map(n=>{
-    const paras=n.body.trim().split(/\n+/).map(p=>`<p>${p.trim()}</p>`).join('');
-    return `<article class="card story${n.lead?' lead':''}"><div class="tag">${String(n.tag).replace(/^\s*Share\s*·\s*/i,'')}</div><h4>${n.title}</h4><div class="body">${paras}</div><p class="why">${n.why}</p><div class="links">${n.links.map(l=>`<div><a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a> <span>· ${l[2]}</span></div>`).join('')}</div></article>`;
+(function(){
+  const card=n=>{const paras=n.body.trim().split(/\n+/).map(p=>`<p>${p.trim()}</p>`).join('');
+    return `<article class="card story${n.lead?' lead':''}"><div class="tag">${String(n.tag).replace(/^\s*Share\s*·\s*/i,'')}</div><h4>${n.title}</h4><div class="body">${paras}</div><p class="why">${n.why}</p><div class="links">${n.links.map(l=>`<div><a href="${l[1]}" target="_blank" rel="noopener">${l[0]}</a> <span>· ${l[2]}</span></div>`).join('')}</div></article>`;};
+  const open=NEWS_TIERS.filter(t=>/Lead|Co-lead/i.test(t.h));
+  const more=NEWS_TIERS.filter(t=>!/Lead|Co-lead/i.test(t.h));
+  const o=document.getElementById('newsOpen');
+  if(o) o.innerHTML=open.map(t=>`<div class="tier-h">${t.h}</div><div class="news-tier">${t.items.map(card).join('')}</div>`).join('');
+  document.getElementById('newsList').innerHTML=more.map(t=>`<div class="tier-h">${t.h}</div><div class="news-tier">${t.items.map(card).join('')}</div>`).join('');
+  document.getElementById('heldStrip').innerHTML=HELD.map(h=>{
+    const link=h.url && h.url!=='#' && h.label?` <a href="${h.url}" target="_blank" rel="noopener">${h.label}</a>`:'';
+    return `<div class="item"><span class="k">${h.k}</span><b>${h.t}</b> — ${h.body}${link}</div>`;
   }).join('');
-  return `<div class="tier-h">${t.h}</div><div class="news-tier">${cards}</div>`;
-}).join('');
-document.getElementById('heldStrip').innerHTML=HELD.map(h=>{
-  const link=h.url && h.url!=='#' && h.label?` <a href="${h.url}" target="_blank" rel="noopener">${h.label}</a>`:'';
-  return `<div class="item"><span class="k">${h.k}</span><b>${h.t}</b> — ${h.body}${link}</div>`;
-}).join('');
+})();
 
 
 /* Best-for-what job cards, 2026-10-14.
@@ -612,7 +525,7 @@ document.getElementById('heldStrip').innerHTML=HELD.map(h=>{
 const BENCH=[
  {id:'job-swebench-mm', asof:'Oct 13', isNew:true, field:18, dp:2, boardRank:true, boardName:'Vals', title:'Screenshot→JS bug fixes (SWE-bench Multimodal)', sub:'Official: Vals SWE-bench Multimodal · independent · 480 JavaScript tasks from 11 repos · mini-swe-agent · no internet · screenshots pre-attached · one run per model · binomial ±1 SE · NOT comparable with with-network runs · board as of Oct 13 · 18 models',
   ci:{'Claude Opus 5.5':[68.12,72.30],'Claude Fable 5.1':[59.02,63.48],'Claude Sonnet 5.5':[56.08,60.58],'Gemini 4 Argon':[53.77,58.31],'Muse Wonder Full':[45.01,49.57],'DeepSeek V4.1 Flash':[44.18,48.74],'Muse Wonder':[43.15,47.69],'Claude Haiku 5.5':[41.69,46.23],'GPT-6.1 Sol':[41.28,45.80],'GPT-6 Astra':[41.07,45.59],'Muse Spark 1.3':[40.87,45.39],'Grok 4.7':[40.66,45.18],'MiMo-V2.6-Pro':[39.00,43.50],'Gemini 3.8 Flash':[38.59,43.07],'Step 5 Preview':[38.59,43.07],'Qwen3.8 Max':[36.94,41.40],'GPT-6 Luna':[35.29,39.71],'Kimi K3':[33.64,38.02]},
-  landNote:'Claude Opus 5.5 70.21% ±2.09 (1 SE) is a clear 1st of 18 — its band clears Claude Fable 5.1 (61.25% ±2.23). Fable and Claude Sonnet 5.5 (58.33% ±2.25) overlap, so 2=. Gemini 4 Argon 56.04% ±2.27 sits just under Sonnet’s band. One run each; with-network diagnostics scored 21–35 points higher.',
+  landNote:'Claude Opus 5.5 (70.21% ±2.09) is 1. of 18; its band clears Claude Fable 5.1 (61.25%). Fable and Claude Sonnet 5.5 (58.33%) overlap, so 2=. Gemini 4 Argon (56.04%) is a clean 3. One run each; with-network diagnostics scored 21–35 points higher.',
   practical:'For “fix a front-end bug when the report includes a screenshot” — visual software issues, not text-only SWE-bench.',
   tests:'SWE-bench Multimodal (Yang, Jimenez, Press et al.): 480 JS GitHub issues whose bug reports depend on images. Vals runs mini-swe-agent with no internet; screenshots downloaded and attached to the first message. Graded by each repo’s own tests. Error bars are binomial standard error from a single run.',
   daily:'Use when the bug report needs the screenshot. Do not blend with with-network runs, text-only SWE-bench, Terminal-Bench, or FrontierCode.',
@@ -776,7 +689,7 @@ const BENCH=[
 ['MiMo-V2.6-Pro','±1.4 · Alignment Index · Sep 30 board · Oct 8 blog',74.5,'#20 of 27'],
 ['Qwen3.8 Max','±1.1 · Alignment Index · Sep 30 board · Oct 8 blog',73.9,'#24 of 27']
   ]},
- {id:'job-lab-aa', asof:'Oct 8', dp:1, title:'Legal agent work without material hallucinations (Harvey LAB-AA v1.1)', sub:'Official: Harvey LAB-AA v1.1 · Artificial Analysis × Harvey · independent · Hallucination-Gated All-Pass Rate · 120 private tasks · 24 practice areas · Stirrup harness · data as at Oct 8 · v1.1 not comparable with v1.0',
+ {id:'job-lab-aa', asof:'Oct 8', dp:1, title:'Legal agent work without material hallucinations (Harvey legal bench, AA run)', sub:'Official: Harvey LAB-AA v1.1 · Artificial Analysis × Harvey · independent · Hallucination-Gated All-Pass Rate · 120 private tasks · 24 practice areas · Stirrup harness · data as at Oct 8 · v1.1 not comparable with v1.0',
   landNote:'Grok 4.7 (xhigh) 9.4%, Muse Spark 1.3 (max) 8.9% and GPT-6 Astra (max) 8.6% sit within one task of each other (no CIs published). Without the hallucination gate, Muse would lead at 26.7% All-Pass Rate — two thirds of those passes had a material hallucination.',
   practical:'For “can an agent finish a realistic legal deliverable without inventing facts from the source docs?” — a gated all-pass, not a preference Elo.',
   tests:'Each of 120 private Harvey tasks asks an agent to produce legal work across 24 practice areas. Every deliverable is audited for hallucinations against the task’s source documents (two-stage check by GPT-6 Sol high), and a three-judge rubric panel (GPT-6 Sol, Grok 4.7, Claude Opus 5.5) grades every criterion. The headline, Hallucination-Gated All-Pass Rate, credits a task only when every rubric criterion passes and there is no material hallucination. Criterion Pass Rate is rubric coverage before the gate. v1.1 also updates the private dataset; scores are not comparable with v1.0.',
@@ -1013,7 +926,7 @@ const BENCH=[
 ['GLM-5.3-Flash','Setting not stated · public · AA article · Oct 6',50],
 ['GPT-6 Sol','Max · public · AA · Oct 8',36.83]
   ]},
- {id:'job-cybergym', asof:'Oct 6', title:'Find, prove and patch a real bug (CyberGym-E2E-AA)', sub:'Official: CyberGym-E2E-AA · Artificial Analysis · independent · from Berkeley RDI’s CyberGym-E2E · 131 tasks · pass@1 · figures named in AA’s Oct 6 article only',
+ {id:'job-cybergym', asof:'Oct 6', title:'Find, prove and patch a real bug (CyberGym, AA run)', sub:'Official: CyberGym-E2E-AA · Artificial Analysis · independent · from Berkeley RDI’s CyberGym-E2E · 131 tasks · pass@1 · figures named in AA’s Oct 6 article only',
   landNote:'Mistral Large 4 Preview (Oct 6): 82%, the highest of the three figures AA names. Mistral’s claim that it’s the highest of any model isn’t in AA’s article.',
   practical:'For security agents that must turn a suspected memory bug into a confirmed crash and a working fix.',
   tests:'Each of 131 tasks is a real memory-safety bug in a different widely used C/C++ open-source project, drawn from Google’s OSS-Fuzz (Google’s open-source fuzz-testing service). The agent must locate the bug, write an input that makes the program crash under a memory sanitizer (a tool that catches memory bugs), and patch the code so the crash no longer happens while the project’s own developer-written tests still pass. A task counts only if all three steps check out, on a single attempt. Ending a task without a finding scores zero. AA runs it in its own Stirrup agent harness (AA’s agent test setup).',
@@ -1072,7 +985,7 @@ const BENCH=[
     ['GPT-6.1 Sol','Max thinking · AA Sol page · OpenAI API · Oct 12',65.8],
     ['GPT-6 Astra','Max thinking · AA Astra page · OpenAI API · Oct 12',63.7]
   ]},
- {id:'job-agent-ni', asof:'Oct 8', dp:2, title:'Agent sessions that go better (Net Improvement)', sub:'Official: LMArena Agent Arena Overall · Net Improvement (NI) · NOT Elo · board Oct 8 · 2,378,129 sessions · 52 models · top five and Mistral Large 4 / Medium 3.5 as of the Oct 8 board', ci:{'Claude Opus 5.5':[12.15,16.51],'GPT-6 Astra':[10.72,15.46],'Claude Fable 5.1':[10.61,14.71],'Claude Sonnet 5.5':[8.64,15.26],'GPT-6.1 Sol':[8.67,14.77],'Mistral Large 4':[-9.51,-3.61],'Mistral Medium 3.5':[-14.05,-11.15]},
+ {id:'job-agent-ni', asof:'Oct 8', subset:true, dp:2, title:'Agent sessions that go better (Net Improvement)', sub:'Official: LMArena Agent Arena Overall · Net Improvement (NI) · NOT Elo · board Oct 8 · 2,378,129 sessions · 52 models · top five and Mistral Large 4 / Medium 3.5 as of the Oct 8 board', ci:{'Claude Opus 5.5':[12.15,16.51],'GPT-6 Astra':[10.72,15.46],'Claude Fable 5.1':[10.61,14.71],'Claude Sonnet 5.5':[8.64,15.26],'GPT-6.1 Sol':[8.67,14.77],'Mistral Large 4':[-9.51,-3.61],'Mistral Medium 3.5':[-14.05,-11.15]},
   landNote:'Oct 8 board: Mistral Large 4 (preview) entered at −6.56% ±2.95% (LMArena #43 of 52), with the worst tool-hallucination signal on the board (−18.6 ±3.3). Mistral Medium 3.5 was −12.60% ±1.45% (LMArena #51); Large 4’s interval sat entirely above it. Claude Opus 5.5 led at 14.33 ±2.18, but its interval overlapped GPT-6 Astra, Claude Fable 5.1, Claude Sonnet 5.5 and GPT-6.1 Sol, so all five were a statistical tie at 1=.',
   practical:'For “which model makes real user agent sessions go better?” — a treatment effect, not a preference Elo or a pass rate.',
   tests:'Net Improvement is how much better a real user’s agent session goes with this model than with the average model, in percentage points. Because each session is sent to a randomly chosen model, LMArena can measure it as a treatment effect from implicit behaviour signals (task outcome, praise/complaint, steering burden, bash recovery, tool hallucination). It is not an Elo score and not a pass-rate agent bench. ± marks the confidence interval; values drift down as the average model improves.',
@@ -1105,8 +1018,8 @@ const BENCH=[
 ['GPT-5.6 Sol','Extra-high · ±4 · Text · Oct 13',1485,'#21 of 415'],
 ['GPT-6.1 Sol','Max · ±8 · Text · Oct 13',1484,'#22 of 415'],
 ['Qwen3.8 Max','±5 · Text · Oct 13',1482,'#24 of 415'],
-['GLM-5.3','Max · ±5 · Text · Oct 13',1479,'#28 of 415'],
 ['MiMo-V2.6-Pro','±9 · Text · Oct 13',1479,'#27 of 415'],
+['GLM-5.3','Max · ±5 · Text · Oct 13',1479,'#28 of 415'],
 ['GPT-6 Astra','Max · ±6 · Text · Oct 13',1477,'#30 of 415'],
 ['Claude Sonnet 5.5','xHigh · ±8 · Text · Oct 13',1475,'#35 of 415'],
 ['DeepSeek V4.1 Flash','Max · ±6 · Text · Oct 13',1475,'#38 of 415'],
@@ -1120,7 +1033,7 @@ const BENCH=[
 ['Grok 4.7','Extra-high · ±7 · Text · Oct 13',1444,'#89 of 415'],
 ['GPT-6 Luna','Max · ±5 · Text · Oct 13',1443,'#91 of 415']
   ]},
- {id:'job-vision', asof:'Oct 2', title:'Images people prefer (Vision Elo)', sub:'Official: LMArena Vision Arena · Overall · preference Elo · NOT accuracy · board Oct 2 · 1,436,923 votes · every model tracked elsewhere in this brief that is on the board · each label leads with LMArena’s own rank, then the rank among these (upper-bound method)', boardRank:true, ci:{'Claude Fable 5':[1301.45,1316.05],'Qwen3.8 Max':[1293.74,1308.70],'GPT-6.1 Sol':[1274.58,1306.64],'Gemini 3.8 Flash':[1278.79,1301.90],'Muse Spark 1.3':[1279.74,1300.68],'Claude Opus 5':[1282.12,1295.88],'Claude Fable 5.1':[1277.73,1297.65],'GPT-5.6 Sol':[1277.11,1292.23],'GPT-6 Astra':[1273.02,1295.68],'Claude Sonnet 5.5':[1253.15,1283.52],'GPT-5.6 Terra':[1260.60,1275.83],'Claude Sonnet 5':[1257.45,1271.48],'Grok 4.6':[1254.39,1272.55],'GPT-5.6 Luna':[1252.19,1267.43],'MiMo-V2.6-Flash':[1234.20,1260.74],'MiMo-V2.6-Pro':[1230.58,1259.86]},
+ {id:'job-vision', asof:'Oct 2', title:'Image understanding people prefer (Vision Elo)', sub:'Official: LMArena Vision Arena · Overall · preference Elo · NOT accuracy · board Oct 2 · 1,436,923 votes · every model tracked elsewhere in this brief that is on the board · each label leads with LMArena’s own rank, then the rank among these (upper-bound method)', boardRank:true, ci:{'Claude Fable 5':[1301.45,1316.05],'Qwen3.8 Max':[1293.74,1308.70],'GPT-6.1 Sol':[1274.58,1306.64],'Gemini 3.8 Flash':[1278.79,1301.90],'Muse Spark 1.3':[1279.74,1300.68],'Claude Opus 5':[1282.12,1295.88],'Claude Fable 5.1':[1277.73,1297.65],'GPT-5.6 Sol':[1277.11,1292.23],'GPT-6 Astra':[1273.02,1295.68],'Claude Sonnet 5.5':[1253.15,1283.52],'GPT-5.6 Terra':[1260.60,1275.83],'Claude Sonnet 5':[1257.45,1271.48],'Grok 4.6':[1254.39,1272.55],'GPT-5.6 Luna':[1252.19,1267.43],'MiMo-V2.6-Flash':[1234.20,1260.74],'MiMo-V2.6-Pro':[1230.58,1259.86]},
   practical:'For “which model’s image answers do humans prefer?” — vibe ranking, not vision accuracy benches.',
   tests:'LMArena Vision Arena is a crowd-sourced human-preference Elo arena: people vote between paired vision responses. Higher Elo means wins more head-to-heads. It is not an accuracy test. Confidence intervals and vote counts matter — overlapping CIs mean the gap between those two models isn’t statistically clear.',
   daily:'Use for multimodal preference. Prefer dedicated vision accuracy suites when correctness is the job.',
@@ -1335,7 +1248,6 @@ function whereItem(b){
   return `<li><span class="job">${jobLabel(b)}${b.isNew?'<span class="new">NEW</span>':(b.updated?'<span class="new">UPDATED</span>':'')} <span class="asof-inline">· as of ${b.asof}</span></span><ol class="mini">${miniItems(b,top,0)}</ol>${b.correction?`<div class="tail">${b.correction}</div>`:''}${b.landNote?`<div class="tail">${b.landNote}</div>`:''}${full}${tail}</li>`;
 }
 document.getElementById('whereList').innerHTML=FRONT.length?FRONT.map(whereItem).join(''):'<li class="where-none" style="list-style:none">No new or updated cards today — every job is under “Other cards (carried)” below.</li>';
-if(CARRIED_N){document.getElementById('whereList').insertAdjacentHTML('afterend',`<details class="more" id="whereCarriedWrap" style="margin-top:14px"><summary>Other cards (carried) · ${CARRIED_N} <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary><ol class="where" style="margin-top:10px">${CARRIED.map(whereItem).join('')}</ol></details>`);}
 
 const benchRootMain=document.getElementById('benches');
 benchRootMain.insertAdjacentHTML('beforeend','<div id="benchesNew"></div>'+(CARRIED_N?`<details class="more" id="carriedWrap" style="margin-top:16px"><summary>Other cards (carried) · ${CARRIED_N} <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary><div id="benchesCarried"></div></details>`:''));
@@ -1436,14 +1348,24 @@ if(ceRest.length||ceOther.length){
 
 /* JOBLIST:BEGIN */
 (function(){const el=document.getElementById('jobList');if(!el)return;
-const fmt=(g,n)=>!g.length?'—':(g.length>1?'tied: '+g.slice(0,n).join(', ')+(g.length>n?` +${g.length-n} more`:''):g[0]);
-el.innerHTML=ORDERED.map(b=>{const u=topPerModel(sortedBench(b),Infinity);let line;
- if(b.vendor){line=`highest on vendor chart: ${u[0]?u[0][0]:'—'} <span class="jl-r">(not ranked across labs)</span>`;}
- else{const rk=u.map(d=>[d[0],rankOf(b,d)]).filter(x=>x[1]!=='·').map(x=>[x[0],parseInt(x[1],10)]);
-  if(!rk.length){line='—'}else{const r0=Math.min(...rk.map(x=>x[1]));const rest=rk.filter(x=>x[1]>r0);
-  const r1=rest.length?Math.min(...rest.map(x=>x[1])):null;
-  line=fmt(rk.filter(x=>x[1]===r0).map(x=>x[0]),6)+`<span class="jl-r"> · runner-up: ${fmt(r1==null?[]:rest.filter(x=>x[1]===r1).map(x=>x[0]),2)}</span>`;}}
- return `<li><a href="#${b.id}">${b.title}</a>${b.isNew?'<span class="new">NEW</span>':''}<span class="jl-asof">${b.asof}</span>${b.vendor?' <span class="jl-v">vendor-reported</span>':''}<br>${line}</li>`;}).join('');})();
+const GM={Coding:['swebench-mm','aa-3d','frontiercode','img2webdev','vibe','aa-tb40','vals-tb40','vals-tb21','webdev','migrate','code-agent','aa-cyber','cybergym','cyber-poc','cyber-patch'],
+ Agents:['agent-ni','align','lab-aa','briefcase','gdpval','workflows-aa','finance','tbsci','fab'],
+ 'Chat and reasoning':['text-en','aa-index','vals-index','eci','omni','arc1','arc2','arc3','proof'],
+ Media:['vision','t2i','image-edit','hss'], Speech:['stt-nonstream','stt-stream','tts'], Cost:['speed']};
+const grp=b=>{if(b.vendor)return'Vendor-reported';const k=(b.id||'').replace(/^job-/,'');for(const g in GM)if(GM[g].includes(k))return g;return'Chat and reasoning'};
+const flag=d=>{const m=(d[1]||'').match(/preliminary|provisional|public preview/i);return m?` (${m[0][0].toUpperCase()+m[0].slice(1).toLowerCase()})`:''};
+const fmt=(g,n)=>!g.length?'—':(g.length>1?g.slice(0,n).join(', ')+(g.length>n?` (+${g.length-n})`:''):g[0]);
+const lineOf=b=>{const u=topPerModel(sortedBench(b),Infinity);
+ if(b.vendor)return`highest on vendor chart: ${u[0]?u[0][0]:'—'} <span class="jl-r">(not ranked across labs)</span>`;
+ const rk=u.map(d=>[d[0]+flag(d),rankOf(b,d)]).filter(x=>x[1]!=='·').map(x=>[x[0],parseInt(x[1],10)]);
+ if(b.subset){const r0=Math.min(...rk.map(x=>x[1]));return fmt(rk.filter(x=>x[1]===r0).map(x=>x[0]),6)+`<span class="jl-r"> · Next: not on this card (it lists the top group only)</span>`;}
+ if(!rk.length)return'—';const r0=Math.min(...rk.map(x=>x[1]));const rest=rk.filter(x=>x[1]>r0);const r1=rest.length?Math.min(...rest.map(x=>x[1])):null;
+ return fmt(rk.filter(x=>x[1]===r0).map(x=>x[0]),6)+`<span class="jl-r"> · Next: ${fmt(r1==null?[]:rest.filter(x=>x[1]===r1).map(x=>x[0]),2)}</span>`;};
+const order=['Coding','Agents','Chat and reasoning','Media','Speech','Cost','Vendor-reported'];
+const by={};ORDERED.forEach(b=>{(by[grp(b)]=by[grp(b)]||[]).push(b)});
+let html='';for(const g of order){if((!by[g]||!by[g].length)&&g!=='Cost')continue;by[g]=by[g]||[];html+=`<li class="jl-g">${g}</li>`;if(g==='Cost')html+=`<li><a href="#cost">Smarts per dollar (cost board)</a><br><span class="jl-r">See the cost section</span></li>`;
+ for(const b of by[g]){html+=`<li><a href="#${b.id}">${b.title}</a>${b.isNew?'<span class="new">NEW</span>':''}<span class="jl-asof">${b.asof}</span>${b.vendor?' <span class="jl-v">vendor-reported</span>':''}<br>${lineOf(b)}</li>`;}}
+el.innerHTML=html;})();
 /* JOBLIST:END */
 function openForHash(){const h=location.hash.slice(1);if(!h)return;const el=document.getElementById(h);const cw=document.getElementById('carriedWrap');if(el&&cw&&cw.contains(el)&&!cw.open){cw.open=true;requestAnimationFrame(()=>el.scrollIntoView());}}
 window.addEventListener('hashchange',openForHash); openForHash();
