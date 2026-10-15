@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="description" content="AI Updates 2026-10-15: Eight state AGs sue OpenAI over ChatGPT child safety; DOJ charges OpenAI engineer over hidden recorder; AA-Robotics Astra 69.4; Vals Robo-bench Sol/Astra 1=; Scale HSS Argon 1=; Grok Voice 3.0 leads Speech to Speech."/>
+<meta name="description" content="AI Updates 2026-10-15: Eight state AGs sue OpenAI over ChatGPT child safety; DOJ charges OpenAI engineer over hidden recorder; AA-Robotics Astra 69.4; Vals Robo-bench Sol 1st within rerun noise; Scale HSS Argon 1=; Grok Voice 3.0 leads Speech to Speech."/>
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2064%2064%22%3E%20%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%231B5FBF%22/%3E%20%3Ctext%20x%3D%2232%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2C-apple-system%2CSegoe%20UI%2Csans-serif%22%20font-size%3D%2228%22%20font-weight%3D%22800%22%20fill%3D%22%23FFFFFF%22%20letter-spacing%3D%22-0.5%22%3EAI%3C/text%3E%20%3C/svg%3E"/>
 <link rel="apple-touch-icon" href="https://jwatson7399.github.io/ai-auditing-dashboard/apple-touch-icon.png"/>
 <title>AI Updates — Oct 15, 2026 · Eight AG suits; DOJ OpenAI engineer; robot boards</title>
@@ -62,6 +62,11 @@ section,.bench,[id^="job-"],#ns-60,#ns-jobs,#ns-score{scroll-margin-top:60px}
 .jl .new{display:inline-block;margin-left:4px;padding:0 6px;border-radius:999px;font-size:13px;font-weight:700;background:var(--pick-soft);color:var(--pick)}
 .how-l{margin:8px 0 0;padding-left:18px;font-size:13px;color:var(--muted)}
 .how-l li{margin:2px 0}
+.row .lbl .cfg{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+details.cz-card{margin:6px 0 0}details.cz-card>summary{font-size:13px}
+.cost-wrap.ce .ce-head{text-transform:none!important;letter-spacing:0!important;line-height:1.15;gap:6px!important;align-items:end}
+.cost-wrap.ce .ce-head span{white-space:normal;overflow-wrap:anywhere}
+@media(max-width:640px){.cost-wrap.ce .ce-head,.cost-wrap.ce .row{grid-template-columns:22px minmax(88px,1.5fr) 44px 52px 62px!important;gap:6px!important}}
 details.cz{margin:10px 0}
 .stamp,.chip,.toc-scroller a,.jl .jl-asof,.jl .jl-v,.jl .new,.ns-meta,.ns-note,.ns-mv,.ns-table thead th,.ns-table .asof,.story .tag,.held-strip .item .k,.bench .sub,.bench .asof,.bench .new,.legend,.pair .lab,.row .lbl,.row .val,.cost-wrap .row .lbl,.cost-wrap .row .score,.cost-wrap.ce .row .rank,.cost-wrap.ce .row .lbl,.cost-wrap.ce .row .idx,.cost-wrap.ce .row .dol,.cost-wrap.ce .row .ce,.cost-head,.cost-wrap.ce .ce-head,ol.mini li .n,ol.mini li .v,details.fl>summary,.where .job,.where .tail,.newmodel .k,.news-teaser{font-size:13px!important}
 .row .lbl .cfg,.cost-wrap .row .lbl .cfg,.cost-wrap.ce .row .lbl .cfg,ol.mini li .m small,.badge-best,.toc-bar .label,.bench .new,.where .new{font-size:13px!important}
@@ -307,14 +312,13 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <div class="stamp">Thursday, Oct 15, 2026 · ET</div>
     <h1>AI Updates</h1>
     <div class="chips">
-      <span class="chip mid">Lead: Eight AGs sue OpenAI</span>
-      <span class="chip mid">Co-lead: DOJ OpenAI engineer</span>
-      <span class="chip good">Robot boards: Astra / Sol</span>
+      <span class="chip mid">Two OpenAI legal stories</span>
+      <span class="chip good">Six updated boards</span>
     </div>
   </div>
 
   <div class="lede">
-    <p><b>Lead:</b> Eight state AGs sued OpenAI in state courts over ChatGPT harms to children; they seek injunctions, penalties and a halt on self-improving models until safeguards exist. <b>Co-lead:</b> DOJ charged an OpenAI engineer with installing a hidden recorder in an executive conference room — allegations only.</p>
+    <p><b>Lead:</b> Eight state AGs sued OpenAI in state courts over ChatGPT harms to children. <b>Co-lead:</b> DOJ charged an OpenAI engineer with installing a hidden recorder in an executive conference room — allegations only.</p>
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
@@ -334,18 +338,19 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
 <!-- NS:BEGIN -->
   <section id="ns-60" class="ns">
     <h3>The 60-second version</h3>
-    <div class="card"><ul class="ns-qa"><li><div class="ns-q">What&#x27;s the big news?</div><p class="ns-a">Eight state AGs sued OpenAI in their own courts over ChatGPT harms to children. They seek injunctions, penalties and a halt on self-improving models until safeguards exist.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">What about the DOJ case?</div><p class="ns-a">DOJ charged an OpenAI engineer with installing a hidden recorder in an executive conference room. Allegations only; framed as frontier-lab counterintelligence.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">Who leads robot-arm control?</div><p class="ns-a">GPT-6 Astra leads AA-Robotics v0.1 at 69.4 among five models. Single runs, no intervals — not a clear lead over Sol at 64.6.</p><div class="ns-meta"><span class="chip pick">Too close to call</span><a href="#job-aa-robotics">show me the numbers</a></div></li><li><div class="ns-q">Who&#x27;s best at simulated robots?</div><p class="ns-a">GPT-6.1 Sol and GPT-6 Astra are 1= on Vals Robo-bench (28.33% vs 23.33%). Vals says reruns move totals by about ten points; no model clears humanoid tasks.</p><div class="ns-meta"><span class="chip pick">Too close to call</span><a href="#job-robo-bench">show me the numbers</a></div></li><li><div class="ns-q">Cheapest good option?</div><p class="ns-a">GPT-6.1 Sol gives near-top smarts for under a dollar per task. GPT-6 Luna and MiMo-V2.6-Pro give the most points per dollar.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#cost">show me the numbers</a></div></li></ul>
+    <div class="card"><ul class="ns-qa"><li><div class="ns-q">What&#x27;s the big news?</div><p class="ns-a">Eight state AGs sued OpenAI in their own courts over ChatGPT harms to children. Allegations only so far.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">What about the DOJ case?</div><p class="ns-a">DOJ charged an OpenAI engineer with installing a hidden recorder in an executive conference room. Allegations only; framed as frontier-lab counterintelligence.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#news">show me the numbers</a></div></li><li><div class="ns-q">Who leads robot-arm control?</div><p class="ns-a">GPT-6 Astra leads AA-Robotics v0.1 at 69.4 among five models. Single runs, no intervals — not a clear lead over Sol at 64.6.</p><div class="ns-meta"><span class="chip pick">Too close to call</span><a href="#job-aa-robotics">show me the numbers</a></div></li><li><div class="ns-q">Who&#x27;s best at simulated robots?</div><p class="ns-a">Vals Robo-bench: Sol 1st, within Vals’ ~10-point rerun noise of Astra (28.33% vs 23.33%). No model clears the humanoid tasks.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#job-robo-bench">show me the numbers</a></div></li><li><div class="ns-q">Cheapest good option?</div><p class="ns-a">GPT-6.1 Sol gives near-top smarts for under a dollar per task. GPT-6 Luna and MiMo-V2.6-Pro give the most points per dollar.</p><div class="ns-meta"><span class="chip good">Confirmed</span><a href="#cost">show me the numbers</a></div></li></ul>
     </div>
   </section>
   <section id="ns-jobs" class="ns">
     <h3>Pick your job</h3>
-    <div class="card"><ul class="ns-jl"><li><a href="#job-aa-robotics">Control a real robot arm</a> → GPT-6 Astra at 69.4 on AA-Robotics — 1st of 5; Sol is close at 64.6.<span class="w">Watch out: Eight tabletop tasks, one zero-shot run each; no intervals.</span></li><li><a href="#job-robo-bench">Drive a simulated robot</a> → GPT-6.1 Sol and GPT-6 Astra, 1= on Vals Robo-bench.<span class="w">Watch out: One seed; ~10-point run variation; no model clears humanoid tasks.</span></li><li><a href="#job-text-en">Chat and writing</a> → Gemini 4 Argon and Muse Wonder (max), statistically tied at the top.<span class="w">Watch out: Argon is Preliminary; Muse Wonder has the fewest votes in the top group.</span></li><li><a href="#job-swebench-mm">Fix JS bugs from screenshots</a> → Claude Opus 5.5 at 70.21% on SWE-bench Multimodal — clear 1.<span class="w">Watch out: One run per model, no internet; with-network scores are not comparable.</span></li><li><a href="#job-hss">Read a scene at a glance</a> → Gemini 4 Argon and GPT-6 Astra, 1= on Scale HSS.<span class="w">Watch out: AI judge is Claude Opus 5; humans still at 93.1%.</span></li><li><a href="#job-speech-sts">Talk end-to-end by voice</a> → Grok Voice 3.0 at 86.9 on AA Speech to Speech — 1st of 19.<span class="w">Watch out: Index has no intervals; mixes reasoning, agentic voice, Arena and task success.</span></li><li><a href="#cost">Do it cheaply</a> → GPT-6 Luna and MiMo-V2.6-Pro give the most index points per dollar.<span class="w">Watch out: Some AA cost figures are provisional (Claude Haiku 5.5).</span></li></ul></div>
+    <div class="card"><ul class="ns-jl"><li><a href="#job-aa-robotics">Control a real robot arm</a> → GPT-6 Astra at 69.4 on AA-Robotics — 1st of 5; Sol is close at 64.6.<span class="w">Watch out: Eight tabletop tasks, one zero-shot run each; no intervals.</span></li><li><a href="#job-robo-bench">Drive a simulated robot</a> → GPT-6.1 Sol on Vals Robo-bench: Sol 1st, within Vals’ ~10-point rerun noise of Astra.<span class="w">Watch out: One seed per task, no intervals; no model clears humanoid tasks.</span></li><li><a href="#job-text-en">Chat and writing</a> → Gemini 4 Argon and Muse Wonder (max), statistically tied at the top.<span class="w">Watch out: Argon is Preliminary; Muse Wonder has the fewest votes in the top group.</span></li><li><a href="#job-swebench-mm">Fix JS bugs from screenshots</a> → Claude Opus 5.5 at 70.21% on SWE-bench Multimodal — clear 1.<span class="w">Watch out: One run per model, no internet; with-network scores are not comparable.</span></li><li><a href="#job-hss">Read a scene at a glance</a> → Gemini 4 Argon and GPT-6 Astra, 1= on Scale HSS.<span class="w">Watch out: AI judge is Claude Opus 5; humans still at 93.1%.</span></li><li><a href="#job-speech-sts">Talk end-to-end by voice</a> → Grok Voice 3.0 at 86.9 on AA Speech to Speech — 1st of 19.<span class="w">Watch out: Index has no intervals; mixes reasoning, agentic voice, Arena and task success.</span></li><li><a href="#cost">Do it cheaply</a> → GPT-6 Luna and MiMo-V2.6-Pro give the most index points per dollar.<span class="w">Watch out: Some AA cost figures are provisional (Claude Haiku 5.5).</span></li></ul></div>
   </section>
   <section id="ns-score" class="ns">
     <h3>Scoreboard</h3>
     <div class="card">
-    <div class="ns-scroll" role="region" aria-label="Standings table" tabindex="0"><table class="ns-table"><thead><tr><th>Model</th><th><a href="#job-aa-robotics">Real robot arm</a><span class="asof">as of Oct 14</span></th><th><a href="#job-robo-bench">Simulated robots</a><span class="asof">as of Oct 13</span></th><th><a href="#job-hss">Scene at a glance</a><span class="asof">as of Oct 14</span></th><th><a href="#job-swebench-mm">Screenshot→JS fixes</a><span class="asof">as of Oct 13</span></th><th><a href="#job-speech-sts">Voice conversation</a><span class="asof">as of Oct 14</span></th><th><a href="#job-aa-index">Overall smarts</a><span class="asof">as of Oct 12</span></th></tr></thead><tbody><tr><td>Claude Opus 5.5</td><td data-l="AA-Robo">●<span class="ns-mv"> 4.</span></td><td data-l="Robo">●<span class="ns-mv"> 3.</span></td><td data-l="HSS">●<span class="ns-mv"> 3=</span><span class="ns-mv">↓</span></td><td data-l="SWE-MM">★<span class="ns-mv"> 1.</span></td><td data-l="S2S" title="not on this card">○</td><td data-l="Index">★<span class="ns-mv"> 1.</span></td></tr><tr><td>Claude Sonnet 5.5</td><td data-l="AA-Robo" title="not on this card">○</td><td data-l="Robo" title="not on this card">○</td><td data-l="HSS" title="not on this card">○</td><td data-l="SWE-MM">●<span class="ns-mv"> 2=</span></td><td data-l="S2S" title="not on this card">○</td><td data-l="Index">●<span class="ns-mv"> 2=</span></td></tr><tr><td>Claude Fable 5.1</td><td data-l="AA-Robo">●<span class="ns-mv"> 5.</span></td><td data-l="Robo">●<span class="ns-mv"> 5.</span></td><td data-l="HSS">●<span class="ns-mv"> 3=</span><span class="ns-mv">↓</span></td><td data-l="SWE-MM">●<span class="ns-mv"> 2=</span></td><td data-l="S2S" title="not on this card">○</td><td data-l="Index">●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6 Astra</td><td data-l="AA-Robo">★<span class="ns-mv"> 1.</span></td><td data-l="Robo">●<span class="ns-mv"> 2.</span></td><td data-l="HSS">★<span class="ns-mv"> 1=</span></td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="S2S" title="not on this card">○</td><td data-l="Index">●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6.1 Sol</td><td data-l="AA-Robo">●<span class="ns-mv"> 2.</span></td><td data-l="Robo">★<span class="ns-mv"> 1.</span></td><td data-l="HSS">●<span class="ns-mv"> 2.</span><span class="ns-mv">↓</span></td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="S2S" title="not on this card">○</td><td data-l="Index">·<span class="ns-mv"> 7=</span><span class="ns-mv">↓</span></td></tr><tr><td>Gemini 4 Argon</td><td data-l="AA-Robo">●<span class="ns-mv"> 3.</span></td><td data-l="Robo">·<span class="ns-mv"> 6.</span></td><td data-l="HSS">★<span class="ns-mv"> 1=</span></td><td data-l="SWE-MM">●<span class="ns-mv"> 3.</span></td><td data-l="S2S" title="not on this card">○</td><td data-l="Index">●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>Muse Wonder Full</td><td data-l="AA-Robo" title="not on this card">○</td><td data-l="Robo">●<span class="ns-mv"> 4.</span></td><td data-l="HSS" title="not on this card">○</td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="S2S" title="not on this card">○</td><td data-l="Index">●<span class="ns-mv"> 2=</span></td></tr><tr><td>Muse Wonder</td><td data-l="AA-Robo" title="not on this card">○</td><td data-l="Robo" title="not on this card">○</td><td data-l="HSS">●<span class="ns-mv"> 3=</span></td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="S2S" title="not on this card">○</td><td data-l="Index">·<span class="ns-mv"> 7=</span></td></tr><tr><td>Claude Haiku 5.5</td><td data-l="AA-Robo" title="not on this card">○</td><td data-l="Robo" title="not on this card">○</td><td data-l="HSS" title="not on this card">○</td><td data-l="SWE-MM">●<span class="ns-mv"> 5=</span></td><td data-l="S2S" title="not on this card">○</td><td data-l="Index">·<span class="ns-mv"> 19.</span><span class="ns-mv">↓</span></td></tr><tr><td>Grok Voice 3.0</td><td data-l="AA-Robo" title="not on this card">○</td><td data-l="Robo" title="not on this card">○</td><td data-l="HSS" title="not on this card">○</td><td data-l="SWE-MM" title="not on this card">○</td><td data-l="S2S">★<span class="ns-mv"> 1.</span></td><td data-l="Index" title="not on this card">○</td></tr></tbody></table></div>
-    <p class="ns-note">↑/↓ = rank change vs Oct 8. Symbols: <a href="#howRank">How we rank</a>.</p></div>
+    <p class="ns-note" style="margin:0 0 8px">Key: ★ 1st or tied · ● 2nd–5th · · lower · ○ not on that board · † preliminary or vendor-reported. <a href="#howRank">More in How we rank</a>.</p>
+    <div class="ns-scroll" role="region" aria-label="Standings table" tabindex="0"><table class="ns-table"><thead><tr><th>Model</th><th><a href="#job-aa-robotics">Real robot arm</a><span class="asof">as of Oct 14</span></th><th><a href="#job-robo-bench">Simulated robots</a><span class="asof">as of Oct 13</span></th><th><a href="#job-hss">Scene at a glance</a><span class="asof">as of Oct 14</span></th><th><a href="#job-swebench-mm">Screenshot→JS fixes</a><span class="asof">as of Oct 13</span></th><th><a href="#job-speech-sts">Voice conversation</a><span class="asof">as of Oct 14</span></th><th><a href="#job-aa-index">Overall smarts</a><span class="asof">as of Oct 12</span></th></tr></thead><tbody><tr><td>Claude Opus 5.5</td><td data-l="Real robot arm">●<span class="ns-mv"> 4.</span></td><td data-l="Simulated robots">●<span class="ns-mv"> 3.</span></td><td data-l="Scene at a glance">●<span class="ns-mv"> 3=</span><span class="ns-mv">↓</span></td><td data-l="Screenshot→JS fixes">★<span class="ns-mv"> 1.</span></td><td data-l="Voice conversation" title="not on this card">○</td><td data-l="Overall smarts">★<span class="ns-mv"> 1.</span></td></tr><tr><td>Claude Sonnet 5.5</td><td data-l="Real robot arm" title="not on this card">○</td><td data-l="Simulated robots" title="not on this card">○</td><td data-l="Scene at a glance" title="not on this card">○</td><td data-l="Screenshot→JS fixes">●<span class="ns-mv"> 2=</span></td><td data-l="Voice conversation" title="not on this card">○</td><td data-l="Overall smarts">●<span class="ns-mv"> 2=</span></td></tr><tr><td>Claude Fable 5.1</td><td data-l="Real robot arm">●<span class="ns-mv"> 5.</span></td><td data-l="Simulated robots">●<span class="ns-mv"> 5.</span></td><td data-l="Scene at a glance">●<span class="ns-mv"> 3=</span><span class="ns-mv">↓</span></td><td data-l="Screenshot→JS fixes">●<span class="ns-mv"> 2=</span></td><td data-l="Voice conversation" title="not on this card">○</td><td data-l="Overall smarts">●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6 Astra</td><td data-l="Real robot arm">★<span class="ns-mv"> 1.</span></td><td data-l="Simulated robots">●<span class="ns-mv"> 2.</span></td><td data-l="Scene at a glance">★<span class="ns-mv"> 1=</span></td><td data-l="Screenshot→JS fixes">●<span class="ns-mv"> 5=</span></td><td data-l="Voice conversation" title="not on this card">○</td><td data-l="Overall smarts">●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>GPT-6.1 Sol</td><td data-l="Real robot arm">●<span class="ns-mv"> 2.</span></td><td data-l="Simulated robots">★<span class="ns-mv"> 1.</span></td><td data-l="Scene at a glance">●<span class="ns-mv"> 2.</span><span class="ns-mv">↓</span></td><td data-l="Screenshot→JS fixes">●<span class="ns-mv"> 5=</span></td><td data-l="Voice conversation" title="not on this card">○</td><td data-l="Overall smarts">·<span class="ns-mv"> 7=</span><span class="ns-mv">↓</span></td></tr><tr><td>Gemini 4 Argon</td><td data-l="Real robot arm">●<span class="ns-mv"> 3.</span></td><td data-l="Simulated robots">·<span class="ns-mv"> 6.</span></td><td data-l="Scene at a glance">★<span class="ns-mv"> 1=</span></td><td data-l="Screenshot→JS fixes">●<span class="ns-mv"> 3.</span></td><td data-l="Voice conversation" title="not on this card">○</td><td data-l="Overall smarts">●<span class="ns-mv"> 4=</span><span class="ns-mv">↓</span></td></tr><tr><td>Muse Wonder Full</td><td data-l="Real robot arm" title="not on this card">○</td><td data-l="Simulated robots">●<span class="ns-mv"> 4.</span></td><td data-l="Scene at a glance" title="not on this card">○</td><td data-l="Screenshot→JS fixes">●<span class="ns-mv"> 5=</span></td><td data-l="Voice conversation" title="not on this card">○</td><td data-l="Overall smarts">●<span class="ns-mv"> 2=</span></td></tr><tr><td>Muse Wonder</td><td data-l="Real robot arm" title="not on this card">○</td><td data-l="Simulated robots" title="not on this card">○</td><td data-l="Scene at a glance">●<span class="ns-mv"> 3=</span></td><td data-l="Screenshot→JS fixes">●<span class="ns-mv"> 5=</span></td><td data-l="Voice conversation" title="not on this card">○</td><td data-l="Overall smarts">·<span class="ns-mv"> 7=</span></td></tr><tr><td>Claude Haiku 5.5</td><td data-l="Real robot arm" title="not on this card">○</td><td data-l="Simulated robots" title="not on this card">○</td><td data-l="Scene at a glance" title="not on this card">○</td><td data-l="Screenshot→JS fixes">●<span class="ns-mv"> 5=</span></td><td data-l="Voice conversation" title="not on this card">○</td><td data-l="Overall smarts">·<span class="ns-mv"> 19.</span><span class="ns-mv">↓</span></td></tr><tr><td>Grok Voice 3.0</td><td data-l="Real robot arm" title="not on this card">○</td><td data-l="Simulated robots" title="not on this card">○</td><td data-l="Scene at a glance" title="not on this card">○</td><td data-l="Screenshot→JS fixes" title="not on this card">○</td><td data-l="Voice conversation">★<span class="ns-mv"> 1.</span></td><td data-l="Overall smarts" title="not on this card">○</td></tr></tbody></table></div>
+    <p class="ns-note">↑/↓ = rank change vs a week ago. Simulated robots: Sol 1st, within Vals’ ~10-point rerun noise of Astra.</p></div>
   </section>
 <!-- NS:END -->
   <section id="news">
@@ -371,7 +376,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   <section id="boards">
     <h3>What’s new on the boards</h3>
     <div class="card">
-      <p style="max-width:72ch;font-size:14.5px">Updated cards: <a href="#job-aa-robotics">robot arm (AA-Robotics)</a>, <a href="#job-robo-bench">simulated robots (Vals)</a>, <a href="#job-spireclimb">Slay the Spire (Epoch)</a>, <a href="#job-hss">scene at a glance (HSS)</a>, <a href="#job-speech-sts">Speech to Speech</a> and <a href="#job-agent-ni">Agent Arena</a>. Astra leads AA-Robotics at 69.4 among five; Sol and Astra are 1= on Robo-bench and SpireClimb.</p>
+      <p style="max-width:72ch;font-size:14.5px">Updated cards: <a href="#job-aa-robotics">robot arm (AA-Robotics)</a>, <a href="#job-robo-bench">simulated robots (Vals)</a>, <a href="#job-spireclimb">Slay the Spire (Epoch)</a>, <a href="#job-hss">scene at a glance (HSS)</a>, <a href="#job-speech-sts">Speech to Speech</a> and <a href="#job-agent-ni">Agent Arena</a>. Robo-bench: Sol 1st, within Vals’ ~10-point rerun noise of Astra. SpireClimb: Astra 1st; Epoch’s chart shows overlapping 90% intervals.</p>
       <details class="more cz cz-boards"><summary>Sources and carried scores <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
       <p style="margin-top:10px;max-width:72ch;font-size:14px;color:var(--muted)">Sources: <a href="https://artificialanalysis.ai/articles/aa-robotics" target="_blank" rel="noopener">AA-Robotics</a> · <a href="https://www.vals.ai/benchmarks/robo_bench" target="_blank" rel="noopener">Robo-bench</a> · <a href="https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel" target="_blank" rel="noopener">SpireClimb</a> · <a href="https://labs.scale.com/leaderboard/hss" target="_blank" rel="noopener">HSS</a> · <a href="https://artificialanalysis.ai/speech-to-speech" target="_blank" rel="noopener">Speech to Speech</a> · <a href="https://arena.ai/leaderboard/agent" target="_blank" rel="noopener">Agent Arena</a></p>
       </details>
@@ -387,7 +392,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
       <li><b>Top pick</b> = rank 1 on that card. Runners show as “Next: …” — the next rank, or “(+n)” when more share it. On cards with intervals, rank = 1 + models whose whole interval sits above (LMArena’s rule), so overlaps show “=”.</li>
       <li><b>Tags</b> (60-second): Confirmed = independent source · Vendor says = company’s own report · Too close to call = tied within intervals · Sources disagree = claims conflict.</li>
       <li><b>Scoreboard symbols:</b> ★ 1st or tied (“=”) · ● 2–5 · · lower · ○ not on this card · † preliminary or vendor-reported · ↑/↓ = rank change vs the week-ago brief.</li>
-      <li><b>Cost:</b> CE = AA Intelligence Index ÷ AA $ per task (higher = more smarts per dollar). Best deal = each model’s best-CE setting.</li>
+      <li><b>Cost:</b> CE (cost-effectiveness) = AA Intelligence Index ÷ AA $ per task (higher = more smarts per dollar). Best deal = each model’s best-CE setting.</li>
       <li><b>Jargon:</b> ±1 SE (binomial) = one-run error bar from a yes/no success rate · mini-swe-agent = the small agent harness Vals uses · AA = Artificial Analysis · Elo = vote-based preference rating · Agent NI = Agent Arena Net Improvement (not Elo) · WER = word error rate, lower is better · ECI = Epoch Capabilities Index.</li>
       <li>Each card keeps its own as-of date. Vendor-reported cards are labeled and never ranked across labs. Independent boards first (AA, Vals, LMArena, Epoch, Scale, ARC). Don’t blend harnesses or scales.</li>
     </ul></details>
@@ -410,7 +415,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
         <h4 class="ce-title">Cost-effectiveness leaderboard</h4>
         <p class="ce-blurb"><b>Best deal</b> = each model’s best cost-effectiveness setting (Index per dollar). Data as of Oct 8. Formula in <a href="#howRank">How we rank</a>.</p>
         <div class="cost-wrap ce">
-          <div class="ce-head"><span>#</span><span>Model · thinking · $ bar</span><span>Index</span><span>$/task</span><span>CE</span></div>
+          <div class="ce-head"><span>#</span><span>Model · thinking</span><span>Index</span><span>$ per task</span><span>Cost-eff. (CE)</span></div>
           <div class="chart" id="cechart"></div>
         </div>
         <details class="more" id="ceFullWrap">
@@ -436,10 +441,10 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <h3>Sourcing and caveats</h3>
     <details class="more cz cz-cav"><summary>Sourcing and caveats <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
 <div class="card caveats">
-      <p><b>Eight-state AG suits.</b> Allegations only. Primary links are the Iowa petition PDF and Arkansas/Nebraska AG releases. Arkansas’s release also lists Utah; count stays at eight until Utah confirms.</p>
+      <p><b>Eight-state AG suits.</b> Allegations only. Primary links are the Iowa petition PDF and Arkansas/Nebraska AG releases. Arkansas’s release also names Utah.</p>
       <p><b>DOJ OpenAI engineer.</b> Charged, not convicted. Complaint details are allegations.</p>
-      <p><b>AA-Robotics / Robo-bench.</b> Single runs or one seed; no published intervals on either board. Vals reports ~10-point run-to-run variation on Robo-bench.</p>
-      <p><b>Epoch SpireClimb.</b> Win rates averaged over 60–75 single-shot runs; 90% intervals charted but bounds not in text. Sol and Astra read as 1= on each game.</p>
+      <p><b>AA-Robotics / Robo-bench.</b> Single runs or one seed; no published intervals on either board. Robo-bench: Sol 1st, within Vals’ ~10-point rerun noise of Astra.</p>
+      <p><b>Epoch SpireClimb.</b> Win rates averaged over 60–75 single-shot runs; Astra 1st; Epoch’s chart shows overlapping 90% intervals.</p>
       <p><b>Scale HSS.</b> Judge is Claude Opus 5 (self-preference risk for Claude rows). Argon and Astra intervals overlap → 1=.</p>
       <p><b>AA Speech to Speech.</b> Index has no intervals. Grok Voice 3.0 leads at 86.9 of 19.</p>
       <p><b>Carried scores.</b> Cards without a NEW tag, and the cost board (Oct 8), carry scores from earlier briefs; each shows its as-of date.</p>
@@ -460,7 +465,7 @@ const NEWS_TIERS=[
  {lead:true, tag:'Lead · Eight state AGs', title:'Eight state AGs sue OpenAI over ChatGPT safety for children and vulnerable users',
   body:`Eight attorneys general — Iowa, Kansas, Nebraska, West Virginia, Arkansas, Arizona, Idaho and Montana — each sued OpenAI in their own state courts on Oct 14 under state consumer-protection law. The complaints allege ChatGPT was sold as safe while harming children and other vulnerable users.
 Relief sought includes injunctions, restitution, civil penalties and a halt on models capable of recursive self-improvement until safeguards are in place. OpenAI’s Drew Pusateri said the company has “industry-leading age-specific protections.”
-Caveat: Arkansas’s release also lists Utah among filers; WV, NE and Iowa name the eight above. Keep the count at eight until Utah confirms. Allegations only.`,
+Caveat: Arkansas’s release also names Utah. Allegations only.`,
   why:'Why it matters: first coordinated multistate AG action against a frontier AI developer under consumer-protection law.',
   links:[['Iowa AG — petition (Polk County, 14 Oct)','https://www.iowaattorneygeneral.gov/media/cms/261014_Petition_EC459B522F957.pdf','primary'],['Arkansas AG — Griffin sues OpenAI (14 Oct)','https://arkansasag.gov/news-release/attorney-general-griffin-sues-openai-for-misleading-arkansans-over-safety-of-chatgpt/','primary'],['Nebraska AG — release PDF (14 Oct)','https://ago.nebraska.gov/sites/default/files/doc/Nebraska%20release_3.pdf','primary'],['The Guardian — eight states sue OpenAI','https://www.theguardian.com/technology/2026/oct/14/openai-child-self-harm-lawsuit','news']]}
  ]},
@@ -473,7 +478,7 @@ He made a first court appearance Oct 13 (N.D. Cal.). Maximum penalty cited: 5 ye
  ]},
  {h:'Also today', items:[
  {tag:'Also · Scientists · containment', title:'463 scientists’ open letter urges airgapping cyber-capable models and an international containment-failure registry',
-  body:`Letter dated October 2026 (ai-security-letter.org; 463 named signatories including Bengio, Hinton and Russell). It recommends that groups building or testing cyber-capable models “immediately adopt high-assurance containment,” initially defaulting to airgaps; an international body to standardise non-airgap containment and record failures; and public reporting of containment-failure incidents.
+  body:`Letter dated October 2026 (ai-security-letter.org; 463 named signatories including Bengio, Hinton and Russell). It recommends that groups building or testing cyber-capable models “immediately adopt high-assurance containment,” initially defaulting to airgaps; an international body to standardise non-airgap containment and record failures; and that containment-failure incidents “must be reported to the body and eventually made public.”
 Caveat: advocacy, not policy.`,
   why:'Why care: a large named-scientist call for airgaps and a failure registry after recent disclosed sandbox escapes.',
   links:[['AI Security Letter — open letter site','https://ai-security-letter.org/','primary']]},
@@ -493,7 +498,7 @@ const HELD=[
   body:`Product launch; open beta on paid plans from Oct 15.`,
   url:'https://www.figma.com/blog/introducing-figma-specs/', label:'Figma'},
  {k:'Held', t:'BBC: Anthropic told investors Q3 revenue was $16.8bn',
-  body:`BBC only; Anthropic declined to comment; no company release.`,
+  body:`BBC only (“the BBC understands”); no company release.`,
   url:'https://www.bbc.com/news/articles/cqzjx448vxkgo', label:'BBC'},
  {k:'Held', t:'CoreWeave shares −15.5%; 2032 bond YTM ~14.8%',
   body:`CNBC market signal; CEO memo not public.`,
@@ -542,7 +547,7 @@ const BENCH=[
 ['Claude Fable 5.1','High · Claude Code · AA-Robotics · Oct 14',46.3]
   ]},
  {id:'job-robo-bench', asof:'Oct 13', isNew:true, field:7, dp:2, boardRank:true, boardName:'Vals', title:'Simulated robot control (Vals Robo-bench)', sub:'Official: Vals Robo-bench · independent · 24 tasks (13 Franka Panda arm + 11 Unitree G1 humanoid) in MuJoCo · real-time 3-minute episodes · one seed · vendor coding agents at highest reasoning · no intervals · board stamp Oct 13 · 7 models',
-  landNote:'GPT-6.1 Sol (28.33%) and GPT-6 Astra (23.33%) are 1= — Vals says reruns move totals by up to about ten points. Claude Opus 5.5 (14.58%) is 3rd. No model clears the humanoid suite (all ≤2/100). Arm-only, Sol averages 51/100.',
+  rankNote:'Sol 1st, within Vals’ ~10-point rerun noise of Astra', landNote:'Sol 1st, within Vals’ ~10-point rerun noise of Astra (28.33% vs 23.33%; one seed, no intervals). Claude Opus 5.5 (14.58%) is 3rd. No model clears the humanoid suite (all ≤2/100). Arm-only, Sol averages 51/100.',
   practical:'For “can an agent control a simulated arm or humanoid from cameras and motor commands alone?” — physics-sim robotics, not a real arm.',
   tests:'Vals Robo-bench: 13 arm + 11 humanoid tasks in MuJoCo. Agent gets datasheet, sensors and cameras only — no object poses. Episodes run three minutes wall-clock; thinking burns the clock. One seed per task. Milestone scoring out of 100. GPT in Codex, Claude in Claude Code, Argon in Antigravity, Grok in Grok Build, Muse in Muse Code.',
   daily:'Use for sim robot-control skill. Do not blend with AA-Robotics (real arm) or with Terminal-Bench. Small gaps inside ~10 points are noise.',
@@ -557,14 +562,14 @@ const BENCH=[
 ['Grok 4.7','Highest reasoning · Grok Build · Robo-bench · Oct 13',0.21]
   ]},
  {id:'job-spireclimb', asof:'Oct 14', isNew:true, field:7, dp:0, boardRank:true, boardName:'Epoch', title:'Slay the Spire win rate (Epoch SpireClimb)', sub:'Official: Epoch SpireClimb · independent · Inspect ReAct visual computer-use harness · wiki via Tavily · max reasoning · StS2 Ascension 10 shown (75 runs) · StS1 Ascension 20 Heart in notes (60 runs) · 90% CIs charted but bounds not in text · report Oct 14',
-  landNote:'On Slay the Spire 2 Ascension 10: GPT-6 Astra 35% and GPT-6.1 Sol 29% are 1= within noise (75 single-shot runs). On StS1 Ascension 20 Heart: Sol 20% and Astra 17% are likewise 1= (60 runs). Top humans win ~80%+ on StS1 A20 Heart.',
+  rankNote:'Astra 1st; Epoch’s chart shows overlapping 90% intervals', landNote:'Astra 1st; Epoch’s chart shows overlapping 90% intervals (StS2 Ascension 10: 35% vs Sol 29%, 75 runs). On StS1 Ascension 20 Heart Sol leads 20% to 17% (60 runs), also within noise. Top humans win ~80%+ on StS1 A20 Heart.',
   practical:'For long-horizon visual game play under a computer-use agent — not coding and not chat preference.',
   tests:'Epoch SpireClimb: agents play Slay the Spire 1 and 2 via a visual computer-use harness with wiki search. Scores are win rates averaged over many independent single-shot runs (15 per character), not best-of-N. StS2 frozen at v0.107.1. Chart shows 90% intervals; numeric bounds are not in the report text.',
   daily:'Use as a long-horizon agent signal. Do not blend with AA-Robotics or Robo-bench. Prefer StS1 A20 Heart when comparing to human baselines Epoch cites.',
   fieldNote:'Epoch report Oct 14, 2026. StS2 A10 also lists GPT-6 Sol 13%, Opus 5.5 7%, Fable 5.1 4%, Sonnet 5.5 3%, Luna 0%. StS1 A20 Heart: GPT-6 Sol 2%, other models 0%.',
   data:[
-['GPT-6 Astra','Max · StS2 A10 · 75 runs · SpireClimb · Oct 14',35],
-['GPT-6.1 Sol','Max · StS2 A10 · 75 runs · SpireClimb · Oct 14',29],
+['GPT-6 Astra','Max · StS2 A10 · SpireClimb · Oct 14',35],
+['GPT-6.1 Sol','Max · StS2 A10 · SpireClimb · Oct 14',29],
 ['GPT-6 Sol','Max · StS2 A10 · SpireClimb · Oct 14',13],
 ['Claude Opus 5.5','Max · StS2 A10 · SpireClimb · Oct 14',7],
 ['Claude Fable 5.1','Max · StS2 A10 · SpireClimb · Oct 14',4],
@@ -648,7 +653,7 @@ const BENCH=[
   practical:'For “would a maintainer merge this change to a real open-source repo?” — harder coding depth than vibe preference boards.',
   tests:'AA runs Cognition’s private FrontierCode 1.1 Main (100 of 150 tasks): changes to real open-source repos judged on whether a maintainer would merge them. Stirrup harness, 3 attempts per task, 250-turn cap; GPT-6 Luna (medium) is the LLM judge for part of the grading. Standalone AA leaderboard (not in the Intelligence Index). No confidence intervals.',
   daily:'Use when you care about merge-ready patches on real repos. Do not blend with AA-3D (3D panel taste), Image-to-WebDev (design preference), or Terminal-Bench harness scores. Remember Cognition built the benchmark and sells a coding agent.',
-  fieldNote:'AA write-up, Oct 12.',
+  fieldNote:'Board as of Oct 12 (carried).',
   data:[
 ['Claude Opus 5.5','Max, Default Fallback · FrontierCode 1.1 · Oct 12',52.2],
 ['GPT-6.1 Sol','Max · FrontierCode 1.1 · Oct 12',49.1],
@@ -1275,9 +1280,10 @@ function benchRows(b, data, scaleMax){
       : Math.max(2, d[2]/scaleMax*100);
     const val=b.lowerBetter?fmtV(b,d[2])+'%':fmtV(b,d[2]);
     const rr=(b.ci||b.boardRank||b.unranked)?rankOf(b,d):'·'; const lm=(b.boardRank&&d[3])?(b.boardName||'LMArena')+' '+d[3]+' · ':''; const rk=lm+(rr==='·'?(b.boardRank?'other setting, not ranked · ':(b.unranked&&b.unranked.includes(d[0])?'· not ranked · ':'')):(b.boardRank?rr.replace(/\.$/,'')+' among these · ':'#'+rr.replace(/\.$/,'')+' · '));
-    return `<div class="row${pick}"><div class="lbl">${d[0]}${d[1]?`<span class="cfg">${rk}${d[1]}</span>`:''}</div><div class="track"><div class="fill" style="width:${w}%"></div></div><div class="val">${val}</div></div>`;
+    return `<div class="row${pick}"><div class="lbl">${d[0]}${d[1]?`<span class="cfg">${rk}${barNote(b,d)}</span>`:''}</div><div class="track"><div class="fill" style="width:${w}%"></div></div><div class="val">${val}</div></div>`;
   }).join('');
 }
+function barNote(b,d){const nm=(b.title+' '+officialName(b)).toLowerCase();return (d[1]||'').split(' · ').map(s=>s.trim()).filter(s=>s&&!/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\.? \d{1,2}$/.test(s)&&!/^\d+ runs$/.test(s)&&!nm.includes(s.toLowerCase())).slice(0,2).join(' · ')}
 function officialName(b){return b.sub.replace(/^Official:\s*/,'').split(' · ')[0]}
 function shortCfg(c){
   const f=(c||'').split(' · ')[0].trim();
@@ -1332,6 +1338,7 @@ ORDERED.forEach(b=>{
   benchRoot.insertAdjacentHTML('beforeend',`<article class="bench" id="${b.id}">
     <p class="title">${b.title}</p>
     <span class="asof">As of ${b.asof}</span>${b.isNew?' <span class="new">NEW</span>':(b.updated?' <span class="new">UPDATED</span>':'')}${b.correction?`<p class="note" style="margin:6px 0 0">${b.correction}</p>`:''}
+    ${isFront(b)?`<details class="more cz-card"><summary>Top scores and notes <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>`:''}
     <p class="practical"><b>In practice:</b> ${b.practical}</p>
     <div class="chart">${benchRows(b, top, scaleMax)}</div>
     <details class="more">
@@ -1343,6 +1350,7 @@ ORDERED.forEach(b=>{
       <p class="sub" style="margin:8px 0 4px">${b.sub}</p>${b.landNote?`<p class="note" style="margin:4px 0 8px">${b.landNote}</p>`:''}
       ${fullChart}
     </details>
+    ${isFront(b)?'</details>':''}
   </article>`);
 });
 
@@ -1416,24 +1424,26 @@ if(ceRest.length||ceOther.length){
 (function(){const el=document.getElementById('jobList');if(!el)return;
 const GM={Coding:['swebench-mm','aa-3d','frontiercode','img2webdev','vibe','aa-tb40','vals-tb40','vals-tb21','webdev','migrate','code-agent','aa-cyber','cybergym','cyber-poc','cyber-patch'],
  Agents:['agent-ni','align','lab-aa','briefcase','gdpval','workflows-aa','finance','tbsci','fab'],
+ 'Robots and games':['aa-robotics','robo-bench','spireclimb'],
  'Chat and reasoning':['text-en','aa-index','vals-index','eci','omni','arc1','arc2','arc3','proof'],
- Media:['vision','t2i','image-edit','hss'], Speech:['stt-nonstream','stt-stream','tts'], Cost:['speed']};
+ Media:['vision','t2i','image-edit','hss'], Speech:['speech-sts','stt-nonstream','stt-stream','tts'], Cost:['speed']};
 const grp=b=>{if(b.vendor)return'Vendor-reported';const k=(b.id||'').replace(/^job-/,'');for(const g in GM)if(GM[g].includes(k))return g;return'Chat and reasoning'};
 const flag=d=>{const m=(d[1]||'').match(/preliminary|provisional|public preview/i);return m?` (${m[0][0].toUpperCase()+m[0].slice(1).toLowerCase()})`:''};
 const fmt=(g,n)=>!g.length?'—':(g.length>1?g.slice(0,n).join(', ')+(g.length>n?` (+${g.length-n})`:''):g[0]);
 const lineOf=b=>{const u=topPerModel(sortedBench(b),Infinity);
+ if(b.rankNote&&!b.vendor)return b.rankNote;
  if(b.vendor)return`highest on vendor chart: ${u[0]?u[0][0]:'—'} <span class="jl-r">(not ranked across labs)</span>`;
  const rk=u.map(d=>[d[0]+flag(d),rankOf(b,d)]).filter(x=>x[1]!=='·').map(x=>[x[0],parseInt(x[1],10)]);
  if(b.subset){const r0=Math.min(...rk.map(x=>x[1]));return fmt(rk.filter(x=>x[1]===r0).map(x=>x[0]),6)+`<span class="jl-r"> · Next: not on this card (it lists the top group only)</span>`;}
  if(!rk.length)return'—';const r0=Math.min(...rk.map(x=>x[1]));const rest=rk.filter(x=>x[1]>r0);const r1=rest.length?Math.min(...rest.map(x=>x[1])):null;
- return fmt(rk.filter(x=>x[1]===r0).map(x=>x[0]),6)+`<span class="jl-r"> · Next: ${fmt(r1==null?[]:rest.filter(x=>x[1]===r1).map(x=>x[0]),2)}</span>`;};
-const order=['Coding','Agents','Chat and reasoning','Media','Speech','Cost','Vendor-reported'];
+ return fmt(rk.filter(x=>x[1]===r0).map(x=>x[0]),6)+(r1==null?'':`<span class="jl-r"> · Next: ${fmt(rest.filter(x=>x[1]===r1).map(x=>x[0]),2)}</span>`);};
+const order=['Coding','Agents','Robots and games','Chat and reasoning','Media','Speech','Cost','Vendor-reported'];
 const by={};ORDERED.forEach(b=>{(by[grp(b)]=by[grp(b)]||[]).push(b)});
 let html='';for(const g of order){if((!by[g]||!by[g].length)&&g!=='Cost')continue;by[g]=by[g]||[];html+=`<li class="jl-g">${g}</li>`;if(g==='Cost')html+=`<li><a href="#cost">Smarts per dollar (cost board)</a><br><span class="jl-r">See the cost section</span></li>`;
  for(const b of by[g]){html+=`<li><a href="#${b.id}">${b.title}</a>${b.isNew?'<span class="new">NEW</span>':''}<span class="jl-asof">${b.asof}</span>${b.vendor?' <span class="jl-v">vendor-reported</span>':''}<br>${lineOf(b)}</li>`;}}
 el.innerHTML=html;})();
 /* JOBLIST:END */
-function openForHash(){const h=location.hash.slice(1);if(!h)return;const el=document.getElementById(h);const cw=document.getElementById('carriedWrap');if(el&&cw&&cw.contains(el)&&!cw.open){cw.open=true;requestAnimationFrame(()=>el.scrollIntoView());}}
+function openForHash(){const h=location.hash.slice(1);if(!h)return;const el=document.getElementById(h);if(el){const cc=el.querySelector(':scope>details.cz-card');if(cc)cc.open=true;}const cw=document.getElementById('carriedWrap');if(el&&cw&&cw.contains(el)&&!cw.open){cw.open=true;requestAnimationFrame(()=>el.scrollIntoView());}}
 window.addEventListener('hashchange',openForHash); openForHash();
 
 const tocSc=document.getElementById('tocScroller'), tocWrap=document.getElementById('tocWrap');
