@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-16",
- "built_at": "2026-10-16T14:14:34+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 170",
- "built_at_et": "10:14 AM",
+ "built_at": "2026-10-16T14:29:22+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 171",
+ "built_at_et": "10:29 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -29997,14 +29997,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -31219,12 +31219,12 @@
      "chatgpt"
     ],
     [
-     "MAI-Image-2.6-Flash",
+     "MAI-Image-2.5",
      84.2,
      null
     ],
     [
-     "MAI-Image-2.5",
+     "MAI-Image-2.6-Flash",
      84.2,
      null
     ],
@@ -31299,12 +31299,12 @@
      null
     ],
     [
-     "FLUX.2 [flex]",
+     "Recraft V4.1 Utility",
      70.3,
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "FLUX.2 [flex]",
      70.3,
      null
     ],
@@ -31404,12 +31404,12 @@
      null
     ],
     [
-     "Luma UNI 1",
+     "Cosmos3-Super-Text2Image (agentic)",
      64.8,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "Luma UNI 1",
      64.8,
      null
     ],
@@ -31444,12 +31444,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Instant",
+     "Cosmos3-Super-Text2Image",
      63.4,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Ideogram 4.0 Instant",
      63.4,
      null
     ],
@@ -31509,12 +31509,12 @@
      null
     ],
     [
-     "Z-Image Turbo",
+     "HunyuanImage 3.0",
      56.0,
      null
     ],
     [
-     "HunyuanImage 3.0",
+     "Z-Image Turbo",
      56.0,
      null
     ],
@@ -31749,12 +31749,12 @@
      null
     ],
     [
-     "HappyHorse-1.0",
+     "Grok Imagine Video 1.5",
      70.2,
      null
     ],
     [
-     "Grok Imagine Video 1.5",
+     "HappyHorse-1.0",
      70.2,
      null
     ],
@@ -31839,12 +31839,12 @@
      null
     ],
     [
-     "Pika 2.5",
+     "LTX-2.3 Pro",
      10.5,
      null
     ],
     [
-     "LTX-2.3 Pro",
+     "Pika 2.5",
      10.5,
      null
     ],
@@ -31915,11 +31915,11 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
-    "GPT-5.6 Luna",
-    "Claude Opus 5",
     "GPT-5.6 Sol",
-    "Claude Fable 5"
+    "Claude Fable 5",
+    "GPT-5.6 Luna",
+    "Grok 4.6",
+    "Claude Opus 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32303,11 +32303,11 @@
     ]
    ],
    "missing": [
+    "Claude Fable 5",
+    "GPT-5.6 Luna",
     "Grok 4.6",
     "Claude Opus 5",
-    "GPT-5.6 Sol",
-    "Claude Fable 5",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32345,14 +32345,14 @@
      "chatgpt"
     ],
     [
-     "Grok 4.6",
-     77.1,
-     "grok"
-    ],
-    [
      "Muse Spark 1.3",
      77.1,
      null
+    ],
+    [
+     "Grok 4.6",
+     77.1,
+     "grok"
     ],
     [
      "Qwen3.8 Max",
@@ -32465,12 +32465,12 @@
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
@@ -32550,12 +32550,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -33683,6 +33683,15 @@
    "items": "6",
    "pr": "169",
    "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-16",
+   "time": "10:14",
+   "status": "partial",
+   "items": "0",
+   "pr": "170",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
