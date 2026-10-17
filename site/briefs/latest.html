@@ -58,7 +58,7 @@ section,.bench,[id^="job-"],#ns-60,#ns-jobs,#ns-score{scroll-margin-top:60px}
 .jl .jl-asof{display:inline-block;margin-left:4px;padding:0 7px;border-radius:999px;font-size:13px;font-weight:600;background:var(--ground);border:1px solid var(--line);color:var(--muted);white-space:nowrap}
 .jl .jl-v{font-size:13px;font-weight:600;color:var(--mid);white-space:nowrap}
 .jl .jl-r{color:var(--muted)}
-.jl .jl-l{display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.jl .jl-l{display:block;white-space:normal;overflow:visible;overflow-wrap:anywhere}
 .toc-wrap{display:flex!important;align-items:center}.toc-wrap .toc-scroller{flex:1;min-width:0;padding-right:0!important}.toc-more{position:static!important;flex:none;width:18px!important;background:none!important;justify-content:center!important;padding:0!important}
 .new{margin-left:6px}
 .jl .jl-g{list-style:none;margin:10px 0 0;padding:0;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);border-bottom:0!important}
@@ -71,6 +71,15 @@ details.cz-card{margin:6px 0 0}details.cz-card>summary{font-size:13px}
 .cost-wrap.ce .ce-head span{white-space:normal;overflow-wrap:anywhere}
 @media(max-width:640px){.cost-wrap.ce .ce-head,.cost-wrap.ce .row{grid-template-columns:22px minmax(88px,1.5fr) 44px 52px 62px!important;gap:6px!important}}
 details.cz{margin:10px 0}
+html{scroll-padding-top:var(--jumpH,60px)}
+section,.bench,[id]{scroll-margin-top:0!important}
+@media(max-width:640px){
+ .toc-bar{height:auto!important;padding:5px 12px!important;margin-left:-20px;margin-right:-20px}
+ .toc-wrap{height:auto!important}
+ .toc-scroller{flex-wrap:wrap!important;overflow:visible!important;gap:4px!important;padding:0!important;scroll-snap-type:none!important}
+ .toc-scroller a{flex:1 1 auto!important;text-align:center;padding:4px 7px!important}
+ .toc-more{display:none!important}
+}
 .stamp,.chip,.toc-scroller a,.jl .jl-asof,.jl .jl-v,.jl .new,.ns-meta,.ns-note,.ns-mv,.ns-table thead th,.ns-table .asof,.story .tag,.held-strip .item .k,.bench .sub,.bench .asof,.bench .new,.legend,.pair .lab,.row .lbl,.row .val,.cost-wrap .row .lbl,.cost-wrap .row .score,.cost-wrap.ce .row .rank,.cost-wrap.ce .row .lbl,.cost-wrap.ce .row .idx,.cost-wrap.ce .row .dol,.cost-wrap.ce .row .ce,.cost-head,.cost-wrap.ce .ce-head,ol.mini li .n,ol.mini li .v,details.fl>summary,.where .job,.where .tail,.newmodel .k,.news-teaser{font-size:13px!important}
 .row .lbl .cfg,.cost-wrap .row .lbl .cfg,.cost-wrap.ce .row .lbl .cfg,ol.mini li .m small,.badge-best,.toc-bar .label,.bench .new,.where .new{font-size:13px!important}
 /* CONCISE:END */
@@ -321,7 +330,7 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
   </div>
 
   <div class="lede">
-    <p><b>Lead:</b> China proposed curbs on moving frontier model weights abroad; registration before any such transfer applies now. <b>Co-lead:</b> Anthropic pitched lawmakers a draft federal bill letting a judge halt a model only for imminent catastrophic risk, Politico reports; the text is unpublished.</p>
+    <p><b>Lead:</b> China proposed curbs on moving frontier model weights abroad; registration before any such transfer applies now. <b>Co‑lead:</b> Anthropic pitched lawmakers a draft federal bill letting a judge halt a model only for imminent catastrophic risk, Politico reports; the text is unpublished.</p>
   </div>
 
   <nav class="toc-bar" id="contents" aria-label="Contents">
@@ -448,13 +457,13 @@ details.fl[open]>summary .o{display:none} details.fl:not([open])>summary .c{disp
     <h3>Sourcing and caveats</h3>
     <details class="more cz cz-cav"><summary>Details <span class="hint"><span class="o">show</span><span class="c">hide</span></span></summary>
 <div class="card caveats">
-      <p><b>China (Announcement No. 48).</b> The catalogue is a draft open for comment to Nov 15; only the pre-transfer duty applies now. Thresholds are from Annex 1.</p>
+      <p><b>China (Announcement No. 48).</b> It lists 40 technologies, 23 of them in AI. The catalogue is a draft open for comment to Nov 15; only the pre-transfer duty applies now. Thresholds are from Annex 1.</p>
       <p><b>Anthropic draft bill.</b> Rests on Politico’s three sources, relayed by Reuters and others; the text is unpublished and no sponsor is named.</p>
       <p><b>FTC.</b> The agency confirmed “civil subpoenas”; page counts, scope and plans to compel testimony are from Axios’s source.</p>
       <p><b>Vals Science Index.</b> Intervals are from Vals model pages, which don’t state the level; only the top six are shown. BioMysteryBench, one of its three tests, is built by Anthropic.</p>
-      <p><b>Epoch Cyber ECI.</b> Few results per model (3 for GLM-5.3, 4 for Opus 5.5); 90% intervals. Epoch compares central estimates; earlier Cyber ECI values are not comparable after the October refit.</p>
+      <p><b>Epoch Cyber ECI.</b> Few results per model (3 for GLM-5.3, 4 for Opus 5.5); 90% intervals; limited-access models (Claude Mythos 5.1, GPT-5.5-Cyber and others) also reach the top group but aren’t shown. Epoch compares central estimates; earlier Cyber ECI values are not comparable after the October refit.</p>
       <p><b>Beam 1.0.</b> AA’s Coding Agent Index runs it in Reflection’s own Mirror harness. Agent Arena’s text copy drops minus signs; the sign is from LMArena’s post.</p>
-      <p><b>Vals Index.</b> Four rows moved by 0.6 points or less since Oct 12 (Gemini 3.8 Flash, Claude Haiku 5.5, Claude Sonnet 5, Mistral Large 4); their bands keep the Oct 12 width, re-centred (our arithmetic).</p>
+      <p><b>Vals Index.</b> ± is Vals’ 1 SE as published on its board and model pages; the four rows that moved since Oct 12 (Gemini 3.8 Flash, Claude Haiku 5.5, Claude Sonnet 5, Mistral Large 4) were read from their model pages on Oct 17.</p>
       <p><b>Carried scores.</b> Cards without a NEW tag, and the cost board (Oct 8), carry scores from earlier briefs; each shows its as-of date.</p>
     </div>
 </details>
@@ -471,10 +480,11 @@ function isSub(n){return ACCENT_MODELS.some(s=>n.indexOf(s)===0)}
 const NEWS_TIERS=[
  {h:'Lead · Saturday Oct 17', items:[
  {lead:true, tag:'Lead · China · MOFCOM / MOST', title:'China proposes curbs on frontier AI model weights; registration before any transfer abroad applies now',
-  body:`Commerce and Science ministries, Announcement No. 48 (Oct 16, 4:00 AM ET): a draft revision of the Catalogue of Technologies Prohibited or Restricted from Export adds 40 technologies, 23 of them in AI (large models, agents, computing clusters, information processing), plus 5 in biomedicine and 12 in photovoltaics. Comments run to Nov 15.
-From publication, firms must register listed technologies on MOFCOM’s platform before sending them abroad, including transfers begun but not finished.
-Annex 1 restricts large-model weights, key checkpoints, source code, architecture and training or inference techniques at 10^26 training FLOPs or more, 2 trillion parameters or more, or a public global top-10 ranking. A prohibited item covers models trained on China’s “core data”. Open-source and published work is excluded.
-Caveat: the catalogue is a draft; only the pre-transfer duty applies now. That API or SaaS access is not covered comes from outlets, not the annex.`,
+  body:`<b>What it is:</b> Announcement No. 48 from the Commerce and Science ministries (Oct 16, 4:00 AM ET) proposes adding 40 technologies to China’s export-control catalogue: 23 in AI (large models, agents, computing clusters, information processing), 5 in biomedicine and 12 in photovoltaics.
+<b>Thresholds (Annex 1):</b> large-model weights, key checkpoints, source code, architecture and training or inference techniques at 10^26 training FLOPs or more, 2 trillion parameters or more, or a public global top-10 ranking. Models trained on China’s “core data” would be prohibited. Open-source and published work is excluded.
+<b>Applies now:</b> firms must register listed technologies on MOFCOM’s platform before sending them abroad, including transfers already under way.
+<b>Comments:</b> until Nov 15; the catalogue itself is a draft.
+Caveat: outlets, not the annex, say API or SaaS access is not covered.`,
   why:'Why it matters: a binding registration duty today, and draft compute, size and ranking thresholds for moving frontier weights out of China.',
   links:[['MOFCOM — Announcement No. 48 of 2026 (16 Oct)','https://www.mofcom.gov.cn/zcfb/blgg/art/2026/art_1666fcaa24424766afe0683498ff0908.html','primary']]}
  ]},
@@ -482,8 +492,8 @@ Caveat: the catalogue is a draft; only the pre-transfer duty applies now. That A
  {tag:'Co-lead · Anthropic · US Congress', title:'Anthropic pitches lawmakers a draft federal bill letting a judge halt a model for imminent catastrophic risk, Politico reports',
   body:`Politico (Owen Dahlkamp, Oct 16, 5:45 PM ET), citing three people with knowledge of the draft: the government could block a model’s release or use only for a “foreseeable, imminent” risk of more than $1 billion in damage or of killing or seriously injuring more than 50 people, from a biological weapon, the model evading its developer’s controls, or a cyberattack.
 Evaluators registered with Commerce would assess labs and report an “imminent enumerated risk” within 72 hours. Only Commerce, through a D.C. federal district judge, could seek a suspension; other agencies would be barred.
-An Anthropic spokesperson told Reuters the draft reflects its “Advanced AI Framework”.
-Caveat: draft text unpublished; no sponsor named. AFP’s report that it would override some state laws is outlet-only.`,
+An Anthropic spokesperson told Politico the draft reflects its “Advanced AI Framework”.
+Caveat: Politico and AFP report it would preempt some state laws; the text is unpublished. No sponsor is named.`,
   why:'Why it matters: a frontier lab’s own proposal for hard halt thresholds and a court-only suspension path.',
   links:[['Politico — Anthropic AI safety bill draft (16 Oct)','https://www.politico.com/news/2026/10/16/anthropic-ai-safety-01124654','news']]}
  ]},
@@ -543,7 +553,7 @@ const HELD=[
    ACCENT_MODELS = ['Beam 1.0']. */
 
 const BENCH=[
- {id:'job-vals-science', asof:'Oct 16', isNew:true, subset:true, field:21, dp:2, title:'Agentic science research (Vals Science Index)', sub:'Official: Vals Science Index · Vals AI · independent · equal average of BioMysteryBench, MysteryMechanism and Terminal-Bench-Science · board updated 10/16 · 21 models · top six shown, with ± from Vals model pages (level not stated) · default max reasoning effort', ci:{'GPT-6 Astra':[62.83,67.35],'GPT-6.1 Sol':[57.32,61.94],'Claude Sonnet 5.5':[56.81,61.43],'Claude Opus 5.5':[56.33,60.97],'Gemini 4 Argon':[53.07,57.65],'Muse Wonder Full':[46.31,50.77]},
+ {id:'job-vals-science', asof:'Oct 16', isNew:true, subset:true, topN:6, field:21, dp:2, title:'Agentic science research (Vals Science Index)', sub:'Official: Vals Science Index · Vals AI · independent · equal average of BioMysteryBench, MysteryMechanism and Terminal-Bench-Science · board updated 10/16 · 21 models · top six shown, with ± from Vals model pages (level not stated) · default max reasoning effort', ci:{'GPT-6 Astra':[62.83,67.35],'GPT-6.1 Sol':[57.32,61.94],'Claude Sonnet 5.5':[56.81,61.43],'Claude Opus 5.5':[56.33,60.97],'Gemini 4 Argon':[53.07,57.65],'Muse Wonder Full':[46.31,50.77]},
   landNote:'Biggest move: GPT-6 Astra (65.09% ±2.26) leads alone; its low end (62.83) clears GPT-6.1 Sol’s high end (61.94). Sol (59.63%), Claude Sonnet 5.5 (59.12%), Claude Opus 5.5 (58.65%) and Gemini 4 Argon (55.36%) tie for 2nd; Sol is the cheapest of the five at $1.36 per test vs Astra’s $8.03. Muse Wonder Full is a clear 6th (48.54%).',
   practical:'For agents that dig into real datasets, run experiments and work through research tasks in a terminal — science work, not recall.',
   tests:'Vals averages three agentic tests equally. BioMysteryBench: investigate real biological datasets to answer open questions (some tasks are beyond human experts). MysteryMechanism: recover a hidden mechanism by running experiments in a simulated lab. Terminal-Bench-Science: research workflows in a terminal across life, physical, earth, mathematical and engineering sciences. The model gets data, a lab or a terminal and is scored on what it finds.',
@@ -558,11 +568,11 @@ const BENCH=[
 ['Muse Wonder Full','Max · ±2.23 · Science Index · $10.15/test · #6 of 21',48.54]
   ]},
  {id:'job-cyber-eci', asof:'Oct 16', isNew:true, dp:2, title:'Cyber capability across many tests (Epoch Cyber ECI)', sub:'Official: Epoch Cyber ECI · Epoch AI · independent · cyber-only version of the ECI, same scale, NOT a percent · data as of Oct 8, post Oct 16 · 90% intervals · public models tracked elsewhere in this brief, plus GLM-5.2 · 2 to 10 cyber results per model', ci:{'Claude Opus 5.5':[166.66,177.32],'GPT-6 Astra':[166.93,177.96],'GPT-6.1 Sol':[164.89,174.78],'Claude Opus 5':[162.97,171.59],'Claude Sonnet 5.5':[163.26,171.68],'GPT-5.6 Sol':[162.98,171.33],'GPT-6 Sol':[155.03,167.46],'GLM-5.3':[155.83,166.97],'Claude Haiku 5.5':[144.61,161.77],'Kimi K3':[147.96,160.67],'GPT-6 Luna':[109.15,159.86],'Claude Sonnet 5':[135.27,158.39],'GLM-5.2':[151.72,156.46]},
-  landNote:'GLM-5.3 (160.10, 155.83–166.97) is the top open-weight model by central estimate but rests on 3 CAISI results; its upper bound reaches the lower bounds of Claude Opus 5.5 (171.14) and GPT-6 Astra (171.03), so eight models share the top group under our interval rule. Epoch’s 6–7 month open-weight lag reads from central estimates, not intervals.',
+  landNote:'GLM-5.3 (160.10, 155.83–166.97) is the top open-weight model by central estimate but rests on 3 CAISI results; its upper bound (166.97) reaches the lower bounds of Claude Opus 5.5 (166.66) and GPT-6 Astra (166.93), whose central scores are 171.14 and 171.03, so eight of the models we track share the top group under our interval rule. Epoch’s 6–7 month open-weight lag reads from central estimates, not intervals.',
   practical:'For “how strong is this model on hacking and cyber-defense tests overall?” — a capability reading for risk work, not a tool pick.',
   tests:'Epoch places each model’s cyber benchmark results (from UK AISI, CAISI, Irregular, developer reports and other public sources) on the same scale as its general ECI, keeping benchmark difficulties from a joint fit, so harder tests count for more. Models need at least two cyber results to appear. With so few results per model, intervals are wide.',
   daily:'Use to see where open-weight models sit on cyber capability; for picking a defensive tool, use the AA Cyber Index card. Don’t compare with earlier Cyber ECI values: the October refit lowered several top scores.',
-  fieldNote:'Epoch data insight by Jaeho Lee and Alexander Barry (post Oct 16); Cyber ECI data as of Oct 8 (76 models, 35 cyber benchmarks, 324 results; 57 models with at least two results shown by Epoch). Epoch compares models by central estimates and says better estimates of uncertainty in differences are coming. CAISI did not name the US models it tested, so Epoch attributed those results. Opus 5.5 (4 developer-reported results) and Astra (7) share no benchmarks. Limited-access models not shown: Claude Mythos 5.1 169.60, Claude Mythos 5 168.27. GLM-5.3 licence: Epoch says open weights (restricted use); LMArena lists MIT.',
+  fieldNote:'Epoch data insight by Jaeho Lee and Alexander Barry (post Oct 16); Cyber ECI data as of Oct 8 (76 models, 35 cyber benchmarks, 324 results; 57 models with at least two results shown by Epoch). Epoch compares models by central estimates and says better estimates of uncertainty in differences are coming. CAISI did not name the US models it tested, so Epoch attributed those results. Opus 5.5 (4 developer-reported results) and Astra (7) share no benchmarks. Limited-access models, not shown, also sit in the top group on Epoch’s table: Claude Mythos 5.1 169.60 (165.42–174.63), Claude Mythos 5 168.27 (164.19–178.45), GPT-5.5-Cyber 163.84 (160.50–169.93) and Claude Mythos Preview (April) 164.82 (161.81–169.99). GLM-5.3 licence: Epoch says open weights (restricted use); LMArena lists MIT.',
   data:[
 ['Claude Opus 5.5','Effort not stated · 166.66–177.32 · 4 cyber results · Epoch',171.14],
 ['GPT-6 Astra','Effort not stated · 166.93–177.96 · 7 cyber results · Epoch',171.03],
@@ -592,7 +602,7 @@ const BENCH=[
 ['Claude Haiku 5.5','Max thinking · Provider Adapter · ARC · Oct 14',2.82],
 ['GPT-6 Luna','Max thinking · Provider Adapter · ARC',0.59]
   ]},
- {id:'job-arxivmath', asof:'Oct 16', field:7, dp:2, title:'Research-level math answers (MathArena ArXivMath, Sep)', sub:'Official: MathArena ArXivMath 09/2026 · independent · 53 problems from recent arXiv papers · final-answer accuracy · 95% intervals · each lab’s model in its maker’s own agent harness · 7 models', ci:{'GPT-6.1 Sol':[86.20,96.82],'Gemini 4 Argon':[81.50,93.98],'Claude Opus 5.5':[74.78,89.38],'Gemini 3.8 Flash':[40.48,59.52],'Qwen3.8':[35.80,54.76],'Grok 4.7':[35.80,54.76],'DeepSeek V4.1 Flash':[31.18,49.96]},
+ {id:'job-arxivmath', asof:'Oct 16', field:7, dp:2, title:'Research-level math answers (MathArena ArXivMath, Sep)', sub:'Official: MathArena ArXivMath 09/2026 · independent · 53 problems from recent arXiv papers · final-answer accuracy · 95% intervals · each lab’s model in its maker’s own agent harness · 7 models', ci:{'GPT-6.1 Sol':[86.20,96.82],'Gemini 4 Argon':[81.50,93.98],'Claude Opus 5.5':[74.78,89.38],'Gemini 3.8 Flash':[40.48,59.52],'Qwen3.8 2.4T':[35.80,54.76],'Grok 4.7':[35.80,54.76],'DeepSeek V4.1 Flash':[31.18,49.96]},
   landNote:'GPT-6.1 Sol (91.51% ±5.31), Gemini 4 Argon (87.74% ±6.24) and Claude Opus 5.5 (82.08% ±7.30) share the top group: Opus’s upper bound (89.38) reaches past Sol’s lower bound (86.20). Gemini 3.8 Flash (50.00%) leads a distant second group.',
   practical:'For “can it get the right final answer to a fresh research-level math problem?” — not proofs, and not competition math.',
   tests:'MathArena pulls research-level problems with concrete final answers (numbers, formulas or objects) from arXiv papers posted that month, so models are unlikely to have seen them. Each answer is checked for correctness; scores are accuracy with a 95% interval. Lab models run in their makers’ own agent harnesses.',
@@ -603,11 +613,11 @@ const BENCH=[
 ['Gemini 4 Argon','High · ±6.24 · Antigravity · $3.24',87.74],
 ['Claude Opus 5.5','High · ±7.30 · Claude Code · $1.98',82.08],
 ['Gemini 3.8 Flash','±9.52 · $1.35',50.0],
-['Qwen3.8','±9.48 · open weights · $2.16',45.28],
+['Qwen3.8 2.4T','±9.48 · open weights · $2.16',45.28],
 ['Grok 4.7','Extra-high · ±9.48 · $10.26',45.28],
 ['DeepSeek V4.1 Flash','Max · ±9.39 · open weights · $1.13',40.57]
   ]},
- {id:'job-brokenarxiv', asof:'Oct 16', field:7, dp:2, title:'Refusing to “prove” false math claims (MathArena BrokenArXiv, Sep)', sub:'Official: MathArena BrokenArXiv 09/2026 · independent · 53 plausible but provably false statements made from recent arXiv results · pass = flags the claim as false or declines to prove it · LLM judge · 95% intervals · 7 models', ci:{'GPT-6.1 Sol':[75.50,89.90],'Claude Opus 5.5':[68.69,84.77],'DeepSeek V4.1 Flash':[45.24,64.20],'Gemini 4 Argon':[40.13,59.25],'Qwen3.8':[24.07,41.97],'Grok 4.7':[15.63,39.71],'Gemini 3.8 Flash':[18.31,35.15]},
+ {id:'job-brokenarxiv', asof:'Oct 16', field:7, dp:2, title:'Refusing to “prove” false math claims (MathArena BrokenArXiv, Sep)', sub:'Official: MathArena BrokenArXiv 09/2026 · independent · 53 plausible but provably false statements made from recent arXiv results · pass = flags the claim as false or declines to prove it · LLM judge · 95% intervals · 7 models', ci:{'GPT-6.1 Sol':[75.50,89.90],'Claude Opus 5.5':[68.69,84.77],'DeepSeek V4.1 Flash':[45.24,64.20],'Gemini 4 Argon':[40.13,59.25],'Qwen3.8 2.4T':[24.07,41.97],'Grok 4.7':[15.63,39.71],'Gemini 3.8 Flash':[18.31,35.15]},
   landNote:'GPT-6.1 Sol (82.70% ±7.20) and Claude Opus 5.5 (76.73% ±8.04) share the top group. DeepSeek V4.1 Flash (54.72%) and Gemini 4 Argon (49.69%) form the next group — Argon falls well below its ArXivMath showing.',
   practical:'For “will it tell me a math claim is wrong instead of faking a proof?” — reliability when the premise is false.',
   tests:'MathArena takes statements from recent arXiv abstracts and perturbs them so they become provably false (for example, reversing an implication), then asks the model to prove them. A model fails if it claims a proof and passes if it says the statement is false or that it cannot prove it. An LLM judge, checked by hand, grades each reply.',
@@ -618,11 +628,11 @@ const BENCH=[
 ['Claude Opus 5.5','High · ±8.04 · Claude Code · $2.30',76.73],
 ['DeepSeek V4.1 Flash','Max · ±9.48 · open weights · $0.61',54.72],
 ['Gemini 4 Argon','High · ±9.56 · Antigravity · $7.22',49.69],
-['Qwen3.8','±8.95 · open weights · $2.69',33.02],
+['Qwen3.8 2.4T','±8.95 · open weights · $2.69',33.02],
 ['Grok 4.7','Extra-high · ±12.04 · $5.55',27.67],
 ['Gemini 3.8 Flash','±8.42 · $0.73',26.73]
   ]},
- {id:'job-arxivlean', asof:'Oct 16', field:5, dp:2, title:'Machine-checked research proofs in Lean (MathArena ArXivLean, Sep)', sub:'Official: MathArena ArXivLean 09/2026 · independent · 53 statements from recent arXiv papers, auto-formalized and human-checked · proof must pass Lean verification · 95% intervals · 5 models', ci:{'Claude Opus 5.5':[33.73,60.61],'GPT-6 Astra':[24.69,50.79],'GPT-6.1 Sol':[22.94,48.76],'DeepSeek V4.1 Flash':[0.00,11.88],'Qwen3.8':[0.00,5.55]},
+ {id:'job-arxivlean', asof:'Oct 16', field:5, dp:2, title:'Machine-checked research proofs in Lean (MathArena ArXivLean, Sep)', sub:'Official: MathArena ArXivLean 09/2026 · independent · 53 statements from recent arXiv papers, auto-formalized and human-checked · proof must pass Lean verification · 95% intervals · 5 models', ci:{'Claude Opus 5.5':[33.73,60.61],'GPT-6 Astra':[24.69,50.79],'GPT-6.1 Sol':[22.94,48.76],'DeepSeek V4.1 Flash':[0.00,11.88],'Qwen3.8 2.4T':[0.00,5.55]},
   landNote:'Claude Opus 5.5 (47.17% ±13.44), GPT-6 Astra (37.74% ±13.05) and GPT-6.1 Sol (35.85% ±12.91) share the top group — only 5 models and wide intervals. The two open-weight models score 6% or less.',
   practical:'For agents that turn fresh research statements into proofs a computer can verify — formal math, not chat.',
   tests:'MathArena extracts statements from recent arXiv abstracts, formalizes them in Lean with an LLM and has a person check each formalization. The model must output a Lean proof (auxiliary lemmas allowed) that passes a verifier built to stop syntax tricks. Tools: Lean execution, semantic search over Lean libraries and a persistent lemma scratchpad.',
@@ -633,7 +643,7 @@ const BENCH=[
 ['GPT-6 Astra','Max · ±13.05 · Codex · $4.83',37.74],
 ['GPT-6.1 Sol','Max · ±12.91 · Codex · $1.08',35.85],
 ['DeepSeek V4.1 Flash','Max · ±6.22 · open weights · $1.87',5.66],
-['Qwen3.8','±3.66 · open weights · $9.00',1.89]
+['Qwen3.8 2.4T','±3.66 · open weights · $9.00',1.89]
   ]},
  {id:'job-rsi', asof:'Oct 15', subset:true, dp:2, title:'Autonomous AI research tasks (Vals RSI Index)', sub:'Official: Vals RSI Index · independent · four open-ended LLM R&D tasks under fixed compute and time · reference-anchored log scale · single runs · no intervals · page updated Oct 15 · 25 models · top four plus Muse Wonder Full',
   rankNote:'Opus 5.5 1st by value; single runs, no intervals', landNote:'Opus 5.5 1st by value; single runs, no intervals. Claude Opus 5.5 37.31%, Claude Fable 5.1 36.09%, Claude Opus 5 33.02%, Gemini 4 Argon 30.55%; the rest trail at 28.1% or below. Muse Wonder Full (max) is 9th of 25 at 24.43%.',
@@ -941,13 +951,13 @@ const BENCH=[
 ['Qwen3.8 Max','Setting not stated · Vals · Oct 7',64.70,'#43 of 110'],
 ['GLM-5.3-Flash','Setting not stated · Vals · Oct 7',30.76,'#69 of 110']
   ]},
- {id:'job-vals-index', asof:'Oct 16', isNew:true, dp:2, boardRank:true, boardName:'Vals', title:'Overall job mix (Vals Index)', sub:'Official: Vals Index v2.1 · Vals AI · independent · board updated 10/16 · 49 models · Muse Spark Open added Oct 16 · proprietary suites · models tracked elsewhere in this brief · each label leads with Vals’ own rank, then the rank among these · ± = 1 SE (standard error, Vals), not a 95% interval · ranks use Vals’ ±1 SE for every row', ci:{'Gemini 4 Argon':[67.92,69.87],'Muse Wonder Full':[63.50,65.64],'Muse Wonder':[59.99,62.13],'Claude Sonnet 5.5':[66.12,67.96],'Claude Opus 5.5':[66.08,67.86],'Claude Fable 5.1':[64.71,66.94],'Claude Opus 5':[62.72,64.63],'GPT-6 Astra':[61.94,64.31],'Claude Fable 5':[60.39,62.39],'GPT-6.1 Sol':[60.14,62.17],'Muse Spark 1.3':[56.97,59.35],'GPT-5.6 Sol':[56.99,59.02],'GPT-6 Sol':[56.52,58.55],'MiMo-V2.6-Pro':[54.02,56.38],'Grok 4.7':[53.88,56.02],'Gemini 3.8 Flash':[53.86,55.91],'Claude Haiku 5.5':[53.03,55.85],'GLM-5.3':[52.21,54.82],'MiMo-V2.6-Flash':[52.13,54.33],'GPT-5.6 Terra':[51.79,54.38],'Grok 4.6':[50.94,53.24],'Claude Sonnet 5':[50.81,53.00],'GPT-5.6 Luna':[50.63,52.74],'DeepSeek V4.1 Flash':[50.19,52.45],'GPT-6 Luna':[50.14,52.29],'Kimi K3':[49.30,51.29],'Qwen3.8 Max':[46.93,49.61],'Mistral Large 4 Preview':[47.54,49.77],'DeepSeek V4 Pro 0813':[46.51,48.74],'Muse Spark Open':[45.41,47.81]},
+ {id:'job-vals-index', asof:'Oct 16', isNew:true, dp:2, boardRank:true, boardName:'Vals', title:'Overall job mix (Vals Index)', sub:'Official: Vals Index v2.1 · Vals AI · independent · board updated 10/16 · 49 models · Muse Spark Open added Oct 16 · proprietary suites · models tracked elsewhere in this brief · each label leads with Vals’ own rank, then the rank among these · ± = 1 SE (standard error, Vals), not a 95% interval · ranks use Vals’ ±1 SE for every row', ci:{'Gemini 4 Argon':[67.92,69.87],'Muse Wonder Full':[63.50,65.64],'Muse Wonder':[59.99,62.13],'Claude Sonnet 5.5':[66.12,67.96],'Claude Opus 5.5':[66.08,67.86],'Claude Fable 5.1':[64.71,66.94],'Claude Opus 5':[62.72,64.63],'GPT-6 Astra':[61.94,64.31],'Claude Fable 5':[60.39,62.39],'GPT-6.1 Sol':[60.14,62.17],'Muse Spark 1.3':[56.97,59.35],'GPT-5.6 Sol':[56.99,59.02],'GPT-6 Sol':[56.52,58.55],'MiMo-V2.6-Pro':[54.02,56.38],'Grok 4.7':[53.88,56.02],'Gemini 3.8 Flash':[53.87,55.91],'Claude Haiku 5.5':[53.03,55.85],'GLM-5.3':[52.21,54.82],'MiMo-V2.6-Flash':[52.13,54.33],'GPT-5.6 Terra':[51.79,54.38],'Grok 4.6':[50.94,53.24],'Claude Sonnet 5':[50.80,53.00],'GPT-5.6 Luna':[50.63,52.74],'DeepSeek V4.1 Flash':[50.19,52.45],'GPT-6 Luna':[50.14,52.29],'Kimi K3':[49.30,51.29],'Qwen3.8 Max':[46.93,49.61],'Mistral Large 4 Preview':[47.53,49.79],'DeepSeek V4 Pro 0813':[46.51,48.74],'Muse Spark Open':[45.41,47.81]},
   correction:'Correction: our Oct 7 brief labelled Mistral Large 4’s result “Vals Index v3” and called it not comparable with this card. Vals’ page lists the current version as v2.1 (Sep 25), so it’s one board and the two cards are merged here.',
   landNote:'Oct 16 board (49 models): Meta’s open-weight Muse Spark Open (xhigh) is Vals #38 at 46.61% ±1.20, 27= among these, level with DeepSeek V4 Pro 0813; its best component is Finance Agent v2 (3rd of 79). Gemini 4 Argon (68.90% ±0.97, 1 SE) and Claude Sonnet 5.5 (67.04%) share 1=; Sonnet 5.5 and Opus 5.5 are 0.07 points apart.',
   practical:'Quick “how useful is it across a spread of paid professional work?” skim — not a public, reproducible ruler.',
   tests:'Vals Index blends eight of Vals’ suites into one composite: finance (Finance Agent v2 and spreadsheet financial modelling), coding (Terminal-Bench 4.0, Vibe Code Bench and Code Migration), legal (case-law research and Harvey’s long-horizon legal agent benchmark) and corporate tax research. Each sector is weighted by its share of US GDP, so finance counts most. Vals runs the models itself, independent of the labs, but six of the suites are private, so you can’t rerun it yourself.',
   daily:'Good for a broad “professional work” read; use the specific job cards for terminal work, vibe coding, proofs and migration. Gaps of a point or so are inside Vals’ error bars.',
-  fieldNote:'Vals Index board, “As of October 16, 2026” (49 models). Muse Spark Open (model page): reasoning effort xhigh via Together AI, temperature 1, max output 131,072 tokens; $4.08 per test on the board (Vals’ post said $0.77; board figure used); Terminal-Bench 4.0 6.57%. Four rows moved by 0.6 points or less since Oct 12; their bands keep the Oct 12 width, re-centred (our arithmetic). Mistral Large 4 is listed without “Preview” on the Oct 16 board. Muse Wonder pages: reasoning effort max, temperature 1, max output 131,072 tokens; $4/$20 per million tokens; fallback 0.00%; refusal 0.04% (Wonder Full) and 0.22% (Wonder); $8.56 and $11.43 per test. Vals’ fallback note: Sonnet 5.5, Opus 5.5 and Fable 5.1 include some component tasks answered by a fallback model after a provider refusal; counting those as failures lowers them to 65.85%, 65.05% and 64.59%, with the order unchanged. Claude Haiku 5.5 (model page): compute effort max, temperature 1, max output 128,000 tokens; $2.99 per test; fallback rate 0.00%, refusal rate 0.22%; Vals notes “some benchmarks may use different provider and parameters.” Mistral Large 4 (high reasoning effort) is Vals #34 of 49. Ranks use Vals’ ±1 SE (standard error) for every row. Not shown because they aren’t tracked elsewhere in this brief: Claude Opus 4.8 (#15), Gemini 3.7 Flash, Ember-1, Hy4 Preview, Step 5 Preview, Muse Spark 1.2, DeepSeek V4 Flash 0731 and others. Vals’ v2.1 (Sep 25) moved Terminal-Bench 4.0 into the coding bucket and added a tax sector.',
+  fieldNote:'Vals Index board, “As of October 16, 2026” (49 models). Muse Spark Open (model page): reasoning effort xhigh via Together AI, temperature 1, max output 131,072 tokens; $4.08 per test on the board (Vals’ post said $0.77; board figure used); Terminal-Bench 4.0 6.57%. Four rows moved by 0.6 points or less since Oct 12; their ± are from Vals model pages (Gemini 3.8 Flash ±1.02, Claude Haiku 5.5 ±1.41, Claude Sonnet 5 ±1.10, Mistral Large 4 ±1.13). Mistral Large 4 is listed without “Preview” on the Oct 16 board. Muse Wonder pages: reasoning effort max, temperature 1, max output 131,072 tokens; $4/$20 per million tokens; fallback 0.00%; refusal 0.04% (Wonder Full) and 0.22% (Wonder); $8.56 and $11.43 per test. Vals’ fallback note: Sonnet 5.5, Opus 5.5 and Fable 5.1 include some component tasks answered by a fallback model after a provider refusal; counting those as failures lowers them to 65.85%, 65.05% and 64.59%, with the order unchanged. Claude Haiku 5.5 (model page): compute effort max, temperature 1, max output 128,000 tokens; $2.99 per test; fallback rate 0.00%, refusal rate 0.22%; Vals notes “some benchmarks may use different provider and parameters.” Mistral Large 4 (high reasoning effort) is Vals #34 of 49. Ranks use Vals’ ±1 SE (standard error) for every row. Not shown because they aren’t tracked elsewhere in this brief: Claude Opus 4.8 (#15), Gemini 3.7 Flash, Ember-1, Hy4 Preview, Step 5 Preview, Muse Spark 1.2, DeepSeek V4 Flash 0731 and others. Vals’ v2.1 (Sep 25) moved Terminal-Bench 4.0 into the coding bucket and added a tax sector.',
   data:[
 ['Gemini 4 Argon','High thinking · Vals Index · Oct 16',68.90,'#1 of 49'],
 ['Claude Sonnet 5.5','Setting not stated · w/ fallbacks · Vals Index · Oct 16',67.04,'#2 of 49'],
@@ -1103,18 +1113,18 @@ const BENCH=[
 ['Beam 1.0','Setting not stated · ±13 · WebDev · Oct 16 · Preliminary · open weights',1438,'#80 of 145']
   ]},
  {id:'job-aa-cyber', asof:'Oct 16', isNew:true, dp:2, title:'Cyber defense overall (AA Cyber Index)', sub:'Official: Artificial Analysis Cyber Index · independent · equally weighted CWE-Bench-AA, DeepsecBench-AA F2 (a findings score weighting recall above precision), CyberGym-E2E-AA · Oct 8 adds trusted-access models · public and trusted-access rows are not comparable · the trusted-access row is shown with · and not ranked · Beam 1.0 added Oct 16', unranked:['GPT-6 Sol (Daybreak Blue)'],
-  landNote:'Public top (AA’s default view): Grok 4.7 (xhigh) and MiMo-V2.6-Pro at 56, rank 1= among public rows. Trusted-access (not public): GPT-6 Sol Daybreak Blue (max) scores 68.66 vs 36.83 for public GPT-6 Sol (max) — almost all from CyberGym refusals dropping to zero; do not rank it against public models. Oct 16: Reflection’s Beam 1.0 scores 34 (33.7 unrounded), 13th of 21 by value; AA calls it the leading US open-weights model it has tested.',
+  landNote:'Public top (AA’s default view): Grok 4.7 (xhigh) and MiMo-V2.6-Pro, tied at displayed value (56) among public rows; AA gives no intervals. Trusted-access (not public): GPT-6 Sol Daybreak Blue (max) scores 68.66 vs 36.83 for public GPT-6 Sol (max) — almost all from CyberGym refusals dropping to zero; do not rank it against public models. Oct 16: Reflection’s Beam 1.0 scores 33.7, 13th of 21 by value; AA calls it the leading US open-weights model it has tested.',
   practical:'For “can an agent do defensive security work: find the hole, prove it, patch it without breaking things?”',
   tests:'Artificial Analysis averages three agentic cyber-defense tests, equally weighted. CWE-Bench-AA has the agent audit a real open-source repository and patch the weakness; a deterministic checker confirms the exploit is blocked and legitimate behaviour still works. DeepsecBench-AA has it review application code and submit findings, matched against an expert-verified answer set. CyberGym-E2E-AA has it find, reproduce and patch memory-safety bugs. Declined tasks still score zero. Trusted-access rows are models with fewer cyber guardrails, marked “not publicly available.”',
   daily:'Shortlist on the public rows unless you are enrolled in a trusted-access programme (e.g. OpenAI Daybreak Blue). A big jump under reduced refusals is about access policy, not a new public model.',
   fieldNote:'AA article “Introducing trusted-access models to the Artificial Analysis Cyber Index” (Oct 8). Daybreak is OpenAI’s Trusted Access for Cyber programme; Blue gives reduced refusals on supported mainline models including GPT-6 Sol for verified defensive work. Daybreak Blue components: CWE 0.647, Deepsec 0.481, CyberGym-E2E 0.931; zero safety blocks; $1.77 per task. Public GPT-6 Sol (max) 36.83; its CyberGym-E2E is 0 with a 100% refusal rate. Carried public context: Mistral Large 4 Preview 50 and GLM-5.3-Flash 50 (AA Oct 6 article). Beam 1.0 (AA post Oct 16): 33.7; not on the same scale as Epoch’s Cyber ECI.',
   data:[
 ['GPT-6 Sol (Daybreak Blue)','Max · trusted-access · NOT public · AA · Oct 8',68.66],
-['Grok 4.7','xhigh · public · AA · Oct 8',56],
-['MiMo-V2.6-Pro','Setting not stated · public · AA article · Oct 6',56],
+['Grok 4.7','xhigh · public · tied at displayed value · AA · Oct 8',56],
+['MiMo-V2.6-Pro','Setting not stated · public · tied at displayed value · AA article · Oct 6',56],
 ['Mistral Large 4 Preview','Effort not stated · public · AA · Oct 6 · public preview',50],
 ['GLM-5.3-Flash','Setting not stated · public · AA article · Oct 6',50],
-['Beam 1.0','Effort not stated · public · AA · Oct 16 · open weights',34],
+['Beam 1.0','Effort not stated · public · AA · Oct 16 · open weights',33.7],
 ['GPT-6 Sol','Max · public · AA · Oct 8',36.83]
   ]},
  {id:'job-cybergym', asof:'Oct 6', title:'Find, prove and patch a real bug (CyberGym, AA run)', sub:'Official: CyberGym-E2E-AA · Artificial Analysis · independent · from Berkeley RDI’s CyberGym-E2E · 131 tasks · pass@1 · figures named in AA’s Oct 6 article only',
@@ -1183,7 +1193,7 @@ const BENCH=[
     ['GPT-6.1 Sol','Max thinking · AA Sol page · OpenAI API · Oct 12',65.8],
     ['GPT-6 Astra','Max thinking · AA Astra page · OpenAI API · Oct 12',63.7]
   ]},
- {id:'job-agent-ni', asof:'Oct 16', isNew:true, subset:true, dp:2, title:'Agent sessions that go better (Net Improvement)', sub:'Official: LMArena Agent Arena Overall · Net Improvement (NI) · NOT Elo · board Oct 16 · 2,534,501 sessions · 52 models · top six plus Muse Wonder (Max), MiMo-V2.6-Pro, Claude Haiku 5.5 (High) and Beam 1.0 (added Oct 16)', ci:{'Claude Opus 5.5':[16.14,21.62],'GPT-6 Astra':[11.83,16.43],'Claude Fable 5.1':[12.04,16.02],'GPT-6.1 Sol':[11.70,15.50],'Gemini 4 Argon':[11.90,14.56],'Claude Sonnet 5.5':[9.86,16.12],'Muse Wonder':[3.23,6.65],'MiMo-V2.6-Pro':[2.86,5.04],'Claude Haiku 5.5':[0.55,2.43],'Beam 1.0':[-7.51,0.17]},
+ {id:'job-agent-ni', asof:'Oct 16', isNew:true, subset:true, topN:6, boardN:52, dp:2, title:'Agent sessions that go better (Net Improvement)', sub:'Official: LMArena Agent Arena Overall · Net Improvement (NI) · NOT Elo · board Oct 16 · 2,534,501 sessions · 52 models · top six plus Muse Wonder (Max), MiMo-V2.6-Pro, Claude Haiku 5.5 (High) and Beam 1.0 (added Oct 16)', ci:{'Claude Opus 5.5':[16.14,21.62],'GPT-6 Astra':[11.83,16.43],'Claude Fable 5.1':[12.04,16.02],'GPT-6.1 Sol':[11.70,15.50],'Gemini 4 Argon':[11.90,14.56],'Claude Sonnet 5.5':[9.86,16.12],'Muse Wonder':[3.23,6.65],'MiMo-V2.6-Pro':[2.86,5.04],'Claude Haiku 5.5':[0.55,2.43],'Beam 1.0':[-7.51,0.17]},
   landNote:'Oct 16 board: Claude Opus 5.5 (Max, 18.88 ±2.74) and GPT-6 Astra (14.13 ±2.30) share 1=; Opus 5.5’s low end (16.14) clears Claude Fable 5.1, GPT-6.1 Sol, Gemini 4 Argon and Claude Sonnet 5.5, which share 2=. Reflection’s Beam 1.0 is −3.67 ±3.84% (#38 of 52, spread 28–48) on 7,489 sessions: an estimate below the average model, though its interval reaches just above zero (+0.17).',
   practical:'For “which model makes real user agent sessions go better?” — a treatment effect, not a preference Elo or a pass rate.',
   tests:'Net Improvement is how much better a real user’s agent session goes with this model than with the average model, in percentage points. LMArena measures it from implicit behaviour signals. It is not an Elo score and not a pass-rate agent bench. ± marks the confidence interval; values drift as the average model improves.',
@@ -1412,7 +1422,7 @@ function benchRows(b, data, scaleMax){
       ? Math.max(2, ((scaleMax-d[2])/(scaleMax-scaleMin||1))*100)
       : Math.max(2, d[2]/scaleMax*100);
     const val=b.lowerBetter?fmtV(b,d[2])+'%':fmtV(b,d[2]);
-    const rr=(b.ci||b.boardRank||b.unranked)?rankOf(b,d):'·'; const lm=(b.boardRank&&d[3])?(b.boardName||'LMArena')+' '+d[3]+' · ':''; const rk=lm+(rr==='·'?(b.boardRank?'other setting, not ranked · ':(b.unranked&&b.unranked.includes(d[0])?'· not ranked · ':'')):(b.boardRank?rr.replace(/\.$/,'')+' among these · ':'#'+rr.replace(/\.$/,'')+' · '));
+    const rr=(b.ci||b.boardRank||b.unranked)?rankOf(b,d):'·'; const lm=(b.boardRank&&d[3])?(b.boardName||'LMArena')+' '+d[3]+' · ':''; const rk=lm+(rr==='·'?(b.boardRank?'other setting, not ranked · ':(b.unranked&&b.unranked.includes(d[0])?'· not ranked · ':'')):(b.boardRank?rr.replace(/\.$/,'')+' among these · ':'#'+(b.ci?rr.replace(/\.$/,''):rr.replace(/\.$/,'').replace(/=$/,' tied'))+' · '));
     return `<div class="row${pick}"><div class="lbl">${d[0]}${d[1]?`<span class="cfg">${barNote(b,d,rk)}</span>`:''}</div><div class="track"><div class="fill" style="width:${w}%"></div></div><div class="val">${val}</div></div>`;
   }).join('');
 }
@@ -1561,7 +1571,7 @@ const GM={Coding:['swebench-mm','aa-3d','frontiercode','img2webdev','vibe','aa-t
  'Chat and reasoning':['text-en','aa-index','vals-index','eci','omni','arc1','arc2','arxivmath','brokenarxiv','arxivlean','proof'],
  Media:['vision','t2i','image-edit','hss'], Speech:['speech-sts','stt-nonstream','stt-stream','tts'], Cost:['speed']};
 const grp=b=>{if(b.vendor)return'Vendor-reported';const k=(b.id||'').replace(/^job-/,'');for(const g in GM)if(GM[g].includes(k))return g;return'Chat and reasoning'};
-const flag=d=>{const m=(d[1]||'').match(/preliminary|provisional|public preview/i);return m?` (${m[0][0].toUpperCase()+m[0].slice(1).toLowerCase()})`:''};
+const flag=d=>{const m=(d[1]||'').match(/preliminary|provisional|public preview/i);if(!m)return'';if(/preview/i.test(m[0])&&/preview/i.test(d[0]))return'';const w={preliminary:'Preliminary',provisional:'Provisional','public preview':'Preview'}[m[0].toLowerCase()];return` (${w})`};
 const fmt=g=>!g.length?'—':g[0]+(g.length>1?` (+${g.length-1})`:'');
 const notes=[];
 const lineOf=b=>{const u=topPerModel(sortedBench(b),Infinity);
@@ -1569,14 +1579,16 @@ const lineOf=b=>{const u=topPerModel(sortedBench(b),Infinity);
  if(b.rankNote){notes.push(`${b.title}: ${b.rankNote}.`);return fmt(u.slice(0,1).map(d=>d[0]))+(u[1]?`<span class="jl-r"> · Next: ${u[1][0]}</span>`:'');}
  const rk=u.map(d=>[d[0]+flag(d),rankOf(b,d)]).filter(x=>x[1]!=='·').map(x=>[x[0],parseInt(x[1],10)]);
  if(!rk.length)return'—';const r0=Math.min(...rk.map(x=>x[1]));
- if(b.subset){notes.push(`${b.title}: card lists the top group only.`);return fmt(rk.filter(x=>x[1]===r0).map(x=>x[0]));}
- const rest=rk.filter(x=>x[1]>r0);const r1=rest.length?Math.min(...rest.map(x=>x[1])):null;
+ if(b.subset&&!b.topN){notes.push(`${b.title}: card lists the top group only.`);return fmt(rk.filter(x=>x[1]===r0).map(x=>x[0]));}
+ if(b.subset){const k=u.length-b.topN,of=b.field||b.boardN;notes.push(`${b.title}: card shows the board’s top ${b.topN}${k>0?` plus ${k} other${k>1?'s':''}`:''}${of?` of ${of} models`:''}.`);}
+ const rest=rk.filter(x=>x[1]>r0&&(!b.topN||x[1]<=b.topN));const r1=rest.length?Math.min(...rest.map(x=>x[1])):null;
  return fmt(rk.filter(x=>x[1]===r0).map(x=>x[0]))+(r1==null?'':`<span class="jl-r"> · Next: ${fmt(rest.filter(x=>x[1]===r1).map(x=>x[0]))}</span>`);};
 const order=['Coding','Agents','Robots and games','Chat and reasoning','Media','Speech','Cost','Vendor-reported'];
 const by={};ORDERED.forEach(b=>{(by[grp(b)]=by[grp(b)]||[]).push(b)});
 let html='';for(const g of order){if((!by[g]||!by[g].length)&&g!=='Cost')continue;by[g]=by[g]||[];html+=`<li class="jl-g">${g}</li>`;if(g==='Cost')html+=`<li><a href="#cost">Smarts per dollar (cost board)</a></li>`;
  for(const b of by[g]){html+=`<li><a href="#${b.id}">${b.title}</a>${b.isNew?'<span class="new">NEW</span>':''}<span class="jl-l"><span class="jl-asof" style="margin:0 6px 0 0">${b.asof}</span>${lineOf(b)}</span></li>`;}}
 el.innerHTML=html;const hn=document.getElementById('howNotes');if(hn)hn.insertAdjacentHTML('beforeend',notes.join(' '));})();
+(function(){const bar=document.querySelector('.toc-bar');if(!bar)return;const set=()=>document.documentElement.style.setProperty('--jumpH',(bar.offsetHeight+12)+'px');set();window.addEventListener('resize',set);})();
 /* JOBLIST:END */
 function openForHash(){const h=location.hash.slice(1);if(!h)return;const el=document.getElementById(h);if(el){const cc=el.querySelector(':scope>details.cz-card');if(cc)cc.open=true;}const cw=document.getElementById('carriedWrap');if(el&&cw&&cw.contains(el)&&!cw.open){cw.open=true;requestAnimationFrame(()=>el.scrollIntoView());}}
 window.addEventListener('hashchange',openForHash); openForHash();
