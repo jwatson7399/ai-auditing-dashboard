@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-17",
- "built_at": "2026-10-17T14:19:42+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 173",
- "built_at_et": "10:19 AM",
+ "built_at": "2026-10-17T14:39:44+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 174",
+ "built_at_et": "10:39 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -30479,12 +30479,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -31366,7 +31366,7 @@
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Seedream 4.5",
      69.8,
      null
     ],
@@ -31376,7 +31376,7 @@
      null
     ],
     [
-     "Seedream 4.5",
+     "Wan 2.6 Image",
      69.8,
      null
     ],
@@ -31396,18 +31396,13 @@
      null
     ],
     [
-     "Luma UNI 1 Max",
-     68.9,
-     null
-    ],
-    [
      "FLUX.2 [max]",
      68.9,
      null
     ],
     [
-     "Ideogram 4.5 (High)",
-     68.2,
+     "Luma UNI 1 Max",
+     68.9,
      null
     ],
     [
@@ -31416,12 +31411,17 @@
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "Ideogram 4.5 (High)",
      68.2,
      null
     ],
     [
      "Recraft V4.1 Utility Pro",
+     68.2,
+     null
+    ],
+    [
+     "Krea 2 Medium Turbo",
      68.2,
      null
     ],
@@ -31491,7 +31491,12 @@
      null
     ],
     [
-     "HunyuanImage 3.0 (Tencent Cloud)",
+     "HunyuanImage 3.0 Instruct",
+     63.7,
+     null
+    ],
+    [
+     "FLUX.2 [dev] Flash",
      63.7,
      null
     ],
@@ -31501,12 +31506,7 @@
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
-     63.7,
-     null
-    ],
-    [
-     "FLUX.2 [dev] Flash",
+     "HunyuanImage 3.0 (Tencent Cloud)",
      63.7,
      null
     ],
@@ -31526,12 +31526,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Instant",
+     "Ideogram 4.0 Fast (Quality)",
      62.6,
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Ideogram 4.0 Instant",
      62.6,
      null
     ],
@@ -31992,8 +31992,8 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
     "Claude Fable 5",
+    "Claude Opus 5",
     "Grok 4.6",
     "GPT-5.6 Sol",
     "GPT-5.6 Luna"
@@ -32380,11 +32380,11 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
     "Claude Fable 5",
+    "Claude Opus 5",
+    "GPT-5.6 Sol",
     "Grok 4.6",
-    "GPT-5.6 Luna",
-    "GPT-5.6 Sol"
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32422,14 +32422,14 @@
      "chatgpt"
     ],
     [
-     "Muse Spark 1.3",
-     77.1,
-     null
-    ],
-    [
      "Grok 4.6",
      77.1,
      "grok"
+    ],
+    [
+     "Muse Spark 1.3",
+     77.1,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -32627,12 +32627,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -33751,6 +33751,15 @@
    "items": "6",
    "pr": "172",
    "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-17",
+   "time": "10:19",
+   "status": "partial",
+   "items": "0",
+   "pr": "173",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
