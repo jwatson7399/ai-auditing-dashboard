@@ -70,6 +70,7 @@ details.cz-card{margin:6px 0 0}details.cz-card>summary{font-size:13px}
 .cost-wrap.ce .ce-head{text-transform:none!important;letter-spacing:0!important;line-height:1.15;gap:6px!important;align-items:end}
 .cost-wrap.ce .ce-head span{white-space:normal;overflow-wrap:anywhere}
 @media(max-width:640px){.cost-wrap.ce .ce-head,.cost-wrap.ce .row{grid-template-columns:22px minmax(88px,1.5fr) 44px 52px 62px!important;gap:6px!important}}
+@media(max-width:640px){#cechart .row.best-deal{margin:2px 0;padding:6px 0}}
 details.cz{margin:10px 0}
 html{scroll-padding-top:var(--jumpH,60px)}
 section,.bench,[id]{scroll-margin-top:0!important}
@@ -475,15 +476,15 @@ function isSub(n){return ACCENT_MODELS.some(s=>n.indexOf(s)===0)}
 
 const NEWS_TIERS=[
  {h:'Lead · Monday Oct 19', items:[
- {lead:true, tag:'Lead · Character.AI · Disney · Courts', title:'Character.AI’s court papers say Disney required its deal be “fully consummated” in a Chapter 11 sale, citing “significant litigation and regulatory risks”',
+ {lead:true, tag:'Lead · Character.AI · Disney · Courts', title:'Character.AI’s court papers say Disney required its deal be “fully consummated” in a Chapter 11 sale',
   body:`<b>What it says:</b> the sale motion (Case 26-11603-BLS, D. Del.; docketed Oct 13): “Given the Debtor's diminishing cash reserve and significant litigation and regulatory risks, Disney required that the transaction be fully consummated in a chapter 11 sale process.”
 <b>Liability:</b> the draft sale order says the deal “does not amount to a consolidation, merger, or de facto merger” and no Buyer Party “shall have any responsibility for (a) any liability or other obligation of the Debtor”.
-<b>Money:</b> Disney paid US$7.5M of the US$20M cash price up front (US$2M of it a refundable deposit) and hired “the majority” of staff, including the CEO.
+<b>Money:</b> the buyer paid US$7.5M of the US$20M cash price up front (US$2M of it a refundable deposit) and hired “the majority” of staff, including the CEO.
 <b>Next:</b> bidding-procedures hearing Oct 30; auction Nov 23; sale hearing Nov 24.
-<b>Context:</b> WIRED reports 46 states and territories are investigating the company; Disney declined to comment.
+<b>Context:</b> WIRED reports 46 states and territories are investigating the company; the buyer declined to comment.
 Caveat: “asked Character.AI to go bankrupt” is WIRED’s headline framing, not the court papers’ wording.`,
   why:'Why it matters: the deal is built so liability for the chatbots stays with the bankrupt company while state investigations continue.',
-  links:[['WIRED — Disney asked Character.AI to go bankrupt (19 Oct)','https://www.wired.com/story/disney-asked-characterai-to-go-bankrupt-for-a-get-out-of-lawsuits-card/','news']]}
+  links:[['Court papers — Character.AI sale motion, Case 26-11603-BLS, D. Del. (Stretto docket, 13 Oct)','https://cases.stretto.com/public/x936/14939/PLEADINGS/1493910132680000000114.pdf','primary'],['WIRED — Disney asked Character.AI to go bankrupt (19 Oct)','https://www.wired.com/story/disney-asked-characterai-to-go-bankrupt-for-a-get-out-of-lawsuits-card/','news']]}
  ]},
  {h:'Co-lead', items:[
  {tag:'Co-lead · Anthropic · Governance', title:'Anthropic will commit 5% of its shares to an Anthropic Public Benefit Fund, subject to stockholder approval',
@@ -491,22 +492,22 @@ Caveat: “asked Character.AI to go bankrupt” is WIRED’s headline framing, n
 The Fund is “a wholly-owned LLC—rather than a 501(c)(3)”, and “None of the Anthropic equity held by the LLC will be used for lobbying or political giving, in the US or abroad.” Possible uses include “large donations to traditional nonprofits or direct distributions to specific populations”, citing labour-market impacts.
 With the co-founders’ pledge to donate 80% of their equity and the employee equity match, Anthropic says roughly 20% of its shares will be dedicated to the public good.
 Caveat: no dollar value, baseline or split is given; structure, governance and valuation milestones come “in the coming months”.`,
-  why:'Why it matters: a frontier lab expected to go public ties part of its equity to public-benefit uses and bars that equity from political spending.',
+  why:'Why it matters: a frontier lab ties part of its equity to public-benefit uses and bars that equity from political spending.',
   links:[['Anthropic — Anthropic Public Benefit Fund (18 Oct)','https://www.anthropic.com/news/public-benefit-fund','primary']]}
  ]},
  {h:'Also', items:[
  {tag:'Also · Microsoft · Nscale', title:'Microsoft pulls out of its anchor-tenant deal at Nscale’s planned Loughton AI data centre, the Telegraph reports',
   body:`The BBC “understands” Microsoft “has terminated its involvement”; Microsoft declined to comment to the BBC, and Reuters says the Telegraph did not specify why it withdrew. The Guardian says Nscale “has lost its only publicly announced customer” for the Essex site, which the UK government billed as the “largest UK sovereign AI datacentre”.
 Nscale says it remains “committed to both the Loughton project and the UK”, is “exploring alternative power sources”, and “this unfortunate London-wide grid issue has no impact on our other contracts”.
-Caveat: the grid delay (power early to mid-2030s) was first reported in late September; the customer loss is what is fresh.`,
+Caveat: the BBC says the Telegraph first reported the grid delay (power not until the 2030s) on Oct 18; the customer loss is what is fresh.`,
   why:'Why care: the UK government’s showcase sovereign AI site loses its only public customer as grid power slips to the 2030s.',
-  links:[['The Telegraph — Microsoft and Nscale report (18 Oct)','https://www.telegraph.co.uk/business/2026/10/18/microsoft-axes-ai-deal-setback-uk-data-centre-pioneer/','news']]}
+  links:[['The Telegraph — Microsoft and Nscale report (18 Oct)','https://www.telegraph.co.uk/business/2026/10/18/microsoft-axes-ai-deal-setback-uk-data-centre-pioneer/','news'],['BBC — Microsoft and Nscale Loughton (18 Oct)','https://www.bbc.co.uk/news/articles/c9m26kl5y7epo','news']]}
  ]}
 ];
 
 const HELD=[
  {k:'Held', t:'Philippine House bill HB 11014 would attribute AI agents’ actions within granted authority to whoever authorised them',
-  body:`A press statement (Oct 18) on a bill introduced Aug 27 and pending in the ICT committee since Sep 2, which one author chairs; not law.`,
+  body:`A press statement (Oct 18) on a bill introduced Aug 27 and pending in the ICT committee since Sep 2 (dates: <a href="https://bills.juris.ph/bills/house/hb11014" target="_blank" rel="noopener">BatasWatch</a>, mirroring the House listing), which one author chairs; not law.`,
   url:'https://politiko.com.ph/villafuertes-push-guidelines-for-transactions-made-by-ai-agents/', label:'Politiko'},
  {k:'Held', t:'Anthropic is consulting law firms on “negotiation norms” for agents that bargain for users, the FT reports',
   body:`Rests on two unnamed people familiar, via relays of the paywalled story; Anthropic declined to comment to the FT.`,
