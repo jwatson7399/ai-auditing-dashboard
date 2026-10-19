@@ -9,3 +9,9 @@ https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4
 https://artificialanalysis.ai/articles/artificial-analysis-intelligence-index-v4-2 | Claude Fable 5.1 | GDP.pdf (All-pass Rate)
 https://arena.ai/leaderboard/agent/code?license=open-source | Kimi K3 (Max) | Arena Agent Arena Code (open-source filter) — Net Improvement
 https://artificialanalysis.ai/changelog | not applicable | Artificial Analysis Intelligence Index v4.3.2
+https://artificialanalysis.ai/models/grok-4-7 | Grok 4.7 (xhigh) | Artificial Analysis Intelligence Index v4.3.2
+https://artificialanalysis.ai/models/grok-4-7-high | Grok 4.7 (high) | Artificial Analysis Intelligence Index v4.3.2
+https://artificialanalysis.ai/models/mimo-v2-6-pro | MiMo-V2.6-Pro | Artificial Analysis Intelligence Index v4.3.2
+https://artificialanalysis.ai/articles/benchmarking-grok-4-7 | Grok 4.7 (xhigh) | Artificial Analysis Coding Agent Index
+https://artificialanalysis.ai/articles/benchmarking-grok-4-7 | Grok 4.7 (xhigh) | AA-Briefcase
+https://artificialanalysis.ai/articles/benchmarking-grok-4-7 | Grok 4.7 (xhigh) | GDPval-AA
