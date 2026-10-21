@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-21",
- "built_at": "2026-10-21T14:11:23+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 185",
- "built_at_et": "10:11 AM",
+ "built_at": "2026-10-21T14:21:32+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 186",
+ "built_at_et": "10:21 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -30107,14 +30107,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -31409,12 +31409,12 @@
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "MAI-Image-2.5-Flash",
      69.3,
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen-Image-2.1-Turbo",
      69.3,
      null
     ],
@@ -31424,12 +31424,7 @@
      null
     ],
     [
-     "FLUX.2 [flex]",
-     68.8,
-     null
-    ],
-    [
-     "Recraft V4.1 Utility",
+     "Seedream 4.5",
      68.8,
      null
     ],
@@ -31439,7 +31434,12 @@
      null
     ],
     [
-     "Seedream 4.5",
+     "Recraft V4.1 Utility",
+     68.8,
+     null
+    ],
+    [
+     "FLUX.2 [flex]",
      68.8,
      null
     ],
@@ -31464,12 +31464,12 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "HiDream-O1-Image-1.5",
      67.4,
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "Seedream 5.0 Lite",
      67.4,
      null
     ],
@@ -31569,12 +31569,12 @@
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Cosmos3-Super-Text2Image",
      62.3,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      62.3,
      null
     ],
@@ -31634,12 +31634,12 @@
      null
     ],
     [
-     "Z-Image Turbo",
+     "GPT Image 1 Mini (medium)",
      54.5,
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Z-Image Turbo",
      54.5,
      null
     ],
@@ -31704,12 +31704,12 @@
      null
     ],
     [
-     "FLUX.1 Krea [dev]",
+     "Vidu Q2",
      48.1,
      null
     ],
     [
-     "Vidu Q2",
+     "FLUX.1 Krea [dev]",
      48.1,
      null
     ],
@@ -32045,11 +32045,11 @@
     ]
    ],
    "missing": [
+    "Claude Opus 5",
     "GPT-5.6 Luna",
     "GPT-5.6 Sol",
-    "Claude Fable 5",
-    "Claude Opus 5",
-    "Grok 4.6"
+    "Grok 4.6",
+    "Claude Fable 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32433,11 +32433,11 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
-    "GPT-5.6 Luna",
     "Claude Opus 5",
+    "GPT-5.6 Luna",
     "GPT-5.6 Sol",
-    "Grok 4.6"
+    "Grok 4.6",
+    "Claude Fable 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32625,12 +32625,12 @@
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
@@ -32680,12 +32680,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -33768,6 +33768,15 @@
    "items": "6",
    "pr": "184",
    "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-21",
+   "time": "10:11",
+   "status": "partial",
+   "items": "0",
+   "pr": "185",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
