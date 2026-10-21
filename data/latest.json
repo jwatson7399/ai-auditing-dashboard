@@ -1,22 +1,14 @@
 {
  "schema": 1,
- "date": "2026-10-20",
- "built_at": "2026-10-20T16:57:47+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 184",
- "built_at_et": "12:57 PM",
+ "date": "2026-10-21",
+ "built_at": "2026-10-21T14:11:23+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 185",
+ "built_at_et": "10:11 AM",
  "status": "partial",
  "status_notes": [
-  "AA public leaderboard unavailable",
-  "gdpval carried forward",
-  "omni carried forward",
-  "nohalluc carried forward",
-  "webdev carried forward",
-  "text carried forward"
+  "numbers carried forward (--no-fetch)"
  ],
- "known_gaps": [
-  "cost missing or carried forward",
-  "gdppdf carried forward"
- ],
+ "known_gaps": [],
  "access": {
   "Claude Fable 5.1": "claude",
   "Claude Fable 5": "claude",
@@ -42,7 +34,7 @@
    "fetched": "2026-10-20",
    "field": "terminalbench_v2_1",
    "index_version": "Artificial Analysis Intelligence Index (version not exposed by the API)",
-   "stale": false,
+   "stale": true,
    "d": {
     "Claude Fable 5.1": 91.4,
     "GPT-6 Astra": 89.9,
@@ -408,7 +400,8 @@
     "NVIDIA Nemotron 3 Nano 4B": "default",
     "Gemma 3 12B Instruct": "default",
     "K2 Horizon 0.9B": "default"
-   }
+   },
+   "records": {}
   },
   "scicode": {
    "name": "SciCode",
@@ -418,7 +411,7 @@
    "fetched": "2026-10-20",
    "field": "scicode",
    "index_version": "Artificial Analysis Intelligence Index (version not exposed by the API)",
-   "stale": false,
+   "stale": true,
    "d": {
     "Claude Opus 5.5": 66.9,
     "Claude Sonnet 5.5": 61.0,
@@ -734,7 +727,8 @@
     "NVIDIA Nemotron 3 Nano 4B": "default",
     "Gemma 3 12B Instruct": "default",
     "K2 Horizon 0.9B": "default"
-   }
+   },
+   "records": {}
   },
   "tau": {
    "name": "τ³-Banking",
@@ -744,7 +738,7 @@
    "fetched": "2026-10-20",
    "field": "tau_banking",
    "index_version": "Artificial Analysis Intelligence Index (version not exposed by the API)",
-   "stale": false,
+   "stale": true,
    "d": {
     "Claude Fable 5.1": 47.2,
     "GPT-6 Astra": 43.1,
@@ -1056,7 +1050,8 @@
     "Gemma 3n E4B Instruct": "default",
     "Gemma 3 12B Instruct": "default",
     "K2 Horizon 0.9B": "default"
-   }
+   },
+   "records": {}
   },
   "lcr": {
    "name": "AA-LCR",
@@ -1066,7 +1061,7 @@
    "fetched": "2026-10-20",
    "field": "lcr",
    "index_version": "Artificial Analysis Intelligence Index (version not exposed by the API)",
-   "stale": false,
+   "stale": true,
    "d": {
     "Claude Opus 5.5": 84.7,
     "Claude Sonnet 5.5": 82.7,
@@ -1844,7 +1839,8 @@
     "K2 Horizon 0.9B": "default",
     "Cogito v2.1": "Reasoning",
     "Mi:dm K 2.5 Pro Preview": "default"
-   }
+   },
+   "records": {}
   },
   "gdpval": {
    "src": "Artificial Analysis public leaderboard",
@@ -16375,7 +16371,7 @@
    "elo": true,
    "src": "Artificial Analysis",
    "fetched": "2026-10-20",
-   "stale": false,
+   "stale": true,
    "historical": {
     "Reve 2.1": {
      "fetched": "2026-09-21",
@@ -17210,7 +17206,7 @@
     "GPT Image 2.5 Sunburst (max)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17220,7 +17216,7 @@
     "GPT Image 2.5 Flare (max)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17230,7 +17226,7 @@
     "GPT Image 2": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17240,7 +17236,7 @@
     "Nano Banana 2.1": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17250,7 +17246,7 @@
     "MAI-Image-2.6": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17260,7 +17256,7 @@
     "Grok Imagine Image 2.0": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17270,7 +17266,7 @@
     "Nano Banana 2 (Gemini 3.1 Flash Image)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17280,7 +17276,7 @@
     "Muse Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17290,7 +17286,7 @@
     "GPT Image 1.5": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17300,7 +17296,7 @@
     "MAI-Image-2.6-Flash": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17310,7 +17306,7 @@
     "Nano Banana Pro (Gemini 3 Pro Image)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17320,7 +17316,7 @@
     "MAI-Image-2.5": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17330,7 +17326,7 @@
     "FLUX 3 Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17340,7 +17336,7 @@
     "MAI-Image-2.5-Pro": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17350,7 +17346,7 @@
     "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17360,7 +17356,7 @@
     "Seedream 5.0 Pro": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17370,7 +17366,7 @@
     "Qwen-Image-3.0-Pro": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17380,7 +17376,7 @@
     "Qwen-Image-3.0": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17390,7 +17386,7 @@
     "Qwen-Image-2.1-Pro": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17400,7 +17396,7 @@
     "grok-imagine-image-quality": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17410,7 +17406,7 @@
     "Qwen-Image-2.1": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17420,7 +17416,7 @@
     "Fibo 2.0": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17430,7 +17426,7 @@
     "Krea 2 Large": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17440,7 +17436,7 @@
     "Qwen Image 2.0 Pro (2026-04-22)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17450,7 +17446,7 @@
     "MAI-Image-2.5-Flash": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17460,7 +17456,7 @@
     "Qwen-Image-2.1-Turbo": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17470,7 +17466,7 @@
     "Wan 2.6 Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17480,7 +17476,7 @@
     "Recraft V4.1 Utility": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17490,7 +17486,7 @@
     "Seedream 4.5": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17500,7 +17496,7 @@
     "FLUX.2 [flex]": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17510,7 +17506,7 @@
     "Ideogram 4.0 (Quality)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17520,7 +17516,7 @@
     "Luma UNI 1 Max": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17530,7 +17526,7 @@
     "grok-imagine-image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17540,7 +17536,7 @@
     "FLUX.2 [max]": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17550,7 +17546,7 @@
     "Krea 2 Medium Turbo": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17560,7 +17556,7 @@
     "Recraft V4.1 Utility Pro": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17570,7 +17566,7 @@
     "HiDream-O1-Image-1.5": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17580,7 +17576,7 @@
     "Seedream 5.0 Lite": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17590,7 +17586,7 @@
     "Ideogram 4.5 (High)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17600,7 +17596,7 @@
     "Wan2.6 Text to Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17610,7 +17606,7 @@
     "GPT Image 1 (high)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17620,7 +17616,7 @@
     "Krea 2 Medium": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17630,7 +17626,7 @@
     "FLUX.2 [pro]": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17640,7 +17636,7 @@
     "Ideogram 4.0": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17650,7 +17646,7 @@
     "FLUX.2 [dev]": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17660,7 +17656,7 @@
     "Ming-Image-0.1-Design": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17670,7 +17666,7 @@
     "P-Image-Ideogram (High)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17680,7 +17676,7 @@
     "FLUX.2 [dev] Turbo": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17690,7 +17686,7 @@
     "Cosmos3-Super-Text2Image (agentic)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17700,7 +17696,7 @@
     "Luma UNI 1": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17710,7 +17706,7 @@
     "P-Image-Ideogram (Very High)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17720,7 +17716,7 @@
     "Qwen Image 2.0 (2026-03-03)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17730,7 +17726,7 @@
     "HunyuanImage 3.0 (Tencent Cloud)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17740,7 +17736,7 @@
     "FLUX.2 [dev] Flash": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17750,7 +17746,7 @@
     "HunyuanImage 3.0 Instruct": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17760,7 +17756,7 @@
     "Wan 2.7": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17770,7 +17766,7 @@
     "Cosmos3-Super-Text2Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17780,7 +17776,7 @@
     "Nano Banana (Gemini 2.5 Flash Image)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17790,7 +17786,7 @@
     "Ideogram 4.0 Fast (Quality)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17800,7 +17796,7 @@
     "Ideogram 4.0 Instant": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17810,7 +17806,7 @@
     "Wan 2.7 Pro": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17820,7 +17816,7 @@
     "HiDream-O1-Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17830,7 +17826,7 @@
     "P-Image-Ideogram (Medium)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17840,7 +17836,7 @@
     "Cosmos3-Super-Text2Image-4Step": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17850,7 +17846,7 @@
     "HunyuanImage 3.5 (Preview)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17860,7 +17856,7 @@
     "Ideogram 4.0 Fast": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17870,7 +17866,7 @@
     "P-Image-Ideogram (Low)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17880,7 +17876,7 @@
     "Qwen Image Plus 2601": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17890,7 +17886,7 @@
     "Recraft V4.1 Flash": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17900,7 +17896,7 @@
     "GPT Image 1 Mini (medium)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17910,7 +17906,7 @@
     "Z-Image Turbo": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17920,7 +17916,7 @@
     "HunyuanImage 3.0": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17930,7 +17926,7 @@
     "Dreamina 3.1": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17940,7 +17936,7 @@
     "FLUX.2 [klein] 9B": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17950,7 +17946,7 @@
     "FLUX.1 Kontext [max]": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17960,7 +17956,7 @@
     "Kling Image 3.0 Omni": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17970,7 +17966,7 @@
     "FLUX.1 Kontext [pro]": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17980,7 +17976,7 @@
     "ERNIE Image Turbo": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17990,7 +17986,7 @@
     "Ideogram 3.0": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18000,7 +17996,7 @@
     "P-Image-Ideogram (Very Low)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18010,7 +18006,7 @@
     "ERNIE Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18020,7 +18016,7 @@
     "Qwen Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18030,7 +18026,7 @@
     "P-Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18040,7 +18036,7 @@
     "FLUX.1 Krea [dev]": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18050,7 +18046,7 @@
     "Vidu Q2": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18060,7 +18056,7 @@
     "Z-Image Base": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18070,7 +18066,7 @@
     "GLM-Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18080,7 +18076,7 @@
     "Lucid Origin Ultra": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18090,7 +18086,7 @@
     "FLUX1.1 [pro]": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18100,7 +18096,7 @@
     "Lucid Origin Fast": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18110,7 +18106,7 @@
     "LongCat Image": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18120,7 +18116,7 @@
     "FLUX1.1 [pro] Ultra": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18130,7 +18126,7 @@
     "FIBO": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18140,7 +18136,7 @@
     "Luma Photon": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18150,7 +18146,7 @@
     "FLUX.2 [klein] 4B": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18160,7 +18156,7 @@
     "Phoenix 0.9 Ultra": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18170,7 +18166,7 @@
     "Phoenix 1.0 Fast": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18180,7 +18176,7 @@
     "SRPO": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18190,7 +18186,7 @@
     "FLUX.1 [dev]": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18200,7 +18196,7 @@
     "FIBO Lite": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18210,7 +18206,7 @@
     "HiDream-O1-Image-Dev": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18220,7 +18216,7 @@
     "Luma Photon Flash": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18230,7 +18226,7 @@
     "FLUX.1 [schnell]": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18240,7 +18236,7 @@
     "OmniGen V2": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18250,7 +18246,7 @@
     "Bagel": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18481,7 +18477,7 @@
    "elo": true,
    "src": "Artificial Analysis",
    "fetched": "2026-10-20",
-   "stale": false,
+   "stale": true,
    "historical": {
     "Kling 2.1 Master": {
      "fetched": "2026-09-21",
@@ -19304,7 +19300,7 @@
     "Wan 3.0": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19314,7 +19310,7 @@
     "MiniMax H3 (768p)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19324,7 +19320,7 @@
     "MiniMax H3 Max": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19334,7 +19330,7 @@
     "Dreamina Seedance 2.5": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19344,7 +19340,7 @@
     "FLUX 3": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19354,7 +19350,7 @@
     "Dreamina Seedance 2.0": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19364,7 +19360,7 @@
     "Gemini Omni Flash 1.1": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19374,7 +19370,7 @@
     "Agnes-Video-2.5": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19384,7 +19380,7 @@
     "HappyHorse-1.1": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19394,7 +19390,7 @@
     "Grok Imagine Video 1.5": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19404,7 +19400,7 @@
     "HappyHorse-1.0": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19414,7 +19410,7 @@
     "Wan2.7-260612": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19424,7 +19420,7 @@
     "MAGI-2 Preview": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19434,7 +19430,7 @@
     "Kling 3.0 1080p (Pro)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19444,7 +19440,7 @@
     "PixVerse V6": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19454,7 +19450,7 @@
     "Kling 3.0 Omni 1080p (Pro)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19464,7 +19460,7 @@
     "Grok Imagine Video 1.5 Lite": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19474,7 +19470,7 @@
     "Veo 3.1": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19484,7 +19480,7 @@
     "Veo 3.1 Fast": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19494,7 +19490,7 @@
     "Veo 3.1 Lite": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19504,7 +19500,7 @@
     "LTX-2.5 Fast": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19514,7 +19510,7 @@
     "LTX-2.5 Pro": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19524,7 +19520,7 @@
     "Runway Gen-4.5 (720p)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19534,7 +19530,7 @@
     "Vidu Q3 Turbo": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19544,7 +19540,7 @@
     "Vidu Q3 Pro": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19554,7 +19550,7 @@
     "Kling O1 Pro (January)": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19564,7 +19560,7 @@
     "LTX-2.3 Fast": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19574,7 +19570,7 @@
     "LTX-2.3 Pro": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19584,7 +19580,7 @@
     "Pika 2.5": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19594,7 +19590,7 @@
     "Boreal": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19604,7 +19600,7 @@
     "P-Video": {
      "fetched": "2026-10-20",
      "src": "Artificial Analysis",
-     "stale": false,
+     "stale": true,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -30111,14 +30107,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -30531,12 +30527,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -31313,12 +31309,12 @@
      null
     ],
     [
-     "MAI-Image-2.6",
+     "Grok Imagine Image 2.0",
      91.1,
      null
     ],
     [
-     "Grok Imagine Image 2.0",
+     "MAI-Image-2.6",
      91.1,
      null
     ],
@@ -31343,12 +31339,12 @@
      null
     ],
     [
-     "Nano Banana Pro (Gemini 3 Pro Image)",
+     "MAI-Image-2.5",
      83.4,
      null
     ],
     [
-     "MAI-Image-2.5",
+     "Nano Banana Pro (Gemini 3 Pro Image)",
      83.4,
      null
     ],
@@ -31413,18 +31409,23 @@
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen-Image-2.1-Turbo",
      69.3,
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "MAI-Image-2.5-Flash",
      69.3,
      null
     ],
     [
      "Wan 2.6 Image",
      68.9,
+     null
+    ],
+    [
+     "FLUX.2 [flex]",
+     68.8,
      null
     ],
     [
@@ -31439,11 +31440,6 @@
     ],
     [
      "Seedream 4.5",
-     68.8,
-     null
-    ],
-    [
-     "FLUX.2 [flex]",
      68.8,
      null
     ],
@@ -31468,17 +31464,17 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
-     67.4,
-     null
-    ],
-    [
      "Seedream 5.0 Lite",
      67.4,
      null
     ],
     [
      "HiDream-O1-Image-1.5",
+     67.4,
+     null
+    ],
+    [
+     "Recraft V4.1 Utility Pro",
      67.4,
      null
     ],
@@ -31573,12 +31569,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      62.3,
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Cosmos3-Super-Text2Image",
      62.3,
      null
     ],
@@ -31658,12 +31654,12 @@
      null
     ],
     [
-     "FLUX.1 Kontext [max]",
+     "FLUX.2 [klein] 9B",
      53.3,
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "FLUX.1 Kontext [max]",
      53.3,
      null
     ],
@@ -31708,12 +31704,12 @@
      null
     ],
     [
-     "Vidu Q2",
+     "FLUX.1 Krea [dev]",
      48.1,
      null
     ],
     [
-     "FLUX.1 Krea [dev]",
+     "Vidu Q2",
      48.1,
      null
     ],
@@ -32049,11 +32045,11 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Luna",
     "GPT-5.6 Sol",
-    "Claude Opus 5",
-    "Grok 4.6",
     "Claude Fable 5",
-    "GPT-5.6 Luna"
+    "Claude Opus 5",
+    "Grok 4.6"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32437,11 +32433,11 @@
     ]
    ],
    "missing": [
+    "Claude Fable 5",
+    "GPT-5.6 Luna",
     "Claude Opus 5",
     "GPT-5.6 Sol",
-    "Grok 4.6",
-    "Claude Fable 5",
-    "GPT-5.6 Luna"
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32599,12 +32595,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -32629,12 +32625,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -32684,12 +32680,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -33229,7 +33225,7 @@
    ]
   }
  ],
- "previous_date": "2026-10-19",
+ "previous_date": "2026-10-20",
  "noise": 3,
  "changes": [
   [
@@ -33238,37 +33234,10 @@
   ],
   [
    "weak",
-   "6 of 12 sources include carried-forward scores: GDPval-AA v2 (oldest carried-forward score: 2026-09-19), AA-Omniscience Accuracy (oldest carried-forward score: 2026-09-30), Non-hallucination rate (oldest carried-forward score: 2026-09-30), GDP.pdf (all criteria met) (oldest carried-forward score: 2026-09-03), Arena WebDev (oldest carried-forward score: 2026-10-07), Arena Text (oldest carried-forward score: 2026-10-08)."
+   "12 of 12 sources include carried-forward scores: Terminal-Bench v2.1 (oldest carried-forward score: 2026-10-20), SciCode (oldest carried-forward score: 2026-10-20), τ³-Banking (oldest carried-forward score: 2026-10-20), AA-LCR (oldest carried-forward score: 2026-10-20), GDPval-AA v2 (oldest carried-forward score: 2026-09-19), AA-Omniscience Accuracy (oldest carried-forward score: 2026-09-30), Non-hallucination rate (oldest carried-forward score: 2026-09-30), GDP.pdf (all criteria met) (oldest carried-forward score: 2026-09-03), Arena WebDev (oldest carried-forward score: 2026-10-07), Arena Text (oldest carried-forward score: 2026-10-08), AA Image Arena (oldest carried-forward score: 2026-10-20), AA Video Arena (oldest carried-forward score: 2026-10-20)."
   ]
  ],
  "health": [
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-06",
-   "time": "10:15",
-   "status": "partial",
-   "items": "0",
-   "pr": "123",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-06",
-   "time": "14:19",
-   "status": "partial",
-   "items": "8",
-   "pr": "124",
-   "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-06",
-   "time": "16:09",
-   "status": "partial",
-   "items": "0",
-   "pr": "125",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
   {
    "agent": "Daily rebuild",
    "date": "2026-10-07",
@@ -33792,8 +33761,17 @@
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
-   "agent": "Benchmark Scout",
+   "agent": "Daily rebuild",
    "date": "2026-10-20",
+   "time": "12:57",
+   "status": "partial",
+   "items": "6",
+   "pr": "184",
+   "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Benchmark Scout",
+   "date": "2026-10-21",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -33802,7 +33780,7 @@
   },
   {
    "agent": "News Scout",
-   "date": "2026-10-20",
+   "date": "2026-10-21",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -33811,7 +33789,7 @@
   },
   {
    "agent": "Editor",
-   "date": "2026-10-20",
+   "date": "2026-10-21",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -33820,7 +33798,7 @@
   },
   {
    "agent": "Verifier",
-   "date": "2026-10-20",
+   "date": "2026-10-21",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -33829,7 +33807,7 @@
   },
   {
    "agent": "Commentator",
-   "date": "2026-10-20",
+   "date": "2026-10-21",
    "time": "",
    "status": "did not run",
    "items": "0",
