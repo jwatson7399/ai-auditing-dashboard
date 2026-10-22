@@ -58,7 +58,7 @@ BENCH = {
     # which is the intended failure.
     "terminal": {"name": "Terminal-Bench v2.1", "kind": "task", "api": ["terminalbench_v2_1"]},
     "scicode":  {"name": "SciCode", "kind": "task", "api": ["scicode"]},
-    "gdpval":   {"name": "GDPval-AA v2", "kind": "task", "api": ["gdpval_aa", "gdpval"]},
+    "gdpval":   {"name": "GDPval-AA v2.1", "kind": "task", "api": ["gdpval_aa", "gdpval"]},
     # tau_banking is AA's tau-cubed Bench Banking; the API just omits the superscript. Verified
     # against the published figures: Fable 5.1 max 0.472 and Astra max 0.414 match 47 and 41.
     # tau2 is the older tau-squared Bench and must not be substituted, so no fallback here.
@@ -412,7 +412,7 @@ def parse_kv_items(path):
 def read_news(today):
     path = os.path.join(ROOT, "inbox", "news", f"{today}-edited.md")
     if not os.path.exists(path):
-        return [], {"editor_file": None, "note": "No Editor picks on main for today. Showing yesterday's stories."}
+        return [], {"editor_file": None, "note": "No Editor picks on main for today."}
     head, items = parse_kv_items(path)
     stories = []
     for it in items:
@@ -434,6 +434,20 @@ def read_news(today):
     except ValueError:
         pass
     return stories, {"editor_file": os.path.relpath(path, ROOT), "considered": head.get("items_considered"), "note": note}
+
+
+def carried_news_meta(prev_meta, today):
+    """Say which day's picks are being shown. The carried file can be weeks old, not yesterday's."""
+    meta = dict(prev_meta)
+    m = re.search(r"(\d{4}-\d{2}-\d{2})-edited\.md$", meta.get("editor_file") or "")
+    if not m:
+        meta["note"] = "No Editor picks on main for today. The stories shown are carried from an earlier day of unknown date."
+        return meta
+    age = (dt.date.fromisoformat(today) - dt.date.fromisoformat(m.group(1))).days
+    meta["carried_from"] = m.group(1)
+    meta["note"] = (f"No Editor picks on main for today. These are the most recent merged picks, "
+                    f"from {m.group(1)} ({age} day{'' if age == 1 else 's'} old).")
+    return meta
 
 
 def read_scout(today):
@@ -765,13 +779,26 @@ def read_runs():
     return rows
 
 
-def health_strip(rows, today, days=14):
+def health_strip(rows, today, days=14, prs=()):
+    """A missing line means no log was merged to main. It does not show the agent failed to
+    run: agents file their log in a pull request, and an unmerged one is invisible here."""
     cutoff = (dt.date.fromisoformat(today) - dt.timedelta(days=days)).isoformat()
     out = [r for r in rows if r["date"] >= cutoff]
     seen_today = {r["agent"] for r in out if r["date"] == today}
     for a in AGENTS:
         if a != "rebuild" and a not in seen_today:
-            out.append({"date": today, "time_et": "", "agent": a, "status": "did not run", "items": "0", "pr": "", "notes": "no log line for today"})
+            # The evidence is a changed file path and an open date. The pull request's
+            # contents are not read, so this never claims the run happened or succeeded.
+            nums = [str(p["number"]) for p in prs if p.get("opened_et") == today
+                    and f"log/runs-{a}.csv" in p.get("logs", [])]
+            if nums:
+                notes = ("no log line on main for today; pull request " + ", ".join("#" + n for n in nums)
+                         + " opened today changes this agent's log file but is unmerged and unread,"
+                         " so the run and its result are unconfirmed")
+            else:
+                notes = "no log line on main for today; no pull request opened today changes this agent's log file"
+            out.append({"date": today, "time_et": "", "agent": a, "status": "no merged log", "items": "",
+                        "pr": ", ".join(nums), "notes": notes})
     return [{"agent": AGENT_LABEL.get(r["agent"], r["agent"]), "date": r["date"], "time": r.get("time_et", ""), "status": r["status"],
              "items": r.get("items", ""), "pr": r.get("pr", ""), "notes": r.get("notes", "")} for r in out]
 
@@ -831,7 +858,9 @@ def pending_prs():
             fr = requests.get(p["url"] + "/files", headers=h, timeout=30)
             files = [f["filename"] for f in fr.json()] if fr.status_code == 200 else []
             if any(f.startswith("inbox/") for f in files):
-                out.append({"number": p["number"], "title": p["title"], "files": [f for f in files if f.startswith("inbox/")]})
+                opened = dt.datetime.fromisoformat(p["created_at"].replace("Z", "+00:00")).astimezone(ET).date().isoformat()
+                out.append({"number": p["number"], "title": p["title"], "files": [f for f in files if f.startswith("inbox/")],
+                            "logs": [f for f in files if re.fullmatch(r"log/runs-[a-z-]+\.csv", f)], "opened_et": opened})
         return out
     except Exception as e:  # noqa: BLE001
         return [{"number": 0, "title": f"could not list pull requests ({e.__class__.__name__})"}]
@@ -992,7 +1021,7 @@ def main():
         # 2. inbox on main
         news, news_meta = read_news(today)
         if not news and prev:
-            news, news_meta = prev.get("news", []), dict(prev.get("news_meta", {}), note=news_meta["note"])
+            news, news_meta = prev.get("news", []), carried_news_meta(prev.get("news_meta", {}), today)
         second, second_meta = read_scout(today)
         proposed = read_proposed_sources()
         prs = pending_prs()
@@ -1012,7 +1041,7 @@ def main():
 
         # 4. health strip and workbook
         runs = read_runs()
-        d["health"] = health_strip(runs, today)
+        d["health"] = health_strip(runs, today, prs=prs)
         write_xlsx(runs)
 
         # 5. write data and page
