@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-25",
- "built_at": "2026-10-25T14:08:42+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 205",
- "built_at_et": "10:08 AM",
+ "built_at": "2026-10-25T14:13:04+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 206",
+ "built_at_et": "10:13 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -30599,12 +30599,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -31381,12 +31381,12 @@
      null
     ],
     [
-     "MAI-Image-2.6",
+     "Grok Imagine Image 2.0",
      91.1,
      null
     ],
     [
-     "Grok Imagine Image 2.0",
+     "MAI-Image-2.6",
      91.1,
      null
     ],
@@ -31486,12 +31486,12 @@
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen-Image-2.1-Turbo",
      69.3,
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "MAI-Image-2.5-Flash",
      69.3,
      null
     ],
@@ -31501,7 +31501,7 @@
      null
     ],
     [
-     "FLUX.2 [flex]",
+     "Recraft V4.1 Utility",
      68.8,
      null
     ],
@@ -31511,12 +31511,12 @@
      null
     ],
     [
-     "Seedream 4.5",
+     "FLUX.2 [flex]",
      68.8,
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "Seedream 4.5",
      68.8,
      null
     ],
@@ -31711,12 +31711,12 @@
      null
     ],
     [
-     "Z-Image Turbo",
+     "GPT Image 1 Mini (medium)",
      54.5,
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Z-Image Turbo",
      54.5,
      null
     ],
@@ -31731,12 +31731,12 @@
      null
     ],
     [
-     "FLUX.1 Kontext [max]",
+     "FLUX.2 [klein] 9B",
      53.3,
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "FLUX.1 Kontext [max]",
      53.3,
      null
     ],
@@ -31956,12 +31956,12 @@
      null
     ],
     [
-     "HappyHorse-1.1",
+     "Grok Imagine Video 1.5",
      68.4,
      null
     ],
     [
-     "Grok Imagine Video 1.5",
+     "HappyHorse-1.1",
      68.4,
      null
     ],
@@ -32001,12 +32001,12 @@
      null
     ],
     [
-     "Veo 3.1 Fast",
+     "Veo 3.1",
      45.9,
      null
     ],
     [
-     "Veo 3.1",
+     "Veo 3.1 Fast",
      45.9,
      null
     ],
@@ -32051,12 +32051,12 @@
      null
     ],
     [
-     "Pika 2.5",
+     "LTX-2.3 Pro",
      10.2,
      null
     ],
     [
-     "LTX-2.3 Pro",
+     "Pika 2.5",
      10.2,
      null
     ],
@@ -32127,11 +32127,11 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Sol",
     "Claude Fable 5",
     "Grok 4.6",
     "Claude Opus 5",
-    "GPT-5.6 Luna",
-    "GPT-5.6 Sol"
+    "GPT-5.6 Luna"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32516,10 +32516,10 @@
    ],
    "missing": [
     "Claude Opus 5",
+    "GPT-5.6 Sol",
     "Claude Fable 5",
-    "Grok 4.6",
     "GPT-5.6 Luna",
-    "GPT-5.6 Sol"
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -32677,12 +32677,12 @@
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
@@ -32762,12 +32762,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -33858,6 +33858,15 @@
    "status": "partial",
    "items": "0",
    "pr": "204",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-25",
+   "time": "10:08",
+   "status": "partial",
+   "items": "0",
+   "pr": "205",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
