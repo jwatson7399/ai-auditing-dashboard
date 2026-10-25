@@ -1,14 +1,22 @@
 {
  "schema": 1,
  "date": "2026-10-25",
- "built_at": "2026-10-25T14:13:04+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 206",
- "built_at_et": "10:13 AM",
+ "built_at": "2026-10-25T16:09:14+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 207",
+ "built_at_et": "12:09 PM",
  "status": "partial",
  "status_notes": [
-  "numbers carried forward (--no-fetch)"
+  "AA public leaderboard unavailable",
+  "gdpval carried forward",
+  "omni carried forward",
+  "nohalluc carried forward",
+  "webdev carried forward",
+  "text carried forward"
  ],
- "known_gaps": [],
+ "known_gaps": [
+  "cost missing or carried forward",
+  "gdppdf carried forward"
+ ],
  "access": {
   "Claude Fable 5.1": "claude",
   "Claude Fable 5": "claude",
@@ -31,10 +39,10 @@
    "kind": "task",
    "elo": false,
    "src": "Artificial Analysis",
-   "fetched": "2026-10-24",
+   "fetched": "2026-10-25",
    "field": "terminalbench_v2_1",
    "index_version": "Artificial Analysis Intelligence Index (version not exposed by the API)",
-   "stale": true,
+   "stale": false,
    "d": {
     "Claude Fable 5.1": 91.4,
     "GPT-6 Astra": 89.9,
@@ -400,18 +408,17 @@
     "NVIDIA Nemotron 3 Nano 4B": "default",
     "Gemma 3 12B Instruct": "default",
     "K2 Horizon 0.9B": "default"
-   },
-   "records": {}
+   }
   },
   "scicode": {
    "name": "SciCode",
    "kind": "task",
    "elo": false,
    "src": "Artificial Analysis",
-   "fetched": "2026-10-24",
+   "fetched": "2026-10-25",
    "field": "scicode",
    "index_version": "Artificial Analysis Intelligence Index (version not exposed by the API)",
-   "stale": true,
+   "stale": false,
    "d": {
     "Claude Opus 5.5": 66.9,
     "Claude Sonnet 5.5": 61.0,
@@ -731,18 +738,17 @@
     "NVIDIA Nemotron 3 Nano 4B": "default",
     "Gemma 3 12B Instruct": "default",
     "K2 Horizon 0.9B": "default"
-   },
-   "records": {}
+   }
   },
   "tau": {
    "name": "τ³-Banking",
    "kind": "task",
    "elo": false,
    "src": "Artificial Analysis",
-   "fetched": "2026-10-24",
+   "fetched": "2026-10-25",
    "field": "tau_banking",
    "index_version": "Artificial Analysis Intelligence Index (version not exposed by the API)",
-   "stale": true,
+   "stale": false,
    "d": {
     "Claude Fable 5.1": 47.2,
     "GPT-6 Astra": 43.1,
@@ -1054,18 +1060,17 @@
     "Gemma 3n E4B Instruct": "default",
     "Gemma 3 12B Instruct": "default",
     "K2 Horizon 0.9B": "default"
-   },
-   "records": {}
+   }
   },
   "lcr": {
    "name": "AA-LCR",
    "kind": "task",
    "elo": false,
    "src": "Artificial Analysis",
-   "fetched": "2026-10-24",
+   "fetched": "2026-10-25",
    "field": "lcr",
    "index_version": "Artificial Analysis Intelligence Index (version not exposed by the API)",
-   "stale": true,
+   "stale": false,
    "d": {
     "Claude Opus 5.5": 84.7,
     "Claude Sonnet 5.5": 82.7,
@@ -1847,8 +1852,7 @@
     "K2 Horizon 0.9B": "default",
     "Cogito v2.1": "Reasoning",
     "Mi:dm K 2.5 Pro Preview": "default"
-   },
-   "records": {}
+   }
   },
   "gdpval": {
    "src": "Artificial Analysis public leaderboard",
@@ -16378,8 +16382,8 @@
    "kind": "votes",
    "elo": true,
    "src": "Artificial Analysis",
-   "fetched": "2026-10-24",
-   "stale": true,
+   "fetched": "2026-10-25",
+   "stale": false,
    "historical": {
     "Reve 2.1": {
      "fetched": "2026-09-21",
@@ -17212,9 +17216,9 @@
    },
    "records": {
     "GPT Image 2.5 Sunburst (max)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17222,9 +17226,9 @@
      ]
     },
     "GPT Image 2.5 Flare (max)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17232,9 +17236,9 @@
      ]
     },
     "GPT Image 2": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17242,9 +17246,9 @@
      ]
     },
     "Nano Banana 2.1": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17252,9 +17256,9 @@
      ]
     },
     "MAI-Image-2.6": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17262,9 +17266,9 @@
      ]
     },
     "Grok Imagine Image 2.0": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17272,9 +17276,9 @@
      ]
     },
     "Nano Banana 2 (Gemini 3.1 Flash Image)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17282,9 +17286,9 @@
      ]
     },
     "Muse Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17292,9 +17296,9 @@
      ]
     },
     "GPT Image 1.5": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17302,9 +17306,9 @@
      ]
     },
     "MAI-Image-2.6-Flash": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17312,9 +17316,9 @@
      ]
     },
     "Nano Banana Pro (Gemini 3 Pro Image)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17322,9 +17326,9 @@
      ]
     },
     "MAI-Image-2.5": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17332,9 +17336,9 @@
      ]
     },
     "FLUX 3 Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17342,9 +17346,9 @@
      ]
     },
     "MAI-Image-2.5-Pro": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17352,9 +17356,9 @@
      ]
     },
     "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17362,9 +17366,9 @@
      ]
     },
     "Seedream 5.0 Pro": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17372,9 +17376,9 @@
      ]
     },
     "Qwen-Image-3.0-Pro": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17382,9 +17386,9 @@
      ]
     },
     "Qwen-Image-3.0": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17392,9 +17396,9 @@
      ]
     },
     "Qwen-Image-2.1-Pro": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17402,9 +17406,9 @@
      ]
     },
     "grok-imagine-image-quality": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17412,9 +17416,9 @@
      ]
     },
     "FLUX 3 Image Klein": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17422,9 +17426,9 @@
      ]
     },
     "Qwen-Image-2.1": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17432,9 +17436,9 @@
      ]
     },
     "Fibo 2.0": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17442,9 +17446,9 @@
      ]
     },
     "Krea 2 Large": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17452,9 +17456,9 @@
      ]
     },
     "Qwen Image 2.0 Pro (2026-04-22)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17462,9 +17466,9 @@
      ]
     },
     "MAI-Image-2.5-Flash": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17472,9 +17476,9 @@
      ]
     },
     "Qwen-Image-2.1-Turbo": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17482,9 +17486,9 @@
      ]
     },
     "Wan 2.6 Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17492,9 +17496,9 @@
      ]
     },
     "Recraft V4.1 Utility": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17502,9 +17506,9 @@
      ]
     },
     "Seedream 4.5": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17512,9 +17516,9 @@
      ]
     },
     "FLUX.2 [flex]": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17522,9 +17526,9 @@
      ]
     },
     "Ideogram 4.0 (Quality)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17532,9 +17536,9 @@
      ]
     },
     "Luma UNI 1 Max": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17542,9 +17546,9 @@
      ]
     },
     "grok-imagine-image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17552,9 +17556,9 @@
      ]
     },
     "FLUX.2 [max]": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17562,9 +17566,9 @@
      ]
     },
     "Krea 2 Medium Turbo": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17572,9 +17576,9 @@
      ]
     },
     "Recraft V4.1 Utility Pro": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17582,9 +17586,9 @@
      ]
     },
     "HiDream-O1-Image-1.5": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17592,9 +17596,9 @@
      ]
     },
     "Seedream 5.0 Lite": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17602,9 +17606,9 @@
      ]
     },
     "Ideogram 4.5 (High)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17612,9 +17616,9 @@
      ]
     },
     "Wan2.6 Text to Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17622,9 +17626,9 @@
      ]
     },
     "GPT Image 1 (high)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17632,9 +17636,9 @@
      ]
     },
     "Krea 2 Medium": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17642,9 +17646,9 @@
      ]
     },
     "FLUX.2 [pro]": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17652,9 +17656,9 @@
      ]
     },
     "Ideogram 4.0": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17662,9 +17666,9 @@
      ]
     },
     "FLUX.2 [dev]": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17672,9 +17676,9 @@
      ]
     },
     "Ming-Image-0.1-Design": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17682,9 +17686,9 @@
      ]
     },
     "P-Image-Ideogram (High)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17692,9 +17696,9 @@
      ]
     },
     "FLUX.2 [dev] Turbo": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17702,9 +17706,9 @@
      ]
     },
     "Cosmos3-Super-Text2Image (agentic)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17712,9 +17716,9 @@
      ]
     },
     "Luma UNI 1": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17722,9 +17726,9 @@
      ]
     },
     "P-Image-Ideogram (Very High)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17732,9 +17736,9 @@
      ]
     },
     "Qwen Image 2.0 (2026-03-03)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17742,9 +17746,9 @@
      ]
     },
     "HunyuanImage 3.0 (Tencent Cloud)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17752,9 +17756,9 @@
      ]
     },
     "FLUX.2 [dev] Flash": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17762,9 +17766,9 @@
      ]
     },
     "HunyuanImage 3.0 Instruct": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17772,9 +17776,9 @@
      ]
     },
     "Wan 2.7": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17782,9 +17786,9 @@
      ]
     },
     "Cosmos3-Super-Text2Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17792,9 +17796,9 @@
      ]
     },
     "Nano Banana (Gemini 2.5 Flash Image)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17802,9 +17806,9 @@
      ]
     },
     "Ideogram 4.0 Fast (Quality)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17812,9 +17816,9 @@
      ]
     },
     "Ideogram 4.0 Instant": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17822,9 +17826,9 @@
      ]
     },
     "Wan 2.7 Pro": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17832,9 +17836,9 @@
      ]
     },
     "HiDream-O1-Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17842,9 +17846,9 @@
      ]
     },
     "P-Image-Ideogram (Medium)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17852,9 +17856,9 @@
      ]
     },
     "Cosmos3-Super-Text2Image-4Step": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17862,9 +17866,9 @@
      ]
     },
     "HunyuanImage 3.5 (Preview)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17872,9 +17876,9 @@
      ]
     },
     "Ideogram 4.0 Fast": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17882,9 +17886,9 @@
      ]
     },
     "P-Image-Ideogram (Low)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17892,9 +17896,9 @@
      ]
     },
     "Qwen Image Plus 2601": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17902,9 +17906,9 @@
      ]
     },
     "Recraft V4.1 Flash": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17912,9 +17916,9 @@
      ]
     },
     "GPT Image 1 Mini (medium)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17922,9 +17926,9 @@
      ]
     },
     "Z-Image Turbo": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17932,9 +17936,9 @@
      ]
     },
     "HunyuanImage 3.0": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17942,9 +17946,9 @@
      ]
     },
     "Dreamina 3.1": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17952,9 +17956,9 @@
      ]
     },
     "FLUX.2 [klein] 9B": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17962,9 +17966,9 @@
      ]
     },
     "FLUX.1 Kontext [max]": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17972,9 +17976,9 @@
      ]
     },
     "Kling Image 3.0 Omni": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17982,9 +17986,9 @@
      ]
     },
     "FLUX.1 Kontext [pro]": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -17992,9 +17996,9 @@
      ]
     },
     "ERNIE Image Turbo": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18002,9 +18006,9 @@
      ]
     },
     "Ideogram 3.0": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18012,9 +18016,9 @@
      ]
     },
     "P-Image-Ideogram (Very Low)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18022,9 +18026,9 @@
      ]
     },
     "ERNIE Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18032,9 +18036,9 @@
      ]
     },
     "Qwen Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18042,9 +18046,9 @@
      ]
     },
     "P-Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18052,9 +18056,9 @@
      ]
     },
     "FLUX.1 Krea [dev]": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18062,9 +18066,9 @@
      ]
     },
     "Vidu Q2": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18072,9 +18076,9 @@
      ]
     },
     "Z-Image Base": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18082,9 +18086,9 @@
      ]
     },
     "GLM-Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18092,9 +18096,9 @@
      ]
     },
     "Lucid Origin Ultra": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18102,9 +18106,9 @@
      ]
     },
     "FLUX1.1 [pro]": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18112,9 +18116,9 @@
      ]
     },
     "Lucid Origin Fast": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18122,9 +18126,9 @@
      ]
     },
     "LongCat Image": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18132,9 +18136,9 @@
      ]
     },
     "FLUX1.1 [pro] Ultra": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18142,9 +18146,9 @@
      ]
     },
     "FIBO": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18152,9 +18156,9 @@
      ]
     },
     "Luma Photon": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18162,9 +18166,9 @@
      ]
     },
     "FLUX.2 [klein] 4B": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18172,9 +18176,9 @@
      ]
     },
     "Phoenix 0.9 Ultra": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18182,9 +18186,9 @@
      ]
     },
     "Phoenix 1.0 Fast": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18192,9 +18196,9 @@
      ]
     },
     "SRPO": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18202,9 +18206,9 @@
      ]
     },
     "FLUX.1 [dev]": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18212,9 +18216,9 @@
      ]
     },
     "FIBO Lite": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18222,9 +18226,9 @@
      ]
     },
     "HiDream-O1-Image-Dev": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18232,9 +18236,9 @@
      ]
     },
     "Luma Photon Flash": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18242,9 +18246,9 @@
      ]
     },
     "FLUX.1 [schnell]": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18252,9 +18256,9 @@
      ]
     },
     "OmniGen V2": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18262,9 +18266,9 @@
      ]
     },
     "Bagel": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -18496,8 +18500,8 @@
    "kind": "votes",
    "elo": true,
    "src": "Artificial Analysis",
-   "fetched": "2026-10-24",
-   "stale": true,
+   "fetched": "2026-10-25",
+   "stale": false,
    "historical": {
     "Kling 2.1 Master": {
      "fetched": "2026-09-21",
@@ -19330,9 +19334,9 @@
    },
    "records": {
     "HeyGen Video 1": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19340,9 +19344,9 @@
      ]
     },
     "Wan 3.0": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19350,9 +19354,9 @@
      ]
     },
     "MiniMax H3 (768p)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19360,9 +19364,9 @@
      ]
     },
     "MiniMax H3 Max": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19370,9 +19374,9 @@
      ]
     },
     "Dreamina Seedance 2.5": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19380,9 +19384,9 @@
      ]
     },
     "FLUX 3": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19390,9 +19394,9 @@
      ]
     },
     "Dreamina Seedance 2.0": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19400,9 +19404,9 @@
      ]
     },
     "Gemini Omni Flash 1.1": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19410,9 +19414,9 @@
      ]
     },
     "Agnes-Video-2.5": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19420,9 +19424,9 @@
      ]
     },
     "HappyHorse-1.1": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19430,9 +19434,9 @@
      ]
     },
     "Grok Imagine Video 1.5": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19440,9 +19444,9 @@
      ]
     },
     "HappyHorse-1.0": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19450,9 +19454,9 @@
      ]
     },
     "Wan2.7-260612": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19460,9 +19464,9 @@
      ]
     },
     "MAGI-2 Preview": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19470,9 +19474,9 @@
      ]
     },
     "Kling 3.0 1080p (Pro)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19480,9 +19484,9 @@
      ]
     },
     "PixVerse V6": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19490,9 +19494,9 @@
      ]
     },
     "Kling 3.0 Omni 1080p (Pro)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19500,9 +19504,9 @@
      ]
     },
     "Grok Imagine Video 1.5 Lite": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19510,9 +19514,9 @@
      ]
     },
     "Veo 3.1": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19520,9 +19524,9 @@
      ]
     },
     "Veo 3.1 Fast": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19530,9 +19534,9 @@
      ]
     },
     "Veo 3.1 Lite": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19540,9 +19544,9 @@
      ]
     },
     "LTX-2.5 Fast": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19550,9 +19554,9 @@
      ]
     },
     "LTX-2.5 Pro": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19560,9 +19564,9 @@
      ]
     },
     "Runway Gen-4.5 (720p)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19570,9 +19574,9 @@
      ]
     },
     "Vidu Q3 Turbo": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19580,9 +19584,9 @@
      ]
     },
     "Vidu Q3 Pro": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19590,9 +19594,9 @@
      ]
     },
     "Kling O1 Pro (January)": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19600,9 +19604,9 @@
      ]
     },
     "LTX-2.3 Fast": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19610,9 +19614,9 @@
      ]
     },
     "Pika 2.5": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19620,9 +19624,9 @@
      ]
     },
     "LTX-2.3 Pro": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19630,9 +19634,9 @@
      ]
     },
     "Boreal": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19640,9 +19644,9 @@
      ]
     },
     "P-Video": {
-     "fetched": "2026-10-24",
+     "fetched": "2026-10-25",
      "src": "Artificial Analysis",
-     "stale": true,
+     "stale": false,
      "url": null,
      "source_updated": null,
      "raw_names": [
@@ -19791,7 +19795,7 @@
  },
  "eff": {
   "index": "Artificial Analysis Intelligence Index (version not exposed by the API)",
-  "fetched": "2026-10-24",
+  "fetched": "2026-10-25",
   "fields": {
    "scicode": "scicode",
    "lcr": "lcr",
@@ -19805,8 +19809,8 @@
     "effort": "Max, Default Fallback",
     "score": 57.6,
     "price_1m": 8,
-    "speed": 94.619,
-    "wait_s": 401.547,
+    "speed": 94.76,
+    "wait_s": 472.827,
     "access": null,
     "estimate": false,
     "api_name": "Claude Opus 5.5 (Max, Default Fallback)",
@@ -19819,8 +19823,8 @@
     "effort": "Max, Default Fallback",
     "score": 56,
     "price_1m": 4,
-    "speed": 137.827,
-    "wait_s": 264.723,
+    "speed": 140.088,
+    "wait_s": 275.739,
     "access": null,
     "estimate": false,
     "api_name": "Claude Sonnet 5.5 (Max, Default Fallback)",
@@ -19833,8 +19837,8 @@
     "effort": "Xhigh, Default Fallback",
     "score": 56,
     "price_1m": 8,
-    "speed": 77.38,
-    "wait_s": 48.993,
+    "speed": 74.099,
+    "wait_s": 57.349,
     "access": null,
     "estimate": false,
     "api_name": "Claude Opus 5.5 (Xhigh, Default Fallback)",
@@ -19861,8 +19865,8 @@
     "effort": "default",
     "score": 55.1,
     "price_1m": 4,
-    "speed": 58.758,
-    "wait_s": 35.903,
+    "speed": 49.906,
+    "wait_s": 42.047,
     "access": null,
     "estimate": false,
     "api_name": "Kimi K3.1 Pro",
@@ -19875,7 +19879,7 @@
     "effort": "High, Default Fallback",
     "score": 53.6,
     "price_1m": 8,
-    "speed": 74.687,
+    "speed": 71.492,
     "wait_s": 15.276,
     "access": null,
     "estimate": false,
@@ -19889,8 +19893,8 @@
     "effort": "Max, Default Fallback",
     "score": 53.4,
     "price_1m": 20,
-    "speed": 69.919,
-    "wait_s": 128.198,
+    "speed": 67.481,
+    "wait_s": 139.654,
     "access": "claude",
     "estimate": false,
     "api_name": "Claude Fable 5.1 (Max, Default Fallback)",
@@ -19903,8 +19907,8 @@
     "effort": "Xhigh, Default Fallback",
     "score": 53.2,
     "price_1m": 20,
-    "speed": 54.553,
-    "wait_s": 37.137,
+    "speed": 52.064,
+    "wait_s": 39.138,
     "access": "claude",
     "estimate": false,
     "api_name": "Claude Fable 5.1 (Xhigh, Default Fallback)",
@@ -19917,7 +19921,7 @@
     "effort": "Max",
     "score": 52.7,
     "price_1m": 20,
-    "speed": 63.003,
+    "speed": 59.94,
     "wait_s": 167.237,
     "access": "chatgpt",
     "estimate": false,
@@ -19931,8 +19935,8 @@
     "effort": "High",
     "score": 52.6,
     "price_1m": 4,
-    "speed": 79.302,
-    "wait_s": 31.034,
+    "speed": 78.044,
+    "wait_s": 39.744,
     "access": null,
     "estimate": false,
     "api_name": "Gemini 4 Argon (High)",
@@ -19945,8 +19949,8 @@
     "effort": "Max",
     "score": 52.4,
     "price_1m": 8,
-    "speed": 139.052,
-    "wait_s": 48.609,
+    "speed": 117.017,
+    "wait_s": 44.211,
     "access": null,
     "estimate": false,
     "api_name": "Muse Wonder (Max)",
@@ -19959,8 +19963,8 @@
     "effort": "Xhigh",
     "score": 52.4,
     "price_1m": 20,
-    "speed": 56.324,
-    "wait_s": 63.058,
+    "speed": 53.736,
+    "wait_s": 61.836,
     "access": "chatgpt",
     "estimate": false,
     "api_name": "GPT-6 Astra (Xhigh)",
@@ -19973,8 +19977,8 @@
     "effort": "Xhigh, Default Fallback",
     "score": 51.9,
     "price_1m": 4,
-    "speed": 97.412,
-    "wait_s": 11.888,
+    "speed": 95.265,
+    "wait_s": 11.896,
     "access": null,
     "estimate": false,
     "api_name": "Claude Sonnet 5.5 (Xhigh, Default Fallback)",
@@ -19988,7 +19992,7 @@
     "score": 51.8,
     "price_1m": 4,
     "speed": 56.229,
-    "wait_s": 132.363,
+    "wait_s": 145.524,
     "access": null,
     "estimate": false,
     "api_name": "GPT-6.1 Sol (Max)",
@@ -20001,8 +20005,8 @@
     "effort": "Medium, Default Fallback",
     "score": 51.2,
     "price_1m": 8,
-    "speed": 70.147,
-    "wait_s": 10.113,
+    "speed": 68.189,
+    "wait_s": 10.256,
     "access": null,
     "estimate": false,
     "api_name": "Claude Opus 5.5 (Medium, Default Fallback)",
@@ -20015,8 +20019,8 @@
     "effort": "High, Default Fallback",
     "score": 51.2,
     "price_1m": 20,
-    "speed": 51.978,
-    "wait_s": 2.931,
+    "speed": 47.053,
+    "wait_s": 1.706,
     "access": "claude",
     "estimate": false,
     "api_name": "Claude Fable 5.1 (High, Default Fallback)",
@@ -20029,7 +20033,7 @@
     "effort": "Xhigh",
     "score": 51,
     "price_1m": 4,
-    "speed": 53.917,
+    "speed": 49.641,
     "wait_s": 55.331,
     "access": null,
     "estimate": false,
@@ -20043,8 +20047,8 @@
     "effort": "High",
     "score": 50.9,
     "price_1m": 20,
-    "speed": 49.935,
-    "wait_s": 23.017,
+    "speed": 48.502,
+    "wait_s": 21.281,
     "access": "chatgpt",
     "estimate": false,
     "api_name": "GPT-6 Astra (High)",
@@ -20071,8 +20075,8 @@
     "effort": "High",
     "score": 50.2,
     "price_1m": 4,
-    "speed": 48.382,
-    "wait_s": 20.672,
+    "speed": 47.798,
+    "wait_s": 17.013,
     "access": null,
     "estimate": false,
     "api_name": "GPT-6.1 Sol (High)",
@@ -20114,7 +20118,7 @@
     "score": 49.6,
     "price_1m": 20,
     "speed": 50.425,
-    "wait_s": 3.488,
+    "wait_s": 2.598,
     "access": "chatgpt",
     "estimate": false,
     "api_name": "GPT-6 Astra (Medium)",
@@ -20127,8 +20131,8 @@
     "effort": "Medium, Default Fallback",
     "score": 48.9,
     "price_1m": 20,
-    "speed": 51.458,
-    "wait_s": 2.515,
+    "speed": 46.138,
+    "wait_s": 2.114,
     "access": "claude",
     "estimate": false,
     "api_name": "Claude Fable 5.1 (Medium, Default Fallback)",
@@ -20155,8 +20159,8 @@
     "effort": "Max",
     "score": 48.1,
     "price_1m": 2,
-    "speed": 124.677,
-    "wait_s": 96.591,
+    "speed": 0,
+    "wait_s": 0,
     "access": null,
     "estimate": false,
     "api_name": "Muse Spark 1.3 (Max)",
@@ -20169,8 +20173,8 @@
     "effort": "Medium",
     "score": 47.8,
     "price_1m": 4,
-    "speed": 48.561,
-    "wait_s": 3.185,
+    "speed": 51.52,
+    "wait_s": 3.197,
     "access": null,
     "estimate": false,
     "api_name": "GPT-6.1 Sol (Medium)",
@@ -20211,8 +20215,8 @@
     "effort": "Low, Default Fallback",
     "score": 46.8,
     "price_1m": 20,
-    "speed": 51.823,
-    "wait_s": 1.147,
+    "speed": 49.17,
+    "wait_s": 0.798,
     "access": "claude",
     "estimate": false,
     "api_name": "Claude Fable 5.1 (Low, Default Fallback)",
@@ -20225,8 +20229,8 @@
     "effort": "High, Default Fallback",
     "score": 46.8,
     "price_1m": 4,
-    "speed": 94.85,
-    "wait_s": 7.344,
+    "speed": 90.18,
+    "wait_s": 7.745,
     "access": null,
     "estimate": false,
     "api_name": "Claude Sonnet 5.5 (High, Default Fallback)",
@@ -20239,8 +20243,8 @@
     "effort": "Xhigh",
     "score": 46.4,
     "price_1m": 3,
-    "speed": 89.283,
-    "wait_s": 15.456,
+    "speed": 75.706,
+    "wait_s": 15.588,
     "access": null,
     "estimate": false,
     "api_name": "Grok 4.7 (Xhigh)",
@@ -20253,8 +20257,8 @@
     "effort": "High",
     "score": 46.3,
     "price_1m": 3,
-    "speed": 82.906,
-    "wait_s": 8.71,
+    "speed": 75.296,
+    "wait_s": 10.201,
     "access": null,
     "estimate": false,
     "api_name": "Grok 4.7 (High)",
@@ -20267,8 +20271,8 @@
     "effort": "default",
     "score": 46.3,
     "price_1m": 0.544,
-    "speed": 46.422,
-    "wait_s": 45.432,
+    "speed": 44.674,
+    "wait_s": 47.172,
     "access": null,
     "estimate": false,
     "api_name": "MiMo-V2.6-Pro",
@@ -20293,8 +20297,8 @@
     "effort": "Low",
     "score": 45.8,
     "price_1m": 20,
-    "speed": 54.113,
-    "wait_s": 1.748,
+    "speed": 56.159,
+    "wait_s": 1.57,
     "access": "chatgpt",
     "estimate": false,
     "api_name": "GPT-6 Astra (Low)",
@@ -20307,8 +20311,8 @@
     "effort": "0902",
     "score": 45.4,
     "price_1m": 3,
-    "speed": 40.188,
-    "wait_s": 51.754,
+    "speed": 39.773,
+    "wait_s": 52.141,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.8 Max (0902)",
@@ -20333,8 +20337,8 @@
     "effort": "Max",
     "score": 45.1,
     "price_1m": 0.525,
-    "speed": 181.481,
-    "wait_s": 11.981,
+    "speed": 154.888,
+    "wait_s": 13.823,
     "access": null,
     "estimate": false,
     "api_name": "DeepSeek V4.1 Flash 1017 (Max)",
@@ -20347,8 +20351,8 @@
     "effort": "Xhigh",
     "score": 45.1,
     "price_1m": 2,
-    "speed": 711.027,
-    "wait_s": 29.035,
+    "speed": 0,
+    "wait_s": 0,
     "access": null,
     "estimate": false,
     "api_name": "Muse Spark 1.3 (Xhigh)",
@@ -20375,8 +20379,8 @@
     "effort": "Max",
     "score": 44.8,
     "price_1m": 2.15,
-    "speed": 77.903,
-    "wait_s": 28.169,
+    "speed": 83.516,
+    "wait_s": 26.324,
     "access": null,
     "estimate": false,
     "api_name": "GLM-5.3 (Max)",
@@ -20459,8 +20463,8 @@
     "effort": "default",
     "score": 43.7,
     "price_1m": 1.425,
-    "speed": 219.97,
-    "wait_s": 10.056,
+    "speed": 211.278,
+    "wait_s": 10.455,
     "access": null,
     "estimate": false,
     "api_name": "Step 5 Preview",
@@ -20485,8 +20489,8 @@
     "effort": "Max",
     "score": 43.6,
     "price_1m": 6,
-    "speed": 39.08,
-    "wait_s": 54.349,
+    "speed": 40.025,
+    "wait_s": 52.23,
     "access": null,
     "estimate": false,
     "api_name": "Kimi K3 (Max)",
@@ -20499,8 +20503,8 @@
     "effort": "Max",
     "score": 43.4,
     "price_1m": 0.2,
-    "speed": 241.135,
-    "wait_s": 211.99,
+    "speed": 240.446,
+    "wait_s": 218.109,
     "access": null,
     "estimate": false,
     "api_name": "Claude Haiku 5.5 (Max)",
@@ -20527,8 +20531,8 @@
     "effort": "default",
     "score": 42.7,
     "price_1m": 0.262,
-    "speed": 103.33,
-    "wait_s": 20.364,
+    "speed": 108.111,
+    "wait_s": 19.439,
     "access": null,
     "estimate": false,
     "api_name": "MiniMax-M3.1-Flash",
@@ -20569,8 +20573,8 @@
     "effort": "Low, Default Fallback",
     "score": 42.3,
     "price_1m": 8,
-    "speed": 70.274,
-    "wait_s": 2.561,
+    "speed": 68.948,
+    "wait_s": 2.094,
     "access": null,
     "estimate": false,
     "api_name": "Claude Opus 5.5 (Low, Default Fallback)",
@@ -20583,8 +20587,8 @@
     "effort": "Low",
     "score": 42.2,
     "price_1m": 3,
-    "speed": 68.92,
-    "wait_s": 3.053,
+    "speed": 64.785,
+    "wait_s": 2.109,
     "access": null,
     "estimate": false,
     "api_name": "Grok 4.7 (Low)",
@@ -20598,7 +20602,7 @@
     "score": 42.1,
     "price_1m": 4,
     "speed": 48.873,
-    "wait_s": 1.487,
+    "wait_s": 1.587,
     "access": null,
     "estimate": false,
     "api_name": "GPT-6.1 Sol (Low)",
@@ -20611,8 +20615,8 @@
     "effort": "Max",
     "score": 42.1,
     "price_1m": 4.5,
-    "speed": 125.551,
-    "wait_s": 65.502,
+    "speed": 119.267,
+    "wait_s": 67.439,
     "access": "chatgpt",
     "estimate": false,
     "api_name": "GPT-5.6 Terra (Max)",
@@ -20625,8 +20629,8 @@
     "effort": "default",
     "score": 41.8,
     "price_1m": 0.237,
-    "speed": 62.804,
-    "wait_s": 34.31,
+    "speed": 64.336,
+    "wait_s": 33.496,
     "access": null,
     "estimate": false,
     "api_name": "GLM-5.3-Flash",
@@ -20653,8 +20657,8 @@
     "effort": "Xhigh",
     "score": 41.2,
     "price_1m": 0.2,
-    "speed": 181.912,
-    "wait_s": 34.635,
+    "speed": 179.244,
+    "wait_s": 35.232,
     "access": null,
     "estimate": false,
     "api_name": "Claude Haiku 5.5 (Xhigh)",
@@ -20667,8 +20671,8 @@
     "effort": "default",
     "score": 41.1,
     "price_1m": 0.45,
-    "speed": 218.335,
-    "wait_s": 10.454,
+    "speed": 212.804,
+    "wait_s": 10.668,
     "access": null,
     "estimate": false,
     "api_name": "Ling 3.1 Flash",
@@ -20681,8 +20685,8 @@
     "effort": "High",
     "score": 40.9,
     "price_1m": 1.5,
-    "speed": 126.944,
-    "wait_s": 16.343,
+    "speed": 121.871,
+    "wait_s": 17.22,
     "access": null,
     "estimate": false,
     "api_name": "Gemini 3.8 Flash (High)",
@@ -20695,8 +20699,8 @@
     "effort": "Medium, Default Fallback",
     "score": 40.8,
     "price_1m": 4,
-    "speed": 91.552,
-    "wait_s": 0.827,
+    "speed": 86.578,
+    "wait_s": 0.884,
     "access": null,
     "estimate": false,
     "api_name": "Claude Sonnet 5.5 (Medium, Default Fallback)",
@@ -20749,8 +20753,8 @@
     "effort": "default",
     "score": 39.9,
     "price_1m": 3,
-    "speed": 40.127,
-    "wait_s": 51.799,
+    "speed": 39.246,
+    "wait_s": 53.005,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.8 2.4T A95B",
@@ -20775,8 +20779,8 @@
     "effort": "default",
     "score": 39.8,
     "price_1m": 0.23,
-    "speed": 49.254,
-    "wait_s": 41.736,
+    "speed": 49.226,
+    "wait_s": 41.768,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.8-Flash-Next",
@@ -20927,8 +20931,8 @@
     "effort": "Xhigh",
     "score": 38.9,
     "price_1m": 2,
-    "speed": 142.636,
-    "wait_s": 14.649,
+    "speed": 143.698,
+    "wait_s": 14.456,
     "access": null,
     "estimate": false,
     "api_name": "Muse Spark Open (Xhigh)",
@@ -20955,8 +20959,8 @@
     "effort": "default",
     "score": 38.4,
     "price_1m": 2.065,
-    "speed": 96.609,
-    "wait_s": 22.326,
+    "speed": 115.87,
+    "wait_s": 18.273,
     "access": null,
     "estimate": false,
     "api_name": "Mistral Large 4 Preview",
@@ -20997,8 +21001,8 @@
     "effort": "Max",
     "score": 38.1,
     "price_1m": 0.2,
-    "speed": 134.648,
-    "wait_s": 63.933,
+    "speed": 129.95,
+    "wait_s": 72.037,
     "access": null,
     "estimate": false,
     "api_name": "GPT-6 Luna (Max)",
@@ -21011,8 +21015,8 @@
     "effort": "Xhigh",
     "score": 38,
     "price_1m": 4.5,
-    "speed": 116.431,
-    "wait_s": 6.639,
+    "speed": 101.427,
+    "wait_s": 5.16,
     "access": "chatgpt",
     "estimate": false,
     "api_name": "GPT-5.6 Terra (Xhigh)",
@@ -21025,8 +21029,8 @@
     "effort": "default",
     "score": 37.9,
     "price_1m": 0.175,
-    "speed": 47.532,
-    "wait_s": 46.457,
+    "speed": 49.581,
+    "wait_s": 44.981,
     "access": null,
     "estimate": false,
     "api_name": "MiMo-V2.6-Flash",
@@ -21051,8 +21055,8 @@
     "effort": "High",
     "score": 37.8,
     "price_1m": 0.2,
-    "speed": 152.312,
-    "wait_s": 10.448,
+    "speed": 151.37,
+    "wait_s": 12.667,
     "access": null,
     "estimate": false,
     "api_name": "Claude Haiku 5.5 (High)",
@@ -21107,8 +21111,8 @@
     "effort": "Max",
     "score": 36,
     "price_1m": 1.98,
-    "speed": 90.068,
-    "wait_s": 23.322,
+    "speed": 102.664,
+    "wait_s": 20.653,
     "access": null,
     "estimate": false,
     "api_name": "DeepSeek V4 Pro 0813 (Max)",
@@ -21121,8 +21125,8 @@
     "effort": "Low, Default Fallback",
     "score": 35.9,
     "price_1m": 4,
-    "speed": 92.471,
-    "wait_s": 0.83,
+    "speed": 88.128,
+    "wait_s": 0.82,
     "access": null,
     "estimate": false,
     "api_name": "Claude Sonnet 5.5 (Low, Default Fallback)",
@@ -21135,8 +21139,8 @@
     "effort": "default",
     "score": 35.2,
     "price_1m": 0.15,
-    "speed": 118.105,
-    "wait_s": 17.608,
+    "speed": 122.503,
+    "wait_s": 16.987,
     "access": null,
     "estimate": false,
     "api_name": "Agnes 2.5 Pro Beta",
@@ -21163,8 +21167,8 @@
     "effort": "Max",
     "score": 34.8,
     "price_1m": 0.66,
-    "speed": 163.707,
-    "wait_s": 13.444,
+    "speed": 152.935,
+    "wait_s": 14.27,
     "access": null,
     "estimate": false,
     "api_name": "DeepSeek V4 Flash Vision (Max)",
@@ -21177,8 +21181,8 @@
     "effort": "Xhigh",
     "score": 34.6,
     "price_1m": 0.2,
-    "speed": 109.721,
-    "wait_s": 14.243,
+    "speed": 112.795,
+    "wait_s": 14.429,
     "access": null,
     "estimate": false,
     "api_name": "GPT-6 Luna (Xhigh)",
@@ -21205,8 +21209,8 @@
     "effort": "Medium",
     "score": 34.5,
     "price_1m": 0.2,
-    "speed": 153.975,
-    "wait_s": 7.045,
+    "speed": 141.317,
+    "wait_s": 6.491,
     "access": null,
     "estimate": false,
     "api_name": "Claude Haiku 5.5 (Medium)",
@@ -21247,8 +21251,8 @@
     "effort": "Low",
     "score": 34.3,
     "price_1m": 2.15,
-    "speed": 71.581,
-    "wait_s": 30.946,
+    "speed": 68.119,
+    "wait_s": 32.322,
     "access": null,
     "estimate": false,
     "api_name": "GLM-5.3 (Low)",
@@ -21261,8 +21265,8 @@
     "effort": "High",
     "score": 34.2,
     "price_1m": 4.5,
-    "speed": 106.103,
-    "wait_s": 2.203,
+    "speed": 97.634,
+    "wait_s": 2.301,
     "access": "chatgpt",
     "estimate": false,
     "api_name": "GPT-5.6 Terra (High)",
@@ -21359,8 +21363,8 @@
     "effort": "Xhigh",
     "score": 33.7,
     "price_1m": 1.125,
-    "speed": 40.779,
-    "wait_s": 50.237,
+    "speed": 42.704,
+    "wait_s": 48.022,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.8 27B (Xhigh)",
@@ -21429,8 +21433,8 @@
     "effort": "High",
     "score": 32.9,
     "price_1m": 0.2,
-    "speed": 117.653,
-    "wait_s": 11.284,
+    "speed": 113.943,
+    "wait_s": 8.657,
     "access": null,
     "estimate": false,
     "api_name": "GPT-6 Luna (High)",
@@ -21457,8 +21461,8 @@
     "effort": "Xhigh",
     "score": 32.5,
     "price_1m": 4.813,
-    "speed": 84.166,
-    "wait_s": 42.473,
+    "speed": 97.489,
+    "wait_s": 40.436,
     "access": null,
     "estimate": false,
     "api_name": "GPT-5.3 Codex (Xhigh)",
@@ -21569,8 +21573,8 @@
     "effort": "default",
     "score": 30.5,
     "price_1m": 0,
-    "speed": 402.747,
-    "wait_s": 6.567,
+    "speed": 163.619,
+    "wait_s": 13.824,
     "access": null,
     "estimate": false,
     "api_name": "K2 Horizon 375B A23B",
@@ -21611,8 +21615,8 @@
     "effort": "default",
     "score": 30.3,
     "price_1m": 0.6,
-    "speed": 338.258,
-    "wait_s": 6.423,
+    "speed": 360.04,
+    "wait_s": 6.065,
     "access": null,
     "estimate": false,
     "api_name": "Beam 1.0",
@@ -21639,8 +21643,8 @@
     "effort": "Medium",
     "score": 30.1,
     "price_1m": 4.5,
-    "speed": 101.316,
-    "wait_s": 1.549,
+    "speed": 98.889,
+    "wait_s": 1.523,
     "access": "chatgpt",
     "estimate": false,
     "api_name": "GPT-5.6 Terra (Medium)",
@@ -21653,8 +21657,8 @@
     "effort": "Low",
     "score": 30.1,
     "price_1m": 6,
-    "speed": 37.164,
-    "wait_s": 56.494,
+    "speed": 40.191,
+    "wait_s": 52.313,
     "access": null,
     "estimate": false,
     "api_name": "Kimi K3 (Low)",
@@ -21695,8 +21699,8 @@
     "effort": "default",
     "score": 29.7,
     "price_1m": 4.5,
-    "speed": 134.017,
-    "wait_s": 17.314,
+    "speed": 131.41,
+    "wait_s": 16.577,
     "access": null,
     "estimate": false,
     "api_name": "Gemini 3.1 Pro Preview",
@@ -21735,8 +21739,8 @@
     "effort": "Low",
     "score": 29.5,
     "price_1m": 0.2,
-    "speed": 150.839,
-    "wait_s": 4.294,
+    "speed": 142.223,
+    "wait_s": 3.833,
     "access": null,
     "estimate": false,
     "api_name": "Claude Haiku 5.5 (Low)",
@@ -21750,7 +21754,7 @@
     "score": 29.2,
     "price_1m": 0.525,
     "speed": 88.037,
-    "wait_s": 23.741,
+    "wait_s": 23.501,
     "access": null,
     "estimate": false,
     "api_name": "MiniMax-M3",
@@ -21941,8 +21945,8 @@
     "effort": "Medium",
     "score": 27.6,
     "price_1m": 1.125,
-    "speed": 46.663,
-    "wait_s": 44.047,
+    "speed": 44.281,
+    "wait_s": 46.392,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.8 27B (Medium)",
@@ -21956,7 +21960,7 @@
     "score": 27.5,
     "price_1m": 4.5,
     "speed": 103.124,
-    "wait_s": 1.456,
+    "wait_s": 1.359,
     "access": "chatgpt",
     "estimate": false,
     "api_name": "GPT-5.6 Terra (Low)",
@@ -22025,8 +22029,8 @@
     "effort": "Max, Based on GLM-5.2",
     "score": 26.7,
     "price_1m": 0.165,
-    "speed": 152.694,
-    "wait_s": 13.652,
+    "speed": 146.814,
+    "wait_s": 14.159,
     "access": null,
     "estimate": false,
     "api_name": "Quasar 438B (Max, Based on GLM-5.2)",
@@ -22081,8 +22085,8 @@
     "effort": "default",
     "score": 26.5,
     "price_1m": 0.313,
-    "speed": 440.035,
-    "wait_s": 5.107,
+    "speed": 440.745,
+    "wait_s": 5.055,
     "access": null,
     "estimate": false,
     "api_name": "Nemotron 3.5 Super VL",
@@ -22149,8 +22153,8 @@
     "effort": "Low",
     "score": 26.2,
     "price_1m": 1.125,
-    "speed": 44.965,
-    "wait_s": 45.603,
+    "speed": 46.017,
+    "wait_s": 44.621,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.8 27B (Low)",
@@ -22177,8 +22181,8 @@
     "effort": "June 2026",
     "score": 26,
     "price_1m": 11.25,
-    "speed": 156.855,
-    "wait_s": 13.556,
+    "speed": 153.559,
+    "wait_s": 13.806,
     "access": null,
     "estimate": false,
     "api_name": "GPT-5.5 Instant (June 2026)",
@@ -22217,8 +22221,8 @@
     "effort": "default",
     "score": 25.8,
     "price_1m": 1.712,
-    "speed": 51.436,
-    "wait_s": 44.414,
+    "speed": 64.164,
+    "wait_s": 35.791,
     "access": null,
     "estimate": false,
     "api_name": "Kimi K2.7 Code",
@@ -22243,8 +22247,8 @@
     "effort": "default",
     "score": 25.7,
     "price_1m": 0.525,
-    "speed": 225.066,
-    "wait_s": 10.45,
+    "speed": 220.56,
+    "wait_s": 10.764,
     "access": null,
     "estimate": false,
     "api_name": "Inkling Small",
@@ -22297,8 +22301,8 @@
     "effort": "default",
     "score": 25.3,
     "price_1m": 0.241,
-    "speed": 85.946,
-    "wait_s": 25.111,
+    "speed": 81.288,
+    "wait_s": 26.431,
     "access": null,
     "estimate": false,
     "api_name": "Hy3",
@@ -22337,8 +22341,8 @@
     "effort": "default",
     "score": 25.2,
     "price_1m": 0.7,
-    "speed": 57.357,
-    "wait_s": 36.485,
+    "speed": 56.058,
+    "wait_s": 37.385,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.7 Plus",
@@ -22391,8 +22395,8 @@
     "effort": "Xhigh",
     "score": 25,
     "price_1m": 1.762,
-    "speed": 220.029,
-    "wait_s": 11.128,
+    "speed": 214.014,
+    "wait_s": 11.366,
     "access": null,
     "estimate": false,
     "api_name": "Inkling (Xhigh)",
@@ -22601,8 +22605,8 @@
     "effort": "default",
     "score": 24.1,
     "price_1m": 0.175,
-    "speed": 101.892,
-    "wait_s": 20.74,
+    "speed": 107.728,
+    "wait_s": 19.677,
     "access": null,
     "estimate": false,
     "api_name": "Solar Mini 4",
@@ -22769,8 +22773,8 @@
     "effort": "Reasoning",
     "score": 22.9,
     "price_1m": 1.125,
-    "speed": 133.558,
-    "wait_s": 17.925,
+    "speed": 147.252,
+    "wait_s": 16.344,
     "access": null,
     "estimate": false,
     "api_name": "Nemotron 3 Ultra 550B A55B (Reasoning)",
@@ -22965,8 +22969,8 @@
     "effort": "default",
     "score": 22.2,
     "price_1m": 0.85,
-    "speed": 375.879,
-    "wait_s": 6.259,
+    "speed": 355.559,
+    "wait_s": 5.923,
     "access": null,
     "estimate": false,
     "api_name": "Gemini 3.5 Flash-Lite",
@@ -23088,7 +23092,7 @@
     "score": 21.5,
     "price_1m": 0.2,
     "speed": 111.076,
-    "wait_s": 2.49,
+    "wait_s": 2.41,
     "access": null,
     "estimate": false,
     "api_name": "GPT-6 Luna (Low)",
@@ -23129,8 +23133,8 @@
     "effort": "Non-reasoning",
     "score": 21.4,
     "price_1m": 1.35,
-    "speed": 59.182,
-    "wait_s": 1.532,
+    "speed": 59.739,
+    "wait_s": 1.541,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.5 397B A17B (Non-reasoning)",
@@ -23255,8 +23259,8 @@
     "effort": "Non-reasoning",
     "score": 20.8,
     "price_1m": 4.5,
-    "speed": 102.606,
-    "wait_s": 0.742,
+    "speed": 99.737,
+    "wait_s": 0.773,
     "access": "chatgpt",
     "estimate": false,
     "api_name": "GPT-5.6 Terra (Non-reasoning)",
@@ -23351,8 +23355,8 @@
     "effort": "default",
     "score": 20.4,
     "price_1m": 1.5,
-    "speed": 113.44,
-    "wait_s": 1.085,
+    "speed": 115.157,
+    "wait_s": 1.1,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.5 Omni Plus",
@@ -23393,8 +23397,8 @@
     "effort": "Non-reasoning",
     "score": 20.4,
     "price_1m": 1.98,
-    "speed": 85.511,
-    "wait_s": 1.149,
+    "speed": 95.135,
+    "wait_s": 1.174,
     "access": null,
     "estimate": false,
     "api_name": "DeepSeek V4 Pro 0813 (Non-reasoning)",
@@ -23419,8 +23423,8 @@
     "effort": "default",
     "score": 20.2,
     "price_1m": 3.5,
-    "speed": 126.855,
-    "wait_s": 5.392,
+    "speed": 136.509,
+    "wait_s": 3.75,
     "access": null,
     "estimate": false,
     "api_name": "o3",
@@ -23433,8 +23437,8 @@
     "effort": "Non-reasoning",
     "score": 20.2,
     "price_1m": 1.125,
-    "speed": 45.85,
-    "wait_s": 1.157,
+    "speed": 46.877,
+    "wait_s": 1.17,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.8 27B (Non-reasoning)",
@@ -23599,8 +23603,8 @@
     "effort": "default",
     "score": 19.1,
     "price_1m": 1.3,
-    "speed": 69.905,
-    "wait_s": 30.37,
+    "speed": 71.384,
+    "wait_s": 29.829,
     "access": null,
     "estimate": false,
     "api_name": "LongCat 2.0",
@@ -23723,8 +23727,8 @@
     "effort": "Non-reasoning",
     "score": 18.5,
     "price_1m": 0.2,
-    "speed": 114.886,
-    "wait_s": 0.797,
+    "speed": 110.139,
+    "wait_s": 0.919,
     "access": null,
     "estimate": false,
     "api_name": "GPT-6 Luna (Non-reasoning)",
@@ -23749,8 +23753,8 @@
     "effort": "Reasoning",
     "score": 18.4,
     "price_1m": 1.35,
-    "speed": 58.677,
-    "wait_s": 55.778,
+    "speed": 59.12,
+    "wait_s": 55.445,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.5 397B A17B (Reasoning)",
@@ -23777,8 +23781,8 @@
     "effort": "Reasoning",
     "score": 18.2,
     "price_1m": 0.844,
-    "speed": 134.612,
-    "wait_s": 41.122,
+    "speed": 134.468,
+    "wait_s": 41.185,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.6 35B A3B (Reasoning)",
@@ -23833,8 +23837,8 @@
     "effort": "Non-reasoning",
     "score": 17.7,
     "price_1m": 1.1,
-    "speed": 145.259,
-    "wait_s": 0.999,
+    "speed": 144.941,
+    "wait_s": 0.974,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.5 122B A10B (Non-reasoning)",
@@ -23861,8 +23865,8 @@
     "effort": "High",
     "score": 17.5,
     "price_1m": 0.525,
-    "speed": 121.436,
-    "wait_s": 16.932,
+    "speed": 108.89,
+    "wait_s": 18.829,
     "access": null,
     "estimate": false,
     "api_name": "Muse Glimmer (High)",
@@ -23987,8 +23991,8 @@
     "effort": "Reasoning",
     "score": 16.7,
     "price_1m": 0.16,
-    "speed": 86.104,
-    "wait_s": 23.838,
+    "speed": 92.03,
+    "wait_s": 22.338,
     "access": null,
     "estimate": false,
     "api_name": "Gemma 4 26B A4B (Reasoning)",
@@ -24015,8 +24019,8 @@
     "effort": "default",
     "score": 16.6,
     "price_1m": 0.85,
-    "speed": 121.831,
-    "wait_s": 18.6,
+    "speed": 121.445,
+    "wait_s": 18.652,
     "access": null,
     "estimate": false,
     "api_name": "Ring-2.6-1T",
@@ -24181,8 +24185,8 @@
     "effort": "Reasoning",
     "score": 15.6,
     "price_1m": 1.1,
-    "speed": 133.797,
-    "wait_s": 15.932,
+    "speed": 134.555,
+    "wait_s": 15.849,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.5 122B A10B (Reasoning)",
@@ -24291,8 +24295,8 @@
     "effort": "Non-reasoning",
     "score": 15.2,
     "price_1m": 0.844,
-    "speed": 148.508,
-    "wait_s": 1.067,
+    "speed": 143.389,
+    "wait_s": 1.062,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.6 35B A3B (Non-reasoning)",
@@ -24389,8 +24393,8 @@
     "effort": "Reasoning",
     "score": 14.7,
     "price_1m": 0,
-    "speed": 35.502,
-    "wait_s": 49.859,
+    "speed": 35.636,
+    "wait_s": 49.603,
     "access": null,
     "estimate": false,
     "api_name": "Gemma 4 31B (Reasoning)",
@@ -24501,8 +24505,8 @@
     "effort": "default",
     "score": 14.2,
     "price_1m": 3,
-    "speed": 159.278,
-    "wait_s": 13.231,
+    "speed": 158.085,
+    "wait_s": 13.32,
     "access": null,
     "estimate": false,
     "api_name": "Mistral Medium 3.5",
@@ -24527,8 +24531,8 @@
     "effort": "Reasoning",
     "score": 14.2,
     "price_1m": 0.15,
-    "speed": 143.297,
-    "wait_s": 15.178,
+    "speed": 141.126,
+    "wait_s": 15.401,
     "access": null,
     "estimate": false,
     "api_name": "Gemma 4 12B (Reasoning)",
@@ -24541,8 +24545,8 @@
     "effort": "Medium",
     "score": 14.2,
     "price_1m": 3.438,
-    "speed": 131.742,
-    "wait_s": 27.981,
+    "speed": 124.63,
+    "wait_s": 28.481,
     "access": null,
     "estimate": false,
     "api_name": "Nova 2.0 Pro Preview (Medium)",
@@ -24609,8 +24613,8 @@
     "effort": "Non-reasoning",
     "score": 13.9,
     "price_1m": 0.224,
-    "speed": 61.923,
-    "wait_s": 0.592,
+    "speed": 65.693,
+    "wait_s": 0.584,
     "access": null,
     "estimate": false,
     "api_name": "Gemma 4 31B (Non-reasoning)",
@@ -24721,8 +24725,8 @@
     "effort": "High",
     "score": 13.4,
     "price_1m": 0.85,
-    "speed": 206.976,
-    "wait_s": 20.389,
+    "speed": 204.206,
+    "wait_s": 20.346,
     "access": null,
     "estimate": false,
     "api_name": "Nova 2.0 Lite (High)",
@@ -24749,8 +24753,8 @@
     "effort": "Non-reasoning",
     "score": 13.3,
     "price_1m": 0.19,
-    "speed": 80.151,
-    "wait_s": 0.487,
+    "speed": 85.542,
+    "wait_s": 0.536,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.5 9B (Non-reasoning)",
@@ -24777,8 +24781,8 @@
     "effort": "default",
     "score": 13.1,
     "price_1m": 0,
-    "speed": 137.938,
-    "wait_s": 14.79,
+    "speed": 158.34,
+    "wait_s": 12.921,
     "access": null,
     "estimate": false,
     "api_name": "Command A+",
@@ -24791,8 +24795,8 @@
     "effort": "Non-reasoning",
     "score": 13.1,
     "price_1m": 0.186,
-    "speed": 101.633,
-    "wait_s": 0.566,
+    "speed": 103.534,
+    "wait_s": 0.538,
     "access": null,
     "estimate": false,
     "api_name": "Gemma 4 26B A4B (Non-reasoning)",
@@ -24805,8 +24809,8 @@
     "effort": "Reasoning",
     "score": 13.1,
     "price_1m": 0.06,
-    "speed": 13.407,
-    "wait_s": 149.827,
+    "speed": 14.5,
+    "wait_s": 138.548,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.5 4B (Reasoning)",
@@ -24861,8 +24865,8 @@
     "effort": "default",
     "score": 12.9,
     "price_1m": 0.095,
-    "speed": 286.258,
-    "wait_s": 7.432,
+    "speed": 290.62,
+    "wait_s": 7.287,
     "access": null,
     "estimate": false,
     "api_name": "Nemotron 3.5 Lightning",
@@ -24901,8 +24905,8 @@
     "effort": "Low",
     "score": 12.8,
     "price_1m": 3.438,
-    "speed": 140.734,
-    "wait_s": 17.414,
+    "speed": 130.782,
+    "wait_s": 17.948,
     "access": null,
     "estimate": false,
     "api_name": "Nova 2.0 Pro Preview (Low)",
@@ -24971,8 +24975,8 @@
     "effort": "default",
     "score": 12.7,
     "price_1m": 0.282,
-    "speed": 72.771,
-    "wait_s": 27.824,
+    "speed": 47.544,
+    "wait_s": 42.437,
     "access": null,
     "estimate": false,
     "api_name": "Granite 4.2 30B",
@@ -24999,8 +25003,8 @@
     "effort": "Medium",
     "score": 12.5,
     "price_1m": 0.85,
-    "speed": 200.743,
-    "wait_s": 19.125,
+    "speed": 193.606,
+    "wait_s": 22.019,
     "access": null,
     "estimate": false,
     "api_name": "Nova 2.0 Lite (Medium)",
@@ -25027,8 +25031,8 @@
     "effort": "default",
     "score": 12.5,
     "price_1m": 0.275,
-    "speed": 234.995,
-    "wait_s": 0.939,
+    "speed": 224.142,
+    "wait_s": 0.981,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.5 Omni Flash",
@@ -25097,8 +25101,8 @@
     "effort": "default",
     "score": 12.3,
     "price_1m": 0.375,
-    "speed": 586.248,
-    "wait_s": 2.7,
+    "speed": 707.194,
+    "wait_s": 2.437,
     "access": null,
     "estimate": false,
     "api_name": "Mercury 2.5",
@@ -25235,8 +25239,8 @@
     "effort": "Low",
     "score": 11.8,
     "price_1m": 0.85,
-    "speed": 209.83,
-    "wait_s": 13.745,
+    "speed": 211.546,
+    "wait_s": 13.623,
     "access": null,
     "estimate": false,
     "api_name": "Nova 2.0 Lite (Low)",
@@ -25319,8 +25323,8 @@
     "effort": "High",
     "score": 11.6,
     "price_1m": 0.262,
-    "speed": 201.38,
-    "wait_s": 10.408,
+    "speed": 219.544,
+    "wait_s": 9.587,
     "access": null,
     "estimate": false,
     "api_name": "gpt-oss-120b (High)",
@@ -25431,8 +25435,8 @@
     "effort": "Reasoning",
     "score": 11.3,
     "price_1m": 0.262,
-    "speed": 182,
-    "wait_s": 11.631,
+    "speed": 181.804,
+    "wait_s": 11.678,
     "access": null,
     "estimate": false,
     "api_name": "Mistral Small 4 (Reasoning)",
@@ -25487,8 +25491,8 @@
     "effort": "Reasoning",
     "score": 11.2,
     "price_1m": 0.151,
-    "speed": 60.209,
-    "wait_s": 34.265,
+    "speed": 60.456,
+    "wait_s": 34.084,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.5 9B (Reasoning)",
@@ -25543,8 +25547,8 @@
     "effort": "default",
     "score": 11.1,
     "price_1m": 0.107,
-    "speed": 97.579,
-    "wait_s": 20.823,
+    "speed": 47.202,
+    "wait_s": 42.733,
     "access": null,
     "estimate": false,
     "api_name": "Granite 4.2 8B",
@@ -25583,8 +25587,8 @@
     "effort": "default",
     "score": 11.1,
     "price_1m": 0,
-    "speed": 57.985,
-    "wait_s": 36.289,
+    "speed": 57.846,
+    "wait_s": 36.445,
     "access": null,
     "estimate": false,
     "api_name": "Ling 3.0 Tiny",
@@ -25665,8 +25669,8 @@
     "effort": "default",
     "score": 10.8,
     "price_1m": 0.388,
-    "speed": 359.259,
-    "wait_s": 6.73,
+    "speed": 354.898,
+    "wait_s": 6.775,
     "access": null,
     "estimate": false,
     "api_name": "Trinity Large Thinking",
@@ -25691,8 +25695,8 @@
     "effort": "Non-reasoning",
     "score": 10.8,
     "price_1m": 0.06,
-    "speed": 11.621,
-    "wait_s": 0.635,
+    "speed": 14.798,
+    "wait_s": 0.512,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3.5 4B (Non-reasoning)",
@@ -25815,8 +25819,8 @@
     "effort": "default",
     "score": 10.3,
     "price_1m": 0.641,
-    "speed": 235.802,
-    "wait_s": 8.924,
+    "speed": 234.954,
+    "wait_s": 8.926,
     "access": null,
     "estimate": false,
     "api_name": "Nemotron 3 Nano Omni 30B A3B Reasoning",
@@ -25829,8 +25833,8 @@
     "effort": "Low",
     "score": 10.2,
     "price_1m": 0.242,
-    "speed": 247.254,
-    "wait_s": 8.548,
+    "speed": 259.852,
+    "wait_s": 8.15,
     "access": null,
     "estimate": false,
     "api_name": "gpt-oss-120b (Low)",
@@ -25871,8 +25875,8 @@
     "effort": "Non-reasoning",
     "score": 10,
     "price_1m": 3.438,
-    "speed": 133.552,
-    "wait_s": 0.634,
+    "speed": 127.459,
+    "wait_s": 0.633,
     "access": null,
     "estimate": false,
     "api_name": "Nova 2.0 Pro Preview (Non-reasoning)",
@@ -25885,8 +25889,8 @@
     "effort": "Low",
     "score": 10,
     "price_1m": 0.128,
-    "speed": 200.724,
-    "wait_s": 10.429,
+    "speed": 207.876,
+    "wait_s": 10.086,
     "access": null,
     "estimate": false,
     "api_name": "gpt-oss-20b (Low)",
@@ -25913,8 +25917,8 @@
     "effort": "default",
     "score": 9.9,
     "price_1m": 0,
-    "speed": 60.499,
-    "wait_s": 33.364,
+    "speed": 79.609,
+    "wait_s": 25.428,
     "access": null,
     "estimate": false,
     "api_name": "North Mini Code",
@@ -26037,8 +26041,8 @@
     "effort": "default",
     "score": 9.6,
     "price_1m": 0.35,
-    "speed": 119.793,
-    "wait_s": 0.548,
+    "speed": 140.838,
+    "wait_s": 0.541,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3 Next 80B A3B Instruct",
@@ -26163,8 +26167,8 @@
     "effort": "Non-reasoning",
     "score": 9.4,
     "price_1m": 0.15,
-    "speed": 148.398,
-    "wait_s": 1.225,
+    "speed": 142.299,
+    "wait_s": 1.22,
     "access": null,
     "estimate": false,
     "api_name": "Gemma 4 12B (Non-reasoning)",
@@ -26191,8 +26195,8 @@
     "effort": "default",
     "score": 9.3,
     "price_1m": 0.417,
-    "speed": 54.299,
-    "wait_s": 0.588,
+    "speed": 55.878,
+    "wait_s": 0.539,
     "access": null,
     "estimate": false,
     "api_name": "Llama 4 Maverick",
@@ -26243,8 +26247,8 @@
     "effort": "default",
     "score": 9.2,
     "price_1m": 0.482,
-    "speed": 86.812,
-    "wait_s": 0.724,
+    "speed": 94.074,
+    "wait_s": 0.693,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3 Coder Next",
@@ -26339,8 +26343,8 @@
     "effort": "default",
     "score": 9.1,
     "price_1m": 0.052,
-    "speed": 72.284,
-    "wait_s": 27.981,
+    "speed": 49.641,
+    "wait_s": 40.672,
     "access": null,
     "estimate": false,
     "api_name": "Granite 4.2 3B",
@@ -26435,8 +26439,8 @@
     "effort": "Non-reasoning",
     "score": 9,
     "price_1m": 0.262,
-    "speed": 181.42,
-    "wait_s": 0.624,
+    "speed": 181.728,
+    "wait_s": 0.589,
     "access": null,
     "estimate": false,
     "api_name": "Mistral Small 4 (Non-reasoning)",
@@ -26463,8 +26467,8 @@
     "effort": "High",
     "score": 9,
     "price_1m": 0.092,
-    "speed": 163.167,
-    "wait_s": 12.685,
+    "speed": 173.967,
+    "wait_s": 11.96,
     "access": null,
     "estimate": false,
     "api_name": "gpt-oss-20b (High)",
@@ -26533,8 +26537,8 @@
     "effort": "Reasoning",
     "score": 8.9,
     "price_1m": 0.04,
-    "speed": 50.962,
-    "wait_s": 39.602,
+    "speed": 53.927,
+    "wait_s": 37.44,
     "access": null,
     "estimate": false,
     "api_name": "Gemma 4 E4B (Reasoning)",
@@ -26547,8 +26551,8 @@
     "effort": "Reasoning",
     "score": 8.9,
     "price_1m": 0.088,
-    "speed": 233.011,
-    "wait_s": 9.037,
+    "speed": 242.302,
+    "wait_s": 8.71,
     "access": null,
     "estimate": false,
     "api_name": "NVIDIA Nemotron 3 Nano 30B A3B (Reasoning)",
@@ -26589,8 +26593,8 @@
     "effort": "High",
     "score": 8.8,
     "price_1m": 0.074,
-    "speed": 179.435,
-    "wait_s": 12.087,
+    "speed": 178.672,
+    "wait_s": 12.135,
     "access": null,
     "estimate": false,
     "api_name": "Sarvam 105B (High)",
@@ -26617,8 +26621,8 @@
     "effort": "Non-reasoning",
     "score": 8.7,
     "price_1m": 0.85,
-    "speed": 231.05,
-    "wait_s": 0.728,
+    "speed": 214.951,
+    "wait_s": 0.725,
     "access": null,
     "estimate": false,
     "api_name": "Nova 2.0 Lite (Non-reasoning)",
@@ -26727,8 +26731,8 @@
     "effort": "default",
     "score": 8.6,
     "price_1m": 0.75,
-    "speed": 79.892,
-    "wait_s": 25.816,
+    "speed": 96.23,
+    "wait_s": 21.513,
     "access": null,
     "estimate": false,
     "api_name": "Magistral Small 1.2",
@@ -27145,8 +27149,8 @@
     "effort": "Reasoning",
     "score": 7.8,
     "price_1m": 0.43,
-    "speed": 111.14,
-    "wait_s": 18.878,
+    "speed": 110.941,
+    "wait_s": 18.896,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3 Omni 30B A3B (Reasoning)",
@@ -27215,8 +27219,8 @@
     "effort": "default",
     "score": 7.7,
     "price_1m": 0.67,
-    "speed": 94.407,
-    "wait_s": 0.663,
+    "speed": 94.68,
+    "wait_s": 0.646,
     "access": null,
     "estimate": false,
     "api_name": "Llama 3.3 Instruct 70B",
@@ -27381,8 +27385,8 @@
     "effort": "Reasoning",
     "score": 7.5,
     "price_1m": 1.5,
-    "speed": 41.176,
-    "wait_s": 49.257,
+    "speed": 40.173,
+    "wait_s": 50.458,
     "access": null,
     "estimate": false,
     "api_name": "Hermes 4 - Llama-3.1 405B (Reasoning)",
@@ -27423,8 +27427,8 @@
     "effort": "Non-reasoning",
     "score": 7.5,
     "price_1m": 0.04,
-    "speed": 46.487,
-    "wait_s": 0.425,
+    "speed": 51.9,
+    "wait_s": 0.408,
     "access": null,
     "estimate": false,
     "api_name": "Gemma 4 E4B (Non-reasoning)",
@@ -27451,8 +27455,8 @@
     "effort": "Reasoning",
     "score": 7.4,
     "price_1m": 0.07,
-    "speed": 106.912,
-    "wait_s": 19.159,
+    "speed": 109.881,
+    "wait_s": 18.563,
     "access": null,
     "estimate": false,
     "api_name": "NVIDIA Nemotron Nano 9B V2 (Reasoning)",
@@ -27465,8 +27469,8 @@
     "effort": "Non-reasoning",
     "score": 7.4,
     "price_1m": 1.5,
-    "speed": 43.729,
-    "wait_s": 0.646,
+    "speed": 44.823,
+    "wait_s": 0.648,
     "access": null,
     "estimate": false,
     "api_name": "Hermes 4 - Llama-3.1 405B (Non-reasoning)",
@@ -27885,8 +27889,8 @@
     "effort": "default",
     "score": 7,
     "price_1m": 4.375,
-    "speed": 48.392,
-    "wait_s": 0.497,
+    "speed": 31.975,
+    "wait_s": 0.478,
     "access": null,
     "estimate": false,
     "api_name": "Command A",
@@ -27969,8 +27973,8 @@
     "effort": "Non-reasoning",
     "score": 6.8,
     "price_1m": 0.088,
-    "speed": 252.456,
-    "wait_s": 0.386,
+    "speed": 266.022,
+    "wait_s": 0.403,
     "access": null,
     "estimate": false,
     "api_name": "NVIDIA Nemotron 3 Nano 30B A3B (Non-reasoning)",
@@ -27983,8 +27987,8 @@
     "effort": "Non-reasoning",
     "score": 6.8,
     "price_1m": 0.086,
-    "speed": 165.407,
-    "wait_s": 0.7,
+    "speed": 167.952,
+    "wait_s": 0.68,
     "access": null,
     "estimate": false,
     "api_name": "NVIDIA Nemotron Nano 9B V2 (Non-reasoning)",
@@ -28333,8 +28337,8 @@
     "effort": "default",
     "score": 6.5,
     "price_1m": 0.3,
-    "speed": 101.901,
-    "wait_s": 0.609,
+    "speed": 115.997,
+    "wait_s": 0.555,
     "access": null,
     "estimate": false,
     "api_name": "Llama 4 Scout",
@@ -28457,8 +28461,8 @@
     "effort": "default",
     "score": 6.3,
     "price_1m": 0.325,
-    "speed": 1694.417,
-    "wait_s": 0.401,
+    "speed": 1697.302,
+    "wait_s": 0.421,
     "access": null,
     "estimate": false,
     "api_name": "Celeris-1",
@@ -28511,8 +28515,8 @@
     "effort": "default",
     "score": 6.3,
     "price_1m": 0.131,
-    "speed": 46.739,
-    "wait_s": 0.33,
+    "speed": 47.367,
+    "wait_s": 0.348,
     "access": null,
     "estimate": false,
     "api_name": "Phi-4 Mini Instruct",
@@ -28623,8 +28627,8 @@
     "effort": "default",
     "score": 6,
     "price_1m": 0.2,
-    "speed": 87.123,
-    "wait_s": 0.574,
+    "speed": 86.252,
+    "wait_s": 0.534,
     "access": null,
     "estimate": false,
     "api_name": "Ministral 3 14B",
@@ -28663,8 +28667,8 @@
     "effort": "default",
     "score": 6,
     "price_1m": 0.43,
-    "speed": 107.877,
-    "wait_s": 0.839,
+    "speed": 108.4,
+    "wait_s": 0.888,
     "access": null,
     "estimate": false,
     "api_name": "Qwen3 Omni 30B A3B Instruct",
@@ -28775,8 +28779,8 @@
     "effort": "default",
     "score": 5.9,
     "price_1m": 0.219,
-    "speed": 41.9,
-    "wait_s": 1.004,
+    "speed": 43.926,
+    "wait_s": 0.947,
     "access": null,
     "estimate": false,
     "api_name": "Phi-4",
@@ -28803,8 +28807,8 @@
     "effort": "default",
     "score": 5.9,
     "price_1m": 0.061,
-    "speed": 266.769,
-    "wait_s": 0.554,
+    "speed": 255.876,
+    "wait_s": 0.534,
     "access": null,
     "estimate": false,
     "api_name": "Nova Micro",
@@ -28873,8 +28877,8 @@
     "effort": "Non-reasoning",
     "score": 5.8,
     "price_1m": 0.3,
-    "speed": 206.969,
-    "wait_s": 0.76,
+    "speed": 208.485,
+    "wait_s": 0.735,
     "access": null,
     "estimate": false,
     "api_name": "NVIDIA Nemotron Nano 12B v2 VL (Non-reasoning)",
@@ -28902,7 +28906,7 @@
     "score": 5.8,
     "price_1m": 0.14,
     "speed": 17.133,
-    "wait_s": 0.374,
+    "wait_s": 0.383,
     "access": null,
     "estimate": false,
     "api_name": "Phi-4 Multimodal Instruct",
@@ -29041,8 +29045,8 @@
     "effort": "default",
     "score": 5.6,
     "price_1m": 0.35,
-    "speed": 86.916,
-    "wait_s": 23.852,
+    "speed": 87.333,
+    "wait_s": 23.726,
     "access": null,
     "estimate": false,
     "api_name": "Reka Flash 3",
@@ -29223,8 +29227,8 @@
     "effort": "default",
     "score": 5.5,
     "price_1m": 0.15,
-    "speed": 124.801,
-    "wait_s": 0.448,
+    "speed": 135.092,
+    "wait_s": 0.436,
     "access": null,
     "estimate": false,
     "api_name": "Ministral 3 8B",
@@ -29305,8 +29309,8 @@
     "effort": "Vision",
     "score": 5.4,
     "price_1m": 0.345,
-    "speed": 27.521,
-    "wait_s": 0.419,
+    "speed": 26.373,
+    "wait_s": 0.516,
     "access": null,
     "estimate": false,
     "api_name": "Llama 3.2 Instruct 11B (Vision)",
@@ -29865,8 +29869,8 @@
     "effort": "default",
     "score": 4.8,
     "price_1m": 0.1,
-    "speed": 234.194,
-    "wait_s": 0.485,
+    "speed": 221.46,
+    "wait_s": 0.471,
     "access": null,
     "estimate": false,
     "api_name": "Ministral 3 3B",
@@ -29891,8 +29895,8 @@
     "effort": "default",
     "score": 4.8,
     "price_1m": 0.125,
-    "speed": 133.523,
-    "wait_s": 2.811,
+    "speed": 144.593,
+    "wait_s": 2.75,
     "access": null,
     "estimate": false,
     "api_name": "Apertus 8B Instruct",
@@ -30073,7 +30077,7 @@
     "effort": "default",
     "score": 4.8,
     "price_1m": 0,
-    "speed": 131.181,
+    "speed": 131.728,
     "wait_s": 0.21,
     "access": null,
     "estimate": false,
@@ -31486,12 +31490,12 @@
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "MAI-Image-2.5-Flash",
      69.3,
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen-Image-2.1-Turbo",
      69.3,
      null
     ],
@@ -31501,22 +31505,22 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
-     68.8,
-     null
-    ],
-    [
      "Ideogram 4.0 (Quality)",
      68.8,
      null
     ],
     [
-     "FLUX.2 [flex]",
+     "Recraft V4.1 Utility",
      68.8,
      null
     ],
     [
      "Seedream 4.5",
+     68.8,
+     null
+    ],
+    [
+     "FLUX.2 [flex]",
      68.8,
      null
     ],
@@ -31546,12 +31550,12 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "HiDream-O1-Image-1.5",
      67.4,
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "Seedream 5.0 Lite",
      67.4,
      null
     ],
@@ -31711,12 +31715,12 @@
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Z-Image Turbo",
      54.5,
      null
     ],
     [
-     "Z-Image Turbo",
+     "GPT Image 1 Mini (medium)",
      54.5,
      null
     ],
@@ -32127,11 +32131,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
+    "GPT-5.6 Luna",
+    "Claude Opus 5",
     "Claude Fable 5",
     "Grok 4.6",
-    "Claude Opus 5",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -32515,10 +32519,10 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Luna",
     "Claude Opus 5",
     "GPT-5.6 Sol",
     "Claude Fable 5",
-    "GPT-5.6 Luna",
     "Grok 4.6"
    ],
    "confidence": "Clear lead",
@@ -32707,12 +32711,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -32762,12 +32766,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -33316,7 +33320,7 @@
   ],
   [
    "weak",
-   "12 of 12 sources include carried-forward scores: Terminal-Bench v2.1 (oldest carried-forward score: 2026-10-24), SciCode (oldest carried-forward score: 2026-10-24), τ³-Banking (oldest carried-forward score: 2026-10-24), AA-LCR (oldest carried-forward score: 2026-10-24), GDPval-AA v2 (oldest carried-forward score: 2026-09-19), AA-Omniscience Accuracy (oldest carried-forward score: 2026-09-30), Non-hallucination rate (oldest carried-forward score: 2026-09-30), GDP.pdf (all criteria met) (oldest carried-forward score: 2026-09-03), Arena WebDev (oldest carried-forward score: 2026-10-07), Arena Text (oldest carried-forward score: 2026-10-08), AA Image Arena (oldest carried-forward score: 2026-10-24), AA Video Arena (oldest carried-forward score: 2026-10-24)."
+   "6 of 12 sources include carried-forward scores: GDPval-AA v2 (oldest carried-forward score: 2026-09-19), AA-Omniscience Accuracy (oldest carried-forward score: 2026-09-30), Non-hallucination rate (oldest carried-forward score: 2026-09-30), GDP.pdf (all criteria met) (oldest carried-forward score: 2026-09-03), Arena WebDev (oldest carried-forward score: 2026-10-07), Arena Text (oldest carried-forward score: 2026-10-08)."
   ]
  ],
  "health": [
@@ -33867,6 +33871,15 @@
    "status": "partial",
    "items": "0",
    "pr": "205",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-25",
+   "time": "10:13",
+   "status": "partial",
+   "items": "0",
+   "pr": "206",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
