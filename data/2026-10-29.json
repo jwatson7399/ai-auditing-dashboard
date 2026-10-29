@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-29",
- "built_at": "2026-10-29T14:12:56+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 221",
- "built_at_et": "10:12 AM",
+ "built_at": "2026-10-29T14:17:10+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 222",
+ "built_at_et": "10:17 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -22265,12 +22265,12 @@
      null
     ],
     [
-     "MAI-Image-2.6",
+     "Grok Imagine Image 2.0",
      91.1,
      null
     ],
     [
-     "Grok Imagine Image 2.0",
+     "MAI-Image-2.6",
      91.1,
      null
     ],
@@ -22370,12 +22370,12 @@
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "MAI-Image-2.5-Flash",
      69.3,
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen-Image-2.1-Turbo",
      69.3,
      null
     ],
@@ -22385,22 +22385,22 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
-     68.8,
-     null
-    ],
-    [
      "FLUX.2 [flex]",
      68.8,
      null
     ],
     [
-     "Seedream 4.5",
+     "Recraft V4.1 Utility",
      68.8,
      null
     ],
     [
      "Ideogram 4.0 (Quality)",
+     68.8,
+     null
+    ],
+    [
+     "Seedream 4.5",
      68.8,
      null
     ],
@@ -22430,12 +22430,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
+     "Seedream 5.0 Lite",
      67.4,
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Recraft V4.1 Utility Pro",
      67.4,
      null
     ],
@@ -22495,12 +22495,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Very High)",
+     "Luma UNI 1",
      63.4,
      null
     ],
     [
-     "Luma UNI 1",
+     "P-Image-Ideogram (Very High)",
      63.4,
      null
     ],
@@ -22595,12 +22595,12 @@
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Z-Image Turbo",
      54.5,
      null
     ],
     [
-     "Z-Image Turbo",
+     "GPT Image 1 Mini (medium)",
      54.5,
      null
     ],
@@ -22665,12 +22665,12 @@
      null
     ],
     [
-     "Vidu Q2",
+     "FLUX.1 Krea [dev]",
      48.1,
      null
     ],
     [
-     "FLUX.1 Krea [dev]",
+     "Vidu Q2",
      48.1,
      null
     ],
@@ -22920,12 +22920,12 @@
      null
     ],
     [
-     "Vidu Q3 Turbo",
+     "Vidu Q3 Pro",
      28.9,
      null
     ],
     [
-     "Vidu Q3 Pro",
+     "Vidu Q3 Turbo",
      28.9,
      null
     ],
@@ -23016,11 +23016,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
-    "Claude Fable 5",
     "Claude Opus 5",
     "Grok 4.6",
-    "GPT-5.6 Luna"
+    "Claude Fable 5",
+    "GPT-5.6 Luna",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23404,11 +23404,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
     "Claude Fable 5",
+    "GPT-5.6 Luna",
     "Claude Opus 5",
-    "Grok 4.6",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Sol",
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -23566,12 +23566,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -24666,6 +24666,15 @@
    "status": "partial",
    "items": "0",
    "pr": "220",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-29",
+   "time": "10:12",
+   "status": "partial",
+   "items": "0",
+   "pr": "221",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
