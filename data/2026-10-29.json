@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-29",
- "built_at": "2026-10-29T14:07:44+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 220",
- "built_at_et": "10:07 AM",
+ "built_at": "2026-10-29T14:12:56+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 221",
+ "built_at_et": "10:12 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21483,12 +21483,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -22295,12 +22295,12 @@
      null
     ],
     [
-     "MAI-Image-2.5",
+     "Nano Banana Pro (Gemini 3 Pro Image)",
      83.4,
      null
     ],
     [
-     "Nano Banana Pro (Gemini 3 Pro Image)",
+     "MAI-Image-2.5",
      83.4,
      null
     ],
@@ -22370,12 +22370,12 @@
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen-Image-2.1-Turbo",
      69.3,
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "MAI-Image-2.5-Flash",
      69.3,
      null
     ],
@@ -22385,22 +22385,22 @@
      null
     ],
     [
-     "Seedream 4.5",
-     68.8,
-     null
-    ],
-    [
      "Recraft V4.1 Utility",
      68.8,
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "FLUX.2 [flex]",
      68.8,
      null
     ],
     [
-     "FLUX.2 [flex]",
+     "Seedream 4.5",
+     68.8,
+     null
+    ],
+    [
+     "Ideogram 4.0 (Quality)",
      68.8,
      null
     ],
@@ -22425,7 +22425,7 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "HiDream-O1-Image-1.5",
      67.4,
      null
     ],
@@ -22435,7 +22435,7 @@
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "Seedream 5.0 Lite",
      67.4,
      null
     ],
@@ -22530,12 +22530,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      62.3,
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Cosmos3-Super-Text2Image",
      62.3,
      null
     ],
@@ -22615,12 +22615,12 @@
      null
     ],
     [
-     "FLUX.1 Kontext [max]",
+     "FLUX.2 [klein] 9B",
      53.3,
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "FLUX.1 Kontext [max]",
      53.3,
      null
     ],
@@ -22850,12 +22850,12 @@
      null
     ],
     [
-     "HappyHorse-1.0",
+     "HappyHorse-1.1",
      67.5,
      null
     ],
     [
-     "HappyHorse-1.1",
+     "HappyHorse-1.0",
      67.5,
      null
     ],
@@ -23017,9 +23017,9 @@
    ],
    "missing": [
     "GPT-5.6 Sol",
-    "Grok 4.6",
     "Claude Fable 5",
     "Claude Opus 5",
+    "Grok 4.6",
     "GPT-5.6 Luna"
    ],
    "confidence": "Within noise",
@@ -23405,10 +23405,10 @@
    ],
    "missing": [
     "GPT-5.6 Sol",
+    "Claude Fable 5",
     "Claude Opus 5",
-    "GPT-5.6 Luna",
     "Grok 4.6",
-    "Claude Fable 5"
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -23596,12 +23596,12 @@
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
@@ -23651,12 +23651,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -24658,6 +24658,15 @@
    "items": "6",
    "pr": "219",
    "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-29",
+   "time": "10:07",
+   "status": "partial",
+   "items": "0",
+   "pr": "220",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
