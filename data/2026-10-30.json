@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-30",
- "built_at": "2026-10-30T14:09:47+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 225",
- "built_at_et": "10:09 AM",
+ "built_at": "2026-10-30T14:14:00+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 226",
+ "built_at_et": "10:14 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21091,14 +21091,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -21511,12 +21511,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -22293,12 +22293,12 @@
      null
     ],
     [
-     "MAI-Image-2.6",
+     "Grok Imagine Image 2.0",
      91.1,
      null
     ],
     [
-     "Grok Imagine Image 2.0",
+     "MAI-Image-2.6",
      91.1,
      null
     ],
@@ -22323,12 +22323,12 @@
      null
     ],
     [
-     "MAI-Image-2.5",
+     "Nano Banana Pro (Gemini 3 Pro Image)",
      83.4,
      null
     ],
     [
-     "Nano Banana Pro (Gemini 3 Pro Image)",
+     "MAI-Image-2.5",
      83.4,
      null
     ],
@@ -22398,12 +22398,12 @@
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "MAI-Image-2.5-Flash",
      69.3,
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen-Image-2.1-Turbo",
      69.3,
      null
     ],
@@ -22418,12 +22418,12 @@
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Recraft V4.1 Utility",
      68.8,
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "Ideogram 4.0 (Quality)",
      68.8,
      null
     ],
@@ -22453,7 +22453,7 @@
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "Recraft V4.1 Utility Pro",
      67.4,
      null
     ],
@@ -22463,7 +22463,7 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
+     "HiDream-O1-Image-1.5",
      67.4,
      null
     ],
@@ -22593,12 +22593,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "HunyuanImage 3.5 (Preview)",
      59.9,
      null
     ],
     [
-     "HunyuanImage 3.5 (Preview)",
+     "Cosmos3-Super-Text2Image-4Step",
      59.9,
      null
     ],
@@ -22623,12 +22623,12 @@
      null
     ],
     [
-     "Z-Image Turbo",
+     "GPT Image 1 Mini (medium)",
      54.5,
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Z-Image Turbo",
      54.5,
      null
     ],
@@ -22693,12 +22693,12 @@
      null
     ],
     [
-     "FLUX.1 Krea [dev]",
+     "Vidu Q2",
      48.1,
      null
     ],
     [
-     "Vidu Q2",
+     "FLUX.1 Krea [dev]",
      48.1,
      null
     ],
@@ -23044,11 +23044,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
     "Claude Opus 5",
+    "GPT-5.6 Luna",
+    "Grok 4.6",
     "Claude Fable 5",
-    "GPT-5.6 Sol",
-    "Grok 4.6"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23432,11 +23432,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
     "Grok 4.6",
     "Claude Opus 5",
     "Claude Fable 5",
-    "GPT-5.6 Sol"
+    "GPT-5.6 Sol",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -23624,12 +23624,12 @@
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
@@ -24703,6 +24703,15 @@
    "status": "partial",
    "items": "0",
    "pr": "224",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-30",
+   "time": "10:09",
+   "status": "partial",
+   "items": "0",
+   "pr": "225",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
