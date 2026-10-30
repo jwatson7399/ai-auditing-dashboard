@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-30",
- "built_at": "2026-10-30T14:04:09+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 224",
- "built_at_et": "10:04 AM",
+ "built_at": "2026-10-30T14:09:47+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 225",
+ "built_at_et": "10:09 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21091,14 +21091,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -22418,7 +22418,7 @@
      null
     ],
     [
-     "Seedream 4.5",
+     "Ideogram 4.0 (Quality)",
      68.8,
      null
     ],
@@ -22428,7 +22428,7 @@
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Seedream 4.5",
      68.8,
      null
     ],
@@ -22453,12 +22453,12 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "HiDream-O1-Image-1.5",
      67.4,
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
+     "Seedream 5.0 Lite",
      67.4,
      null
     ],
@@ -22523,12 +22523,12 @@
      null
     ],
     [
-     "Luma UNI 1",
+     "P-Image-Ideogram (Very High)",
      63.4,
      null
     ],
     [
-     "P-Image-Ideogram (Very High)",
+     "Luma UNI 1",
      63.4,
      null
     ],
@@ -22558,12 +22558,12 @@
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Cosmos3-Super-Text2Image",
      62.3,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      62.3,
      null
     ],
@@ -22593,12 +22593,12 @@
      null
     ],
     [
-     "HunyuanImage 3.5 (Preview)",
+     "Cosmos3-Super-Text2Image-4Step",
      59.9,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "HunyuanImage 3.5 (Preview)",
      59.9,
      null
     ],
@@ -22643,12 +22643,12 @@
      null
     ],
     [
-     "FLUX.1 Kontext [max]",
+     "FLUX.2 [klein] 9B",
      53.3,
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "FLUX.1 Kontext [max]",
      53.3,
      null
     ],
@@ -22693,12 +22693,12 @@
      null
     ],
     [
-     "Vidu Q2",
+     "FLUX.1 Krea [dev]",
      48.1,
      null
     ],
     [
-     "FLUX.1 Krea [dev]",
+     "Vidu Q2",
      48.1,
      null
     ],
@@ -22968,12 +22968,12 @@
      null
     ],
     [
-     "LTX-2.3 Pro",
+     "Pika 2.5",
      9.7,
      null
     ],
     [
-     "Pika 2.5",
+     "LTX-2.3 Pro",
      9.7,
      null
     ],
@@ -23044,10 +23044,10 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
     "GPT-5.6 Luna",
-    "GPT-5.6 Sol",
+    "Claude Opus 5",
     "Claude Fable 5",
+    "GPT-5.6 Sol",
     "Grok 4.6"
    ],
    "confidence": "Within noise",
@@ -23432,11 +23432,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
-    "Claude Fable 5",
-    "Claude Opus 5",
+    "GPT-5.6 Luna",
     "Grok 4.6",
-    "GPT-5.6 Luna"
+    "Claude Opus 5",
+    "Claude Fable 5",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -23474,14 +23474,14 @@
      "chatgpt"
     ],
     [
-     "Grok 4.6",
-     77.1,
-     "grok"
-    ],
-    [
      "Muse Spark 1.3",
      77.1,
      null
+    ],
+    [
+     "Grok 4.6",
+     77.1,
+     "grok"
     ],
     [
      "Qwen3.8 Max",
@@ -23624,12 +23624,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -23679,12 +23679,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -24695,6 +24695,15 @@
    "items": "6",
    "pr": "223",
    "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-30",
+   "time": "10:04",
+   "status": "partial",
+   "items": "0",
+   "pr": "224",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
