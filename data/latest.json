@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-10-31",
- "built_at": "2026-10-31T14:02:50+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 228",
- "built_at_et": "10:02 AM",
+ "built_at": "2026-10-31T14:08:57+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 229",
+ "built_at_et": "10:08 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21251,14 +21251,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -21671,12 +21671,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -22453,12 +22453,12 @@
      null
     ],
     [
-     "MAI-Image-2.6",
+     "Grok Imagine Image 2.0",
      91.1,
      null
     ],
     [
-     "Grok Imagine Image 2.0",
+     "MAI-Image-2.6",
      91.1,
      null
     ],
@@ -22483,12 +22483,12 @@
      null
     ],
     [
-     "MAI-Image-2.5",
+     "Nano Banana Pro (Gemini 3 Pro Image)",
      83.4,
      null
     ],
     [
-     "Nano Banana Pro (Gemini 3 Pro Image)",
+     "MAI-Image-2.5",
      83.4,
      null
     ],
@@ -22573,12 +22573,12 @@
      null
     ],
     [
-     "Seedream 4.5",
+     "FLUX.2 [flex]",
      68.8,
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "Seedream 4.5",
      68.8,
      null
     ],
@@ -22588,7 +22588,7 @@
      null
     ],
     [
-     "FLUX.2 [flex]",
+     "Recraft V4.1 Utility",
      68.8,
      null
     ],
@@ -22613,17 +22613,17 @@
      null
     ],
     [
+     "Recraft V4.1 Utility Pro",
+     67.4,
+     null
+    ],
+    [
      "HiDream-O1-Image-1.5",
      67.4,
      null
     ],
     [
      "Seedream 5.0 Lite",
-     67.4,
-     null
-    ],
-    [
-     "Recraft V4.1 Utility Pro",
      67.4,
      null
     ],
@@ -22683,12 +22683,12 @@
      null
     ],
     [
-     "Luma UNI 1",
+     "P-Image-Ideogram (Very High)",
      63.4,
      null
     ],
     [
-     "P-Image-Ideogram (Very High)",
+     "Luma UNI 1",
      63.4,
      null
     ],
@@ -22783,12 +22783,12 @@
      null
     ],
     [
-     "GPT Image 1 Mini (medium)",
+     "Z-Image Turbo",
      54.5,
      null
     ],
     [
-     "Z-Image Turbo",
+     "GPT Image 1 Mini (medium)",
      54.5,
      null
     ],
@@ -22803,12 +22803,12 @@
      null
     ],
     [
-     "FLUX.1 Kontext [max]",
+     "FLUX.2 [klein] 9B",
      53.3,
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "FLUX.1 Kontext [max]",
      53.3,
      null
     ],
@@ -23219,11 +23219,11 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
-    "GPT-5.6 Sol",
+    "Claude Fable 5",
     "GPT-5.6 Luna",
     "Claude Opus 5",
-    "Claude Fable 5"
+    "Grok 4.6",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23607,10 +23607,10 @@
     ]
    ],
    "missing": [
+    "Claude Fable 5",
     "GPT-5.6 Luna",
     "Claude Opus 5",
     "Grok 4.6",
-    "Claude Fable 5",
     "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
@@ -23799,12 +23799,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -23854,12 +23854,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -24879,6 +24879,15 @@
    "items": "6",
    "pr": "227",
    "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-10-31",
+   "time": "10:02",
+   "status": "partial",
+   "items": "0",
+   "pr": "228",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
