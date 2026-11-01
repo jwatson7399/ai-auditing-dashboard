@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-01",
- "built_at": "2026-11-01T15:11:58+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 233",
- "built_at_et": "10:11 AM",
+ "built_at": "2026-11-01T15:17:21+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 234",
+ "built_at_et": "10:17 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21251,14 +21251,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -21671,12 +21671,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -22483,12 +22483,12 @@
      null
     ],
     [
-     "MAI-Image-2.5",
+     "Nano Banana Pro (Gemini 3 Pro Image)",
      83.4,
      null
     ],
     [
-     "Nano Banana Pro (Gemini 3 Pro Image)",
+     "MAI-Image-2.5",
      83.4,
      null
     ],
@@ -22558,12 +22558,12 @@
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "MAI-Image-2.5-Flash",
      69.3,
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen-Image-2.1-Turbo",
      69.3,
      null
     ],
@@ -22573,7 +22573,7 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "Seedream 4.5",
      68.8,
      null
     ],
@@ -22588,7 +22588,7 @@
      null
     ],
     [
-     "Seedream 4.5",
+     "Recraft V4.1 Utility",
      68.8,
      null
     ],
@@ -22613,7 +22613,7 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
+     "Seedream 5.0 Lite",
      67.4,
      null
     ],
@@ -22623,7 +22623,7 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Recraft V4.1 Utility Pro",
      67.4,
      null
     ],
@@ -22718,12 +22718,12 @@
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Cosmos3-Super-Text2Image",
      62.3,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      62.3,
      null
     ],
@@ -22753,12 +22753,12 @@
      null
     ],
     [
-     "HunyuanImage 3.5 (Preview)",
+     "Cosmos3-Super-Text2Image-4Step",
      59.9,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "HunyuanImage 3.5 (Preview)",
      59.9,
      null
     ],
@@ -23143,12 +23143,12 @@
      null
     ],
     [
-     "Pika 2.5",
+     "LTX-2.3 Pro",
      9.7,
      null
     ],
     [
-     "LTX-2.3 Pro",
+     "Pika 2.5",
      9.7,
      null
     ],
@@ -23219,10 +23219,10 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Luna",
+    "Grok 4.6",
     "Claude Fable 5",
     "GPT-5.6 Sol",
-    "Grok 4.6",
-    "GPT-5.6 Luna",
     "Claude Opus 5"
    ],
    "confidence": "Within noise",
@@ -23607,8 +23607,8 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
     "Claude Fable 5",
+    "GPT-5.6 Luna",
     "GPT-5.6 Sol",
     "Grok 4.6",
     "Claude Opus 5"
@@ -24896,6 +24896,15 @@
    "status": "partial",
    "items": "0",
    "pr": "232",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-01",
+   "time": "10:11",
+   "status": "partial",
+   "items": "0",
+   "pr": "233",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
