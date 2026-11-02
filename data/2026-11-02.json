@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-02",
- "built_at": "2026-11-02T15:18:24+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 237",
- "built_at_et": "10:18 AM",
+ "built_at": "2026-11-02T15:22:23+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 238",
+ "built_at_et": "10:22 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -22453,12 +22453,12 @@
      null
     ],
     [
-     "MAI-Image-2.6",
+     "Grok Imagine Image 2.0",
      91.1,
      null
     ],
     [
-     "Grok Imagine Image 2.0",
+     "MAI-Image-2.6",
      91.1,
      null
     ],
@@ -22558,23 +22558,18 @@
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen-Image-2.1-Turbo",
      69.3,
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "MAI-Image-2.5-Flash",
      69.3,
      null
     ],
     [
      "Wan 2.6 Image",
      68.9,
-     null
-    ],
-    [
-     "FLUX.2 [flex]",
-     68.8,
      null
     ],
     [
@@ -22589,6 +22584,11 @@
     ],
     [
      "Ideogram 4.0 (Quality)",
+     68.8,
+     null
+    ],
+    [
+     "FLUX.2 [flex]",
      68.8,
      null
     ],
@@ -22683,12 +22683,12 @@
      null
     ],
     [
-     "Luma UNI 1",
+     "P-Image-Ideogram (Very High)",
      63.4,
      null
     ],
     [
-     "P-Image-Ideogram (Very High)",
+     "Luma UNI 1",
      63.4,
      null
     ],
@@ -22718,12 +22718,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      62.3,
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Cosmos3-Super-Text2Image",
      62.3,
      null
     ],
@@ -22753,12 +22753,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "HunyuanImage 3.5 (Preview)",
      59.9,
      null
     ],
     [
-     "HunyuanImage 3.5 (Preview)",
+     "Cosmos3-Super-Text2Image-4Step",
      59.9,
      null
     ],
@@ -23219,11 +23219,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
+    "GPT-5.6 Luna",
     "Claude Opus 5",
     "Claude Fable 5",
-    "Grok 4.6",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Sol",
+    "Grok 4.6"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23607,11 +23607,11 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
+    "GPT-5.6 Luna",
     "Grok 4.6",
-    "GPT-5.6 Sol",
     "Claude Opus 5",
-    "GPT-5.6 Luna"
+    "Claude Fable 5",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -23769,12 +23769,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -23799,12 +23799,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -23854,12 +23854,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -24896,6 +24896,15 @@
    "status": "partial",
    "items": "0",
    "pr": "236",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-02",
+   "time": "10:18",
+   "status": "partial",
+   "items": "0",
+   "pr": "237",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
