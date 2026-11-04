@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-04",
- "built_at": "2026-11-04T15:15:57+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 245",
- "built_at_et": "10:15 AM",
+ "built_at": "2026-11-04T15:17:56+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 246",
+ "built_at_et": "10:17 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21741,12 +21741,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -22608,12 +22608,12 @@
      null
     ],
     [
-     "FLUX 3 Image Klein",
+     "Qwen-Image-2.1",
      71.4,
      null
     ],
     [
-     "Qwen-Image-2.1",
+     "FLUX 3 Image Klein",
      71.4,
      null
     ],
@@ -22648,17 +22648,17 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
-     68.7,
-     null
-    ],
-    [
      "Wan 2.6 Image",
      68.7,
      null
     ],
     [
      "FLUX.2 [flex]",
+     68.7,
+     null
+    ],
+    [
+     "Recraft V4.1 Utility",
      68.7,
      null
     ],
@@ -22753,12 +22753,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "Luma UNI 1",
      63.4,
      null
     ],
     [
-     "Luma UNI 1",
+     "Cosmos3-Super-Text2Image (agentic)",
      63.4,
      null
     ],
@@ -22773,12 +22773,12 @@
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "HunyuanImage 3.0 (Tencent Cloud)",
      62.6,
      null
     ],
     [
-     "HunyuanImage 3.0 (Tencent Cloud)",
+     "FLUX.2 [dev] Flash",
      62.6,
      null
     ],
@@ -22868,12 +22868,12 @@
      null
     ],
     [
-     "Dreamina 3.1",
+     "HunyuanImage 3.0",
      53.7,
      null
     ],
     [
-     "HunyuanImage 3.0",
+     "Dreamina 3.1",
      53.7,
      null
     ],
@@ -22993,12 +22993,12 @@
      null
     ],
     [
-     "SRPO",
+     "Phoenix 1.0 Fast",
      36.9,
      null
     ],
     [
-     "Phoenix 1.0 Fast",
+     "SRPO",
      36.9,
      null
     ],
@@ -23294,11 +23294,11 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
-    "Grok 4.6",
+    "GPT-5.6 Sol",
     "GPT-5.6 Luna",
     "Claude Opus 5",
-    "GPT-5.6 Sol"
+    "Claude Fable 5",
+    "Grok 4.6"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23687,11 +23687,11 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
-    "Claude Fable 5",
-    "Grok 4.6",
     "GPT-5.6 Luna",
-    "GPT-5.6 Sol"
+    "Claude Opus 5",
+    "GPT-5.6 Sol",
+    "Claude Fable 5",
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -25008,6 +25008,15 @@
    "status": "partial",
    "items": "0",
    "pr": "244",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-04",
+   "time": "10:15",
+   "status": "partial",
+   "items": "0",
+   "pr": "245",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
