@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-05",
- "built_at": "2026-11-05T15:17:39+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 251",
- "built_at_et": "10:17 AM",
+ "built_at": "2026-11-05T15:25:59+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 252",
+ "built_at_et": "10:25 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -22675,12 +22675,12 @@
      null
     ],
     [
-     "Nano Banana Pro (Gemini 3 Pro Image)",
+     "MAI-Image-2.5",
      83.3,
      null
     ],
     [
-     "MAI-Image-2.5",
+     "Nano Banana Pro (Gemini 3 Pro Image)",
      83.3,
      null
     ],
@@ -22720,12 +22720,12 @@
      null
     ],
     [
-     "Qwen-Image-2.1",
+     "FLUX 3 Image Klein",
      71.4,
      null
     ],
     [
-     "FLUX 3 Image Klein",
+     "Qwen-Image-2.1",
      71.4,
      null
     ],
@@ -22865,12 +22865,12 @@
      null
     ],
     [
-     "Luma UNI 1",
+     "Cosmos3-Super-Text2Image (agentic)",
      63.4,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "Luma UNI 1",
      63.4,
      null
     ],
@@ -22885,17 +22885,17 @@
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
-     62.6,
-     null
-    ],
-    [
      "HunyuanImage 3.0 Instruct",
      62.6,
      null
     ],
     [
      "HunyuanImage 3.0 (Tencent Cloud)",
+     62.6,
+     null
+    ],
+    [
+     "FLUX.2 [dev] Flash",
      62.6,
      null
     ],
@@ -23105,17 +23105,17 @@
      null
     ],
     [
+     "SRPO",
+     36.9,
+     null
+    ],
+    [
      "Phoenix 1.0 Fast",
      36.9,
      null
     ],
     [
      "FLUX.1 [dev]",
-     36.9,
-     null
-    ],
-    [
-     "SRPO",
      36.9,
      null
     ],
@@ -23406,11 +23406,11 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
-    "Claude Opus 5",
-    "Grok 4.6",
     "GPT-5.6 Sol",
-    "GPT-5.6 Luna"
+    "Claude Fable 5",
+    "Grok 4.6",
+    "GPT-5.6 Luna",
+    "Claude Opus 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23799,11 +23799,11 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
-    "Claude Opus 5",
-    "Grok 4.6",
     "GPT-5.6 Sol",
-    "GPT-5.6 Luna"
+    "Claude Fable 5",
+    "Grok 4.6",
+    "GPT-5.6 Luna",
+    "Claude Opus 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -25138,6 +25138,15 @@
    "status": "partial",
    "items": "0",
    "pr": "250",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-05",
+   "time": "10:17",
+   "status": "partial",
+   "items": "0",
+   "pr": "251",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
