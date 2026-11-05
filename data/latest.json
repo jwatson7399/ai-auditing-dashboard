@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-05",
- "built_at": "2026-11-05T15:25:59+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 252",
- "built_at_et": "10:25 AM",
+ "built_at": "2026-11-05T15:31:46+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 253",
+ "built_at_et": "10:31 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -22760,12 +22760,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "Wan 2.6 Image",
      68.7,
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Recraft V4.1 Utility",
      68.7,
      null
     ],
@@ -22790,12 +22790,12 @@
      null
     ],
     [
-     "FLUX.2 [max]",
+     "Krea 2 Medium Turbo",
      67.9,
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "FLUX.2 [max]",
      67.9,
      null
     ],
@@ -22865,12 +22865,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "Luma UNI 1",
      63.4,
      null
     ],
     [
-     "Luma UNI 1",
+     "Cosmos3-Super-Text2Image (agentic)",
      63.4,
      null
     ],
@@ -22885,7 +22885,7 @@
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "FLUX.2 [dev] Flash",
      62.6,
      null
     ],
@@ -22895,7 +22895,7 @@
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "HunyuanImage 3.0 Instruct",
      62.6,
      null
     ],
@@ -22980,12 +22980,12 @@
      null
     ],
     [
-     "Dreamina 3.1",
+     "HunyuanImage 3.0",
      53.7,
      null
     ],
     [
-     "HunyuanImage 3.0",
+     "Dreamina 3.1",
      53.7,
      null
     ],
@@ -23105,7 +23105,7 @@
      null
     ],
     [
-     "SRPO",
+     "FLUX.1 [dev]",
      36.9,
      null
     ],
@@ -23115,7 +23115,7 @@
      null
     ],
     [
-     "FLUX.1 [dev]",
+     "SRPO",
      36.9,
      null
     ],
@@ -23295,12 +23295,12 @@
      null
     ],
     [
-     "LTX-2.5 Fast",
+     "LTX-2.5 Pro",
      36.8,
      null
     ],
     [
-     "LTX-2.5 Pro",
+     "LTX-2.5 Fast",
      36.8,
      null
     ],
@@ -23406,11 +23406,11 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Luna",
+    "Claude Opus 5",
     "GPT-5.6 Sol",
     "Claude Fable 5",
-    "Grok 4.6",
-    "GPT-5.6 Luna",
-    "Claude Opus 5"
+    "Grok 4.6"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23799,11 +23799,11 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
     "Claude Fable 5",
     "Grok 4.6",
     "GPT-5.6 Luna",
-    "Claude Opus 5"
+    "Claude Opus 5",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -23841,14 +23841,14 @@
      "chatgpt"
     ],
     [
-     "Grok 4.6",
-     77.1,
-     "grok"
-    ],
-    [
      "Muse Spark 1.3",
      77.1,
      null
+    ],
+    [
+     "Grok 4.6",
+     77.1,
+     "grok"
     ],
     [
      "Qwen3.8 Max",
@@ -23961,12 +23961,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -23991,12 +23991,12 @@
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
@@ -24046,12 +24046,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -25147,6 +25147,15 @@
    "status": "partial",
    "items": "0",
    "pr": "251",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-05",
+   "time": "10:25",
+   "status": "partial",
+   "items": "0",
+   "pr": "252",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
