@@ -246,3 +246,4 @@ date,time_et,agent,status,items,pr,notes
 2026-11-05,10:25,rebuild,partial,0,252,numbers carried forward (--no-fetch)
 2026-11-05,10:31,rebuild,partial,0,253,numbers carried forward (--no-fetch)
 2026-11-05,10:44,rebuild,partial,0,254,numbers carried forward (--no-fetch)
+2026-11-05,14:53,rebuild,error,0,255,RuntimeError: AA llms endpoint returned 410: {"error":"Gone";"message":"The legacy /api/v2/data/* e
