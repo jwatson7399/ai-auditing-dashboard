@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-06",
- "built_at": "2026-11-06T15:38:18+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 257",
- "built_at_et": "10:38 AM",
+ "built_at": "2026-11-06T15:49:20+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 258",
+ "built_at_et": "10:49 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21433,14 +21433,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -21853,12 +21853,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -22675,12 +22675,12 @@
      null
     ],
     [
-     "Nano Banana Pro (Gemini 3 Pro Image)",
+     "MAI-Image-2.5",
      83.3,
      null
     ],
     [
-     "MAI-Image-2.5",
+     "Nano Banana Pro (Gemini 3 Pro Image)",
      83.3,
      null
     ],
@@ -22760,17 +22760,17 @@
      null
     ],
     [
+     "FLUX.2 [flex]",
+     68.7,
+     null
+    ],
+    [
      "Wan 2.6 Image",
      68.7,
      null
     ],
     [
      "Recraft V4.1 Utility",
-     68.7,
-     null
-    ],
-    [
-     "FLUX.2 [flex]",
      68.7,
      null
     ],
@@ -22790,12 +22790,12 @@
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "FLUX.2 [max]",
      67.9,
      null
     ],
     [
-     "FLUX.2 [max]",
+     "Krea 2 Medium Turbo",
      67.9,
      null
     ],
@@ -22865,12 +22865,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "Luma UNI 1",
      63.4,
      null
     ],
     [
-     "Luma UNI 1",
+     "Cosmos3-Super-Text2Image (agentic)",
      63.4,
      null
     ],
@@ -22885,17 +22885,17 @@
      null
     ],
     [
+     "FLUX.2 [dev] Flash",
+     62.6,
+     null
+    ],
+    [
      "HunyuanImage 3.0 (Tencent Cloud)",
      62.6,
      null
     ],
     [
      "HunyuanImage 3.0 Instruct",
-     62.6,
-     null
-    ],
-    [
-     "FLUX.2 [dev] Flash",
      62.6,
      null
     ],
@@ -23105,7 +23105,7 @@
      null
     ],
     [
-     "Phoenix 1.0 Fast",
+     "SRPO",
      36.9,
      null
     ],
@@ -23115,7 +23115,7 @@
      null
     ],
     [
-     "SRPO",
+     "Phoenix 1.0 Fast",
      36.9,
      null
     ],
@@ -23406,11 +23406,11 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
-    "Claude Fable 5",
-    "GPT-5.6 Luna",
+    "GPT-5.6 Sol",
     "Grok 4.6",
-    "GPT-5.6 Sol"
+    "Claude Opus 5",
+    "GPT-5.6 Luna",
+    "Claude Fable 5"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23799,11 +23799,11 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
-    "Claude Fable 5",
-    "GPT-5.6 Luna",
+    "GPT-5.6 Sol",
     "Grok 4.6",
-    "GPT-5.6 Sol"
+    "Claude Opus 5",
+    "GPT-5.6 Luna",
+    "Claude Fable 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -23961,12 +23961,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -25147,6 +25147,15 @@
    "status": "partial",
    "items": "0",
    "pr": "256",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-06",
+   "time": "10:38",
+   "status": "partial",
+   "items": "0",
+   "pr": "257",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
