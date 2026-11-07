@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-07",
- "built_at": "2026-11-07T15:09:31+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 260",
- "built_at_et": "10:09 AM",
+ "built_at": "2026-11-07T15:16:06+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 261",
+ "built_at_et": "10:16 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21433,14 +21433,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -22760,17 +22760,17 @@
      null
     ],
     [
-     "Wan 2.6 Image",
-     68.7,
-     null
-    ],
-    [
      "Recraft V4.1 Utility",
      68.7,
      null
     ],
     [
      "FLUX.2 [flex]",
+     68.7,
+     null
+    ],
+    [
+     "Wan 2.6 Image",
      68.7,
      null
     ],
@@ -22885,17 +22885,17 @@
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
-     62.6,
-     null
-    ],
-    [
      "FLUX.2 [dev] Flash",
      62.6,
      null
     ],
     [
      "HunyuanImage 3.0 (Tencent Cloud)",
+     62.6,
+     null
+    ],
+    [
+     "HunyuanImage 3.0 Instruct",
      62.6,
      null
     ],
@@ -23110,12 +23110,12 @@
      null
     ],
     [
-     "Phoenix 1.0 Fast",
+     "FLUX.1 [dev]",
      36.9,
      null
     ],
     [
-     "FLUX.1 [dev]",
+     "Phoenix 1.0 Fast",
      36.9,
      null
     ],
@@ -23407,10 +23407,10 @@
    ],
    "missing": [
     "Claude Opus 5",
+    "Claude Fable 5",
     "Grok 4.6",
     "GPT-5.6 Luna",
-    "GPT-5.6 Sol",
-    "Claude Fable 5"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23800,10 +23800,10 @@
    ],
    "missing": [
     "Claude Opus 5",
+    "Claude Fable 5",
     "Grok 4.6",
-    "GPT-5.6 Sol",
     "GPT-5.6 Luna",
-    "Claude Fable 5"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -23961,12 +23961,12 @@
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
@@ -23991,12 +23991,12 @@
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
@@ -24046,12 +24046,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -25139,6 +25139,15 @@
    "items": "0",
    "pr": "259",
    "notes": "RuntimeError: AA llms endpoint returned 410: {\"error\":\"Gone\";\"message\":\"The legacy /api/v2/data/* e"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-07",
+   "time": "10:09",
+   "status": "partial",
+   "items": "0",
+   "pr": "260",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
