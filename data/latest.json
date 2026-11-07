@@ -1,9 +1,9 @@
 {
  "schema": 1,
- "date": "2026-11-06",
- "built_at": "2026-11-06T15:49:20+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 258",
- "built_at_et": "10:49 AM",
+ "date": "2026-11-07",
+ "built_at": "2026-11-07T15:09:31+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 260",
+ "built_at_et": "10:09 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21433,14 +21433,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -21853,12 +21853,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -22720,12 +22720,12 @@
      null
     ],
     [
-     "FLUX 3 Image Klein",
+     "Qwen-Image-2.1",
      71.4,
      null
     ],
     [
-     "Qwen-Image-2.1",
+     "FLUX 3 Image Klein",
      71.4,
      null
     ],
@@ -22760,17 +22760,17 @@
      null
     ],
     [
-     "FLUX.2 [flex]",
-     68.7,
-     null
-    ],
-    [
      "Wan 2.6 Image",
      68.7,
      null
     ],
     [
      "Recraft V4.1 Utility",
+     68.7,
+     null
+    ],
+    [
+     "FLUX.2 [flex]",
      68.7,
      null
     ],
@@ -22885,17 +22885,17 @@
      null
     ],
     [
+     "HunyuanImage 3.0 Instruct",
+     62.6,
+     null
+    ],
+    [
      "FLUX.2 [dev] Flash",
      62.6,
      null
     ],
     [
      "HunyuanImage 3.0 (Tencent Cloud)",
-     62.6,
-     null
-    ],
-    [
-     "HunyuanImage 3.0 Instruct",
      62.6,
      null
     ],
@@ -23110,12 +23110,12 @@
      null
     ],
     [
-     "FLUX.1 [dev]",
+     "Phoenix 1.0 Fast",
      36.9,
      null
     ],
     [
-     "Phoenix 1.0 Fast",
+     "FLUX.1 [dev]",
      36.9,
      null
     ],
@@ -23295,12 +23295,12 @@
      null
     ],
     [
-     "LTX-2.5 Fast",
+     "LTX-2.5 Pro",
      36.8,
      null
     ],
     [
-     "LTX-2.5 Pro",
+     "LTX-2.5 Fast",
      36.8,
      null
     ],
@@ -23406,10 +23406,10 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
-    "Grok 4.6",
     "Claude Opus 5",
+    "Grok 4.6",
     "GPT-5.6 Luna",
+    "GPT-5.6 Sol",
     "Claude Fable 5"
    ],
    "confidence": "Within noise",
@@ -23799,9 +23799,9 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
-    "Grok 4.6",
     "Claude Opus 5",
+    "Grok 4.6",
+    "GPT-5.6 Sol",
     "GPT-5.6 Luna",
     "Claude Fable 5"
    ],
@@ -23961,12 +23961,12 @@
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
@@ -23991,12 +23991,12 @@
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
@@ -24596,7 +24596,7 @@
    ]
   }
  ],
- "previous_date": "2026-11-05",
+ "previous_date": "2026-11-06",
  "noise": 3,
  "changes": [
   [
@@ -24609,42 +24609,6 @@
   ]
  ],
  "health": [
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-23",
-   "time": "10:09",
-   "status": "partial",
-   "items": "0",
-   "pr": "195",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-23",
-   "time": "10:19",
-   "status": "partial",
-   "items": "0",
-   "pr": "196",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-23",
-   "time": "11:15",
-   "status": "partial",
-   "items": "0",
-   "pr": "198",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-23",
-   "time": "13:02",
-   "status": "partial",
-   "items": "6",
-   "pr": "199",
-   "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
-  },
   {
    "agent": "Daily rebuild",
    "date": "2026-10-24",
@@ -25159,8 +25123,26 @@
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
-   "agent": "Benchmark Scout",
+   "agent": "Daily rebuild",
    "date": "2026-11-06",
+   "time": "10:49",
+   "status": "partial",
+   "items": "0",
+   "pr": "258",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-06",
+   "time": "14:30",
+   "status": "error",
+   "items": "0",
+   "pr": "259",
+   "notes": "RuntimeError: AA llms endpoint returned 410: {\"error\":\"Gone\";\"message\":\"The legacy /api/v2/data/* e"
+  },
+  {
+   "agent": "Benchmark Scout",
+   "date": "2026-11-07",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -25169,7 +25151,7 @@
   },
   {
    "agent": "News Scout",
-   "date": "2026-11-06",
+   "date": "2026-11-07",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -25178,7 +25160,7 @@
   },
   {
    "agent": "Editor",
-   "date": "2026-11-06",
+   "date": "2026-11-07",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -25187,7 +25169,7 @@
   },
   {
    "agent": "Verifier",
-   "date": "2026-11-06",
+   "date": "2026-11-07",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -25196,7 +25178,7 @@
   },
   {
    "agent": "Commentator",
-   "date": "2026-11-06",
+   "date": "2026-11-07",
    "time": "",
    "status": "did not run",
    "items": "0",
