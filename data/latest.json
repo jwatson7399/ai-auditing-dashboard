@@ -1,9 +1,9 @@
 {
  "schema": 1,
- "date": "2026-11-07",
- "built_at": "2026-11-07T15:16:06+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 261",
- "built_at_et": "10:16 AM",
+ "date": "2026-11-09",
+ "built_at": "2026-11-09T16:34:16+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 264",
+ "built_at_et": "11:34 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21433,14 +21433,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -21853,12 +21853,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -22720,12 +22720,12 @@
      null
     ],
     [
-     "Qwen-Image-2.1",
+     "FLUX 3 Image Klein",
      71.4,
      null
     ],
     [
-     "FLUX 3 Image Klein",
+     "Qwen-Image-2.1",
      71.4,
      null
     ],
@@ -22760,12 +22760,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "FLUX.2 [flex]",
      68.7,
      null
     ],
     [
-     "FLUX.2 [flex]",
+     "Recraft V4.1 Utility",
      68.7,
      null
     ],
@@ -22790,12 +22790,12 @@
      null
     ],
     [
-     "FLUX.2 [max]",
+     "Krea 2 Medium Turbo",
      67.9,
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "FLUX.2 [max]",
      67.9,
      null
     ],
@@ -22865,12 +22865,12 @@
      null
     ],
     [
-     "Luma UNI 1",
+     "Cosmos3-Super-Text2Image (agentic)",
      63.4,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "Luma UNI 1",
      63.4,
      null
     ],
@@ -22890,12 +22890,12 @@
      null
     ],
     [
-     "HunyuanImage 3.0 (Tencent Cloud)",
+     "HunyuanImage 3.0 Instruct",
      62.6,
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "HunyuanImage 3.0 (Tencent Cloud)",
      62.6,
      null
     ],
@@ -23110,12 +23110,12 @@
      null
     ],
     [
-     "FLUX.1 [dev]",
+     "Phoenix 1.0 Fast",
      36.9,
      null
     ],
     [
-     "Phoenix 1.0 Fast",
+     "FLUX.1 [dev]",
      36.9,
      null
     ],
@@ -23295,12 +23295,12 @@
      null
     ],
     [
-     "LTX-2.5 Pro",
+     "LTX-2.5 Fast",
      36.8,
      null
     ],
     [
-     "LTX-2.5 Fast",
+     "LTX-2.5 Pro",
      36.8,
      null
     ],
@@ -23406,11 +23406,11 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
-    "Claude Fable 5",
     "Grok 4.6",
-    "GPT-5.6 Luna",
-    "GPT-5.6 Sol"
+    "GPT-5.6 Sol",
+    "Claude Fable 5",
+    "Claude Opus 5",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23799,11 +23799,11 @@
     ]
    ],
    "missing": [
-    "Claude Opus 5",
-    "Claude Fable 5",
     "Grok 4.6",
-    "GPT-5.6 Luna",
-    "GPT-5.6 Sol"
+    "GPT-5.6 Sol",
+    "Claude Fable 5",
+    "Claude Opus 5",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -23841,14 +23841,14 @@
      "chatgpt"
     ],
     [
-     "Muse Spark 1.3",
-     77.1,
-     null
-    ],
-    [
      "Grok 4.6",
      77.1,
      "grok"
+    ],
+    [
+     "Muse Spark 1.3",
+     77.1,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -23991,12 +23991,12 @@
      null
     ],
     [
-     "Inkling Small",
+     "K2 Horizon MoVA 36B A4B",
      55.2,
      null
     ],
     [
-     "K2 Horizon MoVA 36B A4B",
+     "Inkling Small",
      55.2,
      null
     ],
@@ -24046,12 +24046,12 @@
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
@@ -24596,7 +24596,7 @@
    ]
   }
  ],
- "previous_date": "2026-11-06",
+ "previous_date": "2026-11-07",
  "noise": 3,
  "changes": [
   [
@@ -24609,78 +24609,6 @@
   ]
  ],
  "health": [
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-24",
-   "time": "10:05",
-   "status": "partial",
-   "items": "0",
-   "pr": "200",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-24",
-   "time": "10:13",
-   "status": "partial",
-   "items": "0",
-   "pr": "201",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-24",
-   "time": "10:18",
-   "status": "partial",
-   "items": "0",
-   "pr": "202",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-24",
-   "time": "11:52",
-   "status": "partial",
-   "items": "6",
-   "pr": "203",
-   "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-25",
-   "time": "10:02",
-   "status": "partial",
-   "items": "0",
-   "pr": "204",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-25",
-   "time": "10:08",
-   "status": "partial",
-   "items": "0",
-   "pr": "205",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-25",
-   "time": "10:13",
-   "status": "partial",
-   "items": "0",
-   "pr": "206",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-10-25",
-   "time": "12:09",
-   "status": "partial",
-   "items": "6",
-   "pr": "207",
-   "notes": "AA public leaderboard unavailable; gdpval carried forward; omni carried forward; nohalluc carried f"
-  },
   {
    "agent": "Daily rebuild",
    "date": "2026-10-26",
@@ -25150,8 +25078,35 @@
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
-   "agent": "Benchmark Scout",
+   "agent": "Daily rebuild",
    "date": "2026-11-07",
+   "time": "10:16",
+   "status": "partial",
+   "items": "0",
+   "pr": "261",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-07",
+   "time": "12:43",
+   "status": "error",
+   "items": "0",
+   "pr": "262",
+   "notes": "RuntimeError: AA llms endpoint returned 410: {\"error\":\"Gone\";\"message\":\"The legacy /api/v2/data/* e"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-08",
+   "time": "12:54",
+   "status": "error",
+   "items": "0",
+   "pr": "263",
+   "notes": "RuntimeError: AA llms endpoint returned 410: {\"error\":\"Gone\";\"message\":\"The legacy /api/v2/data/* e"
+  },
+  {
+   "agent": "Benchmark Scout",
+   "date": "2026-11-09",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -25160,7 +25115,7 @@
   },
   {
    "agent": "News Scout",
-   "date": "2026-11-07",
+   "date": "2026-11-09",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -25169,7 +25124,7 @@
   },
   {
    "agent": "Editor",
-   "date": "2026-11-07",
+   "date": "2026-11-09",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -25178,7 +25133,7 @@
   },
   {
    "agent": "Verifier",
-   "date": "2026-11-07",
+   "date": "2026-11-09",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -25187,7 +25142,7 @@
   },
   {
    "agent": "Commentator",
-   "date": "2026-11-07",
+   "date": "2026-11-09",
    "time": "",
    "status": "did not run",
    "items": "0",
