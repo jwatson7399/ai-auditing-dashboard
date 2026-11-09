@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-09",
- "built_at": "2026-11-09T16:34:16+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 264",
- "built_at_et": "11:34 AM",
+ "built_at": "2026-11-09T16:45:11+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 265",
+ "built_at_et": "11:45 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -21433,14 +21433,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -22675,12 +22675,12 @@
      null
     ],
     [
-     "MAI-Image-2.5",
+     "Nano Banana Pro (Gemini 3 Pro Image)",
      83.3,
      null
     ],
     [
-     "Nano Banana Pro (Gemini 3 Pro Image)",
+     "MAI-Image-2.5",
      83.3,
      null
     ],
@@ -22720,12 +22720,12 @@
      null
     ],
     [
-     "FLUX 3 Image Klein",
+     "Qwen-Image-2.1",
      71.4,
      null
     ],
     [
-     "Qwen-Image-2.1",
+     "FLUX 3 Image Klein",
      71.4,
      null
     ],
@@ -22765,12 +22765,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "Wan 2.6 Image",
      68.7,
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Recraft V4.1 Utility",
      68.7,
      null
     ],
@@ -22790,12 +22790,12 @@
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "FLUX.2 [max]",
      67.9,
      null
     ],
     [
-     "FLUX.2 [max]",
+     "Krea 2 Medium Turbo",
      67.9,
      null
     ],
@@ -22865,12 +22865,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "Luma UNI 1",
      63.4,
      null
     ],
     [
-     "Luma UNI 1",
+     "Cosmos3-Super-Text2Image (agentic)",
      63.4,
      null
     ],
@@ -22885,17 +22885,17 @@
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
-     62.6,
-     null
-    ],
-    [
      "HunyuanImage 3.0 Instruct",
      62.6,
      null
     ],
     [
      "HunyuanImage 3.0 (Tencent Cloud)",
+     62.6,
+     null
+    ],
+    [
+     "FLUX.2 [dev] Flash",
      62.6,
      null
     ],
@@ -22980,12 +22980,12 @@
      null
     ],
     [
-     "HunyuanImage 3.0",
+     "Dreamina 3.1",
      53.7,
      null
     ],
     [
-     "Dreamina 3.1",
+     "HunyuanImage 3.0",
      53.7,
      null
     ],
@@ -23407,10 +23407,10 @@
    ],
    "missing": [
     "Grok 4.6",
-    "GPT-5.6 Sol",
     "Claude Fable 5",
+    "GPT-5.6 Luna",
     "Claude Opus 5",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Sol"
    ],
    "confidence": "Within noise",
    "evidence": "Tests plus votes",
@@ -23800,10 +23800,10 @@
    ],
    "missing": [
     "Grok 4.6",
-    "GPT-5.6 Sol",
     "Claude Fable 5",
     "Claude Opus 5",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Luna",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -23961,12 +23961,12 @@
      null
     ],
     [
-     "Kimi K2.7 Code",
+     "Ling-3.0-flash-VL",
      60.1,
      null
     ],
     [
-     "Ling-3.0-flash-VL",
+     "Kimi K2.7 Code",
      60.1,
      null
     ],
@@ -24046,12 +24046,12 @@
      null
     ],
     [
-     "Solar Open2 250B",
+     "K2 Horizon 7B",
      47.6,
      null
     ],
     [
-     "K2 Horizon 7B",
+     "Solar Open2 250B",
      47.6,
      null
     ],
@@ -25103,6 +25103,15 @@
    "items": "0",
    "pr": "263",
    "notes": "RuntimeError: AA llms endpoint returned 410: {\"error\":\"Gone\";\"message\":\"The legacy /api/v2/data/* e"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-09",
+   "time": "11:34",
+   "status": "partial",
+   "items": "0",
+   "pr": "264",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
