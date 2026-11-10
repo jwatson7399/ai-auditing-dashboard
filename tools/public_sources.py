@@ -8,6 +8,9 @@ import re
 
 AA_URL = "https://artificialanalysis.ai/leaderboards/models"
 ARENA_URLS = {"text": "https://arena.ai/leaderboard/text", "webdev": "https://arena.ai/leaderboard/code"}
+# Used when arena.ai returns 403. Same publisher, overall category only.
+ARENA_DATASET = "lmarena-ai/leaderboard-dataset"
+ARENA_DATASET_CONFIG = {"webdev": "webdev", "text": "text"}
 ELO_RANGE = (800, 2000)
 PUBLIC_METRICS = ("gdpval", "omni", "nohalluc")
 # Legacy labels. A header that still matches one of these keeps this string as its field,
@@ -281,7 +284,83 @@ def effort_key(name):
     return base, level, fallback
 
 
+def fetch_arena_dataset(board, root):
+    """Overall rows from the official Arena dataset. One config, one category."""
+    try:
+        import duckdb
+    except ImportError as exc:
+        raise RuntimeError("reading the Arena dataset requires duckdb") from exc
+    config = ARENA_DATASET_CONFIG[board]
+    url = (f"https://huggingface.co/datasets/{ARENA_DATASET}/resolve/main/"
+           f"{config}/latest-00000-of-00001.parquet")
+    fetched = duckdb.sql("""
+        SELECT model_name, rating, CAST(leaderboard_publish_date AS VARCHAR) AS published
+        FROM read_parquet(?)
+        WHERE category = 'overall'
+    """, params=[url]).fetchall()
+    if len(fetched) < 5:
+        raise RuntimeError(f"Arena dataset {config} returned {len(fetched)} overall rows")
+    models = [{"model_name": name, "rating": rating, "leaderboard_publish_date": published}
+              for name, rating, published in fetched]
+    dates = {row["leaderboard_publish_date"] for row in models}
+    payload = {
+        "source": ARENA_DATASET,
+        "config": config,
+        "category": "overall",
+        "url": (f"https://huggingface.co/datasets/{ARENA_DATASET}"
+                f"?config={config}&split=latest&category=overall"),
+        "source_updated": next(iter(dates)) if len(dates) == 1 else None,
+        "models": models,
+        "fetched_at": dt.datetime.now(dt.timezone.utc).isoformat(),
+    }
+    raw_dir = os.path.join(root, "data", "raw")
+    os.makedirs(raw_dir, exist_ok=True)
+    with open(os.path.join(raw_dir, f"arena-{board}-dataset.json"), "w") as handle:
+        json.dump(payload, handle)
+    return payload
+
+
+def load_arena(board, root):
+    """The arena.ai page, or the official dataset when that page is blocked."""
+    try:
+        return fetch_public_table(ARENA_URLS[board], root, "arena-" + board)
+    except RuntimeError as exc:
+        if "HTTP 403" not in str(exc):
+            raise
+        return fetch_arena_dataset(board, root)
+
+
+def _parse_arena_dataset(payload, board):
+    if payload.get("config") != ARENA_DATASET_CONFIG[board] or payload.get("category") != "overall":
+        raise ValueError(f"Arena dataset is not the overall {board} board")
+    rows = payload.get("models") or []
+    counts = Counter(row.get("model_name") for row in rows)
+    data, excluded = {}, []
+    for row in rows:
+        name = row.get("model_name") or ""
+        if counts[name] > 1:
+            excluded.append({"model": name, "reason": "Duplicate model label; cannot identify configuration",
+                             "display": row.get("rating")})
+            continue
+        if "AutoEval" in name:
+            excluded.append({"model": name, "reason": "AutoEval estimate, not human votes",
+                             "display": row.get("rating")})
+            continue
+        try:
+            rating = float(row["rating"])
+        except (KeyError, TypeError, ValueError):
+            raise ValueError(f"Invalid Arena score for {name}: {row.get('rating')}") from None
+        if not ELO_RANGE[0] <= rating <= ELO_RANGE[1]:
+            raise ValueError(f"Invalid Arena score for {name}: {row.get('rating')}")
+        data[name] = round(rating)
+    if len(data) < 5:
+        raise ValueError("Arena table has fewer than 5 scores")
+    return data, excluded
+
+
 def parse_arena_table(payload, board):
+    if payload.get("source") == ARENA_DATASET:
+        return _parse_arena_dataset(payload, board)
     expected = {"webdev": "Code Arena | WebDev 🏆 Overall", "text": "Text Arena 🏆 Overall"}
     if payload.get("url", "").rstrip("/") != ARENA_URLS[board] or compact(payload.get("heading", "")) != compact(expected[board]):
         raise ValueError(f"Arena response is not the overall {board} board")

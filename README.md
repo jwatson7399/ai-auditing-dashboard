@@ -35,7 +35,7 @@ The rebuild renders the public Artificial Analysis models table, expands its col
 
 Cost per task comes from the same public table and is joined to API rows by model, effort level, and fallback presence. Ambiguous or unknown settings are left unjoined and logged. Original names and join keys are stored with each cost. A displayed $0.00 is retained as rounded and excluded from savings comparisons; it is not interpreted as free. Missing values stay unavailable or carry forward with their original date. The separate token-price column remains available.
 
-The WebDev fetch uses `https://arena.ai/leaderboard/code`, the overall WebDev board. It preserves the board's published date separately from the fetch date. AutoEval estimates are recorded as exclusions and do not enter the human-vote blend. A source change is not automatically called a re-grade.
+The WebDev fetch uses `https://arena.ai/leaderboard/code`, the overall WebDev board. It preserves the board's published date separately from the fetch date. When that page returns 403, the overall rows are read from the official `lmarena-ai/leaderboard-dataset` instead, and that dataset URL is what gets stored. AutoEval estimates are recorded as exclusions and do not enter the human-vote blend. A source change is not automatically called a re-grade.
 
 Raw rendered text and table rows are saved under `data/raw/`. Benchmarks retain per-model provenance, effort settings, and dates; rows absent from a successful fetch are preserved separately as historical observations and excluded from current rankings. A whole-source outage retains the last available board with stale dates. A failed column leaves other validated columns usable. Task cards warn when their blend includes stale scores.
 

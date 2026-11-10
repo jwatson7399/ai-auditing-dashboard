@@ -29,7 +29,7 @@ import re
 import sys
 import traceback
 import zoneinfo
-from public_sources import (AA_URL, AA_COLUMNS, ARENA_URLS, fetch_public_table,
+from public_sources import (AA_URL, AA_COLUMNS, ARENA_URLS, fetch_public_table, load_arena,
                             parse_aa_table, parse_arena_table, effort_key, PUBLIC_METRICS)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -292,10 +292,13 @@ def fetch_aa_media(key, kind, probe=False):
 
 # ------------------------------------------------------------------- arena.ai
 def fetch_arena(board, probe=False):
-    payload = fetch_public_table(ARENA_URLS[board], ROOT, "arena-" + board)
+    payload = load_arena(board, ROOT)
     if probe:
-        log(f"arena {board}: title={payload.get('title')!r}; url={payload.get('url')}; rows={len(payload.get('rows', []))}")
-        log("headers/sample: " + repr(payload.get("rows", [])[:3]))
+        if payload.get("models") is not None and not payload.get("rows"):
+            log(f"arena {board}: dataset url={payload.get('url')}; models={len(payload.get('models', []))}")
+        else:
+            log(f"arena {board}: title={payload.get('title')!r}; url={payload.get('url')}; rows={len(payload.get('rows', []))}")
+            log("headers/sample: " + repr(payload.get("rows", [])[:3]))
         return payload
     data, excluded = parse_arena_table(payload, board)
     log(f"arena {board}: {len(data)} scores; {len(excluded)} estimated or ambiguous rows excluded")

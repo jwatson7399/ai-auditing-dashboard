@@ -241,6 +241,34 @@ class SourceTests(unittest.TestCase):
                       ['Feb 31, 2026','128 models','100 votes'], ['article from Sep 11, 2026','128 models','100 votes']):
             self.assertIsNone(arena_source_date({'metadata':cells}))
 
+    def test_arena_dataset_keeps_overall_scores_only(self):
+        from public_sources import ARENA_DATASET
+        models = [{"model_name": f"M{i}", "rating": 1500 + i} for i in range(6)]
+        models.append({"model_name": "M0", "rating": 1600})
+        models.append({"model_name": "AutoEval Ghost", "rating": 1400})
+        payload = {"source": ARENA_DATASET, "config": "webdev", "category": "overall", "models": models}
+        data, excluded = parse_arena_table(payload, "webdev")
+        self.assertNotIn("M0", data)
+        self.assertNotIn("AutoEval Ghost", data)
+        self.assertEqual(data["M1"], 1501)
+        self.assertEqual(len(data), 5)
+        self.assertEqual(len(excluded), 3)
+        with self.assertRaises(ValueError):
+            parse_arena_table(dict(payload, config="text"), "webdev")
+
+    def test_arena_403_uses_the_official_dataset(self):
+        from unittest.mock import patch
+        from public_sources import load_arena
+        sentinel = {"source": "lmarena-ai/leaderboard-dataset"}
+        with patch("public_sources.fetch_public_table", side_effect=RuntimeError("arena-webdev: HTTP 403")), \
+                patch("public_sources.fetch_arena_dataset", return_value=sentinel):
+            self.assertIs(load_arena("webdev", "/tmp"), sentinel)
+        with patch("public_sources.fetch_public_table", side_effect=RuntimeError("arena-webdev: HTTP 500")), \
+                patch("public_sources.fetch_arena_dataset") as dataset:
+            with self.assertRaises(RuntimeError):
+                load_arena("webdev", "/tmp")
+            dataset.assert_not_called()
+
     def test_arena_wrong_text_board_or_filter_rejected(self):
         with self.assertRaises(ValueError): parse_arena_table(self.arena(),'text')
         p=self.arena(); p['url'] += '?category=coding'
@@ -249,7 +277,7 @@ class SourceTests(unittest.TestCase):
     def test_probe_bypasses_strict_parser(self):
         from unittest.mock import patch
         payload={'title':'Changed schema','rows':[['Unexpected']]}
-        with patch.object(rebuild,'fetch_public_table',return_value=payload), contextlib.redirect_stdout(io.StringIO()):
+        with patch.object(rebuild,'load_arena',return_value=payload), contextlib.redirect_stdout(io.StringIO()):
             self.assertEqual(rebuild.fetch_arena('webdev',probe=True),payload)
             with self.assertRaises(ValueError): rebuild.fetch_arena('webdev')
 

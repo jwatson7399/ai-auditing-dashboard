@@ -2,7 +2,7 @@
 import argparse
 import json
 import tempfile
-from public_sources import AA_URL, ARENA_URLS, fetch_public_table, parse_aa_table, parse_arena_table
+from public_sources import AA_URL, ARENA_URLS, fetch_public_table, load_arena, parse_aa_table, parse_arena_table
 
 
 def main():
@@ -25,7 +25,7 @@ def main():
     result = {'aa_numeric_rows': {k: v['numeric_rows'] for k, v in columns.items()},
               'aa_columns': columns, 'output': output}
     for board in ('webdev', 'text'):
-        arena = fetch_public_table(ARENA_URLS[board], output, 'arena-' + board)
+        arena = load_arena(board, output)
         scores, excluded = parse_arena_table(arena, board)
         result[board] = {'scores': len(scores), 'excluded': excluded, 'source_updated': arena['source_updated']}
     print(json.dumps(result, indent=2))
