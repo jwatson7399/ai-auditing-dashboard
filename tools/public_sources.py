@@ -1,5 +1,6 @@
 """Label-based public leaderboard extraction. No API key or model-generated data."""
 from collections import Counter
+from decimal import Decimal, ROUND_HALF_UP
 import datetime as dt
 import json
 import os
@@ -9,12 +10,35 @@ AA_URL = "https://artificialanalysis.ai/leaderboards/models"
 ARENA_URLS = {"text": "https://arena.ai/leaderboard/text", "webdev": "https://arena.ai/leaderboard/code"}
 ELO_RANGE = (800, 2000)
 PUBLIC_METRICS = ("gdpval", "omni", "nohalluc")
+# Legacy labels. A header that still matches one of these keeps this string as its field,
+# so a case-only reprint does not look like a new score definition. Newer wording is stored
+# as the header the page actually showed.
 AA_COLUMNS = {
     "gdpval": "GDPval-AA v2\nAgentic Real-World Work Tasks, (Elo-500)/2000",
     "omni": "AA-Omniscience Accuracy\nKnowledge",
     "nohalluc": "AA-Omniscience Non-Hallucination Rate\n1 - Hallucination Rate",
     "cost": "Cost per Task\nUSD",
 }
+# A minor version ("v2", "v2.1", "v1.1") may appear after the benchmark name. Case is
+# folded by compact() before these patterns run.
+_VERSION = r"(?: v\d+(?:\.\d+)*)?"
+AA_COLUMN_MATCHERS = {
+    "gdpval": re.compile(
+        rf"^gdpval-aa{_VERSION} agentic real-world work tasks, (?:\(elo-500\)/2000|elo)$"),
+    "omni": re.compile(rf"^aa-omniscience{_VERSION} accuracy knowledge$"),
+    "nohalluc": re.compile(
+        rf"^aa-omniscience{_VERSION} non-hallucination rate 1 - hallucination rate$"),
+    "cost": re.compile(r"^cost per task usd$"),
+}
+# Used by the browser wait as well as tests. The page may insert a version and change case.
+OMNISCIENCE_NON_HALLUCINATION_HEADER = r"^AA-Omniscience(?: v\d+(?:\.\d+)*)? Non-Hallucination Rate"
+# Raw GDPval Elo is converted with the formula the old column printed: (Elo-500)/2000.
+# 500 Elo is 0 on that scale. Elo below 500 is a negative percentage point score.
+# The sanity window only rejects cells that are not Elo-shaped numbers.
+GDPVAL_ELO_ZERO = 500
+GDPVAL_ELO_SANITY = (-1000, 3000)
+_MISSING_CELLS = {"", "--", "-", "N/A"}
+_CI_LINE = re.compile(r"^[+\-]\d+(?:\.\d+)?/[+\-]\d+(?:\.\d+)?$")
 
 
 def compact(s):
@@ -63,8 +87,10 @@ def fetch_public_table(url, root, name, expand=False):
             if expand:
                 page.get_by_role("button", name="Expand columns", exact=True).click(timeout=30000)
                 page.get_by_role("button", name="Collapse columns", exact=True).wait_for(timeout=30000)
-                page.wait_for_function("""() => Array.from(document.querySelectorAll('th,td')).some(c =>
-                    c.innerText.startsWith('AA-Omniscience Non-Hallucination Rate'))""", timeout=30000)
+                page.wait_for_function(
+                    """pattern => Array.from(document.querySelectorAll('th,td')).some(c =>
+                        new RegExp(pattern, 'i').test(c.innerText.trim()))""",
+                    arg=OMNISCIENCE_NON_HALLUCINATION_HEADER, timeout=30000)
             page.locator("table tbody tr").first.wait_for(timeout=30000)
             # Wait for labeled headers as well as rows; hydration can initially leave empty cells.
             page.wait_for_function("""() => Array.from(document.querySelectorAll('table tr')).some(tr =>
@@ -116,27 +142,114 @@ def labeled_rows(rows, allow_duplicates=False):
     return names, mi, data
 
 
+def elo_to_percent(elo):
+    """(Elo - 500) / 2000 as percentage points, rounded half up to one decimal."""
+    points = (Decimal(str(elo)) - Decimal(GDPVAL_ELO_ZERO)) / Decimal(2000) * Decimal(100)
+    return float(points.quantize(Decimal("0.1"), rounding=ROUND_HALF_UP))
+
+
+def _header_row(rows):
+    headers = [r for r in rows if any(compact(c) == "model" for c in r)]
+    if len(headers) != 1:
+        raise ValueError("Expected exactly one table header with Model")
+    return headers[0]
+
+
+def _match_column(header, key):
+    names = [compact(c) for c in header]
+    hits = [i for i, name in enumerate(names) if AA_COLUMN_MATCHERS[key].fullmatch(name)]
+    if len(hits) != 1:
+        raise ValueError(f"Expected one {key} column, found {len(hits)}")
+    return hits[0]
+
+
+def _cell_lines(text):
+    return [ln.strip() for ln in str(text).splitlines() if ln.strip()]
+
+
+def _parse_number_cell(text, key, model, kind):
+    """kind is 'percent', 'dollars', or 'elo'. Missing cells return None."""
+    if text in _MISSING_CELLS:
+        return None, None
+    lines = _cell_lines(text)
+    if not lines or lines[0] in _MISSING_CELLS:
+        return None, None
+    if any(not _CI_LINE.fullmatch(ln) for ln in lines[1:]):
+        raise ValueError(f"Invalid {key} cell for {model}: {text}")
+    token = lines[0].replace(",", "").replace("\u2212", "-").replace("\u2013", "-")
+    if kind == "dollars":
+        match = re.fullmatch(r"\$(\d+(?:\.\d+)?)", token)
+        ceiling = 500
+    elif kind == "percent":
+        match = re.fullmatch(r"(\d+(?:\.\d+)?)%", token)
+        ceiling = 100
+    else:
+        match = re.fullmatch(r"-?\d+(?:\.\d+)?", token)
+        ceiling = None
+    if not match:
+        raise ValueError(f"Invalid {key} cell for {model}: {text}")
+    number = float(match.group(1) if kind != "elo" else match.group(0))
+    if kind == "elo":
+        if not GDPVAL_ELO_SANITY[0] <= number <= GDPVAL_ELO_SANITY[1]:
+            raise ValueError(f"Out-of-range {key} cell for {model}: {text}")
+        return elo_to_percent(number), number
+    if not 0 <= number <= ceiling:
+        raise ValueError(f"Out-of-range {key} cell for {model}")
+    return number, None
+
+
+def _column_cells_by_model(data, mi, ci):
+    """One cell per model. Agreeing copies collapse. Disagreeing copies are not guessed."""
+    grouped, order = {}, []
+    for row in data:
+        name = row[mi]
+        if name not in grouped:
+            order.append(name)
+            grouped[name] = []
+        grouped[name].append(row[ci])
+    chosen = []
+    for name in order:
+        present = []
+        for cell in grouped[name]:
+            lines = _cell_lines(cell)
+            if lines and lines[0] not in _MISSING_CELLS:
+                present.append(cell.strip())
+        # A second copy with a blank cell is not the same fact as a copy with a number.
+        # Two blanks stay blank. Two identical numbers collapse to one.
+        if len(set(present)) > 1 or (present and len(present) != len(grouped[name])):
+            chosen.append((name, None))
+        else:
+            chosen.append((name, present[0] if present else "--"))
+    return chosen
+
+
 def parse_aa_table(rows):
-    headers, mi, data = labeled_rows(rows)
-    if len(data) < 20:
+    _headers, mi, data = labeled_rows(rows, allow_duplicates=True)
+    if len({row[mi].split("\n")[0] for row in data}) < 20:
         raise ValueError("AA table has fewer than 20 model rows")
+    header = _header_row(rows)
     result, errors = {}, {}
-    for key, label in AA_COLUMNS.items():
+    for key in AA_COLUMNS:
         try:
-            ci = headers.index(compact(label))
+            ci = _match_column(header, key)
+            raw_header = header[ci]
+            field = AA_COLUMNS[key] if compact(raw_header) == compact(AA_COLUMNS[key]) else raw_header
+            kind = "dollars" if key == "cost" else "percent"
+            if key == "gdpval" and compact(raw_header).endswith(", elo"):
+                kind = "elo"
             parsed = []
-            for row in data:
-                text = row[ci]
-                value = None
-                if text not in ("", "--", "-", "N/A"):
-                    pattern = r"\$(\d+(?:\.\d+)?)" if key == "cost" else r"(\d+(?:\.\d+)?)%"
-                    match = re.fullmatch(pattern, text)
-                    if not match:
-                        raise ValueError(f"Invalid {key} cell for {row[mi]}: {text}")
-                    value = float(match[1])
-                    if not 0 <= value <= (500 if key == "cost" else 100):
-                        raise ValueError(f"Out-of-range {key} cell for {row[mi]}")
-                parsed.append({"name": row[mi], "value": value, "display": text})
+            for name, cell in _column_cells_by_model(data, mi, ci):
+                if cell is None:
+                    value, raw_elo, display = None, None, "ambiguous"
+                else:
+                    value, raw_elo = _parse_number_cell(cell, key, name, kind)
+                    display = cell
+                item = {"name": name, "value": value, "display": display, "field": field,
+                        "column_title": raw_header.split("\n")[0].strip(),
+                        "scale": "percent" if key != "cost" else "usd"}
+                if raw_elo is not None:
+                    item["raw_elo"] = int(raw_elo) if raw_elo == int(raw_elo) else raw_elo
+                parsed.append(item)
             if sum(r["value"] is not None for r in parsed) < 20:
                 raise ValueError(f"Fewer than 20 numeric {key} rows")
             result[key] = parsed

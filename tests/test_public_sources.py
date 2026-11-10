@@ -6,7 +6,8 @@ import sys
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
-from public_sources import AA_COLUMNS, ARENA_URLS, arena_source_date, effort_key, parse_aa_table, parse_arena_table
+from public_sources import (AA_COLUMNS, ARENA_URLS, OMNISCIENCE_NON_HALLUCINATION_HEADER,
+                            arena_source_date, effort_key, elo_to_percent, parse_aa_table, parse_arena_table)
 import rebuild
 
 
@@ -47,9 +48,107 @@ class SourceTests(unittest.TestCase):
         rows = aa_rows(); rows[2].pop()
         with self.assertRaises(ValueError): parse_aa_table(rows)
 
-    def test_duplicate_models_rejected(self):
+    def current_aa_rows(self):
+        header = ['Model',
+                  'GDPval-AA v2.1\nAgentic real-world work tasks, Elo',
+                  'AA-Omniscience v1.1 Accuracy\nKnowledge',
+                  'AA-Omniscience v1.1 Non-Hallucination Rate\n1 - hallucination rate',
+                  'Cost per Task\nUSD']
+        return [header] + [
+            [f'Model {i} (high)', '1,831' if i == 0 else '1500', '79.13%', '40.73%', '$1.00']
+            for i in range(20)]
+
+    def test_legacy_percent_headers_still_parse(self):
+        result, errors = parse_aa_table(aa_rows())
+        self.assertFalse(errors)
+        self.assertEqual(result['gdpval'][0]['value'], 50)
+        self.assertEqual(result['gdpval'][0]['field'], AA_COLUMNS['gdpval'])
+        self.assertNotIn('raw_elo', result['gdpval'][0])
+
+    def test_versioned_headers_and_gdpval_elo(self):
+        result, errors = parse_aa_table(self.current_aa_rows())
+        self.assertFalse(errors, errors)
+        self.assertEqual(elo_to_percent(1831), 66.6)
+        self.assertEqual(result['gdpval'][0]['value'], 66.6)
+        self.assertEqual(result['gdpval'][0]['raw_elo'], 1831)
+        self.assertEqual(result['gdpval'][1]['value'], 50.0)
+        self.assertEqual(result['gdpval'][0]['column_title'], 'GDPval-AA v2.1')
+        self.assertIn('v2.1', result['gdpval'][0]['field'])
+        self.assertEqual(result['omni'][0]['value'], 79.13)
+        self.assertEqual(result['nohalluc'][0]['value'], 40.73)
+        self.assertEqual(result['cost'][0]['value'], 1)
+        self.assertRegex('AA-Omniscience v1.1 Non-Hallucination Rate\n1 - hallucination rate',
+                         '(?i)' + OMNISCIENCE_NON_HALLUCINATION_HEADER)
+        self.assertRegex('AA-Omniscience Non-Hallucination Rate',
+                         '(?i)' + OMNISCIENCE_NON_HALLUCINATION_HEADER)
+
+    def test_case_and_patch_version_still_match(self):
+        rows = self.current_aa_rows()
+        rows[0] = ['model',
+                   'gdpval-aa v2.1.3\nAGENTIC REAL-WORLD WORK TASKS, ELO',
+                   'aa-omniscience v10.2 accuracy\nknowledge',
+                   'AA-OMNISCIENCE v1.1 NON-HALLUCINATION RATE\n1 - HALLUCINATION RATE',
+                   'cost per task\nusd']
+        result, errors = parse_aa_table(rows)
+        self.assertFalse(errors, errors)
+        self.assertEqual(result['gdpval'][0]['column_title'], 'gdpval-aa v2.1.3')
+        self.assertEqual(result['omni'][0]['value'], 79.13)
+
+    def test_gdpval_elo_out_of_range_drops_only_that_column(self):
+        rows = self.current_aa_rows(); rows[1][1] = '99999'
+        result, errors = parse_aa_table(rows)
+        self.assertIn('gdpval', errors)
+        self.assertNotIn('gdpval', result)
+        self.assertIn('omni', result)
+
+    def test_negative_gdpval_elo_uses_the_same_formula(self):
+        self.assertEqual(elo_to_percent(1831), 66.6)
+        self.assertEqual(elo_to_percent(500), 0.0)
+        self.assertEqual(elo_to_percent(-359), -43.0)
+        rows = self.current_aa_rows(); rows[1][1] = '−359'
+        result, errors = parse_aa_table(rows)
+        self.assertFalse(errors, errors)
+        self.assertEqual(result['gdpval'][0]['raw_elo'], -359)
+        self.assertEqual(result['gdpval'][0]['value'], -43.0)
+
+    def test_gdpval_card_uses_column_title_and_keeps_raw_elo(self):
+        parsed, errors = parse_aa_table(self.current_aa_rows())
+        self.assertFalse(errors, errors)
+        bench, _ = self.apply(parsed, [])
+        self.assertEqual(bench['gdpval']['name'], 'GDPval-AA v2.1')
+        self.assertEqual(bench['gdpval']['d']['Model 0'], 66.6)
+        self.assertEqual(bench['gdpval']['records']['Model 0']['raw_elo'], 1831)
+        self.assertIn('v2.1', bench['gdpval']['field'])
+        self.assertEqual(bench['gdpval']['scale'], 'percent')
+        self.assertIn('(Elo-500)/2000', bench['gdpval']['scale_note'])
+
+    def test_duplicate_models_collapse_when_they_agree(self):
         rows = aa_rows(); rows.append(rows[1])
-        with self.assertRaises(ValueError): parse_aa_table(rows)
+        result, errors = parse_aa_table(rows)
+        self.assertFalse(errors)
+        names = [r['name'] for r in result['gdpval']]
+        self.assertEqual(names.count(rows[1][0]), 1)
+        self.assertEqual(result['gdpval'][0]['value'], 50)
+
+    def test_disagreeing_duplicate_is_left_blank(self):
+        rows = aa_rows()
+        twin = rows[1][:]
+        twin[1] = '40%'
+        extra = rows[2][:]
+        extra[0] = 'Extra Model (high)'
+        rows.extend([twin, extra])
+        result, errors = parse_aa_table(rows)
+        self.assertFalse(errors, errors)
+        self.assertIsNone(result['gdpval'][0]['value'])
+        self.assertEqual(result['gdpval'][0]['display'], 'ambiguous')
+        self.assertEqual(result['omni'][0]['value'], 60)
+        rows = aa_rows()
+        missing = rows[1][:]; missing[1] = '--'
+        extra = rows[2][:]; extra[0] = 'Extra Model (high)'
+        rows.extend([missing, extra])
+        result, errors = parse_aa_table(rows)
+        self.assertFalse(errors, errors)
+        self.assertIsNone(result['gdpval'][0]['value'])
 
     def test_small_table_rejected(self):
         with self.assertRaises(ValueError): parse_aa_table(aa_rows()[:4])

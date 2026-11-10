@@ -14,7 +14,16 @@ def main():
     parsed, errors = parse_aa_table(aa['rows'])
     if errors:
         raise RuntimeError(str(errors))
-    result = {'aa_numeric_rows': {k: sum(r['value'] is not None for r in v) for k, v in parsed.items()}, 'output': output}
+    columns = {}
+    for key, values in parsed.items():
+        columns[key] = {'field': values[0].get('field'), 'scale': values[0].get('scale'),
+                        'numeric_rows': sum(r['value'] is not None for r in values)}
+        example = next((r for r in values if r.get('raw_elo') is not None), None)
+        if example:
+            columns[key]['example_raw_elo'] = example['raw_elo']
+            columns[key]['example_percent'] = example['value']
+    result = {'aa_numeric_rows': {k: v['numeric_rows'] for k, v in columns.items()},
+              'aa_columns': columns, 'output': output}
     for board in ('webdev', 'text'):
         arena = fetch_public_table(ARENA_URLS[board], output, 'arena-' + board)
         scores, excluded = parse_arena_table(arena, board)

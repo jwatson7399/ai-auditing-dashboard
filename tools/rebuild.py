@@ -375,12 +375,21 @@ def apply_public_aa(parsed, payload, eff_rows, bench, prev, today):
                 continue
             if base not in d or row["value"] > d[base]:
                 d[base], settings[base] = row["value"], setting
-                records[base] = dict(source, page_name=row["name"], field=AA_COLUMNS[k],
-                                     display=row["display"], effort=setting, stale=False)
+                record = dict(source, page_name=row["name"], field=row.get("field") or AA_COLUMNS[k],
+                              display=row["display"], effort=setting, stale=False)
+                if "raw_elo" in row:
+                    record["raw_elo"] = row["raw_elo"]
+                records[base] = record
+        sample = next((row for row in parsed[k] if row.get("field") or row.get("column_title")), {})
+        field = sample.get("field") or AA_COLUMNS[k]
+        # The card name follows the GDPval header, so a v2.1 column is not still labeled v2.
+        name = sample.get("column_title") if k == "gdpval" and sample.get("column_title") else BENCH[k]["name"]
         old = (prev or {}).get("bench", {}).get(k, {})
-        bench[k] = dict(source, name=BENCH[k]["name"], kind="task", elo=False,
-                        field=AA_COLUMNS[k], scale="percent", d=d, settings=settings, records=records,
-                        stale=False, historical=historical_scores(old, d))
+        bench[k] = dict(source, name=name, kind="task", elo=False,
+                        field=field, scale=sample.get("scale") or "percent", d=d, settings=settings,
+                        records=records, stale=False, historical=historical_scores(old, d))
+        if any("raw_elo" in row for row in parsed[k]):
+            bench[k]["scale_note"] = "(Elo-500)/2000 as percentage points; raw Elo is on each record"
     return sorted(set(notes)), sorted(set(gaps))
 
 
