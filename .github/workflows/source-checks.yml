@@ -21,7 +21,7 @@ jobs:
         run: python -m unittest discover -s tests -p 'test_*.py'
       - name: Install browser
         run: |
-          pip install playwright
+          pip install playwright duckdb
           python -m playwright install --with-deps chromium
       - name: Inline evidence browser checks
         run: python tests/check_task_panels.py

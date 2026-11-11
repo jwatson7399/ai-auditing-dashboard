@@ -29,7 +29,7 @@ import re
 import sys
 import traceback
 import zoneinfo
-from public_sources import (AA_URL, AA_COLUMNS, ARENA_URLS, fetch_public_table,
+from public_sources import (AA_URL, AA_COLUMNS, ARENA_URLS, fetch_public_table, load_arena,
                             parse_aa_table, parse_arena_table, effort_key, PUBLIC_METRICS)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -444,10 +444,13 @@ def fetch_aa_media(key, kind, probe=False):
 
 # ------------------------------------------------------------------- arena.ai
 def fetch_arena(board, probe=False):
-    payload = fetch_public_table(ARENA_URLS[board], ROOT, "arena-" + board)
+    payload = load_arena(board, ROOT)
     if probe:
-        log(f"arena {board}: title={payload.get('title')!r}; url={payload.get('url')}; rows={len(payload.get('rows', []))}")
-        log("headers/sample: " + repr(payload.get("rows", [])[:3]))
+        if payload.get("models") is not None and not payload.get("rows"):
+            log(f"arena {board}: dataset url={payload.get('url')}; models={len(payload.get('models', []))}")
+        else:
+            log(f"arena {board}: title={payload.get('title')!r}; url={payload.get('url')}; rows={len(payload.get('rows', []))}")
+            log("headers/sample: " + repr(payload.get("rows", [])[:3]))
         return payload
     data, excluded = parse_arena_table(payload, board)
     log(f"arena {board}: {len(data)} scores; {len(excluded)} estimated or ambiguous rows excluded")
@@ -527,12 +530,21 @@ def apply_public_aa(parsed, payload, eff_rows, bench, prev, today):
                 continue
             if base not in d or row["value"] > d[base]:
                 d[base], settings[base] = row["value"], setting
-                records[base] = dict(source, page_name=row["name"], field=AA_COLUMNS[k],
-                                     display=row["display"], effort=setting, stale=False)
+                record = dict(source, page_name=row["name"], field=row.get("field") or AA_COLUMNS[k],
+                              display=row["display"], effort=setting, stale=False)
+                if "raw_elo" in row:
+                    record["raw_elo"] = row["raw_elo"]
+                records[base] = record
+        sample = next((row for row in parsed[k] if row.get("field") or row.get("column_title")), {})
+        field = sample.get("field") or AA_COLUMNS[k]
+        # The card name follows the GDPval header, so a v2.1 column is not still labeled v2.
+        name = sample.get("column_title") if k == "gdpval" and sample.get("column_title") else BENCH[k]["name"]
         old = (prev or {}).get("bench", {}).get(k, {})
-        bench[k] = dict(source, name=BENCH[k]["name"], kind="task", elo=False,
-                        field=AA_COLUMNS[k], scale="percent", d=d, settings=settings, records=records,
-                        stale=False, historical=historical_scores(old, d))
+        bench[k] = dict(source, name=name, kind="task", elo=False,
+                        field=field, scale=sample.get("scale") or "percent", d=d, settings=settings,
+                        records=records, stale=False, historical=historical_scores(old, d))
+        if any("raw_elo" in row for row in parsed[k]):
+            bench[k]["scale_note"] = "(Elo-500)/2000 as percentage points; raw Elo is on each record"
     return sorted(set(notes)), sorted(set(gaps))
 
 

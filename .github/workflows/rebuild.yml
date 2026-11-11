@@ -41,7 +41,7 @@ jobs:
 
       - name: Install
         run: |
-          pip install --quiet requests openpyxl playwright
+          pip install --quiet requests openpyxl playwright duckdb
           python -m playwright install --with-deps chromium
 
       - name: Rebuild
