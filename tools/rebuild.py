@@ -72,11 +72,10 @@ BENCH = {
     "webdev":   {"name": "Arena WebDev", "kind": "votes", "elo": True, "arena": "webdev"},
     "text":     {"name": "Arena Text", "kind": "votes", "elo": True, "arena": "text"},
     "image":    {"name": "AA Image Arena", "kind": "votes", "elo": True, "media": "text-to-image"},
-    # Named for what the endpoint returns, which is the whole text-to-video board. It is not the
-    # narrower "with audio" chart the seed numbers were read from: the response comes back with
-    # include_categories false and every row's categories list empty, so no filter is applied,
-    # and it carries 83 models where that chart had a handful. Calling it the audio board made
-    # a change of board look like every model gaining about 95 Elo overnight.
+    # Successor of the retired /api/v2/data/media/text-to-video path. V2 documents
+    # /api/v2/media/text-to-video/models as the silent (no-audio) text-to-video board.
+    # The with-audio board is a separate endpoint and is not used: switching boards previously
+    # made every Elo look like it had jumped overnight.
     "video":    {"name": "AA Video Arena", "kind": "votes", "elo": True, "media": "text-to-video"},
 }
 INDEX_API = ["artificial_analysis_intelligence_index"]
@@ -139,10 +138,159 @@ def load_previous(today):
 
 
 # ------------------------------------------------------------ Artificial Analysis
-def http_get(url, headers=None, timeout=60):
+# Retired /api/v2/data/* paths return 410. Each has a Pro list and a Free list; the same
+# API key is sent to both. Pro is required for per-benchmark scores and the published
+# 3:1 blended token price. Free still returns the Intelligence Index, median speed, input
+# and output prices, and arena Elo. A 403 on Pro falls back to Free.
+AA_ORIGIN = "https://artificialanalysis.ai"
+AA_LLMS_PRO = AA_ORIGIN + "/api/v2/language/models"
+AA_LLMS_FREE = AA_ORIGIN + "/api/v2/language/models/free"
+AA_MEDIA_PRO = {
+    "text-to-image": AA_ORIGIN + "/api/v2/media/text-to-image/models",
+    "text-to-video": AA_ORIGIN + "/api/v2/media/text-to-video/models",
+}
+AA_MEDIA_FREE = {
+    "text-to-image": AA_ORIGIN + "/api/v2/media/text-to-image/models/free",
+    "text-to-video": AA_ORIGIN + "/api/v2/media/text-to-video/models/free",
+}
+# The retired llms call measured speed at 1,000 input tokens and one query (prompt_options
+# prompt_length 1000). That preset is prompt_type=medium. The new default is long (10,000).
+AA_PROMPT_TYPE = "medium"
+AA_MAX_PAGES = 25
+
+
+def http_get(url, headers=None, timeout=60, params=None):
     import requests
-    r = requests.get(url, headers=headers or {}, timeout=timeout)
+    r = requests.get(url, headers=headers or {}, params=params, timeout=timeout)
     return r.status_code, r
+
+
+def _aa_error(label, url, status, response):
+    body = (getattr(response, "text", "") or "").replace("\n", " ")[:200]
+    return RuntimeError(f"{label} returned {status} for {url}: {body}")
+
+
+def _fetch_pages(url, headers, params):
+    """Follow a V2 list's pagination. A non-200 on any page fails the fetch."""
+    merged = None
+    rows = []
+    seen = set()
+    pages_fetched = 0
+    for page in range(1, AA_MAX_PAGES + 1):
+        query = dict(params)
+        query["page"] = page
+        status, response = http_get(url, headers, params=query)
+        if status != 200:
+            return status, response, None
+        body = response.json()
+        if isinstance(body, list):
+            chunk, body = body, {"data": body}
+        else:
+            chunk = body.get("data") or []
+        if not isinstance(chunk, list):
+            raise RuntimeError(f"AA response data was not a list: {url}")
+        pages_fetched += 1
+        if merged is None:
+            merged = dict(body)
+        added = 0
+        for item in chunk:
+            ident = item.get("id") if isinstance(item, dict) else None
+            if ident:
+                if ident in seen:
+                    continue
+                seen.add(ident)
+            rows.append(item)
+            added += 1
+        pagination = body.get("pagination") or {}
+        # A page of ids we already have means pagination is stuck. An empty page with
+        # has_more still set is followed; the page cap stops a run of empty pages.
+        if not pagination.get("has_more") or (chunk and added == 0):
+            break
+    else:
+        raise RuntimeError(f"AA pagination exceeded {AA_MAX_PAGES} pages: {url}")
+    merged["data"] = rows
+    if isinstance(merged.get("pagination"), dict):
+        merged["pagination"] = dict(merged["pagination"], pages_fetched=pages_fetched, has_more=False)
+    merged["endpoint"] = url
+    return 200, response, merged
+
+
+def fetch_aa_collection(label, key, pro_url, free_url, pro_params=None):
+    """Pro list first. Free list only when Pro answers 403 (the key's tier is too low)."""
+    if not key:
+        raise Blocked("AA_API_KEY not set")
+    headers = {"x-api-key": key}
+    url = pro_url
+    status, response, body = _fetch_pages(url, headers, pro_params or {})
+    if status == 403 and free_url:
+        detail = (getattr(response, "text", "") or "").replace("\n", " ")[:160]
+        log(f"{label}: Pro endpoint returned 403; retrying the Free endpoint ({detail})")
+        url = free_url
+        status, response, body = _fetch_pages(url, headers, {})
+    if status != 200:
+        raise _aa_error(label, url, status, response)
+    return body
+
+
+def intelligence_index_label(raw):
+    """The effort table prints this string. A real version replaces the old placeholder."""
+    version = raw.get("intelligence_index_version")
+    if version is None:
+        version = raw.get("index_version")
+    if version is None or version == "":
+        return "Artificial Analysis Intelligence Index (version not exposed by the API)"
+    if isinstance(version, str):
+        text = version.strip()
+        if text.lower().startswith("artificial analysis"):
+            return text
+        if text.lower().startswith("v"):
+            return f"Artificial Analysis Intelligence Index {text}"
+    try:
+        number = float(version)
+    except (TypeError, ValueError):
+        return f"Artificial Analysis Intelligence Index v{version}"
+    shown = f"v{int(number)}.0" if number == int(number) else f"v{number:g}"
+    return f"Artificial Analysis Intelligence Index {shown}"
+
+
+def blended_token_price(pricing):
+    """3:1 blend. Pro sends it; Free sends input and output, which is the same blend.
+
+    AA's own example is input 1.4, output 4.4, blended 2.15, i.e. (3*input + output) / 4.
+    """
+    pricing = pricing or {}
+    for key in PRICE_API:
+        if pricing.get(key) is not None:
+            return pricing[key]
+    inp = pricing.get("price_1m_input_tokens")
+    out = pricing.get("price_1m_output_tokens")
+    if inp is None or out is None:
+        return None
+    return round((3 * inp + out) / 4, 6)
+
+
+def model_speed_wait(model):
+    """Speed and wait. V2 nests medians under performance; the retired payload was flat.
+
+    Wait prefers time to first answer token, then time to first token, matching the old
+    field order. V2 renames the answer-token field with a _seconds suffix.
+    """
+    perf = model.get("performance") if isinstance(model.get("performance"), dict) else {}
+
+    def pick(*pairs):
+        for src, key in pairs:
+            if isinstance(src, dict) and src.get(key) is not None:
+                return src[key]
+        return None
+
+    speed = pick((perf, "median_output_tokens_per_second"), (model, "median_output_tokens_per_second"))
+    wait = pick(
+        (perf, "median_time_to_first_answer_token_seconds"),
+        (model, "median_time_to_first_answer_token"),
+        (perf, "median_time_to_first_token_seconds"),
+        (model, "median_time_to_first_token_seconds"),
+    )
+    return speed, wait
 
 
 def split_effort(name):
@@ -205,20 +353,21 @@ def as_percent(v):
 
 def fetch_aa_llms(key, probe=False):
     """Returns (bench_partial, eff, index_meta, raw). Raises Blocked without a key."""
-    if not key:
-        raise Blocked("AA_API_KEY not set")
-    status, r = http_get("https://artificialanalysis.ai/api/v2/data/llms/models", {"x-api-key": key})
-    if status != 200:
-        raise RuntimeError(f"AA llms endpoint returned {status}: {r.text[:200]}")
-    raw = r.json()
-    models = raw.get("data", raw if isinstance(raw, list) else [])
+    raw = fetch_aa_collection(
+        "AA llms endpoint", key, AA_LLMS_PRO, AA_LLMS_FREE, {"prompt_type": AA_PROMPT_TYPE})
+    models = raw.get("data") or []
     if probe:
-        log(f"AA llms: {len(models)} models")
+        log(f"AA llms: {len(models)} models; tier={raw.get('tier')}; endpoint={raw.get('endpoint')}")
         if models:
             log("top-level keys: " + ", ".join(sorted(models[0].keys())))
             log("evaluation keys: " + ", ".join(sorted((models[0].get("evaluations") or {}).keys())))
+            perf = models[0].get("performance") or {}
+            if perf:
+                log("performance keys: " + ", ".join(sorted(perf.keys())))
             log("names: " + " | ".join(m.get("name", "?") for m in models[:60]))
         return None
+    if not models:
+        raise RuntimeError(f"AA llms endpoint returned no models (tier={raw.get('tier')})")
     bench, eff = {}, []
     used_fields = {}
     for m in models:
@@ -227,13 +376,11 @@ def fetch_aa_llms(key, probe=False):
         ev = m.get("evaluations") or {}
         idx_k = first_key(ev, INDEX_API)
         idx = ev.get(idx_k) if idx_k else None
-        pricing = m.get("pricing") or {}
-        price_k = first_key(pricing, PRICE_API)
-        price = pricing.get(price_k) if price_k else None
+        price = blended_token_price(m.get("pricing"))
+        speed, wait = model_speed_wait(m)
         if idx is not None:
             eff.append({"model": base, "effort": effort, "score": round(idx, 1), "price_1m": price,
-                        "speed": m.get("median_output_tokens_per_second"),
-                        "wait_s": m.get("median_time_to_first_answer_token") or m.get("median_time_to_first_token_seconds"),
+                        "speed": speed, "wait_s": wait,
                         "access": ACCESS.get(base), "estimate": False, "api_name": name})
         for k, b in BENCH.items():
             # Public metric aliases have no verified API scale or definition.
@@ -256,28 +403,33 @@ def fetch_aa_llms(key, probe=False):
             if base not in slot["d"] or val > slot["d"][base]:
                 slot["d"][base] = val
                 slot["settings"][base] = effort
-    index_meta = {"index": raw.get("index_version") or "Artificial Analysis Intelligence Index (version not exposed by the API)",
-                  "fetched": now_et().strftime("%Y-%m-%d"), "fields": used_fields, "price_label": PRICE_LABEL}
+    index_meta = {"index": intelligence_index_label(raw),
+                  "fetched": now_et().strftime("%Y-%m-%d"), "fields": used_fields, "price_label": PRICE_LABEL,
+                  "tier": raw.get("tier"), "endpoint": raw.get("endpoint"),
+                  "prompt_type": AA_PROMPT_TYPE if raw.get("endpoint") == AA_LLMS_PRO else None}
     return bench, eff, index_meta, raw
 
 
 def fetch_aa_media(key, kind, probe=False):
-    # include_categories asks the endpoint to say which sub-boards each model appears on. It is
-    # metadata only and does not filter the rows. It is requested so the saved response records
-    # whether a narrower board, such as video with audio, exists to be selected later.
-    status, r = http_get(f"https://artificialanalysis.ai/api/v2/data/media/{kind}?include_categories=true",
-                         {"x-api-key": key})
-    if status != 200:
-        raise RuntimeError(f"AA media/{kind} returned {status}")
-    raw = r.json()
-    models = raw.get("data", [])
+    # include_categories is Pro-only metadata. It does not filter rows. It is requested so the
+    # saved response still records whether a narrower board exists to be selected later.
+    # The Free list has no category parameter; it is used only after Pro returns 403.
+    if kind not in AA_MEDIA_PRO:
+        raise RuntimeError(f"AA media/{kind}: no V2 endpoint is mapped")
+    raw = fetch_aa_collection(
+        f"AA media/{kind}", key, AA_MEDIA_PRO[kind], AA_MEDIA_FREE[kind], {"include_categories": "true"})
+    models = raw.get("data") or []
     # Kept for the same reason as the llms response: when a board's numbers all move at once,
     # the only way to tell a re-grade from a different board is to read what the endpoint sent.
     os.makedirs(os.path.join(ROOT, "data", "raw"), exist_ok=True)
     with open(os.path.join(ROOT, "data", "raw", f"aa-media-{kind}.json"), "w") as f:
         json.dump(raw, f)
     if probe:
-        log(f"AA media/{kind}: {len(models)} rows; keys: " + ", ".join(sorted(models[0].keys())) if models else "empty")
+        if models:
+            log(f"AA media/{kind}: {len(models)} rows; tier={raw.get('tier')}; keys: "
+                + ", ".join(sorted(models[0].keys())))
+        else:
+            log(f"AA media/{kind}: empty; tier={raw.get('tier')}")
         return None
     d = {}
     for m in models:
