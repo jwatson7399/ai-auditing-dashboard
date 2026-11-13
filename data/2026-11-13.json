@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-13",
- "built_at": "2026-11-13T14:59:26+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 279",
- "built_at_et": "9:59 AM",
+ "built_at": "2026-11-13T15:13:07+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 280",
+ "built_at_et": "10:13 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -26598,11 +26598,11 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
+    "Claude Opus 5",
+    "Claude Fable 5.1",
     "GPT-5.6 Terra",
     "GPT-5.6 Luna",
-    "Claude Fable 5.1",
-    "Claude Opus 5",
+    "Claude Fable 5",
     "GPT-5.6 Sol",
     "Grok 4.6"
    ],
@@ -26894,17 +26894,17 @@
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
-     64.1,
-     null
-    ],
-    [
      "Wan 2.6 Image",
      64.1,
      null
     ],
     [
      "grok-imagine-image",
+     64.1,
+     null
+    ],
+    [
+     "Qwen-Image-2.1-Turbo",
      64.1,
      null
     ],
@@ -26924,22 +26924,22 @@
      null
     ],
     [
-     "HiDream-O1-Image-1.5",
-     63.3,
-     null
-    ],
-    [
      "Recraft V4.1 Utility Pro",
      63.3,
      null
     ],
     [
-     "Wan2.6 Text to Image",
-     63.0,
+     "HiDream-O1-Image-1.5",
+     63.3,
      null
     ],
     [
      "GPT Image 1 (high)",
+     63.0,
+     null
+    ],
+    [
+     "Wan2.6 Text to Image",
      63.0,
      null
     ],
@@ -27024,12 +27024,12 @@
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "HunyuanImage 3.0 Instruct",
      58.3,
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "FLUX.2 [dev] Flash",
      58.3,
      null
     ],
@@ -27104,12 +27104,12 @@
      null
     ],
     [
-     "Dreamina 3.1",
+     "FLUX.2 [klein] 9B",
      50.2,
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "Dreamina 3.1",
      50.2,
      null
     ],
@@ -27119,12 +27119,12 @@
      null
     ],
     [
-     "Kling Image 3.0 Omni",
+     "FLUX.1 Kontext [pro]",
      49.1,
      null
     ],
     [
-     "FLUX.1 Kontext [pro]",
+     "Kling Image 3.0 Omni",
      49.1,
      null
     ],
@@ -27164,12 +27164,12 @@
      null
     ],
     [
-     "P-Image",
+     "Z-Image Base",
      44.5,
      null
     ],
     [
-     "Z-Image Base",
+     "P-Image",
      44.5,
      null
     ],
@@ -27540,11 +27540,11 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
+    "Claude Opus 5",
+    "Claude Fable 5.1",
     "GPT-5.6 Terra",
     "GPT-5.6 Luna",
-    "Claude Fable 5.1",
-    "Claude Opus 5",
+    "Claude Fable 5",
     "GPT-5.6 Sol",
     "Grok 4.6"
    ],
@@ -27730,11 +27730,11 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
+    "Claude Opus 5",
+    "Claude Fable 5.1",
     "GPT-5.6 Terra",
     "GPT-5.6 Luna",
-    "Claude Fable 5.1",
-    "Claude Opus 5",
+    "Claude Fable 5",
     "GPT-5.6 Sol",
     "Grok 4.6"
    ],
@@ -28175,13 +28175,13 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
-    "GPT-5.6 Sol",
-    "Grok 4.6",
-    "Claude Fable 5",
-    "GPT-5.6 Terra",
     "Claude Fable 5.1",
-    "Claude Opus 5"
+    "GPT-5.6 Luna",
+    "Claude Opus 5",
+    "GPT-5.6 Terra",
+    "Claude Fable 5",
+    "GPT-5.6 Sol",
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -28915,6 +28915,15 @@
    "items": "7",
    "pr": "278",
    "notes": "terminal carried forward; scicode carried forward; tau carried forward; lcr carried forward; gap: c"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-13",
+   "time": "09:59",
+   "status": "partial",
+   "items": "0",
+   "pr": "279",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
