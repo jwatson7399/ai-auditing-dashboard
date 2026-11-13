@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-13",
- "built_at": "2026-11-13T15:13:07+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 280",
- "built_at_et": "10:13 AM",
+ "built_at": "2026-11-13T16:26:43+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 281",
+ "built_at_et": "11:26 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -25611,14 +25611,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -26031,12 +26031,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -26598,12 +26598,12 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Sol",
+    "GPT-5.6 Terra",
+    "Claude Fable 5",
+    "GPT-5.6 Luna",
     "Claude Opus 5",
     "Claude Fable 5.1",
-    "GPT-5.6 Terra",
-    "GPT-5.6 Luna",
-    "Claude Fable 5",
-    "GPT-5.6 Sol",
     "Grok 4.6"
    ],
    "confidence": "Clear lead",
@@ -26894,7 +26894,7 @@
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Qwen-Image-2.1-Turbo",
      64.1,
      null
     ],
@@ -26904,7 +26904,7 @@
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "Wan 2.6 Image",
      64.1,
      null
     ],
@@ -26924,22 +26924,22 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
-     63.3,
-     null
-    ],
-    [
      "HiDream-O1-Image-1.5",
      63.3,
      null
     ],
     [
-     "GPT Image 1 (high)",
-     63.0,
+     "Recraft V4.1 Utility Pro",
+     63.3,
      null
     ],
     [
      "Wan2.6 Text to Image",
+     63.0,
+     null
+    ],
+    [
+     "GPT Image 1 (high)",
      63.0,
      null
     ],
@@ -26984,12 +26984,12 @@
      null
     ],
     [
-     "FLUX.2 [dev] Turbo",
+     "Cosmos3-Super-Text2Image (agentic)",
      59.7,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "FLUX.2 [dev] Turbo",
      59.7,
      null
     ],
@@ -27024,12 +27024,12 @@
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "FLUX.2 [dev] Flash",
      58.3,
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "HunyuanImage 3.0 Instruct",
      58.3,
      null
     ],
@@ -27059,12 +27059,12 @@
      null
     ],
     [
-     "HunyuanImage 3.5 (Preview)",
+     "Cosmos3-Super-Text2Image-4Step",
      56.2,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "HunyuanImage 3.5 (Preview)",
      56.2,
      null
     ],
@@ -27119,12 +27119,12 @@
      null
     ],
     [
-     "FLUX.1 Kontext [pro]",
+     "Kling Image 3.0 Omni",
      49.1,
      null
     ],
     [
-     "Kling Image 3.0 Omni",
+     "FLUX.1 Kontext [pro]",
      49.1,
      null
     ],
@@ -27324,12 +27324,12 @@
      null
     ],
     [
-     "Bach 1.0 Pro",
+     "Gemini Omni Flash 1.2",
      90.5,
      null
     ],
     [
-     "Gemini Omni Flash 1.2",
+     "Bach 1.0 Pro",
      90.5,
      null
     ],
@@ -27540,12 +27540,12 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Sol",
+    "GPT-5.6 Terra",
+    "Claude Fable 5",
+    "GPT-5.6 Luna",
     "Claude Opus 5",
     "Claude Fable 5.1",
-    "GPT-5.6 Terra",
-    "GPT-5.6 Luna",
-    "Claude Fable 5",
-    "GPT-5.6 Sol",
     "Grok 4.6"
    ],
    "confidence": "Clear lead",
@@ -27730,12 +27730,12 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Sol",
+    "GPT-5.6 Terra",
+    "Claude Fable 5",
+    "GPT-5.6 Luna",
     "Claude Opus 5",
     "Claude Fable 5.1",
-    "GPT-5.6 Terra",
-    "GPT-5.6 Luna",
-    "Claude Fable 5",
-    "GPT-5.6 Sol",
     "Grok 4.6"
    ],
    "confidence": "Clear lead",
@@ -28175,13 +28175,13 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5.1",
+    "GPT-5.6 Sol",
     "GPT-5.6 Luna",
     "Claude Opus 5",
+    "Grok 4.6",
     "GPT-5.6 Terra",
     "Claude Fable 5",
-    "GPT-5.6 Sol",
-    "Grok 4.6"
+    "Claude Fable 5.1"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -28923,6 +28923,15 @@
    "status": "partial",
    "items": "0",
    "pr": "279",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-13",
+   "time": "10:13",
+   "status": "partial",
+   "items": "0",
+   "pr": "280",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
