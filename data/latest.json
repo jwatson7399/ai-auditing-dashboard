@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-14",
- "built_at": "2026-11-14T14:56:42+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 283",
- "built_at_et": "9:56 AM",
+ "built_at": "2026-11-14T15:11:12+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 284",
+ "built_at_et": "10:11 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -26678,13 +26678,13 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5.1",
-    "GPT-5.6 Terra",
-    "GPT-5.6 Sol",
-    "GPT-5.6 Luna",
     "Grok 4.6",
+    "Claude Fable 5.1",
     "Claude Opus 5",
-    "Claude Fable 5"
+    "GPT-5.6 Luna",
+    "GPT-5.6 Terra",
+    "Claude Fable 5",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -26974,12 +26974,12 @@
      null
     ],
     [
-     "Wan 2.6 Image",
+     "Qwen-Image-2.1-Turbo",
      64.3,
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "Wan 2.6 Image",
      64.3,
      null
     ],
@@ -26989,12 +26989,12 @@
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "FLUX.2 [max]",
      63.7,
      null
     ],
     [
-     "FLUX.2 [max]",
+     "Krea 2 Medium Turbo",
      63.7,
      null
     ],
@@ -27014,12 +27014,12 @@
      null
     ],
     [
-     "GPT Image 1 (high)",
+     "Wan2.6 Text to Image",
      63.2,
      null
     ],
     [
-     "Wan2.6 Text to Image",
+     "GPT Image 1 (high)",
      63.2,
      null
     ],
@@ -27069,12 +27069,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Very High)",
+     "Cosmos3-Super-Text2Image (agentic)",
      59.8,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image (agentic)",
+     "P-Image-Ideogram (Very High)",
      59.8,
      null
     ],
@@ -27099,12 +27099,12 @@
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "Nano Banana (Gemini 2.5 Flash Image)",
      58.5,
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "FLUX.2 [dev] Flash",
      58.5,
      null
     ],
@@ -27119,12 +27119,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Wan 2.7 Pro",
      57.8,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Ideogram 4.0 Fast (Quality)",
      57.8,
      null
     ],
@@ -27139,12 +27139,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image-4Step",
+     "HunyuanImage 3.5 (Preview)",
      56.4,
      null
     ],
     [
-     "HunyuanImage 3.5 (Preview)",
+     "Cosmos3-Super-Text2Image-4Step",
      56.4,
      null
     ],
@@ -27189,12 +27189,12 @@
      null
     ],
     [
-     "Dreamina 3.1",
+     "FLUX.1 Kontext [max]",
      50.1,
      null
     ],
     [
-     "FLUX.1 Kontext [max]",
+     "Dreamina 3.1",
      50.1,
      null
     ],
@@ -27414,12 +27414,12 @@
      null
     ],
     [
-     "Dreamina Seedance 2.5",
+     "P-Video-2-Pro",
      88.1,
      null
     ],
     [
-     "P-Video-2-Pro",
+     "Dreamina Seedance 2.5",
      88.1,
      null
     ],
@@ -27620,13 +27620,13 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5.1",
-    "GPT-5.6 Terra",
-    "GPT-5.6 Sol",
-    "GPT-5.6 Luna",
     "Grok 4.6",
+    "Claude Fable 5.1",
     "Claude Opus 5",
-    "Claude Fable 5"
+    "GPT-5.6 Luna",
+    "GPT-5.6 Terra",
+    "Claude Fable 5",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -27815,13 +27815,13 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5.1",
-    "GPT-5.6 Terra",
-    "GPT-5.6 Sol",
-    "GPT-5.6 Luna",
     "Grok 4.6",
+    "Claude Fable 5.1",
     "Claude Opus 5",
-    "Claude Fable 5"
+    "GPT-5.6 Luna",
+    "GPT-5.6 Terra",
+    "Claude Fable 5",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -28260,13 +28260,13 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
     "Grok 4.6",
-    "Claude Opus 5",
     "Claude Fable 5.1",
     "GPT-5.6 Terra",
-    "GPT-5.6 Luna",
-    "Claude Fable 5"
+    "Claude Fable 5",
+    "GPT-5.6 Sol",
+    "Claude Opus 5",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -29000,6 +29000,15 @@
    "items": "7",
    "pr": "282",
    "notes": "terminal carried forward; scicode carried forward; tau carried forward; lcr carried forward; gap: c"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-14",
+   "time": "09:56",
+   "status": "partial",
+   "items": "0",
+   "pr": "283",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
