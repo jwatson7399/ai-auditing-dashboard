@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-16",
- "built_at": "2026-11-16T14:57:06+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 291",
- "built_at_et": "9:57 AM",
+ "built_at": "2026-11-16T15:10:34+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 292",
+ "built_at_et": "10:10 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -27977,14 +27977,14 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
-    "Grok 4.6",
-    "GPT-5.6 Terra",
-    "Claude Fable 5.1",
+    "Claude Opus 5",
     "GPT-6 Astra",
-    "GPT-5.6 Luna",
+    "GPT-5.6 Terra",
+    "Grok 4.6",
     "Claude Fable 5",
-    "Claude Opus 5"
+    "GPT-5.6 Sol",
+    "Claude Fable 5.1",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -28264,12 +28264,12 @@
      null
     ],
     [
-     "FLUX.2 [flex]",
+     "Recraft V4.1 Utility",
      64.4,
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "FLUX.2 [flex]",
      64.4,
      null
     ],
@@ -28279,12 +28279,12 @@
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
+     "Luma UNI 1 Max",
      64.1,
      null
     ],
     [
-     "Luma UNI 1 Max",
+     "Qwen-Image-2.1-Turbo",
      64.1,
      null
     ],
@@ -28304,7 +28304,7 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Recraft V4.1 Utility Pro",
      63.3,
      null
     ],
@@ -28314,7 +28314,7 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
+     "Seedream 5.0 Lite",
      63.3,
      null
     ],
@@ -28329,12 +28329,12 @@
      null
     ],
     [
-     "Wan2.6 Text to Image",
+     "Ideogram 4.5 (High)",
      62.9,
      null
     ],
     [
-     "Ideogram 4.5 (High)",
+     "Wan2.6 Text to Image",
      62.9,
      null
     ],
@@ -28389,17 +28389,17 @@
      null
     ],
     [
-     "Qwen Image 2.0 (2026-03-03)",
-     59.1,
-     null
-    ],
-    [
      "HunyuanImage 3.0 (Tencent Cloud)",
      59.1,
      null
     ],
     [
-     "Wan 2.7",
+     "Qwen Image 2.0 (2026-03-03)",
+     59.1,
+     null
+    ],
+    [
+     "Nano Banana (Gemini 2.5 Flash Image)",
      58.4,
      null
     ],
@@ -28409,17 +28409,17 @@
      null
     ],
     [
-     "Nano Banana (Gemini 2.5 Flash Image)",
+     "Wan 2.7",
      58.4,
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "HunyuanImage 3.0 Instruct",
      58.1,
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "FLUX.2 [dev] Flash",
      58.1,
      null
     ],
@@ -28459,12 +28459,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast",
+     "P-Image-Ideogram (Low)",
      55.1,
      null
     ],
     [
-     "P-Image-Ideogram (Low)",
+     "Ideogram 4.0 Fast",
      55.1,
      null
     ],
@@ -28509,12 +28509,12 @@
      null
     ],
     [
-     "FLUX.1 Kontext [pro]",
+     "Kling Image 3.0 Omni",
      48.9,
      null
     ],
     [
-     "Kling Image 3.0 Omni",
+     "FLUX.1 Kontext [pro]",
      48.9,
      null
     ],
@@ -28920,14 +28920,14 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
+    "Claude Opus 5",
+    "GPT-6 Astra",
     "Claude Fable 5",
     "GPT-5.6 Sol",
-    "Grok 4.6",
     "GPT-5.6 Terra",
     "Claude Fable 5.1",
-    "GPT-6 Astra",
-    "Claude Opus 5"
+    "Grok 4.6",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -29066,14 +29066,14 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
+    "Claude Opus 5",
+    "GPT-6 Astra",
     "Claude Fable 5",
     "GPT-5.6 Sol",
-    "Grok 4.6",
     "GPT-5.6 Terra",
     "Claude Fable 5.1",
-    "GPT-6 Astra",
-    "Claude Opus 5"
+    "Grok 4.6",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -29397,14 +29397,14 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Sol",
-    "Grok 4.6",
-    "GPT-5.6 Terra",
-    "Claude Fable 5.1",
+    "Claude Opus 5",
     "GPT-6 Astra",
-    "GPT-5.6 Luna",
+    "GPT-5.6 Terra",
+    "Grok 4.6",
     "Claude Fable 5",
-    "Claude Opus 5"
+    "GPT-5.6 Sol",
+    "Claude Fable 5.1",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -30138,6 +30138,15 @@
    "items": "7",
    "pr": "290",
    "notes": "terminal carried forward; scicode carried forward; tau carried forward; lcr carried forward; gap: c"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-16",
+   "time": "09:57",
+   "status": "partial",
+   "items": "0",
+   "pr": "291",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
