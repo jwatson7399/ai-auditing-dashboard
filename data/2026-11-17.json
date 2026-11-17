@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-17",
- "built_at": "2026-11-17T14:49:04+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 294",
- "built_at_et": "9:49 AM",
+ "built_at": "2026-11-17T15:02:10+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 295",
+ "built_at_et": "10:02 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -28051,14 +28051,14 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Sol",
     "GPT-5.6 Terra",
+    "Grok 4.6",
+    "GPT-5.6 Luna",
     "Claude Fable 5.1",
-    "Claude Fable 5",
     "Claude Opus 5",
     "GPT-6 Astra",
-    "GPT-5.6 Sol",
-    "Grok 4.6",
-    "GPT-5.6 Luna"
+    "Claude Fable 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -28323,12 +28323,12 @@
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen Image 2.0 Pro (2026-04-22)",
      65.4,
      null
     ],
     [
-     "Qwen Image 2.0 Pro (2026-04-22)",
+     "MAI-Image-2.5-Flash",
      65.4,
      null
     ],
@@ -28338,12 +28338,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "FLUX.2 [flex]",
      64.4,
      null
     ],
     [
-     "FLUX.2 [flex]",
+     "Recraft V4.1 Utility",
      64.4,
      null
     ],
@@ -28353,22 +28353,22 @@
      null
     ],
     [
-     "Qwen-Image-2.1-Turbo",
-     64.1,
-     null
-    ],
-    [
      "Luma UNI 1 Max",
      64.1,
      null
     ],
     [
-     "Wan 2.6 Image",
-     63.9,
+     "Qwen-Image-2.1-Turbo",
+     64.1,
      null
     ],
     [
      "grok-imagine-image",
+     63.9,
+     null
+    ],
+    [
+     "Wan 2.6 Image",
      63.9,
      null
     ],
@@ -28378,17 +28378,17 @@
      null
     ],
     [
+     "Krea 2 Medium Turbo",
+     63.3,
+     null
+    ],
+    [
      "Recraft V4.1 Utility Pro",
      63.3,
      null
     ],
     [
      "Seedream 5.0 Lite",
-     63.3,
-     null
-    ],
-    [
-     "Krea 2 Medium Turbo",
      63.3,
      null
     ],
@@ -28463,18 +28463,13 @@
      null
     ],
     [
-     "HunyuanImage 3.0 (Tencent Cloud)",
-     59.1,
-     null
-    ],
-    [
      "Qwen Image 2.0 (2026-03-03)",
      59.1,
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
-     58.4,
+     "HunyuanImage 3.0 (Tencent Cloud)",
+     59.1,
      null
     ],
     [
@@ -28488,12 +28483,17 @@
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
-     58.1,
+     "Cosmos3-Super-Text2Image",
+     58.4,
      null
     ],
     [
      "HunyuanImage 3.0 Instruct",
+     58.1,
+     null
+    ],
+    [
+     "FLUX.2 [dev] Flash",
      58.1,
      null
     ],
@@ -28503,12 +28503,12 @@
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Ideogram 4.0 Fast (Quality)",
      57.5,
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Wan 2.7 Pro",
      57.5,
      null
     ],
@@ -28533,12 +28533,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Low)",
+     "Ideogram 4.0 Fast",
      55.1,
      null
     ],
     [
-     "Ideogram 4.0 Fast",
+     "P-Image-Ideogram (Low)",
      55.1,
      null
     ],
@@ -28568,12 +28568,12 @@
      null
     ],
     [
-     "FLUX.1 Kontext [max]",
+     "FLUX.2 [klein] 9B",
      49.8,
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "FLUX.1 Kontext [max]",
      49.8,
      null
     ],
@@ -28583,12 +28583,12 @@
      null
     ],
     [
-     "Kling Image 3.0 Omni",
+     "FLUX.1 Kontext [pro]",
      48.9,
      null
     ],
     [
-     "FLUX.1 Kontext [pro]",
+     "Kling Image 3.0 Omni",
      48.9,
      null
     ],
@@ -28613,12 +28613,12 @@
      null
     ],
     [
-     "Ideogram 3.0",
+     "Qwen Image",
      46.3,
      null
     ],
     [
-     "Qwen Image",
+     "Ideogram 3.0",
      46.3,
      null
     ],
@@ -28678,12 +28678,12 @@
      null
     ],
     [
-     "Luma Photon",
+     "FLUX.2 [klein] 4B",
      35.9,
      null
     ],
     [
-     "FLUX.2 [klein] 4B",
+     "Luma Photon",
      35.9,
      null
     ],
@@ -28994,13 +28994,13 @@
     ]
    ],
    "missing": [
-    "GPT-6 Astra",
     "GPT-5.6 Sol",
-    "Grok 4.6",
-    "GPT-5.6 Terra",
     "Claude Fable 5.1",
-    "Claude Fable 5",
     "Claude Opus 5",
+    "GPT-5.6 Terra",
+    "GPT-6 Astra",
+    "Claude Fable 5",
+    "Grok 4.6",
     "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
@@ -29135,13 +29135,13 @@
     ]
    ],
    "missing": [
-    "GPT-6 Astra",
     "GPT-5.6 Sol",
-    "Grok 4.6",
-    "GPT-5.6 Terra",
     "Claude Fable 5.1",
-    "Claude Fable 5",
     "Claude Opus 5",
+    "GPT-5.6 Terra",
+    "GPT-6 Astra",
+    "Claude Fable 5",
+    "Grok 4.6",
     "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
@@ -29461,14 +29461,14 @@
     ]
    ],
    "missing": [
+    "GPT-5.6 Sol",
     "GPT-5.6 Terra",
+    "Grok 4.6",
+    "GPT-5.6 Luna",
     "Claude Fable 5.1",
-    "Claude Fable 5",
     "Claude Opus 5",
     "GPT-6 Astra",
-    "GPT-5.6 Sol",
-    "Grok 4.6",
-    "GPT-5.6 Luna"
+    "Claude Fable 5"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -30193,6 +30193,15 @@
    "items": "7",
    "pr": "293",
    "notes": "terminal carried forward; scicode carried forward; tau carried forward; lcr carried forward; gap: c"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-17",
+   "time": "09:49",
+   "status": "partial",
+   "items": "0",
+   "pr": "294",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
