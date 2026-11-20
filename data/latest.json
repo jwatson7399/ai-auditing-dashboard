@@ -1,9 +1,9 @@
 {
  "schema": 1,
- "date": "2026-11-19",
- "built_at": "2026-11-20T03:40:18+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 316",
- "built_at_et": "10:40 PM",
+ "date": "2026-11-20",
+ "built_at": "2026-11-20T14:58:38+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 317",
+ "built_at_et": "9:58 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -27754,14 +27754,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -28636,14 +28636,14 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
     "GPT-5.6 Luna",
     "GPT-6 Astra",
-    "Claude Opus 5",
-    "GPT-5.6 Sol",
     "Grok 4.6",
-    "Claude Fable 5.1",
-    "GPT-5.6 Terra"
+    "Claude Fable 5",
+    "GPT-5.6 Terra",
+    "GPT-5.6 Sol",
+    "Claude Opus 5",
+    "Claude Fable 5.1"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -28803,12 +28803,12 @@
      null
     ],
     [
-     "Canva Craft",
+     "MAI-Image-2.7-Flash",
      84.3,
      null
     ],
     [
-     "MAI-Image-2.7-Flash",
+     "Canva Craft",
      84.3,
      null
     ],
@@ -28918,12 +28918,12 @@
      null
     ],
     [
-     "MAI-Image-2.5-Flash",
+     "Qwen Image 2.0 Pro (2026-04-22)",
      65.4,
      null
     ],
     [
-     "Qwen Image 2.0 Pro (2026-04-22)",
+     "MAI-Image-2.5-Flash",
      65.4,
      null
     ],
@@ -28973,17 +28973,17 @@
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
-     63.3,
-     null
-    ],
-    [
      "Krea 2 Medium Turbo",
      63.3,
      null
     ],
     [
      "Seedream 5.0 Lite",
+     63.3,
+     null
+    ],
+    [
+     "Recraft V4.1 Utility Pro",
      63.3,
      null
     ],
@@ -29058,12 +29058,12 @@
      null
     ],
     [
-     "Qwen Image 2.0 (2026-03-03)",
+     "HunyuanImage 3.0 (Tencent Cloud)",
      59.1,
      null
     ],
     [
-     "HunyuanImage 3.0 (Tencent Cloud)",
+     "Qwen Image 2.0 (2026-03-03)",
      59.1,
      null
     ],
@@ -29128,12 +29128,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Low)",
+     "Ideogram 4.0 Fast",
      55.1,
      null
     ],
     [
-     "Ideogram 4.0 Fast",
+     "P-Image-Ideogram (Low)",
      55.1,
      null
     ],
@@ -29163,12 +29163,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "FLUX.1 Kontext [max]",
      49.8,
      null
     ],
     [
-     "FLUX.1 Kontext [max]",
+     "FLUX.2 [klein] 9B",
      49.8,
      null
     ],
@@ -29198,12 +29198,12 @@
      null
     ],
     [
-     "ADM 3 Cloud (Image)",
+     "ERNIE Image",
      46.4,
      null
     ],
     [
-     "ERNIE Image",
+     "ADM 3 Cloud (Image)",
      46.4,
      null
     ],
@@ -29273,12 +29273,12 @@
      null
     ],
     [
-     "FLUX.2 [klein] 4B",
+     "Luma Photon",
      35.9,
      null
     ],
     [
-     "Luma Photon",
+     "FLUX.2 [klein] 4B",
      35.9,
      null
     ],
@@ -29398,12 +29398,12 @@
      null
     ],
     [
-     "P-Video-2-Pro",
+     "Dreamina Seedance 2.5",
      88.1,
      null
     ],
     [
-     "Dreamina Seedance 2.5",
+     "P-Video-2-Pro",
      88.1,
      null
     ],
@@ -29589,14 +29589,14 @@
     ]
    ],
    "missing": [
-    "GPT-6 Astra",
-    "Claude Opus 5",
     "Claude Fable 5",
+    "GPT-5.6 Terra",
     "GPT-5.6 Luna",
     "GPT-5.6 Sol",
+    "Claude Opus 5",
+    "GPT-6 Astra",
     "Grok 4.6",
-    "Claude Fable 5.1",
-    "GPT-5.6 Terra"
+    "Claude Fable 5.1"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -29745,14 +29745,14 @@
     ]
    ],
    "missing": [
-    "GPT-6 Astra",
-    "Claude Opus 5",
     "Claude Fable 5",
+    "GPT-5.6 Terra",
     "GPT-5.6 Luna",
     "GPT-5.6 Sol",
+    "Claude Opus 5",
+    "GPT-6 Astra",
     "Grok 4.6",
-    "Claude Fable 5.1",
-    "GPT-5.6 Terra"
+    "Claude Fable 5.1"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -30056,14 +30056,14 @@
     ]
    ],
    "missing": [
-    "Claude Fable 5",
     "GPT-5.6 Luna",
     "GPT-6 Astra",
-    "Claude Opus 5",
-    "GPT-5.6 Sol",
     "Grok 4.6",
-    "Claude Fable 5.1",
-    "GPT-5.6 Terra"
+    "Claude Fable 5",
+    "GPT-5.6 Terra",
+    "GPT-5.6 Sol",
+    "Claude Opus 5",
+    "Claude Fable 5.1"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -30317,7 +30317,7 @@
    ]
   }
  ],
- "previous_date": "2026-11-18",
+ "previous_date": "2026-11-19",
  "noise": 3,
  "changes": [
   [
@@ -30330,60 +30330,6 @@
   ]
  ],
  "health": [
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-11-05",
-   "time": "10:05",
-   "status": "partial",
-   "items": "0",
-   "pr": "250",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-11-05",
-   "time": "10:17",
-   "status": "partial",
-   "items": "0",
-   "pr": "251",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-11-05",
-   "time": "10:25",
-   "status": "partial",
-   "items": "0",
-   "pr": "252",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-11-05",
-   "time": "10:31",
-   "status": "partial",
-   "items": "0",
-   "pr": "253",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-11-05",
-   "time": "10:44",
-   "status": "partial",
-   "items": "0",
-   "pr": "254",
-   "notes": "numbers carried forward (--no-fetch)"
-  },
-  {
-   "agent": "Daily rebuild",
-   "date": "2026-11-05",
-   "time": "14:53",
-   "status": "error",
-   "items": "0",
-   "pr": "255",
-   "notes": "RuntimeError: AA llms endpoint returned 410: {\"error\":\"Gone\";\"message\":\"The legacy /api/v2/data/* e"
-  },
   {
    "agent": "Daily rebuild",
    "date": "2026-11-06",
@@ -30898,8 +30844,17 @@
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
-   "agent": "Benchmark Scout",
+   "agent": "Daily rebuild",
    "date": "2026-11-19",
+   "time": "22:40",
+   "status": "partial",
+   "items": "0",
+   "pr": "316",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Benchmark Scout",
+   "date": "2026-11-20",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -30908,7 +30863,7 @@
   },
   {
    "agent": "News Scout",
-   "date": "2026-11-19",
+   "date": "2026-11-20",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -30917,7 +30872,7 @@
   },
   {
    "agent": "Editor",
-   "date": "2026-11-19",
+   "date": "2026-11-20",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -30926,7 +30881,7 @@
   },
   {
    "agent": "Verifier",
-   "date": "2026-11-19",
+   "date": "2026-11-20",
    "time": "",
    "status": "did not run",
    "items": "0",
@@ -30935,7 +30890,7 @@
   },
   {
    "agent": "Commentator",
-   "date": "2026-11-19",
+   "date": "2026-11-20",
    "time": "",
    "status": "did not run",
    "items": "0",
