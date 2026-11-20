@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<title>AI Updates · Thursday 19 November 2026</title>
+<style>
+:root{
+  --bg:#f6f5f2; --card:#ffffff; --ink:#1b1c1e; --mute:#5d6168; --faint:#8a8f97; --line:#e3e1dc;
+  --accent:#2a5bd7; --accent-soft:#e7eeff;
+  --off:#1f7a4d; --off-soft:#e3f3ea;
+  --co:#8a5a00; --co-soft:#fbf0d9;
+  --out:#9b3b2f; --out-soft:#f9e5e1;
+  --lead:#2a5bd7; --rest:#a3a8b0; --track:#eceae5;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#121315; --card:#1b1d20; --ink:#ecebe8; --mute:#a6abb3; --faint:#7d838c; --line:#2d3035;
+    --accent:#7ea2ff; --accent-soft:#1e2a47;
+    --off:#5fcf95; --off-soft:#16301f;
+    --co:#e4b55a; --co-soft:#33270f;
+    --out:#f08a7b; --out-soft:#3a1d19;
+    --lead:#7ea2ff; --rest:#5b616a; --track:#26292d;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 64px}
+a{color:var(--accent);text-decoration:none;word-break:break-word}
+a:hover{text-decoration:underline}
+h1,h2,h3{line-height:1.25;margin:0}
+.num{font-variant-numeric:tabular-nums}
+
+/* masthead */
+header.mast{padding:6px 2px 14px;border-bottom:2px solid var(--ink);margin-bottom:14px}
+.kick{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600}
+header.mast h1{font-size:28px;margin-top:2px;letter-spacing:-.01em}
+.sub{color:var(--mute);font-size:14px;margin-top:4px}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.btn{font:inherit;font-size:13px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer}
+nav.jump{display:flex;gap:6px;flex-wrap:wrap;font-size:13px}
+nav.jump a{padding:5px 10px;border-radius:999px;background:var(--card);border:1px solid var(--line);color:var(--ink)}
+
+/* section heads */
+h2.sec{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);margin:28px 2px 10px;font-weight:700}
+h2.sec small{letter-spacing:0;text-transform:none;font-weight:400;color:var(--faint)}
+
+/* glance */
+.glance{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 14px}
+.glance ol{list-style:none;margin:0;padding:0}
+.glance li{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.glance li:last-child{border-bottom:0}
+.glance .big{font-weight:750;font-size:17px;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.glance .what{font-size:15px}
+.glance .what a{color:var(--ink)}
+.note-line{font-size:13px;color:var(--mute);margin:10px 2px 0}
+
+/* badges */
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 7px;border-radius:5px;vertical-align:middle;white-space:nowrap}
+.t-off{background:var(--off-soft);color:var(--off)}
+.t-co{background:var(--co-soft);color:var(--co)}
+.t-out{background:var(--out-soft);color:var(--out)}
+.t-fu{background:var(--accent-soft);color:var(--accent)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 12px;font-size:12px;color:var(--mute);margin:8px 2px 0}
+
+/* story cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px 6px;margin-bottom:12px}
+.card .meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:12px;color:var(--mute);margin-bottom:8px}
+.card .rank{font-weight:800;color:var(--ink);font-size:13px}
+.card h3{font-size:19px;letter-spacing:-.005em}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin:12px 0}
+.stat{background:var(--bg);border-radius:10px;padding:8px 10px}
+.stat b{display:block;font-size:20px;font-variant-numeric:tabular-nums;letter-spacing:-.01em;line-height:1.2}
+.stat span{font-size:12px;color:var(--mute);line-height:1.3;display:block;margin-top:2px}
+.card ul{margin:6px 0 10px;padding-left:18px}
+.card li{margin:4px 0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0}
+.split>div{border-radius:10px;padding:10px;font-size:14px}
+.split .o{background:var(--off-soft)} .split .r{background:var(--out-soft)}
+.split h4{margin:0 0 4px;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.split .o h4{color:var(--off)} .split .r h4{color:var(--out)}
+@media (max-width:520px){.split{grid-template-columns:1fr}}
+
+details{border-top:1px solid var(--line);margin:0 -16px;padding:0 16px}
+details>summary{cursor:pointer;list-style:none;padding:10px 0;font-size:14px;font-weight:600;color:var(--accent);display:flex;align-items:center;gap:6px}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";width:7px;height:7px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg);transition:transform .15s;margin-right:3px}
+details[open]>summary::before{transform:rotate(45deg)}
+.more{font-size:14.5px;padding-bottom:12px}
+.more h5{margin:12px 0 4px;font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute)}
+.more ul{margin:4px 0;padding-left:18px}
+.more p{margin:6px 0}
+.limits{background:var(--co-soft);border-radius:8px;padding:8px 10px;margin-top:10px}
+.limits h5{margin-top:0;color:var(--co)}
+q{quotes:"\201C" "\201D"}
+
+/* compact items */
+.mini{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:10px;padding:12px 16px 0}
+.mini .hd{display:flex;gap:10px;align-items:flex-start}
+.mini .k{font-weight:800;font-size:17px;font-variant-numeric:tabular-nums;min-width:86px;line-height:1.3}
+.mini .tx{font-size:15px;padding-bottom:10px}
+.mini .tx b{display:block;font-size:15.5px}
+.mini details{margin:0 -16px}
+
+/* models */
+.panel{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.panel h3{font-size:17px;margin-bottom:6px}
+.panel p{margin:6px 0;font-size:14.5px}
+.mover{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media (max-width:560px){.mover{grid-template-columns:1fr}}
+.mover ul{margin:4px 0 0;padding-left:18px;font-size:14px}
+.mover li{margin:3px 0}
+
+table.snap{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+table.snap th,table.snap td{padding:7px 4px;text-align:center;border-bottom:1px solid var(--line)}
+table.snap th{font-size:11px;color:var(--mute);font-weight:700;text-transform:uppercase;letter-spacing:.04em;vertical-align:bottom}
+table.snap td:first-child,table.snap th:first-child{text-align:left}
+.c1{background:var(--accent-soft);color:var(--accent);font-weight:800;border-radius:6px;padding:2px 7px;display:inline-block;min-width:30px}
+.cn{color:var(--faint);font-size:12px}
+
+.jobs{list-style:none;margin:0;padding:0}
+.jobs li{padding:9px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:128px 1fr;gap:10px;font-size:14px}
+.jobs li:last-child{border-bottom:0}
+.jobs .j{font-weight:650;line-height:1.3}
+.jobs .w b{font-weight:650}
+.jobs .src{display:block;color:var(--faint);font-size:12px;margin-top:2px}
+.solid{font-size:11px;font-weight:700;padding:1px 6px;border-radius:4px;margin-left:4px;white-space:nowrap}
+.s-clear{background:var(--off-soft);color:var(--off)}
+.s-shared{background:var(--accent-soft);color:var(--accent)}
+.s-close{background:var(--co-soft);color:var(--co)}
+@media (max-width:480px){.jobs li{grid-template-columns:1fr;gap:2px}}
+.grp{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin:14px 0 2px}
+.grp:first-child{margin-top:0}
+
+/* charts */
+.chart{border-top:1px solid var(--line);margin:0 -16px;padding:0 16px}
+.chart .cm{font-size:12.5px;color:var(--mute);margin:0 0 8px}
+.rows{margin:2px 0 6px}
+.row{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) auto;gap:4px 12px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border-bottom:0}
+.rl{font-size:13.5px;line-height:1.3;display:flex;gap:6px;align-items:baseline;min-width:0}
+.pl{font-size:11px;font-weight:800;min-width:30px;text-align:center;border-radius:4px;padding:1px 3px;background:var(--track);color:var(--mute);flex:none}
+.row.lead .pl{background:var(--accent-soft);color:var(--accent)}
+.row.lead .mn{font-weight:650}
+.mn small{display:block;color:var(--faint);font-size:11.5px}
+.trk{position:relative;height:18px}
+.trk::before{content:"";position:absolute;left:0;right:0;top:8px;height:2px;background:var(--track);border-radius:2px}
+.rg{position:absolute;top:5px;height:8px;border-radius:4px;background:var(--rest);opacity:.45}
+.dt{position:absolute;top:3px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--rest);border:2px solid var(--card)}
+.row.lead .rg{background:var(--lead);opacity:.35}
+.row.lead .dt{background:var(--lead)}
+.rv{text-align:right;font-variant-numeric:tabular-nums;font-size:13.5px;white-space:nowrap}
+.rv b{font-size:14.5px}
+.rv .ci{display:block;color:var(--faint);font-size:11px}
+.rv .co{display:block;color:var(--co);font-size:11.5px}
+.axis{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) auto;gap:12px;font-size:10.5px;color:var(--faint)}
+.axis .ax{display:flex;justify-content:space-between}
+.foot{font-size:12.5px;color:var(--mute);margin:4px 0 12px;padding-left:16px}
+.foot li{margin:3px 0}
+@media (max-width:560px){
+  .row{grid-template-columns:1fr auto;}
+  .row .trk{grid-column:1 / -1;order:3}
+  .axis{grid-template-columns:1fr}
+  .axis .sp{display:none}
+}
+
+.howto ul{margin:4px 0;padding-left:18px;font-size:14px}
+.howto li{margin:4px 0}
+.srcs{font-size:13.5px}
+.srcs ul{padding-left:18px;margin:4px 0 10px}
+.srcs li{margin:3px 0}
+footer{color:var(--faint);font-size:12px;margin-top:24px;text-align:center}
+@media print{details{display:block} details>*{display:block}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <div class="kick">AI Updates · Daily brief for Julian</div>
+  <h1>Thursday 19 November 2026</h1>
+  <div class="sub">Two official proposals for shutdown-style powers over frontier AI, a US audit of chatbot safeguards, and a reshuffle at the top of the score boards. Times are US Eastern unless noted.</div>
+  <div class="toolbar">
+    <nav class="jump">
+      <a href="#glance">At a glance</a><a href="#stories">Stories</a><a href="#also">Also</a><a href="#models">Model scores</a>
+    </nav>
+    <button class="btn" id="toggleAll" type="button">Expand all</button>
+  </div>
+  <div class="legend">
+    <span><span class="tag t-off">Official</span> government or court document</span>
+    <span><span class="tag t-co">Company's own</span> self-reported</span>
+    <span><span class="tag t-out">Outlet report</span> not officially confirmed</span>
+  </div>
+</header>
+
+<!-- ============ AT A GLANCE ============ -->
+<h2 class="sec" id="glance">At a glance</h2>
+<div class="glance">
+  <ol>
+    <li><span class="big">15 d → 48 h</span><span class="what"><a href="#s1"><b>California</b> report recommends power to order an immediate shutdown of a dangerous AI model</a>, plus faster incident reporting. <span class="tag t-off">Official</span></span></li>
+    <li><span class="big">HC 689</span><span class="what"><a href="#s2"><b>UK</b> Commons committee calls for an AI Safety and Security Bill</a> and a statutory regulator separate from AISI. <span class="tag t-off">Official</span></span></li>
+    <li><span class="big">4 of 4</span><span class="what"><a href="#s3"><b>GAO</b> covert tests got four widely used chatbots</a> to produce feasible attack plans in under 12 hours. <span class="tag t-off">Official</span></span></li>
+    <li><span class="big">No deal</span><span class="what"><a href="#s4"><b>Xi</b> urged keeping AI <q>always under human control</q></a>; Trump reportedly opposed <q>globalist regulation</q>. <span class="tag t-off">Official</span> <span class="tag t-out">Outlet report</span></span></li>
+    <li><span class="big">$2.035 bn+</span><span class="what"><a href="#s5"><b>Oregon</b> sues OpenAI</a> over ChatGPT's risks to children (filed 17 Nov). <span class="tag t-off">Official</span></span></li>
+  </ol>
+</div>
+<p class="note-line">Nothing to install: none of today's stories is a software patch or security update.</p>
+
+<!-- ============ LEAD STORIES ============ -->
+<h2 class="sec" id="stories">Lead stories <small>· in order of weight</small></h2>
+
+<!-- 1 -->
+<article class="card" id="s1">
+  <div class="meta"><span class="rank">1</span><span class="tag t-off">Official</span><span>California Government Operations Agency · released by the Governor 18 Nov</span></div>
+  <h3>California report recommends power to order an immediate emergency shutdown of a dangerous AI model</h3>
+  <div class="stats">
+    <div class="stat"><b>15 d → 48 h</b><span>proposed deadline for most critical safety-incident reports</span></div>
+    <div class="stat"><b>Immediate</b><span>shutdown order would take effect at once, pending judicial review</span></div>
+    <div class="stat"><b>No bill yet</b><span>recommendations only; no bill text or number</span></div>
+  </div>
+  <ul>
+    <li>Mandatory ongoing oversight of large frontier developers by licensed independent verification organizations (IVOs).</li>
+    <li>Power to cap AI that builds its own successors (the report calls this recursive self-improvement, RSI).</li>
+    <li>Aims to inform discussions <q>as the legislature returns next month</q>.</li>
+  </ul>
+  <details>
+    <summary>Details, dates and sources</summary>
+    <div class="more">
+      <h5>What else it recommends</h5>
+      <ul>
+        <li>A shutdown order applies if danger is imminent and the developer refuses to act; it <q>should go into effect immediately and remain in effect pending judicial review</q> (report wording).</li>
+        <li>Incident reports: most critical safety incidents cut from 15 days to 48 hours. The existing 24-hour rule for imminent catastrophic risk stays. The 48-hour figure is in the report, not the Governor's release.</li>
+        <li>Developers would need an IVO-verified Risk Containment Protocol.</li>
+        <li>Catastrophic-capable models would count as frontier even below 10<sup>26</sup> operations.</li>
+        <li>CalCompute would be funded by a surcharge on IVO fees.</li>
+      </ul>
+      <h5>Background</h5>
+      <p>Full title: <i>AI Safety in 2026 and Beyond: Recommendations for Legislative Enhancements to California's AI Safety Laws</i>, a report to the Governor from the Government Operations Agency. Prepared in response to Executive Order N-9-26, with the California Office of Emergency Services and an expert group (Goldman, Hadfield, Nelson, Reich).</p>
+      <h5>Dates</h5>
+      <p>Report dated 16 Nov 2026 (85 pages). Governor's release dated 18 Nov 2026.</p>
+      <div class="limits"><h5>Limits</h5>Recommendations only. There is no draft bill and no bill number.</div>
+      <h5>Sources</h5>
+      <ul>
+        <li><a href="https://www.gov.ca.gov/2026/11/18/governor-newsoms-nation-leading-ai-safety-framework-is-getting-even-stronger-as-california-releases-next-steps-on-mandatory-safety-standards-and-oversight/">Governor's release</a></li>
+        <li><a href="https://www.govops.ca.gov/wp-content/uploads/sites/11/2026/11/FINAL_-AI-Safety-in-2026-and-Beyond-v2.pdf">Report PDF</a></li>
+      </ul>
+    </div>
+  </details>
+</article>
+
+<!-- 2 -->
+<article class="card" id="s2">
+  <div class="meta"><span class="rank">2</span><span class="tag t-off">Official</span><span>House of Commons · published 18 Nov</span></div>
+  <h3>UK committee calls for an AI Safety and Security Bill and a statutory AI regulator</h3>
+  <div class="stats">
+    <div class="stat"><b>Bill + regulator</b><span>regulator separate from the AI Security Institute (AISI)</span></div>
+    <div class="stat"><b>Not binding</b><span>no Government response yet</span></div>
+  </div>
+  <ul>
+    <li>From the Business, Innovation, Science and Trade Committee: <i>Guardrails for growth: AI safety and security</i> (HC 689).</li>
+    <li>Para 48: <q>No UK regulator or public authority currently has the power to impose safeguards on frontier AI systems, pause training, delay deployment or withdraw unsafe services.</q></li>
+    <li>Para 49: the Government <q>should have the power to delay, restrict or prohibit its deployment, training or testing in the UK</q>.</li>
+  </ul>
+  <details>
+    <summary>Details, dates and sources</summary>
+    <div class="more">
+      <h5>Key passages</h5>
+      <ul>
+        <li>Para 8: <q>A bill in the next session should be merely the first step.</q></li>
+        <li>Para 28: <q>a statutory AI regulator, separate from AISI but drawing on its expertise.</q></li>
+        <li>Para 49: <q>The statutory regulator should not be AISI.</q></li>
+        <li>Para 81: G20 presidency objectives within three months; the committee opens a call for evidence on a global AI convention.</li>
+      </ul>
+      <h5>On the £400 billion figure</h5>
+      <p>The committee restates OECD estimates (<q>up to £400 billion larger after ten years</q>). It is not the committee's own estimate.</p>
+      <h5>Dates and reference</h5>
+      <p>Eleventh Report of Session 2026–27, HC 689. Ordered printed 10 Nov 2026; published 18 Nov 2026.</p>
+      <div class="limits"><h5>Limits</h5>Not binding. No Government response yet.</div>
+      <h5>Source</h5>
+      <ul><li><a href="https://committees.parliament.uk/publications/55827/documents/315162/default/">Committee report</a></li></ul>
+    </div>
+  </details>
+</article>
+
+<!-- 3 -->
+<article class="card" id="s3">
+  <div class="meta"><span class="rank">3</span><span class="tag t-off">Official</span><span>US Government Accountability Office · publicly released 18 Nov</span></div>
+  <h3>US audit: covert tests got four chatbots to produce feasible attack plans</h3>
+  <div class="stats">
+    <div class="stat"><b>4 of 4</b><span>ChatGPT, Claude, Gemini and Grok each produced feasible attack information</span></div>
+    <div class="stat"><b>&lt; 12 h</b><span>two IED plans and two electrical-grid attack plans</span></div>
+    <div class="stat"><b>Not significant</b><span>GAO: tests <q>are not a statistically significant sample</q></span></div>
+  </div>
+  <ul>
+    <li>Every platform's safeguards fired at first (denial, removal or account suspension). GAO <q>was able to circumvent those safeguards by using common safeguard-bypassing techniques.</q></li>
+    <li>Tested models are redacted; platforms appear only as A–D, assigned at random.</li>
+  </ul>
+  <details>
+    <summary>Vendor replies, dates and sources</summary>
+    <div class="more">
+      <h5>Vendor replies, as summarised by GAO</h5>
+      <ul>
+        <li><b>Anthropic:</b> methodology critique. The work needs a control and a significant sample; the scenarios are not comparable; the models should be named.</li>
+        <li><b>Google:</b> describes ongoing, <q>dynamic and improving</q> safeguards.</li>
+        <li><b>OpenAI:</b> the report <q>does not always make clear which parts of the attack plan came from ChatGPT.</q></li>
+      </ul>
+      <p>GAO's response to Anthropic: its tests <q>are not a statistically significant sample</q>; it agrees a control group is <q>a valuable measure</q> but says its objective was different.</p>
+      <h5>Which models?</h5>
+      <p>A footnote lists the then-current consumer versions (Claude 4, Grok 4, GPT-5 series, Gemini 3 Flash), but GAO redacts which models it tested. The caveat that these may be earlier versions is GAO's own.</p>
+      <h5>Dates</h5>
+      <p>GAO-27-108814. Published 16 Oct 2026; publicly released 18 Nov 2026. Tests took place in spring 2026. (A usage survey in April 2026 picked the four platforms; that is not the test date.)</p>
+      <p>Report to Ranking Member Margaret Wood Hassan (Senator Maggie Hassan), Joint Economic Committee. The text that was read has no recommendations section.</p>
+      <div class="limits"><h5>Limits</h5>Tested models are redacted, and platforms A–D are not mapped to named products in the public text. The sample is not statistically significant.</div>
+      <h5>Sources</h5>
+      <ul>
+        <li><a href="https://www.gao.gov/products/gao-27-108814">GAO product page</a></li>
+        <li><a href="https://www.gao.gov/assets/gao-27-108814.pdf">Report PDF</a></li>
+      </ul>
+    </div>
+  </details>
+</article>
+
+<!-- 4 -->
+<article class="card" id="s4">
+  <div class="meta"><span class="rank">4</span><span class="tag t-off">Official</span><span class="tag t-out">Outlet report</span><span>Shenzhen / APEC · 19 Nov</span></div>
+  <h3>Xi and Trump exchange views on AI. No AI agreement announced</h3>
+  <div class="split">
+    <div class="o"><h4>Official Chinese readout</h4>Xi told Trump the two countries <q>should strengthen communication and coordination, prevent the security risks of AI, and ensure that AI is always under human control.</q> The readout has Trump backing cooperation in <q>farm products, energy, super intelligence and other fields.</q></div>
+    <div class="r"><h4>Outlet reports · no White House transcript</h4>At APEC, Trump reportedly said the US opposes <q>any form of globalist regulation</q> of super intelligence (Yonhap, Anadolu Agency).</div>
+  </div>
+  <details>
+    <summary>Wording differences and sources</summary>
+    <div class="more">
+      <ul>
+        <li>Outlets differ on the words that follow: <q>control or stifle SI</q> (Yonhap, Anadolu) versus <q>control and stifle SI</q> (some other outlets).</li>
+        <li>Yonhap, Anadolu and Lianhe Zaobao place the remarks at the APEC leaders' session; Euronews also says <q>in a meeting with Xi.</q></li>
+        <li>China's foreign-ministry readout was updated 19 Nov, 18:00 Beijing time (about 5:00 AM ET).</li>
+      </ul>
+      <div class="limits"><h5>Limits</h5>No AI agreement was announced. There is no White House transcript of Trump's APEC remarks. Xi's words come from an official readout; Trump's quote is outlet reporting only.</div>
+      <h5>Sources</h5>
+      <ul>
+        <li><a href="https://www.mfa.gov.cn/eng/xw/zyxw/202611/t20261119_12063139.html">China foreign ministry readout</a></li>
+        <li><a href="https://en.yna.co.kr/view/AEN20261119004900315">Yonhap</a></li>
+        <li><a href="https://aa.com.tr/en/americas/us-opposes-globalist-regulation-of-ai-trump-tells-apec-summit-in-china/4129936">Anadolu Agency</a></li>
+      </ul>
+    </div>
+  </details>
+</article>
+
+<!-- 5 -->
+<article class="card" id="s5">
+  <div class="meta"><span class="rank">5</span><span class="tag t-off">Official</span><span>Oregon Department of Justice · dated 17 Nov (catch-up)</span></div>
+  <h3>Oregon sues OpenAI for at least $2.035 billion over ChatGPT's risks to children</h3>
+  <div class="stats">
+    <div class="stat"><b>$2.035 bn</b><span>minimum sought (complaint paras 173 and 190)</span></div>
+    <div class="stat"><b>5 claims</b><span>against 6 OpenAI entities; jury demanded</span></div>
+  </div>
+  <ul>
+    <li>Attorney General Dan Rayfield filed in Multnomah County Circuit Court.</li>
+    <li>Claims under the state's Unlawful Trade Practices Act (UTPA), plus negligence, unjust enrichment and public nuisance.</li>
+  </ul>
+  <details>
+    <summary>What Oregon asks for, and sources</summary>
+    <div class="more">
+      <h5>Relief sought (jointly and severally)</h5>
+      <ul>
+        <li>Damages of not less than $2,035,000,000 (paragraph 173, negligence; paragraph 190, public nuisance).</li>
+        <li>An injunction, plus effective age assurance, safeguards and working parental controls.</li>
+        <li>Civil penalties per willful UTPA violation (ORS 646.642(3)).</li>
+        <li>Interest, fees and other relief.</li>
+      </ul>
+      <p>56-page complaint. OpenAI's on-record response has not been independently confirmed, so it is not repeated here.</p>
+      <div class="limits"><h5>Limits</h5>The case number is blank on the posted copy of the complaint.</div>
+      <h5>Sources</h5>
+      <ul>
+        <li><a href="https://www.doj.state.or.us/media-home/news-media-releases/ag-rayfield-files-2b-lawsuit-against-open-ai-launches-keeping-kids-safe-initiative/">Oregon Justice Department release</a></li>
+        <li><a href="https://doj.state.or.us/wp-content/uploads/2026/11/2026-11-17-Oregon-OpenAI-Complaint-FINAL.pdf">Complaint PDF</a></li>
+      </ul>
+    </div>
+  </details>
+</article>
+
+<!-- ============ ALSO ============ -->
+<h2 class="sec" id="also">Also today <small>· shorter mentions</small></h2>
+
+<div class="mini">
+  <div class="hd"><div class="k">Critical</div><div class="tx"><b>OpenAI's GPT-6.2 system card</b><span class="tag t-co">Company's own</span> Both GPT-6.2 models meet OpenAI's Critical cybersecurity threshold; Astra is its first released model at High for AI self-improvement.</div></div>
+  <details>
+    <summary>More</summary>
+    <div class="more">
+      <ul>
+        <li>Both models <q>meet the Critical threshold for Cybersecurity capabilities and the High threshold for Biological and Chemical capabilities.</q></li>
+        <li><q>GPT-6.2 Astra is our first externally released model to meet the High threshold for AI Self-Improvement</q>; Sol falls below it.</li>
+        <li>Both sit at FGF Loss of Control Tier 1. OpenAI says Control Room <q>can stop them quickly.</q></li>
+        <li>Regressions versus GPT-6 Astra on obstacle-disclosure evals, and <q>slightly</q> on high-risk biology jailbreak prompts.</li>
+      </ul>
+      <p>Published 17 Nov 2026 (change log the same day). This is OpenAI's self-assessment, not an independent test.</p>
+      <p><a href="https://deploymentsafety.openai.com/gpt-6-2-astra-sol">System card</a></p>
+    </div>
+  </details>
+</div>
+
+<div class="mini">
+  <div class="hd"><div class="k">3 sources</div><div class="tx"><b>US reportedly weighs making firms disclose use of Chinese AI models</b><span class="tag t-out">Outlet report</span> Reuters, citing three anonymous people. No official text, and it is unclear whether the idea is moving.</div></div>
+  <details>
+    <summary>More</summary>
+    <div class="more">
+      <ul>
+        <li>The administration <q>is considering requiring US companies to publicly disclose their use of Chinese AI models.</q></li>
+        <li>Treasury and the Office of Science and Technology Policy <q>have discussed the plan.</q> Firms like Airbnb <q>would be required to post that information on their websites.</q></li>
+        <li>Unclear whether it is gaining traction or would go through rulemaking.</li>
+        <li>The White House, Treasury and Alibaba did not respond in the story; Airbnb, the Chinese Embassy and Rep. Moolenaar commented.</li>
+      </ul>
+      <p>Reuters, Alexandra Alper, 18 Nov 2026 (Yahoo copy published 9:46 AM ET).</p>
+      <p><a href="https://www.yahoo.com/news/politics/articles/exclusive-trump-administration-weighs-forcing-110405816.html">Reuters via Yahoo</a> · <a href="https://www.investing.com/news/stock-market-news/exclusivetrump-administration-weighs-forcing-us-firms-to-disclose-chinese-ai-use-5035455">Investing.com copy</a></p>
+    </div>
+  </details>
+</div>
+
+<div class="mini">
+  <div class="hd"><div class="k">$83.00</div><div class="tx"><b>Anthropic prices its share sale</b><span class="tag t-co">Company release</span> 980 million Class A shares at $83.00. Trading expected on the Nasdaq today under the ticker ANT.</div></div>
+  <details>
+    <summary>More</summary>
+    <div class="more">
+      <ul>
+        <li>956,351,354 shares sold by Anthropic; 23,648,646 by selling stockholders (no proceeds to Anthropic from those).</li>
+        <li>Nasdaq Global Select Market, trading expected 19 Nov; closing expected 20 Nov. The SEC declared the registration statement effective 18 Nov.</li>
+        <li>Underwriters have a 30-day option on up to 147,000,000 more shares.</li>
+        <li>About $81.34 billion gross: <i>computed here</i> (980 million × $83), not a figure Anthropic stated.</li>
+      </ul>
+      <p>The final prospectus was not yet available when this was checked.</p>
+      <p><a href="https://www.anthropic.com/news/anthropic-prices-initial-public-offering">Anthropic release</a></p>
+    </div>
+  </details>
+</div>
+
+<h2 class="sec">Follow-ups <small>· already covered, now advanced</small></h2>
+
+<div class="mini">
+  <div class="hd"><div class="k">In force today</div><div class="tx"><b>US chip-licence rule takes effect</b><span class="tag t-off">Official</span> Licences now required for advanced AI chips going to data centres that give firms headquartered in Country Group D:5 or Macau access to more than 12,000,000 aggregate TPP.</div></div>
+  <details>
+    <summary>More</summary>
+    <div class="more">
+      <ul>
+        <li>Bureau of Industry and Security interim final rule, RIN 0694-AK50. Published in the Federal Register on 19 Nov 2026 as 91 FR 74970 (pp. 74970–74999), FR Doc. 2026-23529. <q>This rule is effective November 19, 2026.</q></li>
+        <li>The 12,000,000 TPP threshold covers one data centre or linked data centres, including digitally linked ones.</li>
+        <li>Adds a licence requirement for Indonesia, Malaysia, Singapore, Thailand and Brazil, with an exception for US-headquartered firms (or firms with a US ultimate parent) that meet reporting requirements.</li>
+        <li>Formally rescinds the AI Diffusion Rule.</li>
+        <li>Comments due 60 days after publication (about 18 Jan 2027).</li>
+      </ul>
+      <p><a href="https://www.federalregister.gov/documents/2026/11/19/2026-23529/addressing-remote-access-to-advanced-semiconductors">Federal Register</a> · <a href="https://www.bis.gov/press-release/bis-issues-rule-addressing-remote-access-american-super-intelligence-technology">BIS release</a> · <a href="https://www.bis.gov/media/documents/rin-0694-ak50.pdf">Rule PDF</a></p>
+    </div>
+  </details>
+</div>
+
+<div class="mini">
+  <div class="hd"><div class="k">Text adopted</div><div class="tx"><b>ASEAN–Japan joint statement posted</b><span class="tag t-off">Official</span> Leaders welcome Japan's AI Safety and Security Partnership with ASEAN, described as voluntary and non-binding.</div></div>
+  <details>
+    <summary>More</summary>
+    <div class="more">
+      <p><i>Joint Statement of the 29th ASEAN-Japan Summit on Realising Economic Resilience</i>, adopted in Manila on 17 Nov 2026 and posted on asean.org.</p>
+      <p>Para 13(a): leaders <q>Welcome the launch of the Japan-ASEAN AI Safety and Security Partnership by Japan, which is voluntary, non-binding, and focused on the sharing of best practices and information, as well as capacity-building</q>, coordinated with the ASEAN Working Group on AI Governance and the ASEAN AI Safety Network.</p>
+      <p><a href="https://asean.org/wp-content/uploads/2026/11/FINAL_Joint-Statement-of-the-29th-ASEAN-Japan-Summit-on-Realising-Economic-Resilience-003.pdf">Joint statement PDF</a></p>
+    </div>
+  </details>
+</div>
+
+<!-- ============ MODELS ============ -->
+<h2 class="sec" id="models">Model scores <small>· independent boards</small></h2>
+
+<div class="panel">
+  <h3>What moved</h3>
+  <p>Google's Gemini 4 Neon (released 18 Nov) and OpenAI's GPT-6.2 models changed several standings.</p>
+  <div class="mover">
+    <div>
+      <b>Gemini 4 Neon</b>
+      <ul>
+        <li>1st by value on the Coding Agent Index (with Antigravity CLI)</li>
+        <li>Shares 1st on Vals finance, legal and everyday-work boards</li>
+        <li>3rd on the Artificial Analysis (AA) Intelligence Index (61.40), Agent Arena (1,333) and LMArena Text</li>
+        <li>Not on Epoch yet</li>
+        <li>Launch price $3 / $15 per 1M input / output tokens <span class="tag t-co">Google's own</span></li>
+      </ul>
+    </div>
+    <div>
+      <b>GPT-6.2 Astra / Sol</b>
+      <ul>
+        <li>Astra: top by value on Epoch's index (174.17; 7 share 1st)</li>
+        <li>Astra and Sol share 1st on MathArena; Sol costs far less</li>
+        <li>Astra: 2nd on the AA Intelligence Index (62.14); 3rd on WebDev (1,797)</li>
+        <li>Astra: 70.3% on ARC-AGI-3 (Fable 5.2 leads at 81.2%); shares 6th on the Vals Index</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="panel">
+  <h3>Across four broad boards</h3>
+  <p style="font-size:13px;color:var(--mute)">Place on each board. “1=” means shares first place.</p>
+  <table class="snap">
+    <thead><tr><th>Model</th><th>Epoch ECI<br><span class="cn">19 Nov · ranges</span></th><th>Agent Arena<br><span class="cn">18 Nov</span></th><th>WebDev<br><span class="cn">18 Nov</span></th><th>AA Index<br><span class="cn">19 Nov</span></th></tr></thead>
+    <tbody>
+      <tr><td>Claude Fable 5.2</td><td><span class="c1">1=</span></td><td><span class="c1">1</span></td><td><span class="c1">1</span></td><td><span class="c1">1</span></td></tr>
+      <tr><td>GPT-6.2 Astra</td><td><span class="c1">1=</span></td><td>6</td><td>3</td><td>2</td></tr>
+      <tr><td>Claude Opus 5.5</td><td><span class="c1">1=</span></td><td>2</td><td>2</td><td>5</td></tr>
+      <tr><td>Gemini 4 Carbon</td><td><span class="c1">1=</span></td><td>4</td><td>6</td><td>4</td></tr>
+      <tr><td>Gemini 4 Neon</td><td class="cn">not yet</td><td>3</td><td>7</td><td>3</td></tr>
+      <tr><td>Claude Sonnet 5.5</td><td>3=</td><td>5</td><td>4</td><td>7</td></tr>
+      <tr><td>GPT-6.1 Sol</td><td><span class="c1">1=</span></td><td>12</td><td>10</td><td class="cn">not listed</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:12.5px;color:var(--mute)">Agent Arena, WebDev and AA rank by printed score (no ranges published), so close scores there are not statistical ties.</p>
+</div>
+
+<div class="panel">
+  <h3>Who leads which job</h3>
+  <p style="font-size:13px;color:var(--mute)"><span class="solid s-clear">clear</span> a clear lead · <span class="solid s-shared">shared</span> ranges overlap, so several share 1st · <span class="solid s-close">close</span> narrow gap, no ranges published</p>
+  <ul class="jobs" id="jobs"></ul>
+</div>
+
+<div class="panel" id="charts">
+  <h3>Full score charts</h3>
+  <p style="font-size:13px;color:var(--mute)">Dots are scores; bars are published error ranges. Blue = 1st place (shared where ranges overlap). Costs in amber. Each board keeps its own date.</p>
+  <div id="chartList"></div>
+</div>
+
+<div class="panel howto">
+  <details style="border-top:0;margin-top:-10px">
+    <summary>How to read these scores</summary>
+    <ul>
+      <li>When a board publishes error ranges, a model ranks behind only those whose range sits entirely above it; overlapping ranges share a place.</li>
+      <li>Range types: Vals ±1 standard error; MathArena and AA-3D 95% intervals; Epoch as published; Scale does not state the interval level.</li>
+      <li>With no ranges, order is by printed score only. A large gap can still show a clear leader, but close scores are not a statistical tie.</li>
+      <li>Each standing keeps its own as-of date and carries forward until that board updates.</li>
+      <li>Harnesses, scales and retired metrics are never mixed. Agent Arena replaced <q>Net Improvement</q> with Agent Arena Index points on 18 Nov; earlier percentages are not comparable.</li>
+      <li>The Coding Agent Index scores the tool and model together; its 13 Nov method change means v2.1 is not comparable with v2.0.</li>
+    </ul>
+  </details>
+</div>
+
+<footer>AI Updates · 19 November 2026 · Built from pre-verified data; no figures added beyond it.</footer>
+</div>
+
+<script>
+(function(){
+/* ---------- Who leads which job ---------- */
+var J=[
+ ["Broad boards"],
+ ["Overall smarts","<b>Claude Fable 5.2 (max)</b> 64.56; GPT-6.2 Astra 62.14 and Gemini 4 Neon 61.40 close behind","close","AA Intelligence Index v5.0.1 · 19 Nov · no ranges"],
+ ["Broad capability","<b>7 share 1st</b>; GPT-6.2 Astra top by value (174.17)","shared","Epoch ECI · 19 Nov"],
+ ["Everyday professional work","<b>6 share 1st</b>; Claude Fable 5.2 top by value (71.31%)","shared","Vals Index v2.2 · 18 Nov"],
+ ["Coding help","<b>Antigravity CLI · Gemini 4 Neon</b> 58.64; top five within 0.48","close","AA Coding Agent Index v2.1 · 18 Nov"],
+ ["Agents for real users","<b>Claude Fable 5.2 (Max)</b> 1,448, ahead by 112 points","clear","Agent Arena Index · 18 Nov"],
+ ["Chat and writing","<b>Gemini 4 Carbon</b> 1,526; Argon 1,521","close","LMArena Text · 18 Nov"],
+ ["Web apps people like","<b>Claude Fable 5.2</b> 1,824; Opus 5.5 6 points behind","close","LMArena WebDev · 18 Nov"],
+ ["Professional fields"],
+ ["Finance work","<b>4 Geminis share 1st</b>; Neon top by value (68.32%); Hydrogen cheapest of the four ($3.80)","shared","Vals Finance Index · 18 Nov"],
+ ["Legal work","<b>6 share 1st</b>; Gemini 4 Neon top by value (78.36%); Muse Ember $0.07 per test","shared","Vals Legal Index · 18 Nov"],
+ ["Office tasks","<b>Claude Opus 5.5</b> 1,866 shares top with 3 others","shared","AA GDPval-AA v2.1 · 2 Nov"],
+ ["Terminal tasks","<b>4 share 1st</b>; Claude Opus 5.5 top by value (65.15%)","shared","Vals Terminal-Bench 4.0 · 29 Oct"],
+ ["Web search research","<b>Claude Opus 5.5 + Parallel Fast</b> 57.54% shares 1st with 2","shared","Vals Web Search · 4 Nov"],
+ ["Paid freelance projects","<b>Claude Fable 5.2</b> 41.3% vs Opus 5.5 21.25%","clear","Scale Remote Labor Index · 10 Nov"],
+ ["Immigration law","<b>Claude Fable 5.1</b> 75.44% vs Opus 5.5 72.14%","clear","Vals Immigration Bench · 28 Oct · AI grader"],
+ ["Long conversations","<b>GPT-6.1 Sol</b> by value; 3 others statistically tied","shared","Scale MultiChallenge · 21 Oct"],
+ ["Long medical records","<b>Claude Sonnet 5.5</b> shares top with one other","shared","AA MLCR-AA · 21 Oct"],
+ ["Clinician health questions","<b>GPT-6 Astra</b> 1st by value; next GPT-6.1 Sol","close","HealthBench Professional · 19 Oct · no ranges"],
+ ["Cybersecurity skills","<b>Claude Opus 5.5</b> shares 1st with 7 others. Separately, trusted-access GPT-6 Sol leads AA's Cyber Index (69)","shared","Epoch Cyber ECI · 16 Oct; AA Cyber Index · 23 Oct (separate boards)"],
+ ["Science and reasoning"],
+ ["Research math","<b>GPT-6.2 Astra</b> 92.2% and <b>Sol</b> 89.5% share 1st; Sol $0.96 vs $2.67 per problem","shared","MathArena · 18 Nov"],
+ ["Physics problems","<b>Claude Fable 5.2 (max)</b> 86.3%, close with GPT-6 Astra 84.0%","close","AA CritPt v2 · 10 Nov"],
+ ["Solving puzzles","<b>Claude Fable 5.2 (XHigh)</b> 81.2% vs GPT-6.2 Astra 70.3%","clear","ARC-AGI-3 standard score · 11 Nov"],
+ ["Drug discovery","<b>3 share 1st</b>; Gemini 4 Carbon top by value (71.5)","shared","Scale DrugDiscoveryBench · 19 Nov"],
+ ["Science index","<b>GPT-6.2 Astra</b> shares 1st; Gemini 4 Neon shares 2nd of 28","shared","Vals Science Index · 18 Nov"],
+ ["Cost and access"],
+ ["Free to download","<b>5 share 1st</b>; Kimi K3.1 Pro top by value (161.36)","shared","Epoch ECI, free-to-download only · 19 Nov"],
+ ["Do it cheaply","<b>Muse Ember (max)</b> 36 at $0.14 per task; then GPT-6 Luna and MiMo","clear","AA Intelligence Index v5.0.1 · 10 Nov"],
+ ["Media and making"],
+ ["Images","<b>GPT-Image-2.5 Sunburst</b> clear 1st on both LMArena image boards","clear","LMArena Text-to-Image and Image Edit · 8 Nov · preliminary"],
+ ["3D models in code","<b>3 share 1st</b>; GPT-6.2 Astra top by value (1,318)","shared","AA-3D · 18 Nov"],
+ ["Marketing videos in code","<b>Claude Opus 5.5</b> 1,536 vs Sonnet 5.5 1,443 (low weight)","clear","AA Code2Video-AA · 26 Oct"],
+ ["Cloned voices","<b>HeyGen Voice Turbo</b> shares 1st with 2 others","shared","AA Controlled Voice · 21 Oct"],
+ ["Real robot arm","<b>GPT-6 Astra</b>","clear","AA-Robotics · 14 Oct"]
+];
+var lbl={clear:"clear",shared:"shared",close:"close"};
+var jh="";
+J.forEach(function(r){
+  if(r.length===1){jh+='<li style="display:block;border:0;padding:0"><div class="grp">'+r[0]+'</div></li>';return;}
+  jh+='<li><span class="j">'+r[0]+'</span><span class="w">'+r[1]+' <span class="solid s-'+r[2]+'">'+lbl[r[2]]+'</span><span class="src">'+r[3]+'</span></span></li>';
+});
+document.getElementById("jobs").innerHTML=jh;
+
+/* ---------- Score charts ---------- */
+/* row: [model, score, low, high, cost, place, sub-note]; place starting "1" = lead */
+var B=[
+ {t:"Overall smarts",b:"Artificial Analysis Intelligence Index v5.0.1",d:"read 19 Nov",u:"",n:"No ranges; ordered by printed score. Precise values where known (display rounds).",rows:[
+  ["Claude Fable 5.2 (max)",64.56,null,null,null,"1"],["GPT-6.2 Astra",62.14,null,null,null,"2"],["Gemini 4 Neon (xhigh)",61.40,null,null,null,"3"],["Gemini 4 Carbon",60,null,null,null,"4"],["Claude Opus 5.5",59,null,null,null,"5","displayed (rounded)"],["GPT-6.2 Sol",57,null,null,null,"6","displayed (rounded)"],["Claude Sonnet 5.5",55,null,null,null,"7","displayed (rounded)"]],
+  f:["GPT-6.1 Sol is no longer listed.","Fable 5.2 also leads AA's standalone HLE-Diamond board (hard exam questions, no tools) at 80.2% by value; that is already part of the index.","<a href=\"https://artificialanalysis.ai/leaderboards/models\">Board</a>"]},
+ {t:"Broad capability",b:"Epoch Capabilities Index (ECI)",d:"19 Nov download",u:"",n:"Ranges as Epoch publishes them. Gray dates are each model's Epoch entry date.",rows:[
+  ["GPT-6.2 Astra",174.17,170.29,178.58,null,"1=","2026-11-17"],["Claude Fable 5.2",173.50,170.09,177.36,null,"1=","2026-11-09"],["Gemini 4 Carbon",169.78,166.59,173.31,null,"1=","2026-11-10"],["GPT-6 Astra",169.20,166.33,172.48,null,"1=","2026-09-03"],["Claude Opus 5.5",168.70,165.87,171.89,null,"1=","2026-09-22"],["GPT-6.1 Sol",168.63,165.70,171.91,null,"1=","2026-09-29"],["GPT-6.1 Terra",167.72,164.78,170.92,null,"1=","2026-10-26"],["Claude Fable 5.1",167.09,164.43,170.11,null,"2","2026-09-01"],["Claude Sonnet 5.5",166.59,163.83,169.65,null,"3=","2026-09-28"]],
+  f:["Gemini 4 Neon is not on Epoch yet.","<a href=\"https://epoch.ai/data/eci_scores.csv\">Data</a>"]},
+ {t:"Everyday professional work",b:"Vals Index v2.2",d:"18 Nov · 42 models",u:"%",cu:"/test",n:"Bars are ±1 standard error. Cost in USD per test.",rows:[
+  ["Claude Fable 5.2",71.31,70.35,72.27,17.94,"1="],["Gemini 4 Neon",70.87,69.93,71.81,7.40,"1="],["Claude Sonnet 5.5",70.85,69.92,71.78,16.18,"1="],["Gemini 4 Carbon",70.45,69.48,71.42,10.51,"1="],["Claude Opus 5.5",70.14,69.14,71.14,24.77,"1="],["Gemini 4 Argon",69.39,68.30,70.48,13.37,"1="],["Gemini 4 Hydrogen",68.49,67.50,69.48,9.84,"4="],["GPT-6.2 Astra",67.66,66.72,68.60,10.68,"6="]],
+  f:["Cheaper but lower: Muse Ember 60.48% at $0.15; Tencent Hy4 Flash 50.78% at $0.07 (cheapest of the 42).","<a href=\"https://www.vals.ai/benchmarks/vals_index\">Board</a>"]},
+ {t:"Coding help",b:"AA Coding Agent Index v2.1",d:"18 Nov · 41 setups",u:"",cu:"/task",n:"Scores the tool and model together. No ranges. Method changed 13 Nov; not comparable with v2.0. Cost in USD per task.",rows:[
+  ["Antigravity CLI · Gemini 4 Neon (Xhigh)",58.64,null,null,6.86,"1","1st of 41 and of 16 default setups"],["Claude Code · Fable 5.2 (Xhigh)",58.47,null,null,15.47,""],["Devin Fusion CLI · Opus 5.5 Max + GPT-6 Luna",58.40,null,null,8.75,""],["Claude Code · Fable 5.2 (High)",58.24,null,null,7.51,""],["Claude Code · Opus 5.5 (Max)",58.16,null,null,12.61,""],["Claude Code · Sonnet 5.5",56.33,null,null,null,""],["Claude Code · Fable 5.2 (Max)",55.74,null,null,null,"","AA blames task time limits"],["Antigravity CLI · Gemini 4 Hydrogen (Xhigh)",52.32,null,null,4.45,"","8th of 16 default setups"]],
+  f:["Top five within 0.48 points.","<a href=\"https://artificialanalysis.ai/agents/coding-agents\">Board</a>"]},
+ {t:"Agents that help real users",b:"Agent Arena Index",d:"18 Nov · 68 models",u:"",cu:"/task",n:"Points from real-session signals, not a pass rate. No ranges. Replaced Net Improvement on 18 Nov; earlier percentages not comparable. Cost is median USD per task (read 19 Nov).",rows:[
+  ["Claude Fable 5.2 (Max)",1448,null,null,9.15,"1"],["Claude Opus 5.5 (Max)",1336,null,null,6.00,"2"],["Gemini 4 Neon (High)",1333,null,null,2.60,"3","Arena's and Google's posts say 2nd at 1,336; board says 3rd"],["Gemini 4 Carbon (prelim.)",1303,null,null,null,"4"],["Claude Sonnet 5.5",1296,null,null,null,"5"],["GPT-6.2 Astra (Max)",1291,null,null,null,"6"],["GPT-6 Astra",1282,null,null,null,"7"],["GPT-6.2 Sol (Max)",1241,null,null,0.98,"11"],["GPT-6.1 Terra",1230,null,null,0.87,"13","low-cost option; Arena's Daily Driver pick"]],
+  f:["Gemini 4 Argon ranks 14th at $0.66 per task, cheaper than Terra.","<a href=\"https://arena.ai/leaderboard/agent\">Board</a>"]},
+ {t:"Chat and writing",b:"LMArena Text",d:"18 Nov · 422 models",u:"",n:"Points; no ranges.",rows:[
+  ["Gemini 4 Carbon",1526,null,null,null,"1"],["Gemini 4 Argon",1521,null,null,null,""],["Gemini 4 Neon (High)",1518,null,null,null,"3"],["Muse Wonder",1511,null,null,null,""],["Claude Opus 5.5",1507,null,null,null,""]],
+  f:["Carbon is no longer marked Preliminary. Its price is $2 / $10 per 1M input / output tokens until 30 Nov, then $4 / $20 (<a href=\"https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-now-available/\">Google, 10 Nov</a>).","<a href=\"https://arena.ai/leaderboard/text\">Board</a>"]},
+ {t:"Web apps people like",b:"LMArena WebDev",d:"18 Nov",u:"",n:"Human preference, not working code. Points; no ranges.",rows:[
+  ["Claude Fable 5.2",1824,null,null,null,"1"],["Claude Opus 5.5",1818,null,null,null,"2"],["GPT-6.2 Astra (Max)",1797,null,null,null,"3"],["Claude Sonnet 5.5",1773,null,null,null,"4"],["GPT-6.2 Sol (Max)",1771,null,null,null,""],["Gemini 4 Carbon",1769,null,null,null,"6"],["Gemini 4 Neon (High)",1764,null,null,null,"7"],["GPT-6 Astra",1763,null,null,null,""]],
+  f:["<a href=\"https://arena.ai/leaderboard/code/webdev\">Board</a>"]},
+ {t:"Finance work",b:"Vals Finance Index",d:"18 Nov · 45 models",u:"%",cu:"/test",n:"Bars are ±1 standard error. Cost in USD per test.",rows:[
+  ["Gemini 4 Neon",68.32,66.94,69.70,4.88,"1="],["Gemini 4 Carbon",67.05,65.62,68.48,6.46,"1="],["Gemini 4 Hydrogen",66.14,64.75,67.53,3.80,"1=","best value in the shared-1st group"],["Gemini 4 Argon",66.00,64.51,67.49,6.53,"1="],["Claude Opus 5.5",65.34,63.86,66.82,10.88,"2="],["Muse Wonder Full",64.55,63.15,65.95,3.14,"2="],["Claude Sonnet 5.5",64.53,63.05,66.01,7.40,"2="],["Claude Fable 5.2",63.58,62.20,64.96,4.94,"3="]],
+  f:["<a href=\"https://www.vals.ai/benchmarks/finance_index\">Board</a>"]},
+ {t:"Legal work",b:"Vals Legal Index",d:"18 Nov · 43 models",u:"%",cu:"/test",n:"Bars are ±1 standard error. Cost in USD per test.",rows:[
+  ["Gemini 4 Neon",78.36,76.52,80.20,6.10,"1="],["Muse Wonder Full",77.86,76.04,79.68,3.72,"1="],["Gemini 4 Argon",76.78,74.94,78.62,6.82,"1="],["Gemini 4 Carbon",75.93,74.08,77.78,7.20,"1="],["Muse Ember",75.69,73.85,77.53,0.07,"1="],["Muse Wonder",75.26,73.43,77.09,4.32,"1="],["GLM-5.3",74.62,72.78,76.46,2.68,"2"]],
+  f:["Separate, lower-signal test: Vals Legal Research Bench (AI grader), 18 Nov. Neon 56.25% ±3.45 is 1st by value of 100 but shares the place with 11 others, including Carbon 55.77%.","<a href=\"https://www.vals.ai/benchmarks/legal_index\">Board</a>"]},
+ {t:"Free to download and run yourself",b:"Epoch ECI, free-to-download models only",d:"19 Nov download",u:"",n:"Ranges as Epoch publishes them. Licence noted under each name.",rows:[
+  ["Kimi K3.1 Pro",161.36,158.97,163.90,null,"1=","restricted use · 10th overall on ECI"],["DeepSeek V4.1 Flash 1017",159.40,157.16,161.93,null,"1=","unrestricted"],["Kimi K3",158.60,156.63,160.80,null,"1=","non-commercial only"],["GLM-5.3",157.10,155.04,159.33,null,"1=","restricted use"],["DeepSeek V4.1 Flash",157.00,155.08,159.03,null,"1=","unrestricted"]],
+  f:["On the AA Intelligence Index v5.0.1 (no ranges): Kimi K3.1 Pro 46 vs DeepSeek V4.1 Flash 1017 33.","Kimi K3.1 Pro uses Moonshot's own licence, with extra terms for hosted services (<a href=\"https://huggingface.co/moonshotai/Kimi-K3.1-Pro\">Hugging Face</a>)."]},
+ {t:"Do it cheaply",b:"AA Intelligence Index v5.0.1",d:"10 Nov",u:"",cu:"/task",n:"Pick is most score per dollar. No ranges. Cost in USD per task.",rows:[
+  ["Muse Ember (max)",36,null,null,0.14,"1","most score per dollar"],["Claude Haiku 5.5",36,null,null,0.41,""],["MiMo-V2.6-Pro",30,null,null,0.26,"","pick from AA's 8 Oct cost board"],["GPT-6 Luna (max)",28,null,null,0.15,"","pick from AA's 8 Oct cost board"]],
+  f:["Order by value for money: Ember, then Luna and MiMo (the Luna and MiMo picks come from an older index version). On the Vals Index, Ember costs $0.15 per test.","Near-top smarts for less (3 Nov): GPT-6.1 Sol 55 at $1.27 per task and GPT-6.1 Terra 51 at $0.96, vs Claude Opus 5.5 59 at $10.04."]},
+ {t:"Research math",b:"MathArena",d:"18 Nov",u:"%",cu:"/problem",n:"Bars are 95% bootstrap intervals. Cost in USD per problem.",rows:[
+  ["GPT-6.2 Astra (max)",92.2,89.8,94.6,2.67,"1=","3 observed competitions; rest model-estimated"],["GPT-6.2 Sol (max)",89.5,87.3,91.7,0.96,"1=","3 observed competitions; rest model-estimated"],["Gemini 4 Carbon",85.4,82.1,88.7,null,"2="],["Claude Fable 5.2",82.4,77.5,87.3,null,"2=","top of range equals Sol's low end, so shares 2nd"],["GPT-6.1 Sol",80.6,78.1,83.1,null,"3="]],
+  f:["<a href=\"https://matharena.ai/\">Board</a>"]},
+ {t:"Solving puzzles",b:"ARC-AGI-3 standard score",d:"11 Nov",u:"%",cu:" run",n:"No ranges; a large gap on the printed score. Cost is total run cost.",rows:[
+  ["Claude Fable 5.2 (XHigh)",81.2,null,null,"$21.9K","1"],["GPT-6.2 Astra",70.3,null,null,null,""],["Gemini 4 Carbon (Low)",65.1,null,null,"$7.2K","","Carbon's High run did not finish"],["GPT-6 Astra",62.7,null,null,null,""]],
+  f:["Separate Provider Adapter setup (each maker's own harness, not mixed with the standard score): Astra 99.9%, Carbon 99.1%, Fable 5.2 97.7%.","<a href=\"https://arcprize.org/leaderboard\">Board</a>"]},
+ {t:"Drug-discovery tasks",b:"Scale DrugDiscoveryBench",d:"read 19 Nov",u:"",n:"Bars as Scale publishes them (interval level not stated).",rows:[
+  ["Gemini 4 Carbon",71.5,69.4,73.6,null,"1="],["Gemini 4 Hydrogen",69.1,65.6,72.6,null,"1="],["GPT-6 Astra (mini-SWE-agent)",68.7,66.2,71.2,null,"1="],["GPT-6.2 Astra (Codex, xhigh)",65.45,62.58,68.32,null,"2="],["GPT-6.2 Sol (Codex, xhigh)",62.2,57.22,67.18,null,"2="],["GPT-6.1 Terra (Codex, xhigh)",58.13,56.54,59.72,null,"9="],["Muse Ember 1.0 (mini-swe-agent, xhigh)",52.44,50.05,54.83,null,"13="]],
+  f:["<a href=\"https://labs.scale.com/leaderboard/drugdiscoverybench\">Board</a>"]},
+ {t:"3D models made in code",b:"AA-3D",d:"18 Nov",u:"",n:"Bars are 95% intervals.",rows:[
+  ["GPT-6.2 Astra",1318,1287,1349,null,"1="],["Claude Fable 5.2",1271,1246,1296,null,"1="],["GPT-6.2 Sol",1259,1231,1287,null,"1="]],
+  f:["<a href=\"https://artificialanalysis.ai/evaluations/aa-3d\">Board</a>"]},
+ {t:"Office tasks",b:"AA GDPval-AA v2.1",d:"2 Nov",u:"",n:"Intervals as published.",rows:[
+  ["Claude Opus 5.5",1866,1840,1892,null,"1="],["Kimi K3.1 Pro",1858,1830,1886,null,"1="],["Muse Wonder Full",1857,1832,1882,null,"1="],["Claude Sonnet 5.5",1838,1815,1861,null,"1="]],
+  f:["<a href=\"https://artificialanalysis.ai/evaluations/gdpval-aa\">Board</a>"]},
+ {t:"Terminal tasks",b:"Vals Terminal-Bench 4.0",d:"29 Oct",u:"%",n:"Standard errors as Vals publishes them.",rows:[
+  ["Claude Opus 5.5",65.15,null,null,null,"1=","no range published"],["Claude Sonnet 5.5",64.14,63.13,65.15,null,"1="],["Kimi K3.1 Pro",63.64,61.89,65.39,null,"1="],["Gemini 4 Carbon",63.13,60.93,65.33,null,"1="],["GPT-6 Astra",59.6,55.2,64.0,null,"2"]],
+  f:["AA's own run (23 Oct, different harness, no ranges) has Kimi K3.1 Pro 1st by value; not mixed here.","<a href=\"https://www.vals.ai/benchmarks/terminal-bench-4\">Board</a>"]},
+ {t:"Physics problems",b:"AA CritPt v2",d:"10 Nov",u:"%",n:"No ranges.",rows:[
+  ["Claude Fable 5.2 (max)",86.3,null,null,null,"1"],["Claude Fable 5.2 (xhigh)",84.9,null,null,null,""],["GPT-6 Astra (medium)",84.0,null,null,null,""]],
+  f:["<a href=\"https://artificialanalysis.ai/evaluations/critpt-v2\">Board</a>"]},
+ {t:"Paid freelance projects",b:"Scale Remote Labor Index",d:"read 10 Nov",u:"%",n:"No ranges.",rows:[
+  ["Claude Fable 5.2",41.3,null,null,null,"1"],["Claude Opus 5.5",21.25,null,null,null,""],["GPT-6 Astra",20.83,null,null,null,""]],
+  f:["<a href=\"https://labs.scale.com/leaderboard/rli\">Board</a>"]},
+ {t:"Web search research",b:"Vals Web Search",d:"4 Nov",u:"%",n:"Ranks search tools paired with a fixed model.",rows:[
+  ["Claude Opus 5.5 + Parallel Fast",57.54,null,null,null,"1="],["Claude Opus 5.5 + Parallel Advanced",54.05,null,null,null,"1="],["Claude Opus 5.5 + its own search",53.75,null,null,null,"1="],["GPT-5.6 Sol + Keenable",49.08,null,null,null,"4"]],
+  f:["<a href=\"https://www.vals.ai/benchmarks/web_search\">Board</a>"]},
+ {t:"Immigration law questions",b:"Vals Immigration Bench",d:"launched 28 Oct",u:"%",n:"An AI grader scores answers; only 26.3% of answers are fully right.",rows:[
+  ["Claude Fable 5.1",75.44,null,null,null,"1"],["Claude Opus 5.5",72.14,null,null,null,""]],
+  f:["<a href=\"https://www.vals.ai/benchmarks/immigration\">Board</a>"]},
+ {t:"Marketing videos made in code",b:"AA Code2Video-AA",d:"26 Oct",u:"",n:"Low weight: a Gemini model is the judge, and AA built the test with HeyGen. Values are interval midpoints.",rows:[
+  ["Claude Opus 5.5",1536,null,null,null,"1"],["Claude Sonnet 5.5",1443,null,null,null,""],["GPT-6 Astra",1427,null,null,null,""]],
+  f:["<a href=\"https://artificialanalysis.ai/evaluations/code2video-aa\">Board</a>"]}
+];
+
+function fmt(v,u){
+  if(v===null||v===undefined)return"";
+  var s=(Math.abs(v)>=1000)?v.toLocaleString("en-US"):String(v);
+  return s+(u||"");
+}
+function money(c,cu){
+  if(c===null||c===undefined)return"";
+  if(typeof c==="string")return c+(cu||"");
+  return "$"+c.toFixed(2)+(cu||"");
+}
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+
+var out="";
+B.forEach(function(b){
+  var lo=Infinity,hi=-Infinity;
+  b.rows.forEach(function(r){
+    var a=r[2]!==null?r[2]:r[1], z=r[3]!==null?r[3]:r[1];
+    if(a<lo)lo=a; if(z>hi)hi=z;
+  });
+  var span=hi-lo||1, pad=span*0.08; lo-=pad; hi+=pad; span=hi-lo;
+  function pos(v){return ((v-lo)/span*100).toFixed(2);}
+  var h='<details class="chart"><summary>'+b.t+' <span style="color:var(--faint);font-weight:400;font-size:12.5px">· '+b.b+' · '+b.d+'</span></summary>';
+  h+='<p class="cm">'+b.n+'</p><div class="rows">';
+  b.rows.forEach(function(r){
+    var lead=r[5]&&r[5].charAt(0)==="1";
+    h+='<div class="row'+(lead?' lead':'')+'">';
+    h+='<div class="rl"><span class="pl">'+(r[5]||"·")+'</span><span class="mn">'+esc(r[0])+(r[6]?'<small>'+esc(r[6])+'</small>':'')+'</span></div>';
+    h+='<div class="trk">';
+    if(r[2]!==null&&r[3]!==null){
+      h+='<i class="rg" style="left:'+pos(r[2])+'%;width:'+(pos(r[3])-pos(r[2])).toFixed(2)+'%"></i>';
+    }
+    h+='<i class="dt" style="left:'+pos(r[1])+'%"></i></div>';
+    h+='<div class="rv"><b>'+fmt(r[1],b.u)+'</b>';
+    if(r[2]!==null&&r[3]!==null)h+='<span class="ci">'+r[2]+'–'+r[3]+'</span>';
+    if(r[4]!==null&&r[4]!==undefined)h+='<span class="co">'+money(r[4],b.cu)+'</span>';
+    h+='</div></div>';
+  });
+  h+='</div><div class="axis"><span class="sp"></span><span class="ax"><span>'+(+lo.toFixed(1))+'</span><span>'+(+hi.toFixed(1))+'</span></span><span></span></div>';
+  if(b.f&&b.f.length){h+='<ul class="foot">';b.f.forEach(function(x){h+='<li>'+x+'</li>';});h+='</ul>';}
+  h+='</details>';
+  out+=h;
+});
+document.getElementById("chartList").innerHTML=out;
+
+/* ---------- Expand / collapse all ---------- */
+var btn=document.getElementById("toggleAll"), open=false;
+btn.addEventListener("click",function(){
+  open=!open;
+  document.querySelectorAll("details").forEach(function(d){d.open=open;});
+  btn.textContent=open?"Collapse all":"Expand all";
+});
+})();
+</script>
+</body>
+</html>
