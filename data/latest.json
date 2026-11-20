@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-19",
- "built_at": "2026-11-20T03:03:43+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 312",
- "built_at_et": "10:03 PM",
+ "built_at": "2026-11-20T03:19:46+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 313",
+ "built_at_et": "10:19 PM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -27754,14 +27754,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -28174,12 +28174,12 @@
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
@@ -28636,14 +28636,14 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
-    "Claude Opus 5",
-    "Grok 4.6",
-    "GPT-6 Astra",
     "GPT-5.6 Terra",
+    "GPT-5.6 Sol",
+    "Grok 4.6",
+    "Claude Opus 5",
+    "GPT-5.6 Luna",
+    "GPT-6 Astra",
     "Claude Fable 5",
-    "Claude Fable 5.1",
-    "GPT-5.6 Sol"
+    "Claude Fable 5.1"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -28803,12 +28803,12 @@
      null
     ],
     [
-     "Canva Craft",
+     "MAI-Image-2.7-Flash",
      84.3,
      null
     ],
     [
-     "MAI-Image-2.7-Flash",
+     "Canva Craft",
      84.3,
      null
     ],
@@ -28978,12 +28978,12 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Recraft V4.1 Utility Pro",
      63.3,
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
+     "Seedream 5.0 Lite",
      63.3,
      null
     ],
@@ -28998,12 +28998,12 @@
      null
     ],
     [
-     "Ideogram 4.5 (High)",
+     "Wan2.6 Text to Image",
      62.9,
      null
     ],
     [
-     "Wan2.6 Text to Image",
+     "Ideogram 4.5 (High)",
      62.9,
      null
     ],
@@ -29083,12 +29083,12 @@
      null
     ],
     [
-     "FLUX.2 [dev] Flash",
+     "HunyuanImage 3.0 Instruct",
      58.1,
      null
     ],
     [
-     "HunyuanImage 3.0 Instruct",
+     "FLUX.2 [dev] Flash",
      58.1,
      null
     ],
@@ -29098,12 +29098,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Wan 2.7 Pro",
      57.5,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Ideogram 4.0 Fast (Quality)",
      57.5,
      null
     ],
@@ -29128,12 +29128,12 @@
      null
     ],
     [
-     "P-Image-Ideogram (Low)",
+     "Ideogram 4.0 Fast",
      55.1,
      null
     ],
     [
-     "Ideogram 4.0 Fast",
+     "P-Image-Ideogram (Low)",
      55.1,
      null
     ],
@@ -29163,12 +29163,12 @@
      null
     ],
     [
-     "FLUX.1 Kontext [max]",
+     "FLUX.2 [klein] 9B",
      49.8,
      null
     ],
     [
-     "FLUX.2 [klein] 9B",
+     "FLUX.1 Kontext [max]",
      49.8,
      null
     ],
@@ -29178,12 +29178,12 @@
      null
     ],
     [
-     "Kling Image 3.0 Omni",
+     "FLUX.1 Kontext [pro]",
      48.9,
      null
     ],
     [
-     "FLUX.1 Kontext [pro]",
+     "Kling Image 3.0 Omni",
      48.9,
      null
     ],
@@ -29198,22 +29198,22 @@
      null
     ],
     [
-     "ADM 3 Cloud (Image)",
-     46.4,
-     null
-    ],
-    [
      "ERNIE Image",
      46.4,
      null
     ],
     [
-     "Ideogram 3.0",
-     46.3,
+     "ADM 3 Cloud (Image)",
+     46.4,
      null
     ],
     [
      "Qwen Image",
+     46.3,
+     null
+    ],
+    [
+     "Ideogram 3.0",
      46.3,
      null
     ],
@@ -29368,12 +29368,12 @@
      null
     ],
     [
-     "Hyperflow H3",
+     "Utopai X",
      97.4,
      null
     ],
     [
-     "Utopai X",
+     "Hyperflow H3",
      97.4,
      null
     ],
@@ -29398,12 +29398,12 @@
      null
     ],
     [
-     "P-Video-2-Pro",
+     "Dreamina Seedance 2.5",
      88.1,
      null
     ],
     [
-     "Dreamina Seedance 2.5",
+     "P-Video-2-Pro",
      88.1,
      null
     ],
@@ -29590,13 +29590,13 @@
    ],
    "missing": [
     "GPT-5.6 Luna",
-    "Claude Opus 5",
-    "Claude Fable 5.1",
-    "GPT-5.6 Sol",
-    "Grok 4.6",
-    "GPT-6 Astra",
     "GPT-5.6 Terra",
-    "Claude Fable 5"
+    "GPT-5.6 Sol",
+    "GPT-6 Astra",
+    "Grok 4.6",
+    "Claude Opus 5",
+    "Claude Fable 5",
+    "Claude Fable 5.1"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -29746,13 +29746,13 @@
    ],
    "missing": [
     "GPT-5.6 Luna",
-    "Claude Opus 5",
-    "Claude Fable 5.1",
-    "GPT-5.6 Sol",
-    "Grok 4.6",
-    "GPT-6 Astra",
     "GPT-5.6 Terra",
-    "Claude Fable 5"
+    "GPT-5.6 Sol",
+    "GPT-6 Astra",
+    "Grok 4.6",
+    "Claude Opus 5",
+    "Claude Fable 5",
+    "Claude Fable 5.1"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -30056,14 +30056,14 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Luna",
-    "Claude Opus 5",
-    "Grok 4.6",
-    "GPT-6 Astra",
     "GPT-5.6 Terra",
+    "GPT-5.6 Sol",
+    "Grok 4.6",
+    "Claude Opus 5",
+    "GPT-5.6 Luna",
+    "GPT-6 Astra",
     "Claude Fable 5",
-    "Claude Fable 5.1",
-    "GPT-5.6 Sol"
+    "Claude Fable 5.1"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -30859,6 +30859,15 @@
    "status": "partial",
    "items": "0",
    "pr": "311",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-19",
+   "time": "22:03",
+   "status": "partial",
+   "items": "0",
+   "pr": "312",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
