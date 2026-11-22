@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-22",
- "built_at": "2026-11-22T15:07:46+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 327",
- "built_at_et": "10:07 AM",
+ "built_at": "2026-11-22T15:20:53+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 328",
+ "built_at_et": "10:20 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -28951,14 +28951,14 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
     "GPT-5.6 Terra",
-    "Claude Fable 5.1",
-    "GPT-6 Astra",
-    "GPT-5.6 Sol",
-    "Claude Opus 5",
+    "GPT-5.6 Luna",
+    "Grok 4.6",
     "Claude Fable 5",
-    "GPT-5.6 Luna"
+    "GPT-6 Astra",
+    "Claude Fable 5.1",
+    "Claude Opus 5",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -29138,14 +29138,14 @@
      null
     ],
     [
-     "GPT Image 1.5",
-     79.2,
-     "chatgpt"
-    ],
-    [
      "Muse Image",
      79.2,
      null
+    ],
+    [
+     "GPT Image 1.5",
+     79.2,
+     "chatgpt"
     ],
     [
      "MAI-Image-2.6-Flash",
@@ -29228,17 +29228,17 @@
      null
     ],
     [
+     "Krea 2 Large",
+     65.2,
+     null
+    ],
+    [
      "Qwen Image 2.0 Pro (2026-04-22)",
      65.2,
      null
     ],
     [
      "MAI-Image-2.5-Flash",
-     65.2,
-     null
-    ],
-    [
-     "Krea 2 Large",
      65.2,
      null
     ],
@@ -29253,12 +29253,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "Ideogram 4.0 (Quality)",
      64.1,
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Recraft V4.1 Utility",
      64.1,
      null
     ],
@@ -29268,12 +29268,12 @@
      null
     ],
     [
-     "grok-imagine-image",
+     "Wan 2.6 Image",
      63.8,
      null
     ],
     [
-     "Wan 2.6 Image",
+     "grok-imagine-image",
      63.8,
      null
     ],
@@ -29288,12 +29288,12 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Recraft V4.1 Utility Pro",
      63.1,
      null
     ],
     [
-     "Recraft V4.1 Utility Pro",
+     "Seedream 5.0 Lite",
      63.1,
      null
     ],
@@ -29388,12 +29388,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Wan 2.7",
      58.2,
      null
     ],
     [
-     "Wan 2.7",
+     "Cosmos3-Super-Text2Image",
      58.2,
      null
     ],
@@ -29413,12 +29413,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Wan 2.7 Pro",
      57.3,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Ideogram 4.0 Fast (Quality)",
      57.3,
      null
     ],
@@ -29593,12 +29593,12 @@
      null
     ],
     [
-     "Phoenix 0.9 Ultra",
+     "SRPO",
      35.6,
      null
     ],
     [
-     "SRPO",
+     "Phoenix 0.9 Ultra",
      35.6,
      null
     ],
@@ -29678,12 +29678,12 @@
      null
     ],
     [
-     "MiniMax H3 Max",
+     "Hyperflow H3",
      97.7,
      null
     ],
     [
-     "Hyperflow H3",
+     "MiniMax H3 Max",
      97.7,
      null
     ],
@@ -29718,12 +29718,12 @@
      null
     ],
     [
-     "SkyReels V4",
+     "P-Video-2-Pro",
      87.6,
      null
     ],
     [
-     "P-Video-2-Pro",
+     "SkyReels V4",
      87.6,
      null
     ],
@@ -29798,12 +29798,12 @@
      null
     ],
     [
-     "Veo 3.1 Fast",
+     "Veo 3.1",
      46.6,
      null
     ],
     [
-     "Veo 3.1",
+     "Veo 3.1 Fast",
      46.6,
      null
     ],
@@ -29904,14 +29904,14 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
-    "GPT-5.6 Sol",
-    "Claude Opus 5",
-    "GPT-5.6 Terra",
-    "Claude Fable 5.1",
-    "GPT-6 Astra",
     "Claude Fable 5",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Terra",
+    "GPT-6 Astra",
+    "Claude Fable 5.1",
+    "Claude Opus 5",
+    "GPT-5.6 Sol",
+    "GPT-5.6 Luna",
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -30060,14 +30060,14 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
-    "GPT-5.6 Sol",
-    "Claude Opus 5",
-    "GPT-5.6 Terra",
-    "Claude Fable 5.1",
-    "GPT-6 Astra",
     "Claude Fable 5",
-    "GPT-5.6 Luna"
+    "GPT-5.6 Terra",
+    "GPT-6 Astra",
+    "Claude Fable 5.1",
+    "Claude Opus 5",
+    "GPT-5.6 Sol",
+    "GPT-5.6 Luna",
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -30371,14 +30371,14 @@
     ]
    ],
    "missing": [
-    "Grok 4.6",
     "GPT-5.6 Terra",
-    "Claude Fable 5.1",
-    "GPT-6 Astra",
-    "GPT-5.6 Sol",
-    "Claude Opus 5",
+    "GPT-5.6 Luna",
+    "Grok 4.6",
     "Claude Fable 5",
-    "GPT-5.6 Luna"
+    "GPT-6 Astra",
+    "Claude Fable 5.1",
+    "Claude Opus 5",
+    "GPT-5.6 Sol"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -31192,6 +31192,15 @@
    "status": "partial",
    "items": "0",
    "pr": "326",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-22",
+   "time": "10:07",
+   "status": "partial",
+   "items": "0",
+   "pr": "327",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
