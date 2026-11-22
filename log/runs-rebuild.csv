@@ -317,3 +317,4 @@ date,time_et,agent,status,items,pr,notes
 2026-11-22,09:55,rebuild,partial,0,326,numbers carried forward (--no-fetch)
 2026-11-22,10:07,rebuild,partial,0,327,numbers carried forward (--no-fetch)
 2026-11-22,10:20,rebuild,partial,0,328,numbers carried forward (--no-fetch)
+2026-11-22,14:31,rebuild,partial,7,329,terminal carried forward; scicode carried forward; tau carried forward; lcr carried forward; gap: c
