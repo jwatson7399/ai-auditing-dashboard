@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-23",
- "built_at": "2026-11-23T14:57:27+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 330",
- "built_at_et": "9:57 AM",
+ "built_at": "2026-11-23T15:09:49+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 331",
+ "built_at_et": "10:09 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -28069,14 +28069,14 @@
      null
     ],
     [
-     "Kimi K3",
-     74.8,
-     null
-    ],
-    [
      "GPT-5.6 Terra",
      74.8,
      "chatgpt"
+    ],
+    [
+     "Kimi K3",
+     74.8,
+     null
     ],
     [
      "Qwen3.8 Max",
@@ -28489,12 +28489,12 @@
      null
     ],
     [
-     "gpt-oss-120b",
+     "Qwen3.5 9B",
      29.3,
      null
     ],
     [
-     "Qwen3.5 9B",
+     "gpt-oss-120b",
      29.3,
      null
     ],
@@ -28951,14 +28951,14 @@
     ]
    ],
    "missing": [
-    "GPT-6 Astra",
-    "Grok 4.6",
-    "Claude Opus 5",
-    "GPT-5.6 Luna",
     "Claude Fable 5.1",
+    "GPT-5.6 Luna",
+    "GPT-6 Astra",
+    "GPT-5.6 Terra",
+    "Claude Opus 5",
     "GPT-5.6 Sol",
     "Claude Fable 5",
-    "GPT-5.6 Terra"
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -29138,14 +29138,14 @@
      null
     ],
     [
-     "GPT Image 1.5",
-     79.2,
-     "chatgpt"
-    ],
-    [
      "Muse Image",
      79.2,
      null
+    ],
+    [
+     "GPT Image 1.5",
+     79.2,
+     "chatgpt"
     ],
     [
      "MAI-Image-2.6-Flash",
@@ -29228,17 +29228,17 @@
      null
     ],
     [
-     "Qwen Image 2.0 Pro (2026-04-22)",
-     65.2,
-     null
-    ],
-    [
      "MAI-Image-2.5-Flash",
      65.2,
      null
     ],
     [
      "Krea 2 Large",
+     65.2,
+     null
+    ],
+    [
+     "Qwen Image 2.0 Pro (2026-04-22)",
      65.2,
      null
     ],
@@ -29253,12 +29253,12 @@
      null
     ],
     [
-     "Recraft V4.1 Utility",
+     "Ideogram 4.0 (Quality)",
      64.1,
      null
     ],
     [
-     "Ideogram 4.0 (Quality)",
+     "Recraft V4.1 Utility",
      64.1,
      null
     ],
@@ -29273,12 +29273,12 @@
      null
     ],
     [
-     "Luma UNI 1 Max",
+     "grok-imagine-image",
      63.8,
      null
     ],
     [
-     "grok-imagine-image",
+     "Luma UNI 1 Max",
      63.8,
      null
     ],
@@ -29293,12 +29293,12 @@
      null
     ],
     [
-     "Krea 2 Medium Turbo",
+     "Seedream 5.0 Lite",
      63.1,
      null
     ],
     [
-     "Seedream 5.0 Lite",
+     "Krea 2 Medium Turbo",
      63.1,
      null
     ],
@@ -29388,12 +29388,12 @@
      null
     ],
     [
-     "Cosmos3-Super-Text2Image",
+     "Wan 2.7",
      58.2,
      null
     ],
     [
-     "Wan 2.7",
+     "Cosmos3-Super-Text2Image",
      58.2,
      null
     ],
@@ -29523,12 +29523,12 @@
      null
     ],
     [
-     "ERNIE Image",
+     "Ideogram 3.0",
      46.0,
      null
     ],
     [
-     "Ideogram 3.0",
+     "ERNIE Image",
      46.0,
      null
     ],
@@ -29593,12 +29593,12 @@
      null
     ],
     [
-     "SRPO",
+     "Phoenix 0.9 Ultra",
      35.6,
      null
     ],
     [
-     "Phoenix 0.9 Ultra",
+     "SRPO",
      35.6,
      null
     ],
@@ -29904,14 +29904,14 @@
     ]
    ],
    "missing": [
-    "GPT-6 Astra",
+    "GPT-5.6 Terra",
     "Claude Fable 5.1",
-    "Grok 4.6",
     "Claude Opus 5",
     "GPT-5.6 Sol",
     "Claude Fable 5",
     "GPT-5.6 Luna",
-    "GPT-5.6 Terra"
+    "Grok 4.6",
+    "GPT-6 Astra"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -30060,14 +30060,14 @@
     ]
    ],
    "missing": [
-    "GPT-6 Astra",
+    "GPT-5.6 Terra",
     "Claude Fable 5.1",
-    "Grok 4.6",
     "Claude Opus 5",
     "GPT-5.6 Sol",
     "Claude Fable 5",
     "GPT-5.6 Luna",
-    "GPT-5.6 Terra"
+    "Grok 4.6",
+    "GPT-6 Astra"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -30371,14 +30371,14 @@
     ]
    ],
    "missing": [
-    "GPT-6 Astra",
-    "Grok 4.6",
-    "Claude Opus 5",
-    "GPT-5.6 Luna",
     "Claude Fable 5.1",
+    "GPT-5.6 Luna",
+    "GPT-6 Astra",
+    "GPT-5.6 Terra",
+    "Claude Opus 5",
     "GPT-5.6 Sol",
     "Claude Fable 5",
-    "GPT-5.6 Terra"
+    "Grok 4.6"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -31211,6 +31211,15 @@
    "items": "7",
    "pr": "329",
    "notes": "terminal carried forward; scicode carried forward; tau carried forward; lcr carried forward; gap: c"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-23",
+   "time": "09:57",
+   "status": "partial",
+   "items": "0",
+   "pr": "330",
+   "notes": "numbers carried forward (--no-fetch)"
   },
   {
    "agent": "Benchmark Scout",
