@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "date": "2026-11-23",
- "built_at": "2026-11-23T15:09:49+00:00",
- "built_by": "tools/rebuild.py, GitHub Actions run 331",
- "built_at_et": "10:09 AM",
+ "built_at": "2026-11-23T15:25:11+00:00",
+ "built_by": "tools/rebuild.py, GitHub Actions run 332",
+ "built_at_et": "10:25 AM",
  "status": "partial",
  "status_notes": [
   "numbers carried forward (--no-fetch)"
@@ -28069,14 +28069,14 @@
      null
     ],
     [
-     "GPT-5.6 Terra",
-     74.8,
-     "chatgpt"
-    ],
-    [
      "Kimi K3",
      74.8,
      null
+    ],
+    [
+     "GPT-5.6 Terra",
+     74.8,
+     "chatgpt"
     ],
     [
      "Qwen3.8 Max",
@@ -28952,13 +28952,13 @@
    ],
    "missing": [
     "Claude Fable 5.1",
-    "GPT-5.6 Luna",
-    "GPT-6 Astra",
+    "Grok 4.6",
     "GPT-5.6 Terra",
+    "GPT-6 Astra",
     "Claude Opus 5",
     "GPT-5.6 Sol",
     "Claude Fable 5",
-    "Grok 4.6"
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -29138,14 +29138,14 @@
      null
     ],
     [
-     "Muse Image",
-     79.2,
-     null
-    ],
-    [
      "GPT Image 1.5",
      79.2,
      "chatgpt"
+    ],
+    [
+     "Muse Image",
+     79.2,
+     null
     ],
     [
      "MAI-Image-2.6-Flash",
@@ -29228,17 +29228,17 @@
      null
     ],
     [
+     "Qwen Image 2.0 Pro (2026-04-22)",
+     65.2,
+     null
+    ],
+    [
      "MAI-Image-2.5-Flash",
      65.2,
      null
     ],
     [
      "Krea 2 Large",
-     65.2,
-     null
-    ],
-    [
-     "Qwen Image 2.0 Pro (2026-04-22)",
      65.2,
      null
     ],
@@ -29293,22 +29293,22 @@
      null
     ],
     [
-     "Seedream 5.0 Lite",
-     63.1,
-     null
-    ],
-    [
      "Krea 2 Medium Turbo",
      63.1,
      null
     ],
     [
-     "GPT Image 1 (high)",
-     62.9,
+     "Seedream 5.0 Lite",
+     63.1,
      null
     ],
     [
      "HiDream-O1-Image-1.5",
+     62.9,
+     null
+    ],
+    [
+     "GPT Image 1 (high)",
      62.9,
      null
     ],
@@ -29413,12 +29413,12 @@
      null
     ],
     [
-     "Ideogram 4.0 Fast (Quality)",
+     "Wan 2.7 Pro",
      57.3,
      null
     ],
     [
-     "Wan 2.7 Pro",
+     "Ideogram 4.0 Fast (Quality)",
      57.3,
      null
     ],
@@ -29578,12 +29578,12 @@
      null
     ],
     [
-     "FIBO",
+     "FLUX1.1 [pro] Ultra",
      37.8,
      null
     ],
     [
-     "FLUX1.1 [pro] Ultra",
+     "FIBO",
      37.8,
      null
     ],
@@ -29688,12 +29688,12 @@
      null
     ],
     [
-     "Wan 3.0",
+     "MiniMax H3 Max",
      97.4,
      null
     ],
     [
-     "MiniMax H3 Max",
+     "Wan 3.0",
      97.4,
      null
     ],
@@ -29798,12 +29798,12 @@
      null
     ],
     [
-     "Veo 3.1 Fast",
+     "Veo 3.1",
      46.4,
      null
     ],
     [
-     "Veo 3.1",
+     "Veo 3.1 Fast",
      46.4,
      null
     ],
@@ -29904,14 +29904,14 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Terra",
+    "GPT-6 Astra",
     "Claude Fable 5.1",
     "Claude Opus 5",
+    "Grok 4.6",
     "GPT-5.6 Sol",
     "Claude Fable 5",
-    "GPT-5.6 Luna",
-    "Grok 4.6",
-    "GPT-6 Astra"
+    "GPT-5.6 Terra",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Tests plus votes",
@@ -30060,14 +30060,14 @@
     ]
    ],
    "missing": [
-    "GPT-5.6 Terra",
+    "GPT-6 Astra",
     "Claude Fable 5.1",
+    "Grok 4.6",
     "Claude Opus 5",
     "GPT-5.6 Sol",
     "Claude Fable 5",
-    "GPT-5.6 Luna",
-    "Grok 4.6",
-    "GPT-6 Astra"
+    "GPT-5.6 Terra",
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -30372,13 +30372,13 @@
    ],
    "missing": [
     "Claude Fable 5.1",
-    "GPT-5.6 Luna",
-    "GPT-6 Astra",
+    "Grok 4.6",
     "GPT-5.6 Terra",
+    "GPT-6 Astra",
     "Claude Opus 5",
     "GPT-5.6 Sol",
     "Claude Fable 5",
-    "Grok 4.6"
+    "GPT-5.6 Luna"
    ],
    "confidence": "Clear lead",
    "evidence": "Task tests",
@@ -31219,6 +31219,15 @@
    "status": "partial",
    "items": "0",
    "pr": "330",
+   "notes": "numbers carried forward (--no-fetch)"
+  },
+  {
+   "agent": "Daily rebuild",
+   "date": "2026-11-23",
+   "time": "10:09",
+   "status": "partial",
+   "items": "0",
+   "pr": "331",
    "notes": "numbers carried forward (--no-fetch)"
   },
   {
